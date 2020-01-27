@@ -7,9 +7,9 @@
 **Getting Started**
 
   - [Project Managers](getting-started/new-project.md)
-  - [Product Manager](getting-started/new-project.md)
-  - [Startups](getting-started/new-project.md)
-  - [Agencies](getting-started/new-project.md)
+  - [Product Manager](getting-started/product-managers.md)
+  - [Startups](getting-started/startups.md)
+  - [Agencies](getting-started/agencies.md)
   
 
 **Using Leantime**
