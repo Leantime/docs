@@ -1,4 +1,4 @@
-# Quick Start
+# Setting up a new project
 
 You’re official.  The ink is just drying on your new venture.  Welcome.  The journey is the best part.
 Beginning your journey
