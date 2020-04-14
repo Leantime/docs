@@ -7,10 +7,7 @@
 **Getting Started**
 
   - [Project Managers](getting-started/new-project.md)
-  - [Product Manager](getting-started/product-managers.md)
-  - [Startups](getting-started/startups.md)
-  - [Agencies](getting-started/agencies.md)
-  
+ 
 
 **Using Leantime**
   
@@ -31,9 +28,10 @@
 **Knowledge Base**
 
   - [Agile in Leantime](knowledge-base/agile.md)
+  - [Lean Methodology](knowledge-base/whatislean.md)
   - [Idea Development](knowledge-base/idea-development.md)
   - [Product Validation](knowledge-base/product-validation.md)
-  - [Time Management](knowledge-base/time-management.md)
+  - [Where do I start?](knowledge-base/wheretostart.md)
   - [Team Happiness](knowledge-base/team-happiness.md)
 
 
