@@ -58,13 +58,13 @@ While we typically think we know what a solution should look like, this method o
 
 This pattern will continue into Problem & Solution.  The Full Canvas will take you through this in more detail -- looking also at solution costs, revenue flows, value proposition, metrics and distribution channels.
 
-In the end, it should look like this:
+In the end, it should look something like this:
 
 ![logo](../_images/getting-started/image4.png)
 
 Click Save.
 
-Need more information on the Lean Canvas? Click *here to read more.  
+Need more information on the Lean methodologies and research? Click [here](knowledge-base/whatislean.md) to read more.   
 
 ![logo](../_images/getting-started/image9.png)
 
@@ -83,6 +83,38 @@ When you’re finished, it’ll look like this:
 And if you want to dig into the Full Canvas, it’ll look like this:  
 
 ![logo](../_images/getting-started/image14.png)
+
+
+####Milestones
+Remember all the milestones you plugged in already?  This is where you can add your ideas to them.  Not all ideas will need to be attached to a milestone
+but as they relate to your projects, may cause changes, or simply as you have ideas about project planning -- this will be the place to plug in.
+If you don't have any milestones set up, you can create a new one from this screen in the same way you would have from the research board.
+
+![logo](../_images/getting-started/ideasmilestone.png)
+
+To add an existing milestone, click on the *Attach an Existing Milestone* button and the above screen will come up.  You might also notice that there
+is text on the bottom of the screen that reads, "Nothing so far".  This is just to let you know that there is no discussion on this idea currently.
+
+####Idea Wall
+
+Once you've saved all the relevant pieces to that initial idea and *Close* the tab, your Idea board will default to the Idea Wall view.  It looks like this: 
+
+![logo](../_images/getting-started/ideawall.png)
+
+####Idea Kanban
+
+This is the location for your working ideas (or the resting place for the ones on hold).  Similar to the the traditional kanban for task management, you will 
+see that you have 6 boxes that your ideas can sit under.
+
+To move an idea between boxes, simply click it and drag it to the appropriate category.
+
+
+![logo](../_images/getting-started/ideakanban.png)
+
+![logo](../_images/getting-started/ideainreview.png)
+
+Now it's time to come up with the next great idea.  Click [here](knowledge-base/idea-management.md) to read more on Idea Management.
+
 
 ## Milestones
 
@@ -118,16 +150,13 @@ From the milestone screen you can move to the doing portion of your Project.  Se
 
 ![logo](../_images/getting-started/image24.png)
 
-On the To Do screen, you’ll be able to attach actions to a milestone, start a spring, change views from Kanban to List format.
+On the To Do screen, you’ll be able to attach actions to a milestone, start a sprint, change views from Kanban to List format.
 
  If you’ve already added in milestones, this screen will also pre-populate with the filters on.  To move away from the milestone related To Dos, you’ll click the drop down on the left hand side with the arrow on it.  You can then select All Milestones.  This will make that bar disappear.  To bring it back, select Filters.
 
 You’ll also have the ability to add specific To Dos and quickly get an overview of where you, or your teammates, are with their work efforts.
 
 The List View offers the same options but in a different viewing format.  This is a Backlog view if you’re used to SCRUM.
-
-
-
 
 ## Start a Sprint
 
@@ -168,4 +197,46 @@ Effort: The amount of work we suspect it’ll take (S, M, L, XL, XXL)
 Tags: Key words associated with this type of to do.
 
 Click Save & Close when finished.
+
+# Retrospectives
+
+Retrospectives are that important end piece to every Sprint and even great for the end of a milestone or project completion.  This is that final meeting
+to talk about what went well, what didn't go so well, and what to change.  You can focus on all dimensions of a project 
+and can include things such as: communication, delivery, planning, and workflow.
+
+![logo](../_images/getting-started/retrospectivesstart.png)
+
+The screen above is the first screen you will see the first time you go to start a retrospective in every project.  Click *Start a Retrospective*.
+ 
+![logo](../_images/getting-started/retrospectivetitle.png)
+
+From there, another pop up box will appear and ask you for the title of your Retrospective.  In this case, we continued the title from this sample project, 
+"The Next Great Idea" but in reality, you could use a Sprint name, Dates, Milestones, or as this, a project name.   Click *Start*.
+ 
+![logo](../_images/getting-started/retrospectiveboard.png)
+
+Here you'll see 5 button options.
+
+**Add More** <br>
+**Board Title**:  This drop down menu allows you to select which board you are working on. <br>
+**Create New Board**: As stated, start a new one.<br>
+**Edit Board**: This lets you modify the title of the board.<br>
+**Delete Board**
+
+Click *Add More*.
+ 
+![logo](../_images/getting-started/retrospectivewentwell.png)
+
+Adding More allows you to edit the title and place examples of what went well.  From this screen, you can also create a new milestone or attach to an existing 
+one.  In this case, we've added an existing milestone.  Click *Save & Close*
+
+![logo](../_images/getting-started/retrospectivewentwellsaved.png)
+
+Clicking *Save & Close* on the previous screen will take you back to the main board view.  Complete the remaining sections and you'll be ready
+to review how things went. 
+
+![logo](../_images/getting-started/retrospectivessave.png)
+ 
+ Retrospectives can be a quick and effective way to boost team morale, work together, and find ways to always improve.  Click [here](knowledge-base/team-happiness.md) 
+ to read more on Team Happiness.
 
