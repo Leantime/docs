@@ -41,5 +41,8 @@ Leantime works with Apache out of the box. To make it work with nginx please cop
 
 
 ## Language
-While there is a setting in the config file to change the language, this is currently not supported.
-We are working on internaitonalizing the entire system. Progress is tracked on [this issue](https://github.com/Leantime/leantime/issues/59)  
+To change the default language of your installation just update   
+```php
+public $language = 'en-US'; 
+```
+to a language string available. You can see all available languages in `resources\languages\languagelist.ini`

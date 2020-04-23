@@ -27,7 +27,7 @@ When you click *Save*, you'll move to this screen:
 
 ![logo](../_images/getting-started/ideassaved.png)
 
-####Milestones
+#### Milestones
 Remember all the milestones you plugged in already?  This is where you can add your ideas to them.  Not all ideas will need to be attached to a milestone
 but as they relate to your projects, may cause changes, or simply as you have ideas about project planning -- this will be the place to plug in.
 If you don't have any milestones set up, you can create a new one from this screen in the same way you would have from the research board.
@@ -37,13 +37,13 @@ If you don't have any milestones set up, you can create a new one from this scre
 To add an existing milestone, click on the *Attach an Existing Milestone* button and the above screen will come up.  You might also notice that there
 is text on the bottom of the screen that reads, "Nothing so far".  This is just to let you know that there is no discussion on this idea currently.
 
-####Idea Wall
+#### Idea Wall
 
 Once you've saved all the relevant pieces to that initial idea and *Close* the tab, your Idea board will default to the Idea Wall view.  It looks like this: 
 
 ![logo](../_images/getting-started/ideawall.png)
 
-####Idea Kanban
+#### Idea Kanban
 
 This is the location for your working ideas (or the resting place for the ones on hold).  Similar to the the traditional kanban for task management, you will 
 see that you have 6 boxes that your ideas can sit under.

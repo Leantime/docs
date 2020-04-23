@@ -8,7 +8,7 @@ My timesheets are seen below in the top right corner.  This is the space where y
  
   ![logo](../_images/getting-started/timesheetsbillable.png)
   
- ####Time Tracking
+ #### Time Tracking
  
 From the main Kanban view, you can click on the 3 dots on the top right corner of your task/to do box.  This will pull up the options to edit, delete or Start Work.  
 Starting work will start a task timer that allows you to track the time spent on that effort and input it into your timesheet.

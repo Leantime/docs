@@ -1,9 +1,7 @@
 # Setting up a new project
 
 You’re official.  The ink is just drying on your new venture.  Welcome.  The journey is the best part.
-Beginning your journey
-
-, you will start here.  The category at the top of the far left black bar.  In this example, it reads “Leantime Project”.  This category will be the name of the project you are working on in the system.  
+Beginning your journey, you will start here.  The category at the top of the far left black bar.  In this example, it reads “Leantime Project”.  This category will be the name of the project you are working on in the system.  
 To create a new project, click: Create New Project.
 
 ![logo](../_images/getting-started/image2.png)
@@ -86,9 +84,7 @@ And if you want to dig into the Full Canvas, it’ll look like this:
 
 
 ####Milestones
-Remember all the milestones you plugged in already?  This is where you can add your ideas to them.  Not all ideas will need to be attached to a milestone
-but as they relate to your projects, may cause changes, or simply as you have ideas about project planning -- this will be the place to plug in.
-If you don't have any milestones set up, you can create a new one from this screen in the same way you would have from the research board.
+Remember all the milestones you plugged in already?  This is where you can add your ideas to them.  Not all ideas will need to be attached to a milestone but as they relate to your projects, may cause changes, or simply as you have ideas about project planning -- this will be the place to plug in. If you don't have any milestones set up, you can create a new one from this screen in the same way you would have from the research board.
 
 ![logo](../_images/getting-started/ideasmilestone.png)
 
@@ -114,7 +110,6 @@ To move an idea between boxes, simply click it and drag it to the appropriate ca
 ![logo](../_images/getting-started/ideainreview.png)
 
 Now it's time to come up with the next great idea.  Click [here](knowledge-base/idea-management.md) to read more on Idea Management.
-
 
 ## Milestones
 
@@ -200,18 +195,16 @@ Click Save & Close when finished.
 
 # Retrospectives
 
-Retrospectives are that important end piece to every Sprint and even great for the end of a milestone or project completion.  This is that final meeting
-to talk about what went well, what didn't go so well, and what to change.  You can focus on all dimensions of a project 
+Retrospectives are that important end piece to every Sprint and even great for the end of a milestone or project completion. This is that final meeting to talk about what went well, what didn't go so well, and what to change.  You can focus on all dimensions of a project 
 and can include things such as: communication, delivery, planning, and workflow.
 
 ![logo](../_images/getting-started/retrospectivesstart.png)
 
-The screen above is the first screen you will see the first time you go to start a retrospective in every project.  Click *Start a Retrospective*.
+The screen above is the first screen you will see the first time you go to start a retrospective in every project. Click *Start a Retrospective*.
  
 ![logo](../_images/getting-started/retrospectivetitle.png)
 
-From there, another pop up box will appear and ask you for the title of your Retrospective.  In this case, we continued the title from this sample project, 
-"The Next Great Idea" but in reality, you could use a Sprint name, Dates, Milestones, or as this, a project name.   Click *Start*.
+From there, another pop up box will appear and ask you for the title of your Retrospective.  In this case, we continued the title from this sample project, "The Next Great Idea" but in reality, you could use a Sprint name, Dates, Milestones, or as this, a project name.   Click *Start*.
  
 ![logo](../_images/getting-started/retrospectiveboard.png)
 
@@ -227,16 +220,13 @@ Click *Add More*.
  
 ![logo](../_images/getting-started/retrospectivewentwell.png)
 
-Adding More allows you to edit the title and place examples of what went well.  From this screen, you can also create a new milestone or attach to an existing 
-one.  In this case, we've added an existing milestone.  Click *Save & Close*
+Adding More allows you to edit the title and place examples of what went well.  From this screen, you can also create a new milestone or attach to an existing one.  In this case, we've added an existing milestone.  Click *Save & Close*
 
 ![logo](../_images/getting-started/retrospectivewentwellsaved.png)
 
-Clicking *Save & Close* on the previous screen will take you back to the main board view.  Complete the remaining sections and you'll be ready
-to review how things went. 
+Clicking *Save & Close* on the previous screen will take you back to the main board view.  Complete the remaining sections and you'll be ready to review how things went. 
 
 ![logo](../_images/getting-started/retrospectivessave.png)
  
- Retrospectives can be a quick and effective way to boost team morale, work together, and find ways to always improve.  Click [here](knowledge-base/team-happiness.md) 
- to read more on Team Happiness.
+ Retrospectives can be a quick and effective way to boost team morale, work together, and find ways to always improve. Click [here](knowledge-base/team-happiness.md) to read more on Team Happiness.
 

@@ -13,6 +13,37 @@
             --base-font-size: 14px;
             --theme-color   : #1b75bb;
         }
+
+        nav {
+            border-bottom:1px solid #ddd;
+        }
+
+        nav a {
+            display:inline-block;
+            padding:0px 10px;
+            color:#1b75bb;
+        }
+
+        nav a:hover {
+            color:#333;
+        }
+
+        section.content {
+            padding-top:12px;
+        }
+
+        .markdown-section > div:first-child {
+            float:right;
+            padding-top:38px;
+        }
+
+        .markdown-section a:hover {
+            color:#1b75bb;
+        }
+
+        .markdown-section > div:first-child a {
+            text-decoration:none !important;
+        }
     </style>
 
 </head>
@@ -22,12 +53,13 @@
 
 <div id="app"></div>
 
-
+<script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
 <script>
     window.$docsify = {
         el: '#main',
         loadSidebar: true,
-        repo: 'leantime/docs',
+        loadNavbar: true,
+
         name: 'Leantime',
         logo: '/_images/leantime_logo.png',
         relativePath: false,
@@ -39,7 +71,7 @@
         maxLevel   : 3,
         subMaxLevel: 3,
         plugins: [
-
+            EditOnGithubPlugin.create('https://github.com/Leantime/docs/edit/master/', null, '<img src="_images/icons/github.svg" style="vertical-align: text-bottom"/> Edit on Github'),
             function (hook) {
                 var footer = [
                     '<hr/>',
@@ -55,7 +87,7 @@
             }
         ],
         search: {
-            maxAge: 86400000, // Expiration time, the default one day
+            maxAge: 5000, // Expiration time, the default one day
             paths: 'auto', // or 'auto'
             placeholder: 'Type to search',
 
@@ -66,9 +98,6 @@
 
             hideOtherSidebarContent: false, // whether or not to hide other sidebar content
 
-            // To avoid search index collision
-            // between multiple websites under the same domain
-            namespace: 'leantime-docs',
         }, // default
 
     }

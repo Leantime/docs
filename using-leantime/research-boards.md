@@ -18,7 +18,7 @@ This view is geared towards those ideas or projects that need some validation or
 
 Ready to Answer?  Click *Add New*.
 
-###The Customer
+### The Customer
 
 ![logo](../_images/getting-started/image7.png)
 
@@ -50,21 +50,21 @@ In the end, it should look something like this:
 
 Click *Save & Close*.
 
-###The Problem
+### The Problem
 
 This section is laid out similar to The Customer and asks the same questions.
 
-![logo](../_images/getting-started/Helper Content - Getting Started - Research Board - The Problem.png)
+![logo](../_images/getting-started/HelperContent-GettingStarted-ResearchBoard-TheProblem.png)
 
-###The Solution
+### The Solution
 
 The pattern continues from The Customer & The Problem sections.  In these windows, you will assign text to the information, click Save & Close or Save and can also link to existing milestones or to create new ones.  
 
-![logo](../_images/getting-started/Helper Content - Getting Started - Research Board - The Solution.png)
+![logo](../_images/getting-started/HelperContent-GettingStarted-ResearchBoard-TheSolution.png)
 
 For more information on Milestones: [Roadmap Planning](using-leantime/roadmap-planning.md)
 
-###The Little Details
+### The Little Details
 
 All the arrows here will point to changes you can make to the board:
 
@@ -76,18 +76,17 @@ Underneath our board name is more clickable text: *Create New Board* & *Edit Boa
 When you've added a customer, a drag and drop box will appear.  To edit the customer, solution, or problem, you will click on the blue text.  
 
 
-
 In the far right corner, you will find red text: *Delete Board*.  This is, as it sounds, to delete the board you are currently on.
 
 Want to **Collaborate** on your research?
 
 Leave a comment.
 
-_images/getting-started/Helper Content - Getting Started - Research Board -- Leaving a Comment.png
+![logo](../_images/getting-started/HelperContent-GettingStarted-ResearchBoard-LeavingaComment.png)
 
 When you're all finished, it should look like this:
 
-_images/getting-started/Helper Content - Getting Started - Research Board - Finished Simple View.png
+![logo](../_images/getting-started/HelperContent-GettingStarted-ResearchBoard-FinishedSimpleView.png)
 
 This is the whole of the Simple View.  The Full Lean Canvas view will offer a more in-depth research functionality.  The board usage is the same as is the boxes.  For your projects, you'll decide which categories you need and track from there.
 

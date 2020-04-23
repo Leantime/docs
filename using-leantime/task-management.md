@@ -7,7 +7,7 @@ In this area, you have two main management routes:  Backlog or Kanban board.  A 
 in progress, blocked, new, or done.  The backlog view is where you house all the tasks -- the ones you're currently working on and the ones waiting to be worked on.
 In that view, you will be able to start and set tasks for your Sprints.  
 
-####Sprints
+## Sprints
 
 Sprints are, as they sound, quick bursts of work done with the goal of having a releasable iteration of work at the end of the time period.  When you've broken
 large concept projects into the whole project, to milestones, and to sprints -- you've taken a big idea and made it simpler, manageable and in workable chunks.   
@@ -26,7 +26,7 @@ large concept projects into the whole project, to milestones, and to sprints -- 
  Once you click save, a new "Saved!" box will pop up.  It will direct you to the Backlog view so that you can drag and drop your tasks into the current Sprint.  
  Again, this backlog view is the home for all tasks.  You can either move a ready made task into the Sprint or quick-add a new one from this screen as seen below.
  
- ####Backlog
+ ## Backlog
  
   ![logo](../_images/getting-started/taskbacklogquickadd.png)
   
@@ -45,14 +45,14 @@ large concept projects into the whole project, to milestones, and to sprints -- 
  
  ![logo](../_images/getting-started/taskkanbandragdrop.png)
 
-####Filters
+## Filters
  
 This example is very simple.  As your tasks and milestones increase for your projects, you may want to filter tasks and activities by user working on them,
 by milestone, or by To Do type (task, bug, story).  
  
  ![logo](../_images/getting-started/taskfilters.png)
  
- ####Time Tracking
+## Time Tracking
  
 From the main Kanban view, you can click on the 3 dots on the top right corner of your task/to do box.  This will pull up the options to edit, delete or Start Work.  
 Starting work will start a task timer that allows you to track the time spent on that effort and input it into your timesheet.

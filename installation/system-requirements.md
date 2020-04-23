@@ -6,4 +6,13 @@ Leantime can be installed on a variety of configurations. Here is a list of mini
 - Apache with mod_rewrite
 - MySQL 5.6 
 
-*Note:* We have done limited testing on 5.7. Strict mode is currently not supported. 
+**PHP Extensions needed**
+
+Required MySQL
+Optional Curl (for Integrations)
+
+**Other considerations**
+
+- The Leantime folder should be writeable by the server user (usually apache or www-data)
+- We have done limited testing on 5.7. Strict mode is currently not supported
+ 

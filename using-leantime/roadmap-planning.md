@@ -2,11 +2,11 @@
 
 In Leantime, we've made milestones innate to your task management.  Now you have a view that shows you where your tasks are in your timeline.      
  
-  ##Milestone View
+## Milestone View
  
  ![logo](../_images/getting-started/image10.png)
  
- ##Edit Milestones
+ #### Edit Milestones
  
  To edit your milestone after it's already been added, click the milestone title and a box will show.  Click Edit Milestone.
  
@@ -24,7 +24,7 @@ In Leantime, we've made milestones innate to your task management.  Now you have
  A dependency shows that one milestone must finish before another one can be considered complete.  In this scenario, before the green milestone "Compile and Organize"
  can finish, the milestone "Interview 15 entrepreneur/business owners" must finish first.  
 
- ####Extend the Dates / Timelines of Milestones
+ #### Extend the Dates / Timelines of Milestones
  
  While you can make these edits from the "edit milestone" portion of the screen, you can also quickly edit timeframes from the primary view. 
  In this image below, the dates are set from mid March to mid April. 
@@ -35,7 +35,7 @@ In Leantime, we've made milestones innate to your task management.  Now you have
  
  ![logo](../_images/getting-started/image17.png)
  
-  ##Task Management & Milestone Views
+  ## Task Management & Milestone Views
  
 Within the highlighted milestone, you can quick link to the To Dos Kanban Board by clicking "View To Dos"
  
@@ -54,20 +54,20 @@ Within the highlighted milestone, you can quick link to the To Dos Kanban Board 
  
  ![logo](../_images/getting-started/image20.png)
  
- ##Other Screens to Access & Modify Milestones
+ ## Other Screens to Access & Modify Milestones
  
- ####Research Boards
+ #### Research Boards
  
  Depending on where you are in your project journey, when you start at the Research boards (or go back to them), you will have the ability to create and attach
  current milestones to your research concepts.  Seen on the image below.
  
  ![logo](../_images/getting-started/image9.png)
  
- ####Project Dashboard
+ #### Project Dashboard
  
   ![logo](../_images/getting-started/projectdashboardmilestone.png)
   
-  ####Idea Management & Retrospectives
+  #### Idea Management & Retrospectives
   
   Both these boards also have the ability to edit/add/modify milestones directly within them.
  
