@@ -1,4 +1,4 @@
 [Homepage](https://leantime.io/)
 [Get Leantime](https://leantime.io/pricing/)
-[Community](https://community.io/features/)
+[Community](https://community.leantime.io/features/)
 [Blog](https://leantime.io/blog/)
