@@ -1,4 +1,4 @@
-# Roadmap Planning or Milestone Management
+# Roadmap Planning
 
 In Leantime, we've made milestones innate to your task management.  Now you have a view that shows you where your tasks are in your timeline.      
  
