@@ -51,13 +51,16 @@ grunt Build-All
 To run the docker image from DockerHub you will need an existing MySQL database. 
 
 ```
-docker run -d -p 80:80 --network leantime-net \
--e DB_HOST=mysql_leantime \
--e MYSQL_USER=admin \
--e MYSQL_PASSWORD=321.qwerty \
--e MYSQL_DATABASE=leantime \
+docker run -d -p 80:80 --network
+-e LEAN_DB_HOST=mysql_leantime \
+-e LEAN_DB_USER=admin \
+-e LEAN_DB_PASSWORD=321.qwerty \
+-e LEAN_DB_DATABASE=leantime \
 --name leantime leantime/leantime:latest
 ```
+
+You can set any of the config variables in config/configuration.php when running the docker command.
+
 Once started you can go to `<yourdomain.com>/install` and run the installation script.
 
 **Full set up with MySQL and network**
@@ -85,10 +88,10 @@ docker run -d -p 3306:3306 --network leantime-net \
 
 ```
 docker run -d -p 80:80 --network leantime-net \
--e DB_HOST=mysql_leantime \
--e MYSQL_USER=admin \
--e MYSQL_PASSWORD=321.qwerty \
--e MYSQL_DATABASE=leantime \
+-e LEAN_DB_HOST=mysql_leantime \
+-e LEAN_DB_USER=admin \
+-e LEAN_DB_PASSWORD=321.qwerty \
+-e LEAN_DB_DATABASE=leantime \
 --name leantime leantime/leantime:latest
 ```
 
