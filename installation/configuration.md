@@ -39,6 +39,25 @@ public $smtpPort = ""; //Port (usually one of 25, 465, 587, 2526)
 
 Leantime works with Apache out of the box. To make it work with nginx please copy the contents of the nginx.conf file in the root of the directory into your nginx.conf file (and adjust your domain name as needed). The file can also be found in our [GitHub repository](https://github.com/Leantime/leantime/blob/master/nginx.conf)
 
+## Plesk Nginx configuration
+
+Using nginx under Plesk is quite easy but still not advised to edit the nginx.config of a domain, so instead of doing the above metod we'll fix the uri rewriting by adding the instructions in the "Additional nginx directives" under the "Apache & nginx Settings" page of the domain.
+
+```if ($ssl_protocol = "") {
+	rewrite ^/(.*) https://$server_name/$1 permanent;
+}
+rewrite ^/resetPassword$ /index.php?resetPassword=true;
+rewrite ^/resetPassword/([^/\.]+)/?$ /index.php?resetPassword=true&hash=$1;
+rewrite ^/install$ /index.php?install=true;
+rewrite ^/install/([^/\.]+)/?$ /index.php?install=true;
+rewrite ^/update /index.php?update=true;
+rewrite ^/update/([^/\.]+)/?$ /index.php?update=true;
+rewrite ^/?$ /index.php?act=dashboard.show;
+rewrite ^/([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1.$2;
+rewrite ^/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1.$2&id=$3;
+```
+
+This and by desabling the 
 
 ## Language
 To change the default language of your installation just update   
