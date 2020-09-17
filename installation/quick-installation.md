@@ -107,6 +107,16 @@ cd docker-leantime
 docker-compose up -d
 ```
 
+### Kubernetes Helm (3rd Party)
+
+Minimal install on Kubernetes using 3rd party Helm chart. Note that by default data is not persistent, see [chart options](https://github.com/gissilabs/charts/tree/master/leantime) for more details.
+
+```
+helm repo add gissilabs https://gissilabs.github.io/charts/
+helm repo update
+helm install myleantime gissilabs/leantime
+```
+
 ## Subfolder installation
 
 We recommend running Leantime as the main application under a domain or subdomain (eg leantime.yourcompany.com), however it is possible to run Leantime within a subfolder (eg. yourcompany.com/leantime).
