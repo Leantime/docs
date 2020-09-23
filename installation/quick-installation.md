@@ -115,7 +115,7 @@ To enable subfolder installations follow the steps below:
 1. Uncomment line 4 in `public/.htaccess` and change the path to your subfolder
 2. Set `public $appURL` in `config\configuration.php` to the URL you are planning to use including the subfolder (eg yourcompany.com/leantime)
 
-Keep in mind that this exposes your \userdata\ folder to the public. You should restrict access to that folder using .htaccess rules and make sure directory listings are off. 
+Keep in mind that this exposes your \userfiles\ folder to the public. You should restrict access to that folder using .htaccess rules and make sure directory listings are off. 
 
 ## Common Problems
 
@@ -127,6 +127,6 @@ There are two possible options why this would happen
 
 **I can't upload files**
 
-This usually happens when PHP can't write to the local folder. Make sure userdata/ and public/userdata/ are writeable by the server user
+This usually happens when PHP can't write to the local folder. Make sure userfiles/ and public/userfiles/ are writeable by the server user
 
 
