@@ -8,8 +8,8 @@ Leantime can be installed on a variety of configurations. Here is a list of mini
 
 **PHP Extensions needed**
 
-Required MySQL
-Optional Curl (for Integrations)
+- Required: MySQL, mbstring
+- Optional: Curl (for Integrations)
 
 **Other considerations**
 
