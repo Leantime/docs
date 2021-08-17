@@ -1,12 +1,12 @@
 # The Phases of a Project
 
-####Design Phase
+#### Design Phase
 
-####Discovery / Research
+#### Discovery / Research
 
 #### Execute
 
-####Support / Maintanence 
+#### Support / Maintanence 
 
   
 
