@@ -9,7 +9,7 @@ Leantime can be installed on a variety of configurations. Here is a list of mini
 **PHP Extensions needed**
 
 - Required: MySQL, mbstring
-- Optional: Curl (for Integrations)
+- Optional: Curl (for Integrations), gd, imagick, xml (for 2FA QR code generation)
 
 **Other considerations**
 
