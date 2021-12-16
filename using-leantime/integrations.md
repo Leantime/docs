@@ -1,7 +1,7 @@
 # Integrations
 
 ## Slack, Mattermost
-You can connect your project with your Slack, Mattermost or Zulip account. This will allow lLantime to post notifications to a channel of your choice.  The process to set up Slack or Mattermost is very similar and will be covered here.
+You can connect your project with your Slack, Mattermost or Zulip account. This will allow Leantime to post notifications to a channel of your choice.  The process to set up Slack or Mattermost is very similar and will be covered here.
 
 Before you can connect Leantime to Slack or Mattermost you have to set up a webhook. 
 
