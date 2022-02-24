@@ -117,6 +117,12 @@ helm repo update
 helm install myleantime gissilabs/leantime
 ```
 
+## Installation on Cloud Provider
+
+Some hosting platforms, or Cloud Providers, provide a documentation (or even an easy process) to install Leantime.
+
+  * alwaysdata: [install Leantime from Marketplace](https://www.alwaysdata.com/en/marketplace/leantime/)
+  
 ## Subfolder installation
 
 We recommend running Leantime as the main application under a domain or subdomain (eg leantime.yourcompany.com), however it is possible to run Leantime within a subfolder (eg. yourcompany.com/leantime).
