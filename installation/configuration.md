@@ -35,6 +35,58 @@ public $smtpSecure =""; //SMTP Security protocol (usually one of: TLS, SSL, STAR
 public $smtpPort = ""; //Port (usually one of 25, 465, 587, 2526)
 ```
 
+## Ldap Configuration
+As of v2.1.9 Leantime supports a basic ldap integration. A few notes:
+* When a user first logs in a new Leantime user is being created. The default role can be defined in the config file
+* You can map roles from your ldap directory to roles in Leantime using the `$ldapLtGroupAssignments`
+* To get started, set `$useLdap` to true.
+
+```php
+    public $useLdap = false;
+    public $ldapHost = ""; //FQDN
+    public $ldapPort = 389; //Default Port
+    public $baseDn = ""; //Base DN, example: DC=example,DC=com
+    public $ldapDn = ""; //Location of users, example: CN=users,DC=example,DC=com
+    public $ldapUserDomain = ""; //Domain after ldap, example @example.com
+    public $bindUser = ""; //ldap user that can search directory. (Should be read only)
+    public $bindPassword = "";
+
+    //Default ldap keys in your directory.
+    public $ldapKeys = '{ 
+        "username":"uid",
+        "groups":"memberof",
+        "email":"mail",
+        "firstname":"displayname",
+        "lastname":""
+        }';
+
+    //Default role assignments upon first login. (Optional) Can be updated in user settings for each user
+    public $ldapLtGroupAssignments = '{
+          "10": {
+            "ltRole":"client",
+            "ldapRole":""
+          },
+          "20": {
+            "ltRole":"developer",
+            "ldapRole":""
+          },
+          "30": {
+            "ltRole":"clientManager",
+            "ldapRole":""
+          },
+          "40": {
+            "ltRole":"manager",
+            "ldapRole":""
+          },
+          "50": {
+            "ltRole":"admin",
+            "ldapRole":"administrators"
+          }
+        }';
+
+    public $ldapDefaultRoleKey = 20; //Default Leantime Role on creation. (set to developer)
+```
+
 ## Nginx configuration
 
 Leantime works with Apache out of the box. To make it work with nginx please copy the contents of the nginx.conf file in the root of the directory into your nginx.conf file (and adjust your domain name as needed). The file can also be found in our [GitHub repository](https://github.com/Leantime/leantime/blob/master/nginx.conf)
