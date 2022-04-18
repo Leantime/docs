@@ -9,10 +9,10 @@ Leantime can be installed on a variety of configurations. Here is a list of mini
 **PHP Extensions needed**
 
 - Required: MySQL, mbstring
-- Optional: Curl (for Integrations), gd, imagick, xml (for 2FA QR code generation)
+- Optional: Curl (for Integrations), gd, imagick, xml (for 2FA QR code generation), ldap
 
 **Other considerations**
 
 - The Leantime folder should be writeable by the server user (usually apache or www-data)
-- We have done limited testing on 5.7. Strict mode is currently not supported
+- Strict mode is currently not supported
  
