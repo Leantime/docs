@@ -1,27 +1,25 @@
-name: FTP Deployer
-# You may pin to the exact commit or the version.
-# uses: sand4rt/ftp-deployer@b4d8a88f104b46a1bcfac8f69b3413986cc0ce28
-uses: sand4rt/ftp-deployer@v1.3
- with:
-  # SFTP on
-  sftp: # optional
-  # FTP host URL like: ftp.host.com or sftp.host.com
-  host: docs.leantime.io
-  # FTP port
-  port: # optional, default is 21
-  # Ftp username
-  username: ${{ secrets.ftpuser }}
-  # Ftp password
-  password: ${{ secrets.ftppass }}
-  # The remote folder location of your FTP server
-  remote_folder: # optional
-  # The local folder location
-  local_folder: # optional, default is dist
-  # Remove existing files inside FTP remote folder
-  cleanup: # optional
-  # includes
-  include: # optional
-  # exclude
-  exclude: # optional
-  # passive
-  pasive: # optional
+name: Docs Deploy
+on:
+  push:
+    branches: [master]
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: ftp-action
+      # You may pin to the exact commit or the version.
+      # uses: sebastianpopp/ftp-action@eb75c5cb29d23ee4a729720a27dfb66403cb0f6d
+      uses: sebastianpopp/ftp-action@v2.0.0
+      with:
+        # FTP host
+        host: docs.leantime.io
+        # FTP user         
+        user: ${{ secrets.ftpuser }}
+        # FTP password
+        password: ${{ secrets.ftppass }}
+        # Force SSL encryption
+        forceSsl: false
+        # Local directory   
+        localDir: .
+        # Remote directory
+        remoteDir: .
