@@ -60,7 +60,7 @@ As of v2.1.9 Leantime supports a basic ldap integration. A few notes:
         "lastname":""
         }';
 
-    //Default role assignments upon first login. (Optional) Can be updated in user settings for each user
+    //Default role assignments upon first login.
     public $ldapLtGroupAssignments = '{
           "10": {
             "ltRole":"client",
