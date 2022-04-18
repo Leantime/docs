@@ -6,7 +6,7 @@
     # SFTP on
     sftp: # optional
     # FTP host URL like: ftp.host.com or sftp.host.com
-    host: 
+    host: docs.leantime.io
     # FTP port
     port: # optional, default is 21
     # Ftp username
