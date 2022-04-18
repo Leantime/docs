@@ -1,25 +1,17 @@
-name: Docs Deploy
-on:
-  push:
-    branches: [master]
+name: Deploy via ftp
+on: push
 jobs:
-  build: 
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: ftp-action
-      # You may pin to the exact commit or the version.
-      # uses: sebastianpopp/ftp-action@eb75c5cb29d23ee4a729720a27dfb66403cb0f6d
-      uses: sebastianpopp/ftp-action@v2.0.0
+    - uses: actions/checkout@v2
+    - name: Upload ftp
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        # FTP host
-        host: docs.leantime.io
-        # FTP user         
-        user: ${{ secrets.ftpuser }}
-        # FTP password
-        password: ${{ secrets.ftppass }}
-        # Force SSL encryption
-        forceSsl: false
-        # Local directory   
-        localDir: .
-        # Remote directory
-        remoteDir: .
+        host: http://docs.leantime.io
+        user: ${{ secrets.FTPUSER }}
+        password: ${{ secrets.FTPPASS }}
+        localDir: "."
+        remoteDir: "."
+        options: "--delete --asci"
