@@ -35,11 +35,12 @@ public $smtpSecure =""; //SMTP Security protocol (usually one of: TLS, SSL, STAR
 public $smtpPort = ""; //Port (usually one of 25, 465, 587, 2526)
 ```
 
-## Ldap Configuration
+## Ldap Configuration (Beta)
 As of v2.1.9 Leantime supports a basic ldap integration. A few notes:
 * When a user first logs in a new Leantime user is being created. The default role can be defined in the config file
 * You can map roles from your ldap directory to roles in Leantime using the `$ldapLtGroupAssignments`
 * To get started, set `$useLdap` to true.
+* Instead of php arrays we decided to use json as the value format to allow you to configure ldap via environment variables. Please make sure your json is valid.
 
 ```php
     public $useLdap = false;
@@ -50,7 +51,10 @@ As of v2.1.9 Leantime supports a basic ldap integration. A few notes:
     public $ldapUserDomain = ""; //Domain after ldap, example @example.com
     public $bindUser = ""; //ldap user that can search directory. (Should be read only)
     public $bindPassword = "";
-
+```
+Setting the ldap keys allows you to match Leantime fields to the fields in your ldap directory. 
+Json keys are Leantime fields while the values are the property names in your ldap directory.
+```php
     //Default ldap keys in your directory.
     public $ldapKeys = '{ 
         "username":"uid",
@@ -60,6 +64,10 @@ As of v2.1.9 Leantime supports a basic ldap integration. A few notes:
         "lastname":""
         }';
 
+```
+
+The group assignment value allows you to match Leantime roles to roles in your directory. All you have to set is the appropriate role name in `ldapRole`.
+```php
     //Default role assignments upon first login.
     public $ldapLtGroupAssignments = '{
           "10": {
@@ -83,7 +91,9 @@ As of v2.1.9 Leantime supports a basic ldap integration. A few notes:
             "ldapRole":"administrators"
           }
         }';
-
+```
+Lastly, you can set the default role for users when they are first created. 
+```php
     public $ldapDefaultRoleKey = 20; //Default Leantime Role on creation. (set to developer)
 ```
 
