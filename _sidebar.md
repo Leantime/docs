@@ -39,5 +39,5 @@
 **External Links**
 - [Github Repository](https://github.com/Leantime/leantime/)
 - [Report a Bug](https://github.com/Leantime/leantime/issues/new)
+- [Community Chat](https://discord.gg/4zMzJtAq9z)
 - [Community Forum](https://community.leantime.io/) 
-- [More Questions? Contact Us](https://leantime.io/contact/) 
