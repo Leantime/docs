@@ -3,8 +3,8 @@
 Leantime can be installed on a variety of configurations. Here is a list of minimum requirements that have been tested and proven to work.
 
 - PHP 8.0 and up
-- Apache with mod_rewrite
-- MySQL 5.6 
+- Apache with mod_rewrite, Nginx, IIS (possible with adjustments)
+- MySQL 5.7+ 
 
 **PHP Extensions needed**
 
