@@ -1,5 +1,5 @@
 [Homepage](https://leantime.io/)
-[Get Leantime](https://leantime.io/download/))
+[Get Leantime](https://leantime.io/download/)
 [Community Forum](https://community.leantime.io)
 [Community Chat](https://discord.gg/4zMzJtAq9z)
 [Blog](https://leantime.io/blog/)
