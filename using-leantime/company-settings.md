@@ -33,6 +33,6 @@ The data we collect is anonymized and only contains aggregate data from your ins
 We do not collect any personal identifieble information or anything that would allow us to identify the company using leantime (not even company name).
 IP addresses, locations or any other server information that might be sent is also not stored anywhere.
 
-To opt out of telemetry you can uncheck the "Help make Leantime better" checkbox. This will disable the telemetry submission and remove your unique company id. 
+To opt out of telemetry you can uncheck the "Help make Leantime better" checkbox. This will disable the telemetry submission and remove your unique instance id. 
 
 We appreciate your support in helping us!
