@@ -44,6 +44,7 @@ As of v2.1.9 Leantime supports a basic ldap integration. A few notes:
 
 ```php
     public $useLdap = false;
+    public $ldapType = 'OL'; //Select the correct directory type. Currently Supported: OL - OpenLdap, AD - Active Directory
     public $ldapHost = ""; //FQDN
     public $ldapPort = 389; //Default Port
     public $baseDn = ""; //Base DN, example: DC=example,DC=com
