@@ -128,3 +128,58 @@ To change the default language of your installation just update
 public $language = 'en-US'; 
 ```
 to a language string available. You can see all available languages in `resources\languages\languagelist.ini`
+
+## ENV Vars
+The entire configuration can also be passed in as env vars (at docker startup or server variables). The list of equvalent variables is:
+```
+LEAN_SITENAME
+LEAN_LANGUAGE
+LEAN_MAIN_COLOR
+LEAN_LOGO_PATH
+LEAN_APP_URL
+LEAN_DEFAULT_TIMEZONE
+
+/* Database */
+LEAN_DB_HOST
+LEAN_DB_USER
+LEAN_DB_PASSWORD
+LEAN_DB_DATABASE
+
+/* Fileupload */
+LEAN_USER_FILE_PATH
+
+LEAN_USE_S3
+LEAN_S3_END_POINT
+LEAN_S3_KEY
+LEAN_S3_SECRET
+LEAN_S3_BUCKET
+LEAN_S3_USE_PATH_STYLE_ENDPOINT
+LEAN_S3_REGION
+LEAN_S3_FOLDER_NAME
+
+/* Sessions */
+LEAN_SESSION_PASSWORD
+LEAN_SESSION_EXPIRATION
+
+        /* Email */
+LEAN_EMAIL_RETURN
+LEAN_EMAIL_USE_SMTP
+LEAN_EMAIL_SMTP_HOSTS
+LEAN_EMAIL_SMTP_USERNAME
+LEAN_EMAIL_SMTP_PASSWORD
+LEAN_EMAIL_SMTP_AUTO_TLS
+LEAN_EMAIL_SMTP_SECURE
+LEAN_EMAIL_SMTP_PORT
+
+/*ldap*/
+LEAN_LDAP_USE_LDAP
+LEAN_LDAP_LDAP_TYPE
+LEAN_LDAP_HOST
+LEAN_LDAP_PORT
+LEAN_LDAP_BASE_DN
+LEAN_LDAP_DN
+LEAN_LDAP_USER_DOMAIN
+LEAN_LDAP_KEYS
+LEAN_LDAP_GROUP_ASSIGNMENT
+LEAN_LDAP_DEFAULT_ROLE_KEY
+```
