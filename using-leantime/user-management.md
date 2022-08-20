@@ -1,5 +1,7 @@
 # User Management
 
+## Adding Users
+
 In User Management, you can add new team members, clients or other roles that you may need to give access to their projects.  To get to the User Management role, you will
 click on the drop down next to your name/account information.  *Click User Management*
 
@@ -16,7 +18,88 @@ click on the drop down next to your name/account information.  *Click User Manag
  Click on the project name and the arrow to assign which side that project is on.  The left side shows the projects that can be assigned and the right side
  shows the projects actually assigned to the user.
       
-        
+ ## Roles
+ 
+ You can has 5 different user roles that can be assigned globally per user or on a per project basis.
+ Admins and Owners cannot be overwritten by project roles. 
+
+
+Feature | Owner | Admin | Manager | Editor | Commenter | Read-Only
+-- | -- | -- | -- | -- | -- | --
+  |   |   |   |   |   |  
+ToDos |   |   |   |   |   |  
+View Todos | x | x | x | x | x | x
+Create | x | x | x | x |   |  
+Edit Todos | x | x | x | x |   |  
+Delete Todos | x | x | x | x |   |  
+Comment | x | x | x | x | x |  
+File Upload | x | x | x | x | x |  
+  |   |   |   |   |   |  
+Ideas |   |   |   |   |   |  
+View | x | x | x | x | x | x
+Create | x | x | x | x |   |  
+Edit | x | x | x | x |   |  
+Delete | x | x | x | x |   |  
+Comment | x | x | x | x | x |  
+File Upload | x | x | x | x | x |  
+  |   |   |   |   |   |  
+Research |   |   |   |   |   |  
+View | x | x | x | x | x | x
+Create | x | x | x | x |   |  
+Edit | x | x | x | x |   |  
+Delete | x | x | x | x |   |  
+Comment | x | x | x | x | x |  
+File Upload | x | x | x | x | x |  
+  |   |   |   |   |   |  
+Timesheets |   |   |   |   |   |  
+View | x | x | x | x |   |  
+Create | x | x | x | x |   |  
+Edit | x | x | x | x |   |  
+Delete | x | x | x | x |   |  
+Comment | x | x | x | x |   |  
+File Upload | x | x | x | x |   |  
+  |   |   |   |   |   |  
+Projects |   |   |   |   |   |  
+View/settings | x | x | x |   |   |  
+Create | x | x | x |   |   |  
+Edit | x | x | x |   |   |  
+Delete | x | x | x |   |   |  
+Comment | x | x | x |   |   |  
+File Upload | x | x | x |   |   |  
+Assign | x | x | x |   |   |  
+  |   |   |   |   |   |  
+Users |   |   |   |   |   |  
+View Profiles | x | x | x | x | x | x
+View All | x | x |   |   |   |  
+Create | x | x |   |   |   |  
+Edit | x | x |   |   |   |  
+Delete | x | x |   |   |   |  
+Comment | x | x | x | x | x |  
+File Upload | x | x | x | x | x |  
+Assign to project | x | x | x |   |   |  
+  |   |   |   |   |   |  
+Retrospectives |   |   |   |   |   |  
+View | x | x | x | x | x | x
+Create | x | x | x | x |   |  
+Edit | x | x | x | x |   |  
+Delete | x | x | x | x |   |  
+Comment | x | x | x | x | x |  
+File Upload | x | x | x | x | x |  
+  |   |   |   |   |   |  
+Client |   |   |   |   |   |  
+View | x | x (all) | x (all) |   |   |  
+Create | x | x |   |   |   |  
+Edit | x | x |   |   |   |  
+Delete | x | x |   |   |   |  
+Comment | x | x | x |   |   |  
+File Upload | x | x | x |   |   |  
+Assign | x | x | x |   |   |  
+  |   |   |   |   |   |  
+Company Settings |   |   |   |   |   |  
+View | x |   |   |   |   |  
+Edit | x |   |   |   |   |  
+
+
   
   
          
