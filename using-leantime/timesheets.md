@@ -15,7 +15,7 @@ Starting work will start a task timer that allows you to track the time spent on
  
   ![logo](../_images/getting-started/taskandtimestartwork.png)
   
-  Starting work will start a timer on the top of your screen next to *My Timesheet*.  Time is not tracked if work spent is less than 6 minutes long.
+  Starting work will start a timer on the top of your screen next to *My Timesheet*.  Time is not tracked, if work spent is less than one minute long.
   
   ![logo](../_images/getting-started/timestartwork.png)
   

@@ -59,11 +59,13 @@ Starting work will start a task timer that allows you to track the time spent on
  
   ![logo](../_images/getting-started/taskandtimestartwork.png)
   
-  Starting work will start a timer on the top of your screen next to *My Timesheet*.  Time is not tracked if work spent is less than 6 minutes long.
+  Starting work will start a timer on the top of your screen next to *My Timesheet*.  Time durations shorter than one minute will not be tracked.
   
   ![logo](../_images/getting-started/timestartwork.png)
   
   
+# Related
  
-Click [here](knowledge-base/agile.md) to read more on agile and then over [here](knowledge-base/task-management.md) to read more on Task Management.
+- [Agile](/knowledge-base/agile.md)
+- [Timesheets](/using-leantime/timesheets.md)
    
