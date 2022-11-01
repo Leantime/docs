@@ -46,8 +46,7 @@ Docker compose allows you to store your configuration in a yml file and install 
 This file might seem intimidating at first but there are only a few updates you need to make to get Leantime up and running. There are 3 things happening in this file.
 First we define the leantime database to be a MySQL db. This will run in it's own docker container. Second we set up the Leantime container and set the configuration file to connect with your newly created database container. Lastly we define a few volumes so that your data will remain in place if you have to tear down or move the instance. 
 
-2. Update database
-Update the credentials in lines 11-14 to something secure. Make sure your mysql database password is different from the root password. 
+2. Update the db credentials in lines 11-14 to something secure. Make sure your mysql database password is different from the root password. 
 
 ```
 MYSQL_ROOT_PASSWORD: '<<A very secure root password>>'
@@ -56,8 +55,7 @@ MYSQL_USER: '<< A db username >>'
 MYSQL_PASSWORD: '<<The very secure password for your databse (should be different from the root password above>>'
 ```
 
-3. Set your Leantime configuration
-Next update the leantime configuration starting in line 22. The minimal configuration should be
+3. Next update the leantime configuration starting in line 22. The minimal configuration should be
 ```
  LEAN_SITENAME: 'Leantime'                                         # Name of your site
  LEAN_DB_HOST: 'mysql_leantime'                                    # Don't change this unless you changed the container name for your database
@@ -69,10 +67,9 @@ Next update the leantime configuration starting in line 22. The minimal configur
  LEAN_SESSION_EXPIRATION: 28800         
  ```
  
- You can add as many environment variables as you like (or need). To get the full list jump to the "docker environment variables" section above
+ You can add as many environment variables as you like (or need). To get the full list jump to the "docker environment variables" section above.
  
-(Optional) 4. Rename & map volumes
-Docker volumes are static connections between your host directory and the directory in your docker container. 
+(Optional) 4. Rename & map volumes. Docker volumes are static connections between your host directory and the directory in your docker container. 
 For example. In line 31 we define 2 volumes:
 `volumes:
       - public_userfiles:/var/www/html/public/userfiles
@@ -82,9 +79,9 @@ In this case the paths to Leantime's userfiles are mapped to local folders calle
 You can rename the local folders to something else. DO NOT change the paths in your docker container. 
 You need to change the names in each container definition as well as on the bottom of the file.
 
-** Starting the containers **
+# Starting the containers
 Docker compose makes it incredibly easy to launch everything. All your have to do is run 
-`docker-compose up -d` in the folder with your compose file
+```docker-compose up -d``` in the folder with your compose file
 
 
 ### Docker Volumes
