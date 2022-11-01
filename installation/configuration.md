@@ -129,6 +129,13 @@ public $language = 'en-US';
 ```
 to a language string available. You can see all available languages in `resources\languages\languagelist.ini`
 
+## Timezone
+To change the default timezone of your installation, just update
+```php
+public $defaultTimezone = 'America/Los_Angeles';
+```
+to a valid timezone . You can look up all the timezones at https://www.php.net/manual/en/timezones.php
+
 ## ENV Vars
 The entire configuration can also be passed in as env vars (at docker startup or server variables). The list of equvalent variables is:
 ```
