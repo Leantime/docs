@@ -178,4 +178,7 @@ Now find the volumes docker created on your host. Usually these are stored in yo
 
 Move the files into the data folders and your new containers should now include your old files. At this point you can stop and remove the old container as this won't be needed anymore.
 
+## I can't access the site from my public IP. 
 
+The scenario. You have a server with the IP 10.x.x.x and executed the docker commands above. Now your docker container will have it's own IP umder 172.x.x.x 
+If you want to access the site from outside of your local network using the IP 10.x.x.x you have to define that route in your host. There are many different ways to do that and covering this here would far exceed the goal of this documentation. You can find 4 ways outlined here: http://blog.oddbit.com/post/2014-08-11-four-ways-to-connect-a-docker/
