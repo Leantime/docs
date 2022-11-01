@@ -1,7 +1,14 @@
-**Developers**
+**Installation & Updates**
 
   - [System Requirements](installation/system-requirements.md)
-  - [Installation](installation/quick-installation.md)
+  - [Quick Installation](installation/quick-installation.md)
+  - [Linux]
+  - [XAMPP/WAMPP]
+  - [Docker](installation/docker.md)
+  - [Subfolder](installation/subfolder.md)
+  - [Advanced Use Cases](installation/advanced.md)
+  - [Development/Local](installation/development.md)
+  - [Common Problems](installation/common-issues.md)
   - [Configuration](installation/configuration.md)
   
 **Getting Started**
