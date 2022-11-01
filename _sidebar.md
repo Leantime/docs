@@ -1,13 +1,13 @@
 **Installation & Updates**
 
   - [System Requirements](installation/system-requirements.md)
+  - [Configuration](installation/configuration.md)
   - [General Installation](installation/quick-installation.md)
   - [Docker](installation/docker.md)
-  - [Subfolder](installation/subfolder.md)
   - [Additional Use Cases](installation/advanced.md)
   - [Development/Local](installation/development.md)
   - [Common Problems](installation/common-issues.md)
-  - [Configuration](installation/configuration.md)
+
   
 **Getting Started**
 
