@@ -79,9 +79,12 @@ In this case the paths to Leantime's userfiles are mapped to local folders calle
 You can rename the local folders to something else. DO NOT change the paths in your docker container. 
 You need to change the names in each container definition as well as on the bottom of the file.
 
-# Starting the containers
+#### Starting the containers
 Docker compose makes it incredibly easy to launch everything. All your have to do is run 
-```docker-compose up -d``` in the folder with your compose file
+```
+docker-compose up -d
+``` 
+in the folder with your compose file
 
 
 ### Docker Volumes
