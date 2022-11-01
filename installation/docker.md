@@ -1,4 +1,4 @@
-## Docker Installtion
+## Docker Installation
 
 We host our offical docker image on Docker Hub https://hub.docker.com/r/leantime/leantime
 There are various other custom leantime images on docker hub which are not supported. 
@@ -149,7 +149,9 @@ docker-compose up -d
 
 Done. Docker will handle the download, stopping and recreation of your containers. 
 
-## I forgot to add my docker volume, how can I add it later?
+## Common Problems
+
+### I forgot to add my docker volume, how can I add it later?
 
 Once a container is running you cannot add a volume after the fact. However you can create a new container that includes the the volumes (see above) and then copy the files from one container to another using `docker cp`
 
@@ -176,12 +178,4 @@ Now find the volumes docker created on your host. Usually these are stored in yo
 
 Move the files into the data folders and your new containers should now include your old files. At this point you can stop and remove the old container as this won't be needed anymore.
 
-### Kubernetes Helm (3rd Party)
 
-Minimal install on Kubernetes using 3rd party Helm chart. Note that by default data is not persistent, see [chart options](https://github.com/gissilabs/charts/tree/master/leantime) for more details.
-
-```
-helm repo add gissilabs https://gissilabs.github.io/charts/
-helm repo update
-helm install myleantime gissilabs/leantime
-```
