@@ -95,7 +95,9 @@ If you are keen on changing the configuration file manually you could add a thir
 `config:/var/www/html/config/`
 
 
-## Updating your docker images when you used docker run
+## Updating your docker images
+
+### Using docker run 
 Every time we release a new version we create a new image on docker hub. Your host will not know about the update until you update your local docker image.
 To check which version your have installed you can run
 
@@ -136,7 +138,7 @@ or
 You can now follow the instructions above to set up an updated Leantime container using Docker run.
 
 
-## Updating your docker images when you used docker-compose
+### Using docker-compose
 
 Once again, docker compose makes things a lot easier. Here all you have to do is run the following commands in the folder of your compose file:
 
