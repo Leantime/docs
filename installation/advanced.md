@@ -1,5 +1,5 @@
   
-## Advanced: Getting Leantime onto a Raspberry Pi 
+## Getting Leantime onto a Raspberry Pi 
   
 1. MySQL for ARM: We suggest you use `beercan1989/arm-mysql:5.7`. Otherwise you can also install mariadb on the host following [this guide](https://pimylifeup.com/raspberry-pi-mysql/)
 
@@ -12,3 +12,13 @@
 5. Finally, we have a slightly modified run command. I added the --add-host=docker:xxx.xxx.xxx.xxx option and removed the --network, making the -e DB_HOST=docker. Basically I kept a default bridged network with the host, but this allows the container to resolve the IP of your host. 
   
 Thank you @lamping7 for providing this guide!
+
+## Kubernetes Helm (3rd Party)
+
+Minimal install on Kubernetes using 3rd party Helm chart. Note that by default data is not persistent, see [chart options](https://github.com/gissilabs/charts/tree/master/leantime) for more details.
+
+```
+helm repo add gissilabs https://gissilabs.github.io/charts/
+helm repo update
+helm install myleantime gissilabs/leantime
+```
