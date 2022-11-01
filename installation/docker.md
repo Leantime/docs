@@ -1,4 +1,4 @@
-## Docker Installation
+## Installation
 
 We host our offical docker image on Docker Hub https://hub.docker.com/r/leantime/leantime
 There are various other custom leantime images on docker hub which are not supported. 
@@ -95,7 +95,7 @@ If you are keen on changing the configuration file manually you could add a thir
 `config:/var/www/html/config/`
 
 
-## Updating your docker images
+## Updates
 
 ### Using docker run 
 Every time we release a new version we create a new image on docker hub. Your host will not know about the update until you update your local docker image.
