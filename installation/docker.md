@@ -1,5 +1,8 @@
 ## Docker Installtion
 
+We host our offical docker image on Docker Hub https://hub.docker.com/r/leantime/leantime
+There are various other custom leantime images on docker hub which are not supported. 
+
 You have two options to install Leantime via docker. Depending on your specific use case you can user use our docker-compose file as a template to both MySql and Leantime set up or you can use docker run to just launch the leantime image. 
 
 If you are starting from scratch and don't have a database server set up we suggest you use docker-compose. Otherwise, if you have a database server you would like to use go with docker run.
@@ -26,13 +29,16 @@ docker run -d -p 80:80 --network
 -e LEAN_DB_USER=admin \
 -e LEAN_DB_PASSWORD=321.qwerty \
 -e LEAN_DB_DATABASE=leantime \
---name leantime leantime/leantime:latest
+--name leantime leantime/leantime:latest \
+--mount source=public_userfiles,target=/var/www/html/public/userfiles \
+--mount source=userfiles,target=/var/www/html/userfiles \
 ```
 
+You should store this command somewhere (without passwords) so that you can use it when you update Leantime to the latest version. 
 Once started you can go to `<yourdomain.com>/install` and run the installation script.
 
 
-### Using docker compose
+### Docker Compose
 
 Docker compose allows you to store your configuration in a yml file and install Leantime with MySQL, a dedicated network and volumes for the db, userfiles and configs.
 
@@ -74,13 +80,99 @@ For example. In line 31 we define 2 volumes:
 `
 In this case the paths to Leantime's userfiles are mapped to local folders called `public_userfiles` & `userfiles`
 You can rename the local folders to something else. DO NOT change the paths in your docker container. 
+You need to change the names in each container definition as well as on the bottom of the file.
 
-*** Starting the containers ***
+** Starting the containers **
 Docker compose makes it incredibly easy to launch everything. All your have to do is run 
 `docker-compose up -d` in the folder with your compose file
 
 
+### Docker Volumes
+Volumes are used to store permanent data on the host of your docker container. That way you can update, tear down, restart your containers without having to worry about your uploaded data. You can learn more about docker volumes at https://docs.docker.com/storage/volumes/
 
+Leantime creates 2 mounts for for userfiles. These are the files users upload to Leantime. 
+If you are keen on changing the configuration file manually you could add a third volume to 
+`config:/var/www/html/config/`
+
+
+## Updating your docker images when you used docker run
+Every time we release a new version we create a new image on docker hub. Your host will not know about the update until you update your local docker image.
+To check which version your have installed you can run
+
+`docker images` 
+
+Look for Leantime. If the version says `latest` you will have to check the date of that image and compare when Leantime was last updated on https://hub.docker.com/r/leantime/leantime/tags
+
+You can pull the latest version from docker hub using
+
+`docker pull leantime:leantime`
+
+Now that you have the latest image you need to update your container. This step requires you to stop and remove your current container and start a new one.
+
+> But wait, won't I lose all my configuration changes and files?
+
+Yes, this is why we created volumes above to keep your uploaded files. Configuration file values are passed in using the docker run or docker compose file. 
+
+Next let's find the old Leantime container using:
+
+`docker ps -a --filter "ancestor=leantime:latest"` (If you installed Leantime with a specific version tag you should search for that version)
+
+You should see a list of all docker containers with that version. You can now stop all containers using:
+
+`docker stop $(docker ps -aq  --filter "ancestor=leantime:latest")`
+
+Alternatively you can use the container id from the previous output and stop a container via
+
+`docker stop <<containerID>>`
+
+Now remove the old containers:
+
+`docker rm $(docker ps -aq --filter "ancestor=leantime:latest")` 
+
+or 
+
+`docker rm <<containerID>>`
+
+You can now follow the instructions above to set up an updated Leantime container using Docker run.
+
+
+## Updating your docker images when you used docker-compose
+
+Once again, docker compose makes things a lot easier. Here all you have to do is run the following commands in the folder of your compose file:
+
+```
+docker-compose pull
+docker-compose up -d
+```
+
+Done. Docker will handle the download, stopping and recreation of your containers. 
+
+## I forgot to add my docker volume, how can I add it later?
+
+Once a container is running you cannot add a volume after the fact. However you can create a new container that includes the the volumes (see above) and then copy the files from one container to another using `docker cp`
+
+First create your new container using either docker compose or docker run. Instructions are above.
+
+You should now have 2 Leantime containers. You need to find your container IDs to copy from and to containers:
+
+`docker ps -a --filter "ancestor=leantime:latest"`
+
+This will output a list of your containers. Write down the container id of your old container
+
+Now copy the files from your old container to your local directory:
+
+```
+docker cp CONTAINERID:/var/www/html/public/userfiles /someLocalPath/public/userfiles
+docker cp CONTAINERID:/var/www/html/userfiles /someLocalPath/userfiles
+```
+
+Now find the volumes docker created on your host. Usually these are stored in your docker application folders:
+```
+/var/lib/docker/volumes/public_userfiles/_data
+/var/lib/docker/volumes/userfiles/_data
+```
+
+Move the files into the data folders and your new containers should now include your old files. At this point you can stop and remove the old container as this won't be needed anymore.
 
 ### Kubernetes Helm (3rd Party)
 
