@@ -4,7 +4,7 @@
   - [General Installation](installation/quick-installation.md)
   - [Docker](installation/docker.md)
   - [Subfolder](installation/subfolder.md)
-  - [Advanced Use Cases](installation/advanced.md)
+  - [Additional Use Cases](installation/advanced.md)
   - [Development/Local](installation/development.md)
   - [Common Problems](installation/common-issues.md)
   - [Configuration](installation/configuration.md)
