@@ -153,7 +153,7 @@ Done. Docker will handle the download, stopping and recreation of your container
 
 ### I forgot to add my docker volume, how can I add it later?
 
-Once a container is running you cannot add a volume after the fact. However you can create a new container that includes the the volumes (see above) and then copy the files from one container to another using `docker cp`
+Once a container is running you cannot add a volume after the fact. However you can create a new container that includes the volumes (see above) and then copy the files from one container to another using `docker cp`
 
 First create your new container using either docker compose or docker run. Instructions are above.
 
