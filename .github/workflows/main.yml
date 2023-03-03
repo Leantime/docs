@@ -14,3 +14,8 @@ jobs:
         server: docs.leantime.io
         username: ${{ secrets.FTPUSER }}
         password: ${{ secrets.FTPPASS }}
+        log-level: verbose
+        port: 21
+        protocol: ftp
+        server-dir: ./
+        
