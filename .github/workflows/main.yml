@@ -1,17 +1,16 @@
-name: Deploy via ftp
 on: workflow_dispatch
+name: 🚀 Deploy Docs
 jobs:
-  deploy:
-    name: Deploy
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Upload ftp
-      uses: sebastianpopp/ftp-action@releases/v2
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        host: hosting.leantime.io
-        user: ${{ secrets.FTPUSER }}
+        server: docs.leantime.io
+        username: ${{ secrets.FTPUSER }}
         password: ${{ secrets.FTPPASS }}
-        localDir: "."
-        remoteDir: "."
-        options: ""
