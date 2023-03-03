@@ -9,7 +9,7 @@ jobs:
     - name: Upload ftp
       uses: sebastianpopp/ftp-action@releases/v2
       with:
-        host: docs.leantime.io
+        host: hosting.leantime.io
         user: ${{ secrets.FTPUSER }}
         password: ${{ secrets.FTPPASS }}
         localDir: "."
