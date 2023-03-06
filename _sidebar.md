@@ -4,7 +4,6 @@
   - [General Installation](installation/quick-installation.md)
   - [Docker](installation/docker.md)
   - [Additional Use Cases](installation/advanced.md)
-
   - [Common Problems](installation/common-issues.md)
 
  
