@@ -1,5 +1,4 @@
 **Installation & Updates**
-
   - [System Requirements](installation/system-requirements.md)
   - [Configuration](installation/configuration.md)
   - [General Installation](installation/quick-installation.md)
