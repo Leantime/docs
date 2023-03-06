@@ -5,10 +5,15 @@
   - [General Installation](installation/quick-installation.md)
   - [Docker](installation/docker.md)
   - [Additional Use Cases](installation/advanced.md)
-  - [Development/Local](installation/development.md)
+
   - [Common Problems](installation/common-issues.md)
 
-  
+ 
+**Development**
+  - [Development/Local](installation/development.md)
+  - [Hooks](technical/hooks.md)
+  - [Services](technical/README.md)
+ 
 **Getting Started**
 
   - [Quick Start](getting-started/new-project.md)
