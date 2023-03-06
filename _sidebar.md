@@ -12,7 +12,7 @@
 **Development**
   - [Development/Local](installation/development.md)
   - [Hooks](technical/hooks.md)
-  - [Services](technical/README.md)
+  - [Methods](technical/README.md)
  
 **Getting Started**
 
