@@ -15,7 +15,7 @@ With the API Key in hand you can connect to the single rpc endpoint at:
 {{YOURDOMAIN}}/api/jsonrpc
 ```
 
-By adding the key to the Header `x-api-key` 
+by adding the key to the Header `x-api-key` 
 
 ```
 curl https://{{YOURDOMAIN}}/api/jsonrpc
@@ -23,8 +23,8 @@ curl https://{{YOURDOMAIN}}/api/jsonrpc
    -H "Content-Type: application/json"
 ```
 
-This is the only endpoint you will use, as any further interactions are defined in the body/header of the request. 
-Each request needs to contain the x-api-key to authenticate a user. There is no concept of sessions. 
+This is the only endpoint you will use as any further interactions are defined in the body/header of the request. 
+Each request needs to contain the `x-api-key` header to authenticate a transaction. There is no concept of sessions. 
 
 # Sending a POST Request
 
@@ -40,7 +40,8 @@ The format of each request is based on the JSON RPC v2 specifications and follow
 
 ```
 
-`method` is the method you would like to execute. You have access to all service methods in leantime. The format is: `leantime.rpc.{{SERVICE DOMAIN}}.{{METHOD_NAME}}`. Example: `leantime.rpc.tickets.getTicket` will get one individual task. 
+`method` is the method you would like to execute. You have access to all service methods in leantime. The format is: `leantime.rpc.{{SERVICE DOMAIN}}.{{METHOD_NAME}}`. https://docs.leantime.io/#/api/usage
+Example: `leantime.rpc.tickets.getTicket` will get one individual task. Ω
 
 `jsonrpc` is the jsonrpc version used. Right now only 2.0 is supported
 
