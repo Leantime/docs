@@ -12,13 +12,13 @@ When you create the endpoint please take note of the secret and store it in a se
 With the API Key in hand you can connect to the single rpc endpoint at:
 
 ```
-{{YOURDOMAIN}}/api/jsonrpc
+{{YOURDOMAIN}}/api/jsonRPC
 ```
 
 by adding the key to the Header `x-api-key` 
 
 ```
-curl https://{{YOURDOMAIN}}/api/jsonrpc
+curl https://{{YOURDOMAIN}}/api/jsonRPC
    -H "x-api-key: {{YOURAPIKEY}}"
    -H "Content-Type: application/json"
 ```
