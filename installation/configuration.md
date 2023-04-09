@@ -35,7 +35,7 @@ public $smtpSecure =""; //SMTP Security protocol (usually one of: TLS, SSL, STAR
 public $smtpPort = ""; //Port (usually one of 25, 465, 587, 2526)
 ```
 
-## Ldap Configuration (Beta)
+## Ldap Configuration
 As of v2.1.9 Leantime supports a basic ldap integration. A few notes:
 * When a user first logs in a new Leantime user is being created. The default role can be defined in the config file
 * You can map roles from your ldap directory to roles in Leantime using the `$ldapLtGroupAssignments`
@@ -190,3 +190,16 @@ LEAN_LDAP_KEYS
 LEAN_LDAP_GROUP_ASSIGNMENT
 LEAN_LDAP_DEFAULT_ROLE_KEY
 ```
+
+## Cron Jobs
+To ensure users get the notifications at the time they need them Leantime has 2 options to run cron jobs. The shortest time Leantime will process the queue is 5 minutes. We recommend to run the job at least every 15 minutes.
+
+Option 1: Using the command line
+
+```
+./bin leantime cron:run
+```
+
+Option 2: Using endpoint
+
+Call `<<yourdomain>>/cron/run`
