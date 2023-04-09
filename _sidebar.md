@@ -12,6 +12,7 @@
   - [Hooks](technical/hooks.md)
   - [API](api/usage.md)
   - [Methods](technical/README.md)
+  - [CLI](development/commandline.md)
  
 **Getting Started**
 
