@@ -12,13 +12,13 @@ When you create the endpoint please take note of the secret and store it in a se
 With the API Key in hand you can connect to the single rpc endpoint at:
 
 ```
-{{YOURDOMAIN}}/api/jsonRPC
+{{YOURDOMAIN}}/api/jsonrpc
 ```
 
 by adding the key to the Header `x-api-key` 
 
 ```
-curl https://{{YOURDOMAIN}}/api/jsonRPC
+curl https://{{YOURDOMAIN}}/api/jsonrpc
    -H "x-api-key: {{YOURAPIKEY}}"
    -H "Content-Type: application/json"
 ```
@@ -69,7 +69,7 @@ The fully formed body for the POST request to get one ticket with the id "9" wou
 We recommend using POST requests for most interactions with the API. If this is not possible you can use GET requests as well. The format is the same however the `params` property needs to be in base64 and then url encoded. The equivalent GET request for the example above is:
 
 ```
-https://{{YOURDOMAIN}}/api/jsonRPC/?method=leantime.rpc.tickets.getTicket&jsonrpc=2.0&id=1&params=eyJpZCI6IjkifQ%3D%3D
+https://{{YOURDOMAIN}}/api/jsonrpc/?method=leantime.rpc.tickets.getTicket&jsonrpc=2.0&id=1&params=eyJpZCI6IjkifQ%3D%3D
 ```
 
 
