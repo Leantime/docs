@@ -190,6 +190,60 @@ LEAN_LDAP_KEYS
 LEAN_LDAP_GROUP_ASSIGNMENT
 LEAN_LDAP_DEFAULT_ROLE_KEY
 ```
+## OpenID-Conenct (OIDC) Configuration
+Warning! This is still experimental and may not be a 100% secure.
+
+You can connect Leantime to a OIDC provider of your choice. The reference implementation is Authentik, but any compliant provider which implements x5c certificates should work.
+
+For a basic Keycloak or Authentik connection, only the provider URL, client id and client secret are required.
+
+To understand some of the more advanced options, take a look at the github example below.
+
+The following environment variables can be used:
+
+```
+#Enable OIDC-Connect
+LEAN_OIDC_ENABLE=true
+
+#Provider URL:
+#LEAN_OIDC_PROVIDER_URL = https://auth.example.org/application/o/<slug>/           #Authentik
+#LEAN_OIDC_PROVIDER_URL = https://auth.example.org/realms/<realm>/                 #Keycloak
+
+#Provider credentials
+LEAN_OIDC_CLIEND_ID=
+LEAN_OIDC_CLIEND_SECRET=
+
+# optional - these will be read from the well-known configuration if possible
+# adjusting these values should allow connecting to most OAuth2 providers
+#LEAN_OIDC_PROVIDER_URL=
+#LEAN_OIDC_AUTH_URL_OVERRIDE=
+#LEAN_OIDC_TOKEN_URL_OVERRIDE
+
+# this enables the userinfo endpoint to login using only OAuth2 - if you require multiple sources, you can add them comma seperated.
+#LEAN_OIDC_USERINFO_URL_OVERRIDE
+
+# optional - override the public key for RSA validation
+#LEAN_OIDC_CERTIFICATE_STRING =
+#LEAN_OIDC_CERTIFICATE_FILE =
+
+# optional - override the requested scopes
+#LEAN_OIDC_SCOPES = 
+
+# optional - override the keys used for login and name - these can be nested with dots, if neccesarry (e.g.: user.info.email)
+#LEAN_OIDC_FIELD_EMAIL =
+#LEAN_OIDC_FIELD_FIRSTNAME =
+#LEAN_OIDC_FIELD_LASTNAME =
+
+# this is an example configuration for a github login
+#LEAN_OIDC_PROVIDER_URL = https://token.actions.githubusercontent.com/
+#LEAN_OIDC_AUTH_URL_OVERRIDE = https://github.com/login/oauth/authorize
+#LEAN_OIDC_TOKEN_URL_OVERRIDE = https://github.com/login/oauth/access_token
+#LEAN_OIDC_USERINFO_URL_OVERRIDE = https://api.github.com/user,https://api.github.com/user/emails
+#LEAN_OIDC_SCOPES = user:email
+#LEAN_OIDC_FIELD_EMAIL = 0.email
+
+```
+
 
 ## Cron Jobs
 To ensure users get the notifications at the time they need them Leantime has 2 options to run cron jobs. The shortest time Leantime will process the queue is 5 minutes. We recommend to run the job at least every 15 minutes.
