@@ -248,10 +248,12 @@ LEAN_OIDC_CLIEND_SECRET=
 ## Cron Jobs
 To ensure users get the notifications at the time they need them Leantime has 2 options to run cron jobs. The shortest time Leantime will process the queue is 5 minutes. We recommend to run the job at least every 15 minutes.
 
+**Note: To run the cron tab you MUST set `$appURL` in your config file. Otherwise links within the email will not work properly.**
+
 Option 1: Using the command line
 
 ```
-./bin leantime cron:run
+./bin/leantime cron:run
 ```
 
 Option 2: Using endpoint
