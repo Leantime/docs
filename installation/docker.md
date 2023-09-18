@@ -70,11 +70,12 @@ MYSQL_PASSWORD: '<<The very secure password for your databse (should be differen
  You can add as many environment variables as you like (or need). To get the full list jump to the "docker environment variables" section above.
  
 (Optional) 4. Rename & map volumes. Docker volumes are static connections between your host directory and the directory in your docker container. 
-For example. In line 31 we define 2 volumes:
-`volumes:
+For example. In line 24 we define 2 volumes:
+```
+volumes:
       - public_userfiles:/var/www/html/public/userfiles
       - userfiles:/var/www/html/userfiles
-`
+```
 In this case the paths to Leantime's userfiles are mapped to local folders called `public_userfiles` & `userfiles`
 You can rename the local folders to something else. DO NOT change the paths in your docker container. 
 You need to change the names in each container definition as well as on the bottom of the file.
