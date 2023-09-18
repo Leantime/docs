@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\theme
+title: \Leantime\Core\Theme
 footer: false
 ---
 
-# theme
+# Theme
+
+theme - Engine for handling themes
 
 
 
-
-
-* Full name: `\leantime\core\theme`
+* Full name: `\Leantime\Core\Theme`
 
 
 
@@ -17,12 +17,12 @@ footer: false
 
 | Constant | Type | Value |
 |:---      |:---  |:---   |
-|`\leantime\core\theme::DEFAULT`||&#039;default&#039;|
-|`\leantime\core\theme::DEFAULT_INI`||&#039;theme&#039;|
-|`\leantime\core\theme::DEFAULT_CSS`||&#039;theme&#039;|
-|`\leantime\core\theme::DEFAULT_JS`||&#039;theme&#039;|
-|`\leantime\core\theme::CUSTOM_CSS`||&#039;custom&#039;|
-|`\leantime\core\theme::CUSTOM_JS`||&#039;custom&#039;|
+|`\Leantime\Core\Theme::DEFAULT`|string|&#039;default&#039;|
+|`\Leantime\Core\Theme::DEFAULT_INI`|string|&#039;theme&#039;|
+|`\Leantime\Core\Theme::DEFAULT_CSS`|string|&#039;theme&#039;|
+|`\Leantime\Core\Theme::DEFAULT_JS`|string|&#039;theme&#039;|
+|`\Leantime\Core\Theme::CUSTOM_CSS`|string|&#039;custom&#039;|
+|`\Leantime\Core\Theme::CUSTOM_JS`|string|&#039;custom&#039;|
 
 ## Methods
 
@@ -31,7 +31,7 @@ footer: false
 __construct - Constructor
 
 ```php
-public theme::__construct(): mixed
+public Theme::__construct(\Leantime\Core\environment $config, \Leantime\Core\appSettings $settings, array $iniData = []): mixed
 ```
 
 
@@ -40,6 +40,14 @@ public theme::__construct(): mixed
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `config` | **\Leantime\Core\environment** |  |
+| `settings` | **\Leantime\Core\appSettings** |  |
+| `iniData` | **array** |  |
 
 
 **Return Value:**
@@ -54,7 +62,7 @@ public theme::__construct(): mixed
 getActive - Return active theme id
 
 ```php
-public theme::getActive(): string
+public Theme::getActive(): string
 ```
 
 
@@ -77,7 +85,7 @@ Active theme identifier
 setActive - Set active theme
 
 ```php
-public theme::setActive(string $id): void
+public Theme::setActive(string $id): void
 ```
 
 Note: After setActive, the language settings need to be reloaded/reset, because languages are theme specific
@@ -91,7 +99,7 @@ Note: After setActive, the language settings need to be reloaded/reset, because 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **string** | Active theme identifier |
+| `id` | **string** | Active theme identifier. |
 
 
 **Return Value:**
@@ -106,7 +114,7 @@ Note: After setActive, the language settings need to be reloaded/reset, because 
 getAll - Return an array of all themes
 
 ```php
-public theme::getAll(): array
+public Theme::getAll(): array
 ```
 
 
@@ -129,7 +137,7 @@ return an array of all themes
 getDir - Return the root directory of the currently active theme
 
 ```php
-public theme::getDir(): string
+public Theme::getDir(): string
 ```
 
 
@@ -152,7 +160,7 @@ Root directory of currently active theme
 getDir - Return the root directory of the default theme
 
 ```php
-public theme::getDefaultDir(): string
+public Theme::getDefaultDir(): string
 ```
 
 
@@ -175,7 +183,7 @@ Root directory of default theme
 getLayoutDir - Return file path of a layout file in the current theme, reverting to the default theme if it does not exist
 
 ```php
-public theme::getLayoutFilename(string $filename): string|false
+public Theme::getLayoutFilename(string $filename): string|false
 ```
 
 
@@ -204,7 +212,7 @@ Full filename of layout file or false, if it does not exist
 getUrl() - Return an URL pointing to the root directory of the currently active theme
 
 ```php
-public theme::getUrl(): string
+public Theme::getUrl(): string
 ```
 
 
@@ -227,7 +235,7 @@ Root URL currently active theme
 getDefaultUrl() - Return an URL pointing to the root directory of the default theme
 
 ```php
-public theme::getDefaultUrl(): string
+public Theme::getDefaultUrl(): string
 ```
 
 
@@ -250,7 +258,7 @@ Root URL default theme
 getStyleUrl - Return URL that allows loading the style file of the theme
 
 ```php
-public theme::getStyleUrl(): string|false
+public Theme::getStyleUrl(): string|false
 ```
 
 
@@ -273,7 +281,7 @@ URL to the css style file of the current theme or false, if it does not exist
 getCustomStyleUrl - Return URL that allows loading the customized part of the style file of the theme
 
 ```php
-public theme::getCustomStyleUrl(): string|false
+public Theme::getCustomStyleUrl(): string|false
 ```
 
 
@@ -296,7 +304,7 @@ URL to the customized part of the css style file of the current theme or false, 
 getJsUrl - Return URL that allows loading the JavaScript file of the theme
 
 ```php
-public theme::getJsUrl(): string|false
+public Theme::getJsUrl(): string|false
 ```
 
 
@@ -319,7 +327,7 @@ URL to the JavaScript file of the current theme or false, if it does not exist
 getCustomJsUrl - Return URL that allows loading the customized part of the JavaScript file of the theme
 
 ```php
-public theme::getCustomJsUrl(): string|false
+public Theme::getCustomJsUrl(): string|false
 ```
 
 
@@ -342,7 +350,7 @@ URL to the customized part of the JavaScript file of the current theme or false,
 getAssetPath - Get localized name of theme
 
 ```php
-private theme::getAssetPath(string $fileName, string $assetType): string|bool
+private Theme::getAssetPath(string $fileName, string $assetType): string|bool
 ```
 
 
@@ -356,8 +364,8 @@ private theme::getAssetPath(string $fileName, string $assetType): string|bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `fileName` | **string** | filename of asset without extension |
-| `assetType` | **string** | asset type either js or css |
+| `fileName` | **string** | Filename of asset without extension. |
+| `assetType` | **string** | Asset type either js or css. |
 
 
 **Return Value:**
@@ -372,7 +380,7 @@ returns file path to asset. false if file does not exist
 getName - Get localized name of theme
 
 ```php
-public theme::getName(): string
+public Theme::getName(): string
 ```
 
 
@@ -395,7 +403,7 @@ Localized name of theme
 getVersion - Get version of theme
 
 ```php
-public theme::getVersion(): string
+public Theme::getVersion(): string
 ```
 
 
@@ -418,7 +426,7 @@ Version of theme or empty string
 getLogoUrl - Get logo associated with the theme
 
 ```php
-public theme::getLogoUrl(): string|false
+public Theme::getLogoUrl(): string|false
 ```
 
 
@@ -441,7 +449,7 @@ Logo associated with the theme, false if logo cannot be found
 readIniData - Read theme.ini configuration data
 
 ```php
-private theme::readIniData(): void
+private Theme::readIniData(): void
 ```
 
 
@@ -468,7 +476,7 @@ private theme::readIniData(): void
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -499,7 +507,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -531,7 +539,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -557,11 +565,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -584,7 +592,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -611,4 +619,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

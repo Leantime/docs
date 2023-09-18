@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\fileupload
+title: \Leantime\Core\Fileupload
 footer: false
 ---
 
-# fileupload
+# Fileupload
 
 Fileupload class - Data filuploads
 
 
 
-* Full name: `\leantime\core\fileupload`
+* Full name: `\Leantime\Core\Fileupload`
 
 
 
@@ -20,7 +20,7 @@ Fileupload class - Data filuploads
 fileupload constructor.
 
 ```php
-public fileupload::__construct(): mixed
+public Fileupload::__construct(\Leantime\Core\Environment $config): self
 ```
 
 
@@ -29,6 +29,12 @@ public fileupload::__construct(): mixed
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `config` | **\Leantime\Core\Environment** |  |
 
 
 **Return Value:**
@@ -40,11 +46,10 @@ public fileupload::__construct(): mixed
 ---
 ### getMaximumFileUploadSize
 
-This function returns the maximum files size that can be uploaded
-in PHP
+This function returns the maximum files size that can be uploaded in PHP
 
 ```php
-public static fileupload::getMaximumFileUploadSize(): mixed
+public static Fileupload::getMaximumFileUploadSize(): int
 ```
 
 
@@ -57,7 +62,7 @@ public static fileupload::getMaximumFileUploadSize(): mixed
 
 **Return Value:**
 
-
+File size in bytes
 
 
 
@@ -67,7 +72,7 @@ public static fileupload::getMaximumFileUploadSize(): mixed
 This function transforms the php.ini notation for numbers (like '2M') to an integer (2*1024*1024 in this case)
 
 ```php
-private static fileupload::convertPHPSizeToBytes(string $sSize): int
+private static Fileupload::convertPHPSizeToBytes(string $sSize): int
 ```
 
 
@@ -96,7 +101,7 @@ The value in bytes
 
 
 ```php
-public fileupload::getAbsolutePath(): string
+public Fileupload::getAbsolutePath(): string
 ```
 
 
@@ -119,7 +124,7 @@ public fileupload::getAbsolutePath(): string
 
 
 ```php
-public fileupload::getPublicFilesPath(): string
+public Fileupload::getPublicFilesPath(): string
 ```
 
 
@@ -142,7 +147,7 @@ public fileupload::getPublicFilesPath(): string
 initFile - init variables of file
 
 ```php
-public fileupload::initFile( $file): mixed
+public Fileupload::initFile( $file): mixed
 ```
 
 
@@ -171,7 +176,7 @@ public fileupload::initFile( $file): mixed
 checkFileSize - Checks if filesize is ok
 
 ```php
-public fileupload::checkFileSize(): bool
+public Fileupload::checkFileSize(): bool
 ```
 
 
@@ -194,7 +199,7 @@ public fileupload::checkFileSize(): bool
 renameFile
 
 ```php
-public fileupload::renameFile( $name): string
+public Fileupload::renameFile( $name): bool
 ```
 
 
@@ -223,7 +228,7 @@ public fileupload::renameFile( $name): string
 upload - move file from tmp-folder to S3
 
 ```php
-public fileupload::upload(): bool
+public Fileupload::upload(): bool
 ```
 
 
@@ -243,10 +248,10 @@ public fileupload::upload(): bool
 ---
 ### uploadPublic
 
-
+uploadPublic - move file from tmp-folder to public folder
 
 ```php
-public fileupload::uploadPublic(): mixed
+public Fileupload::uploadPublic(): string|false
 ```
 
 
@@ -264,12 +269,12 @@ public fileupload::uploadPublic(): mixed
 
 
 ---
-### uplodToS3
+### uploadToS3
 
-
+uploadToS3 - move file from tmp-folder to S3
 
 ```php
-private fileupload::uplodToS3(): mixed
+private Fileupload::uploadToS3(): bool
 ```
 
 
@@ -292,7 +297,7 @@ private fileupload::uplodToS3(): mixed
 
 
 ```php
-private fileupload::uploadLocal(): mixed
+private Fileupload::uploadLocal(): mixed
 ```
 
 
@@ -301,6 +306,36 @@ private fileupload::uploadLocal(): mixed
 
 
 
+
+
+**Return Value:**
+
+
+
+
+
+---
+### displayImageFile
+
+displayImageFile - display image file
+
+```php
+public Fileupload::displayImageFile(string $imageName, string $fullPath = &#039;&#039;): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `imageName` | **string** |  |
+| `fullPath` | **string** |  |
 
 
 **Return Value:**
@@ -319,7 +354,7 @@ private fileupload::uploadLocal(): mixed
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -350,7 +385,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -382,7 +417,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -408,11 +443,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -435,7 +470,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -462,4 +497,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\plugins
+title: \Leantime\Core\Plugins
 footer: false
 ---
 
-# plugins
+# Plugins
+
+Plugins class
 
 
 
-
-
-* Full name: `\leantime\core\plugins`
+* Full name: `\Leantime\Core\Plugins`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 constructor
 
 ```php
-public plugins::__construct(): mixed
+public Plugins::__construct(\Leantime\Core\Environment $config): self
 ```
 
 
@@ -29,6 +29,12 @@ public plugins::__construct(): mixed
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `config` | **\Leantime\Core\Environment** |  |
 
 
 **Return Value:**
@@ -43,7 +49,7 @@ public plugins::__construct(): mixed
 Makes all plugin keys lowercase for easy comparisons
 
 ```php
-private plugins::standardize_plugin_keys(array $plugins): array
+private Plugins::standardize_plugin_keys(array $plugins): array
 ```
 
 
@@ -72,7 +78,7 @@ private plugins::standardize_plugin_keys(array $plugins): array
 Gets all plugin enabled/disabled settings
 
 ```php
-public plugins::getEnabledPlugins(): array
+public Plugins::getEnabledPlugins(): array
 ```
 
 
@@ -95,7 +101,7 @@ public plugins::getEnabledPlugins(): array
 Checks to see if a plugin is enabled
 
 ```php
-public plugins::isPluginEnabled(string $plugin_name): bool
+public Plugins::isPluginEnabled(string $plugin_name): bool
 ```
 
 
@@ -128,7 +134,7 @@ public plugins::isPluginEnabled(string $plugin_name): bool
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -159,7 +165,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -191,7 +197,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -217,11 +223,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -244,7 +250,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -271,4 +277,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

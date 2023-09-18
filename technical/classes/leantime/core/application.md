@@ -1,274 +1,27 @@
 ---
-title: \leantime\core\application
+title: \Leantime\Core\Application
 footer: false
 ---
 
-# application
+# Application
+
+Application Class - IoC Container for the application
 
 
 
-
-
-* Full name: `\leantime\core\application`
+* Full name: `\Leantime\Core\Application`
+* Parent class: [Container](../../../classes.md)
 
 
 
 ## Methods
 
-### __construct
+### hasBeenBootstrapped
 
-constructor
-
-```php
-public application::__construct(\leantime\core\IncomingRequest $incomingRequest): mixed
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `incomingRequest` | **\leantime\core\IncomingRequest** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### start
-
-start - renders application and routes to correct template, writes content to output buffer
+Check if application has been bootstrapped
 
 ```php
-public application::start(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### redirectWithOrigin
-
-
-
-```php
-public application::redirectWithOrigin(mixed $route, mixed $origin): void
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `route` | **mixed** |  |
-| `origin` | **mixed** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### loadHeaders
-
-sets the headers
-
-```php
-private application::loadHeaders(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### cronExec
-
-executes audits on cron
-
-```php
-private application::cronExec(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### checkIfInstalled
-
-Checks if leantime is installed
-
-```php
-private application::checkIfInstalled(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-
-
-## Inherited methods
-
-### dispatch_event
-
-dispatches an event with context
-
-```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
-```
-
-
-
-* This method is **static**.
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `hook` | **string** |  |
-| `available_params` | **mixed** |  |
-| `function` | **string|int** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### dispatch_filter
-
-dispatches a filter with context
-
-```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
-```
-
-
-
-* This method is **static**.
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `hook` | **string** |  |
-| `payload` | **mixed** |  |
-| `available_params` | **mixed** |  |
-| `function` | **string|int** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### get_event_context
-
-Gets the context of the event
-
-```php
-private static eventhelpers::get_event_context(mixed $function): string
-```
-
-
-
-* This method is **static**.
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `function` | **mixed** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### set_class_context
-
-Gets the class context based on path, this uses the same method as the autoloader
-Helps create unique strings for events/filters
-
-```php
-private static eventhelpers::set_class_context(): string
+public static Application::hasBeenBootstrapped(): bool
 ```
 
 
@@ -286,26 +39,20 @@ private static eventhelpers::set_class_context(): string
 
 
 ---
-### get_function_context
+### setHasBeenBootstrapped
 
-Gets the caller function name
+Set the application as having been bootstrapped
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+public static Application::setHasBeenBootstrapped(): void
 ```
 
-This way we don't have to use much memory by using debug_backtrace
+
 
 * This method is **static**.
 
 
 
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `functionInt` | **mixed** |  |
 
 
 **Return Value:**
@@ -315,7 +62,39 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
+### getNamespace
+
+Get the application namespace
+
+```php
+public Application::getNamespace(bool $includeSuffix = true): string
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `includeSuffix` | **bool** |  |
+
+
+**Return Value:**
+
+
+
+
+**See Also:**
+
+* \Illuminate\Contracts\Foundation\Application::getNamespace() - 
+
+---
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

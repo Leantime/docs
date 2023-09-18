@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\events
+title: \Leantime\Core\Events
 footer: false
 ---
 
-# events
+# Events
+
+Events class - Handles all events and filters
 
 
 
-
-
-* Full name: `\leantime\core\events`
+* Full name: `\Leantime\Core\Events`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 Dispatches an event to be executed somewhere
 
 ```php
-public static events::dispatch_event(string $eventName, mixed $payload = [], string $context = &#039;&#039;): void
+public static Events::dispatch_event(string $eventName, mixed $payload = [], string $context = &#039;&#039;): void
 ```
 
 
@@ -46,12 +46,43 @@ public static events::dispatch_event(string $eventName, mixed $payload = [], str
 
 
 ---
+### findEventListeners
+
+Finds event listeners by event names,
+Allows listeners with wildcards
+
+```php
+public static Events::findEventListeners(string $eventName, array $registry): array
+```
+
+
+
+* This method is **static**.
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `eventName` | **string** |  |
+| `registry` | **array** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### dispatch_filter
 
 Dispatches a filter to manipulate a variable somewhere
 
 ```php
-public static events::dispatch_filter(string $filtername, mixed $payload = &#039;&#039;, mixed $available_params = [], mixed $context = &#039;&#039;): mixed
+public static Events::dispatch_filter(string $filtername, mixed $payload = &#039;&#039;, mixed $available_params = [], mixed $context = &#039;&#039;): mixed
 ```
 
 
@@ -84,7 +115,7 @@ Finds all the event and filter listeners and registers them
 (should only be executed once at the beginning of the program)
 
 ```php
-public static events::discover_listeners(): void
+public static Events::discover_listeners(): void
 ```
 
 
@@ -107,7 +138,7 @@ public static events::discover_listeners(): void
 Adds an event listener to be registered
 
 ```php
-public static events::add_event_listener(string $eventName, string|callable|object $handler, int $priority = 10): void
+public static Events::add_event_listener(string $eventName, string|callable|object $handler, int $priority = 10): void
 ```
 
 
@@ -138,7 +169,7 @@ public static events::add_event_listener(string $eventName, string|callable|obje
 Adds a filter listener to be registered
 
 ```php
-public static events::add_filter_listener(string $filtername, string|callable|object $handler, int $priority = 10): void
+public static Events::add_filter_listener(string $filtername, string|callable|object $handler, int $priority = 10): void
 ```
 
 
@@ -169,7 +200,7 @@ public static events::add_filter_listener(string $filtername, string|callable|ob
 Gets all registered listeners
 
 ```php
-public static events::get_registries(): array
+public static Events::get_registries(): array
 ```
 
 
@@ -192,7 +223,7 @@ public static events::get_registries(): array
 Gets all available hooks
 
 ```php
-public static events::get_available_hooks(): array
+public static Events::get_available_hooks(): array
 ```
 
 
@@ -215,7 +246,7 @@ public static events::get_available_hooks(): array
 Sorts listeners by priority for a given hook and type
 
 ```php
-private static events::sortByPriority(string $type, string $hookName): void
+private static Events::sortByPriority(string $type, string $hookName): void
 ```
 
 
@@ -245,7 +276,7 @@ private static events::sortByPriority(string $type, string $hookName): void
 Adds the current_route to the event's/filter's available params
 
 ```php
-private static events::defineParams(mixed $paramAttr): array|object
+private static Events::defineParams(mixed $paramAttr): array|object
 ```
 
 
@@ -274,7 +305,7 @@ private static events::defineParams(mixed $paramAttr): array|object
 Executes all the handlers for a given hook
 
 ```php
-private static events::executeHandlers(array $registry, string $hookName, mixed $payload, array|object $available_params = []): array|object
+private static Events::executeHandlers(array $registry, string $registryType, string $hookName, mixed $payload, array|object $available_params = []): array|object|null
 ```
 
 
@@ -289,6 +320,7 @@ private static events::executeHandlers(array $registry, string $hookName, mixed 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `registry` | **array** |  |
+| `registryType` | **string** |  |
 | `hookName` | **string** |  |
 | `payload` | **mixed** |  |
 | `available_params` | **array|object** |  |
@@ -304,4 +336,4 @@ private static events::executeHandlers(array $registry, string $hookName, mixed 
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

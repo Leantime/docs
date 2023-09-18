@@ -16,5 +16,32 @@ Inherited Methods
 
 
 
+## Inherited methods
+
+### getScenario
+
+
+
+```php
+protected FunctionalTesterActions::getScenario(): \Codeception\Scenario
+```
+
+
+
+
+* This method is **abstract**.
+
+
+
+
+**Return Value:**
+
+
+
+
+
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+
+
+---
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

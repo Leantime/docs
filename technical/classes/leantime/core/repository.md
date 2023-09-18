@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\repository
+title: \Leantime\Core\Repository
 footer: false
 ---
 
-# repository
+# Repository
+
+repository
 
 
 
-
-
-* Full name: `\leantime\core\repository`
+* Full name: `\Leantime\Core\Repository`
 
 
 
@@ -17,10 +17,10 @@ footer: false
 
 ### dbcall
 
-
+dbcall - creates a new dbcall object
 
 ```php
-protected repository::dbcall(array $args): mixed
+protected Repository::dbcall(array $args): object
 ```
 
 
@@ -34,7 +34,213 @@ protected repository::dbcall(array $args): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `args` | **array** |  |
+| `args` | **array** | - usually the value of func_get_args(), gives events/filters values to work with |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### patch
+
+patch - updates a record in the database
+
+```php
+public Repository::patch(int $id, array $params): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | - the id of the record to update |
+| `params` | **array** | - the parameters to update |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### insert
+
+
+
+```php
+public Repository::insert(object $objectToInsert): false|int
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `objectToInsert` | **object** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### delete
+
+delete - deletes a record from the database
+
+```php
+public Repository::delete(int $id): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | - the id of the record to delete |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### get
+
+get - gets a record from the database
+
+```php
+public Repository::get(int $id): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | - the id of the record to get |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getAll
+
+getAll - gets all records from the database
+
+```php
+public Repository::getAll(int $id): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | - the id of the record to get |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getFieldAttribute
+
+getFieldAttribute - gets the field attribute for a given property
+
+```php
+protected Repository::getFieldAttribute(string $class, string $property, bool $includeId = false): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `class` | **string** | - the class to get the attribute from |
+| `property` | **string** | - the property to get the attribute from |
+| `includeId` | **bool** | - whether or not to include the id attribute |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getDbFields
+
+getDbFields - gets the database fields for a given class
+
+```php
+protected Repository::getDbFields(object|string $class): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `class` | **object|string** | - the class to get the fields from |
 
 
 **Return Value:**
@@ -53,7 +259,7 @@ protected repository::dbcall(array $args): mixed
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -84,7 +290,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -116,7 +322,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -142,11 +348,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -169,7 +375,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -196,4 +402,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

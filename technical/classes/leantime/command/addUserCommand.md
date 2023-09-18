@@ -1,15 +1,15 @@
 ---
-title: \leantime\command\addUserCommand
+title: \Leantime\Command\AddUserCommand
 footer: false
 ---
 
-# addUserCommand
+# AddUserCommand
 
 
 
 
 
-* Full name: `\leantime\command\addUserCommand`
+* Full name: `\Leantime\Command\AddUserCommand`
 * Parent class: [Command](../../../classes.md)
 
 
@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-protected addUserCommand::configure(): mixed
+protected AddUserCommand::configure(): mixed
 ```
 
 
@@ -44,7 +44,7 @@ protected addUserCommand::configure(): mixed
 Execute the command
 
 ```php
-protected addUserCommand::execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output): int
+protected AddUserCommand::execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output): int
 ```
 
 
@@ -72,4 +72,4 @@ protected addUserCommand::execute(\Symfony\Component\Console\Input\InputInterfac
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

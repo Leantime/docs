@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\frontcontroller
+title: \Leantime\Core\Frontcontroller
 footer: false
 ---
 
-# frontcontroller
+# Frontcontroller
+
+Frontcontroller class
 
 
 
-
-
-* Full name: `\leantime\core\frontcontroller`
+* Full name: `\Leantime\Core\Frontcontroller`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - Set the rootpath of the server
 
 ```php
-private frontcontroller::__construct( $rootPath, \leantime\core\IncomingRequest $incomingRequest): mixed
+public Frontcontroller::__construct(\Leantime\Core\IncomingRequest $incomingRequest): self
 ```
 
 
@@ -34,43 +34,12 @@ private frontcontroller::__construct( $rootPath, \leantime\core\IncomingRequest 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `rootPath` | **** |  |
-| `incomingRequest` | **\leantime\core\IncomingRequest** |  |
+| `incomingRequest` | **\Leantime\Core\IncomingRequest** |  |
 
 
 **Return Value:**
 
 
-
-
-
----
-### getInstance
-
-getInstance - just one instance of the object is allowed (it makes no sense to have more)
-
-```php
-public static frontcontroller::getInstance( $rootPath = null, \leantime\core\IncomingRequest $incomingRequest = null): object
-```
-
-
-
-* This method is **static**.
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `rootPath` | **** |  |
-| `incomingRequest` | **\leantime\core\IncomingRequest** |  |
-
-
-**Return Value:**
-
-(instance)
 
 
 
@@ -80,7 +49,7 @@ public static frontcontroller::getInstance( $rootPath = null, \leantime\core\Inc
 run - executes the action depending on Request or firstAction
 
 ```php
-public static frontcontroller::dispatch(mixed $action = &#039;&#039;, mixed $httpResponseCode = 200): void
+public static Frontcontroller::dispatch(string $action = &#039;&#039;, int $httpResponseCode = 200): void
 ```
 
 
@@ -94,8 +63,8 @@ public static frontcontroller::dispatch(mixed $action = &#039;&#039;, mixed $htt
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `action` | **mixed** |  |
-| `httpResponseCode` | **mixed** |  |
+| `action` | **string** |  |
+| `httpResponseCode` | **int** |  |
 
 
 **Return Value:**
@@ -110,7 +79,7 @@ public static frontcontroller::dispatch(mixed $action = &#039;&#039;, mixed $htt
 executeAction - includes the class in includes/modules by the Request
 
 ```php
-private static frontcontroller::executeAction(string $completeName, mixed $params = array()): void
+private static Frontcontroller::executeAction(string $completeName, array $params = array()): void
 ```
 
 
@@ -125,59 +94,7 @@ private static frontcontroller::executeAction(string $completeName, mixed $param
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `completeName` | **string** | actionname.filename |
-| `params` | **mixed** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getRequestMethod
-
-
-
-```php
-private static frontcontroller::getRequestMethod(): mixed
-```
-
-
-
-* This method is **static**.
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### getRequestParams
-
-
-
-```php
-private static frontcontroller::getRequestParams(mixed $method): mixed
-```
-
-
-
-* This method is **static**.
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `method` | **mixed** |  |
+| `params` | **array** |  |
 
 
 **Return Value:**
@@ -192,7 +109,7 @@ private static frontcontroller::getRequestParams(mixed $method): mixed
 includeAction - possible to include action from everywhere
 
 ```php
-public static frontcontroller::includeAction( $completeName, mixed $params = array()): void
+public static Frontcontroller::includeAction(string $completeName, array $params = array()): void
 ```
 
 
@@ -206,8 +123,8 @@ public static frontcontroller::includeAction( $completeName, mixed $params = arr
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `completeName` | **** |  |
-| `params` | **mixed** |  |
+| `completeName` | **string** |  |
+| `params` | **array** |  |
 
 
 **Return Value:**
@@ -222,7 +139,7 @@ public static frontcontroller::includeAction( $completeName, mixed $params = arr
 getActionName - split string to get actionName
 
 ```php
-public static frontcontroller::getActionName( $completeName): string
+public static Frontcontroller::getActionName(string $completeName = null): string
 ```
 
 
@@ -236,7 +153,7 @@ public static frontcontroller::getActionName( $completeName): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `completeName` | **** |  |
+| `completeName` | **string** |  |
 
 
 **Return Value:**
@@ -251,7 +168,7 @@ public static frontcontroller::getActionName( $completeName): string
 getModuleName - split string to get modulename
 
 ```php
-public static frontcontroller::getModuleName( $completeName): string
+public static Frontcontroller::getModuleName(string $completeName = null): string
 ```
 
 
@@ -265,7 +182,7 @@ public static frontcontroller::getModuleName( $completeName): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `completeName` | **** |  |
+| `completeName` | **string** |  |
 
 
 **Return Value:**
@@ -280,7 +197,7 @@ public static frontcontroller::getModuleName( $completeName): string
 getCurrentRoute - gets the current main action
 
 ```php
-public static frontcontroller::getCurrentRoute(): string
+public static Frontcontroller::getCurrentRoute(): string
 ```
 
 
@@ -300,10 +217,10 @@ public static frontcontroller::getCurrentRoute(): string
 ---
 ### redirect
 
-
+redirect - redirects to a given url
 
 ```php
-public static frontcontroller::redirect(mixed $url, mixed $http_response_code = 303): void
+public static Frontcontroller::redirect(string $url, int $http_response_code = 303): never
 ```
 
 
@@ -317,8 +234,8 @@ public static frontcontroller::redirect(mixed $url, mixed $http_response_code = 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `url` | **mixed** |  |
-| `http_response_code` | **mixed** |  |
+| `url` | **string** |  |
+| `http_response_code` | **int** |  |
 
 
 **Return Value:**
@@ -330,10 +247,10 @@ public static frontcontroller::redirect(mixed $url, mixed $http_response_code = 
 ---
 ### setResponseCode
 
-
+setResponseCode - sets the response code
 
 ```php
-public static frontcontroller::setResponseCode(mixed $responseCode): mixed
+public static Frontcontroller::setResponseCode(int $responseCode): void
 ```
 
 
@@ -347,7 +264,7 @@ public static frontcontroller::setResponseCode(mixed $responseCode): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `responseCode` | **mixed** |  |
+| `responseCode` | **int** |  |
 
 
 **Return Value:**
@@ -366,7 +283,7 @@ public static frontcontroller::setResponseCode(mixed $responseCode): mixed
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -397,7 +314,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -429,7 +346,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -455,11 +372,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -482,7 +399,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -509,4 +426,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

@@ -44,41 +44,12 @@ public LoginCest::_before(\Tests\Support\AcceptanceTester $I): mixed
 
 
 ---
-### tryToTest
+### loginPageWorks
 
 
 
 ```php
-public LoginCest::tryToTest(\Tests\Support\AcceptanceTester $I): mixed
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `I` | **\Tests\Support\AcceptanceTester** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### loginpageWorks
-
-
-
-```php
-public LoginCest::loginpageWorks(\Tests\Support\AcceptanceTester $I): mixed
+public LoginCest::loginPageWorks(\Tests\Support\AcceptanceTester $I): mixed
 ```
 
 
@@ -131,7 +102,37 @@ public LoginCest::loginDeniedForWrongCredentials(\Tests\Support\AcceptanceTester
 
 
 ---
+### loginSuccessfully
+
+
+
+```php
+public LoginCest::loginSuccessfully(\Tests\Support\AcceptanceTester $I, \Tests\Support\Page\Acceptance\Login $loginPage): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `I` | **\Tests\Support\AcceptanceTester** |  |
+| `loginPage` | **\Tests\Support\Page\Acceptance\Login** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+
+
+---
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

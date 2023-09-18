@@ -1,15 +1,15 @@
 ---
-title: \leantime\command\migrateCommand
+title: \Leantime\Command\MigrateCommand
 footer: false
 ---
 
-# migrateCommand
+# MigrateCommand
 
 
 
 
 
-* Full name: `\leantime\command\migrateCommand`
+* Full name: `\Leantime\Command\MigrateCommand`
 * Parent class: [Command](../../../classes.md)
 
 
@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-protected migrateCommand::configure(): mixed
+protected MigrateCommand::configure(): mixed
 ```
 
 
@@ -44,7 +44,7 @@ protected migrateCommand::configure(): mixed
 Execute the command
 
 ```php
-protected migrateCommand::execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output): int
+protected MigrateCommand::execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output): int
 ```
 
 
@@ -72,4 +72,4 @@ protected migrateCommand::execute(\Symfony\Component\Console\Input\InputInterfac
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)
