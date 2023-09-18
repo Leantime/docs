@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\template
+title: \Leantime\Core\Template
 footer: false
 ---
 
-# template
+# Template
+
+Template class - Template routing
 
 
 
-
-
-* Full name: `\leantime\core\template`
+* Full name: `\Leantime\Core\Template`
 
 
 
@@ -20,7 +20,121 @@ footer: false
 __construct - get instance of frontcontroller
 
 ```php
-public template::__construct(): mixed
+public Template::__construct(\Leantime\Core\Theme $theme, \Leantime\Core\Language $language, \Leantime\Core\Frontcontroller $frontcontroller, \Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\Environment $config, \Leantime\Core\AppSettings $settings, \Leantime\Domain\Auth\Services\Auth $login, \Leantime\Domain\Auth\Models\Roles $roles, \Illuminate\Contracts\View\Factory $viewFactory = null, \Illuminate\View\Compilers\Compiler $bladeCompiler = null): self
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `theme` | **\Leantime\Core\Theme** |  |
+| `language` | **\Leantime\Core\Language** |  |
+| `frontcontroller` | **\Leantime\Core\Frontcontroller** |  |
+| `incomingRequest` | **\Leantime\Core\IncomingRequest** |  |
+| `config` | **\Leantime\Core\Environment** |  |
+| `settings` | **\Leantime\Core\AppSettings** |  |
+| `login` | **\Leantime\Domain\Auth\Services\Auth** |  |
+| `roles` | **\Leantime\Domain\Auth\Models\Roles** |  |
+| `viewFactory` | **\Illuminate\Contracts\View\Factory** |  |
+| `bladeCompiler` | **\Illuminate\View\Compilers\Compiler** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### setupBlade
+
+Create View Factory capable of rendering PHP and Blade templates
+
+```php
+public Template::setupBlade(\Leantime\Core\Application $app, \Illuminate\Events\Dispatcher $eventDispatcher): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `app` | **\Leantime\Core\Application** |  |
+| `eventDispatcher` | **\Illuminate\Events\Dispatcher** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### attachComposers
+
+attachComposers - attach view composers
+
+```php
+public Template::attachComposers(): void
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### setupDirectives
+
+setupDirectives - setup blade directives
+
+```php
+public Template::setupDirectives(): void
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### setupGlobalVars
+
+setupGlobalVars - setup global vars
+
+```php
+public Template::setupGlobalVars(): void
 ```
 
 
@@ -43,7 +157,7 @@ public template::__construct(): mixed
 assign - assign variables in the action for template
 
 ```php
-public template::assign( $name,  $value): mixed
+public Template::assign( $name,  $value): void
 ```
 
 
@@ -70,10 +184,10 @@ public template::assign( $name,  $value): mixed
 ---
 ### setNotification
 
-setError - assign errors to the template
+setNotification - assign errors to the template
 
 ```php
-public template::setNotification( $msg,  $type): string
+public Template::setNotification(string $msg, string $type, string $event_id = &#039;&#039;): string
 ```
 
 
@@ -87,8 +201,9 @@ public template::setNotification( $msg,  $type): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `msg` | **** |  |
-| `type` | **** |  |
+| `msg` | **string** |  |
+| `type` | **string** |  |
+| `event_id` | **string** | as a string for further identification |
 
 
 **Return Value:**
@@ -103,7 +218,7 @@ public template::setNotification( $msg,  $type): string
 getTemplatePath - Find template in custom and src directories
 
 ```php
-public template::getTemplatePath(string $module, string $name): string|bool
+public Template::getTemplatePath(string $namespace, string $path): string|bool
 ```
 
 
@@ -117,8 +232,8 @@ public template::getTemplatePath(string $module, string $name): string|bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `module` | **string** | Module template resides in |
-| `name` | **string** | Template filename name (including tpl.php extension) |
+| `namespace` | **string** | The namespace the template is for. |
+| `path` | **string** | The path to the template. |
 
 
 **Return Value:**
@@ -128,12 +243,42 @@ Full template path or false if file does not exist
 
 
 ---
+### displayFragment
+
+gives HTMX response
+
+```php
+public Template::displayFragment(string $view, string $fragment = &#039;&#039;): never
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `view` | **string** | The blade view path. |
+| `fragment` | **string** | The fragment key. |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### display
 
 display - display template from folder template including main layout wrapper
 
 ```php
-public template::display( $template, mixed $layout = &quot;app&quot;): void
+public Template::display( $template, string $layout = &quot;app&quot;): void
 ```
 
 
@@ -148,7 +293,37 @@ public template::display( $template, mixed $layout = &quot;app&quot;): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `template` | **** |  |
-| `layout` | **mixed** |  |
+| `layout` | **string** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### confirmLayoutName
+
+
+
+```php
+protected Template::confirmLayoutName(mixed $layoutName, mixed $template): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `layoutName` | **mixed** |  |
+| `template` | **mixed** |  |
 
 
 **Return Value:**
@@ -163,7 +338,7 @@ public template::display( $template, mixed $layout = &quot;app&quot;): void
 displayJson - returns json data
 
 ```php
-public template::displayJson( $jsonContent): void
+public Template::displayJson( $jsonContent): void
 ```
 
 
@@ -192,7 +367,7 @@ public template::displayJson( $jsonContent): void
 display - display only the template from the template folder without a wrapper
 
 ```php
-public template::displayPartial( $template): void
+public Template::displayPartial( $template): void
 ```
 
 
@@ -221,7 +396,7 @@ public template::displayPartial( $template): void
 get - get assigned values
 
 ```php
-public template::get( $name): array
+public Template::get( $name): array
 ```
 
 
@@ -250,7 +425,7 @@ public template::get( $name): array
 getNotification - pulls notification from the current session
 
 ```php
-public template::getNotification(): array
+public Template::getNotification(): array
 ```
 
 
@@ -273,7 +448,7 @@ public template::getNotification(): array
 displaySubmodule - display a submodule for a given module
 
 ```php
-public template::displaySubmodule( $alias): void
+public Template::displaySubmodule(string $alias): void
 ```
 
 
@@ -287,7 +462,7 @@ public template::displaySubmodule( $alias): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `alias` | **** |  |
+| `alias` | **string** |  |
 
 
 **Return Value:**
@@ -299,10 +474,10 @@ public template::displaySubmodule( $alias): void
 ---
 ### displayNotification
 
-
+displayNotification - display notification
 
 ```php
-public template::displayNotification(): mixed
+public Template::displayNotification(): string
 ```
 
 
@@ -322,10 +497,10 @@ public template::displayNotification(): mixed
 ---
 ### displayInlineNotification
 
-
+displayInlineNotification - display notification
 
 ```php
-public template::displayInlineNotification(): mixed
+public Template::displayInlineNotification(): string
 ```
 
 
@@ -345,10 +520,10 @@ public template::displayInlineNotification(): mixed
 ---
 ### redirect
 
-
+redirect - redirect to a given url
 
 ```php
-public template::redirect(mixed $url): void
+public Template::redirect(string $url): void
 ```
 
 
@@ -362,7 +537,7 @@ public template::redirect(mixed $url): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `url` | **mixed** |  |
+| `url` | **string** |  |
 
 
 **Return Value:**
@@ -374,10 +549,10 @@ public template::redirect(mixed $url): void
 ---
 ### getSubdomain
 
-
+getSubdomain - get subdomain from url
 
 ```php
-public template::getSubdomain(): string
+public Template::getSubdomain(): string
 ```
 
 
@@ -397,10 +572,10 @@ public template::getSubdomain(): string
 ---
 ### __
 
-
+__ - returns a language specific string. wraps language class method
 
 ```php
-public template::__(mixed $index): string
+public Template::__(string $index): string
 ```
 
 
@@ -414,7 +589,7 @@ public template::__(mixed $index): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `index` | **mixed** |  |
+| `index` | **string** |  |
 
 
 **Return Value:**
@@ -426,10 +601,10 @@ public template::__(mixed $index): string
 ---
 ### e
 
-
+e - echos and escapes content
 
 ```php
-public template::e(mixed $content): void
+public Template::e(string $content): void
 ```
 
 
@@ -443,7 +618,7 @@ public template::e(mixed $content): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `content` | **mixed** |  |
+| `content` | **string** |  |
 
 
 **Return Value:**
@@ -455,10 +630,10 @@ public template::e(mixed $content): void
 ---
 ### escape
 
-
+escape - escapes content
 
 ```php
-public template::escape(mixed $content): string
+public Template::escape(string $content): string
 ```
 
 
@@ -472,7 +647,7 @@ public template::escape(mixed $content): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `content` | **mixed** |  |
+| `content` | **string** |  |
 
 
 **Return Value:**
@@ -484,10 +659,10 @@ public template::escape(mixed $content): string
 ---
 ### escapeMinimal
 
-
+escapeMinimal - escapes content
 
 ```php
-public template::escapeMinimal(mixed $content): string
+public Template::escapeMinimal(string $content): string
 ```
 
 
@@ -501,7 +676,7 @@ public template::escapeMinimal(mixed $content): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `content` | **mixed** |  |
+| `content` | **string** |  |
 
 
 **Return Value:**
@@ -516,7 +691,7 @@ public template::escapeMinimal(mixed $content): string
 getFormattedDateString - returns a language specific formatted date string. wraps language class method
 
 ```php
-public template::getFormattedDateString( $date): string
+public Template::getFormattedDateString(string $date): string
 ```
 
 
@@ -530,7 +705,7 @@ public template::getFormattedDateString( $date): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `date` | **** | string |
+| `date` | **string** |  |
 
 
 **Return Value:**
@@ -545,7 +720,7 @@ public template::getFormattedDateString( $date): string
 getFormattedTimeString - returns a language specific formatted time string. wraps language class method
 
 ```php
-public template::getFormattedTimeString( $date): string
+public Template::getFormattedTimeString( $date): string
 ```
 
 
@@ -571,10 +746,10 @@ public template::getFormattedTimeString( $date): string
 ---
 ### get24HourTimestring
 
-
+getFormattedDateTimeString - returns a language specific formatted date and time string. wraps language class method
 
 ```php
-public template::get24HourTimestring(mixed $dateTime): mixed
+public Template::get24HourTimestring(string $dateTime): string
 ```
 
 
@@ -588,7 +763,7 @@ public template::get24HourTimestring(mixed $dateTime): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `dateTime` | **mixed** |  |
+| `dateTime` | **string** |  |
 
 
 **Return Value:**
@@ -600,10 +775,10 @@ public template::get24HourTimestring(mixed $dateTime): mixed
 ---
 ### truncate
 
-
+truncate - truncate text
 
 ```php
-public template::truncate(mixed $html, mixed $maxLength = 100, mixed $ending = &#039;(...)&#039;, mixed $exact = true, mixed $considerHtml = false): mixed
+public Template::truncate(string $html, int $maxLength = 100, string $ending = &#039;(...)&#039;, bool $exact = true, bool $considerHtml = false): string
 ```
 
 
@@ -617,11 +792,11 @@ public template::truncate(mixed $html, mixed $maxLength = 100, mixed $ending = &
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `html` | **mixed** |  |
-| `maxLength` | **mixed** |  |
-| `ending` | **mixed** |  |
-| `exact` | **mixed** |  |
-| `considerHtml` | **mixed** |  |
+| `html` | **string** |  |
+| `maxLength` | **int** |  |
+| `ending` | **string** |  |
+| `exact` | **bool** |  |
+| `considerHtml` | **bool** |  |
 
 
 **Return Value:**
@@ -629,14 +804,17 @@ public template::truncate(mixed $html, mixed $maxLength = 100, mixed $ending = &
 
 
 
+**See Also:**
+
+* https://stackoverflow.com/questions/1193500/truncate-text-containing-html-ignoring-tags - 
 
 ---
 ### convertRelativePaths
 
-
+convertRelativePaths - convert relative paths to absolute paths
 
 ```php
-public template::convertRelativePaths(mixed $text): mixed
+public Template::convertRelativePaths(string $text): string
 ```
 
 
@@ -650,7 +828,7 @@ public template::convertRelativePaths(mixed $text): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `text` | **mixed** |  |
+| `text` | **string** |  |
 
 
 **Return Value:**
@@ -662,10 +840,10 @@ public template::convertRelativePaths(mixed $text): mixed
 ---
 ### getModulePicture
 
-
+getModulePicture - get module picture
 
 ```php
-public template::getModulePicture(): mixed
+public Template::getModulePicture(): string
 ```
 
 
@@ -685,10 +863,10 @@ public template::getModulePicture(): mixed
 ---
 ### displayLink
 
-
+displayLink - display link
 
 ```php
-public template::displayLink(mixed $module, mixed $name, mixed $params = null, mixed $attribute = null): mixed
+public Template::displayLink(string $module, string $name, array $params = null, array $attribute = null): string
 ```
 
 
@@ -702,10 +880,10 @@ public template::displayLink(mixed $module, mixed $name, mixed $params = null, m
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `module` | **mixed** |  |
-| `name` | **mixed** |  |
-| `params` | **mixed** |  |
-| `attribute` | **mixed** |  |
+| `module` | **string** |  |
+| `name` | **string** |  |
+| `params` | **array** |  |
+| `attribute` | **array** |  |
 
 
 **Return Value:**
@@ -717,13 +895,15 @@ public template::displayLink(mixed $module, mixed $name, mixed $params = null, m
 ---
 ### patchDownloadUrlToFilenameOrAwsUrl
 
-
+patchDownloadUrlToFilenameOrAwsUrl - Replace all local download.php references in <img src=""> tags
+by either local filenames or AWS URLs that can be accesse without being authenticated
 
 ```php
-public template::patchDownloadUrlToFilenameOrAwsUrl(string $textHtml): string
+public Template::patchDownloadUrlToFilenameOrAwsUrl(string $textHtml): string
 ```
 
-
+Note: This patch is required by the PDF generating engine as it retrieves URL data without being
+authenticated
 
 
 
@@ -734,12 +914,13 @@ public template::patchDownloadUrlToFilenameOrAwsUrl(string $textHtml): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `textHtml` | **string** |  |
+| `textHtml` | **string** | HTML text, potentially containing &lt;img srv=&quot;https://local.domain/download.php?xxxx&quot;&gt; tags |
 
 
 **Return Value:**
 
-
+HTML text with the https://local.domain/download.php?xxxx replaced by either full qualified
+local filenames or AWS URLs
 
 
 
@@ -749,7 +930,7 @@ public template::patchDownloadUrlToFilenameOrAwsUrl(string $textHtml): string
 
 
 ```php
-private template::dispatchTplEvent(string $hookName, mixed $payload = []): mixed
+public Template::dispatchTplEvent(string $hookName, mixed $payload = []): mixed
 ```
 
 
@@ -779,7 +960,7 @@ private template::dispatchTplEvent(string $hookName, mixed $payload = []): mixed
 
 
 ```php
-private template::dispatchTplFilter(string $hookName, mixed $payload = [], mixed $available_params = []): mixed
+public Template::dispatchTplFilter(string $hookName, mixed $payload = [], mixed $available_params = []): mixed
 ```
 
 
@@ -810,7 +991,7 @@ private template::dispatchTplFilter(string $hookName, mixed $payload = [], mixed
 
 
 ```php
-private template::dispatchTplHook(string $type, string $hookName, mixed $payload = [], mixed $available_params = []): null|mixed
+private Template::dispatchTplHook(string $type, string $hookName, mixed $payload = [], mixed $available_params = []): null|mixed
 ```
 
 
@@ -846,7 +1027,7 @@ private template::dispatchTplHook(string $type, string $hookName, mixed $payload
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -877,7 +1058,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -909,7 +1090,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -935,11 +1116,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -962,7 +1143,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -989,4 +1170,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\mailer
+title: \Leantime\Core\Mailer
 footer: false
 ---
 
-# mailer
+# Mailer
+
+Mail class - mails with php mail()
 
 
 
-
-
-* Full name: `\leantime\core\mailer`
+* Full name: `\Leantime\Core\Mailer`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - get configurations
 
 ```php
-public mailer::__construct(): void
+public Mailer::__construct(\Leantime\Core\Environment $config, \Leantime\Core\language $language): void
 ```
 
 
@@ -29,6 +29,13 @@ public mailer::__construct(): void
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `config` | **\Leantime\Core\Environment** |  |
+| `language` | **\Leantime\Core\language** |  |
 
 
 **Return Value:**
@@ -44,7 +51,7 @@ setContext - sets the context for the mailing
 (used for filters & events)
 
 ```php
-public mailer::setContext( $context): void
+public Mailer::setContext( $context): void
 ```
 
 
@@ -73,7 +80,7 @@ public mailer::setContext( $context): void
 setText - sets the mailtext
 
 ```php
-public mailer::setText( $text): void
+public Mailer::setText( $text): void
 ```
 
 
@@ -102,7 +109,7 @@ public mailer::setText( $text): void
 setHTML - set Mail html (no function yet)
 
 ```php
-public mailer::setHtml( $html): void
+public Mailer::setHtml( $html,  $hideWrapper = false): void
 ```
 
 
@@ -117,6 +124,7 @@ public mailer::setHtml( $html): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `html` | **** |  |
+| `hideWrapper` | **** |  |
 
 
 **Return Value:**
@@ -131,7 +139,7 @@ public mailer::setHtml( $html): void
 setSubject - set mail subject
 
 ```php
-public mailer::setSubject( $subject): void
+public Mailer::setSubject( $subject): void
 ```
 
 
@@ -157,10 +165,10 @@ public mailer::setSubject( $subject): void
 ---
 ### dispatchMailerEvent
 
-
+dispatchMailerEvent - dispatches a mailer event
 
 ```php
-private mailer::dispatchMailerEvent(mixed $hookname, mixed $payload, mixed $additional_params = []): mixed
+private Mailer::dispatchMailerEvent( $hookname,  $payload,  $additional_params = []): void
 ```
 
 
@@ -174,9 +182,9 @@ private mailer::dispatchMailerEvent(mixed $hookname, mixed $payload, mixed $addi
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `hookname` | **mixed** |  |
-| `payload` | **mixed** |  |
-| `additional_params` | **mixed** |  |
+| `hookname` | **** |  |
+| `payload` | **** |  |
+| `additional_params` | **** |  |
 
 
 **Return Value:**
@@ -188,10 +196,10 @@ private mailer::dispatchMailerEvent(mixed $hookname, mixed $payload, mixed $addi
 ---
 ### dispatchMailerFilter
 
-
+dispatchMailerFilter - dispatches a mailer filter
 
 ```php
-private mailer::dispatchMailerFilter(mixed $hookname, mixed $payload, mixed $additional_params): mixed
+private Mailer::dispatchMailerFilter( $hookname,  $payload,  $additional_params = []): void
 ```
 
 
@@ -205,9 +213,9 @@ private mailer::dispatchMailerFilter(mixed $hookname, mixed $payload, mixed $add
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `hookname` | **mixed** |  |
-| `payload` | **mixed** |  |
-| `additional_params` | **mixed** |  |
+| `hookname` | **** |  |
+| `payload` | **** |  |
+| `additional_params` | **** |  |
 
 
 **Return Value:**
@@ -219,10 +227,10 @@ private mailer::dispatchMailerFilter(mixed $hookname, mixed $payload, mixed $add
 ---
 ### dispatchMailerHook
 
-
+dispatchMailerHook - dispatches a mailer hook
 
 ```php
-private mailer::dispatchMailerHook(mixed $type, mixed $hookname, mixed $payload, mixed $additional_params = []): mixed
+private Mailer::dispatchMailerHook( $type,  $hookname,  $payload,  $additional_params = []): void|mixed
 ```
 
 
@@ -236,10 +244,10 @@ private mailer::dispatchMailerHook(mixed $type, mixed $hookname, mixed $payload,
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `type` | **mixed** |  |
-| `hookname` | **mixed** |  |
-| `payload` | **mixed** |  |
-| `additional_params` | **mixed** |  |
+| `type` | **** |  |
+| `hookname` | **** |  |
+| `payload` | **** |  |
+| `additional_params` | **** |  |
 
 
 **Return Value:**
@@ -254,7 +262,7 @@ private mailer::dispatchMailerHook(mixed $type, mixed $hookname, mixed $payload,
 sendMail - send the mail with mail()
 
 ```php
-public mailer::sendMail(array $to,  $from): void
+public Mailer::sendMail(array $to,  $from): void
 ```
 
 
@@ -288,7 +296,7 @@ public mailer::sendMail(array $to,  $from): void
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -319,7 +327,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -351,7 +359,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -377,11 +385,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -404,7 +412,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -431,4 +439,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

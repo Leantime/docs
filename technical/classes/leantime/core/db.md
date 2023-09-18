@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\db
+title: \Leantime\Core\Db
 footer: false
 ---
 
-# db
+# Db
+
+Database Class - Very simple abstraction layer for pdo connection
 
 
 
-
-
-* Full name: `\leantime\core\db`
+* Full name: `\Leantime\Core\Db`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - connect to database and select db
 
 ```php
-private db::__construct(): object
+public Db::__construct(\Leantime\Core\Environment $config): self
 ```
 
 
@@ -30,28 +30,11 @@ private db::__construct(): object
 
 
 
+**Parameters:**
 
-**Return Value:**
-
-
-
-
-
----
-### getInstance
-
-
-
-```php
-public static db::getInstance(): mixed
-```
-
-
-
-* This method is **static**.
-
-
-
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `config` | **\Leantime\Core\Environment** |  |
 
 
 **Return Value:**
@@ -67,7 +50,7 @@ This function will generate a pdo binding string (":editors0,:editors1,:editors2
 query that uses the IN() clause, to assist in proper PDO array bindings to avoid SQL injection.
 
 ```php
-public static db::arrayToPdoBindingString( $name,  $count): string
+public static Db::arrayToPdoBindingString(string $name, int $count): string
 ```
 
 A counted for loop is user rather than foreach with a key to avoid issues if the array passed has any
@@ -82,8 +65,8 @@ arbitrary keys
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `name` | **** | string |
-| `count` | **** | int |
+| `name` | **string** |  |
+| `count` | **int** |  |
 
 
 **Return Value:**
@@ -98,7 +81,7 @@ arbitrary keys
 Sanitizes a string to only contain letters, numbers and underscore.
 
 ```php
-public static db::sanitizeToColumnString(mixed $string): string
+public static Db::sanitizeToColumnString(string $string): string
 ```
 
 Used for patch statements with variable column keys values
@@ -112,7 +95,7 @@ Used for patch statements with variable column keys values
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `string` | **mixed** |  |
+| `string` | **string** |  |
 
 
 **Return Value:**
@@ -131,7 +114,7 @@ Used for patch statements with variable column keys values
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -162,7 +145,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -194,7 +177,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -220,11 +203,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -247,7 +230,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -274,4 +257,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

@@ -5,12 +5,12 @@
 
 ## Events
 
-### `domain.{$module}.controllers.{$controller}.__construct.begin`
+### `Core.Controller.__construct.begin`
 
 
-Source: [app/core/class.controller.php](https://github.com/Leantime/leantime/blob/master/app/core/class.controller.php), [line 27](https://github.com/Leantime/leantime/blob/master/app/core/class.controller.php#L27-L27)
+Source: [app/Core/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php#L44-L44)
 
-### `domain.{$module}.controllers.{$controller}.__construct.end`
+### `Core.Controller.__construct.end`
 
 **Arguments**
 
@@ -18,19 +18,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this` |  | 
 
-Source: [app/core/class.controller.php](https://github.com/Leantime/leantime/blob/master/app/core/class.controller.php), [line 35](https://github.com/Leantime/leantime/blob/master/app/core/class.controller.php#L35-L35)
+Source: [app/Core/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php), [line 56](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php#L56-L56)
 
-### `domain.{$module}.controllers.{$controller}.executeActions.before_init`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$available_params` |  | 
-
-Source: [app/core/class.controller.php](https://github.com/Leantime/leantime/blob/master/app/core/class.controller.php), [line 56](https://github.com/Leantime/leantime/blob/master/app/core/class.controller.php#L56-L56)
-
-### `domain.{$module}.controllers.{$controller}.executeActions.before_action`
+### `Core.Controller.executeActions.before_init`
 
 **Arguments**
 
@@ -38,61 +28,51 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$available_params` |  | 
 
-Source: [app/core/class.controller.php](https://github.com/Leantime/leantime/blob/master/app/core/class.controller.php), [line 59](https://github.com/Leantime/leantime/blob/master/app/core/class.controller.php#L59-L59)
+Source: [app/Core/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php), [line 77](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php#L77-L77)
 
-### `core.application.start.beginning`
-
-*The beginning of the application*
+### `Core.Controller.executeActions.before_action`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`['application' => $this]` |  | 
+`$available_params` |  | 
 
-Source: [app/core/class.application.php](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php), [line 69](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php#L69-L74)
+Source: [app/Core/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php), [line 82](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php#L82-L82)
 
-### `core.application.start.logged_in`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['application' => $this]` |  | 
-
-Source: [app/core/class.application.php](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php), [line 120](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php#L120-L120)
-
-### `core.application.start.end`
+### `Core.Mailer.dispatchMailerHook.{$hook}`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`['application' => $this]` |  | 
+`$payload` |  | 
 
-Source: [app/core/class.application.php](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php), [line 138](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php#L138-L138)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 256](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L256-L256)
 
-### `core.mailer.sendMail.sendMailTo`
+### `Core.Mailer.sendMail.sendMailTo`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$to` |  | 
+`[]` |  | 
 
-Source: [app/core/class.mailer.php](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php), [line 230](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php#L230-L230)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 279](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L279-L279)
 
-### `core.mailer.sendMail.sendMailFrom`
+### `Core.Mailer.sendMail.sendMailFrom`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$from` |  | 
+`[]` |  | 
 
-Source: [app/core/class.mailer.php](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php), [line 231](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php#L231-L231)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 280](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L280-L280)
 
-### `core.mailer.sendMail.bodyTemplate`
+### `Core.Mailer.sendMail.bodyTemplate`
 
 **Arguments**
 
@@ -101,19 +81,131 @@ Argument | Type | Description
 `$bodyTemplate` |  | 
 `[['companyColor' => $this->companyColor, 'logoUrl' => $inlineLogoContent, 'languageHiText' => $this->language->__('email_notifications.hi'), 'emailContentsHtml' => nl2br($this->html), 'unsubLink' => sprintf($this->language->__('email_notifications.unsubscribe'), BASE_URL . '/users/editOwn/')]]` |  | 
 
-Source: [app/core/class.mailer.php](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php), [line 283](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php#L283-L295)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 339](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L339-L351)
 
-### `core.mailer.sendMail.altBody`
+### `Core.Mailer.sendMail.altBody`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$this->text` |  | 
+`[]` |  | 
 
-Source: [app/core/class.mailer.php](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php), [line 299](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php#L299-L302)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 355](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L355-L359)
 
-### `domain.{$module}.repositories.{$repo}.{$method}.beforeExecute`
+### `Core.Eventhelpers.dispatch_event.{$hook}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$available_params` |  | 
+`static::get_event_context($function)` |  | 
+
+Source: [app/Core/Eventhelpers.php](https://github.com/Leantime/leantime/blob/master/app/Core/Eventhelpers.php), [line 23](https://github.com/Leantime/leantime/blob/master/app/Core/Eventhelpers.php#L23-L23)
+
+### `Core.Template.displayNotification.notification_displayed`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$note` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 584](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L584-L584)
+
+### `Core.Template.displayInlineNotification.notification_displayed`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$note` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 632](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L632-L632)
+
+### `Core.Template.dispatchTplHook.{$hookName}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$payload` |  | 
+`$this->hookContext` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 1030](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L1030-L1030)
+
+### `Core.HtmxController.__construct.begin`
+
+
+Source: [app/Core/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php#L37-L37)
+
+### `Core.HtmxController.__construct.end`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this` |  | 
+
+Source: [app/Core/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php), [line 45](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php#L45-L45)
+
+### `Core.HtmxController.executeActions.before_init`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['controller' => $this]` |  | 
+
+Source: [app/Core/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php), [line 60](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php#L60-L60)
+
+### `Core.HtmxController.executeActions.before_action`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['controller' => $this]` |  | 
+
+Source: [app/Core/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php), [line 65](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php#L65-L65)
+
+### `Core.Bootloader.boot.beginning`
+
+*The beginning of the application*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['bootloader' => $this]` |  | 
+
+Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 153](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L153-L158)
+
+### `Core.Bootloader.boot.end`
+
+*The end of the application*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['bootloader' => $this]` |  | 
+
+Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 166](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L166-L171)
+
+### `Core.Bootloader.handleRequest.logged_in`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['application' => $this]` |  | 
+
+Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 386](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L386-L386)
+
+### `Core.Repository.__call.beforeExecute`
 
 **Arguments**
 
@@ -122,9 +214,9 @@ Argument | Type | Description
 `$this->getArgs()` |  | 
 `4` |  | 
 
-Source: [app/core/class.repository.php](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php), [line 119](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php#L119-L119)
+Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 166](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L166-L166)
 
-### `domain.{$module}.repositories.{$repo}.{$method}.afterExecute`
+### `Core.Repository.__call.afterExecute`
 
 **Arguments**
 
@@ -133,194 +225,214 @@ Argument | Type | Description
 `$this->getArgs()` |  | 
 `4` |  | 
 
-Source: [app/core/class.repository.php](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php), [line 132](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php#L132-L132)
+Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 179](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L179-L179)
 
-### `domain.clients.templates.showClient.tpl.beforePageHeaderOpen`
+### `Domain.Clients.Templates.showClient.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php#L8-L8)
+Source: [app/Domain/Clients/Templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php#L11-L11)
 
-### `domain.clients.templates.showClient.tpl.afterPageHeaderOpen`
+### `Domain.Clients.Templates.showClient.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php), [line 10](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php#L10-L10)
+Source: [app/Domain/Clients/Templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php#L13-L13)
 
-### `domain.clients.templates.showClient.tpl.beforePageHeaderClose`
+### `Domain.Clients.Templates.showClient.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/clients/templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php#L16-L16)
+Source: [app/Domain/Clients/Templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php#L19-L19)
 
-### `domain.clients.templates.showClient.tpl.afterPageHeaderClose`
+### `Domain.Clients.Templates.showClient.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/clients/templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php), [line 18](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php#L18-L18)
+Source: [app/Domain/Clients/Templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php), [line 21](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php#L21-L21)
 
-### `domain.clients.templates.showClient.tpl.scripts.afterOpen`
+### `Domain.Clients.Templates.showClient.tpl.scripts.afterOpen`
 
 
-Source: [app/domain/clients/templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php), [line 293](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php#L293-L293)
+Source: [app/Domain/Clients/Templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php), [line 296](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php#L296-L296)
 
-### `domain.clients.templates.showClient.tpl.scripts.beforeClose`
+### `Domain.Clients.Templates.showClient.tpl.scripts.beforeClose`
 
 
-Source: [app/domain/clients/templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php), [line 301](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showClient.tpl.php#L301-L301)
+Source: [app/Domain/Clients/Templates/showClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php), [line 304](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showClient.tpl.php#L304-L304)
 
-### `domain.clients.templates.newClient.tpl.beforePageHeaderOpen`
+### `Domain.Clients.Templates.newClient.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php), [line 6](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php#L6-L6)
+Source: [app/Domain/Clients/Templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php), [line 9](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php#L9-L9)
 
-### `domain.clients.templates.newClient.tpl.afterPageHeaderOpen`
+### `Domain.Clients.Templates.newClient.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php#L8-L8)
+Source: [app/Domain/Clients/Templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php#L11-L11)
 
-### `domain.clients.templates.newClient.tpl.beforePageHeaderClose`
+### `Domain.Clients.Templates.newClient.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/clients/templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php#L14-L14)
+Source: [app/Domain/Clients/Templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php#L17-L17)
 
-### `domain.clients.templates.newClient.tpl.afterPageHeaderClose`
+### `Domain.Clients.Templates.newClient.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/clients/templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php#L16-L16)
+Source: [app/Domain/Clients/Templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php#L19-L19)
 
-### `domain.clients.templates.newClient.tpl.afterFormOpen`
+### `Domain.Clients.Templates.newClient.tpl.afterFormOpen`
 
 
-Source: [app/domain/clients/templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php#L29-L29)
+Source: [app/Domain/Clients/Templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php#L32-L32)
 
-### `domain.clients.templates.newClient.tpl.beforeSubmitButton`
+### `Domain.Clients.Templates.newClient.tpl.beforeSubmitButton`
 
 
-Source: [app/domain/clients/templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php), [line 108](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php#L108-L108)
+Source: [app/Domain/Clients/Templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php), [line 111](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php#L111-L111)
 
-### `domain.clients.templates.newClient.tpl.beforeFormClose`
+### `Domain.Clients.Templates.newClient.tpl.beforeFormClose`
 
 
-Source: [app/domain/clients/templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php), [line 122](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/newClient.tpl.php#L122-L122)
+Source: [app/Domain/Clients/Templates/newClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php), [line 125](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/newClient.tpl.php#L125-L125)
 
-### `domain.clients.templates.editClient.tpl.beforePageHeaderOpen`
+### `Domain.Clients.Templates.editClient.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/editClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/editClient.tpl.php), [line 6](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/editClient.tpl.php#L6-L6)
+Source: [app/Domain/Clients/Templates/editClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/editClient.tpl.php), [line 9](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/editClient.tpl.php#L9-L9)
 
-### `domain.clients.templates.editClient.tpl.afterPageHeaderOpen`
+### `Domain.Clients.Templates.editClient.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/editClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/editClient.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/editClient.tpl.php#L8-L8)
+Source: [app/Domain/Clients/Templates/editClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/editClient.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/editClient.tpl.php#L11-L11)
 
-### `domain.clients.templates.editClient.tpl.beforePageHeaderClose`
+### `Domain.Clients.Templates.editClient.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/clients/templates/editClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/editClient.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/editClient.tpl.php#L14-L14)
+Source: [app/Domain/Clients/Templates/editClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/editClient.tpl.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/editClient.tpl.php#L17-L17)
 
-### `domain.clients.templates.editClient.tpl.afterPageHeaderClose`
+### `Domain.Clients.Templates.editClient.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/clients/templates/editClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/editClient.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/editClient.tpl.php#L16-L16)
+Source: [app/Domain/Clients/Templates/editClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/editClient.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/editClient.tpl.php#L19-L19)
 
-### `domain.clients.templates.delClient.tpl.beforePageHeaderOpen`
+### `Domain.Clients.Templates.delClient.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php), [line 6](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php#L6-L6)
+Source: [app/Domain/Clients/Templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php), [line 9](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php#L9-L9)
 
-### `domain.clients.templates.delClient.tpl.afterPageHeaderOpen`
+### `Domain.Clients.Templates.delClient.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php#L8-L8)
+Source: [app/Domain/Clients/Templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php#L11-L11)
 
-### `domain.clients.templates.delClient.tpl.beforePageHeaderClose`
+### `Domain.Clients.Templates.delClient.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/clients/templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php#L14-L14)
+Source: [app/Domain/Clients/Templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php#L17-L17)
 
-### `domain.clients.templates.delClient.tpl.afterPageHeaderClose`
+### `Domain.Clients.Templates.delClient.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/clients/templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php#L16-L16)
+Source: [app/Domain/Clients/Templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php#L19-L19)
 
-### `domain.clients.templates.delClient.tpl.afterFormOpen`
+### `Domain.Clients.Templates.delClient.tpl.afterFormOpen`
 
 
-Source: [app/domain/clients/templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php), [line 28](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php#L28-L28)
+Source: [app/Domain/Clients/Templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php), [line 31](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php#L31-L31)
 
-### `domain.clients.templates.delClient.tpl.beforeFormClose`
+### `Domain.Clients.Templates.delClient.tpl.beforeFormClose`
 
 
-Source: [app/domain/clients/templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php), [line 34](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/delClient.tpl.php#L34-L34)
+Source: [app/Domain/Clients/Templates/delClient.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/delClient.tpl.php#L37-L37)
 
-### `domain.clients.templates.showAll.tpl.beforePageHeaderOpen`
+### `Domain.Clients.Templates.showAll.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php#L5-L5)
+Source: [app/Domain/Clients/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php#L8-L8)
 
-### `domain.clients.templates.showAll.tpl.afterPageHeaderOpen`
+### `Domain.Clients.Templates.showAll.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/clients/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php), [line 7](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php#L7-L7)
+Source: [app/Domain/Clients/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php), [line 10](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php#L10-L10)
 
-### `domain.clients.templates.showAll.tpl.beforePageHeaderClose`
+### `Domain.Clients.Templates.showAll.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/clients/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php#L13-L13)
+Source: [app/Domain/Clients/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php#L16-L16)
 
-### `domain.clients.templates.showAll.tpl.afterPageHeaderClose`
+### `Domain.Clients.Templates.showAll.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/clients/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php#L15-L15)
+Source: [app/Domain/Clients/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php), [line 18](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php#L18-L18)
 
-### `domain.clients.templates.showAll.tpl.scripts.afterOpen`
+### `Domain.Clients.Templates.showAll.tpl.scripts.afterOpen`
 
 
-Source: [app/domain/clients/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php), [line 62](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php#L62-L62)
+Source: [app/Domain/Clients/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php), [line 65](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php#L65-L65)
 
-### `domain.clients.templates.showAll.tpl.scripts.beforeClose`
+### `Domain.Clients.Templates.showAll.tpl.scripts.beforeClose`
 
 
-Source: [app/domain/clients/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php), [line 71](https://github.com/Leantime/leantime/blob/master/app/domain/clients/templates/showAll.tpl.php#L71-L71)
+Source: [app/Domain/Clients/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php), [line 74](https://github.com/Leantime/leantime/blob/master/app/Domain/Clients/Templates/showAll.tpl.php#L74-L74)
 
-### `domain.tickets.templates.showAllMilestones.tpl.filters.afterFormOpen`
+### `Domain.Tickets.Repositories.Tickets.patchTicket.ticketStatusUpdate`
 
+**Arguments**
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 36](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L36-L36)
+Argument | Type | Description
+-------- | ---- | -----------
+`array("ticketId" => $id, "status" => $value, "action" => "ticketStatusUpdate")` |  | 
 
-### `domain.tickets.templates.showAllMilestones.tpl.filters.afterLefthandSectionOpen`
+Source: [app/Domain/Tickets/Repositories/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php), [line 1413](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php#L1413-L1413)
 
+### `Domain.Tickets.Repositories.Tickets.updateTicketStatus.ticketStatusUpdate`
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 42](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L42-L42)
+**Arguments**
 
-### `domain.tickets.templates.showAllMilestones.tpl.filters.beforeLefthandSectionClose`
+Argument | Type | Description
+-------- | ---- | -----------
+`array("ticketId" => $ticketId, "status" => $status, "action" => "ticketStatusUpdate", "handler" => $handler)` |  | 
 
+Source: [app/Domain/Tickets/Repositories/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php), [line 1528](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php#L1528-L1528)
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 48](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L48-L48)
+### `Domain.Tickets.Templates.showAllMilestones.tpl.filters.afterFormOpen`
 
-### `domain.tickets.templates.showAllMilestones.tpl.filters.afterCenterSectionOpen`
 
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 38](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L38-L38)
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 54](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L54-L54)
+### `Domain.Tickets.Templates.showAllMilestones.tpl.filters.afterLefthandSectionOpen`
 
-### `domain.tickets.templates.showAllMilestones.tpl.filters.beforeCenterSectionClose`
 
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L44-L44)
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 55](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L55-L55)
+### `Domain.Tickets.Templates.showAllMilestones.tpl.filters.beforeLefthandSectionClose`
 
-### `domain.tickets.templates.showAllMilestones.tpl.filters.afterRighthandSectionOpen`
 
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 50](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L50-L50)
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 61](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L61-L61)
+### `Domain.Tickets.Templates.showAllMilestones.tpl.filters.afterCenterSectionOpen`
 
-### `domain.tickets.templates.showAllMilestones.tpl.filters.beforeRighthandSectionClose`
 
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 56](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L56-L56)
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 73](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L73-L73)
+### `Domain.Tickets.Templates.showAllMilestones.tpl.filters.beforeCenterSectionClose`
 
-### `domain.tickets.templates.showAllMilestones.tpl.filters.beforeFormClose`
 
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 57](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L57-L57)
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 80](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L80-L80)
+### `Domain.Tickets.Templates.showAllMilestones.tpl.filters.afterRighthandSectionOpen`
 
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.before`
+
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 63](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L63-L63)
+
+### `Domain.Tickets.Templates.showAllMilestones.tpl.filters.beforeRighthandSectionClose`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 76](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L76-L76)
+
+### `Domain.Tickets.Templates.showAllMilestones.tpl.filters.beforeFormClose`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 83](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L83-L83)
+
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.before`
 
 **Arguments**
 
@@ -328,19 +440,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 86](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L86-L86)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 89](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L89-L89)
 
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.beforeHead`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 103](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L103-L103)
-
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.beforeHeadRow`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.beforeHead`
 
 **Arguments**
 
@@ -348,19 +450,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 105](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L105-L105)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 106](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L106-L106)
 
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.afterHeadRow`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 123](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L123-L123)
-
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.afterHead`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.beforeHeadRow`
 
 **Arguments**
 
@@ -368,9 +460,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 125](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L125-L125)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 108](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L108-L108)
 
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.beforeFirstRow`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.afterHeadRow`
 
 **Arguments**
 
@@ -378,9 +470,29 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 127](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L127-L127)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 126](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L126-L126)
 
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.afterRowStart`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.afterHead`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 128](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L128-L128)
+
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.beforeFirstRow`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 130](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L130-L130)
+
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.afterRowStart`
 
 **Arguments**
 
@@ -388,9 +500,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['rowNum' => $rowNum, 'tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 130](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L130-L130)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 133](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L133-L133)
 
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.beforeRowEnd`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.beforeRowEnd`
 
 **Arguments**
 
@@ -398,19 +510,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets, 'rowNum' => $rowNum]` |  | 
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 254](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L254-L254)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 266](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L266-L266)
 
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.afterLastRow`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 257](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L257-L257)
-
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.afterBody`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.afterLastRow`
 
 **Arguments**
 
@@ -418,89 +520,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 259](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L259-L259)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L269-L269)
 
-### `domain.tickets.templates.showAllMilestones.tpl.allTicketsTable.afterClose`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 261](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L261-L261)
-
-### `domain.tickets.templates.showAllMilestones.tpl.scripts.afterOpen`
-
-
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 268](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L268-L268)
-
-### `domain.tickets.templates.showAllMilestones.tpl.scripts.beforeClose`
-
-
-Source: [app/domain/tickets/templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php), [line 293](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAllMilestones.tpl.php#L293-L293)
-
-### `domain.tickets.templates.showList.tpl.beforePageHeaderOpen`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 24](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L24-L24)
-
-### `domain.tickets.templates.showList.tpl.afterPageHeaderOpen`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 26](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L26-L26)
-
-### `domain.tickets.templates.showList.tpl.beforePageHeaderClose`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L32-L32)
-
-### `domain.tickets.templates.showList.tpl.afterPageHeaderClose`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 34](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L34-L34)
-
-### `domain.tickets.templates.showList.tpl.filters.afterFormOpen`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 43](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L43-L43)
-
-### `domain.tickets.templates.showList.tpl.filters.afterLefthandSectionOpen`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 51](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L51-L51)
-
-### `domain.tickets.templates.showList.tpl.filters.beforeLefthandSectionClose`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 69](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L69-L69)
-
-### `domain.tickets.templates.showList.tpl.filters.afterRighthandSectionOpen`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 74](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L74-L74)
-
-### `domain.tickets.templates.showList.tpl.filters.beforeRighthandSectionClose`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 124](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L124-L124)
-
-### `domain.tickets.templates.showList.tpl.filters.beforeBar`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 133](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L133-L133)
-
-### `domain.tickets.templates.showList.tpl.filters.beforeFirstBarField`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 139](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L139-L139)
-
-### `domain.tickets.templates.showList.tpl.filters.beforeFormClose`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 249](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L249-L249)
-
-### `domain.tickets.templates.showList.tpl.allTicketsTable.before`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.afterBody`
 
 **Arguments**
 
@@ -508,19 +530,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 253](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L253-L253)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L271-L271)
 
-### `domain.tickets.templates.showList.tpl.allTicketsTable.beforeHead`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 266](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L266-L266)
-
-### `domain.tickets.templates.showList.tpl.allTicketsTable.beforeHeadRow`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.allTicketsTable.afterClose`
 
 **Arguments**
 
@@ -528,9 +540,69 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 268](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L268-L268)
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 273](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L273-L273)
 
-### `domain.tickets.templates.showList.tpl.allTicketsTable.afterHeadRow`
+### `Domain.Tickets.Templates.showAllMilestones.tpl.scripts.afterOpen`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 280](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L280-L280)
+
+### `Domain.Tickets.Templates.showAllMilestones.tpl.scripts.beforeClose`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestones.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php), [line 300](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestones.tpl.php#L300-L300)
+
+### `Domain.Tickets.Templates.showKanban.tpl.filters.afterLefthandSectionOpen`
+
+
+Source: [app/Domain/Tickets/Templates/showKanban.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showKanban.tpl.php), [line 45](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showKanban.tpl.php#L45-L45)
+
+### `Domain.Tickets.Templates.showKanban.tpl.filters.beforeLefthandSectionClose`
+
+
+Source: [app/Domain/Tickets/Templates/showKanban.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showKanban.tpl.php), [line 50](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showKanban.tpl.php#L50-L50)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.filters.afterFormOpen`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 34](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L34-L34)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.filters.afterLefthandSectionOpen`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L40-L40)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.filters.beforeLefthandSectionClose`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 41](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L41-L41)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.filters.afterCenterSectionOpen`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 47](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L47-L47)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.filters.beforeCenterSectionClose`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 48](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L48-L48)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.filters.afterRighthandSectionOpen`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 54](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L54-L54)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.filters.beforeRighthandSectionClose`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 67](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L67-L67)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.filters.beforeFormClose`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 74](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L74-L74)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.before`
 
 **Arguments**
 
@@ -538,19 +610,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 281](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L281-L281)
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 80](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L80-L80)
 
-### `domain.tickets.templates.showList.tpl.allTicketsTable.afterHead`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 284](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L284-L284)
-
-### `domain.tickets.templates.showList.tpl.allTicketsTable.beforeFirstRow`
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.beforeHead`
 
 **Arguments**
 
@@ -558,9 +620,49 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 286](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L286-L286)
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 99](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L99-L99)
 
-### `domain.tickets.templates.showList.tpl.allTicketsTable.afterRowStart`
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.beforeHeadRow`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 101](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L101-L101)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.afterHeadRow`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 120](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L120-L120)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.afterHead`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 122](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L122-L122)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.beforeFirstRow`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 124](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L124-L124)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.afterRowStart`
 
 **Arguments**
 
@@ -568,9 +670,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['rowNum' => $rowNum, 'tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 289](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L289-L289)
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 128](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L128-L128)
 
-### `domain.tickets.templates.showList.tpl.allTicketsTable.beforeRowEnd`
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.beforeRowEnd`
 
 **Arguments**
 
@@ -578,19 +680,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets, 'rowNum' => $rowNum]` |  | 
 
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 327](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L327-L327)
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 260](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L260-L260)
 
-### `domain.tickets.templates.showList.tpl.allTicketsTable.afterLastRow`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 330](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L330-L330)
-
-### `domain.tickets.templates.showList.tpl.allTicketsTable.afterBody`
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.afterLastRow`
 
 **Arguments**
 
@@ -598,99 +690,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 332](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L332-L332)
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 263](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L263-L263)
 
-### `domain.tickets.templates.showList.tpl.allTicketsTable.afterClose`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 350](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L350-L350)
-
-### `domain.tickets.templates.showList.tpl.scripts.afterOpen`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 357](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L357-L357)
-
-### `domain.tickets.templates.showList.tpl.scripts.beforeClose`
-
-
-Source: [app/domain/tickets/templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php), [line 379](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showList.tpl.php#L379-L379)
-
-### `domain.tickets.templates.showAll.tpl.beforePageHeaderOpen`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 24](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L24-L24)
-
-### `domain.tickets.templates.showAll.tpl.afterPageHeaderOpen`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 26](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L26-L26)
-
-### `domain.tickets.templates.showAll.tpl.beforePageHeaderClose`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L32-L32)
-
-### `domain.tickets.templates.showAll.tpl.afterPageHeaderClose`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 34](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L34-L34)
-
-### `domain.tickets.templates.showAll.tpl.filters.afterFormOpen`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 43](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L43-L43)
-
-### `domain.tickets.templates.showAll.tpl.filters.afterLefthandSectionOpen`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 49](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L49-L49)
-
-### `domain.tickets.templates.showAll.tpl.filters.beforeLefthandSectionClose`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 67](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L67-L67)
-
-### `domain.tickets.templates.showAll.tpl.filters.afterCenterSectionOpen`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 73](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L73-L73)
-
-### `domain.tickets.templates.showAll.tpl.filters.beforeCenterSectionClose`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 112](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L112-L112)
-
-### `domain.tickets.templates.showAll.tpl.filters.afterRighthandSectionOpen`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 117](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L117-L117)
-
-### `domain.tickets.templates.showAll.tpl.filters.beforeRighthandSectionClose`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 166](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L166-L166)
-
-### `domain.tickets.templates.showAll.tpl.filters.beforeBar`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 175](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L175-L175)
-
-### `domain.tickets.templates.showAll.tpl.filters.beforeFirstBarField`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 181](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L181-L181)
-
-### `domain.tickets.templates.showAll.tpl.filters.beforeFormClose`
-
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 291](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L291-L291)
-
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.before`
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.afterBody`
 
 **Arguments**
 
@@ -698,19 +700,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 295](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L295-L295)
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 265](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L265-L265)
 
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.beforeHead`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 313](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L313-L313)
-
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.beforeHeadRow`
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.allTicketsTable.afterClose`
 
 **Arguments**
 
@@ -718,9 +710,94 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 315](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L315-L315)
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 267](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L267-L267)
 
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.afterHeadRow`
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.scripts.afterOpen`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 274](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L274-L274)
+
+### `Domain.Tickets.Templates.showAllMilestonesOverview.tpl.scripts.beforeClose`
+
+
+Source: [app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php), [line 295](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAllMilestonesOverview.tpl.php#L295-L295)
+
+### `Domain.Tickets.Templates.Submodules.ticketFilter.sub.filters.beforeFirstBarField`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php), [line 56](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php#L56-L56)
+
+### `Domain.Tickets.Templates.Submodules.ticketFilter.sub.filters.beforeBar`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php), [line 165](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php#L165-L165)
+
+### `Domain.Tickets.Templates.Submodules.ticketFilter.sub.filters.beforeFormClose`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php), [line 169](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketFilter.sub.php#L169-L169)
+
+### `Domain.Tickets.Templates.Submodules.portfolioHeader.sub.beforePageHeaderOpen`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php#L11-L11)
+
+### `Domain.Tickets.Templates.Submodules.portfolioHeader.sub.afterPageHeaderOpen`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php#L13-L13)
+
+### `Domain.Tickets.Templates.Submodules.portfolioHeader.sub.beforePageHeaderClose`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php), [line 49](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php#L49-L49)
+
+### `Domain.Tickets.Templates.Submodules.portfolioHeader.sub.afterPageHeaderClose`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php), [line 51](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/portfolioHeader.sub.php#L51-L51)
+
+### `Domain.Tickets.Templates.Submodules.ticketHeader.sub.beforePageHeaderOpen`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php), [line 36](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php#L36-L36)
+
+### `Domain.Tickets.Templates.Submodules.ticketHeader.sub.afterPageHeaderOpen`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php), [line 38](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php#L38-L38)
+
+### `Domain.Tickets.Templates.Submodules.ticketHeader.sub.beforePageHeaderClose`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php), [line 98](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php#L98-L98)
+
+### `Domain.Tickets.Templates.Submodules.ticketHeader.sub.afterPageHeaderClose`
+
+
+Source: [app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php), [line 100](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/Submodules/ticketHeader.sub.php#L100-L100)
+
+### `Domain.Tickets.Templates.roadmap.tpl.filters.afterLefthandSectionOpen`
+
+
+Source: [app/Domain/Tickets/Templates/roadmap.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/roadmap.tpl.php), [line 27](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/roadmap.tpl.php#L27-L27)
+
+### `Domain.Tickets.Templates.roadmap.tpl.filters.beforeLefthandSectionClose`
+
+
+Source: [app/Domain/Tickets/Templates/roadmap.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/roadmap.tpl.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/roadmap.tpl.php#L32-L32)
+
+### `Domain.Tickets.Templates.showList.tpl.filters.afterLefthandSectionOpen`
+
+
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 38](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L38-L38)
+
+### `Domain.Tickets.Templates.showList.tpl.filters.beforeLefthandSectionClose`
+
+
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 43](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L43-L43)
+
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.before`
 
 **Arguments**
 
@@ -728,19 +805,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 331](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L331-L331)
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 57](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L57-L57)
 
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.afterHead`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 333](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L333-L333)
-
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.beforeFirstRow`
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.beforeHead`
 
 **Arguments**
 
@@ -748,9 +815,49 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 335](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L335-L335)
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 85](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L85-L85)
 
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.afterRowStart`
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.beforeHeadRow`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 87](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L87-L87)
+
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.afterHeadRow`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 94](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L94-L94)
+
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.afterHead`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 97](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L97-L97)
+
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.beforeFirstRow`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
+
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 99](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L99-L99)
+
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.afterRowStart`
 
 **Arguments**
 
@@ -758,9 +865,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['rowNum' => $rowNum, 'tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 338](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L338-L338)
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 102](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L102-L102)
 
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.beforeRowEnd`
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.beforeRowEnd`
 
 **Arguments**
 
@@ -768,19 +875,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets, 'rowNum' => $rowNum]` |  | 
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 569](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L569-L569)
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 121](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L121-L121)
 
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.afterLastRow`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['tickets' => $allTickets]` |  | 
-
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 572](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L572-L572)
-
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.afterBody`
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.afterLastRow`
 
 **Arguments**
 
@@ -788,9 +885,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 574](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L574-L574)
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 124](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L124-L124)
 
-### `domain.tickets.templates.showAll.tpl.allTicketsTable.afterClose`
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.afterBody`
 
 **Arguments**
 
@@ -798,179 +895,279 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 576](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L576-L576)
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 126](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L126-L126)
 
-### `domain.tickets.templates.showAll.tpl.scripts.afterOpen`
+### `Domain.Tickets.Templates.showList.tpl.allTicketsTable.afterClose`
 
+**Arguments**
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 583](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L583-L583)
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
-### `domain.tickets.templates.showAll.tpl.scripts.beforeClose`
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 150](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L150-L150)
 
+### `Domain.Tickets.Templates.showList.tpl.scripts.afterOpen`
 
-Source: [app/domain/tickets/templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php), [line 610](https://github.com/Leantime/leantime/blob/master/app/domain/tickets/templates/showAll.tpl.php#L610-L610)
 
-### `domain.calendar.templates.delEvent.tpl.beforePageHeaderOpen`
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 157](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L157-L157)
 
+### `Domain.Tickets.Templates.showList.tpl.scripts.beforeClose`
 
-Source: [app/domain/calendar/templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php#L5-L5)
 
-### `domain.calendar.templates.delEvent.tpl.afterPageHeaderOpen`
+Source: [app/Domain/Tickets/Templates/showList.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php), [line 170](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showList.tpl.php#L170-L170)
 
+### `Domain.Tickets.Templates.calendar.tpl.filters.afterLefthandSectionOpen`
 
-Source: [app/domain/calendar/templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php), [line 7](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php#L7-L7)
 
-### `domain.calendar.templates.delEvent.tpl.beforePageHeaderClose`
+Source: [app/Domain/Tickets/Templates/calendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/calendar.tpl.php), [line 25](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/calendar.tpl.php#L25-L25)
 
+### `Domain.Tickets.Templates.calendar.tpl.filters.beforeLefthandSectionClose`
 
-Source: [app/domain/calendar/templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php#L13-L13)
 
-### `domain.calendar.templates.delEvent.tpl.afterPageHeaderClose`
+Source: [app/Domain/Tickets/Templates/calendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/calendar.tpl.php), [line 30](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/calendar.tpl.php#L30-L30)
 
+### `Domain.Tickets.Templates.showAll.tpl.filters.afterLefthandSectionOpen`
 
-Source: [app/domain/calendar/templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php#L15-L15)
 
-### `domain.calendar.templates.delEvent.tpl.afterFormOpen`
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L44-L44)
 
+### `Domain.Tickets.Templates.showAll.tpl.filters.beforeLefthandSectionClose`
 
-Source: [app/domain/calendar/templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php), [line 23](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php#L23-L23)
 
-### `domain.calendar.templates.delEvent.tpl.beforeSubmitButton`
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 49](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L49-L49)
 
+### `Domain.Tickets.Templates.showAll.tpl.filters.afterRighthandSectionOpen`
 
-Source: [app/domain/calendar/templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php), [line 25](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php#L25-L25)
 
-### `domain.calendar.templates.delEvent.tpl.beforeFormClose`
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 59](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L59-L59)
 
+### `Domain.Tickets.Templates.showAll.tpl.filters.beforeRighthandSectionClose`
 
-Source: [app/domain/calendar/templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php), [line 28](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/delEvent.tpl.php#L28-L28)
 
-### `domain.calendar.templates.addEvent.tpl.beforePageHeaderOpen`
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 63](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L63-L63)
 
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.before`
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 6](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L6-L6)
+**Arguments**
 
-### `domain.calendar.templates.addEvent.tpl.afterPageHeaderOpen`
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTicketGroups]` |  | 
 
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 91](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L91-L91)
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L8-L8)
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.beforeHead`
 
-### `domain.calendar.templates.addEvent.tpl.beforePageHeaderClose`
+**Arguments**
 
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L14-L14)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 109](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L109-L109)
 
-### `domain.calendar.templates.addEvent.tpl.afterPageHeaderClose`
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.beforeHeadRow`
 
+**Arguments**
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L16-L16)
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
-### `domain.calendar.templates.addEvent.tpl.afterFormOpen`
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 111](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L111-L111)
 
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterHeadRow`
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 28](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L28-L28)
+**Arguments**
 
-### `domain.calendar.templates.addEvent.tpl.beforeSubmitButton`
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 128](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L128-L128)
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 61](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L61-L61)
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterHead`
 
-### `domain.calendar.templates.addEvent.tpl.beforeFormClose`
+**Arguments**
 
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 67](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L67-L67)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 130](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L130-L130)
 
-### `domain.calendar.templates.addEvent.tpl.scripts.afterOpen`
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.beforeFirstRow`
 
+**Arguments**
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 79](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L79-L79)
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
-### `domain.calendar.templates.addEvent.tpl.scripts.beforeClose`
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 132](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L132-L132)
 
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterRowStart`
 
-Source: [app/domain/calendar/templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php), [line 85](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/addEvent.tpl.php#L85-L85)
+**Arguments**
 
-### `domain.calendar.templates.editEvent.tpl.beforePageHeaderOpen`
+Argument | Type | Description
+-------- | ---- | -----------
+`['rowNum' => $rowNum, 'tickets' => $allTickets]` |  | 
 
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 135](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L135-L135)
 
-Source: [app/domain/calendar/templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php), [line 6](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php#L6-L6)
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.beforeRowEnd`
 
-### `domain.calendar.templates.editEvent.tpl.afterPageHeaderOpen`
+**Arguments**
 
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets, 'rowNum' => $rowNum]` |  | 
 
-Source: [app/domain/calendar/templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php#L8-L8)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 369](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L369-L369)
 
-### `domain.calendar.templates.editEvent.tpl.beforePageHeaderClose`
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterLastRow`
 
+**Arguments**
 
-Source: [app/domain/calendar/templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php#L14-L14)
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
-### `domain.calendar.templates.editEvent.tpl.afterPageHeaderClose`
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 372](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L372-L372)
 
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterBody`
 
-Source: [app/domain/calendar/templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php#L16-L16)
+**Arguments**
 
-### `domain.calendar.templates.editEvent.tpl.afterFormOpen`
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 374](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L374-L374)
 
-Source: [app/domain/calendar/templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php), [line 28](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php#L28-L28)
+### `Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterClose`
 
-### `domain.calendar.templates.editEvent.tpl.beforeSubmitButton`
+**Arguments**
 
+Argument | Type | Description
+-------- | ---- | -----------
+`['tickets' => $allTickets]` |  | 
 
-Source: [app/domain/calendar/templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php), [line 60](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php#L60-L60)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 380](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L380-L380)
 
-### `domain.calendar.templates.editEvent.tpl.beforeFormClose`
+### `Domain.Tickets.Templates.showAll.tpl.scripts.afterOpen`
 
 
-Source: [app/domain/calendar/templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php), [line 69](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/editEvent.tpl.php#L69-L69)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 396](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L396-L396)
 
-### `domain.calendar.templates.export.tpl.afterFormOpen`
+### `Domain.Tickets.Templates.showAll.tpl.scripts.beforeClose`
 
 
-Source: [app/domain/calendar/templates/export.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/export.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/export.tpl.php#L16-L16)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 415](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L415-L415)
 
-### `domain.calendar.templates.export.tpl.beforeSubmitButton`
+### `Domain.Calendar.Templates.delEvent.tpl.afterFormOpen`
 
 
-Source: [app/domain/calendar/templates/export.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/export.tpl.php), [line 35](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/export.tpl.php#L35-L35)
+Source: [app/Domain/Calendar/Templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/delEvent.tpl.php), [line 12](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/delEvent.tpl.php#L12-L12)
 
-### `domain.calendar.templates.export.tpl.beforeFormClose`
+### `Domain.Calendar.Templates.delEvent.tpl.beforeSubmitButton`
 
 
-Source: [app/domain/calendar/templates/export.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/export.tpl.php), [line 47](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/export.tpl.php#L47-L47)
+Source: [app/Domain/Calendar/Templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/delEvent.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/delEvent.tpl.php#L14-L14)
 
-### `domain.calendar.templates.showMyCalendar.tpl.beforePageHeaderOpen`
+### `Domain.Calendar.Templates.delEvent.tpl.beforeFormClose`
 
 
-Source: [app/domain/calendar/templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php#L5-L5)
+Source: [app/Domain/Calendar/Templates/delEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/delEvent.tpl.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/delEvent.tpl.php#L17-L17)
 
-### `domain.calendar.templates.showMyCalendar.tpl.afterPageHeaderOpen`
+### `Domain.Calendar.Templates.addEvent.tpl.afterFormOpen`
 
 
-Source: [app/domain/calendar/templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php), [line 7](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php#L7-L7)
+Source: [app/Domain/Calendar/Templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php#L16-L16)
 
-### `domain.calendar.templates.showMyCalendar.tpl.beforePageHeaderClose`
+### `Domain.Calendar.Templates.addEvent.tpl.beforeSubmitButton`
 
 
-Source: [app/domain/calendar/templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php#L13-L13)
+Source: [app/Domain/Calendar/Templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php), [line 49](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php#L49-L49)
 
-### `domain.calendar.templates.showMyCalendar.tpl.afterPageHeaderClose`
+### `Domain.Calendar.Templates.addEvent.tpl.beforeFormClose`
 
 
-Source: [app/domain/calendar/templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php#L15-L15)
+Source: [app/Domain/Calendar/Templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php), [line 56](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php#L56-L56)
 
-### `domain.calendar.templates.showMyCalendar.tpl.scripts.afterOpen`
+### `Domain.Calendar.Templates.addEvent.tpl.scripts.afterOpen`
 
 
-Source: [app/domain/calendar/templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php#L37-L37)
+Source: [app/Domain/Calendar/Templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php), [line 62](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php#L62-L62)
 
-### `domain.calendar.templates.showMyCalendar.tpl.scripts.beforeClose`
+### `Domain.Calendar.Templates.addEvent.tpl.scripts.beforeClose`
 
 
-Source: [app/domain/calendar/templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php), [line 78](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showMyCalendar.tpl.php#L78-L78)
+Source: [app/Domain/Calendar/Templates/addEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php), [line 68](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/addEvent.tpl.php#L68-L68)
 
-### `domain.calendar.templates.ical.tpl.beforeOutput`
+### `Domain.Calendar.Templates.editEvent.tpl.afterFormOpen`
+
+
+Source: [app/Domain/Calendar/Templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/editEvent.tpl.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/editEvent.tpl.php#L15-L15)
+
+### `Domain.Calendar.Templates.editEvent.tpl.beforeSubmitButton`
+
+
+Source: [app/Domain/Calendar/Templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/editEvent.tpl.php), [line 47](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/editEvent.tpl.php#L47-L47)
+
+### `Domain.Calendar.Templates.editEvent.tpl.beforeFormClose`
+
+
+Source: [app/Domain/Calendar/Templates/editEvent.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/editEvent.tpl.php), [line 57](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/editEvent.tpl.php#L57-L57)
+
+### `Domain.Calendar.Templates.export.tpl.afterFormOpen`
+
+
+Source: [app/Domain/Calendar/Templates/export.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/export.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/export.tpl.php#L19-L19)
+
+### `Domain.Calendar.Templates.export.tpl.beforeSubmitButton`
+
+
+Source: [app/Domain/Calendar/Templates/export.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/export.tpl.php), [line 38](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/export.tpl.php#L38-L38)
+
+### `Domain.Calendar.Templates.export.tpl.beforeFormClose`
+
+
+Source: [app/Domain/Calendar/Templates/export.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/export.tpl.php), [line 50](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/export.tpl.php#L50-L50)
+
+### `Domain.Calendar.Templates.showMyCalendar.tpl.beforePageHeaderOpen`
+
+
+Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php#L11-L11)
+
+### `Domain.Calendar.Templates.showMyCalendar.tpl.afterPageHeaderOpen`
+
+
+Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php#L13-L13)
+
+### `Domain.Calendar.Templates.showMyCalendar.tpl.beforePageHeaderClose`
+
+
+Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php#L19-L19)
+
+### `Domain.Calendar.Templates.showMyCalendar.tpl.afterPageHeaderClose`
+
+
+Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php), [line 21](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php#L21-L21)
+
+### `Domain.Calendar.Templates.showMyCalendar.tpl.scripts.afterOpen`
+
+
+Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php), [line 63](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php#L63-L63)
+
+### `Domain.Calendar.Templates.showMyCalendar.tpl.scripts.beforeClose`
+
+
+Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php), [line 221](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php#L221-L221)
+
+### `Domain.Calendar.Templates.ical.tpl.beforeOutput`
 
 **Arguments**
 
@@ -979,20 +1176,9 @@ Argument | Type | Description
 `$calendars` |  | 
 `['eol' => $eol]` |  | 
 
-Source: [app/domain/calendar/templates/ical.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/ical.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/ical.tpl.php#L8-L8)
+Source: [app/Domain/Calendar/Templates/ical.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/ical.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/ical.tpl.php#L11-L11)
 
-### `domain.calendar.templates.ical.tpl.calendarOutputBeginning`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$calendar` |  | 
-`['url' => $url, 'eol' => $eol]` |  | 
-
-Source: [app/domain/calendar/templates/ical.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/ical.tpl.php), [line 24](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/ical.tpl.php#L24-L27)
-
-### `domain.calendar.templates.ical.tpl.calendarOutputEnd`
+### `Domain.Calendar.Templates.ical.tpl.calendarOutputBeginning`
 
 **Arguments**
 
@@ -1001,9 +1187,20 @@ Argument | Type | Description
 `$calendar` |  | 
 `['url' => $url, 'eol' => $eol]` |  | 
 
-Source: [app/domain/calendar/templates/ical.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/ical.tpl.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/ical.tpl.php#L40-L43)
+Source: [app/Domain/Calendar/Templates/ical.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/ical.tpl.php), [line 95](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/ical.tpl.php#L95-L98)
 
-### `domain.calendar.templates.ical.tpl.afterOutput`
+### `Domain.Calendar.Templates.ical.tpl.calendarOutputEnd`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$calendar` |  | 
+`['url' => $url, 'eol' => $eol]` |  | 
+
+Source: [app/Domain/Calendar/Templates/ical.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/ical.tpl.php), [line 110](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/ical.tpl.php#L110-L113)
+
+### `Domain.Calendar.Templates.ical.tpl.afterOutput`
 
 **Arguments**
 
@@ -1012,294 +1209,289 @@ Argument | Type | Description
 `$calendars` |  | 
 `['eol' => $eol]` |  | 
 
-Source: [app/domain/calendar/templates/ical.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/ical.tpl.php), [line 49](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/ical.tpl.php#L49-L49)
+Source: [app/Domain/Calendar/Templates/ical.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/ical.tpl.php), [line 118](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/ical.tpl.php#L118-L118)
 
-### `domain.calendar.templates.importGCal.tpl.beforePageHeaderOpen`
+### `Domain.Calendar.Templates.importGCal.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/calendar/templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php), [line 6](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php#L6-L6)
+Source: [app/Domain/Calendar/Templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php), [line 9](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php#L9-L9)
 
-### `domain.calendar.templates.importGCal.tpl.afterPageHeaderOpen`
+### `Domain.Calendar.Templates.importGCal.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/calendar/templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php#L8-L8)
+Source: [app/Domain/Calendar/Templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php#L11-L11)
 
-### `domain.calendar.templates.importGCal.tpl.beforePageHeaderClose`
+### `Domain.Calendar.Templates.importGCal.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/calendar/templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php), [line 18](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php#L18-L18)
+Source: [app/Domain/Calendar/Templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php), [line 21](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php#L21-L21)
 
-### `domain.calendar.templates.importGCal.tpl.afterPageHeaderClose`
+### `Domain.Calendar.Templates.importGCal.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/calendar/templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php), [line 20](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php#L20-L20)
+Source: [app/Domain/Calendar/Templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php), [line 23](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php#L23-L23)
 
-### `domain.calendar.templates.importGCal.tpl.afterFormOpen`
+### `Domain.Calendar.Templates.importGCal.tpl.afterFormOpen`
 
 
-Source: [app/domain/calendar/templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php#L29-L29)
+Source: [app/Domain/Calendar/Templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php#L32-L32)
 
-### `domain.calendar.templates.importGCal.tpl.beforeSubmitButton`
+### `Domain.Calendar.Templates.importGCal.tpl.beforeSubmitButton`
 
 
-Source: [app/domain/calendar/templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php), [line 96](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php#L96-L96)
+Source: [app/Domain/Calendar/Templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php), [line 99](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php#L99-L99)
 
-### `domain.calendar.templates.importGCal.tpl.beforeFormClose`
+### `Domain.Calendar.Templates.importGCal.tpl.beforeFormClose`
 
 
-Source: [app/domain/calendar/templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php), [line 107](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/importGCal.tpl.php#L107-L107)
+Source: [app/Domain/Calendar/Templates/importGCal.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php), [line 110](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/importGCal.tpl.php#L110-L110)
 
-### `domain.calendar.templates.showAllGCals.tpl.scripts.afterOpen`
+### `Domain.Calendar.Templates.showAllGCals.tpl.scripts.afterOpen`
 
 
-Source: [app/domain/calendar/templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php#L8-L8)
+Source: [app/Domain/Calendar/Templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php), [line 10](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php#L10-L10)
 
-### `domain.calendar.templates.showAllGCals.tpl.scripts.beforeClose`
+### `Domain.Calendar.Templates.showAllGCals.tpl.scripts.beforeClose`
 
 
-Source: [app/domain/calendar/templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php), [line 33](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php#L33-L33)
+Source: [app/Domain/Calendar/Templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php), [line 35](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php#L35-L35)
 
-### `domain.calendar.templates.showAllGCals.tpl.beforePageHeaderOpen`
+### `Domain.Calendar.Templates.showAllGCals.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/calendar/templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php), [line 38](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php#L38-L38)
+Source: [app/Domain/Calendar/Templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php#L40-L40)
 
-### `domain.calendar.templates.showAllGCals.tpl.afterPageHeaderOpen`
+### `Domain.Calendar.Templates.showAllGCals.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/calendar/templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php#L40-L40)
+Source: [app/Domain/Calendar/Templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php), [line 42](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php#L42-L42)
 
-### `domain.calendar.templates.showAllGCals.tpl.beforePageHeaderClose`
+### `Domain.Calendar.Templates.showAllGCals.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/calendar/templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php), [line 50](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php#L50-L50)
+Source: [app/Domain/Calendar/Templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php), [line 52](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php#L52-L52)
 
-### `domain.calendar.templates.showAllGCals.tpl.afterPageHeaderClose`
+### `Domain.Calendar.Templates.showAllGCals.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/calendar/templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php), [line 52](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php#L52-L52)
+Source: [app/Domain/Calendar/Templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php), [line 54](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php#L54-L54)
 
-### `domain.calendar.templates.showAllGCals.tpl.afterFormOpen`
+### `Domain.Calendar.Templates.showAllGCals.tpl.afterFormOpen`
 
 
-Source: [app/domain/calendar/templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php), [line 58](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php#L58-L58)
+Source: [app/Domain/Calendar/Templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php), [line 60](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php#L60-L60)
 
-### `domain.calendar.templates.showAllGCals.tpl.beforeFormClose`
+### `Domain.Calendar.Templates.showAllGCals.tpl.beforeFormClose`
 
 
-Source: [app/domain/calendar/templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php), [line 87](https://github.com/Leantime/leantime/blob/master/app/domain/calendar/templates/showAllGCals.tpl.php#L87-L87)
+Source: [app/Domain/Calendar/Templates/showAllGCals.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php), [line 89](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showAllGCals.tpl.php#L89-L89)
 
-### `domain.auth.templates.userInvite.tpl.beforePageHeaderOpen`
+### `Domain.Auth.Templates.userInvite.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L5-L5)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L8-L8)
 
-### `domain.auth.templates.userInvite.tpl.afterPageHeaderOpen`
+### `Domain.Auth.Templates.userInvite.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 7](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L7-L7)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 10](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L10-L10)
 
-### `domain.auth.templates.userInvite.tpl.beforePageHeaderClose`
+### `Domain.Auth.Templates.userInvite.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L11-L11)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L14-L14)
 
-### `domain.auth.templates.userInvite.tpl.afterPageHeaderClose`
+### `Domain.Auth.Templates.userInvite.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L13-L13)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L16-L16)
 
-### `domain.auth.templates.userInvite.tpl.afterRegcontentOpen`
+### `Domain.Auth.Templates.userInvite.tpl.afterRegcontentOpen`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L15-L15)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 18](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L18-L18)
 
-### `domain.auth.templates.userInvite.tpl.afterFormOpen`
+### `Domain.Auth.Templates.userInvite.tpl.afterFormOpen`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L17-L17)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 20](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L20-L20)
 
-### `domain.auth.templates.userInvite.tpl.beforeSubmitButton`
+### `Domain.Auth.Templates.userInvite.tpl.beforeSubmitButton`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 41](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L41-L41)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L44-L44)
 
-### `domain.auth.templates.userInvite.tpl.beforeFormClose`
+### `Domain.Auth.Templates.userInvite.tpl.beforeFormClose`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 45](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L45-L45)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 48](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L48-L48)
 
-### `domain.auth.templates.userInvite.tpl.beforeRegcontentClose`
+### `Domain.Auth.Templates.userInvite.tpl.beforeRegcontentClose`
 
 
-Source: [app/domain/auth/templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php), [line 47](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/userInvite.tpl.php#L47-L47)
+Source: [app/Domain/Auth/Templates/userInvite.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php), [line 50](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/userInvite.tpl.php#L50-L50)
 
-### `domain.auth.templates.requestPwLink.tpl.beforePageHeaderOpen`
+### `Domain.Auth.Templates.requestPwLink.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/auth/templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php), [line 1](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php#L1-L1)
+Source: [app/Domain/Auth/Templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php#L5-L5)
 
-### `domain.auth.templates.requestPwLink.tpl.afterPageHeaderClose`
+### `Domain.Auth.Templates.requestPwLink.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/auth/templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php), [line 7](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php#L7-L7)
+Source: [app/Domain/Auth/Templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php), [line 12](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php#L12-L12)
 
-### `domain.auth.templates.requestPwLink.tpl.afterRegcontentOpen`
+### `Domain.Auth.Templates.requestPwLink.tpl.afterRegcontentOpen`
 
 
-Source: [app/domain/auth/templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php), [line 9](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php#L9-L9)
+Source: [app/Domain/Auth/Templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php#L14-L14)
 
-### `domain.auth.templates.requestPwLink.tpl.afterFormOpen`
+### `Domain.Auth.Templates.requestPwLink.tpl.afterFormOpen`
 
 
-Source: [app/domain/auth/templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php#L11-L11)
+Source: [app/Domain/Auth/Templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php#L16-L16)
 
-### `domain.auth.templates.requestPwLink.tpl.beforeSubmitButton`
+### `Domain.Auth.Templates.requestPwLink.tpl.beforeSubmitButton`
 
 
-Source: [app/domain/auth/templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php), [line 21](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php#L21-L21)
+Source: [app/Domain/Auth/Templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php), [line 26](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php#L26-L26)
 
-### `domain.auth.templates.requestPwLink.tpl.beforeFormClose`
+### `Domain.Auth.Templates.requestPwLink.tpl.beforeFormClose`
 
 
-Source: [app/domain/auth/templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php), [line 24](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php#L24-L24)
+Source: [app/Domain/Auth/Templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php#L29-L29)
 
-### `domain.auth.templates.requestPwLink.tpl.beforeRegcontentClose`
+### `Domain.Auth.Templates.requestPwLink.tpl.beforeRegcontentClose`
 
 
-Source: [app/domain/auth/templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php), [line 26](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/requestPwLink.tpl.php#L26-L26)
+Source: [app/Domain/Auth/Templates/requestPwLink.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php), [line 31](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/requestPwLink.tpl.php#L31-L31)
 
-### `domain.auth.templates.resetPw.tpl.beforePageHeaderOpen`
+### `Domain.Auth.Templates.resetPw.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 1](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L1-L1)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L5-L5)
 
-### `domain.auth.templates.resetPw.tpl.afterPageHeaderOpen`
+### `Domain.Auth.Templates.resetPw.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 3](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L3-L3)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L8-L8)
 
-### `domain.auth.templates.resetPw.tpl.beforePageHeaderClose`
+### `Domain.Auth.Templates.resetPw.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 7](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L7-L7)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 12](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L12-L12)
 
-### `domain.auth.templates.resetPw.tpl.afterPageHeaderClose`
+### `Domain.Auth.Templates.resetPw.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 9](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L9-L9)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L14-L14)
 
-### `domain.auth.templates.resetPw.tpl.afterRegcontentOpen`
+### `Domain.Auth.Templates.resetPw.tpl.afterRegcontentOpen`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L11-L11)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L16-L16)
 
-### `domain.auth.templates.resetPw.tpl.afterFormOpen`
+### `Domain.Auth.Templates.resetPw.tpl.afterFormOpen`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L13-L13)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 18](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L18-L18)
 
-### `domain.auth.templates.resetPw.tpl.beforeSubmitButton`
+### `Domain.Auth.Templates.resetPw.tpl.beforeSubmitButton`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L29-L29)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 34](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L34-L34)
 
-### `domain.auth.templates.resetPw.tpl.beforeFormClose`
+### `Domain.Auth.Templates.resetPw.tpl.beforeFormClose`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 35](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L35-L35)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L40-L40)
 
-### `domain.auth.templates.resetPw.tpl.beforeRegcontentClose`
+### `Domain.Auth.Templates.resetPw.tpl.beforeRegcontentClose`
 
 
-Source: [app/domain/auth/templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/resetPw.tpl.php#L37-L37)
+Source: [app/Domain/Auth/Templates/resetPw.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php), [line 42](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/resetPw.tpl.php#L42-L42)
 
-### `domain.auth.templates.loginInfo.tpl.beforeUserinfoMenuOpen`
+### `Domain.Auth.Templates.loginInfo.tpl.beforeUserinfoMenuOpen`
 
 
-Source: [app/domain/auth/templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php), [line 3](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php#L3-L3)
+Source: [app/Domain/Auth/Templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php#L8-L8)
 
-### `domain.auth.templates.loginInfo.tpl.afterUserinfoMenuOpen`
+### `Domain.Auth.Templates.loginInfo.tpl.afterUserinfoMenuOpen`
 
 
-Source: [app/domain/auth/templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php#L5-L5)
+Source: [app/Domain/Auth/Templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php), [line 10](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php#L10-L10)
 
-### `domain.auth.templates.loginInfo.tpl.afterUserinfoDropdownMenuOpen`
+### `Domain.Auth.Templates.loginInfo.tpl.afterUserinfoDropdownMenuOpen`
 
 
-Source: [app/domain/auth/templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php#L11-L11)
+Source: [app/Domain/Auth/Templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php#L16-L16)
 
-### `domain.auth.templates.loginInfo.tpl.beforeUserinfoDropdownMenuClose`
+### `Domain.Auth.Templates.loginInfo.tpl.beforeUserinfoDropdownMenuClose`
 
 
-Source: [app/domain/auth/templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php), [line 45](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php#L45-L45)
+Source: [app/Domain/Auth/Templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php), [line 50](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php#L50-L50)
 
-### `domain.auth.templates.loginInfo.tpl.beforeUserinfoMenuClose`
+### `Domain.Auth.Templates.loginInfo.tpl.beforeUserinfoMenuClose`
 
 
-Source: [app/domain/auth/templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php), [line 47](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php#L47-L47)
+Source: [app/Domain/Auth/Templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php), [line 52](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php#L52-L52)
 
-### `domain.auth.templates.loginInfo.tpl.afterUserinfoMenuClose`
+### `Domain.Auth.Templates.loginInfo.tpl.afterUserinfoMenuClose`
 
 
-Source: [app/domain/auth/templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php), [line 49](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/loginInfo.tpl.php#L49-L49)
+Source: [app/Domain/Auth/Templates/loginInfo.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php), [line 54](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/loginInfo.tpl.php#L54-L54)
 
-### `domain.auth.templates.login.tpl.beforePageHeaderOpen`
+### `Domain.Auth.Templates.login.tpl.beforePageHeaderOpen`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L5-L5)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L8-L8)
 
-### `domain.auth.templates.login.tpl.afterPageHeaderOpen`
+### `Domain.Auth.Templates.login.tpl.afterPageHeaderOpen`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 7](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L7-L7)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 10](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L10-L10)
 
-### `domain.auth.templates.login.tpl.beforePageHeaderClose`
+### `Domain.Auth.Templates.login.tpl.beforePageHeaderClose`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L11-L11)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L14-L14)
 
-### `domain.auth.templates.login.tpl.afterPageHeaderClose`
+### `Domain.Auth.Templates.login.tpl.afterPageHeaderClose`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L13-L13)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L16-L16)
 
-### `domain.auth.templates.login.tpl.afterRegcontentOpen`
+### `Domain.Auth.Templates.login.tpl.afterRegcontentOpen`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L16-L16)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L19-L19)
 
-### `domain.auth.templates.login.tpl.afterFormOpen`
+### `Domain.Auth.Templates.login.tpl.afterFormOpen`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 18](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L18-L18)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 21](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L21-L21)
 
-### `domain.auth.templates.login.tpl.beforeSubmitButton`
+### `Domain.Auth.Templates.login.tpl.beforeSubmitButton`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L32-L32)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 35](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L35-L35)
 
-### `domain.auth.templates.login.tpl.beforeFormClose`
+### `Domain.Auth.Templates.login.tpl.beforeFormClose`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 38](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L38-L38)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 41](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L41-L41)
 
-### `domain.auth.templates.login.tpl.beforeRegcontentClose`
+### `Domain.Auth.Templates.login.tpl.beforeOidcButton`
 
 
-Source: [app/domain/auth/templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/domain/auth/templates/login.tpl.php#L40-L40)
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L44-L44)
 
-### `domain.auth.controllers.userInvite.post.userSignupSuccess`
+### `Domain.Auth.Templates.login.tpl.beforeRegcontentClose`
 
-**Arguments**
 
-Argument | Type | Description
--------- | ---- | -----------
-`['user' => $user]` |  | 
+Source: [app/Domain/Auth/Templates/login.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php), [line 51](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Templates/login.tpl.php#L51-L51)
 
-Source: [app/domain/auth/controllers/class.userInvite.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/controllers/class.userInvite.php), [line 93](https://github.com/Leantime/leantime/blob/master/app/domain/auth/controllers/class.userInvite.php#L93-L93)
-
-### `domain.auth.controllers.login.get.beforeAuth`
+### `Domain.Auth.Controllers.Login.get.beforeAuth`
 
 **Arguments**
 
@@ -1307,9 +1499,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$params` |  | 
 
-Source: [app/domain/auth/controllers/class.login.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/controllers/class.login.php), [line 46](https://github.com/Leantime/leantime/blob/master/app/domain/auth/controllers/class.login.php#L46-L46)
+Source: [app/Domain/Auth/Controllers/Login.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Controllers/Login.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Controllers/Login.php#L37-L37)
 
-### `domain.auth.controllers.login.post.beforeAuthServiceCall`
+### `Domain.Auth.Controllers.Login.post.beforeAuthServiceCall`
 
 **Arguments**
 
@@ -1317,9 +1509,29 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['post' => $_POST]` |  | 
 
-Source: [app/domain/auth/controllers/class.login.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/controllers/class.login.php), [line 78](https://github.com/Leantime/leantime/blob/master/app/domain/auth/controllers/class.login.php#L78-L78)
+Source: [app/Domain/Auth/Controllers/Login.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Controllers/Login.php), [line 75](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Controllers/Login.php#L75-L75)
 
-### `domain.auth.services.auth.login.beforeLoginCheck`
+### `Domain.Auth.Controllers.Login.post.afterAuthServiceCall`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['post' => $_POST]` |  | 
+
+Source: [app/Domain/Auth/Controllers/Login.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Controllers/Login.php), [line 83](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Controllers/Login.php#L83-L83)
+
+### `Domain.Auth.Controllers.UserInvite.post.userSignUpSuccess`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['user' => $user]` |  | 
+
+Source: [app/Domain/Auth/Controllers/UserInvite.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Controllers/UserInvite.php), [line 97](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Controllers/UserInvite.php#L97-L97)
+
+### `Domain.Auth.Services.Auth.login.beforeLoginCheck`
 
 **Arguments**
 
@@ -1327,29 +1539,89 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['username' => $username, 'password' => $password]` |  | 
 
-Source: [app/domain/auth/services/class.auth.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php), [line 197](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php#L197-L197)
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 202](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L202-L202)
 
-### `domain.auth.services.auth.login.afterLoginCheck`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['username' => $username, 'password' => $password, 'authService' => self::getInstance()]` |  | 
-
-Source: [app/domain/auth/services/class.auth.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php), [line 277](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php#L277-L277)
-
-### `domain.auth.services.auth.login.afterLoginCheck`
+### `Domain.Auth.Services.Auth.login.afterLoginCheck`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`['username' => $username, 'password' => $password, 'authService' => self::getInstance()]` |  | 
+`['username' => $username, 'password' => $password, 'authService' => app()->make(self::class)]` |  | 
 
-Source: [app/domain/auth/services/class.auth.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php), [line 282](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php#L282-L282)
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 288](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L288-L288)
 
-### `domain.projects.services.projects.notifyProjectUsers.notifyProjectUsers`
+### `Domain.Auth.Services.Auth.login.afterLoginCheck`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['username' => $username, 'password' => $password, 'authService' => app()->make(self::class)]` |  | 
+
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 291](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L291-L291)
+
+### `Domain.Auth.Services.Auth.logout.afterSessionDestroy`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['authService' => app()->make(self::class)]` |  | 
+
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 389](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L389-L389)
+
+### `Domain.Projects.Repositories.Projects.editProject.editProject`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`array("values" => $values)` |  | 
+
+Source: [app/Domain/Projects/Repositories/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php), [line 668](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php#L668-L668)
+
+### `Domain.Projects.Repositories.Projects.addProjectRelation.userAddedToProject`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`array("userId" => $userId, "projectId" => $projectId, "projectRole" => $projectRole)` |  | 
+
+Source: [app/Domain/Projects/Repositories/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php), [line 1030](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php#L1030-L1030)
+
+### `Domain.Projects.Templates.newProject.tpl.beforeClientPicker`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$project` |  | 
+
+Source: [app/Domain/Projects/Templates/newProject.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/newProject.tpl.php), [line 95](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/newProject.tpl.php#L95-L95)
+
+### `Domain.Projects.Templates.Submodules.projectDetails.sub.afterProjectAvatar`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$project` |  | 
+
+Source: [app/Domain/Projects/Templates/Submodules/projectDetails.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/Submodules/projectDetails.sub.php), [line 113](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/Submodules/projectDetails.sub.php#L113-L113)
+
+### `Domain.Projects.Templates.showProject.tpl.projectTabsList`
+
+
+Source: [app/Domain/Projects/Templates/showProject.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/showProject.tpl.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/showProject.tpl.php#L44-L44)
+
+### `Domain.Projects.Templates.showProject.tpl.projectTabsContent`
+
+
+Source: [app/Domain/Projects/Templates/showProject.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/showProject.tpl.php), [line 461](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/showProject.tpl.php#L461-L461)
+
+### `Domain.Projects.Services.Projects.notifyProjectUsers.notifyProjectUsers`
 
 **Arguments**
 
@@ -1358,273 +1630,194 @@ Argument | Type | Description
 `array("type" => "projectUpdate", "module" => $notification->module, "moduleId" => $entityId, "message" => $notification->message, "subject" => $notification->subject, "users" => $this->getAllUserInfoToNotify($notification->projectId), "url" => $notification->url['url'])` |  | 
 `"domain.services.projects"` |  | 
 
-Source: [app/domain/projects/services/class.projects.php](https://github.com/Leantime/leantime/blob/master/app/domain/projects/services/class.projects.php), [line 246](https://github.com/Leantime/leantime/blob/master/app/domain/projects/services/class.projects.php#L246-L246)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 282](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L282-L282)
 
-### `domain.projects.services.projects.changeCurrentSessionProject.projects.setCurrentProject`
+### `Domain.Projects.Services.Projects.changeCurrentSessionProject.projects.setCurrentProject`
 
+**Arguments**
 
-Source: [app/domain/projects/services/class.projects.php](https://github.com/Leantime/leantime/blob/master/app/domain/projects/services/class.projects.php), [line 403](https://github.com/Leantime/leantime/blob/master/app/domain/projects/services/class.projects.php#L403-L403)
+Argument | Type | Description
+-------- | ---- | -----------
+`$project` |  | 
 
-### `domain.dashboard.templates.home.tpl.beforePageHeaderOpen`
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 526](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L526-L526)
 
+### `Domain.Dashboard.Templates.home.tpl.beforePageHeaderOpen`
 
-Source: [app/domain/dashboard/templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php#L16-L16)
 
-### `domain.dashboard.templates.home.tpl.afterPageHeaderOpen`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L19-L19)
 
+### `Domain.Dashboard.Templates.home.tpl.afterPageHeaderOpen`
 
-Source: [app/domain/dashboard/templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php), [line 18](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php#L18-L18)
 
-### `domain.dashboard.templates.home.tpl.beforePageHeaderClose`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 21](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L21-L21)
 
+### `Domain.Dashboard.Templates.home.tpl.beforePageHeaderClose`
 
-Source: [app/domain/dashboard/templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php), [line 23](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php#L23-L23)
 
-### `domain.dashboard.templates.home.tpl.afterPageHeaderClose`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 26](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L26-L26)
 
+### `Domain.Dashboard.Templates.home.tpl.afterPageHeaderClose`
 
-Source: [app/domain/dashboard/templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php), [line 25](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php#L25-L25)
 
-### `domain.dashboard.templates.home.tpl.afterWelcomeMessage`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 28](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L28-L28)
 
+### `Domain.Dashboard.Templates.home.tpl.afterWelcomeMessage`
 
-Source: [app/domain/dashboard/templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php), [line 38](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php#L38-L38)
 
-### `domain.dashboard.templates.home.tpl.scripts.afterOpen`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 55](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L55-L55)
 
+### `Domain.Dashboard.Templates.home.tpl.afterWelcomeMessageBox`
 
-Source: [app/domain/dashboard/templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php), [line 371](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php#L371-L371)
 
-### `domain.dashboard.templates.home.tpl.scripts.beforeClose`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 59](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L59-L59)
 
+### `Domain.Dashboard.Templates.home.tpl.beforeCalendar`
 
-Source: [app/domain/dashboard/templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php), [line 450](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/home.tpl.php#L450-L450)
 
-### `domain.dashboard.templates.show.tpl.beforePageHeaderOpen`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 299](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L299-L299)
 
+### `Domain.Dashboard.Templates.home.tpl.scripts.afterOpen`
 
-Source: [app/domain/dashboard/templates/show.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php#L14-L14)
 
-### `domain.dashboard.templates.show.tpl.afterPageHeaderOpen`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 399](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L399-L399)
 
+### `Domain.Dashboard.Templates.home.tpl.scripts.beforeClose`
 
-Source: [app/domain/dashboard/templates/show.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php#L16-L16)
 
-### `domain.dashboard.templates.show.tpl.beforePageHeaderClose`
+Source: [app/Domain/Dashboard/Templates/home.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php), [line 634](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Templates/home.tpl.php#L634-L634)
 
+### `Domain.Pageparts.Templates.footer.tpl.beforeFooterOpen`
 
-Source: [app/domain/dashboard/templates/show.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php), [line 30](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php#L30-L30)
 
-### `domain.dashboard.templates.show.tpl.afterPageHeaderClose`
+Source: [app/Domain/Pageparts/Templates/footer.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/footer.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/footer.tpl.php#L8-L8)
 
+### `Domain.Pageparts.Templates.footer.tpl.afterFooterOpen`
 
-Source: [app/domain/dashboard/templates/show.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php#L32-L32)
 
-### `domain.dashboard.templates.show.tpl.scripts.afterOpen`
+Source: [app/Domain/Pageparts/Templates/footer.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/footer.tpl.php), [line 10](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/footer.tpl.php#L10-L10)
 
+### `Domain.Pageparts.Templates.footer.tpl.beforeFooterClose`
 
-Source: [app/domain/dashboard/templates/show.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php), [line 550](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php#L550-L550)
 
-### `domain.dashboard.templates.show.tpl.scripts.beforeClose`
+Source: [app/Domain/Pageparts/Templates/footer.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/footer.tpl.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/footer.tpl.php#L13-L13)
 
+### `Domain.Pageparts.Templates.footer.tpl.afterFooter`
 
-Source: [app/domain/dashboard/templates/show.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php), [line 633](https://github.com/Leantime/leantime/blob/master/app/domain/dashboard/templates/show.tpl.php#L633-L633)
 
-### `domain.pageparts.templates.footer.tpl.beforeFooterOpen`
+Source: [app/Domain/Pageparts/Templates/footer.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/footer.tpl.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/footer.tpl.php#L15-L15)
 
+### `Domain.Pageparts.Templates.pageBottom.tpl.beforeBodyClose`
 
-Source: [app/domain/pageparts/templates/footer.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/footer.tpl.php), [line 3](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/footer.tpl.php#L3-L3)
 
-### `domain.pageparts.templates.footer.tpl.afterFooterOpen`
+Source: [app/Domain/Pageparts/Templates/pageBottom.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/pageBottom.tpl.php), [line 34](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/pageBottom.tpl.php#L34-L34)
 
+### `Domain.Pageparts.Templates.header.tpl.afterMetaTags`
 
-Source: [app/domain/pageparts/templates/footer.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/footer.tpl.php), [line 5](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/footer.tpl.php#L5-L5)
 
-### `domain.pageparts.templates.footer.tpl.beforeFooterClose`
+Source: [app/Domain/Pageparts/Templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php), [line 24](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php#L24-L24)
 
+### `Domain.Pageparts.Templates.header.tpl.afterLinkTags`
 
-Source: [app/domain/pageparts/templates/footer.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/footer.tpl.php), [line 8](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/footer.tpl.php#L8-L8)
 
-### `domain.pageparts.templates.footer.tpl.afterFooterOpen`
+Source: [app/Domain/Pageparts/Templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php), [line 30](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php#L30-L30)
 
+### `Domain.Pageparts.Templates.header.tpl.afterScriptLibTags`
 
-Source: [app/domain/pageparts/templates/footer.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/footer.tpl.php), [line 10](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/footer.tpl.php#L10-L10)
 
-### `domain.pageparts.templates.pageBottom.tpl.beforeBodyClose`
+Source: [app/Domain/Pageparts/Templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php), [line 45](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php#L45-L45)
 
+### `Domain.Pageparts.Templates.header.tpl.afterMainScriptTag`
 
-Source: [app/domain/pageparts/templates/pageBottom.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/pageBottom.tpl.php), [line 11](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/pageBottom.tpl.php#L11-L11)
 
-### `domain.pageparts.templates.header.tpl.afterMetaTags`
+Source: [app/Domain/Pageparts/Templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php), [line 49](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php#L49-L49)
 
+### `Domain.Pageparts.Templates.header.tpl.afterThemeScripts`
 
-Source: [app/domain/pageparts/templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php), [line 20](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php#L20-L20)
 
-### `domain.pageparts.templates.header.tpl.afterLinkTags`
+Source: [app/Domain/Pageparts/Templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php), [line 60](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php#L60-L60)
 
+### `Domain.Pageparts.Templates.header.tpl.afterThemeColors`
 
-Source: [app/domain/pageparts/templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php), [line 26](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php#L26-L26)
 
-### `domain.pageparts.templates.header.tpl.afterScriptLibTags`
+Source: [app/Domain/Pageparts/Templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php), [line 75](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php#L75-L75)
 
+### `Domain.Pageparts.Templates.header.tpl.afterCustomizeTags`
 
-Source: [app/domain/pageparts/templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php), [line 33](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php#L33-L33)
 
-### `domain.pageparts.templates.header.tpl.afterMainScriptTag`
+Source: [app/Domain/Pageparts/Templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php), [line 87](https://github.com/Leantime/leantime/blob/master/app/Domain/Pageparts/Templates/header.tpl.php#L87-L87)
 
+### `Domain.Menu.Templates.Submodules.projectSelector.sub.beforeProjectSelectorList`
 
-Source: [app/domain/pageparts/templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php#L37-L37)
+**Arguments**
 
-### `domain.pageparts.templates.header.tpl.afterThemeScripts`
+Argument | Type | Description
+-------- | ---- | -----------
+`array("projectHierarchy" => $projectHierarchy, "colW" => $colW, "context" => $tpl)` |  | 
 
+Source: [app/Domain/Menu/Templates/Submodules/projectSelector.sub.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Templates/Submodules/projectSelector.sub.php), [line 55](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Templates/Submodules/projectSelector.sub.php#L55-L55)
 
-Source: [app/domain/pageparts/templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php), [line 47](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php#L47-L47)
+### `Domain.Setting.Templates.editCompanySettings.tpl.beforeTelemetrySettings`
 
-### `domain.pageparts.templates.header.tpl.afterThemeColors`
 
+Source: [app/Domain/Setting/Templates/editCompanySettings.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Setting/Templates/editCompanySettings.tpl.php), [line 75](https://github.com/Leantime/leantime/blob/master/app/Domain/Setting/Templates/editCompanySettings.tpl.php#L75-L75)
 
-Source: [app/domain/pageparts/templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php), [line 60](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php#L60-L60)
+### `Domain.Goalcanvas.Templates.canvasDialog.tpl.beforeMeasureGoalContainer`
 
-### `domain.pageparts.templates.header.tpl.afterCustomizeTags`
+**Arguments**
 
+Argument | Type | Description
+-------- | ---- | -----------
+`$canvasItem` |  | 
 
-Source: [app/domain/pageparts/templates/header.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php), [line 72](https://github.com/Leantime/leantime/blob/master/app/domain/pageparts/templates/header.tpl.php#L72-L72)
+Source: [app/Domain/Goalcanvas/Templates/canvasDialog.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Goalcanvas/Templates/canvasDialog.tpl.php), [line 81](https://github.com/Leantime/leantime/blob/master/app/Domain/Goalcanvas/Templates/canvasDialog.tpl.php#L81-L81)
 
-### `domain.menu.templates.menu.tpl.beforeMenu`
+### `Domain.Reports.Services.Reports.getAnonymousTelemetry.beforeTelemetrySend`
 
+**Arguments**
 
-Source: [app/domain/menu/templates/menu.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/menu.tpl.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/menu.tpl.php#L17-L17)
+Argument | Type | Description
+-------- | ---- | -----------
+`$companyId` |  | 
 
-### `domain.menu.templates.menu.tpl.afterMenuOpen`
-
-
-Source: [app/domain/menu/templates/menu.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/menu.tpl.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/menu.tpl.php#L19-L19)
-
-### `domain.menu.templates.menu.tpl.beforeMenuClose`
-
-
-Source: [app/domain/menu/templates/menu.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/menu.tpl.php), [line 124](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/menu.tpl.php#L124-L124)
-
-### `domain.menu.templates.menu.tpl.afterMenuClose`
-
-
-Source: [app/domain/menu/templates/menu.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/menu.tpl.php), [line 126](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/menu.tpl.php#L126-L126)
-
-### `domain.menu.templates.headMenu.tpl.beforeHeadMenu`
-
-
-Source: [app/domain/menu/templates/headMenu.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/headMenu.tpl.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/headMenu.tpl.php#L15-L15)
-
-### `domain.menu.templates.headMenu.tpl.afterHeadMenuOpen`
-
-
-Source: [app/domain/menu/templates/headMenu.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/headMenu.tpl.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/headMenu.tpl.php#L17-L17)
-
-### `domain.menu.templates.headMenu.tpl.beforeHeadMenuClose`
-
-
-Source: [app/domain/menu/templates/headMenu.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/headMenu.tpl.php), [line 237](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/headMenu.tpl.php#L237-L237)
-
-### `domain.menu.templates.headMenu.tpl.afterHeadMenu`
-
-
-Source: [app/domain/menu/templates/headMenu.tpl.php](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/headMenu.tpl.php), [line 239](https://github.com/Leantime/leantime/blob/master/app/domain/menu/templates/headMenu.tpl.php#L239-L239)
+Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 143](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L143-L143)
 
 ## Filters
 
-### `core.theme.getLayoutFilename.filepath`
+### `Core.Mailer.dispatchMailerHook.{$hook}`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$filename` |  | 
+`$payload` |  | 
+`$additional_params` |  | 
 
-Source: [app/core/class.theme.php](https://github.com/Leantime/leantime/blob/master/app/core/class.theme.php), [line 179](https://github.com/Leantime/leantime/blob/master/app/core/class.theme.php#L179-L179)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 254](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L254-L254)
 
-### `core.language.__construct.languages`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$parsedLangList` |  | 
-
-Source: [app/core/class.language.php](https://github.com/Leantime/leantime/blob/master/app/core/class.language.php), [line 88](https://github.com/Leantime/leantime/blob/master/app/core/class.language.php#L88-L88)
-
-### `core.language.readIni.language_resources`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$_SESSION['cache.language_resources_' . $this->language . '_' . $this->theme]` |  | 
-`['language' => $this->language, 'theme' => $this->theme]` |  | 
-
-Source: [app/core/class.language.php](https://github.com/Leantime/leantime/blob/master/app/core/class.language.php), [line 235](https://github.com/Leantime/leantime/blob/master/app/core/class.language.php#L235-L242)
-
-### `core.language.readIni.language_resources`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this->ini_array` |  | 
-`['language' => $this->language, 'theme' => $this->theme]` |  | 
-
-Source: [app/core/class.language.php](https://github.com/Leantime/leantime/blob/master/app/core/class.language.php), [line 326](https://github.com/Leantime/leantime/blob/master/app/core/class.language.php#L326-L333)
-
-### `core.application.start.publicActions`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this->publicActions` |  | 
-
-Source: [app/core/class.application.php](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php), [line 77](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php#L77-L77)
-
-### `core.application.loadHeaders.headers`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['X-Frame-Options' => 'SAMEORIGIN', 'X-XSS-Protection' => '1; mode=block', 'X-Content-Type-Options' => 'nosniff', 'Access-Control-Allow-Origin' => BASE_URL]` |  | 
-
-Source: [app/core/class.application.php](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php), [line 161](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php#L161-L166)
-
-### `core.application.cronExec.increment`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`300` |  | 
-
-Source: [app/core/class.application.php](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php), [line 202](https://github.com/Leantime/leantime/blob/master/app/core/class.application.php#L202-L202)
-
-### `core.mailer.sendMail.sendMailTo`
+### `Core.Mailer.sendMail.sendMailTo`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$to` |  | 
+`[]` |  | 
 
-Source: [app/core/class.mailer.php](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php), [line 230](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php#L230-L230)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 279](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L279-L279)
 
-### `core.mailer.sendMail.sendMailFrom`
+### `Core.Mailer.sendMail.sendMailFrom`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$from` |  | 
+`[]` |  | 
 
-Source: [app/core/class.mailer.php](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php), [line 231](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php#L231-L231)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 280](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L280-L280)
 
-### `core.mailer.sendMail.bodyTemplate`
+### `Core.Mailer.sendMail.bodyTemplate`
 
 **Arguments**
 
@@ -1633,195 +1826,40 @@ Argument | Type | Description
 `$bodyTemplate` |  | 
 `[['companyColor' => $this->companyColor, 'logoUrl' => $inlineLogoContent, 'languageHiText' => $this->language->__('email_notifications.hi'), 'emailContentsHtml' => nl2br($this->html), 'unsubLink' => sprintf($this->language->__('email_notifications.unsubscribe'), BASE_URL . '/users/editOwn/')]]` |  | 
 
-Source: [app/core/class.mailer.php](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php), [line 283](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php#L283-L295)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 339](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L339-L351)
 
-### `core.mailer.sendMail.altBody`
+### `Core.Mailer.sendMail.altBody`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$this->text` |  | 
+`[]` |  | 
 
-Source: [app/core/class.mailer.php](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php), [line 299](https://github.com/Leantime/leantime/blob/master/app/core/class.mailer.php#L299-L302)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 355](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L355-L359)
 
-### `core.template.assign.var.{$name}`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$value` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 107](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L107-L107)
-
-### `core.template.getTemplatePath.relative_plugin_template_path`
+### `Core.Theme.getLayoutFilename.filepath`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`''` |  | 
-`['module' => $module, 'name' => $name]` |  | 
+`$filename` |  | 
 
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 142](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L142-L145)
+Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 285](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L285-L285)
 
-### `core.template.display.template`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$template` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 207](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L207-L207)
-
-### `core.template.display.template.{$template}`
+### `Core.Frontcontroller.executeAction.plugin_routes`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$template` |  | 
+`[]` |  | 
 
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 208](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L208-L208)
+Source: [app/Core/Frontcontroller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Frontcontroller.php), [line 94](https://github.com/Leantime/leantime/blob/master/app/Core/Frontcontroller.php#L94-L94)
 
-### `core.template.display.layout`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$layout` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 215](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L215-L215)
-
-### `core.template.display.layout.{$template}`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$layout` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 216](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L216-L216)
-
-### `core.template.display.layoutContent`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$layoutContent` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 234](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L234-L234)
-
-### `core.template.display.layoutContent.{$template}`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$layoutContent` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 235](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L235-L235)
-
-### `core.template.display.content`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$content` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 257](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L257-L257)
-
-### `core.template.display.content.{$template}`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$content` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 258](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L258-L258)
-
-### `core.template.display.render`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$render` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 263](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L263-L263)
-
-### `core.template.display.render.{$template}`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$render` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 264](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L264-L264)
-
-### `core.template.displaySubmodule.submodule_relative_path`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`"{$submodule['module']}/templates/submodules/{$submodule['submodule']}.sub.php"` |  | 
-`['module' => $submodule['module'], 'submodule' => $submodule['submodule']]` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 358](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L358-L365)
-
-### `core.template.displayNotification.message`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$language->__($message_id, false)` |  | 
-`$note` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 386](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L386-L390)
-
-### `core.template.displayNotification.message_{$message_id}`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$message` |  | 
-`$note` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 391](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L391-L395)
-
-### `core.template.displayInlineNotification.message`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$language->__($message_id, false)` |  | 
-`$note` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 417](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L417-L421)
-
-### `core.template.displayInlineNotification.message_{$message_id}`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$message` |  | 
-`$note` |  | 
-
-Source: [app/core/class.template.php](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php), [line 422](https://github.com/Leantime/leantime/blob/master/app/core/class.template.php#L422-L426)
-
-### `core.fileupload.getPublicFilesPath.relative_path`
+### `Core.Fileupload.getPublicFilesPath.relative_path`
 
 **Arguments**
 
@@ -1829,9 +1867,223 @@ Argument | Type | Description
 -------- | ---- | -----------
 `"/../../public/userfiles"` |  | 
 
-Source: [app/core/class.fileupload.php](https://github.com/Leantime/leantime/blob/master/app/core/class.fileupload.php), [line 179](https://github.com/Leantime/leantime/blob/master/app/core/class.fileupload.php#L179-L179)
+Source: [app/Core/Fileupload.php](https://github.com/Leantime/leantime/blob/master/app/Core/Fileupload.php), [line 168](https://github.com/Leantime/leantime/blob/master/app/Core/Fileupload.php#L168-L168)
 
-### `domain.{$module}.repositories.{$repo}.{$method}.sql`
+### `Core.Language.__construct.languages`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$parsedLangList` |  | 
+
+Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 110](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L110-L110)
+
+### `Core.Language.readIni.language_resources`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$_SESSION['cache.language_resources_' . $this->language . '_' . $this->theme]` |  | 
+`['language' => $this->language, 'theme' => $this->theme]` |  | 
+
+Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 245](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L245-L252)
+
+### `Core.Language.readIni.language_resources`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this->ini_array` |  | 
+`['language' => $this->language, 'theme' => $this->theme]` |  | 
+
+Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 280](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L280-L287)
+
+### `Core.Eventhelpers.dispatch_filter.{$hook}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$payload` |  | 
+`$available_params` |  | 
+`static::get_event_context($function)` |  | 
+
+Source: [app/Core/Eventhelpers.php](https://github.com/Leantime/leantime/blob/master/app/Core/Eventhelpers.php), [line 39](https://github.com/Leantime/leantime/blob/master/app/Core/Eventhelpers.php#L39-L39)
+
+### `Core.Template.assign.var.{$name}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$value` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 340](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L340-L340)
+
+### `Core.Template.getTemplatePath.template_path__{$namespace}_{$path}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`"{$namespace}::{$path}"` |  | 
+`['namespace' => $namespace, 'path' => $path]` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 375](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L375-L382)
+
+### `Core.Template.display.template`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$template` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 416](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L416-L416)
+
+### `Core.Template.display.template.{$template}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$template` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 417](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L417-L417)
+
+### `Core.Template.display.content`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$content` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 448](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L448-L448)
+
+### `Core.Template.display.content.{$template}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$content` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 449](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L449-L449)
+
+### `Core.Template.confirmLayoutName.layout`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$layout` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 457](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L457-L457)
+
+### `Core.Template.confirmLayoutName.layout.{$template}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$layout` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 458](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L458-L458)
+
+### `Core.Template.displayNotification.message`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$language->__($message_id, false)` |  | 
+`$note` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 563](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L563-L567)
+
+### `Core.Template.displayNotification.message_{$message_id}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$message` |  | 
+`$note` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 568](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L568-L572)
+
+### `Core.Template.displayInlineNotification.message`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$language->__($message_id, false)` |  | 
+`$note` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 607](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L607-L611)
+
+### `Core.Template.displayInlineNotification.message_{$message_id}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$message` |  | 
+`$note` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 612](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L612-L616)
+
+### `Core.Template.dispatchTplHook.{$hookName}`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$payload` |  | 
+`$available_params` |  | 
+`$this->hookContext` |  | 
+
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 1027](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L1027-L1027)
+
+### `Core.Bootloader.getApplication.initialized`
+
+*Filter on container right after initial bindings.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this->app` |  | 
+`['bootloader' => $this]` |  | 
+
+Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 204](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L204-L210)
+
+### `Core.Bootloader.loadHeaders.headers`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['X-Frame-Options' => 'SAMEORIGIN', 'X-XSS-Protection' => '1; mode=block', 'X-Content-Type-Options' => 'nosniff', 'Access-Control-Allow-Origin' => BASE_URL]` |  | 
+
+Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 224](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L224-L229)
+
+### `Core.Bootloader.cronExec.increment`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`300` |  | 
+
+Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 430](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L430-L430)
+
+### `Core.Repository.prepare.sql`
 
 **Arguments**
 
@@ -1841,9 +2093,9 @@ Argument | Type | Description
 `$this->getArgs(['prepareArgs' => $args])` |  | 
 `4` |  | 
 
-Source: [app/core/class.repository.php](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php), [line 53](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php#L53-L58)
+Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 79](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L79-L84)
 
-### `domain.{$module}.repositories.{$repo}.{$method}.binding`
+### `Core.Repository.bindValue.binding.str_replace()`
 
 **Arguments**
 
@@ -1853,9 +2105,9 @@ Argument | Type | Description
 `$this->getArgs()` |  | 
 `4` |  | 
 
-Source: [app/core/class.repository.php](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php), [line 72](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php#L72-L77)
+Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 98](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L98-L103)
 
-### `domain.{$module}.repositories.{$repo}.{$method}.args`
+### `Core.Repository.getArgs.args`
 
 **Arguments**
 
@@ -1865,9 +2117,9 @@ Argument | Type | Description
 `[]` |  | 
 `5` |  | 
 
-Source: [app/core/class.repository.php](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php), [line 97](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php#L97-L97)
+Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 144](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L144-L144)
 
-### `domain.{$module}.repositories.{$repo}.{$method}.stmn`
+### `Core.Repository.__call.stmn`
 
 **Arguments**
 
@@ -1877,9 +2129,9 @@ Argument | Type | Description
 `$this->getArgs()` |  | 
 `4` |  | 
 
-Source: [app/core/class.repository.php](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php), [line 121](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php#L121-L121)
+Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 168](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L168-L168)
 
-### `domain.{$module}.repositories.{$repo}.{$method}.method`
+### `Core.Repository.__call.method`
 
 **Arguments**
 
@@ -1889,9 +2141,9 @@ Argument | Type | Description
 `$this->getArgs()` |  | 
 `4` |  | 
 
-Source: [app/core/class.repository.php](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php), [line 122](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php#L122-L122)
+Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 169](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L169-L169)
 
-### `domain.{$module}.repositories.{$repo}.{$method}.return`
+### `Core.Repository.__call.return`
 
 **Arguments**
 
@@ -1901,19 +2153,9 @@ Argument | Type | Description
 `$this->getArgs()` |  | 
 `4` |  | 
 
-Source: [app/core/class.repository.php](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php), [line 134](https://github.com/Leantime/leantime/blob/master/app/core/class.repository.php#L134-L134)
+Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 181](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L181-L181)
 
-### `domain.timesheets.repositories.timesheets.addTime.sql`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$query` |  | 
-
-Source: [app/domain/timesheets/repositories/class.timesheets.php](https://github.com/Leantime/leantime/blob/master/app/domain/timesheets/repositories/class.timesheets.php), [line 342](https://github.com/Leantime/leantime/blob/master/app/domain/timesheets/repositories/class.timesheets.php#L342-L342)
-
-### `domain.timesheets.repositories.timesheets.UpdateHours.sql`
+### `Domain.Timesheets.Repositories.Timesheets.addTime.sql`
 
 **Arguments**
 
@@ -1921,9 +2163,19 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$query` |  | 
 
-Source: [app/domain/timesheets/repositories/class.timesheets.php](https://github.com/Leantime/leantime/blob/master/app/domain/timesheets/repositories/class.timesheets.php), [line 503](https://github.com/Leantime/leantime/blob/master/app/domain/timesheets/repositories/class.timesheets.php#L503-L503)
+Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 349](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L349-L349)
 
-### `domain.auth.models.roles.getFilteredRoles.available_roles`
+### `Domain.Timesheets.Repositories.Timesheets.UpdateHours.sql`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$query` |  | 
+
+Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 510](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L510-L510)
+
+### `Domain.Auth.Models.Roles.getFilteredRoles.available_roles`
 
 **Arguments**
 
@@ -1931,19 +2183,19 @@ Argument | Type | Description
 -------- | ---- | -----------
 `self::$roleKeys` |  | 
 
-Source: [app/domain/auth/models/class.roles.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/models/class.roles.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/domain/auth/models/class.roles.php#L29-L29)
+Source: [app/Domain/Auth/Models/Roles.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Models/Roles.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Models/Roles.php#L29-L29)
 
-### `domain.auth.services.auth.setUserSession.user_session_vars`
+### `Domain.Auth.Services.Auth.setUserSession.user_session_vars`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`['role' => $this->role, 'id' => $this->userId, 'name' => $this->name, 'profileId' => $this->profileId, 'mail' => $this->mail, 'clientId' => $this->clientId, 'settings' => $this->settings, 'twoFAEnabled' => $this->twoFAEnabled, 'twoFAVerified' => false, 'twoFASecret' => $this->twoFASecret, 'isLdap' => $isLdap]` |  | 
+`['role' => $this->role, 'id' => $this->userId, 'name' => $this->name, 'profileId' => $this->profileId, 'mail' => $this->mail, 'clientId' => $this->clientId, 'settings' => $this->settings, 'twoFAEnabled' => $this->twoFAEnabled, 'twoFAVerified' => false, 'twoFASecret' => $this->twoFASecret, 'isLdap' => $isLdap, 'createdOn' => $user['createdOn'] ?? '']` |  | 
 
-Source: [app/domain/auth/services/class.auth.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php), [line 305](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php#L305-L317)
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 313](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L313-L326)
 
-### `domain.auth.services.auth.logout.sessions_vars_to_destroy`
+### `Domain.Auth.Services.Auth.logout.sessions_vars_to_destroy`
 
 **Arguments**
 
@@ -1951,7 +2203,142 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['userdata', 'template', 'subdomainData', 'currentProject', 'currentSprint', 'projectsettings', 'currentSubscriptions', 'lastTicketView', 'lastFilterdTicketTableView']` |  | 
 
-Source: [app/domain/auth/services/class.auth.php](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php), [line 354](https://github.com/Leantime/leantime/blob/master/app/domain/auth/services/class.auth.php#L354-L364)
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 373](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L373-L383)
+
+### `Domain.Plugins.Controllers.CssLoader.get.pluginCss`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$cssFiles` |  | 
+
+Source: [app/Domain/Plugins/Controllers/CssLoader.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Controllers/CssLoader.php), [line 27](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Controllers/CssLoader.php#L27-L27)
+
+### `Domain.Projects.Controllers.ChangeCurrentProject.get.defaultProjectUrl`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$defaultURL` |  | 
+
+Source: [app/Domain/Projects/Controllers/ChangeCurrentProject.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Controllers/ChangeCurrentProject.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Controllers/ChangeCurrentProject.php#L44-L44)
+
+### `Domain.Projects.Services.Projects.getProjectTypes.filterProjectType`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$types` |  | 
+
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 65](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L65-L65)
+
+### `Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.beforeLoadingProjects`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$projectHierarchy` |  | 
+
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 330](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L330-L330)
+
+### `Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.beforePopulatingProjectHierarchy`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$projectHierarchy` |  | 
+`array("projects" => $projects)` |  | 
+
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 335](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L335-L335)
+
+### `Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectHierarchy`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$projectHierarchy` |  | 
+`array("projects" => $projects)` |  | 
+
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 376](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L376-L376)
+
+### `Domain.Projects.Services.Projects.getProjectAvatar.afterGettingAvatar`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$avatar` |  | 
+`array("projectId" => $id)` |  | 
+
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 917](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L917-L917)
+
+### `Domain.Reactions.Models.Reactions.getReactions.available_reactions`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`self::$reactionTypes` |  | 
+
+Source: [app/Domain/Reactions/Models/Reactions.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reactions/Models/Reactions.php), [line 53](https://github.com/Leantime/leantime/blob/master/app/Domain/Reactions/Models/Reactions.php#L53-L53)
+
+### `Domain.Reactions.Models.Reactions.getReactionsByType.available_reactions`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`self::$reactionTypes` |  | 
+
+Source: [app/Domain/Reactions/Models/Reactions.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reactions/Models/Reactions.php), [line 58](https://github.com/Leantime/leantime/blob/master/app/Domain/Reactions/Models/Reactions.php#L58-L58)
+
+### `Domain.Wiki.Templates.templates.tpl.documentTemplates`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$templates` |  | 
+
+Source: [app/Domain/Wiki/Templates/templates.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Wiki/Templates/templates.tpl.php), [line 469](https://github.com/Leantime/leantime/blob/master/app/Domain/Wiki/Templates/templates.tpl.php#L469-L469)
+
+### `Domain.Dashboard.Controllers.Show.get.dashboardRedirect`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`"/dashboard/show"` |  | 
+`array("type" => $project["type"])` |  | 
+
+Source: [app/Domain/Dashboard/Controllers/Show.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Controllers/Show.php), [line 64](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Controllers/Show.php#L64-L64)
+
+### `Domain.Menu.Repositories.Menu.getMenuStructure.menuStructures`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this->menuStructures` |  | 
+`array("menuType" => $menuType)` |  | 
+
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 205](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L205-L205)
+
+### `Domain.Connector.Services.Providers.loadProviders.providerList`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`[]` |  | 
+
+Source: [app/Domain/Connector/Services/Providers.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Connector/Services/Providers.php), [line 25](https://github.com/Leantime/leantime/blob/master/app/Domain/Connector/Services/Providers.php#L25-L25)
 
 
 

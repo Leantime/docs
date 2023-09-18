@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\appSettings
+title: \Leantime\Core\AppSettings
 footer: false
 ---
 
-# appSettings
+# AppSettings
+
+appSettings class - System appSettings
 
 
 
-
-
-* Full name: `\leantime\core\appSettings`
+* Full name: `\Leantime\Core\AppSettings`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct
 
 ```php
-public appSettings::__construct(): mixed
+public AppSettings::__construct(\Leantime\Core\Environment $config): mixed
 ```
 
 
@@ -29,6 +29,12 @@ public appSettings::__construct(): mixed
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `config` | **\Leantime\Core\Environment** |  |
 
 
 **Return Value:**
@@ -43,7 +49,7 @@ public appSettings::__construct(): mixed
 loadSettings - load all appSettings and set ini
 
 ```php
-public appSettings::loadSettings(mixed $timezone, mixed $debug, mixed $logPath): mixed
+public AppSettings::loadSettings(\Leantime\Core\Environment $config = null): mixed
 ```
 
 
@@ -57,38 +63,7 @@ public appSettings::loadSettings(mixed $timezone, mixed $debug, mixed $logPath):
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `timezone` | **mixed** |  |
-| `debug` | **mixed** |  |
-| `logPath` | **mixed** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getRequestURI
-
-
-
-```php
-public appSettings::getRequestURI(mixed $baseURL = &quot;&quot;): mixed
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `baseURL` | **mixed** |  |
+| `config` | **\Leantime\Core\Environment** |  |
 
 
 **Return Value:**
@@ -101,4 +76,4 @@ public appSettings::getRequestURI(mixed $baseURL = &quot;&quot;): mixed
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

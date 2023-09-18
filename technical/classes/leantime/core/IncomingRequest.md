@@ -1,5 +1,5 @@
 ---
-title: \leantime\core\IncomingRequest
+title: \Leantime\Core\IncomingRequest
 footer: false
 ---
 
@@ -9,7 +9,8 @@ Incoming Request information
 
 
 
-* Full name: `\leantime\core\IncomingRequest`
+* Full name: `\Leantime\Core\IncomingRequest`
+* Parent class: [Request](../../../classes.md)
 
 
 
@@ -20,78 +21,7 @@ Incoming Request information
 
 
 ```php
-public IncomingRequest::__construct(): mixed
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### getBaseURL
-
-Gets the base fqdn including protocol
-Note: HTTP_HOST will return port number as well
-
-```php
-public IncomingRequest::getBaseURL(): string
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### getFullURL
-
-Gets the full URL including request uri and protocol
-
-```php
-public IncomingRequest::getFullURL(): string
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### getRequestURI
-
-Gets the request URI (path behind domain name)
-Will adjust for subfolder installations
-
-```php
-public IncomingRequest::getRequestURI(string $baseURL = &quot;&quot;): string
+public IncomingRequest::__construct(array $query = [], array $request = [], array $attributes = [], array $cookies = [], array $files = [], array $server = [], string|resource|null $content = null): mixed
 ```
 
 
@@ -105,7 +35,13 @@ public IncomingRequest::getRequestURI(string $baseURL = &quot;&quot;): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `baseURL` | **string** | Base Url in case of subfolder installations |
+| `query` | **array** | The GET parameters |
+| `request` | **array** | The POST parameters |
+| `attributes` | **array** | The request attributes (parameters parsed from the PATH_INFO, ...) |
+| `cookies` | **array** | The COOKIE parameters |
+| `files` | **array** | The FILES parameters |
+| `server` | **array** | The SERVER parameters |
+| `content` | **string|resource|null** | The raw body data |
 
 
 **Return Value:**
@@ -115,17 +51,70 @@ public IncomingRequest::getRequestURI(string $baseURL = &quot;&quot;): string
 
 
 ---
-### getRequestMethod
+### setRequestDest
 
-
+Sets the request destination from the path
 
 ```php
-public static IncomingRequest::getRequestMethod(): mixed
+protected IncomingRequest::setRequestDest(string $requestUri = null): void
 ```
 
 
 
-* This method is **static**.
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `requestUri` | **string** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getFullUrl
+
+Gets the full URL including request uri and protocol
+
+```php
+public IncomingRequest::getFullUrl(): string
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getRequestUri
+
+Gets the request URI (path behind domain name)
+Will adjust for subfolder installations
+
+```php
+public IncomingRequest::getRequestUri(): string
+```
+
+
+
+
 
 
 
@@ -140,15 +129,15 @@ public static IncomingRequest::getRequestMethod(): mixed
 ---
 ### getRequestParams
 
-
+Gets the request params
 
 ```php
-public static IncomingRequest::getRequestParams(mixed $method): mixed
+public IncomingRequest::getRequestParams(string $method = null): array
 ```
 
 
 
-* This method is **static**.
+
 
 
 
@@ -157,7 +146,7 @@ public static IncomingRequest::getRequestParams(mixed $method): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `method` | **mixed** |  |
+| `method` | **string** |  |
 
 
 **Return Value:**
@@ -167,99 +156,7 @@ public static IncomingRequest::getRequestParams(mixed $method): mixed
 
 
 ---
-### getAuthorizationHeader
-
-Get hearder Authorization
-
-```php
-public IncomingRequest::getAuthorizationHeader(): mixed
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
 
 
 ---
-### getAPIKey
-
-
-
-```php
-public IncomingRequest::getAPIKey(): mixed
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### hasAPIKey
-
-
-
-```php
-public IncomingRequest::hasAPIKey(): mixed
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### getBearerToken
-
-get access token from header
-
-```php
-public IncomingRequest::getBearerToken(): mixed
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-
-
----
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

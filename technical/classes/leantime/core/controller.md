@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\controller
+title: \Leantime\Core\Controller
 footer: false
 ---
 
-# controller
+# Controller
+
+Controller Class - Base class For all controllers
 
 
 
-
-
-* Full name: `\leantime\core\controller`
+* Full name: `\Leantime\Core\Controller`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 constructor - initialize private variables
 
 ```php
-public controller::__construct( $method,  $params): mixed
+public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\template $tpl, \Leantime\Core\language $language): self
 ```
 
 
@@ -34,8 +34,9 @@ public controller::__construct( $method,  $params): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `method` | **** | the method to be initialized |
-| `params` | **** | parameters or body of the request |
+| `incomingRequest` | **\Leantime\Core\IncomingRequest** | The request to be initialized. |
+| `tpl` | **\Leantime\Core\template** | The template to be initialized. |
+| `language` | **\Leantime\Core\language** | The language to be initialized. |
 
 
 **Return Value:**
@@ -50,7 +51,7 @@ public controller::__construct( $method,  $params): mixed
 Allows hooking into all controllers with events
 
 ```php
-private controller::executeActions(string $method, array|object $params): void
+private Controller::executeActions(string $method, array|object $params): void
 ```
 
 
@@ -75,52 +76,6 @@ private controller::executeActions(string $method, array|object $params): void
 
 
 ---
-### init
-
-Extended Controller version of __construct()
-
-```php
-protected controller::init(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### run
-
-Default function for all request types unless otherwise specified
-
-```php
-protected controller::run(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
 
 
 ## Inherited methods
@@ -130,7 +85,7 @@ protected controller::run(): void
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -161,7 +116,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -193,7 +148,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -219,11 +174,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -246,7 +201,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -273,4 +228,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

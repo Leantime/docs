@@ -1,15 +1,15 @@
 ---
-title: \leantime\core\session
+title: \Leantime\Core\Session
 footer: false
 ---
 
-# session
+# Session
+
+Session Class - login procedure
 
 
 
-
-
-* Full name: `\leantime\core\session`
+* Full name: `\Leantime\Core\Session`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - get and test Session or make session
 
 ```php
-private session::__construct(): mixed
+public Session::__construct(\Leantime\Core\environment $config): void
 ```
 
 
@@ -30,28 +30,11 @@ private session::__construct(): mixed
 
 
 
+**Parameters:**
 
-**Return Value:**
-
-
-
-
-
----
-### getInstance
-
-getInstance - Get instance of session
-
-```php
-public static session::getInstance(): object
-```
-
-
-
-* This method is **static**.
-
-
-
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `config` | **\Leantime\Core\environment** |  |
 
 
 **Return Value:**
@@ -66,7 +49,7 @@ public static session::getInstance(): object
 getSID - get the sessionId
 
 ```php
-public static session::getSID(): string
+public static Session::getSID(): string
 ```
 
 
@@ -89,7 +72,7 @@ public static session::getSID(): string
 makeSID - Generate SID with md5(), remote Address, time() and the password
 
 ```php
-private session::makeSID(): string
+private Session::makeSID(): void
 ```
 
 
@@ -109,10 +92,10 @@ private session::makeSID(): string
 ---
 ### destroySession
 
-
+destroySession - destroy the session
 
 ```php
-public static session::destroySession(): mixed
+public static Session::destroySession(): void
 ```
 
 
@@ -139,7 +122,7 @@ public static session::destroySession(): mixed
 dispatches an event with context
 
 ```php
-public static eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int $function = null): void
 ```
 
 
@@ -170,7 +153,7 @@ public static eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int $function = null): mixed
 ```
 
 
@@ -202,7 +185,7 @@ public static eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static eventhelpers::get_event_context(mixed $function): string
+private static Eventhelpers::get_event_context(mixed $function): string
 ```
 
 
@@ -228,11 +211,11 @@ private static eventhelpers::get_event_context(mixed $function): string
 ---
 ### set_class_context
 
-Gets the class context based on path, this uses the same method as the autoloader
+Gets the class Context based on path, this uses the same method as the autoloader
 Helps create unique strings for events/filters
 
 ```php
-private static eventhelpers::set_class_context(): string
+private static Eventhelpers::set_class_context(): string
 ```
 
 
@@ -255,7 +238,7 @@ private static eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static eventhelpers::get_function_context(mixed $functionInt = null): string
+private static Eventhelpers::get_function_context(mixed $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -282,4 +265,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)

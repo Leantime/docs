@@ -1,15 +1,15 @@
 ---
-title: \leantime\command\saveSettingCommand
+title: \Leantime\Command\SaveSettingCommand
 footer: false
 ---
 
-# saveSettingCommand
+# SaveSettingCommand
 
 
 
 
 
-* Full name: `\leantime\command\saveSettingCommand`
+* Full name: `\Leantime\Command\SaveSettingCommand`
 * Parent class: [Command](../../../classes.md)
 
 
@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-protected saveSettingCommand::configure(): mixed
+protected SaveSettingCommand::configure(): mixed
 ```
 
 
@@ -44,7 +44,7 @@ protected saveSettingCommand::configure(): mixed
 Execute the command
 
 ```php
-protected saveSettingCommand::execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output): int
+protected SaveSettingCommand::execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output): int
 ```
 
 
@@ -72,4 +72,4 @@ protected saveSettingCommand::execute(\Symfony\Component\Console\Input\InputInte
 
 
 ---
-> Automatically generated from source code comments on 2023-02-28 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)
