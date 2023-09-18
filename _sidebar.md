@@ -11,7 +11,7 @@
   - [Development/Local](installation/development.md)
   - [Hooks](technical/hooks.md)
   - [API](api/usage.md)
-  - [Methods](technical/README.md)
+  - [Project Code Documentation](technical/README.md)
   - [CLI](development/commandline.md)
  
 **Getting Started**
