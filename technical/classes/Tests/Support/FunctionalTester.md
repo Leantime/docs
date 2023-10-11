@@ -44,4 +44,4 @@ protected FunctionalTesterActions::getScenario(): \Codeception\Scenario
 
 
 ---
-> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-10-11 using [phpDocumentor](http://www.phpdoc.org/)
