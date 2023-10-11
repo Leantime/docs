@@ -18,7 +18,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 | Class | Description |
 |---    |---          |
 | [AddCSVImportProvider](technical/classes/AddCSVImportProvider.md) | MotivationalQuotes|
-| [DeleteComment](technical/classes/DeleteComment.md) | |
+| [DeleteComment](technical/classes/DeleteComment.md) | HtmxController Class - Base class For all htmx controllers|
 
 
 
@@ -44,6 +44,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 
 | Class | Description |
 |---    |---          |
+| [Config](technical/classes/Leantime/Config/Config.md) | |
 | [Config](technical/classes/Leantime/Config/Config.md) | |
 
 
@@ -76,7 +77,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 | [Language](technical/classes/Leantime/Core/Language.md) | Language class - Internationilsation with ini-Files|
 | [Mailer](technical/classes/Leantime/Core/Mailer.md) | Mail class - mails with php mail()|
 | [Plugins](technical/classes/Leantime/Core/Plugins.md) | Plugins class|
-| [Repository](technical/classes/Leantime/Core/Repository.md) | repository|
+| [Repository](technical/classes/Leantime/Core/Repository.md) | Repository|
 | [Session](technical/classes/Leantime/Core/Session.md) | Session Class - login procedure|
 | [Template](technical/classes/Leantime/Core/Template.md) | Template class - Template routing|
 | [Theme](technical/classes/Leantime/Core/Theme.md) | theme - Engine for handling themes|
@@ -107,40 +108,40 @@ This is an automatically generated documentation for **phpDocumentor**.
 | [ApiKey](technical/classes/Leantime/Domain/Api/Controllers/ApiKey.md) | Controller Class - Base class For all controllers|
 | [Calendar](technical/classes/Leantime/Domain/Api/Controllers/Calendar.md) | Controller Class - Base class For all controllers|
 | [Canvas](technical/classes/Leantime/Domain/Api/Controllers/Canvas.md) | Controller Class - Base class For all controllers|
-| [Cpcanvas](technical/classes/Leantime/Domain/Api/Controllers/Cpcanvas.md) | |
-| [Dbmcanvas](technical/classes/Leantime/Domain/Api/Controllers/Dbmcanvas.md) | |
+| [Cpcanvas](technical/classes/Leantime/Domain/Api/Controllers/Cpcanvas.md) | Controller Class - Base class For all controllers|
+| [Dbmcanvas](technical/classes/Leantime/Domain/Api/Controllers/Dbmcanvas.md) | Controller Class - Base class For all controllers|
 | [DelAPIKey](technical/classes/Leantime/Domain/Api/Controllers/DelAPIKey.md) | Controller Class - Base class For all controllers|
-| [Eacanvas](technical/classes/Leantime/Domain/Api/Controllers/Eacanvas.md) | |
-| [Emcanvas](technical/classes/Leantime/Domain/Api/Controllers/Emcanvas.md) | |
+| [Eacanvas](technical/classes/Leantime/Domain/Api/Controllers/Eacanvas.md) | Controller Class - Base class For all controllers|
+| [Emcanvas](technical/classes/Leantime/Domain/Api/Controllers/Emcanvas.md) | Controller Class - Base class For all controllers|
 | [Files](technical/classes/Leantime/Domain/Api/Controllers/Files.md) | Controller Class - Base class For all controllers|
-| [Goalcanvas](technical/classes/Leantime/Domain/Api/Controllers/Goalcanvas.md) | |
+| [Goalcanvas](technical/classes/Leantime/Domain/Api/Controllers/Goalcanvas.md) | Controller Class - Base class For all controllers|
 | [I18n](technical/classes/Leantime/Domain/Api/Controllers/I18n.md) | Controller Class - Base class For all controllers|
 | [Ideas](technical/classes/Leantime/Domain/Api/Controllers/Ideas.md) | Controller Class - Base class For all controllers|
 | [Ideation](technical/classes/Leantime/Domain/Api/Controllers/Ideation.md) | Controller Class - Base class For all controllers|
-| [Insightscanvas](technical/classes/Leantime/Domain/Api/Controllers/Insightscanvas.md) | |
+| [Insightscanvas](technical/classes/Leantime/Domain/Api/Controllers/Insightscanvas.md) | Controller Class - Base class For all controllers|
 | [Jsonrpc](technical/classes/Leantime/Domain/Api/Controllers/Jsonrpc.md) | Controller Class - Base class For all controllers|
-| [Lbmcanvas](technical/classes/Leantime/Domain/Api/Controllers/Lbmcanvas.md) | |
-| [Leancanvas](technical/classes/Leantime/Domain/Api/Controllers/Leancanvas.md) | |
-| [NEWcanvas](technical/classes/Leantime/Domain/Api/Controllers/NEWcanvas.md) | |
+| [Lbmcanvas](technical/classes/Leantime/Domain/Api/Controllers/Lbmcanvas.md) | Controller Class - Base class For all controllers|
+| [Leancanvas](technical/classes/Leantime/Domain/Api/Controllers/Leancanvas.md) | Controller Class - Base class For all controllers|
+| [NEWcanvas](technical/classes/Leantime/Domain/Api/Controllers/NEWcanvas.md) | Controller Class - Base class For all controllers|
 | [NewApiKey](technical/classes/Leantime/Domain/Api/Controllers/NewApiKey.md) | Controller Class - Base class For all controllers|
 | [Notifications](technical/classes/Leantime/Domain/Api/Controllers/Notifications.md) | Controller Class - Base class For all controllers|
-| [Obmcanvas](technical/classes/Leantime/Domain/Api/Controllers/Obmcanvas.md) | |
+| [Obmcanvas](technical/classes/Leantime/Domain/Api/Controllers/Obmcanvas.md) | Controller Class - Base class For all controllers|
 | [Projects](technical/classes/Leantime/Domain/Api/Controllers/Projects.md) | Controller Class - Base class For all controllers|
 | [Reactions](technical/classes/Leantime/Domain/Api/Controllers/Reactions.md) | Controller Class - Base class For all controllers|
-| [Retroscanvas](technical/classes/Leantime/Domain/Api/Controllers/Retroscanvas.md) | |
-| [Riskscanvas](technical/classes/Leantime/Domain/Api/Controllers/Riskscanvas.md) | |
-| [Sbcanvas](technical/classes/Leantime/Domain/Api/Controllers/Sbcanvas.md) | |
+| [Retroscanvas](technical/classes/Leantime/Domain/Api/Controllers/Retroscanvas.md) | Controller Class - Base class For all controllers|
+| [Riskscanvas](technical/classes/Leantime/Domain/Api/Controllers/Riskscanvas.md) | Controller Class - Base class For all controllers|
+| [Sbcanvas](technical/classes/Leantime/Domain/Api/Controllers/Sbcanvas.md) | Controller Class - Base class For all controllers|
 | [Sessions](technical/classes/Leantime/Domain/Api/Controllers/Sessions.md) | Controller Class - Base class For all controllers|
 | [Setting](technical/classes/Leantime/Domain/Api/Controllers/Setting.md) | Controller Class - Base class For all controllers|
-| [Smcanvas](technical/classes/Leantime/Domain/Api/Controllers/Smcanvas.md) | |
-| [Sqcanvas](technical/classes/Leantime/Domain/Api/Controllers/Sqcanvas.md) | |
+| [Smcanvas](technical/classes/Leantime/Domain/Api/Controllers/Smcanvas.md) | Controller Class - Base class For all controllers|
+| [Sqcanvas](technical/classes/Leantime/Domain/Api/Controllers/Sqcanvas.md) | Controller Class - Base class For all controllers|
 | [Submenu](technical/classes/Leantime/Domain/Api/Controllers/Submenu.md) | Controller Class - Base class For all controllers|
-| [Swotcanvas](technical/classes/Leantime/Domain/Api/Controllers/Swotcanvas.md) | |
+| [Swotcanvas](technical/classes/Leantime/Domain/Api/Controllers/Swotcanvas.md) | Controller Class - Base class For all controllers|
 | [Tags](technical/classes/Leantime/Domain/Api/Controllers/Tags.md) | Controller Class - Base class For all controllers|
 | [Tickets](technical/classes/Leantime/Domain/Api/Controllers/Tickets.md) | Controller Class - Base class For all controllers|
 | [Timer](technical/classes/Leantime/Domain/Api/Controllers/Timer.md) | Controller Class - Base class For all controllers|
 | [Users](technical/classes/Leantime/Domain/Api/Controllers/Users.md) | Controller Class - Base class For all controllers|
-| [Valuecanvas](technical/classes/Leantime/Domain/Api/Controllers/Valuecanvas.md) | |
+| [Valuecanvas](technical/classes/Leantime/Domain/Api/Controllers/Valuecanvas.md) | Controller Class - Base class For all controllers|
 
 
 
@@ -186,7 +187,6 @@ This is an automatically generated documentation for **phpDocumentor**.
 |---    |---          |
 | [KeepAlive](technical/classes/Leantime/Domain/Auth/Controllers/KeepAlive.md) | Controller Class - Base class For all controllers|
 | [Login](technical/classes/Leantime/Domain/Auth/Controllers/Login.md) | Controller Class - Base class For all controllers|
-| [LoginInfo](technical/classes/Leantime/Domain/Auth/Controllers/LoginInfo.md) | Controller Class - Base class For all controllers|
 | [Logout](technical/classes/Leantime/Domain/Auth/Controllers/Logout.md) | Controller Class - Base class For all controllers|
 | [ResetPw](technical/classes/Leantime/Domain/Auth/Controllers/ResetPw.md) | Controller Class - Base class For all controllers|
 | [UserInvite](technical/classes/Leantime/Domain/Auth/Controllers/UserInvite.md) | Controller Class - Base class For all controllers|
@@ -253,7 +253,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 
 | Class | Description |
 |---    |---          |
-| [Calendar](technical/classes/Leantime/Domain/Calendar/Repositories/Calendar.md) | repository|
+| [Calendar](technical/classes/Leantime/Domain/Calendar/Repositories/Calendar.md) | Repository|
 
 
 
@@ -411,7 +411,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 
 | Class | Description |
 |---    |---          |
-| [Integrations](technical/classes/Leantime/Domain/Connector/Repositories/Integrations.md) | repository|
+| [Integrations](technical/classes/Leantime/Domain/Connector/Repositories/Integrations.md) | Repository|
 | [LeantimeEntities](technical/classes/Leantime/Domain/Connector/Repositories/LeantimeEntities.md) | |
 
 
@@ -721,6 +721,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 |---    |---          |
 | [FirstLogin](technical/classes/Leantime/Domain/Help/Controllers/FirstLogin.md) | Controller Class - Base class For all controllers|
 | [ShowOnboardingDialog](technical/classes/Leantime/Domain/Help/Controllers/ShowOnboardingDialog.md) | Controller Class - Base class For all controllers|
+| [Updates](technical/classes/Leantime/Domain/Help/Controllers/Updates.md) | Controller Class - Base class For all controllers|
 
 
 
@@ -892,6 +893,17 @@ This is an automatically generated documentation for **phpDocumentor**.
 
 
 
+### \Leantime\Domain\Menu\Hxcontrollers
+
+#### Classes
+
+| Class | Description |
+|---    |---          |
+| [ProjectSelector](technical/classes/Leantime/Domain/Menu/Hxcontrollers/ProjectSelector.md) | HtmxController Class - Base class For all htmx controllers|
+
+
+
+
 ### \Leantime\Domain\Menu\Repositories
 
 #### Classes
@@ -899,6 +911,17 @@ This is an automatically generated documentation for **phpDocumentor**.
 | Class | Description |
 |---    |---          |
 | [Menu](technical/classes/Leantime/Domain/Menu/Repositories/Menu.md) | |
+
+
+
+
+### \Leantime\Domain\Menu\Services
+
+#### Classes
+
+| Class | Description |
+|---    |---          |
+| [Menu](technical/classes/Leantime/Domain/Menu/Services/Menu.md) | |
 
 
 
@@ -1637,7 +1660,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 
 | Class | Description |
 |---    |---          |
-| [Timesheets](technical/classes/Leantime/Domain/Timesheets/Repositories/Timesheets.md) | repository|
+| [Timesheets](technical/classes/Leantime/Domain/Timesheets/Repositories/Timesheets.md) | Repository|
 
 
 
@@ -1874,7 +1897,6 @@ This is an automatically generated documentation for **phpDocumentor**.
 | [InstallCest](technical/classes/Tests/Acceptance/InstallCest.md) | |
 | [LoginCest](technical/classes/Tests/Acceptance/LoginCest.md) | |
 | [TicketsCest](technical/classes/Tests/Acceptance/TicketsCest.md) | |
-| [TwoHundredResponseCest](technical/classes/Tests/Acceptance/TwoHundredResponseCest.md) | |
 
 
 
@@ -1920,7 +1942,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 
 
 ---
-> Automatically generated from source code comments on 2023-09-18 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-10-11 using [phpDocumentor](http://www.phpdoc.org/)
 
 #### Hooks
 
