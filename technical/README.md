@@ -1081,7 +1081,21 @@ This is an automatically generated documentation for **phpDocumentor**.
 | Class | Description |
 |---    |---          |
 | [CssLoader](technical/classes/Leantime/Domain/Plugins/Controllers/CssLoader.md) | Controller Class - Base class For all controllers|
+| [Details](technical/classes/Leantime/Domain/Plugins/Controllers/Details.md) | Controller Class - Base class For all controllers|
+| [Marketplace](technical/classes/Leantime/Domain/Plugins/Controllers/Marketplace.md) | Controller Class - Base class For all controllers|
+| [Myapps](technical/classes/Leantime/Domain/Plugins/Controllers/Myapps.md) | Controller Class - Base class For all controllers|
 | [Show](technical/classes/Leantime/Domain/Plugins/Controllers/Show.md) | Controller Class - Base class For all controllers|
+
+
+
+
+### \Leantime\Domain\Plugins\Hxcontrollers
+
+#### Classes
+
+| Class | Description |
+|---    |---          |
+| [Marketplaceplugins](technical/classes/Leantime/Domain/Plugins/Hxcontrollers/Marketplaceplugins.md) | HtmxController Class - Base class For all htmx controllers|
 
 
 
@@ -1115,6 +1129,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 | Class | Description |
 |---    |---          |
 | [Plugins](technical/classes/Leantime/Domain/Plugins/Services/Plugins.md) | |
+| [Premium](technical/classes/Leantime/Domain/Plugins/Services/Premium.md) | |
 
 
 
@@ -1828,50 +1843,6 @@ This is an automatically generated documentation for **phpDocumentor**.
 
 
 
-### \Leantime\Plugins\MotivationalQuotes\Controllers
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [Settings](technical/classes/Leantime/Plugins/MotivationalQuotes/Controllers/Settings.md) | Settings Controller for Motivational Quotes Plugin|
-
-
-
-
-### \Leantime\Plugins\MotivationalQuotes\Models
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [Quote](technical/classes/Leantime/Plugins/MotivationalQuotes/Models/Quote.md) | quote model|
-
-
-
-
-### \Leantime\Plugins\MotivationalQuotes\Repositories
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [MotivationalQuotes](technical/classes/Leantime/Plugins/MotivationalQuotes/Repositories/MotivationalQuotes.md) | motivationalQuotes Repository|
-
-
-
-
-### \Leantime\Plugins\MotivationalQuotes\Services
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [MotivationalQuotes](technical/classes/Leantime/Plugins/MotivationalQuotes/Services/MotivationalQuotes.md) | motivational quotes service|
-
-
-
-
 ### \Leantime\Views\Composers
 
 #### Classes
@@ -1942,7 +1913,7 @@ This is an automatically generated documentation for **phpDocumentor**.
 
 
 ---
-> Automatically generated from source code comments on 2023-10-11 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
 
 #### Hooks
 

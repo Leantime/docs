@@ -727,6 +727,29 @@ public Install::update_sql_20122(): bool|array
 
 
 ---
+### update_sql_20401
+
+
+
+```php
+public Install::update_sql_20401(): bool|array
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
 
 
 ## Inherited methods
@@ -879,4 +902,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-11 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)

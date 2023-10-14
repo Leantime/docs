@@ -76,4 +76,4 @@ public Api::getAPIKeyUser( $apiKeyUser): mixed
 
 
 ---
-> Automatically generated from source code comments on 2023-10-11 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
