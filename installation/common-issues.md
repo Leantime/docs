@@ -24,7 +24,8 @@ If the styles are not applied and the system looks as if it came straight from t
 
 You are running Leantime using PHP7.X Leantime required PHP8 to run. 
 
-**HX, PATCH, PUT, DELETE methods return 404
+**HX, PATCH, PUT, DELETE methods return 404**
+
 More than likely your apache/iis if configured to only allow post and get http methods. We use the entire spectrum of http request methods. Please add
 ```
 <Limit GET POST PUT OPTIONS DELETE PATCH HEAD>
