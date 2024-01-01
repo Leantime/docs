@@ -197,6 +197,8 @@ You can connect Leantime to a OIDC provider of your choice. The reference implem
 
 For a basic Keycloak or Authentik connection, only the provider URL, client id and client secret are required.
 
+The callback url is:  `<<yourdomain>>/oidc/callback`
+
 To understand some of the more advanced options, take a look at the github example below.
 
 The following environment variables can be used:
@@ -210,8 +212,8 @@ LEAN_OIDC_ENABLE=true
 #LEAN_OIDC_PROVIDER_URL = https://auth.example.org/realms/<realm>/                 #Keycloak
 
 #Provider credentials
-LEAN_OIDC_CLIEND_ID=
-LEAN_OIDC_CLIEND_SECRET=
+LEAN_OIDC_CLIENT_ID=
+LEAN_OIDC_CLIENT_SECRET=
 
 # optional - these will be read from the well-known configuration if possible
 # adjusting these values should allow connecting to most OAuth2 providers
@@ -241,6 +243,14 @@ LEAN_OIDC_CLIEND_SECRET=
 #LEAN_OIDC_USERINFO_URL_OVERRIDE = https://api.github.com/user,https://api.github.com/user/emails
 #LEAN_OIDC_SCOPES = user:email
 #LEAN_OIDC_FIELD_EMAIL = 0.email
+
+# this is an example configuration for a Google Cloud login (Also for Workspace)
+#LEAN_OIDC_ENABLE = true
+#LEAN_OIDC_PROVIDER_URL = https://accounts.google.com/
+#LEAN_OIDC_CLIENT_ID =
+#LEAN_OIDC_CLIENT_SECRET =
+#LEAN_OIDC_JWKS_URL_OVERRIDE = https://www.googleapis.com/oauth2/v1/certs
+
 
 ```
 
