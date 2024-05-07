@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-public Menu::init(\Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Tickets\Services\Tickets $ticketService, \Leantime\Domain\Setting\Services\Setting $settingSvc, \Leantime\Domain\Menu\Repositories\Menu $menuRepo, \Leantime\Domain\Menu\Services\Menu $menuService, \Leantime\Core\IncomingRequest $request): void
+public Menu::init(\Leantime\Domain\Menu\Repositories\Menu $menuRepo, \Leantime\Domain\Menu\Services\Menu $menuService, \Leantime\Core\IncomingRequest $request): void
 ```
 
 
@@ -35,9 +35,6 @@ public Menu::init(\Leantime\Domain\Projects\Services\Projects $projectService, \
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectService` | **\Leantime\Domain\Projects\Services\Projects** |  |
-| `ticketService` | **\Leantime\Domain\Tickets\Services\Tickets** |  |
-| `settingSvc` | **\Leantime\Domain\Setting\Services\Setting** |  |
 | `menuRepo` | **\Leantime\Domain\Menu\Repositories\Menu** |  |
 | `menuService` | **\Leantime\Domain\Menu\Services\Menu** |  |
 | `request` | **\Leantime\Core\IncomingRequest** |  |
@@ -155,4 +152,4 @@ protected Composer::with(): array
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

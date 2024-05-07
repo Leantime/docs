@@ -49,7 +49,7 @@ public Plugins::__construct(\Leantime\Core\Db $db): mixed
 
 
 ```php
-public Plugins::getAllPlugins(true $enabledOnly = true): array|false
+public Plugins::getAllPlugins( $enabledOnly = true): array|false
 ```
 
 
@@ -63,7 +63,7 @@ public Plugins::getAllPlugins(true $enabledOnly = true): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `enabledOnly` | **true** |  |
+| `enabledOnly` | **** |  |
 
 
 **Return Value:**
@@ -78,7 +78,7 @@ public Plugins::getAllPlugins(true $enabledOnly = true): array|false
 
 
 ```php
-public Plugins::getPlugin(int $id): \Leantime\Domain\Plugins\Models\Plugins|false
+public Plugins::getPlugin(int $id): \Leantime\Domain\Plugins\Models\InstalledPlugin|false
 ```
 
 
@@ -107,7 +107,7 @@ public Plugins::getPlugin(int $id): \Leantime\Domain\Plugins\Models\Plugins|fals
 
 
 ```php
-public Plugins::addPlugin(\Leantime\Domain\Plugins\Models\Plugins $plugin): false|string
+public Plugins::addPlugin(\Leantime\Domain\Plugins\Models\InstalledPlugin $plugin): false|string
 ```
 
 
@@ -121,7 +121,7 @@ public Plugins::addPlugin(\Leantime\Domain\Plugins\Models\Plugins $plugin): fals
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `plugin` | **\Leantime\Domain\Plugins\Models\Plugins** |  |
+| `plugin` | **\Leantime\Domain\Plugins\Models\InstalledPlugin** |  |
 
 
 **Return Value:**
@@ -221,4 +221,4 @@ public Plugins::removePlugin(int $id): bool
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

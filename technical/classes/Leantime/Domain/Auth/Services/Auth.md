@@ -83,7 +83,7 @@ returns role as string or false on failure
 login - Validate POST-data with DB
 
 ```php
-public Auth::login( $username,  $password): bool
+public Auth::login(string $username, string $password): bool
 ```
 
 
@@ -97,8 +97,8 @@ public Auth::login( $username,  $password): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `username` | **** |  |
-| `password` | **** |  |
+| `username` | **string** |  |
+| `password` | **string** |  |
 
 
 **Return Value:**
@@ -113,7 +113,7 @@ public Auth::login( $username,  $password): bool
 
 
 ```php
-public Auth::setUserSession( $user, false $isLdap = false): false|void
+public Auth::setUserSession(mixed $user, bool $isLdap = false): false|void
 ```
 
 
@@ -127,8 +127,8 @@ public Auth::setUserSession( $user, false $isLdap = false): false|void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `user` | **** |  |
-| `isLdap` | **false** |  |
+| `user` | **mixed** |  |
+| `isLdap` | **bool** |  |
 
 
 **Return Value:**
@@ -143,7 +143,7 @@ public Auth::setUserSession( $user, false $isLdap = false): false|void
 
 
 ```php
-public Auth::updateUserSessionDB( $userId,  $sessionID): bool
+public Auth::updateUserSessionDB(int $userId, string $sessionID): bool
 ```
 
 
@@ -157,8 +157,8 @@ public Auth::updateUserSessionDB( $userId,  $sessionID): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `sessionID` | **** |  |
+| `userId` | **int** |  |
+| `sessionID` | **string** |  |
 
 
 **Return Value:**
@@ -168,12 +168,12 @@ public Auth::updateUserSessionDB( $userId,  $sessionID): bool
 
 
 ---
-### logged_in
+### loggedIn
 
 logged_in - Check if logged in and Update sessions
 
 ```php
-public Auth::logged_in(): bool
+public Auth::loggedIn(): bool
 ```
 
 
@@ -187,6 +187,29 @@ public Auth::logged_in(): bool
 **Return Value:**
 
 
+
+
+
+---
+### isLoggedIn
+
+Checks if a user is logged in.
+
+```php
+public static Auth::isLoggedIn(): bool
+```
+
+
+
+* This method is **static**.
+
+
+
+
+
+**Return Value:**
+
+Returns true if the user is logged in, false otherwise.
 
 
 
@@ -297,7 +320,7 @@ public Auth::getUserByInviteLink(string $hash): array|bool
 ---
 ### generateLinkAndSendEmail
 
-generateLinkAndSendEmail - generates an invite link (hash) and sends email to user
+generateLinkAndSendEmail - generates an invitation link (hash) and sends email to user
 
 ```php
 public Auth::generateLinkAndSendEmail(string $username): bool
@@ -329,7 +352,7 @@ returns true on success, false on failure
 
 
 ```php
-public Auth::changePw( $password,  $hash): bool
+public Auth::changePw(string $password, string $hash): bool
 ```
 
 
@@ -343,8 +366,8 @@ public Auth::changePw( $password,  $hash): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `password` | **** |  |
-| `hash` | **** |  |
+| `password` | **string** |  |
+| `hash` | **string** |  |
 
 
 **Return Value:**
@@ -359,7 +382,7 @@ public Auth::changePw( $password,  $hash): bool
 
 
 ```php
-public static Auth::userIsAtLeast(string $role, false $forceGlobalRoleCheck = false): bool
+public static Auth::userIsAtLeast(string $role, bool $forceGlobalRoleCheck = false): bool
 ```
 
 
@@ -374,7 +397,7 @@ public static Auth::userIsAtLeast(string $role, false $forceGlobalRoleCheck = fa
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `role` | **string** |  |
-| `forceGlobalRoleCheck` | **false** |  |
+| `forceGlobalRoleCheck` | **bool** |  |
 
 
 **Return Value:**
@@ -389,7 +412,7 @@ public static Auth::userIsAtLeast(string $role, false $forceGlobalRoleCheck = fa
 
 
 ```php
-public static Auth::authOrRedirect( $role, bool $forceGlobalRoleCheck = false): bool
+public static Auth::authOrRedirect(array|string $role, bool $forceGlobalRoleCheck = false): bool
 ```
 
 
@@ -403,7 +426,7 @@ public static Auth::authOrRedirect( $role, bool $forceGlobalRoleCheck = false): 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `role` | **** |  |
+| `role` | **array|string** |  |
 | `forceGlobalRoleCheck` | **bool** |  |
 
 
@@ -419,7 +442,7 @@ public static Auth::authOrRedirect( $role, bool $forceGlobalRoleCheck = false): 
 
 
 ```php
-public static Auth::userHasRole(string|array $role, false $forceGlobalRoleCheck = false): bool
+public static Auth::userHasRole(string|array $role, bool $forceGlobalRoleCheck = false): bool
 ```
 
 
@@ -434,7 +457,7 @@ public static Auth::userHasRole(string|array $role, false $forceGlobalRoleCheck 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `role` | **string|array** |  |
-| `forceGlobalRoleCheck` | **false** |  |
+| `forceGlobalRoleCheck` | **bool** |  |
 
 
 **Return Value:**
@@ -611,6 +634,35 @@ public Auth::set2FAVerified(): void
 
 
 ---
+### logFailedLogin
+
+
+
+```php
+private Auth::logFailedLogin(string $user): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `user` | **string** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 
 
 ## Inherited methods
@@ -683,7 +735,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -736,7 +788,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -750,7 +802,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -763,4 +815,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

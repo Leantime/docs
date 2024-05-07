@@ -84,7 +84,7 @@ public Audit::storeEvent(string $action = &quot;ping&quot;, string $values = &qu
 
 
 ```php
-public Audit::getLastEvent(string $action = &#039;&#039;): mixed|void
+public Audit::getLastEvent(string $action = &#039;&#039;): mixed|null
 ```
 
 
@@ -140,4 +140,4 @@ public Audit::pruneEvents(int $ageDays = 30): void
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

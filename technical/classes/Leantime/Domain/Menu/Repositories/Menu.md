@@ -136,6 +136,36 @@ public Menu::getSubmenuState(string $submenu): mixed
 
 
 ---
+### buildMenuStructure
+
+
+
+```php
+protected Menu::buildMenuStructure(array $menuStructure, string $filter): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `menuStructure` | **array** |  |
+| `filter` | **string** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### getMenuStructure
 
 getMenu - Return a specific menu structure
@@ -218,6 +248,29 @@ public Menu::getTicketMenu(): array|mixed|string|string[]
 
 
 ---
+### getTimelineMenu
+
+
+
+```php
+public Menu::getTimelineMenu(): mixed
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### getIdeaMenu
 
 
@@ -232,6 +285,36 @@ public Menu::getIdeaMenu(): string
 
 
 
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getSectionMenuType
+
+
+
+```php
+public Menu::getSectionMenuType(mixed $currentRoute, mixed $default = &quot;default&quot;): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `currentRoute` | **mixed** |  |
+| `default` | **mixed** |  |
 
 
 **Return Value:**
@@ -313,7 +396,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -366,7 +449,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -380,7 +463,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -393,4 +476,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

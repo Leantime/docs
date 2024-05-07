@@ -382,7 +382,7 @@ public Wiki::getNumberOfCanvasItems( $projectId = null): int|mixed
 __construct - get db connection
 
 ```php
-public Canvas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language): void
+public Canvas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepo): void
 ```
 
 
@@ -398,6 +398,7 @@ public Canvas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $langu
 |-----------|------|-------------|
 | `db` | **\Leantime\Core\Db** |  |
 | `language` | **\Leantime\Core\Language** |  |
+| `ticketRepo` | **\Leantime\Domain\Tickets\Repositories\Tickets** |  |
 
 
 **Return Value:**
@@ -1196,4 +1197,4 @@ public Canvas::getTags(int $projectId): array
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

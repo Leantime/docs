@@ -750,6 +750,121 @@ public Install::update_sql_20401(): bool|array
 
 
 ---
+### update_sql_20402
+
+
+
+```php
+public Install::update_sql_20402(): bool|array
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### update_sql_20405
+
+Install script did not include medium text updates. Run again
+
+```php
+public Install::update_sql_20405(): bool|array
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### update_sql_20406
+
+Install script did not include medium text updates. Run again
+
+```php
+public Install::update_sql_20406(): bool|array
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### update_sql_20407
+
+
+
+```php
+public Install::update_sql_20407(): bool|array
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### update_sql_30002
+
+
+
+```php
+public Install::update_sql_30002(): bool|array
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
 
 
 ## Inherited methods
@@ -822,7 +937,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -875,7 +990,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -889,7 +1004,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -902,4 +1017,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

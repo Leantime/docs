@@ -160,7 +160,123 @@ public Goalcanvas::getParentKPIs( $projectId): array
 
 
 ---
+### getGoalsByMilestone
+
+
+
+```php
+public Goalcanvas::getGoalsByMilestone(mixed $milestoneId): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `milestoneId` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+### updateGoalboard
+
+
+
+```php
+public Goalcanvas::updateGoalboard(mixed $values): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### createGoalboard
+
+
+
+```php
+public Goalcanvas::createGoalboard(mixed $values): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getSingleCanvas
+
+
+
+```php
+public Goalcanvas::getSingleCanvas(mixed $id): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+
+
+---
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

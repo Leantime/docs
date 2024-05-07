@@ -437,7 +437,7 @@ private Oidc::getTokenUrl(): string
 
 
 ```php
-private Oidc::loadEndpoints(): void
+private Oidc::loadEndpoints(): bool
 ```
 
 
@@ -651,4 +651,4 @@ private Oidc::displayError(string $translationKey, string $values): void
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

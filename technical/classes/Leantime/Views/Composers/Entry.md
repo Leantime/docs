@@ -16,12 +16,41 @@ footer: false
 
 ## Methods
 
+### init
+
+
+
+```php
+public Entry::init(\Leantime\Core\Theme $themeCore): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `themeCore` | **\Leantime\Core\Theme** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### with
 
 Data to be passed to view before rendering
 
 ```php
-public Entry::with(): array|string[]
+public Entry::with(): array
 ```
 
 
@@ -121,4 +150,4 @@ protected Composer::with(): array
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

@@ -82,7 +82,7 @@ public Queue::queueMessageToUsers( $recipients,  $message, string $subject = &qu
 
 
 ```php
-public Queue::listMessageInQueue(string $channel = &#039;email&#039;,  $recipients = null, int $projectId): array|false
+public Queue::listMessageInQueue(string $channel,  $recipients = null, int $projectId): array|false
 ```
 
 
@@ -137,7 +137,40 @@ public Queue::deleteMessageInQueue( $msghashes): bool
 
 
 ---
+### addMessageToQueue
+
+
+
+```php
+public Queue::addMessageToQueue(mixed $channel, string $subject,  $message, mixed $userId, int $projectId): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `channel` | **mixed** |  |
+| `subject` | **string** |  |
+| `message` | **** |  |
+| `userId` | **mixed** |  |
+| `projectId` | **int** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+
+
+---
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

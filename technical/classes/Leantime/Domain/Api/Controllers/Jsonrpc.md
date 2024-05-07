@@ -44,7 +44,7 @@ public Jsonrpc::init(): void
 Handles post requests
 
 ```php
-public Jsonrpc::post(array $params): void
+public Jsonrpc::post(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -73,7 +73,7 @@ public Jsonrpc::post(array $params): void
 Handles get requests
 
 ```php
-public Jsonrpc::get(array $params): void
+public Jsonrpc::get(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -102,7 +102,7 @@ public Jsonrpc::get(array $params): void
 Handles patch requests
 
 ```php
-public Jsonrpc::patch(): void
+public Jsonrpc::patch(): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -125,7 +125,7 @@ public Jsonrpc::patch(): void
 Handles delete requests
 
 ```php
-public Jsonrpc::delete(): void
+public Jsonrpc::delete(): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -148,7 +148,7 @@ public Jsonrpc::delete(): void
 executes api call
 
 ```php
-private Jsonrpc::executeApiRequest(array $params): void
+private Jsonrpc::executeApiRequest(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -261,41 +261,12 @@ private Jsonrpc::prepareParameters(array $params, array $methodParams): array
 
 
 ---
-### castBoolValue
-
-
-
-```php
-private Jsonrpc::castBoolValue(mixed $value): mixed
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `value` | **mixed** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
 ### returnResponse
 
 Echos the return response
 
 ```php
-private Jsonrpc::returnResponse(array|null $returnValue, string|null $id = null): void
+private Jsonrpc::returnResponse(array|null $returnValue, string|null $id = null): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -328,7 +299,7 @@ private Jsonrpc::returnResponse(array|null $returnValue, string|null $id = null)
 Return error response
 
 ```php
-private Jsonrpc::returnError(string $errorMessage, int $errorcode, mixed|null $additional_info = null): void
+private Jsonrpc::returnError(string $errorMessage, int $errorcode, mixed|null $additional_info = null, int|string|null $id): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -345,6 +316,7 @@ private Jsonrpc::returnError(string $errorMessage, int $errorcode, mixed|null $a
 | `errorMessage` | **string** |  |
 | `errorcode` | **int** |  |
 | `additional_info` | **mixed|null** |  |
+| `id` | **int|string|null** |  |
 
 
 **Return Value:**
@@ -362,7 +334,7 @@ private Jsonrpc::returnError(string $errorMessage, int $errorcode, mixed|null $a
 Returns a parse error
 
 ```php
-private Jsonrpc::returnParseError(mixed|null $additional_info = null): void
+private Jsonrpc::returnParseError(mixed|null $additional_info = null, int|string|null $id): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -377,6 +349,7 @@ private Jsonrpc::returnParseError(mixed|null $additional_info = null): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `additional_info` | **mixed|null** |  |
+| `id` | **int|string|null** |  |
 
 
 **Return Value:**
@@ -394,7 +367,7 @@ private Jsonrpc::returnParseError(mixed|null $additional_info = null): void
 Returns an invalid request error
 
 ```php
-private Jsonrpc::returnInvalidRequest(mixed|null $additional_info = null): void
+private Jsonrpc::returnInvalidRequest(mixed|null $additional_info = null, int|string|null $id): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -409,6 +382,7 @@ private Jsonrpc::returnInvalidRequest(mixed|null $additional_info = null): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `additional_info` | **mixed|null** |  |
+| `id` | **int|string|null** |  |
 
 
 **Return Value:**
@@ -426,7 +400,7 @@ private Jsonrpc::returnInvalidRequest(mixed|null $additional_info = null): void
 Returns a method not found error
 
 ```php
-private Jsonrpc::returnMethodNotFound(mixed|null $additional_info = null): void
+private Jsonrpc::returnMethodNotFound(mixed|null $additional_info = null, int|string|null $id): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -441,6 +415,7 @@ private Jsonrpc::returnMethodNotFound(mixed|null $additional_info = null): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `additional_info` | **mixed|null** |  |
+| `id` | **int|string|null** |  |
 
 
 **Return Value:**
@@ -458,7 +433,7 @@ private Jsonrpc::returnMethodNotFound(mixed|null $additional_info = null): void
 Returns an invalid parameters error
 
 ```php
-private Jsonrpc::returnInvalidParams(mixed|null $additional_info = null): void
+private Jsonrpc::returnInvalidParams(mixed|null $additional_info = null, int|string|null $id): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -473,6 +448,7 @@ private Jsonrpc::returnInvalidParams(mixed|null $additional_info = null): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `additional_info` | **mixed|null** |  |
+| `id` | **int|string|null** |  |
 
 
 **Return Value:**
@@ -490,7 +466,7 @@ private Jsonrpc::returnInvalidParams(mixed|null $additional_info = null): void
 Returns a server error
 
 ```php
-private Jsonrpc::returnServerError(mixed|null $additional_info): void
+private Jsonrpc::returnServerError(mixed|null $additional_info, int|string|null $id): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -505,6 +481,7 @@ private Jsonrpc::returnServerError(mixed|null $additional_info): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `additional_info` | **mixed|null** |  |
+| `id` | **int|string|null** |  |
 
 
 **Return Value:**
@@ -526,7 +503,7 @@ private Jsonrpc::returnServerError(mixed|null $additional_info): void
 constructor - initialize private variables
 
 ```php
-public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\template $tpl, \Leantime\Core\language $language): mixed
+public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\Template $tpl, \Leantime\Core\Language $language): mixed
 ```
 
 
@@ -541,8 +518,8 @@ public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `incomingRequest` | **\Leantime\Core\IncomingRequest** | The request to be initialized. |
-| `tpl` | **\Leantime\Core\template** | The template to be initialized. |
-| `language` | **\Leantime\Core\language** | The language to be initialized. |
+| `tpl` | **\Leantime\Core\Template** | The template to be initialized. |
+| `language` | **\Leantime\Core\Language** | The language to be initialized. |
 
 
 **Return Value:**
@@ -578,6 +555,29 @@ private Controller::executeActions(string $method, object|array $params): void
 **Return Value:**
 
 
+
+
+
+---
+### getResponse
+
+getResponse - returns the response
+
+```php
+public Controller::getResponse(): \Symfony\Component\HttpFoundation\Response
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+The response object.
 
 
 
@@ -650,7 +650,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -703,7 +703,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -717,7 +717,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -730,4 +730,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

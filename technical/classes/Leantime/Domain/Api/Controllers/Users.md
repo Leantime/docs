@@ -21,7 +21,7 @@ Controller Class - Base class For all controllers
 init - initialize private variables
 
 ```php
-public Users::init(\Leantime\Domain\Users\Services\Users $usersService, \Leantime\Domain\Files\Repositories\Files $filesRepository): mixed
+public Users::init(\Leantime\Domain\Users\Services\Users $userService, \Leantime\Domain\Files\Repositories\Files $filesRepository): void
 ```
 
 
@@ -35,7 +35,7 @@ public Users::init(\Leantime\Domain\Users\Services\Users $usersService, \Leantim
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `usersService` | **\Leantime\Domain\Users\Services\Users** |  |
+| `userService` | **\Leantime\Domain\Users\Services\Users** |  |
 | `filesRepository` | **\Leantime\Domain\Files\Repositories\Files** |  |
 
 
@@ -51,7 +51,7 @@ public Users::init(\Leantime\Domain\Users\Services\Users $usersService, \Leantim
 get - handle get requests
 
 ```php
-public Users::get(mixed $params): mixed
+public Users::get(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -65,7 +65,7 @@ public Users::get(mixed $params): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **mixed** |  |
+| `params` | **array** | parameters or body of the request |
 
 
 **Return Value:**
@@ -80,7 +80,7 @@ public Users::get(mixed $params): mixed
 post - handle post requests
 
 ```php
-public Users::post(mixed $params): mixed
+public Users::post(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -94,7 +94,7 @@ public Users::post(mixed $params): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **mixed** |  |
+| `params` | **array** | parameters or body of the request |
 
 
 **Return Value:**
@@ -106,10 +106,10 @@ public Users::post(mixed $params): mixed
 ---
 ### patch
 
-put - handle put requests
+put - Special handling for settings
 
 ```php
-public Users::patch(mixed $params): mixed
+public Users::patch(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -123,7 +123,7 @@ public Users::patch(mixed $params): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **mixed** |  |
+| `params` | **array** | parameters or body of the request |
 
 
 **Return Value:**
@@ -138,7 +138,7 @@ public Users::patch(mixed $params): mixed
 delete - handle delete requests
 
 ```php
-public Users::delete(mixed $params): mixed
+public Users::delete(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -152,7 +152,7 @@ public Users::delete(mixed $params): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **mixed** |  |
+| `params` | **array** | parameters or body of the request |
 
 
 **Return Value:**
@@ -171,7 +171,7 @@ public Users::delete(mixed $params): mixed
 constructor - initialize private variables
 
 ```php
-public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\template $tpl, \Leantime\Core\language $language): mixed
+public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\Template $tpl, \Leantime\Core\Language $language): mixed
 ```
 
 
@@ -186,8 +186,8 @@ public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `incomingRequest` | **\Leantime\Core\IncomingRequest** | The request to be initialized. |
-| `tpl` | **\Leantime\Core\template** | The template to be initialized. |
-| `language` | **\Leantime\Core\language** | The language to be initialized. |
+| `tpl` | **\Leantime\Core\Template** | The template to be initialized. |
+| `language` | **\Leantime\Core\Language** | The language to be initialized. |
 
 
 **Return Value:**
@@ -223,6 +223,29 @@ private Controller::executeActions(string $method, object|array $params): void
 **Return Value:**
 
 
+
+
+
+---
+### getResponse
+
+getResponse - returns the response
+
+```php
+public Controller::getResponse(): \Symfony\Component\HttpFoundation\Response
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+The response object.
 
 
 
@@ -295,7 +318,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -348,7 +371,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -362,7 +385,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -375,4 +398,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

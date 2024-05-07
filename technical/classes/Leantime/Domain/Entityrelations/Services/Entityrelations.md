@@ -17,10 +17,10 @@ footer: false
 
 ### __construct
 
-
+Class constructor.
 
 ```php
-public Entityrelations::__construct(\Leantime\Domain\Entityrelations\Repositories\Entityrelations $entityRelationshipsRepo): mixed
+public Entityrelations::__construct(\Leantime\Domain\Entityrelations\Repositories\Entityrelations $entityRelationshipsRepo, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo): void
 ```
 
 
@@ -34,7 +34,8 @@ public Entityrelations::__construct(\Leantime\Domain\Entityrelations\Repositorie
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `entityRelationshipsRepo` | **\Leantime\Domain\Entityrelations\Repositories\Entityrelations** |  |
+| `entityRelationshipsRepo` | **\Leantime\Domain\Entityrelations\Repositories\Entityrelations** | The entity relationships repository. |
+| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** | The settings repository. |
 
 
 **Return Value:**
@@ -113,4 +114,4 @@ public Entityrelations::getRelationshipByEntity(string $entitySide, int $entity,
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

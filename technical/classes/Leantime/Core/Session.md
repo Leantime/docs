@@ -20,7 +20,7 @@ Session Class - login procedure
 __construct - get and test Session or make session
 
 ```php
-public Session::__construct(\Leantime\Core\environment $config): void
+public Session::__construct(\Leantime\Core\Environment $config, \Leantime\Core\IncomingRequest $request): void
 ```
 
 
@@ -34,7 +34,8 @@ public Session::__construct(\Leantime\Core\environment $config): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `config` | **\Leantime\Core\environment** |  |
+| `config` | **\Leantime\Core\Environment** |  |
+| `request` | **\Leantime\Core\IncomingRequest** |  |
 
 
 **Return Value:**
@@ -96,6 +97,29 @@ destroySession - destroy the session
 
 ```php
 public static Session::destroySession(): void
+```
+
+
+
+* This method is **static**.
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### get_client_ip
+
+
+
+```php
+private static Session::get_client_ip(): mixed
 ```
 
 
@@ -185,7 +209,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -238,7 +262,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -252,7 +276,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -265,4 +289,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

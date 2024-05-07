@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Install::__construct(\Tests\Support\AcceptanceTester $I): mixed
+public Install::__construct(\Tests\Support\AcceptanceTester $I, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo): mixed
 ```
 
 
@@ -35,6 +35,7 @@ public Install::__construct(\Tests\Support\AcceptanceTester $I): mixed
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `I` | **\Tests\Support\AcceptanceTester** |  |
+| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
 
 
 **Return Value:**
@@ -49,7 +50,7 @@ public Install::__construct(\Tests\Support\AcceptanceTester $I): mixed
 
 
 ```php
-public Install::install(mixed $email, mixed $password, mixed $firstname, mixed $lastname, mixed $company): mixed
+public Install::install(mixed $email, mixed $password, mixed $firstname, mixed $lastname, mixed $company): void
 ```
 
 
@@ -80,4 +81,4 @@ public Install::install(mixed $email, mixed $password, mixed $firstname, mixed $
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

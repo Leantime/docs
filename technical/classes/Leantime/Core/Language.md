@@ -5,7 +5,7 @@ footer: false
 
 # Language
 
-Language class - Internationilsation with ini-Files
+Either takes the translation from ini_array or the default
 
 
 
@@ -24,10 +24,10 @@ Language class - Internationilsation with ini-Files
 
 ### __construct
 
-__construct - Check standard language otherwise get language from browser
+Constructor method for initializing an instance of the class.
 
 ```php
-public Language::__construct(\Leantime\Core\Environment $config, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo): mixed
+public Language::__construct(\Leantime\Core\Environment $config, \Leantime\Core\ApiRequest $apiRequest): mixed
 ```
 
 
@@ -41,8 +41,8 @@ public Language::__construct(\Leantime\Core\Environment $config, \Leantime\Domai
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `config` | **\Leantime\Core\Environment** |  |
-| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
+| `config` | **\Leantime\Core\Environment** | The configuration environment. |
+| `apiRequest` | **\Leantime\Core\ApiRequest** | The API request object. |
 
 
 **Return Value:**
@@ -54,10 +54,10 @@ public Language::__construct(\Leantime\Core\Environment $config, \Leantime\Domai
 ---
 ### setLanguage
 
-setLanguage - set the language (format: de-DE, languageCode-CountryCode)
+Set the language for the application.
 
 ```php
-public Language::setLanguage( $lang): void
+public Language::setLanguage(string $lang): bool
 ```
 
 
@@ -71,19 +71,19 @@ public Language::setLanguage( $lang): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `lang` | **** |  |
+| `lang` | **string** | The language code to be set. |
 
 
 **Return Value:**
 
-
+True if the language is valid and successfully set, False otherwise.
 
 
 
 ---
 ### getCurrentLanguage
 
-getLanguage - set the language (format: de-DE, languageCode-CountryCode)
+Get the currently selected language.
 
 ```php
 public Language::getCurrentLanguage(): string
@@ -99,17 +99,17 @@ public Language::getCurrentLanguage(): string
 
 **Return Value:**
 
-
+The currently selected language.
 
 
 
 ---
 ### isValidLanguage
 
-isValidLanguage - check if language is valid
+Check if a given language code is valid.
 
 ```php
-public Language::isValidLanguage( $langCode): bool
+public Language::isValidLanguage(string $langCode): bool
 ```
 
 
@@ -123,19 +123,19 @@ public Language::isValidLanguage( $langCode): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `langCode` | **** |  |
+| `langCode` | **string** | The language code to check. |
 
 
 **Return Value:**
 
-
+True if the language code is valid, false otherwise.
 
 
 
 ---
 ### readIni
 
-readIni - read File and return values
+Read and load the language resources from the ini files.
 
 ```php
 public Language::readIni(): array
@@ -151,14 +151,14 @@ public Language::readIni(): array
 
 **Return Value:**
 
-
+The array of language resources loaded from the ini files.
 
 
 
 ---
 ### includeOverrides
 
-includeOverrides - include overrides from ini file
+Include language overrides from an ini file.
 
 ```php
 protected Language::includeOverrides(array $language, string $filepath, bool $foreignLanguage = false): array
@@ -175,27 +175,29 @@ protected Language::includeOverrides(array $language, string $filepath, bool $fo
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `language` | **array** |  |
-| `filepath` | **string** |  |
-| `foreignLanguage` | **bool** |  |
+| `language` | **array** | The original language array. |
+| `filepath` | **string** | The path to the ini file. |
+| `foreignLanguage` | **bool** | Whether the language is foreign or not. Defaults to false. |
 
 
 **Return Value:**
 
-
+The modified language array.
 
 
 
 ---
 ### getLanguageList
 
-getLanguageList - gets the list of possible languages
+Get the list of languages.
 
 ```php
-public Language::getLanguageList(): array|bool
+public Language::getLanguageList(): bool|array
 ```
 
-
+Retrieves the list of languages from a cache or from INI files if the cache is not available.
+The list of languages is stored in an associative array where the keys represent the language codes
+and the values represent the language names.
 
 
 
@@ -205,40 +207,17 @@ public Language::getLanguageList(): array|bool
 
 **Return Value:**
 
-
-
-
-
----
-### getBrowserLanguage
-
-getBrowserLanguage - gets the language that is setted in the browser
-
-```php
-public Language::getBrowserLanguage(): string
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
+The list of languages as an associative array, or false if the list is empty or cannot be retrieved.
 
 
 
 ---
 ### __
 
-__ - returns a language specific string
+Get a translated string or a default value if the index is not found.
 
 ```php
-public Language::__(string $index): string
+public Language::__(string $index, string $default = &#039;&#039;): string
 ```
 
 
@@ -252,216 +231,13 @@ public Language::__(string $index): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `index` | **string** |  |
+| `index` | **string** | The index of the translated string. |
+| `default` | **string** | The default value to return if the index is not found. Defaults to an empty string. |
 
 
 **Return Value:**
 
-
-
-
-
----
-### getFormattedDateString
-
-getFormattedDateString - returns a language specific formatted date string
-
-```php
-public Language::getFormattedDateString(string $date): string
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `date` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getFormattedTimeString
-
-getFormattedTimeString - returns a language specific formatted time string
-
-```php
-public Language::getFormattedTimeString(string $date): string
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `date` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### get24HourTimestring
-
-getFormattedDateTimeString - returns a language specific formatted date time string
-
-```php
-public Language::get24HourTimestring(string $date): false|string
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `date` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getISODateString
-
-getISODateString - returns an ISO date string (hours, minutes seconds zeroed out) based on language specific format
-
-```php
-public Language::getISODateString(string $date): string|bool
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `date` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getISODateTimeString
-
-getISODateString - returns an ISO date string (hours, minutes seconds zeroed out) based on language specific format
-
-```php
-public Language::getISODateTimeString(string $date,  $time): string|bool
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `date` | **string** |  |
-| `time` | **** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getISOTimeString
-
-getISOTimeString - returns an ISO time string (hours, minutes seconds zeroed out) based on language specific format
-
-```php
-public Language::getISOTimeString(string $time): string|bool
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `time` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### extractTime
-
-extractTime - returns an ISO time string (hours, minutes seconds zeroed out) based on language specific format
-
-```php
-public Language::extractTime(string $dateTime): string|bool
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `dateTime` | **string** |  |
-
-
-**Return Value:**
-
-
+The translated string or the default value if the index is not found.
 
 
 
@@ -538,7 +314,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -591,7 +367,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -605,7 +381,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -618,4 +394,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

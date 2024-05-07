@@ -79,7 +79,7 @@ public Projects::getProjectTypes(): mixed
 
 
 ```php
-public Projects::getProject( $id): array|bool
+public Projects::getProject(int $id): array|bool
 ```
 
 
@@ -93,7 +93,7 @@ public Projects::getProject( $id): array|bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** |  |
 
 
 **Return Value:**
@@ -282,7 +282,7 @@ public Projects::getProjectIdAssignedToUser( $userId): array|false
 
 
 ```php
-public Projects::getProjectsAssignedToUser( $userId, string $projectStatus = &quot;open&quot;,  $clientId = null): array|false
+public Projects::getProjectsAssignedToUser( $userId, string $projectStatus = &quot;open&quot;,  $clientId = null): array
 ```
 
 
@@ -429,6 +429,37 @@ public Projects::getProjectHierarchyAvailableToUser( $userId, string $projectSta
 
 
 ---
+### getAllClientsAvailableToUser
+
+Gets all the clients available to a user.
+
+```php
+public Projects::getAllClientsAvailableToUser(int $userId, string $projectStatus = &quot;open&quot;): array
+```
+
+Clients are determined by the projects
+the user is assigned to.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **int** | The ID of the user. |
+| `projectStatus` | **string** | (optional) The status of the projects to consider. Defaults to &quot;open&quot;. |
+
+
+**Return Value:**
+
+An array of client objects.
+
+
+
+---
 ### getClientsFromProjectList
 
 
@@ -519,10 +550,35 @@ public Projects::getProjectsUserHasAccessTo( $userId): array|false
 ---
 ### setCurrentProject
 
-
+Sets the current project in the session.
 
 ```php
 public Projects::setCurrentProject(): void
+```
+
+If a project ID is provided in the query string, it is used to set the current project.
+If no project ID is provided, the last visited project or the first assigned project is set as the current project.
+If no project is found, an exception is thrown.
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getCurrentProjectId
+
+Get current project id or 0 if no current project is set.
+
+```php
+public Projects::getCurrentProjectId(): int
 ```
 
 
@@ -677,6 +733,35 @@ Client assignments or projects available to entire organization are not consider
 **Return Value:**
 
 
+
+
+
+---
+### addProject
+
+Adds a new project to the system.
+
+```php
+public Projects::addProject(array $values): int|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **array** | An associative array containing the project details.<br />- name: The name of the project.<br />- details: Additional details of the project (optional, default: &#039;&#039;).<br />- clientId: The ID of the client associated with the project.<br />- hourBudget: The hour budget for the project (optional, default: 0).<br />- assignedUsers: Comma-separated list of user IDs assigned to the project (optional, default: &#039;&#039;).<br />- dollarBudget: The dollar budget for the project (optional, default: 0).<br />- psettings: The settings for the project (optional, default: &#039;restricted&#039;).<br />- type: The type of the project (optional, default: &#039;project&#039;).<br />- start: The start date of the project in user format (YYYY-MM-DD).<br />- end: The end date of the project in user format (YYYY-MM-DD). |
+
+
+**Return Value:**
+
+The ID of the newly added project
 
 
 
@@ -864,6 +949,29 @@ public Projects::setProjectAvatar( $file,  $project): null
 
 
 ---
+### getAllProjects
+
+
+
+```php
+public Projects::getAllProjects(): mixed
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### getProjectSetupChecklist
 
 
@@ -923,6 +1031,66 @@ public Projects::updateProjectProgress( $stepsComplete,  $projectId): void
 
 
 ---
+### editUserProjectRelations
+
+Edits the project relations of a user.
+
+```php
+public Projects::editUserProjectRelations(int $id, array $projects): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | The ID of the user. |
+| `projects` | **array** | An array of project IDs to be assigned to the user. |
+
+
+**Return Value:**
+
+Returns true if the project relations were successfully edited, false otherwise.
+
+
+
+---
+### getProjectIdbyName
+
+Returns the project ID by its name from the given array of projects.
+
+```php
+public Projects::getProjectIdbyName(array $allProjects, string $projectName): int|bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `allProjects` | **array** | An array of projects. |
+| `projectName` | **string** | The name of the project to search for. |
+
+
+**Return Value:**
+
+The ID of the project if found, or false if not found.
+
+
+
+---
 ### updateProjectSorting
 
 
@@ -943,6 +1111,36 @@ public Projects::updateProjectSorting( $params): false|void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `params` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### editProject
+
+Edits a project with the given values.
+
+```php
+public Projects::editProject(mixed $values, int $id): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **mixed** | The values to update the project with. |
+| `id` | **int** | The ID of the project to edit. |
 
 
 **Return Value:**
@@ -1113,7 +1311,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -1166,7 +1364,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -1180,7 +1378,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -1193,4 +1391,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

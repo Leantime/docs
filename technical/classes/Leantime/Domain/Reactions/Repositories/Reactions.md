@@ -199,7 +199,37 @@ public Reactions::removeUserReaction(int $userId, string $module, int $moduleId,
 
 
 ---
+### getReactionsByModule
+
+
+
+```php
+public Reactions::getReactionsByModule(string $module, ?int $moduleId = null): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `module` | **string** |  |
+| `moduleId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+
+
+---
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

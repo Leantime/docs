@@ -5,9 +5,9 @@ footer: false
 
 # SaveSettingCommand
 
+Class SaveSettingCommand
 
-
-
+Command for saving a setting, will create it if it doesn't exist.
 
 * Full name: `\Leantime\Command\SaveSettingCommand`
 * Parent class: [Command](../../../classes.md)
@@ -72,4 +72,4 @@ protected SaveSettingCommand::execute(\Symfony\Component\Console\Input\InputInte
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

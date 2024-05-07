@@ -51,7 +51,7 @@ returns true on success, false on failure
 updates the object by key.
 
 ```php
-public Service::update(object|array $object): bool
+public Service::update(object|array $object): array|bool
 ```
 
 
@@ -194,4 +194,4 @@ Returns array on success, false on failure. No results should return empty array
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

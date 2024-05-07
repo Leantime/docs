@@ -5,7 +5,7 @@ footer: false
 
 # Clients
 
-
+Class Clients
 
 
 
@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Clients::__construct(\Leantime\Core\Template $tpl, \Leantime\Domain\Projects\Repositories\Projects $projectRepository, \Leantime\Domain\Clients\Repositories\Clients $clientRepository): mixed
+public Clients::__construct(\Leantime\Domain\Projects\Repositories\Projects $projectRepository, \Leantime\Domain\Clients\Repositories\Clients $clientRepository): mixed
 ```
 
 
@@ -34,7 +34,6 @@ public Clients::__construct(\Leantime\Core\Template $tpl, \Leantime\Domain\Proje
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `tpl` | **\Leantime\Core\Template** |  |
 | `projectRepository` | **\Leantime\Domain\Projects\Repositories\Projects** |  |
 | `clientRepository` | **\Leantime\Domain\Clients\Repositories\Clients** |  |
 
@@ -80,7 +79,7 @@ public Clients::getUserClients(int $userId): array
 
 
 ```php
-public Clients::getAll(): array
+public Clients::getAll(array $searchparams = null): array
 ```
 
 
@@ -90,6 +89,12 @@ public Clients::getAll(): array
 
 
 
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `searchparams` | **array** |  |
+
 
 **Return Value:**
 
@@ -98,7 +103,153 @@ public Clients::getAll(): array
 
 
 ---
+### patch
+
+patches the client by key.
+
+```php
+public Clients::patch(int $id, array $params): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | Id of the object to be patched |
+| `params` | **array** | Key=&gt;value array where key represents the object field name and value the value. |
+
+
+**Return Value:**
+
+returns true on success, false on failure
+
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+### editClient
+
+updates the client by key.
+
+```php
+public Clients::editClient(object|array $values): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **object|array** | expects the entire object to be updated as object or array |
+
+
+**Return Value:**
+
+Returns true on success, false on failure
+
+
+
+---
+### create
+
+Creates a new client
+
+```php
+public Clients::create(object|array $values): int|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **object|array** | Object or array to be created |
+
+
+**Return Value:**
+
+Returns id of new element or false
+
+
+
+---
+### delete
+
+Deletes a client
+
+```php
+public Clients::delete(int $id): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | Id of the object to be deleted |
+
+
+**Return Value:**
+
+Returns id of new element or false
+
+
+
+---
+### get
+
+Gets 1 specific client by id
+
+```php
+public Clients::get(int $id): object|array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | Id of the object to be retrieved |
+
+
+**Return Value:**
+
+Returns object or array. False on failure or if item cannot be found
+
+
+
+---
+
+
+---
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

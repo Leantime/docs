@@ -51,7 +51,7 @@ public Auth::__construct(\Leantime\Core\Db $db, \Leantime\Core\Environment $conf
 logout - destroy sessions and cookies
 
 ```php
-public Auth::invalidateSession( $sessionId): bool
+public Auth::invalidateSession(string $sessionId): bool
 ```
 
 
@@ -65,7 +65,7 @@ public Auth::invalidateSession( $sessionId): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `sessionId` | **** |  |
+| `sessionId` | **string** |  |
 
 
 **Return Value:**
@@ -103,7 +103,7 @@ private Auth::invalidateExpiredUserSessions(): bool
 getUserByLogin - Check login data and returns user if correct
 
 ```php
-public Auth::getUserByLogin( $username,  $password): array|false
+public Auth::getUserByLogin(string $username, string $password): array|false
 ```
 
 
@@ -117,8 +117,8 @@ public Auth::getUserByLogin( $username,  $password): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `username` | **** |  |
-| `password` | **** |  |
+| `username` | **string** |  |
+| `password` | **string** |  |
 
 
 **Return Value:**
@@ -133,7 +133,7 @@ public Auth::getUserByLogin( $username,  $password): array|false
 
 
 ```php
-public Auth::getUserByEmail( $username): array|false
+public Auth::getUserByEmail(string $username): array|false
 ```
 
 
@@ -147,7 +147,7 @@ public Auth::getUserByEmail( $username): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `username` | **** |  |
+| `username` | **string** |  |
 
 
 **Return Value:**
@@ -162,7 +162,7 @@ public Auth::getUserByEmail( $username): array|false
 updateSession - Update the session time by sessionId
 
 ```php
-public Auth::updateUserSession( $userId,  $sessionid,  $time): bool
+public Auth::updateUserSession(int $userId, string $sessionid, string $time): bool
 ```
 
 
@@ -176,9 +176,9 @@ public Auth::updateUserSession( $userId,  $sessionid,  $time): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `sessionid` | **** |  |
-| `time` | **** |  |
+| `userId` | **int** |  |
+| `sessionid` | **string** |  |
+| `time` | **string** |  |
 
 
 **Return Value:**
@@ -193,7 +193,7 @@ public Auth::updateUserSession( $userId,  $sessionid,  $time): bool
 validateResetLink - validates that the password reset link belongs to a user account in the database
 
 ```php
-public Auth::validateResetLink(mixed $hash): bool
+public Auth::validateResetLink(string $hash): bool
 ```
 
 
@@ -207,7 +207,7 @@ public Auth::validateResetLink(mixed $hash): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `hash` | **mixed** |  |
+| `hash` | **string** |  |
 
 
 **Return Value:**
@@ -222,7 +222,7 @@ public Auth::validateResetLink(mixed $hash): bool
 getUserByInviteLink - gets an invited user by invite code
 
 ```php
-public Auth::getUserByInviteLink(mixed $hash): array|bool
+public Auth::getUserByInviteLink(string $hash): array|bool
 ```
 
 
@@ -236,7 +236,7 @@ public Auth::getUserByInviteLink(mixed $hash): array|bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `hash` | **mixed** |  |
+| `hash` | **string** |  |
 
 
 **Return Value:**
@@ -251,7 +251,7 @@ public Auth::getUserByInviteLink(mixed $hash): array|bool
 
 
 ```php
-public Auth::setPWResetLink( $username,  $resetLink): bool
+public Auth::setPWResetLink(string $username, string $resetLink): bool
 ```
 
 
@@ -265,8 +265,8 @@ public Auth::setPWResetLink( $username,  $resetLink): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `username` | **** |  |
-| `resetLink` | **** |  |
+| `username` | **string** |  |
+| `resetLink` | **string** |  |
 
 
 **Return Value:**
@@ -281,7 +281,7 @@ public Auth::setPWResetLink( $username,  $resetLink): bool
 
 
 ```php
-public Auth::changePW( $password,  $hash): bool
+public Auth::changePW(string $password, string $hash): bool
 ```
 
 
@@ -295,8 +295,8 @@ public Auth::changePW( $password,  $hash): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `password` | **** |  |
-| `hash` | **** |  |
+| `password` | **string** |  |
+| `hash` | **string** |  |
 
 
 **Return Value:**
@@ -309,4 +309,4 @@ public Auth::changePW( $password,  $hash): bool
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

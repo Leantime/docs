@@ -10,7 +10,6 @@ footer: false
 
 
 * Full name: `\Leantime\Domain\Connector\Services\Integrations`
-* This class implements: \Leantime\Core\Service
 
 
 
@@ -47,7 +46,7 @@ public Integrations::__construct(\Leantime\Domain\Connector\Repositories\Integra
 ---
 ### get
 
-Gets 1 specific item
+
 
 ```php
 public Integrations::get(int $id): object|array|false
@@ -74,12 +73,12 @@ public Integrations::get(int $id): object|array|false
 
 
 ---
-### update
+### updateTicket
 
-updates the object by key.
+
 
 ```php
-public Integrations::update(object|array $object): bool
+public Integrations::updateTicket(object|array $object): bool
 ```
 
 
@@ -105,7 +104,7 @@ public Integrations::update(object|array $object): bool
 ---
 ### create
 
-Creates a new object
+
 
 ```php
 public Integrations::create(object|array $object): int|false
@@ -134,7 +133,7 @@ public Integrations::create(object|array $object): int|false
 ---
 ### delete
 
-Deletes object
+
 
 ```php
 public Integrations::delete(int $id): bool
@@ -163,7 +162,7 @@ public Integrations::delete(int $id): bool
 ---
 ### getAll
 
-Get all items
+
 
 ```php
 public Integrations::getAll(array|null $searchparams = null): array|false
@@ -192,7 +191,7 @@ public Integrations::getAll(array|null $searchparams = null): array|false
 ---
 ### patch
 
-patches the object by key.
+
 
 ```php
 public Integrations::patch(int $id, array $params): bool
@@ -223,4 +222,4 @@ public Integrations::patch(int $id, array $params): bool
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

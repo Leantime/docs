@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-public HeadMenu::init(\Leantime\Domain\Notifications\Services\Notifications $notificationService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheets, \Leantime\Domain\Users\Services\Users $userService, \Leantime\Domain\Auth\Services\Auth $authService): void
+public HeadMenu::init(\Leantime\Domain\Notifications\Services\Notifications $notificationService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheets, \Leantime\Domain\Users\Services\Users $userService, \Leantime\Domain\Auth\Services\Auth $authService, \Leantime\Domain\Help\Services\Helper $helperService, \Leantime\Domain\Menu\Repositories\Menu $menuRepo, \Leantime\Core\Theme $themeCore): void
 ```
 
 
@@ -39,6 +39,9 @@ public HeadMenu::init(\Leantime\Domain\Notifications\Services\Notifications $not
 | `timesheets` | **\Leantime\Domain\Timesheets\Services\Timesheets** |  |
 | `userService` | **\Leantime\Domain\Users\Services\Users** |  |
 | `authService` | **\Leantime\Domain\Auth\Services\Auth** |  |
+| `helperService` | **\Leantime\Domain\Help\Services\Helper** |  |
+| `menuRepo` | **\Leantime\Domain\Menu\Repositories\Menu** |  |
+| `themeCore` | **\Leantime\Core\Theme** |  |
 
 
 **Return Value:**
@@ -153,4 +156,4 @@ protected Composer::with(): array
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

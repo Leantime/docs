@@ -18,10 +18,10 @@ Repository
 
 ### __construct
 
-__construct - get database connection
+Class constructor.
 
 ```php
-public Calendar::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language): mixed
+public Calendar::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language, \Leantime\Core\Support\DateTimeHelper $dateTimeHelper, \Leantime\Core\Environment $config): void
 ```
 
 
@@ -35,8 +35,10 @@ public Calendar::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $lan
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
-| `language` | **\Leantime\Core\Language** |  |
+| `db` | **\Leantime\Core\Db** | The DbCore object. |
+| `language` | **\Leantime\Core\Language** | The LanguageCore object. |
+| `dateTimeHelper` | **\Leantime\Core\Support\DateTimeHelper** | The DateTimeHelper object. |
+| `config` | **\Leantime\Core\Environment** | The Environment object. |
 
 
 **Return Value:**
@@ -51,7 +53,7 @@ public Calendar::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $lan
 
 
 ```php
-public Calendar::getAllDates( $dateFrom,  $dateTo): array|false
+public Calendar::getAllDates(string $dateFrom, string $dateTo): array|false
 ```
 
 
@@ -65,8 +67,8 @@ public Calendar::getAllDates( $dateFrom,  $dateTo): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `dateFrom` | **** |  |
-| `dateTo` | **** |  |
+| `dateFrom` | **string** |  |
+| `dateTo` | **string** |  |
 
 
 **Return Value:**
@@ -78,10 +80,10 @@ public Calendar::getAllDates( $dateFrom,  $dateTo): array|false
 ---
 ### getAll
 
-
+Retrieves calendar events based on optional filters.
 
 ```php
-public Calendar::getAll( $dateFrom,  $dateTo): false|array
+public Calendar::getAll(int|null $userId, \Carbon\CarbonImmutable|null $dateFrom, \Carbon\CarbonImmutable|null $dateTo): bool|array
 ```
 
 
@@ -95,13 +97,14 @@ public Calendar::getAll( $dateFrom,  $dateTo): false|array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `dateFrom` | **** |  |
-| `dateTo` | **** |  |
+| `userId` | **int|null** | The user ID to filter the results by. |
+| `dateFrom` | **\Carbon\CarbonImmutable|null** | The minimum date and time of the events. |
+| `dateTo` | **\Carbon\CarbonImmutable|null** | The maximum date and time of the events. |
 
 
 **Return Value:**
 
-
+Returns an array of calendar events if successful, otherwise false.
 
 
 
@@ -111,7 +114,7 @@ public Calendar::getAll( $dateFrom,  $dateTo): false|array
 
 
 ```php
-public Calendar::getCalendar( $userId): array
+public Calendar::getCalendar(int $userId): array
 ```
 
 
@@ -125,7 +128,46 @@ public Calendar::getCalendar( $userId): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
+| `userId` | **int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### mapEventData
+
+Generates an event array for fullcalendar.io frontend.
+
+```php
+private Calendar::mapEventData(string $title, string $description, bool $allDay, int $id, int $projectId, string $eventType, string $dateContext, string $backgroundColor, string $borderColor, int|null $dateFrom, int|null $dateTo): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `title` | **string** |  |
+| `description` | **string** |  |
+| `allDay` | **bool** |  |
+| `id` | **int** |  |
+| `projectId` | **int** |  |
+| `eventType` | **string** |  |
+| `dateContext` | **string** |  |
+| `backgroundColor` | **string** |  |
+| `borderColor` | **string** |  |
+| `dateFrom` | **int|null** |  |
+| `dateTo` | **int|null** |  |
 
 
 **Return Value:**
@@ -140,7 +182,7 @@ public Calendar::getCalendar( $userId): array
 
 
 ```php
-public Calendar::getCalendarBySecretHash( $userHash,  $calHash): array|false
+public Calendar::getCalendarBySecretHash(string $userHash, string $calHash): array|false
 ```
 
 
@@ -154,37 +196,8 @@ public Calendar::getCalendarBySecretHash( $userHash,  $calHash): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userHash` | **** |  |
-| `calHash` | **** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getCalendarEventsForToday
-
-
-
-```php
-public Calendar::getCalendarEventsForToday( $id): array
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `id` | **** |  |
+| `userHash` | **string** |  |
+| `calHash` | **string** |  |
 
 
 **Return Value:**
@@ -245,7 +258,7 @@ public Calendar::getTicketEditDates(): array|false
 
 
 ```php
-public Calendar::addEvent( $values): false|string
+public Calendar::addEvent(array $values): false|string
 ```
 
 
@@ -259,7 +272,7 @@ public Calendar::addEvent( $values): false|string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **** |  |
+| `values` | **array** |  |
 
 
 **Return Value:**
@@ -274,7 +287,7 @@ public Calendar::addEvent( $values): false|string
 
 
 ```php
-public Calendar::getEvent( $id): mixed
+public Calendar::getEvent(int $id): mixed
 ```
 
 
@@ -288,7 +301,7 @@ public Calendar::getEvent( $id): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** |  |
 
 
 **Return Value:**
@@ -303,7 +316,7 @@ public Calendar::getEvent( $id): mixed
 
 
 ```php
-public Calendar::editEvent( $values,  $id): void
+public Calendar::editEvent(array $values, int $id): void
 ```
 
 
@@ -317,8 +330,8 @@ public Calendar::editEvent( $values,  $id): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **** |  |
-| `id` | **** |  |
+| `values` | **array** |  |
+| `id` | **int** |  |
 
 
 **Return Value:**
@@ -333,7 +346,7 @@ public Calendar::editEvent( $values,  $id): void
 
 
 ```php
-public Calendar::delPersonalEvent( $id): bool
+public Calendar::delPersonalEvent(int $id): int|false
 ```
 
 
@@ -347,7 +360,7 @@ public Calendar::delPersonalEvent( $id): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** |  |
 
 
 **Return Value:**
@@ -357,12 +370,12 @@ public Calendar::delPersonalEvent( $id): bool
 
 
 ---
-### getMyGoogleCalendars
+### getMyExternalCalendars
 
 
 
 ```php
-public Calendar::getMyGoogleCalendars(): array|false
+public Calendar::getMyExternalCalendars(int $userId): array|false
 ```
 
 
@@ -371,6 +384,42 @@ public Calendar::getMyGoogleCalendars(): array|false
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getExternalCalendar
+
+
+
+```php
+public Calendar::getExternalCalendar(int $calendarId, int $userId): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `calendarId` | **int** |  |
+| `userId` | **int** |  |
 
 
 **Return Value:**
@@ -385,7 +434,7 @@ public Calendar::getMyGoogleCalendars(): array|false
 
 
 ```php
-public Calendar::getGCal( $id): mixed
+public Calendar::getGCal(int $id): mixed
 ```
 
 
@@ -399,7 +448,7 @@ public Calendar::getGCal( $id): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** |  |
 
 
 **Return Value:**
@@ -414,7 +463,7 @@ public Calendar::getGCal( $id): mixed
 
 
 ```php
-public Calendar::editGUrl( $values,  $id): void
+public Calendar::editGUrl(array $values, int $id): void
 ```
 
 
@@ -428,8 +477,8 @@ public Calendar::editGUrl( $values,  $id): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **** |  |
-| `id` | **** |  |
+| `values` | **array** |  |
+| `id` | **int** |  |
 
 
 **Return Value:**
@@ -444,7 +493,7 @@ public Calendar::editGUrl( $values,  $id): void
 
 
 ```php
-public Calendar::deleteGCal( $id): void
+public Calendar::deleteGCal(int $id): bool
 ```
 
 
@@ -458,7 +507,7 @@ public Calendar::deleteGCal( $id): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** |  |
 
 
 **Return Value:**
@@ -473,7 +522,7 @@ public Calendar::deleteGCal( $id): void
 
 
 ```php
-public Calendar::addGUrl( $values): void
+public Calendar::addGUrl(array $values): void
 ```
 
 
@@ -487,7 +536,7 @@ public Calendar::addGUrl( $values): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **** |  |
+| `values` | **array** |  |
 
 
 **Return Value:**
@@ -652,7 +701,7 @@ public Repository::get(int $id): mixed
 getFieldAttribute - gets the field attribute for a given property
 
 ```php
-protected Repository::getFieldAttribute(string $class, string $property, bool $includeId = false): array|false
+protected Repository::getFieldAttribute(object|string $class, string $property, bool $includeId = false): array|false
 ```
 
 
@@ -666,7 +715,7 @@ protected Repository::getFieldAttribute(string $class, string $property, bool $i
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `class` | **string** | - the class to get the attribute from |
+| `class` | **object|string** | - the class to get the attribute from |
 | `property` | **string** | - the property to get the attribute from |
 | `includeId` | **bool** | - whether or not to include the id attribute |
 
@@ -775,7 +824,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -828,7 +877,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -842,7 +891,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -855,4 +904,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
