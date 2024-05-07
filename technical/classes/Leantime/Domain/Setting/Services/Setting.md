@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Setting::__construct(\Leantime\Core\Template $tpl, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo): mixed
+public Setting::__construct(\Leantime\Domain\Setting\Repositories\Setting $settingsRepo): mixed
 ```
 
 
@@ -34,7 +34,6 @@ public Setting::__construct(\Leantime\Core\Template $tpl, \Leantime\Domain\Setti
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `tpl` | **\Leantime\Core\Template** |  |
 | `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
 
 
@@ -208,7 +207,30 @@ public Setting::setSettingsRepo(\Leantime\Domain\Setting\Repositories\Setting $s
 
 
 ---
+### getCompanyId
+
+Gets the company id (Sets if it's not set)
+
+```php
+public Setting::getCompanyId(): string
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+
+
+---
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

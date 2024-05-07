@@ -78,7 +78,7 @@ public Sprints::getSprint(int $id): \Leantime\Domain\Sprints\Models\Sprints|fals
 getAllSprints - get all sprints for a project
 
 ```php
-public Sprints::getAllSprints( $projectId): array
+public Sprints::getAllSprints( $projectId = null): array
 ```
 
 
@@ -279,4 +279,4 @@ public Sprints::delSprint( $id): void
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

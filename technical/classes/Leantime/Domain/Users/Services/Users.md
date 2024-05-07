@@ -112,7 +112,7 @@ public Users::editUser( $values,  $id): bool
 
 
 ```php
-public Users::getNumberOfUsers(): int
+public Users::getNumberOfUsers(bool $activeOnly = false, bool $includeApi = true): int
 ```
 
 
@@ -121,6 +121,13 @@ public Users::getNumberOfUsers(): int
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `activeOnly` | **bool** |  |
+| `includeApi` | **bool** |  |
 
 
 **Return Value:**
@@ -193,7 +200,7 @@ public Users::getUser( $id): array|bool
 
 
 ```php
-public Users::getUserByEmail( $email): array|false
+public Users::getUserByEmail( $email, mixed $status = &quot;a&quot;): array|false
 ```
 
 
@@ -208,6 +215,7 @@ public Users::getUserByEmail( $email): array|false
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `email` | **** |  |
+| `status` | **mixed** |  |
 
 
 **Return Value:**
@@ -342,13 +350,13 @@ returns true if password meets requirements
 ---
 ### createUserInvite
 
-createUserInvite - generates a new invite token, creates the user in the db and sends the invitation email
+createUserInvite - generates a new invite token, creates the user in the db and sends the invitation email TODO: Should accept userModel
 
 ```php
 public Users::createUserInvite(array $values): bool|int
 ```
 
-TODO: Should accept userModel
+
 
 
 
@@ -365,6 +373,36 @@ TODO: Should accept userModel
 **Return Value:**
 
 returns new user id on success, false on failure
+
+
+
+---
+### sendUserInvite
+
+
+
+```php
+public Users::sendUserInvite(string $inviteCode, string $user): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `inviteCode` | **string** |  |
+| `user` | **string** |  |
+
+
+**Return Value:**
+
+
 
 
 
@@ -488,6 +526,35 @@ public Users::editOwn( $values,  $id): void
 
 
 ---
+### deleteUser
+
+Delete the user with the specified id.
+
+```php
+public Users::deleteUser(int $id): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | The id of the user to delete. |
+
+
+**Return Value:**
+
+True if the user was deleted successfully, false otherwise.
+
+
+
+---
 
 
 ## Inherited methods
@@ -560,7 +627,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -613,7 +680,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -627,7 +694,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -640,4 +707,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

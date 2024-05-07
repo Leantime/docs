@@ -5,9 +5,9 @@ footer: false
 
 # ApiRequest
 
-Incoming Request information
+Class ApiRequest
 
-
+Represents an API request.
 
 * Full name: `\Leantime\Core\ApiRequest`
 * Parent class: [\Leantime\Core\IncomingRequest](technical/IncomingRequest.md)
@@ -53,13 +53,19 @@ public ApiRequest::__construct(array $query = [], array $request = [], array $at
 ---
 ### getAuthorizationHeader
 
-Get header Authorization
+Retrieves the Authorization header from the request.
 
 ```php
 public ApiRequest::getAuthorizationHeader(): string
 ```
 
-
+The method checks multiple keys in the request headers for Authorization,
+including 'Authorization', 'HTTP_AUTHORIZATION', and 'REDIRECT_HTTP_AUTHORIZATION'.
+If the header is found, it is trimmed and returned as a string.
+If the header is not found in the request headers, the method falls back to using the
+getallheaders() function to retrieve all the request headers and checks for the
+'Authorization' header. If found, it is trimmed and returned as a string.
+If no Authorization header is found, an empty string is returned.
 
 
 
@@ -69,14 +75,14 @@ public ApiRequest::getAuthorizationHeader(): string
 
 **Return Value:**
 
-
+The Authorization header value, or an empty string if not found.
 
 
 
 ---
 ### getAPIKey
 
-get api key from header
+Retrieves the API key from the request headers.
 
 ```php
 public ApiRequest::getAPIKey(): string
@@ -92,17 +98,17 @@ public ApiRequest::getAPIKey(): string
 
 **Return Value:**
 
-
+The API key, or an empty string if not found.
 
 
 
 ---
 ### getBearerToken
 
-get access token from header
+Get the bearer token from the authorization header.
 
 ```php
-public ApiRequest::getBearerToken(): ?string
+public ApiRequest::getBearerToken(): string|null
 ```
 
 
@@ -115,7 +121,30 @@ public ApiRequest::getBearerToken(): ?string
 
 **Return Value:**
 
+The bearer token if found, null otherwise.
 
+
+
+---
+### isApiRequest
+
+Checks if the current request is an API request.
+
+```php
+public ApiRequest::isApiRequest(): bool
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+Returns true if the current request is an API request, false otherwise.
 
 
 
@@ -267,4 +296,4 @@ public IncomingRequest::getRequestParams(string|null $method = null): array
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

@@ -333,7 +333,53 @@ private static Events::executeHandlers(array $registry, string $registryType, st
 
 
 ---
+### getEventRegistry
+
+
+
+```php
+public static Events::getEventRegistry(): array
+```
+
+
+
+* This method is **static**.
+
+
+
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+### getFilterRegistry
+
+
+
+```php
+public static Events::getFilterRegistry(): array
+```
+
+
+
+* This method is **static**.
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+
+
+---
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

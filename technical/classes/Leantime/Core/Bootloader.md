@@ -127,7 +127,7 @@ public Bootloader::__invoke(): void
 ---
 ### boot
 
-Boot the Application.
+Execute the Application lifecycle.
 
 ```php
 public Bootloader::boot(): void
@@ -150,7 +150,7 @@ public Bootloader::boot(): void
 ---
 ### getApplication
 
-Get the Application instance.
+Get the Application instance and bind important services
 
 ```php
 public Bootloader::getApplication(): \Leantime\Core\Application
@@ -171,12 +171,12 @@ public Bootloader::getApplication(): \Leantime\Core\Application
 
 
 ---
-### loadHeaders
+### registerCoreBindings
 
-Load headers
+
 
 ```php
-private Bootloader::loadHeaders(): void
+private Bootloader::registerCoreBindings(): void
 ```
 
 
@@ -194,12 +194,12 @@ private Bootloader::loadHeaders(): void
 
 
 ---
-### checkIfInstalled
+### registerCoreAliases
 
-Check if Leantime is installed
+
 
 ```php
-private Bootloader::checkIfInstalled(): bool
+private Bootloader::registerCoreAliases(): void
 ```
 
 
@@ -217,104 +217,12 @@ private Bootloader::checkIfInstalled(): bool
 
 
 ---
-### setInstalled
+### clearCache
 
-Set installed
+
 
 ```php
-private Bootloader::setInstalled(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### setUninstalled
-
-Set uninstalled
-
-```php
-private Bootloader::setUninstalled(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### redirectToInstall
-
-Redirect to install
-
-```php
-private Bootloader::redirectToInstall(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### redirectToUpdate
-
-Redirect to update
-
-```php
-private Bootloader::redirectToUpdate(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### checkIfUpdated
-
-Check if Leantime is updated
-
-```php
-private Bootloader::checkIfUpdated(): bool
+private Bootloader::clearCache(): void
 ```
 
 
@@ -338,82 +246,6 @@ Handle the request
 
 ```php
 private Bootloader::handleRequest(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### redirectWithOrigin
-
-Redirect with origin
-
-```php
-public Bootloader::redirectWithOrigin(string $route, string $origin): void
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `route` | **string** |  |
-| `origin` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### cronExec
-
-Cron exec
-
-```php
-private Bootloader::cronExec(): void
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### handleTelemetryResponse
-
-Handle telemetry response
-
-```php
-private Bootloader::handleTelemetryResponse(): void
 ```
 
 
@@ -555,7 +387,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -608,7 +440,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -622,7 +454,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -635,4 +467,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

@@ -5,9 +5,9 @@ footer: false
 
 # TestEmailCommand
 
+Class TestEmailCommand
 
-
-
+This class represents a command that sends an email to test the system configuration.
 
 * Full name: `\Leantime\Command\TestEmailCommand`
 * Parent class: [Command](../../../classes.md)
@@ -72,4 +72,4 @@ protected TestEmailCommand::execute(\Symfony\Component\Console\Input\InputInterf
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

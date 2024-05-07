@@ -79,7 +79,7 @@ public Users::getUser( $id): array|bool
 getUser - get on user from db
 
 ```php
-public Users::getUserBySha( $hash): array
+public Users::getUserBySha( $hash): mixed
 ```
 
 
@@ -131,7 +131,7 @@ returns datetime string with last login or null if nothing could be found
 getUserByEmail - get on user from db
 
 ```php
-public Users::getUserByEmail( $email): array|false
+public Users::getUserByEmail(string $email, string $status = &quot;a&quot;): array|false
 ```
 
 
@@ -145,7 +145,8 @@ public Users::getUserByEmail( $email): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `email` | **** |  |
+| `email` | **string** |  |
+| `status` | **string** |  |
 
 
 **Return Value:**
@@ -160,7 +161,7 @@ public Users::getUserByEmail( $email): array|false
 
 
 ```php
-public Users::getNumberOfUsers(): int
+public Users::getNumberOfUsers(mixed $activeOnly = false, mixed $includeApi = true): int
 ```
 
 
@@ -169,6 +170,13 @@ public Users::getNumberOfUsers(): int
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `activeOnly` | **mixed** |  |
+| `includeApi` | **mixed** |  |
 
 
 **Return Value:**
@@ -587,4 +595,4 @@ Identifier of user or false, if not found
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

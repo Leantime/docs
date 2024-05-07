@@ -21,7 +21,7 @@ Controller Class - Base class For all controllers
 
 
 ```php
-public Show::init(\Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Tickets\Services\Tickets $ticketService, \Leantime\Domain\Users\Services\Users $userService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheetService, \Leantime\Domain\Comments\Services\Comments $commentService, \Leantime\Domain\Reactions\Services\Reactions $reactionsService, \Leantime\Domain\Reports\Services\Reports $reportsService): void
+public Show::init(\Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Tickets\Services\Tickets $ticketService, \Leantime\Domain\Users\Services\Users $userService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheetService, \Leantime\Domain\Comments\Services\Comments $commentService, \Leantime\Domain\Reactions\Services\Reactions $reactionsService, \Leantime\Domain\Setting\Repositories\Setting $settingRepo): void
 ```
 
 
@@ -41,7 +41,7 @@ public Show::init(\Leantime\Domain\Projects\Services\Projects $projectService, \
 | `timesheetService` | **\Leantime\Domain\Timesheets\Services\Timesheets** |  |
 | `commentService` | **\Leantime\Domain\Comments\Services\Comments** |  |
 | `reactionsService` | **\Leantime\Domain\Reactions\Services\Reactions** |  |
-| `reportsService` | **\Leantime\Domain\Reports\Services\Reports** |  |
+| `settingRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
 
 
 **Return Value:**
@@ -56,7 +56,7 @@ public Show::init(\Leantime\Domain\Projects\Services\Projects $projectService, \
 
 
 ```php
-public Show::get(): void
+public Show::get(): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -79,7 +79,7 @@ public Show::get(): void
 
 
 ```php
-public Show::post( $params): void
+public Show::post( $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -112,7 +112,7 @@ public Show::post( $params): void
 constructor - initialize private variables
 
 ```php
-public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\template $tpl, \Leantime\Core\language $language): mixed
+public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\Template $tpl, \Leantime\Core\Language $language): mixed
 ```
 
 
@@ -127,8 +127,8 @@ public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `incomingRequest` | **\Leantime\Core\IncomingRequest** | The request to be initialized. |
-| `tpl` | **\Leantime\Core\template** | The template to be initialized. |
-| `language` | **\Leantime\Core\language** | The language to be initialized. |
+| `tpl` | **\Leantime\Core\Template** | The template to be initialized. |
+| `language` | **\Leantime\Core\Language** | The language to be initialized. |
 
 
 **Return Value:**
@@ -164,6 +164,29 @@ private Controller::executeActions(string $method, object|array $params): void
 **Return Value:**
 
 
+
+
+
+---
+### getResponse
+
+getResponse - returns the response
+
+```php
+public Controller::getResponse(): \Symfony\Component\HttpFoundation\Response
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+The response object.
 
 
 
@@ -236,7 +259,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -289,7 +312,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -303,7 +326,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -316,4 +339,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

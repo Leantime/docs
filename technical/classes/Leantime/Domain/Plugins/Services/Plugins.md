@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Plugins::__construct(\Leantime\Domain\Plugins\Repositories\Plugins $pluginRepository, \Leantime\Core\Environment $config): mixed
+public Plugins::__construct(\Leantime\Domain\Plugins\Repositories\Plugins $pluginRepository, \Leantime\Core\Environment $config, \Leantime\Domain\Setting\Services\Setting $settingsService, \Leantime\Domain\Users\Services\Users $usersService): void
 ```
 
 
@@ -36,6 +36,8 @@ public Plugins::__construct(\Leantime\Domain\Plugins\Repositories\Plugins $plugi
 |-----------|------|-------------|
 | `pluginRepository` | **\Leantime\Domain\Plugins\Repositories\Plugins** |  |
 | `config` | **\Leantime\Core\Environment** |  |
+| `settingsService` | **\Leantime\Domain\Setting\Services\Setting** |  |
+| `usersService` | **\Leantime\Domain\Users\Services\Users** |  |
 
 
 **Return Value:**
@@ -131,7 +133,7 @@ public Plugins::getEnabledPlugins(): array|false|mixed
 
 
 ```php
-public Plugins::discoverNewPlugins(): array
+public Plugins::discoverNewPlugins(): \Leantime\Domain\Plugins\Models\InstalledPlugin[]
 ```
 
 
@@ -140,6 +142,36 @@ public Plugins::discoverNewPlugins(): array
 
 
 
+
+
+**Return Value:**
+
+
+
+
+
+---
+### createPluginFromComposer
+
+
+
+```php
+public Plugins::createPluginFromComposer(string $pluginFolder, string $license_key = &#039;&#039;): \Leantime\Domain\Plugins\Models\InstalledPlugin
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `pluginFolder` | **string** |  |
+| `license_key` | **string** |  |
 
 
 **Return Value:**
@@ -270,7 +302,7 @@ public Plugins::removePlugin(int $id): bool
 
 
 ```php
-public Plugins::getPluginClassName(\Leantime\Domain\Plugins\Models\Plugins $plugin): string
+public Plugins::getPluginClassName(\Leantime\Domain\Plugins\Models\InstalledPlugin $plugin): string
 ```
 
 
@@ -284,7 +316,7 @@ public Plugins::getPluginClassName(\Leantime\Domain\Plugins\Models\Plugins $plug
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `plugin` | **\Leantime\Domain\Plugins\Models\Plugins** |  |
+| `plugin` | **\Leantime\Domain\Plugins\Models\InstalledPlugin** |  |
 
 
 **Return Value:**
@@ -299,7 +331,7 @@ public Plugins::getPluginClassName(\Leantime\Domain\Plugins\Models\Plugins $plug
 
 
 ```php
-public Plugins::getMarketplacePlugins(int $page, string $query = &#039;&#039;): \Illuminate\Support\Collection
+public Plugins::getMarketplacePlugins(int $page, string $query = &#039;&#039;): \Leantime\Domain\Plugins\Models\MarketplacePlugin[]
 ```
 
 
@@ -329,7 +361,7 @@ public Plugins::getMarketplacePlugins(int $page, string $query = &#039;&#039;): 
 
 
 ```php
-public Plugins::getMarketplacePlugin(string $identifier): \Illuminate\Support\Collection
+public Plugins::getMarketplacePlugin(string $identifier): \Leantime\Domain\Plugins\Models\MarketplacePlugin[]
 ```
 
 
@@ -344,6 +376,88 @@ public Plugins::getMarketplacePlugin(string $identifier): \Illuminate\Support\Co
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `identifier` | **string** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### installMarketplacePlugin
+
+
+
+```php
+public Plugins::installMarketplacePlugin(\Leantime\Domain\Plugins\Models\MarketplacePlugin $plugin, string $version): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `plugin` | **\Leantime\Domain\Plugins\Models\MarketplacePlugin** |  |
+| `version` | **string** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### canActivate
+
+
+
+```php
+public Plugins::canActivate(\Leantime\Domain\Plugins\Models\InstalledPlugin $plugin): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `plugin` | **\Leantime\Domain\Plugins\Models\InstalledPlugin** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### clearCache
+
+
+
+```php
+public Plugins::clearCache(): mixed
+```
+
+
+
+
+
+
+
 
 
 **Return Value:**
@@ -425,7 +539,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -478,7 +592,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -492,7 +606,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -505,4 +619,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

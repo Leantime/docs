@@ -20,6 +20,66 @@ footer: false
 |:---      |:---  |:---   |
 |`\Leantime\Domain\Goalcanvas\Repositories\Goalcanvas::CANVAS_NAME`||&#039;goal&#039;|
 
+## Methods
+
+### getGoalsByMilestone
+
+Gets all goals related to a milestone
+
+```php
+public Goalcanvas::getGoalsByMilestone( $milestoneId): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `milestoneId` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getSingleCanvas
+
+
+
+```php
+public Goalcanvas::getSingleCanvas( $canvasId): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `canvasId` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 
 
 ## Inherited methods
@@ -29,7 +89,7 @@ footer: false
 __construct - get db connection
 
 ```php
-public Canvas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language): void
+public Canvas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepo): void
 ```
 
 
@@ -45,6 +105,7 @@ public Canvas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $langu
 |-----------|------|-------------|
 | `db` | **\Leantime\Core\Db** |  |
 | `language` | **\Leantime\Core\Language** |  |
+| `ticketRepo` | **\Leantime\Domain\Tickets\Repositories\Tickets** |  |
 
 
 **Return Value:**
@@ -843,4 +904,4 @@ public Canvas::getTags(int $projectId): array
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

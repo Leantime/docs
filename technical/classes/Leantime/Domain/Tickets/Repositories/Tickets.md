@@ -126,6 +126,36 @@ public Tickets::getStatusListGroupedByType( $projectId): string[]
 
 
 ---
+### getStatusIdByName
+
+
+
+```php
+public Tickets::getStatusIdByName(mixed $statusLabel, mixed $projectId): int|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `statusLabel` | **mixed** |  |
+| `projectId` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### getAll
 
 getAll - get all Tickets, depending on userrole
@@ -212,6 +242,67 @@ public Tickets::getAllBySearchCriteria(array $searchCriteria, string $sort = &#0
 **Return Value:**
 
 | bool
+
+
+
+---
+### simpleTicketQuery
+
+
+
+```php
+public Tickets::simpleTicketQuery(?int $userId, ?int $projectId): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **?int** |  |
+| `projectId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getScheduledTasks
+
+
+
+```php
+public Tickets::getScheduledTasks(\Carbon\CarbonImmutable $dateFrom, \Carbon\CarbonImmutable $dateTo, ?int $userId = null): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `dateFrom` | **\Carbon\CarbonImmutable** |  |
+| `dateTo` | **\Carbon\CarbonImmutable** |  |
+| `userId` | **?int** |  |
+
+
+**Return Value:**
+
+
 
 
 
@@ -931,7 +1022,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -984,7 +1075,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -998,7 +1089,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -1011,4 +1102,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

@@ -49,7 +49,7 @@ public Frontcontroller::__construct(\Leantime\Core\IncomingRequest $incomingRequ
 run - executes the action depending on Request or firstAction
 
 ```php
-public static Frontcontroller::dispatch(string $action = &#039;&#039;, int $httpResponseCode = 200): void
+public static Frontcontroller::dispatch(string $action = &#039;&#039;, int $httpResponseCode = 200): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -74,12 +74,41 @@ public static Frontcontroller::dispatch(string $action = &#039;&#039;, int $http
 
 
 ---
+### dispatch_request
+
+
+
+```php
+public static Frontcontroller::dispatch_request(\Leantime\Core\IncomingRequest $request): \Symfony\Component\HttpFoundation\Response
+```
+
+
+
+* This method is **static**.
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `request` | **\Leantime\Core\IncomingRequest** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### executeAction
 
 executeAction - includes the class in includes/modules by the Request
 
 ```php
-private static Frontcontroller::executeAction(string $completeName, array $params = array()): void
+private static Frontcontroller::executeAction(string $completeName, array $params = array()): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -194,7 +223,7 @@ public static Frontcontroller::getModuleName(string|null $completeName = null): 
 ---
 ### getCurrentRoute
 
-getCurrentRoute - gets the current main action
+getCurrentRoute - gets the current main action in format module.action
 
 ```php
 public static Frontcontroller::getCurrentRoute(): string
@@ -220,7 +249,7 @@ public static Frontcontroller::getCurrentRoute(): string
 redirect - redirects to a given url
 
 ```php
-public static Frontcontroller::redirect(string $url, int $http_response_code = 303): never
+public static Frontcontroller::redirect(string $url, int $http_response_code = 303): \Symfony\Component\HttpFoundation\RedirectResponse
 ```
 
 
@@ -346,7 +375,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -399,7 +428,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -413,7 +442,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -426,4 +455,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

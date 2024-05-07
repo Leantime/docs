@@ -18,10 +18,10 @@ Controller Class - Base class For all controllers
 
 ### init
 
-init - initialize private variables
+init - initializes the objects for the class
 
 ```php
-public UserInvite::init(\Leantime\Domain\Files\Repositories\Files $fileRepo, \Leantime\Domain\Auth\Services\Auth $authService, \Leantime\Domain\Users\Services\Users $usersService): mixed
+public UserInvite::init(\Leantime\Domain\Auth\Services\Auth $authService, \Leantime\Domain\Users\Services\Users $userService, \Leantime\Domain\Setting\Services\Setting $settingService): void
 ```
 
 
@@ -35,9 +35,9 @@ public UserInvite::init(\Leantime\Domain\Files\Repositories\Files $fileRepo, \Le
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `fileRepo` | **\Leantime\Domain\Files\Repositories\Files** |  |
-| `authService` | **\Leantime\Domain\Auth\Services\Auth** |  |
-| `usersService` | **\Leantime\Domain\Users\Services\Users** |  |
+| `authService` | **\Leantime\Domain\Auth\Services\Auth** | The AuthService object |
+| `userService` | **\Leantime\Domain\Users\Services\Users** | The UserService object |
+| `settingService` | **\Leantime\Domain\Setting\Services\Setting** | The Setting object |
 
 
 **Return Value:**
@@ -52,7 +52,7 @@ public UserInvite::init(\Leantime\Domain\Files\Repositories\Files $fileRepo, \Le
 get - handle get requests
 
 ```php
-public UserInvite::get(mixed $params): mixed
+public UserInvite::get(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -66,7 +66,7 @@ public UserInvite::get(mixed $params): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **mixed** |  |
+| `params` | **array** |  |
 
 
 **Return Value:**
@@ -81,7 +81,7 @@ public UserInvite::get(mixed $params): mixed
 post - handle post requests
 
 ```php
-public UserInvite::post(mixed $params): mixed
+public UserInvite::post(array $params): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -95,7 +95,7 @@ public UserInvite::post(mixed $params): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **mixed** |  |
+| `params` | **array** |  |
 
 
 **Return Value:**
@@ -114,7 +114,7 @@ public UserInvite::post(mixed $params): mixed
 constructor - initialize private variables
 
 ```php
-public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\template $tpl, \Leantime\Core\language $language): mixed
+public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\Template $tpl, \Leantime\Core\Language $language): mixed
 ```
 
 
@@ -129,8 +129,8 @@ public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `incomingRequest` | **\Leantime\Core\IncomingRequest** | The request to be initialized. |
-| `tpl` | **\Leantime\Core\template** | The template to be initialized. |
-| `language` | **\Leantime\Core\language** | The language to be initialized. |
+| `tpl` | **\Leantime\Core\Template** | The template to be initialized. |
+| `language` | **\Leantime\Core\Language** | The language to be initialized. |
 
 
 **Return Value:**
@@ -166,6 +166,29 @@ private Controller::executeActions(string $method, object|array $params): void
 **Return Value:**
 
 
+
+
+
+---
+### getResponse
+
+getResponse - returns the response
+
+```php
+public Controller::getResponse(): \Symfony\Component\HttpFoundation\Response
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+The response object.
 
 
 
@@ -238,7 +261,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -291,7 +314,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -305,7 +328,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -318,4 +341,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

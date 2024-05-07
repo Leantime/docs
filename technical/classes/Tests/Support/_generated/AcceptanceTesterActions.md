@@ -659,7 +659,7 @@ public AcceptanceTesterActions::seeCookie(mixed $cookie, array $params = [], boo
 Checks that a cookie with the given name is set.
 You can set additional cookie params like `domain`, `path` as array passed in last argument.
 
-``` php
+```php
 <?php
 $I->seeCookie('PHPSESSID');
 ```
@@ -700,7 +700,7 @@ public AcceptanceTesterActions::canSeeCookie(mixed $cookie, array $params = [], 
 Checks that a cookie with the given name is set.
 You can set additional cookie params like `domain`, `path` as array passed in last argument.
 
-``` php
+```php
 <?php
 $I->seeCookie('PHPSESSID');
 ```
@@ -741,7 +741,7 @@ public AcceptanceTesterActions::tryToSeeCookie(mixed $cookie, array $params = []
 Checks that a cookie with the given name is set.
 You can set additional cookie params like `domain`, `path` as array passed in last argument.
 
-``` php
+```php
 <?php
 $I->seeCookie('PHPSESSID');
 ```
@@ -960,7 +960,7 @@ public AcceptanceTesterActions::setCookie(mixed $name, mixed $value, array $para
 Sets a cookie with the given name and value.
 You can set additional cookie params like `domain`, `path`, `expires`, `secure` in array passed as last argument.
 
-``` php
+```php
 <?php
 $I->setCookie('PHPSESSID', 'el4ukv0kqbvoirg7nkp4dncpk3');
 ```
@@ -1002,7 +1002,7 @@ public AcceptanceTesterActions::tryToSetCookie(mixed $name, mixed $value, array 
 Sets a cookie with the given name and value.
 You can set additional cookie params like `domain`, `path`, `expires`, `secure` in array passed as last argument.
 
-``` php
+```php
 <?php
 $I->setCookie('PHPSESSID', 'el4ukv0kqbvoirg7nkp4dncpk3');
 ```
@@ -1348,7 +1348,7 @@ public AcceptanceTesterActions::amOnPage(mixed $page): void
 
 Opens the page for the given relative URI.
 
-``` php
+```php
 <?php
 // opens front page
 $I->amOnPage('/');
@@ -1391,7 +1391,7 @@ Checks that the current page contains the given string (case insensitive).
 You can specify a specific HTML element (via CSS or XPath) as the second
 parameter to only search within that element.
 
-``` php
+```php
 <?php
 $I->see('Logout');                        // I can suppose user is logged in
 $I->see('Sign Up', 'h1');                 // I can suppose it's a signup page
@@ -1450,7 +1450,7 @@ Checks that the current page contains the given string (case insensitive).
 You can specify a specific HTML element (via CSS or XPath) as the second
 parameter to only search within that element.
 
-``` php
+```php
 <?php
 $I->see('Logout');                        // I can suppose user is logged in
 $I->see('Sign Up', 'h1');                 // I can suppose it's a signup page
@@ -1509,7 +1509,7 @@ Checks that the current page contains the given string (case insensitive).
 You can specify a specific HTML element (via CSS or XPath) as the second
 parameter to only search within that element.
 
-``` php
+```php
 <?php
 $I->see('Logout');                        // I can suppose user is logged in
 $I->see('Sign Up', 'h1');                 // I can suppose it's a signup page
@@ -1805,7 +1805,7 @@ public AcceptanceTesterActions::seeInSource(mixed $raw): void
 Checks that the current page contains the given string in its
 raw source code.
 
-``` php
+```php
 <?php
 $I->seeInSource('<h1>Green eggs &amp; ham</h1>');
 ```
@@ -1844,7 +1844,7 @@ public AcceptanceTesterActions::canSeeInSource(mixed $raw): void
 Checks that the current page contains the given string in its
 raw source code.
 
-``` php
+```php
 <?php
 $I->seeInSource('<h1>Green eggs &amp; ham</h1>');
 ```
@@ -1883,7 +1883,7 @@ public AcceptanceTesterActions::tryToSeeInSource(mixed $raw): bool
 Checks that the current page contains the given string in its
 raw source code.
 
-``` php
+```php
 <?php
 $I->seeInSource('<h1>Green eggs &amp; ham</h1>');
 ```
@@ -2391,7 +2391,7 @@ The second parameter is a context (CSS or XPath locator) to narrow the search.
 
 Note that if the locator matches a button of type `submit`, the form will be submitted.
 
-``` php
+```php
 <?php
 // simple link
 $I->click('Logout');
@@ -2449,7 +2449,7 @@ The second parameter is a context (CSS or XPath locator) to narrow the search.
 
 Note that if the locator matches a button of type `submit`, the form will be submitted.
 
-``` php
+```php
 <?php
 // simple link
 $I->click('Logout');
@@ -2534,7 +2534,7 @@ public AcceptanceTesterActions::seeLink(string $text, ?string $url = NULL): void
 Checks that there's a link with the specified text.
 Give a full URL as the second parameter to match links with that exact URL.
 
-``` php
+```php
 <?php
 $I->seeLink('Logout'); // matches <a href="#">Logout</a>
 $I->seeLink('Logout','/logout'); // matches <a href="/logout">Logout</a>
@@ -2575,7 +2575,7 @@ public AcceptanceTesterActions::canSeeLink(string $text, ?string $url = NULL): v
 Checks that there's a link with the specified text.
 Give a full URL as the second parameter to match links with that exact URL.
 
-``` php
+```php
 <?php
 $I->seeLink('Logout'); // matches <a href="#">Logout</a>
 $I->seeLink('Logout','/logout'); // matches <a href="/logout">Logout</a>
@@ -2616,7 +2616,7 @@ public AcceptanceTesterActions::tryToSeeLink(string $text, ?string $url = NULL):
 Checks that there's a link with the specified text.
 Give a full URL as the second parameter to match links with that exact URL.
 
-``` php
+```php
 <?php
 $I->seeLink('Logout'); // matches <a href="#">Logout</a>
 $I->seeLink('Logout','/logout'); // matches <a href="/logout">Logout</a>
@@ -2691,7 +2691,7 @@ public AcceptanceTesterActions::dontSeeLink(string $text, string $url = &quot;&q
 Checks that the page doesn't contain a link with the given string.
 If the second parameter is given, only links with a matching "href" attribute will be checked.
 
-``` php
+```php
 <?php
 $I->dontSeeLink('Logout'); // I suppose user is not logged in
 $I->dontSeeLink('Checkout now', '/store/cart.php');
@@ -2732,7 +2732,7 @@ public AcceptanceTesterActions::cantSeeLink(string $text, string $url = &quot;&q
 Checks that the page doesn't contain a link with the given string.
 If the second parameter is given, only links with a matching "href" attribute will be checked.
 
-``` php
+```php
 <?php
 $I->dontSeeLink('Logout'); // I suppose user is not logged in
 $I->dontSeeLink('Checkout now', '/store/cart.php');
@@ -2773,7 +2773,7 @@ public AcceptanceTesterActions::tryToDontSeeLink(string $text, string $url = &qu
 Checks that the page doesn't contain a link with the given string.
 If the second parameter is given, only links with a matching "href" attribute will be checked.
 
-``` php
+```php
 <?php
 $I->dontSeeLink('Logout'); // I suppose user is not logged in
 $I->dontSeeLink('Checkout now', '/store/cart.php');
@@ -2847,7 +2847,7 @@ public AcceptanceTesterActions::seeInCurrentUrl(string $uri): void
 
 Checks that current URI contains the given string.
 
-``` php
+```php
 <?php
 // to match: /home/dashboard
 $I->seeInCurrentUrl('home');
@@ -2888,7 +2888,7 @@ public AcceptanceTesterActions::canSeeInCurrentUrl(string $uri): void
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that current URI contains the given string.
 
-``` php
+```php
 <?php
 // to match: /home/dashboard
 $I->seeInCurrentUrl('home');
@@ -2929,7 +2929,7 @@ public AcceptanceTesterActions::tryToSeeInCurrentUrl(string $uri): bool
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that current URI contains the given string.
 
-``` php
+```php
 <?php
 // to match: /home/dashboard
 $I->seeInCurrentUrl('home');
@@ -3004,7 +3004,7 @@ public AcceptanceTesterActions::seeCurrentUrlEquals(string $uri): void
 Checks that the current URL is equal to the given string.
 Unlike `seeInCurrentUrl`, this only matches the full URL.
 
-``` php
+```php
 <?php
 // to match root url
 $I->seeCurrentUrlEquals('/');
@@ -3044,7 +3044,7 @@ public AcceptanceTesterActions::canSeeCurrentUrlEquals(string $uri): void
 Checks that the current URL is equal to the given string.
 Unlike `seeInCurrentUrl`, this only matches the full URL.
 
-``` php
+```php
 <?php
 // to match root url
 $I->seeCurrentUrlEquals('/');
@@ -3084,7 +3084,7 @@ public AcceptanceTesterActions::tryToSeeCurrentUrlEquals(string $uri): bool
 Checks that the current URL is equal to the given string.
 Unlike `seeInCurrentUrl`, this only matches the full URL.
 
-``` php
+```php
 <?php
 // to match root url
 $I->seeCurrentUrlEquals('/');
@@ -3156,7 +3156,7 @@ public AcceptanceTesterActions::seeCurrentUrlMatches(string $uri): void
 
 Checks that the current URL matches the given regular expression.
 
-``` php
+```php
 <?php
 // to match root url
 $I->seeCurrentUrlMatches('~^/users/(\d+)~');
@@ -3195,7 +3195,7 @@ public AcceptanceTesterActions::canSeeCurrentUrlMatches(string $uri): void
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that the current URL matches the given regular expression.
 
-``` php
+```php
 <?php
 // to match root url
 $I->seeCurrentUrlMatches('~^/users/(\d+)~');
@@ -3234,7 +3234,7 @@ public AcceptanceTesterActions::tryToSeeCurrentUrlMatches(string $uri): bool
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that the current URL matches the given regular expression.
 
-``` php
+```php
 <?php
 // to match root url
 $I->seeCurrentUrlMatches('~^/users/(\d+)~');
@@ -3306,7 +3306,7 @@ public AcceptanceTesterActions::dontSeeInCurrentUrl(string $uri): void
 
 Checks that the current URI doesn't contain the given string.
 
-``` php
+```php
 <?php
 $I->dontSeeInCurrentUrl('/users/');
 ```
@@ -3344,7 +3344,7 @@ public AcceptanceTesterActions::cantSeeInCurrentUrl(string $uri): void
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that the current URI doesn't contain the given string.
 
-``` php
+```php
 <?php
 $I->dontSeeInCurrentUrl('/users/');
 ```
@@ -3382,7 +3382,7 @@ public AcceptanceTesterActions::tryToDontSeeInCurrentUrl(string $uri): bool
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that the current URI doesn't contain the given string.
 
-``` php
+```php
 <?php
 $I->dontSeeInCurrentUrl('/users/');
 ```
@@ -3454,7 +3454,7 @@ public AcceptanceTesterActions::dontSeeCurrentUrlEquals(string $uri): void
 Checks that the current URL doesn't equal the given string.
 Unlike `dontSeeInCurrentUrl`, this only matches the full URL.
 
-``` php
+```php
 <?php
 // current url is not root
 $I->dontSeeCurrentUrlEquals('/');
@@ -3494,7 +3494,7 @@ public AcceptanceTesterActions::cantSeeCurrentUrlEquals(string $uri): void
 Checks that the current URL doesn't equal the given string.
 Unlike `dontSeeInCurrentUrl`, this only matches the full URL.
 
-``` php
+```php
 <?php
 // current url is not root
 $I->dontSeeCurrentUrlEquals('/');
@@ -3534,7 +3534,7 @@ public AcceptanceTesterActions::tryToDontSeeCurrentUrlEquals(string $uri): bool
 Checks that the current URL doesn't equal the given string.
 Unlike `dontSeeInCurrentUrl`, this only matches the full URL.
 
-``` php
+```php
 <?php
 // current url is not root
 $I->dontSeeCurrentUrlEquals('/');
@@ -3606,7 +3606,7 @@ public AcceptanceTesterActions::dontSeeCurrentUrlMatches(string $uri): void
 
 Checks that current url doesn't match the given regular expression.
 
-``` php
+```php
 <?php
 // to match root url
 $I->dontSeeCurrentUrlMatches('~^/users/(\d+)~');
@@ -3645,7 +3645,7 @@ public AcceptanceTesterActions::cantSeeCurrentUrlMatches(string $uri): void
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that current url doesn't match the given regular expression.
 
-``` php
+```php
 <?php
 // to match root url
 $I->dontSeeCurrentUrlMatches('~^/users/(\d+)~');
@@ -3684,7 +3684,7 @@ public AcceptanceTesterActions::tryToDontSeeCurrentUrlMatches(string $uri): bool
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that current url doesn't match the given regular expression.
 
-``` php
+```php
 <?php
 // to match root url
 $I->dontSeeCurrentUrlMatches('~^/users/(\d+)~');
@@ -3757,7 +3757,7 @@ public AcceptanceTesterActions::grabFromCurrentUrl(mixed $uri = NULL): mixed
 Executes the given regular expression against the current URI and returns the first capturing group.
 If no parameters are provided, the full URI is returned.
 
-``` php
+```php
 <?php
 $user_id = $I->grabFromCurrentUrl('~^/user/(\d+)/~');
 $uri = $I->grabFromCurrentUrl();
@@ -3829,7 +3829,7 @@ public AcceptanceTesterActions::seeCheckboxIsChecked(mixed $checkbox): void
 
 Checks that the specified checkbox is checked.
 
-``` php
+```php
 <?php
 $I->seeCheckboxIsChecked('#agree'); // I suppose user agreed to terms
 $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user agreed to terms, If there is only one checkbox in form.
@@ -3869,7 +3869,7 @@ public AcceptanceTesterActions::canSeeCheckboxIsChecked(mixed $checkbox): void
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that the specified checkbox is checked.
 
-``` php
+```php
 <?php
 $I->seeCheckboxIsChecked('#agree'); // I suppose user agreed to terms
 $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user agreed to terms, If there is only one checkbox in form.
@@ -3909,7 +3909,7 @@ public AcceptanceTesterActions::tryToSeeCheckboxIsChecked(mixed $checkbox): bool
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that the specified checkbox is checked.
 
-``` php
+```php
 <?php
 $I->seeCheckboxIsChecked('#agree'); // I suppose user agreed to terms
 $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user agreed to terms, If there is only one checkbox in form.
@@ -3982,7 +3982,7 @@ public AcceptanceTesterActions::dontSeeCheckboxIsChecked(mixed $checkbox): void
 
 Check that the specified checkbox is unchecked.
 
-``` php
+```php
 <?php
 $I->dontSeeCheckboxIsChecked('#agree'); // I suppose user didn't agree to terms
 $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user didn't check the first checkbox in form.
@@ -4021,7 +4021,7 @@ public AcceptanceTesterActions::cantSeeCheckboxIsChecked(mixed $checkbox): void
 [!] Conditional Assertion: Test won't be stopped on fail
 Check that the specified checkbox is unchecked.
 
-``` php
+```php
 <?php
 $I->dontSeeCheckboxIsChecked('#agree'); // I suppose user didn't agree to terms
 $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user didn't check the first checkbox in form.
@@ -4060,7 +4060,7 @@ public AcceptanceTesterActions::tryToDontSeeCheckboxIsChecked(mixed $checkbox): 
 [!] Test won't be stopped on fail. Error won't be logged
 Check that the specified checkbox is unchecked.
 
-``` php
+```php
 <?php
 $I->dontSeeCheckboxIsChecked('#agree'); // I suppose user didn't agree to terms
 $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user didn't check the first checkbox in form.
@@ -4133,7 +4133,7 @@ public AcceptanceTesterActions::seeInField(string|array $field, mixed $value): v
 Checks that the given input field or textarea *equals* (i.e. not just contains) the given value.
 Fields are matched by label text, the "name" attribute, CSS, or XPath.
 
-``` php
+```php
 <?php
 $I->seeInField('Body','Type your comment here');
 $I->seeInField('form textarea[name=body]','Type your comment here');
@@ -4178,7 +4178,7 @@ public AcceptanceTesterActions::canSeeInField(string|array $field, mixed $value)
 Checks that the given input field or textarea *equals* (i.e. not just contains) the given value.
 Fields are matched by label text, the "name" attribute, CSS, or XPath.
 
-``` php
+```php
 <?php
 $I->seeInField('Body','Type your comment here');
 $I->seeInField('form textarea[name=body]','Type your comment here');
@@ -4223,7 +4223,7 @@ public AcceptanceTesterActions::tryToSeeInField(string|array $field, mixed $valu
 Checks that the given input field or textarea *equals* (i.e. not just contains) the given value.
 Fields are matched by label text, the "name" attribute, CSS, or XPath.
 
-``` php
+```php
 <?php
 $I->seeInField('Body','Type your comment here');
 $I->seeInField('form textarea[name=body]','Type your comment here');
@@ -4302,7 +4302,7 @@ public AcceptanceTesterActions::dontSeeInField(string|array $field, mixed $value
 Checks that an input field or textarea doesn't contain the given value.
 For fuzzy locators, the field is matched by label text, CSS and XPath.
 
-``` php
+```php
 <?php
 $I->dontSeeInField('Body','Type your comment here');
 $I->dontSeeInField('form textarea[name=body]','Type your comment here');
@@ -4347,7 +4347,7 @@ public AcceptanceTesterActions::cantSeeInField(string|array $field, mixed $value
 Checks that an input field or textarea doesn't contain the given value.
 For fuzzy locators, the field is matched by label text, CSS and XPath.
 
-``` php
+```php
 <?php
 $I->dontSeeInField('Body','Type your comment here');
 $I->dontSeeInField('form textarea[name=body]','Type your comment here');
@@ -4392,7 +4392,7 @@ public AcceptanceTesterActions::tryToDontSeeInField(string|array $field, mixed $
 Checks that an input field or textarea doesn't contain the given value.
 For fuzzy locators, the field is matched by label text, CSS and XPath.
 
-``` php
+```php
 <?php
 $I->dontSeeInField('Body','Type your comment here');
 $I->dontSeeInField('form textarea[name=body]','Type your comment here');
@@ -4471,7 +4471,7 @@ public AcceptanceTesterActions::seeInFormFields(mixed $formSelector, array $para
 Checks if the array of form parameters (name => value) are set on the form matched with the
 passed selector.
 
-``` php
+```php
 <?php
 $I->seeInFormFields('form[name=myform]', [
      'input1' => 'value',
@@ -4482,7 +4482,7 @@ $I->seeInFormFields('form[name=myform]', [
 For multi-select elements, or to check values of multiple elements with the same name, an
 array may be passed:
 
-``` php
+```php
 <?php
 $I->seeInFormFields('.form-class', [
      'multiselect' => [
@@ -4498,7 +4498,7 @@ $I->seeInFormFields('.form-class', [
 
 Additionally, checkbox values can be checked with a boolean.
 
-``` php
+```php
 <?php
 $I->seeInFormFields('#form-id', [
      'checkbox1' => true,        // passes if checked
@@ -4508,7 +4508,7 @@ $I->seeInFormFields('#form-id', [
 
 Pair this with submitForm for quick testing magic.
 
-``` php
+```php
 <?php
 $form = [
      'field1' => 'value',
@@ -4556,7 +4556,7 @@ public AcceptanceTesterActions::canSeeInFormFields(mixed $formSelector, array $p
 Checks if the array of form parameters (name => value) are set on the form matched with the
 passed selector.
 
-``` php
+```php
 <?php
 $I->seeInFormFields('form[name=myform]', [
      'input1' => 'value',
@@ -4567,7 +4567,7 @@ $I->seeInFormFields('form[name=myform]', [
 For multi-select elements, or to check values of multiple elements with the same name, an
 array may be passed:
 
-``` php
+```php
 <?php
 $I->seeInFormFields('.form-class', [
      'multiselect' => [
@@ -4583,7 +4583,7 @@ $I->seeInFormFields('.form-class', [
 
 Additionally, checkbox values can be checked with a boolean.
 
-``` php
+```php
 <?php
 $I->seeInFormFields('#form-id', [
      'checkbox1' => true,        // passes if checked
@@ -4593,7 +4593,7 @@ $I->seeInFormFields('#form-id', [
 
 Pair this with submitForm for quick testing magic.
 
-``` php
+```php
 <?php
 $form = [
      'field1' => 'value',
@@ -4641,7 +4641,7 @@ public AcceptanceTesterActions::tryToSeeInFormFields(mixed $formSelector, array 
 Checks if the array of form parameters (name => value) are set on the form matched with the
 passed selector.
 
-``` php
+```php
 <?php
 $I->seeInFormFields('form[name=myform]', [
      'input1' => 'value',
@@ -4652,7 +4652,7 @@ $I->seeInFormFields('form[name=myform]', [
 For multi-select elements, or to check values of multiple elements with the same name, an
 array may be passed:
 
-``` php
+```php
 <?php
 $I->seeInFormFields('.form-class', [
      'multiselect' => [
@@ -4668,7 +4668,7 @@ $I->seeInFormFields('.form-class', [
 
 Additionally, checkbox values can be checked with a boolean.
 
-``` php
+```php
 <?php
 $I->seeInFormFields('#form-id', [
      'checkbox1' => true,        // passes if checked
@@ -4678,7 +4678,7 @@ $I->seeInFormFields('#form-id', [
 
 Pair this with submitForm for quick testing magic.
 
-``` php
+```php
 <?php
 $form = [
      'field1' => 'value',
@@ -4760,7 +4760,7 @@ public AcceptanceTesterActions::dontSeeInFormFields(mixed $formSelector, array $
 Checks if the array of form parameters (name => value) are not set on the form matched with
 the passed selector.
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('form[name=myform]', [
      'input1' => 'non-existent value',
@@ -4771,7 +4771,7 @@ $I->dontSeeInFormFields('form[name=myform]', [
 To check that an element hasn't been assigned any one of many values, an array can be passed
 as the value:
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('.form-class', [
      'fieldName' => [
@@ -4783,7 +4783,7 @@ $I->dontSeeInFormFields('.form-class', [
 
 Additionally, checkbox values can be checked with a boolean.
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('#form-id', [
      'checkbox1' => true,        // fails if checked
@@ -4826,7 +4826,7 @@ public AcceptanceTesterActions::cantSeeInFormFields(mixed $formSelector, array $
 Checks if the array of form parameters (name => value) are not set on the form matched with
 the passed selector.
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('form[name=myform]', [
      'input1' => 'non-existent value',
@@ -4837,7 +4837,7 @@ $I->dontSeeInFormFields('form[name=myform]', [
 To check that an element hasn't been assigned any one of many values, an array can be passed
 as the value:
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('.form-class', [
      'fieldName' => [
@@ -4849,7 +4849,7 @@ $I->dontSeeInFormFields('.form-class', [
 
 Additionally, checkbox values can be checked with a boolean.
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('#form-id', [
      'checkbox1' => true,        // fails if checked
@@ -4892,7 +4892,7 @@ public AcceptanceTesterActions::tryToDontSeeInFormFields(mixed $formSelector, ar
 Checks if the array of form parameters (name => value) are not set on the form matched with
 the passed selector.
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('form[name=myform]', [
      'input1' => 'non-existent value',
@@ -4903,7 +4903,7 @@ $I->dontSeeInFormFields('form[name=myform]', [
 To check that an element hasn't been assigned any one of many values, an array can be passed
 as the value:
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('.form-class', [
      'fieldName' => [
@@ -4915,7 +4915,7 @@ $I->dontSeeInFormFields('.form-class', [
 
 Additionally, checkbox values can be checked with a boolean.
 
-``` php
+```php
 <?php
 $I->dontSeeInFormFields('#form-id', [
      'checkbox1' => true,        // fails if checked
@@ -4991,7 +4991,7 @@ public AcceptanceTesterActions::selectOption(mixed $select, mixed $option): void
 
 Selects an option in a select tag or in radio button group.
 
-``` php
+```php
 <?php
 $I->selectOption('form select[name=account]', 'Premium');
 $I->selectOption('form input[name=payment]', 'Monthly');
@@ -5000,17 +5000,17 @@ $I->selectOption('//form/select[@name=account]', 'Monthly');
 
 Provide an array for the second argument to select multiple options:
 
-``` php
+```php
 <?php
-$I->selectOption('Which OS do you use?', array('Windows','Linux'));
+$I->selectOption('Which OS do you use?', ['Windows', 'Linux']);
 ```
 
 Or provide an associative array for the second argument to specifically define which selection method should be used:
 
-``` php
+```php
 <?php
-$I->selectOption('Which OS do you use?', array('text' => 'Windows')); // Only search by text 'Windows'
-$I->selectOption('Which OS do you use?', array('value' => 'windows')); // Only search by value 'windows'
+$I->selectOption('Which OS do you use?', ['text' => 'Windows']); // Only search by text 'Windows'
+$I->selectOption('Which OS do you use?', ['value' => 'windows']); // Only search by value 'windows'
 ```
 
 
@@ -5047,7 +5047,7 @@ public AcceptanceTesterActions::tryToSelectOption(mixed $select, mixed $option):
 [!] Test won't be stopped on fail. Error won't be logged
 Selects an option in a select tag or in radio button group.
 
-``` php
+```php
 <?php
 $I->selectOption('form select[name=account]', 'Premium');
 $I->selectOption('form input[name=payment]', 'Monthly');
@@ -5056,17 +5056,17 @@ $I->selectOption('//form/select[@name=account]', 'Monthly');
 
 Provide an array for the second argument to select multiple options:
 
-``` php
+```php
 <?php
-$I->selectOption('Which OS do you use?', array('Windows','Linux'));
+$I->selectOption('Which OS do you use?', ['Windows', 'Linux']);
 ```
 
 Or provide an associative array for the second argument to specifically define which selection method should be used:
 
-``` php
+```php
 <?php
-$I->selectOption('Which OS do you use?', array('text' => 'Windows')); // Only search by text 'Windows'
-$I->selectOption('Which OS do you use?', array('value' => 'windows')); // Only search by value 'windows'
+$I->selectOption('Which OS do you use?', ['text' => 'Windows']); // Only search by text 'Windows'
+$I->selectOption('Which OS do you use?', ['value' => 'windows']); // Only search by value 'windows'
 ```
 
 
@@ -5239,7 +5239,7 @@ public AcceptanceTesterActions::checkOption(mixed $option): void
 
 Ticks a checkbox. For radio buttons, use the `selectOption` method instead.
 
-``` php
+```php
 <?php
 $I->checkOption('#agree');
 ```
@@ -5277,7 +5277,7 @@ public AcceptanceTesterActions::tryToCheckOption(mixed $option): bool
 [!] Test won't be stopped on fail. Error won't be logged
 Ticks a checkbox. For radio buttons, use the `selectOption` method instead.
 
-``` php
+```php
 <?php
 $I->checkOption('#agree');
 ```
@@ -5348,7 +5348,7 @@ public AcceptanceTesterActions::uncheckOption(mixed $option): void
 
 Unticks a checkbox.
 
-``` php
+```php
 <?php
 $I->uncheckOption('#notify');
 ```
@@ -5386,7 +5386,7 @@ public AcceptanceTesterActions::tryToUncheckOption(mixed $option): bool
 [!] Test won't be stopped on fail. Error won't be logged
 Unticks a checkbox.
 
-``` php
+```php
 <?php
 $I->uncheckOption('#notify');
 ```
@@ -5457,7 +5457,7 @@ public AcceptanceTesterActions::fillField(mixed $field, mixed $value): void
 
 Fills a text field or textarea with the given string.
 
-``` php
+```php
 <?php
 $I->fillField("//input[@type='text']", "Hello World!");
 $I->fillField(['name' => 'email'], 'jon@example.com');
@@ -5497,7 +5497,7 @@ public AcceptanceTesterActions::tryToFillField(mixed $field, mixed $value): bool
 [!] Test won't be stopped on fail. Error won't be logged
 Fills a text field or textarea with the given string.
 
-``` php
+```php
 <?php
 $I->fillField("//input[@type='text']", "Hello World!");
 $I->fillField(['name' => 'email'], 'jon@example.com');
@@ -5814,7 +5814,7 @@ public AcceptanceTesterActions::attachFile(mixed $field, string $filename): void
 
 Attaches a file relative to the Codeception `_data` directory to the given file upload field.
 
-``` php
+```php
 <?php
 // file is stored in 'tests/_data/prices.xls'
 $I->attachFile('input[@type="file"]', 'prices.xls');
@@ -5854,7 +5854,7 @@ public AcceptanceTesterActions::tryToAttachFile(mixed $field, string $filename):
 [!] Test won't be stopped on fail. Error won't be logged
 Attaches a file relative to the Codeception `_data` directory to the given file upload field.
 
-``` php
+```php
 <?php
 // file is stored in 'tests/_data/prices.xls'
 $I->attachFile('input[@type="file"]', 'prices.xls');
@@ -5930,7 +5930,7 @@ Finds and returns the text contents of the given element.
 If a fuzzy locator is used, the element is found using CSS, XPath,
 and by matching the full page source by regular expression.
 
-``` php
+```php
 <?php
 $heading = $I->grabTextFrom('h1');
 $heading = $I->grabTextFrom('descendant-or-self::h1');
@@ -6001,10 +6001,10 @@ Retry number and interval set by $I->retry();
 public AcceptanceTesterActions::grabAttributeFrom(mixed $cssOrXpath, mixed $attribute): ?string
 ```
 
-Grabs the value of the given attribute value from the given element.
-Fails if element is not found.
+Returns the value of the given attribute value from the given HTML element. For some attributes, the string `true` is returned instead of their literal value (e.g. `disabled="disabled"` or `required="required"`).
+Fails if the element is not found. Returns `null` if the attribute is not present on the element.
 
-``` php
+```php
 <?php
 $I->grabAttributeFrom('#tooltip', 'title');
 ```
@@ -6078,7 +6078,7 @@ public AcceptanceTesterActions::grabValueFrom(mixed $field): ?string
 Finds the value for the given form field.
 If a fuzzy locator is used, the field is found by field name, CSS, and XPath.
 
-``` php
+```php
 <?php
 $name = $I->grabValueFrom('Name');
 $name = $I->grabValueFrom('input[name=username]');
@@ -6238,7 +6238,7 @@ Checks that the given element exists on the page and is visible.
 You can also specify expected attributes of this element.
 Only works if `<html>` tag is present.
 
-``` php
+```php
 <?php
 $I->seeElement('.error');
 $I->seeElement('//form/input[1]');
@@ -6285,7 +6285,7 @@ Checks that the given element exists on the page and is visible.
 You can also specify expected attributes of this element.
 Only works if `<html>` tag is present.
 
-``` php
+```php
 <?php
 $I->seeElement('.error');
 $I->seeElement('//form/input[1]');
@@ -6332,7 +6332,7 @@ Checks that the given element exists on the page and is visible.
 You can also specify expected attributes of this element.
 Only works if `<html>` tag is present.
 
-``` php
+```php
 <?php
 $I->seeElement('.error');
 $I->seeElement('//form/input[1]');
@@ -6412,7 +6412,7 @@ public AcceptanceTesterActions::dontSeeElement(mixed $selector, array $attribute
 Checks that the given element is invisible or not present on the page.
 You can also specify expected attributes of this element.
 
-``` php
+```php
 <?php
 $I->dontSeeElement('.error');
 $I->dontSeeElement('//form/input[1]');
@@ -6455,7 +6455,7 @@ public AcceptanceTesterActions::cantSeeElement(mixed $selector, array $attribute
 Checks that the given element is invisible or not present on the page.
 You can also specify expected attributes of this element.
 
-``` php
+```php
 <?php
 $I->dontSeeElement('.error');
 $I->dontSeeElement('//form/input[1]');
@@ -6498,7 +6498,7 @@ public AcceptanceTesterActions::tryToDontSeeElement(mixed $selector, array $attr
 Checks that the given element is invisible or not present on the page.
 You can also specify expected attributes of this element.
 
-``` php
+```php
 <?php
 $I->dontSeeElement('.error');
 $I->dontSeeElement('//form/input[1]');
@@ -6861,7 +6861,7 @@ public AcceptanceTesterActions::seeNumberOfElements(mixed $selector, int|int[] $
 
 Checks that there are a certain number of elements matched by the given locator on the page.
 
-``` php
+```php
 <?php
 $I->seeNumberOfElements('tr', 10);
 $I->seeNumberOfElements('tr', [0,10]); // between 0 and 10 elements
@@ -6901,7 +6901,7 @@ public AcceptanceTesterActions::canSeeNumberOfElements(mixed $selector, int|int[
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that there are a certain number of elements matched by the given locator on the page.
 
-``` php
+```php
 <?php
 $I->seeNumberOfElements('tr', 10);
 $I->seeNumberOfElements('tr', [0,10]); // between 0 and 10 elements
@@ -6941,7 +6941,7 @@ public AcceptanceTesterActions::tryToSeeNumberOfElements(mixed $selector, int|in
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that there are a certain number of elements matched by the given locator on the page.
 
-``` php
+```php
 <?php
 $I->seeNumberOfElements('tr', 10);
 $I->seeNumberOfElements('tr', [0,10]); // between 0 and 10 elements
@@ -7149,7 +7149,7 @@ public AcceptanceTesterActions::seeOptionIsSelected(mixed $selector, mixed $opti
 
 Checks that the given option is selected.
 
-``` php
+```php
 <?php
 $I->seeOptionIsSelected('#form input[name=payment]', 'Visa');
 ```
@@ -7188,7 +7188,7 @@ public AcceptanceTesterActions::canSeeOptionIsSelected(mixed $selector, mixed $o
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that the given option is selected.
 
-``` php
+```php
 <?php
 $I->seeOptionIsSelected('#form input[name=payment]', 'Visa');
 ```
@@ -7227,7 +7227,7 @@ public AcceptanceTesterActions::tryToSeeOptionIsSelected(mixed $selector, mixed 
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that the given option is selected.
 
-``` php
+```php
 <?php
 $I->seeOptionIsSelected('#form input[name=payment]', 'Visa');
 ```
@@ -7300,7 +7300,7 @@ public AcceptanceTesterActions::dontSeeOptionIsSelected(mixed $selector, mixed $
 
 Checks that the given option is not selected.
 
-``` php
+```php
 <?php
 $I->dontSeeOptionIsSelected('#form input[name=payment]', 'Visa');
 ```
@@ -7339,7 +7339,7 @@ public AcceptanceTesterActions::cantSeeOptionIsSelected(mixed $selector, mixed $
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that the given option is not selected.
 
-``` php
+```php
 <?php
 $I->dontSeeOptionIsSelected('#form input[name=payment]', 'Visa');
 ```
@@ -7378,7 +7378,7 @@ public AcceptanceTesterActions::tryToDontSeeOptionIsSelected(mixed $selector, mi
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that the given option is not selected.
 
-``` php
+```php
 <?php
 $I->dontSeeOptionIsSelected('#form input[name=payment]', 'Visa');
 ```
@@ -7451,7 +7451,7 @@ public AcceptanceTesterActions::seeInTitle(mixed $title): mixed|void
 
 Checks that the page title contains the given string.
 
-``` php
+```php
 <?php
 $I->seeInTitle('Blog - Post #1');
 ```
@@ -7489,7 +7489,7 @@ public AcceptanceTesterActions::canSeeInTitle(mixed $title): mixed|void
 [!] Conditional Assertion: Test won't be stopped on fail
 Checks that the page title contains the given string.
 
-``` php
+```php
 <?php
 $I->seeInTitle('Blog - Post #1');
 ```
@@ -7527,7 +7527,7 @@ public AcceptanceTesterActions::tryToSeeInTitle(mixed $title): mixed|void
 [!] Test won't be stopped on fail. Error won't be logged
 Checks that the page title contains the given string.
 
-``` php
+```php
 <?php
 $I->seeInTitle('Blog - Post #1');
 ```
@@ -11982,7 +11982,7 @@ Retry number and interval set by $I->retry();
 [!] Method is generated. Documentation taken from corresponding module.
 
 ```php
-public AcceptanceTesterActions::performOn(string|array|\Tests\Support\_generated\WebDriverBy $element, callable|array|\Tests\Support\_generated\ActionSequence $actions, int $timeout = 10): void
+public AcceptanceTesterActions::performOn(string|array|\Tests\Support\_generated\WebDriverBy $element, callable|array|\Codeception\Util\ActionSequence $actions, int $timeout = 10): void
 ```
 
 Waits for element and runs a sequence of actions inside its context.
@@ -12033,7 +12033,7 @@ In 3rd argument you can set number a seconds to wait for element to appear
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `element` | **string|array|\Tests\Support\_generated\WebDriverBy** |  |
-| `actions` | **callable|array|\Tests\Support\_generated\ActionSequence** |  |
+| `actions` | **callable|array|\Codeception\Util\ActionSequence** |  |
 | `timeout` | **int** |  |
 
 
@@ -12052,7 +12052,7 @@ In 3rd argument you can set number a seconds to wait for element to appear
 [!] Method is generated. Documentation taken from corresponding module.
 
 ```php
-public AcceptanceTesterActions::tryToPerformOn(string|array|\Tests\Support\_generated\WebDriverBy $element, callable|array|\Tests\Support\_generated\ActionSequence $actions, int $timeout = 10): bool
+public AcceptanceTesterActions::tryToPerformOn(string|array|\Tests\Support\_generated\WebDriverBy $element, callable|array|\Codeception\Util\ActionSequence $actions, int $timeout = 10): bool
 ```
 
 [!] Test won't be stopped on fail. Error won't be logged
@@ -12104,7 +12104,7 @@ In 3rd argument you can set number a seconds to wait for element to appear
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `element` | **string|array|\Tests\Support\_generated\WebDriverBy** |  |
-| `actions` | **callable|array|\Tests\Support\_generated\ActionSequence** |  |
+| `actions` | **callable|array|\Codeception\Util\ActionSequence** |  |
 | `timeout` | **int** |  |
 
 
@@ -13437,5 +13437,5 @@ Retry number and interval set by $I->retry();
 ---
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
 

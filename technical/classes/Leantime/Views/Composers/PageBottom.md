@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-public PageBottom::init(\Leantime\Core\AppSettings $settings): void
+public PageBottom::init(\Leantime\Core\AppSettings $settings, \Leantime\Core\Environment $environment): void
 ```
 
 
@@ -36,6 +36,7 @@ public PageBottom::init(\Leantime\Core\AppSettings $settings): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `settings` | **\Leantime\Core\AppSettings** |  |
+| `environment` | **\Leantime\Core\Environment** |  |
 
 
 **Return Value:**
@@ -150,4 +151,4 @@ protected Composer::with(): array
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

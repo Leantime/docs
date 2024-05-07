@@ -29,7 +29,7 @@ editCanvasItem class - Generic canvas controller / Edit Canvas Item
 constructor - initialize private variables
 
 ```php
-public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\template $tpl, \Leantime\Core\language $language): mixed
+public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\Template $tpl, \Leantime\Core\Language $language): mixed
 ```
 
 
@@ -44,8 +44,8 @@ public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `incomingRequest` | **\Leantime\Core\IncomingRequest** | The request to be initialized. |
-| `tpl` | **\Leantime\Core\template** | The template to be initialized. |
-| `language` | **\Leantime\Core\language** | The language to be initialized. |
+| `tpl` | **\Leantime\Core\Template** | The template to be initialized. |
+| `language` | **\Leantime\Core\Language** | The language to be initialized. |
 
 
 **Return Value:**
@@ -201,6 +201,29 @@ private Controller::executeActions(string $method, object|array $params): void
 
 
 ---
+### getResponse
+
+getResponse - returns the response
+
+```php
+public Controller::getResponse(): \Symfony\Component\HttpFoundation\Response
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+The response object.
+
+
+
+---
 ### dispatch_event
 
 dispatches an event with context
@@ -269,7 +292,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -322,7 +345,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -336,7 +359,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -349,4 +372,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

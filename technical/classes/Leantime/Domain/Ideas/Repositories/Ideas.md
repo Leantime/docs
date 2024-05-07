@@ -20,7 +20,7 @@ footer: false
 __construct - get db connection
 
 ```php
-public Ideas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language): void
+public Ideas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepo): void
 ```
 
 
@@ -36,6 +36,36 @@ public Ideas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $langua
 |-----------|------|-------------|
 | `db` | **\Leantime\Core\Db** |  |
 | `language` | **\Leantime\Core\Language** |  |
+| `ticketRepo` | **\Leantime\Domain\Tickets\Repositories\Tickets** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getSingleCanvas
+
+
+
+```php
+public Ideas::getSingleCanvas( $canvasId): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `canvasId` | **** |  |
 
 
 **Return Value:**
@@ -508,4 +538,4 @@ public Ideas::bulkUpdateIdeaStatus( $params): bool
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

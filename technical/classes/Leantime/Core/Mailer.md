@@ -199,7 +199,7 @@ private Mailer::dispatchMailerEvent( $hookname,  $payload, array $additional_par
 dispatchMailerFilter - dispatches a mailer filter
 
 ```php
-private Mailer::dispatchMailerFilter( $hookname,  $payload, array $additional_params = []): void
+private Mailer::dispatchMailerFilter( $hookname,  $payload, array $additional_params = []): mixed
 ```
 
 
@@ -230,7 +230,7 @@ private Mailer::dispatchMailerFilter( $hookname,  $payload, array $additional_pa
 dispatchMailerHook - dispatches a mailer hook
 
 ```php
-private Mailer::dispatchMailerHook( $type,  $hookname,  $payload, array $additional_params = []): void|mixed
+private Mailer::dispatchMailerHook( $type,  $hookname,  $payload, array $additional_params = []): mixed
 ```
 
 
@@ -359,7 +359,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -412,7 +412,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -426,7 +426,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -439,4 +439,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

@@ -17,7 +17,7 @@ footer: false
 
 ### __construct
 
-
+Class constructor.
 
 ```php
 public Queue::__construct(\Leantime\Domain\Queue\Repositories\Queue $queue, \Leantime\Domain\Users\Repositories\Users $userRepo, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Core\Mailer $mailer, \Leantime\Core\Language $language): mixed
@@ -34,11 +34,11 @@ public Queue::__construct(\Leantime\Domain\Queue\Repositories\Queue $queue, \Lea
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `queue` | **\Leantime\Domain\Queue\Repositories\Queue** |  |
-| `userRepo` | **\Leantime\Domain\Users\Repositories\Users** |  |
-| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
-| `mailer` | **\Leantime\Core\Mailer** |  |
-| `language` | **\Leantime\Core\Language** |  |
+| `queue` | **\Leantime\Domain\Queue\Repositories\Queue** | The queue repository. |
+| `userRepo` | **\Leantime\Domain\Users\Repositories\Users** | The user repository. |
+| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** | The settings repository. |
+| `mailer` | **\Leantime\Core\Mailer** | The mailer core. |
+| `language` | **\Leantime\Core\Language** | The language core. |
 
 
 **Return Value:**
@@ -48,12 +48,12 @@ public Queue::__construct(\Leantime\Domain\Queue\Repositories\Queue $queue, \Lea
 
 
 ---
-### doFormatMail
+### processQueue
 
-
+Process the queue for a specific worker.
 
 ```php
-private Queue::doFormatMail( $messageToSendToUser): string
+public Queue::processQueue(\Leantime\Domain\Queue\Workers\Workers $worker): bool
 ```
 
 
@@ -67,22 +67,22 @@ private Queue::doFormatMail( $messageToSendToUser): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `messageToSendToUser` | **** |  |
+| `worker` | **\Leantime\Domain\Queue\Workers\Workers** | The worker for which to process the queue. |
 
 
 **Return Value:**
 
-
+Returns true if the queue was processed successfully, false otherwise.
 
 
 
 ---
-### processQueue
+### addToQueue
 
 
 
 ```php
-public Queue::processQueue(): true
+public Queue::addToQueue(\Leantime\Domain\Queue\Workers\Workers $channel, string $subject, string $message, mixed $projectId): mixed
 ```
 
 
@@ -92,6 +92,15 @@ public Queue::processQueue(): true
 
 
 
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `channel` | **\Leantime\Domain\Queue\Workers\Workers** |  |
+| `subject` | **string** |  |
+| `message` | **string** |  |
+| `projectId` | **mixed** |  |
+
 
 **Return Value:**
 
@@ -103,4 +112,4 @@ public Queue::processQueue(): true
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

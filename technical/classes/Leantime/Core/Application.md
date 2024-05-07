@@ -94,7 +94,76 @@ public Application::getNamespace(bool $includeSuffix = true): string
 * \Illuminate\Contracts\Foundation\Application::getNamespace() - 
 
 ---
+### isDownForMaintenance
+
+Checks whether the application is down for maintenance
+
+```php
+public Application::isDownForMaintenance(): bool
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+### environment
+
+Gets the current environment
+
+```php
+public Application::environment(): string
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### basePath
+
+Gets the base path of the application
+
+```php
+public Application::basePath(): string
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+
+
+---
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

@@ -18,7 +18,7 @@ Repository
 
 ### __construct
 
-__construct - get database connection
+Get database connection
 
 ```php
 public Timesheets::__construct(\Leantime\Core\Db $db): mixed
@@ -47,10 +47,48 @@ public Timesheets::__construct(\Leantime\Core\Db $db): mixed
 ---
 ### getAll
 
-getAll - get all timesheet entries
+Retrieves all timesheets based on the provided filters.
 
 ```php
-public Timesheets::getAll(int $id, ?string $kind, ?string $dateFrom, ?string $dateTo, ?int $userId, ?string $invEmpl, ?string $invComp, ?string $paid, ?int $clientId, ?int $ticketFilter): array|false
+public Timesheets::getAll(int|null $id, string|null $kind, \Carbon\CarbonInterface|null $dateFrom, \Carbon\CarbonInterface|null $dateTo, int|null $userId, string|null $invEmpl, string|null $invComp, string|null $paid, int|null $clientId, int|null $ticketFilter): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int|null** |  |
+| `kind` | **string|null** |  |
+| `dateFrom` | **\Carbon\CarbonInterface|null** |  |
+| `dateTo` | **\Carbon\CarbonInterface|null** |  |
+| `userId` | **int|null** |  |
+| `invEmpl` | **string|null** |  |
+| `invComp` | **string|null** |  |
+| `paid` | **string|null** |  |
+| `clientId` | **int|null** |  |
+| `ticketFilter` | **int|null** |  |
+
+
+**Return Value:**
+
+An array of timesheets or false if there was an error
+
+
+
+---
+### getUsersHours
+
+
+
+```php
+public Timesheets::getUsersHours(int $id): mixed
 ```
 
 
@@ -65,73 +103,6 @@ public Timesheets::getAll(int $id, ?string $kind, ?string $dateFrom, ?string $da
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `id` | **int** |  |
-| `kind` | **?string** |  |
-| `dateFrom` | **?string** |  |
-| `dateTo` | **?string** |  |
-| `userId` | **?int** |  |
-| `invEmpl` | **?string** |  |
-| `invComp` | **?string** |  |
-| `paid` | **?string** |  |
-| `clientId` | **?int** |  |
-| `ticketFilter` | **?int** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### export
-
-
-
-```php
-public Timesheets::export( $values): void
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `values` | **** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getUsersHours
-
-
-
-```php
-public Timesheets::getUsersHours( $id): mixed
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `id` | **** |  |
 
 
 **Return Value:**
@@ -143,10 +114,10 @@ public Timesheets::getUsersHours( $id): mixed
 ---
 ### getHoursBooked
 
-
+Retrieves the total number of hours booked from the timesheets table.
 
 ```php
-public Timesheets::getHoursBooked(): int|mixed
+public Timesheets::getHoursBooked(): mixed
 ```
 
 
@@ -159,7 +130,7 @@ public Timesheets::getHoursBooked(): int|mixed
 
 **Return Value:**
 
-
+The total number of hours booked, or 0 if no hours are booked.
 
 
 
@@ -169,7 +140,7 @@ public Timesheets::getHoursBooked(): int|mixed
 
 
 ```php
-public Timesheets::getWeeklyTimesheets(int $projectId = -1, string $dateStart = &#039;0000-01-01 00:00:00&#039;, int $userId): mixed
+public Timesheets::getWeeklyTimesheets(int $projectId, \Carbon\CarbonInterface $fromDate, int $userId): mixed
 ```
 
 
@@ -184,7 +155,7 @@ public Timesheets::getWeeklyTimesheets(int $projectId = -1, string $dateStart = 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `projectId` | **int** |  |
-| `dateStart` | **string** |  |
+| `fromDate` | **\Carbon\CarbonInterface** |  |
 | `userId` | **int** |  |
 
 
@@ -200,7 +171,7 @@ public Timesheets::getWeeklyTimesheets(int $projectId = -1, string $dateStart = 
 getUsersTicketHours - get the total hours
 
 ```php
-public Timesheets::getUsersTicketHours(mixed $ticketId, mixed $userId): mixed
+public Timesheets::getUsersTicketHours(int $ticketId, int $userId): int|mixed
 ```
 
 
@@ -214,8 +185,8 @@ public Timesheets::getUsersTicketHours(mixed $ticketId, mixed $userId): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **mixed** |  |
-| `userId` | **mixed** |  |
+| `ticketId` | **int** |  |
+| `userId` | **int** |  |
 
 
 **Return Value:**
@@ -227,10 +198,10 @@ public Timesheets::getUsersTicketHours(mixed $ticketId, mixed $userId): mixed
 ---
 ### addTime
 
-addTime - add user specific time entry
+addTime - add user-specific time entry
 
 ```php
-public Timesheets::addTime(mixed $values): mixed
+public Timesheets::addTime(array $values): void
 ```
 
 
@@ -244,7 +215,7 @@ public Timesheets::addTime(mixed $values): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **mixed** |  |
+| `values` | **array** |  |
 
 
 **Return Value:**
@@ -254,12 +225,12 @@ public Timesheets::addTime(mixed $values): mixed
 
 
 ---
-### simpleInsert
+### upsertTimesheetEntry
 
-
+addTime - add user-specific time entry
 
 ```php
-public Timesheets::simpleInsert( $values): void
+public Timesheets::upsertTimesheetEntry(array $values): void
 ```
 
 
@@ -273,7 +244,7 @@ public Timesheets::simpleInsert( $values): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **** |  |
+| `values` | **array** |  |
 
 
 **Return Value:**
@@ -288,7 +259,7 @@ public Timesheets::simpleInsert( $values): void
 getTime - get a specific time entry
 
 ```php
-public Timesheets::getTimesheet(mixed $id): mixed
+public Timesheets::getTimesheet(int $id): mixed
 ```
 
 
@@ -302,7 +273,7 @@ public Timesheets::getTimesheet(mixed $id): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **mixed** |  |
+| `id` | **int** |  |
 
 
 **Return Value:**
@@ -317,7 +288,7 @@ public Timesheets::getTimesheet(mixed $id): mixed
 updatTime - update specific time entry
 
 ```php
-public Timesheets::updateTime(mixed $values): mixed
+public Timesheets::updateTime(array $values): void
 ```
 
 
@@ -331,7 +302,7 @@ public Timesheets::updateTime(mixed $values): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **mixed** |  |
+| `values` | **array** |  |
 
 
 **Return Value:**
@@ -341,12 +312,12 @@ public Timesheets::updateTime(mixed $values): mixed
 
 
 ---
-### UpdateHours
+### updateHours
 
 updatTime - update specific time entry
 
 ```php
-public Timesheets::UpdateHours(mixed $values): mixed
+public Timesheets::updateHours(array $values): void
 ```
 
 
@@ -360,7 +331,7 @@ public Timesheets::UpdateHours(mixed $values): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **mixed** |  |
+| `values` | **array** |  |
 
 
 **Return Value:**
@@ -375,7 +346,7 @@ public Timesheets::UpdateHours(mixed $values): mixed
 getProjectHours - get the Project hours for a specific project
 
 ```php
-public Timesheets::getProjectHours(mixed $projectId): mixed
+public Timesheets::getProjectHours(int $projectId): mixed
 ```
 
 
@@ -389,7 +360,7 @@ public Timesheets::getProjectHours(mixed $projectId): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **mixed** |  |
+| `projectId` | **int** |  |
 
 
 **Return Value:**
@@ -404,7 +375,7 @@ public Timesheets::getProjectHours(mixed $projectId): mixed
 getLoggedHoursForTicket - get the Ticket hours for a specific ticket
 
 ```php
-public Timesheets::getLoggedHoursForTicket( $ticketId): array
+public Timesheets::getLoggedHoursForTicket(int $ticketId): array
 ```
 
 
@@ -418,39 +389,7 @@ public Timesheets::getLoggedHoursForTicket( $ticketId): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### dateRange
-
-dateRange - returns every single day between two dates
-
-```php
-private Timesheets::dateRange(string $first, string $last, string $step = &#039;+1 day&#039;, string $format = &#039;Y-m-d&#039;): array
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `first` | **string** | date |
-| `last` | **string** | date |
-| `step` | **string** | default 1 day, can be changed to get every other day, week etc. |
-| `format` | **string** | date format |
+| `ticketId` | **int** |  |
 
 
 **Return Value:**
@@ -465,7 +404,7 @@ private Timesheets::dateRange(string $first, string $last, string $step = &#039;
 
 
 ```php
-public Timesheets::deleteTime( $id): void
+public Timesheets::deleteTime(int $id): void
 ```
 
 
@@ -479,7 +418,31 @@ public Timesheets::deleteTime( $id): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### cleanUpEmptyTimesheets
+
+Clean up empty timesheets.
+
+```php
+public Timesheets::cleanUpEmptyTimesheets(): void
+```
+
+This function deletes all timesheets from the "zp_timesheets" table
+where the hours value is equal to 0.
+
+
+
+
+
 
 
 **Return Value:**
@@ -525,7 +488,7 @@ public Timesheets::updateInvoices(array $invEmpl, array $invComp = [], array $pa
 punchIn - clock in on a specified ticket
 
 ```php
-public Timesheets::punchIn( $ticketId): mixed
+public Timesheets::punchIn(int $ticketId): mixed
 ```
 
 
@@ -539,7 +502,7 @@ public Timesheets::punchIn( $ticketId): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **** |  |
+| `ticketId` | **int** |  |
 
 
 **Return Value:**
@@ -554,7 +517,7 @@ public Timesheets::punchIn( $ticketId): mixed
 punchOut - clock out on whatever ticket is open for the user
 
 ```php
-public Timesheets::punchOut(mixed $ticketId): float|false|int
+public Timesheets::punchOut(int $ticketId): float|false|int
 ```
 
 
@@ -568,7 +531,7 @@ public Timesheets::punchOut(mixed $ticketId): float|false|int
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **mixed** |  |
+| `ticketId` | **int** |  |
 
 
 **Return Value:**
@@ -598,35 +561,6 @@ public Timesheets::isClocked(int $id): array|false
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `id` | **int** | $id |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getTicketHours
-
-getTicketHours - get the Ticket hours for a specific ticket
-
-```php
-public Timesheets::getTicketHours(mixed $ticketId): array
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `ticketId` | **mixed** |  |
 
 
 **Return Value:**
@@ -791,7 +725,7 @@ public Repository::get(int $id): mixed
 getFieldAttribute - gets the field attribute for a given property
 
 ```php
-protected Repository::getFieldAttribute(string $class, string $property, bool $includeId = false): array|false
+protected Repository::getFieldAttribute(object|string $class, string $property, bool $includeId = false): array|false
 ```
 
 
@@ -805,7 +739,7 @@ protected Repository::getFieldAttribute(string $class, string $property, bool $i
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `class` | **string** | - the class to get the attribute from |
+| `class` | **object|string** | - the class to get the attribute from |
 | `property` | **string** | - the property to get the attribute from |
 | `includeId` | **bool** | - whether or not to include the id attribute |
 
@@ -914,7 +848,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -967,7 +901,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -981,7 +915,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -994,4 +928,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

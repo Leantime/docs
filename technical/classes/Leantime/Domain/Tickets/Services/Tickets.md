@@ -17,10 +17,10 @@ footer: false
 
 ### __construct
 
-
+Constructor method for the class.
 
 ```php
-public Tickets::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Language $language, \Leantime\Core\Environment $config, \Leantime\Domain\Projects\Repositories\Projects $projectRepository, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepository, \Leantime\Domain\Timesheets\Repositories\Timesheets $timesheetsRepo, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheetService, \Leantime\Domain\Sprints\Services\Sprints $sprintService): mixed
+public Tickets::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Language $language, \Leantime\Core\Environment $config, \Leantime\Domain\Projects\Repositories\Projects $projectRepository, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepository, \Leantime\Domain\Timesheets\Repositories\Timesheets $timesheetsRepo, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheetService, \Leantime\Domain\Sprints\Services\Sprints $sprintService, \Leantime\Domain\Tickets\Repositories\TicketHistory $ticketHistoryRepo, \Leantime\Domain\Goalcanvas\Services\Goalcanvas $goalcanvasService, \Leantime\Core\Support\DateTimeHelper $dateTimeHelper): mixed
 ```
 
 
@@ -34,16 +34,19 @@ public Tickets::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Languag
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `tpl` | **\Leantime\Core\Template** |  |
-| `language` | **\Leantime\Core\Language** |  |
-| `config` | **\Leantime\Core\Environment** |  |
-| `projectRepository` | **\Leantime\Domain\Projects\Repositories\Projects** |  |
-| `ticketRepository` | **\Leantime\Domain\Tickets\Repositories\Tickets** |  |
-| `timesheetsRepo` | **\Leantime\Domain\Timesheets\Repositories\Timesheets** |  |
-| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
-| `projectService` | **\Leantime\Domain\Projects\Services\Projects** |  |
-| `timesheetService` | **\Leantime\Domain\Timesheets\Services\Timesheets** |  |
-| `sprintService` | **\Leantime\Domain\Sprints\Services\Sprints** |  |
+| `tpl` | **\Leantime\Core\Template** | The template core instance. |
+| `language` | **\Leantime\Core\Language** | The language core instance. |
+| `config` | **\Leantime\Core\Environment** | The environment core instance. |
+| `projectRepository` | **\Leantime\Domain\Projects\Repositories\Projects** | The project repository instance. |
+| `ticketRepository` | **\Leantime\Domain\Tickets\Repositories\Tickets** | The ticket repository instance. |
+| `timesheetsRepo` | **\Leantime\Domain\Timesheets\Repositories\Timesheets** | The timesheet repository instance. |
+| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** | The setting repository instance. |
+| `projectService` | **\Leantime\Domain\Projects\Services\Projects** | The project service instance. |
+| `timesheetService` | **\Leantime\Domain\Timesheets\Services\Timesheets** | The timesheet service instance. |
+| `sprintService` | **\Leantime\Domain\Sprints\Services\Sprints** | The sprint service instance. |
+| `ticketHistoryRepo` | **\Leantime\Domain\Tickets\Repositories\TicketHistory** | The ticket history repository instance. |
+| `goalcanvasService` | **\Leantime\Domain\Goalcanvas\Services\Goalcanvas** | The goal canvas service instance. |
+| `dateTimeHelper` | **\Leantime\Core\Support\DateTimeHelper** | The date time helper instance. |
 
 
 **Return Value:**
@@ -348,7 +351,7 @@ public Tickets::getSetFilters(array $searchCriteria, bool $includeGroup = false)
 
 
 ```php
-public Tickets::getAll( $searchCriteria): array|bool
+public Tickets::getAll( $searchCriteria = null): array|bool
 ```
 
 
@@ -363,6 +366,98 @@ public Tickets::getAll( $searchCriteria): array|bool
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `searchCriteria` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### simpleTicketCounter
+
+
+
+```php
+public Tickets::simpleTicketCounter(?int $userId = null, ?int $project = null, string $status = &quot;&quot;): int
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **?int** |  |
+| `project` | **?int** |  |
+| `status` | **string** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getAllOpenUserTickets
+
+
+
+```php
+public Tickets::getAllOpenUserTickets(?int $userId = null, ?int $project = null): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **?int** |  |
+| `project` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getScheduledTasks
+
+
+
+```php
+public Tickets::getScheduledTasks(\Carbon\CarbonImmutable $dateFrom, \Carbon\CarbonImmutable $dateTo, ?int $userId): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `dateFrom` | **\Carbon\CarbonImmutable** |  |
+| `dateTo` | **\Carbon\CarbonImmutable** |  |
+| `userId` | **?int** |  |
 
 
 **Return Value:**
@@ -551,6 +646,36 @@ public Tickets::getOpenUserTicketsByProject( $userId,  $projectId): array
 
 
 ---
+### getOpenUserTicketsBySprint
+
+
+
+```php
+public Tickets::getOpenUserTicketsBySprint( $userId,  $projectId): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **** |  |
+| `projectId` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### getAllMilestones
 
 
@@ -633,6 +758,124 @@ public Tickets::getAllMilestonesByUserProjects( $userId): array
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `userId` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getMilestoneProgress
+
+Calculate the progress of a milestone based on the tickets associated with it.
+
+```php
+public Tickets::getMilestoneProgress(int|string $milestoneId): float
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `milestoneId` | **int|string** | ID of the milestone. |
+
+
+**Return Value:**
+
+The progress of the milestone as a percentage.
+
+
+
+---
+### getBulkMilestoneProgress
+
+
+
+```php
+public Tickets::getBulkMilestoneProgress(array $milestones): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `milestones` | **array** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getRecentlyCompletedTicketsByUser
+
+
+
+```php
+public Tickets::getRecentlyCompletedTicketsByUser(int $userId, ?int $projectId = null): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **int** |  |
+| `projectId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### goalsRelatedToWork
+
+
+
+```php
+public Tickets::goalsRelatedToWork(int $userId, mixed $projectId = null): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **int** |  |
+| `projectId` | **mixed** |  |
 
 
 **Return Value:**
@@ -760,10 +1003,10 @@ public Tickets::addTicket( $values): bool|string[]|void
 ---
 ### updateTicket
 
-
+Updates a ticket with the given values.
 
 ```php
-public Tickets::updateTicket( $id,  $values): array|bool
+public Tickets::updateTicket(array $values): array|bool
 ```
 
 
@@ -777,8 +1020,7 @@ public Tickets::updateTicket( $id,  $values): array|bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
-| `values` | **** |  |
+| `values` | **array** | The array containing the ticket values to update.<br />Accepted keys are:<br />- &#039;id&#039; =&gt; The ticket ID.<br />- &#039;headline&#039; =&gt; The ticket headline. (optional)<br />- &#039;type&#039; =&gt; The ticket type. (optional)<br />- &#039;description&#039; =&gt; The ticket description. (optional)<br />- &#039;projectId&#039; =&gt; The project ID. Defaults to $_SESSION[&#039;currentProject&#039;]. (optional)<br />- &#039;editorId&#039; =&gt; The editor ID. (optional)<br />- &#039;date&#039; =&gt; The ticket date. Defaults to the current date and time. (optional)<br />- &#039;dateToFinish&#039; =&gt; The ticket deadline date. (optional)<br />- &#039;timeToFinish&#039; =&gt; The ticket deadline time. (optional)<br />- &#039;status&#039; =&gt; The ticket status. (optional)<br />- &#039;planHours&#039; =&gt; The planned hours for the ticket. (optional)<br />- &#039;tags&#039; =&gt; The tags for the ticket. (optional)<br />- &#039;sprint&#039; =&gt; The sprint for the ticket. (optional)<br />- &#039;storypoints&#039; =&gt; The story points for the ticket. (optional)<br />- &#039;hourRemaining&#039; =&gt; The remaining hours for the ticket. (optional)<br />- &#039;priority&#039; =&gt; The ticket priority. (optional)<br />- &#039;acceptanceCriteria&#039; =&gt; The ticket acceptance criteria. (optional)<br />- &#039;editFrom&#039; =&gt; The ticket edit &#039;from&#039; date-time. (optional)<br />- &#039;time |
 
 
 **Return Value:**
@@ -788,12 +1030,12 @@ public Tickets::updateTicket( $id,  $values): array|bool
 
 
 ---
-### patchTicket
+### patch
 
 
 
 ```php
-public Tickets::patchTicket( $id,  $params): bool
+public Tickets::patch( $id,  $params): bool
 ```
 
 
@@ -966,12 +1208,12 @@ public Tickets::updateTicketStatusAndSorting( $params,  $handler = null): bool
 
 
 ---
-### deleteTicket
+### delete
 
 
 
 ```php
-public Tickets::deleteTicket( $id): bool|string[]
+public Tickets::delete( $id): bool|string[]
 ```
 
 
@@ -1030,6 +1272,29 @@ public Tickets::deleteMilestone( $id): bool|string[]
 
 ```php
 public Tickets::getLastTicketViewUrl(): mixed|string
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getLastTimelineViewUrl
+
+
+
+```php
+public Tickets::getLastTimelineViewUrl(): mixed
 ```
 
 
@@ -1145,7 +1410,214 @@ public Tickets::getTicketTemplateAssignments( $params): array
 
 
 ---
+### getToDoWidgetAssignments
+
+
+
+```php
+public Tickets::getToDoWidgetAssignments(mixed $params): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `params` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+### prepareTicketDates
+
+
+
+```php
+public Tickets::prepareTicketDates(mixed& $values): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+
+
+## Inherited methods
+
+### dispatch_event
+
+dispatches an event with context
+
+```php
+public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+```
+
+
+
+* This method is **static**.
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `hook` | **string** |  |
+| `available_params` | **mixed** |  |
+| `function` | **string|int|null** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### dispatch_filter
+
+dispatches a filter with context
+
+```php
+public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+```
+
+
+
+* This method is **static**.
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `hook` | **string** |  |
+| `payload` | **mixed** |  |
+| `available_params` | **mixed** |  |
+| `function` | **string|int|null** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### get_event_context
+
+Gets the context of the event
+
+```php
+protected static Eventhelpers::get_event_context( $function): string
+```
+
+
+
+* This method is **static**.
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `function` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### set_class_context
+
+Gets the class Context based on path, this uses the same method as the autoloader
+Helps create unique strings for events/filters
+
+```php
+private static Eventhelpers::set_class_context(): string
+```
+
+
+
+* This method is **static**.
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### get_function_context
+
+Gets the caller function name
+
+```php
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
+```
+
+This way we don't have to use much memory by using debug_backtrace
+
+* This method is **static**.
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `functionInt` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+
+
+---
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

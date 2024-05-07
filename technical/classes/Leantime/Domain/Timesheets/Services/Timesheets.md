@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Timesheets::__construct(\Leantime\Domain\Timesheets\Repositories\Timesheets $timesheetsRepo, \Leantime\Core\Language $language): mixed
+public Timesheets::__construct(\Leantime\Domain\Timesheets\Repositories\Timesheets $timesheetsRepo, \Leantime\Domain\Users\Repositories\Users $userRepo): mixed
 ```
 
 
@@ -35,7 +35,7 @@ public Timesheets::__construct(\Leantime\Domain\Timesheets\Repositories\Timeshee
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `timesheetsRepo` | **\Leantime\Domain\Timesheets\Repositories\Timesheets** |  |
-| `language` | **\Leantime\Core\Language** |  |
+| `userRepo` | **\Leantime\Domain\Users\Repositories\Users** |  |
 
 
 **Return Value:**
@@ -47,10 +47,10 @@ public Timesheets::__construct(\Leantime\Domain\Timesheets\Repositories\Timeshee
 ---
 ### isClocked
 
-
+isClocked - Checks to see whether a user is clocked in
 
 ```php
-public Timesheets::isClocked( $sessionId): array|false
+public Timesheets::isClocked(int $sessionId): array|false
 ```
 
 
@@ -64,7 +64,7 @@ public Timesheets::isClocked( $sessionId): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `sessionId` | **** |  |
+| `sessionId` | **int** |  |
 
 
 **Return Value:**
@@ -79,7 +79,7 @@ public Timesheets::isClocked( $sessionId): array|false
 
 
 ```php
-public Timesheets::punchIn( $ticketId): mixed
+public Timesheets::punchIn(int $ticketId): mixed
 ```
 
 
@@ -93,7 +93,7 @@ public Timesheets::punchIn( $ticketId): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **** |  |
+| `ticketId` | **int** |  |
 
 
 **Return Value:**
@@ -108,7 +108,7 @@ public Timesheets::punchIn( $ticketId): mixed
 
 
 ```php
-public Timesheets::punchOut( $ticketId): false|float|int
+public Timesheets::punchOut(int $ticketId): false|float|int
 ```
 
 
@@ -122,7 +122,7 @@ public Timesheets::punchOut( $ticketId): false|float|int
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **** |  |
+| `ticketId` | **int** |  |
 
 
 **Return Value:**
@@ -134,10 +134,10 @@ public Timesheets::punchOut( $ticketId): false|float|int
 ---
 ### logTime
 
-
+logTime, will always add hours or increment existing values
 
 ```php
-public Timesheets::logTime( $ticketId,  $params): array|bool
+public Timesheets::logTime(int $ticketId, array $params): array|bool
 ```
 
 
@@ -151,8 +151,8 @@ public Timesheets::logTime( $ticketId,  $params): array|bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **** |  |
-| `params` | **** |  |
+| `ticketId` | **int** |  |
+| `params` | **array** |  |
 
 
 **Return Value:**
@@ -162,12 +162,12 @@ public Timesheets::logTime( $ticketId,  $params): array|bool
 
 
 ---
-### getLoggedHoursForTicketByDate
+### upsertTime
 
-
+Upserts a time entry for a ticket. Will update hours based on the values provided, not touching descriptions
 
 ```php
-public Timesheets::getLoggedHoursForTicketByDate( $ticketId): array
+public Timesheets::upsertTime(int $ticketId, array $params): array|bool
 ```
 
 
@@ -181,7 +181,37 @@ public Timesheets::getLoggedHoursForTicketByDate( $ticketId): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **** |  |
+| `ticketId` | **int** | The ID of the ticket. |
+| `params` | **array** | An associative array of parameters for the time entry.<br />- userId: The ID of the user creating the time entry. Defaults to the ID of the logged-in user.<br />- kind: The type of timesheet entry. Required.<br />- date: The date of the time entry. Required.<br />- hours: The number of hours for the time entry. Required. |
+
+
+**Return Value:**
+
+Returns true if the time entry was successfully upserted.
+
+
+
+---
+### getLoggedHoursForTicketByDate
+
+
+
+```php
+public Timesheets::getLoggedHoursForTicketByDate(int $ticketId): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `ticketId` | **int** |  |
 
 
 **Return Value:**
@@ -196,7 +226,7 @@ public Timesheets::getLoggedHoursForTicketByDate( $ticketId): array
 
 
 ```php
-public Timesheets::getSumLoggedHoursForTicket( $ticketId): int|mixed
+public Timesheets::getSumLoggedHoursForTicket(int $ticketId): int|mixed
 ```
 
 
@@ -210,7 +240,7 @@ public Timesheets::getSumLoggedHoursForTicket( $ticketId): int|mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **** |  |
+| `ticketId` | **int** |  |
 
 
 **Return Value:**
@@ -225,7 +255,7 @@ public Timesheets::getSumLoggedHoursForTicket( $ticketId): int|mixed
 
 
 ```php
-public Timesheets::getRemainingHours( $ticket): int|mixed
+public Timesheets::getRemainingHours(\Leantime\Domain\Tickets\Models\Tickets $ticket): int|mixed
 ```
 
 
@@ -239,7 +269,7 @@ public Timesheets::getRemainingHours( $ticket): int|mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticket` | **** |  |
+| `ticket` | **\Leantime\Domain\Tickets\Models\Tickets** |  |
 
 
 **Return Value:**
@@ -254,7 +284,7 @@ public Timesheets::getRemainingHours( $ticket): int|mixed
 
 
 ```php
-public Timesheets::getUsersTicketHours( $ticketId,  $userId): int|mixed
+public Timesheets::getUsersTicketHours(int $ticketId, int $userId): int|mixed
 ```
 
 
@@ -268,8 +298,8 @@ public Timesheets::getUsersTicketHours( $ticketId,  $userId): int|mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketId` | **** |  |
-| `userId` | **** |  |
+| `ticketId` | **int** |  |
+| `userId` | **int** |  |
 
 
 **Return Value:**
@@ -307,7 +337,7 @@ public Timesheets::getLoggableHourTypes(): array|string[]
 
 
 ```php
-public Timesheets::getAll(int $projectId = -1, string $kind = &#039;all&#039;, string $dateFrom = &#039;0000-01-01 00:00:00&#039;, string $dateTo = &#039;9999-12-24 00:00:00&#039;, int|null $userId = null, string $invEmpl = &#039;1&#039;, string $invComp = &#039;1&#039;, string $ticketFilter = &#039;-1&#039;, string $paid = &#039;1&#039;, string $clientId = &#039;-1&#039;): array|false
+public Timesheets::getAll(\Carbon\CarbonInterface $dateFrom, \Carbon\CarbonInterface $dateTo, int $projectId = -1, string $kind = &#039;all&#039;, int|null $userId = null, string $invEmpl = &#039;1&#039;, string $invComp = &#039;1&#039;, string $ticketFilter = &#039;-1&#039;, string $paid = &#039;1&#039;, string $clientId = &#039;-1&#039;): array|false
 ```
 
 
@@ -321,10 +351,10 @@ public Timesheets::getAll(int $projectId = -1, string $kind = &#039;all&#039;, s
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
+| `dateFrom` | **\Carbon\CarbonInterface** |  |
+| `dateTo` | **\Carbon\CarbonInterface** |  |
 | `projectId` | **int** |  |
 | `kind` | **string** |  |
-| `dateFrom` | **string** |  |
-| `dateTo` | **string** |  |
 | `userId` | **int|null** |  |
 | `invEmpl` | **string** |  |
 | `invComp` | **string** |  |
@@ -340,12 +370,12 @@ public Timesheets::getAll(int $projectId = -1, string $kind = &#039;all&#039;, s
 
 
 ---
-### export
+### getWeeklyTimesheets
 
 
 
 ```php
-public Timesheets::export( $values): null
+public Timesheets::getWeeklyTimesheets(int $projectId, \Carbon\CarbonInterface $fromDate, int $userId): array
 ```
 
 
@@ -359,7 +389,9 @@ public Timesheets::export( $values): null
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **** |  |
+| `projectId` | **int** |  |
+| `fromDate` | **\Carbon\CarbonInterface** |  |
+| `userId` | **int** |  |
 
 
 **Return Value:**
@@ -426,4 +458,4 @@ public Timesheets::getBookedHourTypes(): array|string[]
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

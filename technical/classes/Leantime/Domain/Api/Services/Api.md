@@ -17,7 +17,7 @@ footer: false
 
 ### __construct
 
-__construct
+
 
 ```php
 public Api::__construct(\Leantime\Domain\Api\Repositories\Api $apiRepository, \Leantime\Domain\Users\Repositories\Users $userRepo): mixed
@@ -50,7 +50,7 @@ public Api::__construct(\Leantime\Domain\Api\Repositories\Api $apiRepository, \L
 
 
 ```php
-public Api::getAPIKeyUser( $apiKey): bool|array
+public Api::getAPIKeyUser(string $apiKey): bool|array
 ```
 
 
@@ -64,7 +64,7 @@ public Api::getAPIKeyUser( $apiKey): bool|array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `apiKey` | **** |  |
+| `apiKey` | **string** |  |
 
 
 **Return Value:**
@@ -126,13 +126,13 @@ public Api::getAPIKeys(): array|false
 
 
 ---
-### random_str
+### randomStr
 
 Generate a random string, using a cryptographically secure
 pseudorandom number generator (random_int)
 
 ```php
-public Api::random_str(int $length = 64, string $keyspace = &#039;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#039;): string
+public Api::randomStr(int $length = 64, string $keyspace = &#039;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#039;): string
 ```
 
 This function uses type hints now (PHP 7+ only), but it was originally
@@ -151,38 +151,7 @@ For PHP 5.x, depends on https://github.com/paragonie/random_compat
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `length` | **int** | How many characters do we want? |
-| `keyspace` | **string** | A string of all possible characters<br />to select from |
-
-
-**Return Value:**
-
-
-
-
-
----
-### setError
-
-
-
-```php
-public Api::setError( $code,  $message,  $data): void
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `code` | **** |  |
-| `message` | **** |  |
-| `data` | **** |  |
+| `keyspace` | **string** | A string of all possible characters to select from |
 
 
 **Return Value:**
@@ -213,6 +182,38 @@ public Api::jsonResponse(int $id, array|null $result): void
 |-----------|------|-------------|
 | `id` | **int** |  |
 | `result` | **array|null** |  |
+
+
+**Return Value:**
+
+
+
+
+**See Also:**
+
+*  - ../Controllers/Tickets.php
+
+---
+### getCaseCorrectPathFromManifest
+
+Check the manifest for the asset and serve if found.
+
+```php
+public Api::getCaseCorrectPathFromManifest(string $filepath): string|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `filepath` | **string** |  |
 
 
 **Return Value:**
@@ -294,7 +295,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -347,7 +348,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -361,7 +362,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -374,4 +375,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)

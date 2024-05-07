@@ -213,6 +213,29 @@ public Template::setNotification(string $msg, string $type, string $event_id = &
 
 
 ---
+### sendConfetti
+
+Set a flag to indicate that confetti should be displayed.
+
+```php
+public Template::sendConfetti(): void
+```
+
+Will be displayed next time a notification is displayed
+
+
+
+
+
+
+
+**Return Value:**
+
+confetti, duh
+
+
+
+---
 ### getTemplatePath
 
 getTemplatePath - Find template in custom and src directories
@@ -248,7 +271,7 @@ Full template path or false if file does not exist
 gives HTMX response
 
 ```php
-public Template::displayFragment(string $view, string $fragment = &#039;&#039;): never
+public Template::displayFragment(string $viewPath, string $fragment = &#039;&#039;): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -262,7 +285,7 @@ public Template::displayFragment(string $view, string $fragment = &#039;&#039;):
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `view` | **string** | The blade view path. |
+| `viewPath` | **string** | The blade view path. |
 | `fragment` | **string** | The fragment key. |
 
 
@@ -278,7 +301,7 @@ public Template::displayFragment(string $view, string $fragment = &#039;&#039;):
 display - display template from folder template including main layout wrapper
 
 ```php
-public Template::display(string $template, string $layout = &quot;app&quot;): void
+public Template::display(string $template, string $layout = &quot;app&quot;, int $responseCode = 200): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -294,6 +317,7 @@ public Template::display(string $template, string $layout = &quot;app&quot;): vo
 |-----------|------|-------------|
 | `template` | **string** |  |
 | `layout` | **string** |  |
+| `responseCode` | **int** |  |
 
 
 **Return Value:**
@@ -305,10 +329,10 @@ public Template::display(string $template, string $layout = &quot;app&quot;): vo
 ---
 ### confirmLayoutName
 
-
+Confirm the layout name based on the provided parameters.
 
 ```php
-protected Template::confirmLayoutName( $layoutName,  $template): bool|string
+protected Template::confirmLayoutName(string $layoutName, string $template): bool|string
 ```
 
 
@@ -322,23 +346,23 @@ protected Template::confirmLayoutName( $layoutName,  $template): bool|string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `layoutName` | **** |  |
-| `template` | **** |  |
+| `layoutName` | **string** | The layout name to be confirmed. |
+| `template` | **string** | The template name associated with the layout. |
 
 
 **Return Value:**
 
-
+The confirmed layout name, or false if not found.
 
 
 
 ---
 ### displayJson
 
-displayJson - returns json data
+Display JSON content with an optional response code.
 
 ```php
-public Template::displayJson( $jsonContent): void
+public Template::displayJson(array|object|string $jsonContent, int $statusCode = 200): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -352,22 +376,23 @@ public Template::displayJson( $jsonContent): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `jsonContent` | **** |  |
+| `jsonContent` | **array|object|string** | The JSON content to be displayed. |
+| `statusCode` | **int** | The HTTP response code to be returned (default: 200). |
 
 
 **Return Value:**
 
-
+The response object after displaying the JSON content.
 
 
 
 ---
 ### displayPartial
 
-display - display only the template from the template folder without a wrapper
+Display a partial template with an optional response code.
 
 ```php
-public Template::displayPartial( $template): void
+public Template::displayPartial(string $template, int $responseCode = 200): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -381,12 +406,13 @@ public Template::displayPartial( $template): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `template` | **** |  |
+| `template` | **string** | The path to the partial template file. |
+| `responseCode` | **int** | The HTTP response code to be returned (default: 200). |
 
 
 **Return Value:**
 
-
+The response object after displaying the partial template.
 
 
 
@@ -411,6 +437,29 @@ public Template::get(string $name): array
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `name` | **string** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getAll
+
+getAll - get all assigned values
+
+```php
+public Template::getAll(): array
+```
+
+
+
+
+
+
+
 
 
 **Return Value:**
@@ -495,6 +544,35 @@ public Template::displayNotification(): string
 
 
 ---
+### getToggleState
+
+getToggleState - retrieves the toggle state of a submenu by name from the session
+
+```php
+public Template::getToggleState(string $name): string
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `name` | **string** | - the name of the submenu toggle |
+
+
+**Return Value:**
+
+- the toggle state of the submenu (either "true" or "false")
+
+
+
+---
 ### displayInlineNotification
 
 displayInlineNotification - display notification
@@ -523,7 +601,7 @@ public Template::displayInlineNotification(): string
 redirect - redirect to a given url
 
 ```php
-public Template::redirect(string $url): void
+public Template::redirect(string $url): \Symfony\Component\HttpFoundation\RedirectResponse
 ```
 
 
@@ -538,29 +616,6 @@ public Template::redirect(string $url): void
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `url` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getSubdomain
-
-getSubdomain - get subdomain from url
-
-```php
-public Template::getSubdomain(): string
-```
-
-
-
-
-
-
-
 
 
 **Return Value:**
@@ -686,93 +741,6 @@ public Template::escapeMinimal(string|null $content): string
 
 
 ---
-### getFormattedDateString
-
-getFormattedDateString - returns a language specific formatted date string. wraps language class method
-
-```php
-public Template::getFormattedDateString(mixed $date): string
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `date` | **mixed** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### getFormattedTimeString
-
-getFormattedTimeString - returns a language specific formatted time string. wraps language class method
-
-```php
-public Template::getFormattedTimeString(string $date): string
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `date` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### get24HourTimestring
-
-getFormattedDateTimeString - returns a language specific formatted date and time string. wraps language class method
-
-```php
-public Template::get24HourTimestring(string $dateTime): string
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `dateTime` | **string** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
 ### truncate
 
 truncate - truncate text
@@ -861,41 +829,9 @@ public Template::getModulePicture(): string
 
 
 ---
-### displayLink
-
-displayLink - display link
-
-```php
-public Template::displayLink(string $module, string $name, array|null $params = null, array|null $attribute = null): false|string
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `module` | **string** |  |
-| `name` | **string** |  |
-| `params` | **array|null** |  |
-| `attribute` | **array|null** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
 ### patchDownloadUrlToFilenameOrAwsUrl
 
-patchDownloadUrlToFilenameOrAwsUrl - Replace all local download.php references in <img src=""> tags
+patchDownloadUrlToFilenameOrAwsUrl - Replace all local files/get references in <img src=""> tags
 by either local filenames or AWS URLs that can be accesse without being authenticated
 
 ```php
@@ -914,12 +850,12 @@ authenticated
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `textHtml` | **string** | HTML text, potentially containing &lt;img srv=&quot;https://local.domain/download.php?xxxx&quot;&gt; tags |
+| `textHtml` | **string** | HTML text, potentially containing &lt;img srv=&quot;https://local.domain/files/get?xxxx&quot;&gt; tags |
 
 
 **Return Value:**
 
-HTML text with the https://local.domain/download.php?xxxx replaced by either full qualified
+HTML text with the https://local.domain/files/get?xxxx replaced by either full qualified
 local filenames or AWS URLs
 
 
@@ -927,7 +863,7 @@ local filenames or AWS URLs
 ---
 ### dispatchTplEvent
 
-
+Dispatch a template event with an optional payload.
 
 ```php
 public Template::dispatchTplEvent(string $hookName, mixed $payload = null): void
@@ -944,8 +880,8 @@ public Template::dispatchTplEvent(string $hookName, mixed $payload = null): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `hookName` | **string** |  |
-| `payload` | **mixed** |  |
+| `hookName` | **string** | The name of the event hook. |
+| `payload` | **mixed** | The payload to be passed to the event hook (default: null). |
 
 
 **Return Value:**
@@ -991,7 +927,7 @@ public Template::dispatchTplFilter(string $hookName, mixed $payload, array $avai
 
 
 ```php
-private Template::dispatchTplHook(string $type, string $hookName, array $payload, array $available_params = []): null|mixed
+private Template::dispatchTplHook(string $type, string $hookName, mixed $payload, array $available_params = []): null|mixed
 ```
 
 
@@ -1007,7 +943,7 @@ private Template::dispatchTplHook(string $type, string $hookName, array $payload
 |-----------|------|-------------|
 | `type` | **string** |  |
 | `hookName` | **string** |  |
-| `payload` | **array** |  |
+| `payload` | **mixed** |  |
 | `available_params` | **array** |  |
 
 
@@ -1090,7 +1026,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static Eventhelpers::get_event_context( $function): string
 ```
 
 
@@ -1143,7 +1079,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static Eventhelpers::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -1157,7 +1093,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -1170,4 +1106,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
