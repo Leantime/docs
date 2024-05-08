@@ -288,4 +288,4 @@ public static ApiSession::bearerToken(string $baseUri, array $creds, array $requ
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-05-08 using [phpDocumentor](http://www.phpdoc.org/)
