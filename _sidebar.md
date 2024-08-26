@@ -1,12 +1,11 @@
-**Installation & Updates**
-
-- [System Requirements](installation/system-requirements.md)
-- [Configuration](installation/configuration.md)
-<!-- - [Installation](installation/installation-types.md) -->
-- [Package based Installation](installation/quick-installation.md)
-- [Docker based Installation](installation/docker.md)
-- [Additional Use Cases](installation/advanced.md)
-- [Common Problems](installation/common-issues.md)
+- **Installation & Updates**
+  - [System Requirements](installation/system-requirements.md)
+  - [Installation](installation/installation-types.md)
+    - [Package based Installation](installation/package-installation.md)
+    - [Docker based Installation](installation/docker.md)
+    - [Other](installation/other-methods.md)
+  - [Configuration](installation/configuration.md)
+  - [Common Problems](installation/common-issues.md)
 
 **Development**
 

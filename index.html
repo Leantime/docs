@@ -1,122 +1,134 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKZP7LPS4X"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-FKZP7LPS4X"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'G-FKZP7LPS4X');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-FKZP7LPS4X");
     </script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
+    />
 
     <style>
-        :root {
-            --base-font-size: 14px;
-            --theme-color   : #1b75bb;
-        }
+      :root {
+        --base-font-size: 14px;
+        --theme-color: #1b75bb;
+      }
 
-        nav {
-            border-bottom:1px solid #ddd;
-        }
+      nav {
+        border-bottom: 1px solid #ddd;
+      }
 
-        nav a {
-            display:inline-block;
-            padding:0px 10px;
-            color:#1b75bb;
-        }
+      nav a {
+        display: inline-block;
+        padding: 0px 10px;
+        color: #1b75bb;
+      }
 
-        nav a:hover {
-            color:#333;
-        }
+      nav a:hover {
+        color: #333;
+      }
 
-        section.content {
-            padding-top:12px;
-        }
+      section.content {
+        padding-top: 12px;
+      }
 
-        .markdown-section > div:first-child {
-            float:right;
-            padding-top:38px;
-        }
+      .markdown-section > div:first-child {
+        float: right;
+        padding-top: 38px;
+      }
 
-        .markdown-section a:hover {
-            color:#1b75bb;
-        }
+      .markdown-section a:hover {
+        color: #1b75bb;
+      }
 
-        .markdown-section > div:first-child a {
-            text-decoration:none !important;
-        }
+      .markdown-section > div:first-child a {
+        text-decoration: none !important;
+      }
     </style>
+  </head>
+  <body>
+    <div data-app id="main">Please wait...</div>
 
-</head>
-<body>
+    <div id="app"></div>
 
-<div data-app id="main">Please wait...</div>
-
-<div id="app"></div>
-
-<script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
-<script>
-    window.$docsify = {
-        el: '#main',
+    <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+    <script>
+      window.$docsify = {
+        el: "#main",
         loadSidebar: true,
+        alias: {
+          "/.*/_sidebar.md": "/_sidebar.md",
+        },
         loadNavbar: true,
 
-        name: 'Leantime',
-        logo: '/_images/leantime_logo.png',
+        name: "Leantime",
+        logo: "/_images/leantime_logo.png",
         relativePath: false,
         themeable: {
-            readyTransition : true, // default
-            responsiveTables: true  // default
+          readyTransition: true, // default
+          responsiveTables: true, // default
         },
-        auto2top   : true,
-        maxLevel   : 3,
+        auto2top: true,
+        maxLevel: 3,
         subMaxLevel: 3,
+        sidebarDisplayLevel: 1,
         plugins: [
-            EditOnGithubPlugin.create('https://github.com/Leantime/docs/edit/master/', null, '<img src="_images/icons/github.svg" style="vertical-align: text-bottom"/> Edit on Github'),
-            function (hook) {
-                var footer = [
-                    '<hr/>',
-                    '<footer>',
-                    '<span><a href="https://leantime.io">Leantime</a> &copy;2023. </span>',
-                    '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify/" target="_blank">docsify</a>.</span>',
-                    '</footer>'
-                ].join('')
+          EditOnGithubPlugin.create(
+            "https://github.com/Leantime/docs/edit/master/",
+            null,
+            '<img src="_images/icons/github.svg" style="vertical-align: text-bottom"/> Edit on Github'
+          ),
+          function (hook) {
+            var footer = [
+              "<hr/>",
+              "<footer>",
+              '<span><a href="https://leantime.io">Leantime</a> &copy;2023. </span>',
+              '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify/" target="_blank">docsify</a>.</span>',
+              "</footer>",
+            ].join("");
 
-                hook.afterEach(function (html) {
-                    return html + footer
-                })
-            }
+            hook.afterEach(function (html) {
+              return html + footer;
+            });
+          },
         ],
         search: {
-            maxAge: 5000, // Expiration time, the default one day
-            paths: 'auto', // or 'auto'
-            placeholder: 'Type to search',
+          maxAge: 5000, // Expiration time, the default one day
+          paths: "auto", // or 'auto'
+          placeholder: "Type to search",
 
-            noData: 'No Results!',
+          noData: "No Results!",
 
-            // Headline depth, 1 - 6
-            depth: 6,
+          // Headline depth, 1 - 6
+          depth: 6,
 
-            hideOtherSidebarContent: false, // whether or not to hide other sidebar content
-
+          hideOtherSidebarContent: false, // whether or not to hide other sidebar content
         }, // default
+      };
+    </script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
 
-    }
-</script>
-<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
-<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
-
-
-</body>
+    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  </body>
 </html>
