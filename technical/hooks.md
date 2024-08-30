@@ -946,7 +946,7 @@ Argument | Type | Description
 `array("type" => "projectUpdate", "module" => $notification->module, "moduleId" => $entityId, "message" => $notification->message, "subject" => $notification->subject, "users" => $this->getAllUserInfoToNotify($notification->projectId), "url" => $notification->url['url'])` |  | 
 `"domain.services.projects"` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 248](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L248-L344)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 247](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L247-L343)
 
 ### `Leantime.Domain.Projects.Services.Projects.changeCurrentSessionProject.projects.setCurrentProject`
 
@@ -956,7 +956,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$project` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 688](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L688-L785)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 687](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L687-L784)
 
 ### `Leantime.Domain.Calendar.Templates.export.tpl.afterFormOpen`
 
@@ -2012,7 +2012,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$types` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 78](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L78-L88)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 77](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L77-L87)
 
 ### `Leantime.Domain.Projects.Services.Projects.notifyProjectUsers.notificationFilter`
 
@@ -2022,7 +2022,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$notification` | `\Notification` | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 248](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L248-L259)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 247](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L247-L258)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterLoadingProjects`
 
@@ -2032,7 +2032,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 454](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L454-L472)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 453](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L453-L471)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectHierarchy`
 
@@ -2043,7 +2043,7 @@ Argument | Type | Description
 `$projectHierarchy` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 454](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L454-L478)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 453](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L453-L477)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectFavorites`
 
@@ -2054,7 +2054,7 @@ Argument | Type | Description
 `$favorites` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 454](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L454-L487)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 453](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L453-L486)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAvailableToUser.afterLoadingProjects`
 
@@ -2064,7 +2064,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 496](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L496-L514)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 495](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L495-L513)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAvailableToUser.afterPopulatingProjectHierarchy`
 
@@ -2075,7 +2075,7 @@ Argument | Type | Description
 `$projectHierarchy` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 496](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L496-L520)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 495](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L495-L519)
 
 ### `Leantime.Domain.Projects.Services.Projects.getAllClientsAvailableToUser.afterLoadingProjects`
 
@@ -2090,7 +2090,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 532](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L532-L553)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 531](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L531-L552)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectAvatar.afterGettingAvatar`
 
@@ -2101,7 +2101,7 @@ Argument | Type | Description
 `$avatar` |  | 
 `array("projectId" => $id)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 1274](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L1274-L1284)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 1273](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L1273-L1283)
 
 ### `Leantime.Domain.Install.Controllers.Update.get.customUpdatePage`
 

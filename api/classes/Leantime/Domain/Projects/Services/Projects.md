@@ -12,63 +12,6 @@ footer: false
 
 
 ## Available Methods
-### `leantime.rpc.Projects.Projects.__construct`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.__construct",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "tpl": \Leantime\Core\Template,
-        "projectRepository": \Leantime\Domain\Projects\Repositories\Projects,
-        "ticketRepository": \Leantime\Domain\Tickets\Repositories\Tickets,
-        "settingsRepo": \Leantime\Domain\Setting\Repositories\Setting,
-        "filesRepository": \Leantime\Domain\Files\Repositories\Files,
-        "language": \Leantime\Core\Language,
-        "messengerService": \Leantime\Domain\Notifications\Services\Messengers,
-        "notificationService": \Leantime\Domain\Notifications\Services\Notifications,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `tpl` | **\Leantime\Core\Template** |  |
-| `projectRepository` | **\Leantime\Domain\Projects\Repositories\Projects** |  |
-| `ticketRepository` | **\Leantime\Domain\Tickets\Repositories\Tickets** |  |
-| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
-| `filesRepository` | **\Leantime\Domain\Files\Repositories\Files** |  |
-| `language` | **\Leantime\Core\Language** |  |
-| `messengerService` | **\Leantime\Domain\Notifications\Services\Messengers** |  |
-| `notificationService` | **\Leantime\Domain\Notifications\Services\Notifications** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": mixed
-}
-```
-
-
-
----
 ### `leantime.rpc.Projects.Projects.getProjectTypes`
 
 
