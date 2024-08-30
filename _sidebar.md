@@ -8,8 +8,8 @@
  
 **Development**
   - [Development/Local](installation/development.md)
-  - [API](api/usage.md)
-  - [CLI](development/commandline.md)
+  - [Connect to API](api/usage.md)
+  - [Using the Leantime CLI](development/commandline.md)
 
 **References**
   - [API Endpoints](api/README.md)
