@@ -16,7 +16,7 @@ footer: false
 
 Gets all status labels for the current set project
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getStatusLabels",
     "jsonrpc": "2.0",
@@ -44,7 +44,7 @@ Gets all status labels for the current set project
 
 **Returns:**
 returns an array of status labels
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -59,7 +59,7 @@ returns an array of status labels
 
 getAllStatusLabelsByUserId - Gets all the status labels a specific user might encounter and groups them by project.
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getAllStatusLabelsByUserId",
     "jsonrpc": "2.0",
@@ -87,7 +87,7 @@ Used to get all the status dropdowns for user home dashboards
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -102,7 +102,7 @@ Used to get all the status dropdowns for user home dashboards
 
 saveStatusLabels - Saves the description/label of a status
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.saveStatusLabels",
     "jsonrpc": "2.0",
@@ -130,7 +130,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -145,7 +145,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getKanbanColumns",
     "jsonrpc": "2.0",
@@ -166,7 +166,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -181,7 +181,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getTypeIcons",
     "jsonrpc": "2.0",
@@ -202,7 +202,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -217,7 +217,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getEffortLabels",
     "jsonrpc": "2.0",
@@ -238,7 +238,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -253,7 +253,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getTicketTypes",
     "jsonrpc": "2.0",
@@ -274,7 +274,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -289,7 +289,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getPriorityLabels",
     "jsonrpc": "2.0",
@@ -310,7 +310,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -325,7 +325,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.prepareTicketSearchArray",
     "jsonrpc": "2.0",
@@ -353,7 +353,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -368,7 +368,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.countSetFilters",
     "jsonrpc": "2.0",
@@ -396,7 +396,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -411,7 +411,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getSetFilters",
     "jsonrpc": "2.0",
@@ -441,7 +441,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -456,7 +456,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getAll",
     "jsonrpc": "2.0",
@@ -484,7 +484,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -499,7 +499,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getAllGrouped",
     "jsonrpc": "2.0",
@@ -527,7 +527,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -542,7 +542,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getAllPossibleParents",
     "jsonrpc": "2.0",
@@ -572,7 +572,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -587,7 +587,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getTicket",
     "jsonrpc": "2.0",
@@ -615,7 +615,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -630,7 +630,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getOpenUserTicketsThisWeekAndLater",
     "jsonrpc": "2.0",
@@ -662,7 +662,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -677,7 +677,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getLastTickets",
     "jsonrpc": "2.0",
@@ -707,7 +707,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -722,7 +722,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getOpenUserTicketsByProject",
     "jsonrpc": "2.0",
@@ -752,7 +752,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -767,7 +767,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getOpenUserTicketsByPriority",
     "jsonrpc": "2.0",
@@ -797,7 +797,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -812,7 +812,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getOpenUserTicketsBySprint",
     "jsonrpc": "2.0",
@@ -842,7 +842,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -857,7 +857,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getAllMilestones",
     "jsonrpc": "2.0",
@@ -887,7 +887,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -902,7 +902,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getAllMilestonesOverview",
     "jsonrpc": "2.0",
@@ -936,7 +936,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -951,7 +951,7 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getAllMilestonesByUserProjects",
     "jsonrpc": "2.0",
@@ -979,7 +979,7 @@ saveStatusLabels - Saves the description/label of a status
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -994,7 +994,7 @@ saveStatusLabels - Saves the description/label of a status
 
 Calculate the progress of a milestone based on the tickets associated with it.
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getMilestoneProgress",
     "jsonrpc": "2.0",
@@ -1022,7 +1022,7 @@ Calculate the progress of a milestone based on the tickets associated with it.
 
 **Returns:**
 The progress of the milestone as a percentage.
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1037,7 +1037,7 @@ The progress of the milestone as a percentage.
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getAllSubtasks",
     "jsonrpc": "2.0",
@@ -1065,7 +1065,7 @@ The progress of the milestone as a percentage.
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1080,7 +1080,7 @@ The progress of the milestone as a percentage.
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.quickAddTicket",
     "jsonrpc": "2.0",
@@ -1108,7 +1108,7 @@ The progress of the milestone as a percentage.
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1123,7 +1123,7 @@ The progress of the milestone as a percentage.
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.quickAddMilestone",
     "jsonrpc": "2.0",
@@ -1151,7 +1151,7 @@ The progress of the milestone as a percentage.
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1166,7 +1166,7 @@ The progress of the milestone as a percentage.
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.addTicket",
     "jsonrpc": "2.0",
@@ -1194,7 +1194,7 @@ The progress of the milestone as a percentage.
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1209,7 +1209,7 @@ The progress of the milestone as a percentage.
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.patch",
     "jsonrpc": "2.0",
@@ -1239,7 +1239,7 @@ The progress of the milestone as a percentage.
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1254,7 +1254,7 @@ The progress of the milestone as a percentage.
 
 moveTicket - Moves a ticket from one project to another. Milestone children will be moved as well
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.moveTicket",
     "jsonrpc": "2.0",
@@ -1284,7 +1284,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1299,7 +1299,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.quickUpdateMilestone",
     "jsonrpc": "2.0",
@@ -1327,7 +1327,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1342,7 +1342,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.upsertSubtask",
     "jsonrpc": "2.0",
@@ -1372,7 +1372,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1387,7 +1387,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.updateTicketSorting",
     "jsonrpc": "2.0",
@@ -1415,7 +1415,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1430,7 +1430,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.updateTicketStatusAndSorting",
     "jsonrpc": "2.0",
@@ -1460,7 +1460,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1475,7 +1475,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.delete",
     "jsonrpc": "2.0",
@@ -1503,7 +1503,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1518,7 +1518,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.deleteMilestone",
     "jsonrpc": "2.0",
@@ -1546,7 +1546,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1561,7 +1561,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getLastTicketViewUrl",
     "jsonrpc": "2.0",
@@ -1582,7 +1582,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1597,7 +1597,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getGroupByFieldOptions",
     "jsonrpc": "2.0",
@@ -1618,7 +1618,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1633,7 +1633,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getSortByFieldOptions",
     "jsonrpc": "2.0",
@@ -1654,7 +1654,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1669,7 +1669,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getNewFieldOptions",
     "jsonrpc": "2.0",
@@ -1690,7 +1690,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -1705,7 +1705,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-```curl
+```json
 {
     "method": "leantime.rpc.Tickets.Tickets.getTicketTemplateAssignments",
     "jsonrpc": "2.0",
@@ -1733,7 +1733,7 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 **Returns:**
 
-```curl
+```json
 {
     "jsonrpc": "2.0",
     "id": 1,
