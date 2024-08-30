@@ -1488,7 +1488,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 | Class | Description |
 |---    |---          |
-| [Projects](technical/classes/Leantime/Domain/Projects/Services/Projects.md) | |
+| [Projects](technical/classes/Leantime/Domain/Projects/Services/Projects.md) | Class Projects|
 
 
 
