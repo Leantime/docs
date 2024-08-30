@@ -8,8 +8,8 @@ footer: false
 Class ApiRateLimiter
 
 This class is responsible for rate limiting requests, login requests and api requests
+`\Leantime\Core\Middleware\RequestRateLimiter`
 
-* Full name: `\Leantime\Core\Middleware\RequestRateLimiter`
 
 
 

@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Menu\Composers\Menu`
 
-* Full name: `\Leantime\Domain\Menu\Composers\Menu`
 * Parent class: [\Leantime\Core\Controller\Composer](../../../Core/Controller/Composer.md)
 
 

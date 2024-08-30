@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Notifications\Controllers\GetLatestGrowl`
 
-* Full name: `\Leantime\Domain\Notifications\Controllers\GetLatestGrowl`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

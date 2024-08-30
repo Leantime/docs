@@ -8,8 +8,8 @@ footer: false
 HtmxController Class - Base class For all htmx controllers
 
 
+`\Leantime\Domain\Timesheets\Hxcontrollers\Stopwatch`
 
-* Full name: `\Leantime\Domain\Timesheets\Hxcontrollers\Stopwatch`
 * Parent class: [\Leantime\Core\Controller\HtmxController](../../../Core/Controller/HtmxController.md)
 
 

@@ -8,8 +8,8 @@ footer: false
 ApiSession - Creates a Guzzle Client with a connection
 
 
+`\Leantime\Core\Http\Client\ApiClient`
 
-* Full name: `\Leantime\Core\Http\Client\ApiClient`
 
 
 

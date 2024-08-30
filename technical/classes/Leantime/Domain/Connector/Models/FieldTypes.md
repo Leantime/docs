@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Connector\Models\FieldTypes`
 
-* Full name: `\Leantime\Domain\Connector\Models\FieldTypes`
 * This class is marked as **final** and can't be subclassed
 
 

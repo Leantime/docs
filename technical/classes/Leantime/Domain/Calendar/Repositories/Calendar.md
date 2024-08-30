@@ -8,8 +8,8 @@ footer: false
 Repository
 
 
+`\Leantime\Domain\Calendar\Repositories\Calendar`
 
-* Full name: `\Leantime\Domain\Calendar\Repositories\Calendar`
 * Parent class: [\Leantime\Core\Db\Repository](../../../Core/Db/Repository.md)
 
 

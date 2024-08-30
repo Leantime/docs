@@ -8,8 +8,8 @@ footer: false
 Either takes the translation from ini_array or the default
 
 
+`\Leantime\Core\Language`
 
-* Full name: `\Leantime\Core\Language`
 
 
 

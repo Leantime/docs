@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Middleware\StartSession`
 
-* Full name: `\Leantime\Core\Middleware\StartSession`
 
 
 

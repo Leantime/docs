@@ -946,7 +946,7 @@ Argument | Type | Description
 `array("type" => "projectUpdate", "module" => $notification->module, "moduleId" => $entityId, "message" => $notification->message, "subject" => $notification->subject, "users" => $this->getAllUserInfoToNotify($notification->projectId), "url" => $notification->url['url'])` |  | 
 `"domain.services.projects"` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 234](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L234-L326)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 248](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L248-L344)
 
 ### `Leantime.Domain.Projects.Services.Projects.changeCurrentSessionProject.projects.setCurrentProject`
 
@@ -956,7 +956,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$project` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 644](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L644-L739)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 688](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L688-L785)
 
 ### `Leantime.Domain.Calendar.Templates.export.tpl.afterFormOpen`
 
@@ -1377,7 +1377,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$lastEvent` |  | 
 
-Source: [app/Domain/Cron/Services/Cron.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php), [line 41](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php#L41-L70)
+Source: [app/Domain/Cron/Services/Cron.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php#L44-L75)
 
 ### `Leantime.Domain.Cron.Services.Cron.runCron.addJobToEnd`
 
@@ -1387,7 +1387,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$lastEvent` |  | 
 
-Source: [app/Domain/Cron/Services/Cron.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php), [line 41](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php#L41-L93)
+Source: [app/Domain/Cron/Services/Cron.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php#L44-L98)
 
 ### `Leantime.Domain.Setting.Templates.editCompanySettings.tpl.beforeTelemetrySettings`
 
@@ -1402,7 +1402,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array("companyId" => $companyId)` |  | 
 
-Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 154](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L154-L197)
+Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 163](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L163-L208)
 
 ### `Leantime.Domain.Users.Services.Users.editUser.editUser`
 
@@ -1412,7 +1412,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `["id" => $id, "values" => $values]` |  | 
 
-Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 65](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L65-L74)
+Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 70](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L70-L81)
 
 ### `Leantime.Domain.Users.Services.Users.editOwn.editUser`
 
@@ -1422,7 +1422,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `["id" => $id, "values" => $values]` |  | 
 
-Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 359](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L359-L372)
+Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 390](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L390-L405)
 
 ### `Leantime.Domain.Api.Controllers.NewApiKey.init.api_key_init`
 
@@ -2012,7 +2012,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$types` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 74](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L74-L82)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 78](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L78-L88)
 
 ### `Leantime.Domain.Projects.Services.Projects.notifyProjectUsers.notificationFilter`
 
@@ -2022,7 +2022,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$notification` | `\Notification` | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 234](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L234-L243)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 248](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L248-L259)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterLoadingProjects`
 
@@ -2032,7 +2032,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 426](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L426-L442)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 454](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L454-L472)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectHierarchy`
 
@@ -2043,7 +2043,7 @@ Argument | Type | Description
 `$projectHierarchy` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 426](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L426-L448)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 454](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L454-L478)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectFavorites`
 
@@ -2054,7 +2054,7 @@ Argument | Type | Description
 `$favorites` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 426](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L426-L457)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 454](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L454-L487)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAvailableToUser.afterLoadingProjects`
 
@@ -2064,7 +2064,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 466](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L466-L482)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 496](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L496-L514)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAvailableToUser.afterPopulatingProjectHierarchy`
 
@@ -2075,7 +2075,7 @@ Argument | Type | Description
 `$projectHierarchy` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 466](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L466-L488)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 496](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L496-L520)
 
 ### `Leantime.Domain.Projects.Services.Projects.getAllClientsAvailableToUser.afterLoadingProjects`
 
@@ -2090,7 +2090,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 500](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L500-L519)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 532](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L532-L553)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectAvatar.afterGettingAvatar`
 
@@ -2101,7 +2101,7 @@ Argument | Type | Description
 `$avatar` |  | 
 `array("projectId" => $id)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 1210](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L1210-L1218)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 1274](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L1274-L1284)
 
 ### `Leantime.Domain.Install.Controllers.Update.get.customUpdatePage`
 
@@ -2182,7 +2182,7 @@ Argument | Type | Description
 `$installedPluginsById` |  | 
 `array("enabledOnly" => $enabledOnly)` |  | 
 
-Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 125](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L125-L129)
+Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 137](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L137-L143)
 
 ### `Leantime.Domain.Plugins.Services.Plugins.getEnabledPlugins.beforeReturnCachedPlugins`
 
@@ -2193,7 +2193,7 @@ Argument | Type | Description
 `session("enabledPlugins")` |  | 
 `array("enabledOnly" => true)` |  | 
 
-Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 152](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L152-L160)
+Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 168](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L168-L178)
 
 ### `Leantime.Domain.Plugins.Services.Plugins.getEnabledPlugins.beforeReturnCachedPlugins`
 
@@ -2206,7 +2206,7 @@ Argument | Type | Description
 `session("enabledPlugins")` |  | 
 `array("enabledOnly" => true)` |  | 
 
-Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 166](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L166-L170)
+Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 184](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L184-L190)
 
 ### `Leantime.Domain.Wiki.Templates.templates.tpl.documentTemplates`
 
@@ -2415,7 +2415,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$telemetry` |  | 
 
-Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 154](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L154-L289)
+Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 163](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L163-L300)
 
 ### `Leantime.Domain.Widgets.Services.Widgets.__construct.availableWidgets`
 
@@ -2429,7 +2429,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this->availableWidgets` |  | 
 
-Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 31](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L31-L115)
+Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L37-L122)
 
 ### `Leantime.Domain.Widgets.Services.Widgets.__construct.defaultWidgets`
 
@@ -2444,7 +2444,7 @@ Argument | Type | Description
 `$this->defaultWidgets` |  | 
 `array("availableWidgets" => $this->availableWidgets)` |  | 
 
-Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 31](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L31-L116)
+Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L37-L123)
 
 ### `Leantime.Domain.Widgets.Services.Widgets.getAll.availableWidgets`
 
@@ -2456,7 +2456,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this->availableWidgets` |  | 
 
-Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 119](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L119-L126)
+Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 126](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L126-L135)
 
 ### `Leantime.Domain.Users.Services.Users.getAll.getAll`
 
@@ -2466,7 +2466,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$users` |  | 
 
-Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 99](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L99-L107)
+Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 108](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L108-L118)
 
 ### `Leantime.Domain.Modulemanager.Controllers.Notavailable.run.notAvailableRedirect`
 

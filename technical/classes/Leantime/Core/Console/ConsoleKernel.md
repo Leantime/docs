@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Console\ConsoleKernel`
 
-* Full name: `\Leantime\Core\Console\ConsoleKernel`
 * This class implements: \Illuminate\Contracts\Console\Kernel
 
 

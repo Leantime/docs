@@ -8,8 +8,8 @@ footer: false
 API-key controller.
 
 
+`\Leantime\Domain\Api\Controllers\ApiKey`
 
-* Full name: `\Leantime\Domain\Api\Controllers\ApiKey`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

@@ -8,8 +8,8 @@ footer: false
 Class EnablePluginCommand
 
 This class represents a command that enables plugins.
+`\Leantime\Command\EnablePluginCommand`
 
-* Full name: `\Leantime\Command\EnablePluginCommand`
 * Parent class: [\Leantime\Command\AbstractPluginCommand](technical/AbstractPluginCommand.md)
 
 

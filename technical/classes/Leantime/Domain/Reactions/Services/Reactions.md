@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Reactions\Services\Reactions`
 
-* Full name: `\Leantime\Domain\Reactions\Services\Reactions`
 
 
 

@@ -8,8 +8,8 @@ footer: false
 upload controller for csvImport plugin
 
 
+`\Leantime\Domain\CsvImport\Controllers\Upload`
 
-* Full name: `\Leantime\Domain\CsvImport\Controllers\Upload`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

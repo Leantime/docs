@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Tickets\Repositories\TicketHistory`
 
-* Full name: `\Leantime\Domain\Tickets\Repositories\TicketHistory`
 
 
 

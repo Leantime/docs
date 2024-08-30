@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Wiki\Controllers\DelWiki`
 
-* Full name: `\Leantime\Domain\Wiki\Controllers\DelWiki`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

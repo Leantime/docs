@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\TwoFA\Controllers\Edit`
 
-* Full name: `\Leantime\Domain\TwoFA\Controllers\Edit`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

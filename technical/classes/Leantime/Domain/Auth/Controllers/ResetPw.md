@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Auth\Controllers\ResetPw`
 
-* Full name: `\Leantime\Domain\Auth\Controllers\ResetPw`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

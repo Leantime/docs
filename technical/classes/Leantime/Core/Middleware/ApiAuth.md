@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Middleware\ApiAuth`
 
-* Full name: `\Leantime\Core\Middleware\ApiAuth`
 
 
 

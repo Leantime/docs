@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Notifications\Services\News`
 
-* Full name: `\Leantime\Domain\Notifications\Services\News`
 
 
 

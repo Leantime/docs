@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Oidc\Controllers\Callback`
 
-* Full name: `\Leantime\Domain\Oidc\Controllers\Callback`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

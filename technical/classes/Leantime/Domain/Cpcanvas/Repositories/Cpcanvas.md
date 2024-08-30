@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Cpcanvas\Repositories\Cpcanvas`
 
-* Full name: `\Leantime\Domain\Cpcanvas\Repositories\Cpcanvas`
 * Parent class: [\Leantime\Domain\Canvas\Repositories\Canvas](../../Canvas/Repositories/Canvas.md)
 
 

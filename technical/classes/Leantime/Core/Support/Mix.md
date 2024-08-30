@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Support\Mix`
 
-* Full name: `\Leantime\Core\Support\Mix`
 
 
 

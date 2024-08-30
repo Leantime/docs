@@ -8,8 +8,8 @@ footer: false
 Calendar controller
 
 
+`\Leantime\Domain\Api\Controllers\Calendar`
 
-* Full name: `\Leantime\Domain\Api\Controllers\Calendar`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

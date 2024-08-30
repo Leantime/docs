@@ -8,8 +8,8 @@ footer: false
 HtmxController Class - Base class For all htmx controllers
 
 
+`\Leantime\Core\Controller\HtmxController`
 
-* Full name: `\Leantime\Core\Controller\HtmxController`
 
 
 

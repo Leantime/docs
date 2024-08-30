@@ -8,8 +8,8 @@ footer: false
 Class RemovePluginCommand
 
 This class represents a command that removes plugins.
+`\Leantime\Command\RemovePluginCommand`
 
-* Full name: `\Leantime\Command\RemovePluginCommand`
 * Parent class: [\Leantime\Command\AbstractPluginCommand](technical/AbstractPluginCommand.md)
 
 

@@ -8,8 +8,8 @@ footer: false
 environment - class To handle environment variables
 
 
+`\Leantime\Core\Configuration\Environment`
 
-* Full name: `\Leantime\Core\Configuration\Environment`
 * This class implements: \ArrayAccess, \Illuminate\Contracts\Config\Repository
 
 

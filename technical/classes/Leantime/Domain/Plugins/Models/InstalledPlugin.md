@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Plugins\Models\InstalledPlugin`
 
-* Full name: `\Leantime\Domain\Plugins\Models\InstalledPlugin`
 * This class implements: \Leantime\Domain\Plugins\Contracts\PluginDisplayStrategy
 
 

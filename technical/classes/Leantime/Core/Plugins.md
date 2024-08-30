@@ -8,8 +8,8 @@ footer: false
 Plugins class
 
 
+`\Leantime\Core\Plugins`
 
-* Full name: `\Leantime\Core\Plugins`
 
 
 

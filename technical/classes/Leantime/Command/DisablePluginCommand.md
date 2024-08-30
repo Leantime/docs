@@ -8,8 +8,8 @@ footer: false
 Class DisablePluginCommand
 
 This class represents a command that disables plugins.
+`\Leantime\Command\DisablePluginCommand`
 
-* Full name: `\Leantime\Command\DisablePluginCommand`
 * Parent class: [\Leantime\Command\AbstractPluginCommand](technical/AbstractPluginCommand.md)
 
 

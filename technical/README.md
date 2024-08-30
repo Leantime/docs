@@ -8,6 +8,7 @@ footer: false
 This is an automatically generated documentation for **Leantime Code Reference**.
 
 
+
 ## \Leantime\Command
 
 ### Classes
@@ -104,7 +105,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### Interfaces
+#### Interfaces
 
 | Interface | Description |
 |---    |---          |
@@ -147,7 +148,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 | [EventDispatcher](technical/classes/Leantime/Core/Events/EventDispatcher.md) | EventDispatcher class - Handles all events and filters|
 
 
-### Traits
+#### Traits
 
 | Trait | Description |
 |---    |---          |
@@ -598,7 +599,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### Interfaces
+#### Interfaces
 
 | Interface | Description |
 |---    |---          |
@@ -934,7 +935,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### Interfaces
+#### Interfaces
 
 | Interface | Description |
 |---    |---          |
@@ -1357,7 +1358,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### Interfaces
+#### Interfaces
 
 | Interface | Description |
 |---    |---          |
@@ -2024,6 +2025,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 | Class | Description |
 |---    |---          |
 | [DelUser](technical/classes/Leantime/Domain/Users/Controllers/DelUser.md) | Controller Class - Base class For all controllers|
+| [EditOwn](technical/classes/Leantime/Domain/Users/Controllers/EditOwn.md) | Controller Class - Base class For all controllers|
 | [EditUser](technical/classes/Leantime/Domain/Users/Controllers/EditUser.md) | Controller Class - Base class For all controllers|
 | [Import](technical/classes/Leantime/Domain/Users/Controllers/Import.md) | Controller Class - Base class For all controllers|
 | [NewUser](technical/classes/Leantime/Domain/Users/Controllers/NewUser.md) | Controller Class - Base class For all controllers|
@@ -2198,6 +2200,6 @@ This is an automatically generated documentation for **Leantime Code Reference**
 ---
 > Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
 
-### Hooks
+#### Hooks
 
 [Reference Here](hooks.md)

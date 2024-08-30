@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Contracts\DTO`
 
-* Full name: `\Leantime\Core\Contracts\DTO`
 
 
 

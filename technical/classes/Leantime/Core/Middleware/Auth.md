@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Middleware\Auth`
 
-* Full name: `\Leantime\Core\Middleware\Auth`
 
 
 

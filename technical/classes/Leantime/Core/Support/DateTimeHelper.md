@@ -10,8 +10,8 @@ Class DateTimeHelper
 A helper class for working with dates and times.
 This class should NOT contain any formatting methods. Any datetime formatting should be included into the
 CarbonMacros class
+`\Leantime\Core\Support\DateTimeHelper`
 
-* Full name: `\Leantime\Core\Support\DateTimeHelper`
 * Parent class: [CarbonImmutable](../../../../classes.md)
 
 

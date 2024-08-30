@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Tickets\Services\Tickets`
 
-* Full name: `\Leantime\Domain\Tickets\Services\Tickets`
 
 
 
@@ -1564,7 +1564,7 @@ public Tickets::findTicket(string $term, int $projectId, ?int $userId): mixed
 
 
 ```php
-public Tickets::pollForNewAccountMilestones(?int $projectId = null, ?int $userId = null): array|false
+public Tickets::pollForNewAccountMilestones(?int $projectId = null, ?int $userId = null): array
 ```
 
 
@@ -1594,7 +1594,7 @@ public Tickets::pollForNewAccountMilestones(?int $projectId = null, ?int $userId
 
 
 ```php
-public Tickets::pollForUpdatedAccountMilestones(?int $projectId = null, ?int $userId = null): array|false
+public Tickets::pollForUpdatedAccountMilestones(?int $projectId = null, ?int $userId = null): array
 ```
 
 
@@ -1624,7 +1624,7 @@ public Tickets::pollForUpdatedAccountMilestones(?int $projectId = null, ?int $us
 
 
 ```php
-public Tickets::pollForNewAccountTodos(?int $projectId = null, ?int $userId = null): array|false
+public Tickets::pollForNewAccountTodos(?int $projectId = null, ?int $userId = null): array
 ```
 
 
@@ -1654,7 +1654,7 @@ public Tickets::pollForNewAccountTodos(?int $projectId = null, ?int $userId = nu
 
 
 ```php
-public Tickets::pollForUpdatedAccountTodos(?int $projectId = null, ?int $userId = null): array|false
+public Tickets::pollForUpdatedAccountTodos(?int $projectId = null, ?int $userId = null): array
 ```
 
 

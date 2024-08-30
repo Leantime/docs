@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Wiki\Models\Article`
 
-* Full name: `\Leantime\Domain\Wiki\Models\Article`
 
 
 

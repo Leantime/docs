@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Auth\Controllers\UserInvite`
 
-* Full name: `\Leantime\Domain\Auth\Controllers\UserInvite`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

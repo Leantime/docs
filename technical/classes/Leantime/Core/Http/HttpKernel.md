@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Http\HttpKernel`
 
-* Full name: `\Leantime\Core\Http\HttpKernel`
 * This class implements: \Illuminate\Contracts\Http\Kernel
 
 

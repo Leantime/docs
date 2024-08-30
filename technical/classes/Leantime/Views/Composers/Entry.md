@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Views\Composers\Entry`
 
-* Full name: `\Leantime\Views\Composers\Entry`
 * Parent class: [\Leantime\Core\Controller\Composer](../../Core/Controller/Composer.md)
 
 

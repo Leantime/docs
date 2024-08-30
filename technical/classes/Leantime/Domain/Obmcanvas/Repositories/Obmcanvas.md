@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Obmcanvas\Repositories\Obmcanvas`
 
-* Full name: `\Leantime\Domain\Obmcanvas\Repositories\Obmcanvas`
 * Parent class: [\Leantime\Domain\Canvas\Repositories\Canvas](../../Canvas/Repositories/Canvas.md)
 
 

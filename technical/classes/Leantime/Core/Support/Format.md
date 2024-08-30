@@ -8,8 +8,8 @@ footer: false
 Class Format
 
 This class provides various formatting methods for simple data types (strings, ints, floats)
+`\Leantime\Core\Support\Format`
 
-* Full name: `\Leantime\Core\Support\Format`
 
 
 

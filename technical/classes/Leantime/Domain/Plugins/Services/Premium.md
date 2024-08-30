@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Plugins\Services\Premium`
 
-* Full name: `\Leantime\Domain\Plugins\Services\Premium`
 
 
 

@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Timesheets\Controllers\AddTime`
 
-* Full name: `\Leantime\Domain\Timesheets\Controllers\AddTime`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

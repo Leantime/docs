@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Connector\Models\Provider`
 
-* Full name: `\Leantime\Domain\Connector\Models\Provider`
 
 
 

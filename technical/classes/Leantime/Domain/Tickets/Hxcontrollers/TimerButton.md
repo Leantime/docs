@@ -8,8 +8,8 @@ footer: false
 HtmxController Class - Base class For all htmx controllers
 
 
+`\Leantime\Domain\Tickets\Hxcontrollers\TimerButton`
 
-* Full name: `\Leantime\Domain\Tickets\Hxcontrollers\TimerButton`
 * Parent class: [\Leantime\Core\Controller\HtmxController](../../../Core/Controller/HtmxController.md)
 
 

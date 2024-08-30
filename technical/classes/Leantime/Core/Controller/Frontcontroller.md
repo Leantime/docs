@@ -8,8 +8,8 @@ footer: false
 Frontcontroller class
 
 
+`\Leantime\Core\Controller\Frontcontroller`
 
-* Full name: `\Leantime\Core\Controller\Frontcontroller`
 
 
 

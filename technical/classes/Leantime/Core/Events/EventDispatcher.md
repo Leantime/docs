@@ -8,8 +8,8 @@ footer: false
 EventDispatcher class - Handles all events and filters
 
 
+`\Leantime\Core\Events\EventDispatcher`
 
-* Full name: `\Leantime\Core\Events\EventDispatcher`
 * This class implements: \Illuminate\Contracts\Events\Dispatcher
 
 

@@ -8,8 +8,8 @@ footer: false
 Class Ideation
 
 
+`\Leantime\Domain\Api\Controllers\Ideation`
 
-* Full name: `\Leantime\Domain\Api\Controllers\Ideation`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

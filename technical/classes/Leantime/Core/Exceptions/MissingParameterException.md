@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Exceptions\MissingParameterException`
 
-* Full name: `\Leantime\Core\Exceptions\MissingParameterException`
 * Parent class: [Exception](../../../../classes.md)
 
 

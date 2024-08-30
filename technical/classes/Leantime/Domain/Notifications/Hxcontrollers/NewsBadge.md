@@ -8,8 +8,8 @@ footer: false
 HtmxController Class - Base class For all htmx controllers
 
 
+`\Leantime\Domain\Notifications\Hxcontrollers\NewsBadge`
 
-* Full name: `\Leantime\Domain\Notifications\Hxcontrollers\NewsBadge`
 * Parent class: [\Leantime\Core\Controller\HtmxController](../../../Core/Controller/HtmxController.md)
 
 

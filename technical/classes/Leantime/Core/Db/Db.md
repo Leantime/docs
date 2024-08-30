@@ -8,8 +8,8 @@ footer: false
 Database Class - Very simple abstraction layer for pdo connection
 
 
+`\Leantime\Core\Db\Db`
 
-* Full name: `\Leantime\Core\Db\Db`
 
 
 

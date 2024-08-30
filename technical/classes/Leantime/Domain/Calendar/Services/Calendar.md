@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Calendar\Services\Calendar`
 
-* Full name: `\Leantime\Domain\Calendar\Services\Calendar`
 
 
 

@@ -8,8 +8,8 @@ footer: false
 Template class For exporting class as XML file
 
 
+`\Leantime\Domain\Swotcanvas\Controllers\Export`
 
-* Full name: `\Leantime\Domain\Swotcanvas\Controllers\Export`
 * Parent class: [\Leantime\Domain\Canvas\Controllers\Export](../../Canvas/Controllers/Export.md)
 
 

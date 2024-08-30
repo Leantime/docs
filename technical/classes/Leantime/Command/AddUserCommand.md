@@ -8,8 +8,8 @@ footer: false
 Class AddUserCommand
 
 This command adds a new user.
+`\Leantime\Command\AddUserCommand`
 
-* Full name: `\Leantime\Command\AddUserCommand`
 * Parent class: [Command](../../../classes.md)
 
 

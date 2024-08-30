@@ -8,8 +8,8 @@ footer: false
 Represents the MigrateCommand class.
 
 
+`\Leantime\Command\MigrateCommand`
 
-* Full name: `\Leantime\Command\MigrateCommand`
 * Parent class: [Command](../../../classes.md)
 
 

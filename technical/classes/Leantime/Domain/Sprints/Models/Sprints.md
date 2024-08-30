@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Sprints\Models\Sprints`
 
-* Full name: `\Leantime\Domain\Sprints\Models\Sprints`
 
 
 

@@ -8,8 +8,8 @@ footer: false
 appSettings class - System appSettings
 
 
+`\Leantime\Core\Configuration\AppSettings`
 
-* Full name: `\Leantime\Core\Configuration\AppSettings`
 
 
 

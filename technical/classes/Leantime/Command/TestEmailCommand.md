@@ -8,8 +8,8 @@ footer: false
 Class TestEmailCommand
 
 This class represents a command that sends an email to test the system configuration.
+`\Leantime\Command\TestEmailCommand`
 
-* Full name: `\Leantime\Command\TestEmailCommand`
 * Parent class: [Command](../../../classes.md)
 
 

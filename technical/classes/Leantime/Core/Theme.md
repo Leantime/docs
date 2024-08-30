@@ -8,8 +8,8 @@ footer: false
 theme - Engine for handling themes
 
 
+`\Leantime\Core\Theme`
 
-* Full name: `\Leantime\Core\Theme`
 
 
 

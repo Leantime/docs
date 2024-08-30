@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Exceptions\ExceptionHandler`
 
-* Full name: `\Leantime\Core\Exceptions\ExceptionHandler`
 * This class implements: \Illuminate\Contracts\Debug\ExceptionHandler
 
 

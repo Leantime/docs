@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Projects\Controllers\ChangeCurrentProject`
 
-* Full name: `\Leantime\Domain\Projects\Controllers\ChangeCurrentProject`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

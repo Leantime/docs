@@ -8,8 +8,8 @@ footer: false
 HtmxController Class - Base class For all htmx controllers
 
 
+`\Leantime\Domain\Tickets\Hxcontrollers\Milestones`
 
-* Full name: `\Leantime\Domain\Tickets\Hxcontrollers\Milestones`
 * Parent class: [\Leantime\Core\Controller\HtmxController](../../../Core/Controller/HtmxController.md)
 
 

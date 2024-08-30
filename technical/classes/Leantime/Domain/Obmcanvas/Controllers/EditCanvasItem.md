@@ -8,8 +8,8 @@ footer: false
 editCanvasItem class - Generic canvas controller / Edit Canvas Item
 
 
+`\Leantime\Domain\Obmcanvas\Controllers\EditCanvasItem`
 
-* Full name: `\Leantime\Domain\Obmcanvas\Controllers\EditCanvasItem`
 * Parent class: [\Leantime\Domain\Canvas\Controllers\EditCanvasItem](../../Canvas/Controllers/EditCanvasItem.md)
 
 

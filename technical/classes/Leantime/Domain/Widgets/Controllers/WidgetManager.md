@@ -8,8 +8,8 @@ footer: false
 Class WidgetManager
 
 This class represents a widget manager.
+`\Leantime\Domain\Widgets\Controllers\WidgetManager`
 
-* Full name: `\Leantime\Domain\Widgets\Controllers\WidgetManager`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

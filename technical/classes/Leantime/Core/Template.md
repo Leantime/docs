@@ -8,8 +8,8 @@ footer: false
 Template class - Template routing
 
 
+`\Leantime\Core\Template`
 
-* Full name: `\Leantime\Core\Template`
 
 
 

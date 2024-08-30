@@ -8,8 +8,8 @@ footer: false
 importGCal Class - Add a new client
 
 
+`\Leantime\Domain\Calendar\Controllers\ImportGCal`
 
-* Full name: `\Leantime\Domain\Calendar\Controllers\ImportGCal`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 
