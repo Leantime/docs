@@ -11,21 +11,6 @@ This is an automatically generated documentation for **Leantime Code Reference**
 ## Namespaces
 
 
-### \Acceptance
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [CreateUserCest](technical/classes/Acceptance/CreateUserCest.md) | |
-| [InstallCest](technical/classes/Acceptance/InstallCest.md) | |
-| [LoginCest](technical/classes/Acceptance/LoginCest.md) | |
-| [TicketsCest](technical/classes/Acceptance/TicketsCest.md) | |
-| [TimesheetCest](technical/classes/Acceptance/TimesheetCest.md) | |
-
-
-
-
 ### \Leantime\Command
 
 #### Classes
@@ -2209,77 +2194,6 @@ This is an automatically generated documentation for **Leantime Code Reference**
 | [Footer](technical/classes/Leantime/Views/Composers/Footer.md) | |
 | [Header](technical/classes/Leantime/Views/Composers/Header.md) | |
 | [PageBottom](technical/classes/Leantime/Views/Composers/PageBottom.md) | |
-
-
-
-
-### \Test\Unit
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [ApiClientTest](technical/classes/Test/Unit/ApiClientTest.md) | |
-
-
-
-
-### \Tests\Support
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [AcceptanceTester](technical/classes/Tests/Support/AcceptanceTester.md) | Inherited Methods|
-| [UnitTester](technical/classes/Tests/Support/UnitTester.md) | Inherited Methods|
-
-
-
-
-### \Tests\Support\Page\Acceptance
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [Install](technical/classes/Tests/Support/Page/Acceptance/Install.md) | |
-| [Login](technical/classes/Tests/Support/Page/Acceptance/Login.md) | |
-
-
-
-
-### \Tests\Support\_generated
-
-
-
-#### Traits
-
-| Trait | Description |
-|---    |---          |
-| [AcceptanceTesterActions](technical/classes/Tests/Support/_generated/AcceptanceTesterActions.md) | |
-| [UnitTesterActions](technical/classes/Tests/Support/_generated/UnitTesterActions.md) | |
-
-
-
-
-### \Unit\app
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [FormatTest](technical/classes/Unit/app/FormatTest.md) | |
-
-
-
-
-### \Unit\app\Core
-
-#### Classes
-
-| Class | Description |
-|---    |---          |
-| [EventsTest](technical/classes/Unit/app/Core/EventsTest.md) | |
 
 
 
