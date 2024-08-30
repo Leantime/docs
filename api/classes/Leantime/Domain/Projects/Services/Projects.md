@@ -5,16 +5,18 @@ footer: false
 
 # Projects
 
+Class Projects
 
-
-
+This class represents a collection of methods related to projects.
+It provides functionality to retrieve project types, project data,
+project progress, users to notify in a project, and send project notifications.
 `leantime.rpc.Projects.Projects.`
 
 
 ## Available Methods
 ### `leantime.rpc.Projects.Projects.getProjectTypes`
 
-
+Gets the project types.
 
 ```json
 {
@@ -50,7 +52,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.getProject`
 
-
+Gets the project with the given ID.
 
 ```json
 {
@@ -75,16 +77,16 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int** |  |
+| `id` | **int** | The ID of the project to retrieve. |
 
 
 **Returns:**
-
+Returns the project data as an associative array if the project exists, otherwise returns false.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|bool
+    "result": bool|array
 }
 ```
 
@@ -93,7 +95,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.getProjectProgress`
 
-
+Gets the progress of a project.
 
 ```json
 {
@@ -101,13 +103,14 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
 
 
-
+Calculates the completion percentage, estimated completion date,
+and planned completion date of the project.
 
 
 
@@ -118,11 +121,11 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Returns:**
-
+The progress of the project.
 ```json
 {
     "jsonrpc": "2.0",
@@ -136,7 +139,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.getUsersToNotify`
 
-
+Gets an array of user IDs to notify for a given project.
 
 ```json
 {
@@ -144,7 +147,7 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
@@ -161,11 +164,11 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project to get users to notify for. |
 
 
 **Returns:**
-
+An array of user IDs.
 ```json
 {
     "jsonrpc": "2.0",
@@ -179,7 +182,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.getAllUserInfoToNotify`
 
-
+Gets all the users who need to be notified for a given project.
 
 ```json
 {
@@ -187,7 +190,7 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
@@ -204,11 +207,11 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Returns:**
-
+An array of users to notify.
 ```json
 {
     "jsonrpc": "2.0",
@@ -222,7 +225,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.notifyProjectUsers`
 
-
+Notifies the users associated with a project about a notification.
 
 ```json
 {
@@ -247,7 +250,7 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `notification` | **\Leantime\Domain\Notifications\Models\Notification** |  |
+| `notification` | **\Leantime\Domain\Notifications\Models\Notification** | The notification object to send. |
 
 
 **Returns:**
@@ -265,7 +268,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.getProjectName`
 
-
+Retrieves the name of a project based on its ID.
 
 ```json
 {
@@ -273,7 +276,7 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
@@ -290,16 +293,16 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Returns:**
-
+The name of the project, or null if the project does not exist.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": mixed|void
+    "result": string|null
 }
 ```
 
@@ -308,7 +311,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.getProjectIdAssignedToUser`
 
-
+Gets the project IDs assigned to a specified user.
 
 ```json
 {
@@ -316,7 +319,7 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userId": ,
+        "userId": int,
     }
 }
 ```
@@ -333,16 +336,16 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
+| `userId` | **int** | The ID of the user. |
 
 
 **Returns:**
-
+The project IDs assigned to the user, or false if no projects are found.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|array
 }
 ```
 
@@ -351,7 +354,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.getProjectsAssignedToUser`
 
-
+Gets projects assigned to a user.
 
 ```json
 {
@@ -359,9 +362,9 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userId": ,
+        "userId": int,
         "projectStatus": string,
-        "clientId": ,
+        "clientId": int|null,
     }
 }
 ```
@@ -378,13 +381,13 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `projectStatus` | **string** |  |
-| `clientId` | **** |  |
+| `userId` | **int** | The ID of the user. |
+| `projectStatus` | **string** | The status of the projects. Defaults to &quot;open&quot;. |
+| `clientId` | **int|null** | The ID of the client. Defaults to null. |
 
 
 **Returns:**
-
+The projects assigned to the user.
 ```json
 {
     "jsonrpc": "2.0",
@@ -398,7 +401,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.findMyChildren`
 
-
+Finds all children projects for a given parent project.
 
 ```json
 {
@@ -406,7 +409,7 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "currentParentId": ,
+        "currentParentId": mixed,
         "projects": array,
     }
 }
@@ -424,12 +427,12 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `currentParentId` | **** |  |
-| `projects` | **array** |  |
+| `currentParentId` | **mixed** | The ID of the current parent project. |
+| `projects` | **array** | An array of projects to search for children. |
 
 
 **Returns:**
-
+An array of children projects found.
 ```json
 {
     "jsonrpc": "2.0",
@@ -443,7 +446,7 @@ footer: false
 ---
 ### `leantime.rpc.Projects.Projects.cleanParentRelationship`
 
-Ensures all projects have a valid parent. If not the parent is removed.
+Cleans the parent relationship in the given array of projects.
 
 ```json
 {
@@ -457,7 +460,8 @@ Ensures all projects have a valid parent. If not the parent is removed.
 ```
 
 
-This way a user can still access a project even if they don't have access to the child.
+Removes projects that have a parent project that does not exist in the array.
+Assigns a parent id of 0 to projects that have no parent.
 
 
 
@@ -468,11 +472,11 @@ This way a user can still access a project even if they don't have access to the
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projects` | **array** |  |
+| `projects` | **array** | An array of projects |
 
 
 **Returns:**
-
+The cleaned array of projects
 ```json
 {
     "jsonrpc": "2.0",
@@ -486,7 +490,7 @@ This way a user can still access a project even if they don't have access to the
 ---
 ### `leantime.rpc.Projects.Projects.getProjectHierarchyAssignedToUser`
 
-
+Gets the hierarchy of projects assigned to a user.
 
 ```json
 {
@@ -494,9 +498,9 @@ This way a user can still access a project even if they don't have access to the
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userId": ,
+        "userId": int,
         "projectStatus": string,
-        "clientId": ,
+        "clientId": int|null,
     }
 }
 ```
@@ -513,13 +517,13 @@ This way a user can still access a project even if they don't have access to the
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `projectStatus` | **string** |  |
-| `clientId` | **** |  |
+| `userId` | **int** | The ID of the user. |
+| `projectStatus` | **string** | The project status. Default is &quot;open&quot;. |
+| `clientId` | **int|null** | The ID of the client. Default is null. |
 
 
 **Returns:**
-
+An array containing the assigned projects, the project hierarchy, and the favorite projects.
 ```json
 {
     "jsonrpc": "2.0",
@@ -533,7 +537,7 @@ This way a user can still access a project even if they don't have access to the
 ---
 ### `leantime.rpc.Projects.Projects.getProjectHierarchyAvailableToUser`
 
-
+Gets the project hierarchy available to a user.
 
 ```json
 {
@@ -541,9 +545,9 @@ This way a user can still access a project even if they don't have access to the
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userId": ,
+        "userId": int,
         "projectStatus": string,
-        "clientId": ,
+        "clientId": int|null,
     }
 }
 ```
@@ -560,13 +564,16 @@ This way a user can still access a project even if they don't have access to the
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `projectStatus` | **string** |  |
-| `clientId` | **** |  |
+| `userId` | **int** | The ID of the user. |
+| `projectStatus` | **string** | The status of the projects to retrieve. Defaults to &quot;open&quot;. |
+| `clientId` | **int|null** | The ID of the client. Defaults to null. |
 
 
 **Returns:**
-
+Returns an array containing the following keys:
+- "allAvailableProjects": An array of all projects available to the user.
+- "allAvailableProjectsHierarchy": An array representing the project hierarchy available to the user.
+- "clients": An array of clients associated with the projects available to the user.
 ```json
 {
     "jsonrpc": "2.0",
@@ -595,8 +602,7 @@ Gets all the clients available to a user.
 ```
 
 
-Clients are determined by the projects
-the user is assigned to.
+
 
 
 
@@ -608,54 +614,11 @@ the user is assigned to.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `userId` | **int** | The ID of the user. |
-| `projectStatus` | **string** | (optional) The status of the projects to consider. Defaults to &quot;open&quot;. |
+| `projectStatus` | **string** | The status of the projects to be considered. Defaults to &quot;open&quot;. |
 
 
 **Returns:**
-An array of client objects.
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": array
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.getClientsFromProjectList`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.getClientsFromProjectList",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "projects": array,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `projects` | **array** |  |
-
-
-**Returns:**
-
+An array of clients available to the user.
 ```json
 {
     "jsonrpc": "2.0",
@@ -669,7 +632,7 @@ An array of client objects.
 ---
 ### `leantime.rpc.Projects.Projects.getProjectRole`
 
-
+Gets the role of a user in a specific project.
 
 ```json
 {
@@ -677,8 +640,8 @@ An array of client objects.
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userId": ,
-        "projectId": ,
+        "userId": mixed,
+        "projectId": mixed,
     }
 }
 ```
@@ -695,17 +658,17 @@ An array of client objects.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `projectId` | **** |  |
+| `userId` | **mixed** | The user ID. |
+| `projectId` | **mixed** | The project ID. |
 
 
 **Returns:**
-
+The role of the user in the project (string) or an empty string if the user is not assigned to the project or if the project role is not defined.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": mixed|string
+    "result": mixed
 }
 ```
 
@@ -714,7 +677,7 @@ An array of client objects.
 ---
 ### `leantime.rpc.Projects.Projects.getProjectsUserHasAccessTo`
 
-
+Gets the projects that a user has access to.
 
 ```json
 {
@@ -722,7 +685,7 @@ An array of client objects.
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userId": ,
+        "userId": int,
     }
 }
 ```
@@ -739,11 +702,11 @@ An array of client objects.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
+| `userId` | **int** | The ID of the user. |
 
 
 **Returns:**
-
+The array of projects if the user has access, false otherwise.
 ```json
 {
     "jsonrpc": "2.0",
@@ -755,83 +718,9 @@ An array of client objects.
 
 
 ---
-### `leantime.rpc.Projects.Projects.setCurrentProject`
-
-Sets the current project in the session.
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.setCurrentProject",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-    }
-}
-```
-
-
-If a project ID is provided in the query string, it is used to set the current project.
-If no project ID is provided, the last visited project or the first assigned project is set as the current project.
-If no project is found, an exception is thrown.
-
-
-
-
-
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": void
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.getCurrentProjectId`
-
-Get current project id or 0 if no current project is set.
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.getCurrentProjectId",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": int
-}
-```
-
-
-
----
 ### `leantime.rpc.Projects.Projects.changeCurrentSessionProject`
 
-
+Change the current session project to the specified projectId.
 
 ```json
 {
@@ -839,7 +728,7 @@ Get current project id or 0 if no current project is set.
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": mixed,
     }
 }
 ```
@@ -856,11 +745,11 @@ Get current project id or 0 if no current project is set.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **mixed** | The ID of the project to set as current. |
 
 
 **Returns:**
-
+Returns true if the current project is successfully changed, false otherwise.
 ```json
 {
     "jsonrpc": "2.0",
@@ -872,45 +761,9 @@ Get current project id or 0 if no current project is set.
 
 
 ---
-### `leantime.rpc.Projects.Projects.resetCurrentProject`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.resetCurrentProject",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": void
-}
-```
-
-
-
----
 ### `leantime.rpc.Projects.Projects.getUsersAssignedToProject`
 
-
+Gets all the users assigned to a specific project.
 
 ```json
 {
@@ -918,7 +771,7 @@ Get current project id or 0 if no current project is set.
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
@@ -935,11 +788,11 @@ Get current project id or 0 if no current project is set.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Returns:**
-
+An array of users assigned to the project.
 ```json
 {
     "jsonrpc": "2.0",
@@ -951,9 +804,54 @@ Get current project id or 0 if no current project is set.
 
 
 ---
+### `leantime.rpc.Projects.Projects.isUserAssignedToProject`
+
+Checks if a user is assigned to a particular project.
+
+```json
+{
+    "method": "leantime.rpc.Projects.Projects.isUserAssignedToProject",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "userId": int,
+        "projectId": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **int** | The ID of the user being checked. |
+| `projectId` | **int** | The ID of the project being checked. |
+
+
+**Returns:**
+Returns true if the user is assigned to the project, false otherwise.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
 ### `leantime.rpc.Projects.Projects.isUserMemberOfProject`
 
-Checks if a user is directly assigned to a project.
+Checks if a user is a member of a specific project.
 
 ```json
 {
@@ -968,7 +866,7 @@ Checks if a user is directly assigned to a project.
 ```
 
 
-Client assignments or projects available to entire organization are not considered true.
+
 
 
 
@@ -979,12 +877,12 @@ Client assignments or projects available to entire organization are not consider
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int** |  |
-| `projectId` | **int** |  |
+| `userId` | **int** | - The ID of the user. |
+| `projectId` | **int** | - The ID of the project. |
 
 
 **Returns:**
-
+- Returns true if the user is a member of the project, otherwise false.
 ```json
 {
     "jsonrpc": "2.0",
@@ -998,7 +896,7 @@ Client assignments or projects available to entire organization are not consider
 ---
 ### `leantime.rpc.Projects.Projects.addProject`
 
-Adds a new project to the system.
+Adds a new project.
 
 ```json
 {
@@ -1023,11 +921,11 @@ Adds a new project to the system.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **array** | An associative array containing the project details.<br />- name: The name of the project.<br />- details: Additional details of the project (optional, default: &#039;&#039;).<br />- clientId: The ID of the client associated with the project.<br />- hourBudget: The hour budget for the project (optional, default: 0).<br />- assignedUsers: Comma-separated list of user IDs assigned to the project (optional, default: &#039;&#039;).<br />- dollarBudget: The dollar budget for the project (optional, default: 0).<br />- psettings: The settings for the project (optional, default: &#039;restricted&#039;).<br />- type: The type of the project (optional, default: &#039;project&#039;).<br />- start: The start date of the project in user format (YYYY-MM-DD).<br />- end: The end date of the project in user format (YYYY-MM-DD). |
+| `values` | **array** | The project data.<br />- name: string (required) The name of the project.<br />- details: string (optional) Additional details about the project.<br />- clientId: int (required) The ID of the client associated with the project.<br />- hourBudget: int (optional) The hour budget for the project (defaults to 0).<br />- assignedUsers: string (optional) The list of assigned users (defaults to an empty string).<br />- dollarBudget: int (optional) The dollar budget for the project (defaults to 0).<br />- psettings: string (optional) The project settings (defaults to &#039;restricted&#039;).<br />- type: string (fixed value &#039;project&#039;) The type of the project.<br />- start: string&amp;#124;null The start date of the project in user format or null.<br />- end: string&amp;#124;null The end date of the project in user format or null. |
 
 
 **Returns:**
-The ID of the newly added project
+The ID of the added project, or false if the project could not be added.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1041,7 +939,7 @@ The ID of the newly added project
 ---
 ### `leantime.rpc.Projects.Projects.duplicateProject`
 
-
+Duplicates a project with the specified details.
 
 ```json
 {
@@ -1070,15 +968,15 @@ The ID of the newly added project
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int** |  |
-| `clientId` | **int** |  |
-| `projectName` | **string** |  |
-| `userStartDate` | **string** |  |
-| `assignSameUsers` | **bool** |  |
+| `projectId` | **int** | The ID of the project to duplicate. |
+| `clientId` | **int** | The ID of the client for the duplicate project. |
+| `projectName` | **string** | The name of the duplicate project. |
+| `userStartDate` | **string** | The start date of the duplicate project in the format specified by the language setting. |
+| `assignSameUsers` | **bool** | Whether to assign the same users as the original project. |
 
 
 **Returns:**
-
+Returns true if the project was successfully duplicated, or the ID of the new project if successful.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1092,7 +990,7 @@ The ID of the newly added project
 ---
 ### `leantime.rpc.Projects.Projects.duplicateCanvas`
 
-
+Duplicate a canvas from one project to another.
 
 ```json
 {
@@ -1120,14 +1018,14 @@ The ID of the newly added project
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `repository` | **string** |  |
-| `originalProjectId` | **int** |  |
-| `newProjectId` | **int** |  |
-| `canvasTypeName` | **string** |  |
+| `repository` | **string** | The repository class to use for CRUD operations |
+| `originalProjectId` | **int** | The ID of the original project |
+| `newProjectId` | **int** | The ID of the new project |
+| `canvasTypeName` | **string** | The canvas type name (optional) |
 
 
 **Returns:**
-
+True if the canvas is duplicated successfully, false otherwise
 ```json
 {
     "jsonrpc": "2.0",
@@ -1141,7 +1039,7 @@ The ID of the newly added project
 ---
 ### `leantime.rpc.Projects.Projects.getProjectUserRelation`
 
-
+Retrieves the relation between a project and its users.
 
 ```json
 {
@@ -1149,7 +1047,7 @@ The ID of the newly added project
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "id": ,
+        "id": int,
     }
 }
 ```
@@ -1166,11 +1064,11 @@ The ID of the newly added project
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** | The ID of the project. |
 
 
 **Returns:**
-
+The relation between the project and its users.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1184,7 +1082,7 @@ The ID of the newly added project
 ---
 ### `leantime.rpc.Projects.Projects.patch`
 
-
+Updates a project with the given parameters.
 
 ```json
 {
@@ -1192,8 +1090,8 @@ The ID of the newly added project
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "id": ,
-        "params": ,
+        "id": int,
+        "params": array,
     }
 }
 ```
@@ -1210,12 +1108,12 @@ The ID of the newly added project
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
-| `params` | **** |  |
+| `id` | **int** | The ID of the project. |
+| `params` | **array** | The parameters to update the project. |
 
 
 **Returns:**
-
+Returns true if the project was successfully updated, false otherwise.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1229,7 +1127,7 @@ The ID of the newly added project
 ---
 ### `leantime.rpc.Projects.Projects.getProjectAvatar`
 
-
+Retrieves the avatar for a project.
 
 ```json
 {
@@ -1237,7 +1135,7 @@ The ID of the newly added project
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "id": ,
+        "id": mixed,
     }
 }
 ```
@@ -1254,11 +1152,11 @@ The ID of the newly added project
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **mixed** | The ID of the project. |
 
 
 **Returns:**
-
+The avatar for the project.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1272,7 +1170,7 @@ The ID of the newly added project
 ---
 ### `leantime.rpc.Projects.Projects.setProjectAvatar`
 
-
+Sets the avatar for a project.
 
 ```json
 {
@@ -1280,8 +1178,8 @@ The ID of the newly added project
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "file": ,
-        "project": ,
+        "file": mixed,
+        "project": mixed,
     }
 }
 ```
@@ -1298,145 +1196,12 @@ The ID of the newly added project
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `file` | **** |  |
-| `project` | **** |  |
+| `file` | **mixed** | The file containing the avatar. |
+| `project` | **mixed** | The project object. |
 
 
 **Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": null
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.getProjectSetupChecklist`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.getProjectSetupChecklist",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "projectId": ,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `projectId` | **** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": array
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.updateProjectProgress`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.updateProjectProgress",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "stepsComplete": ,
-        "projectId": ,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `stepsComplete` | **** |  |
-| `projectId` | **** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": void
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.editUserProjectRelations`
-
-Edits the project relations of a user.
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.editUserProjectRelations",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "id": int,
-        "projects": array,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `id` | **int** | The ID of the user. |
-| `projects` | **array** | An array of project IDs to be assigned to the user. |
-
-
-**Returns:**
-Returns true if the project relations were successfully edited, false otherwise.
+Indicates whether the avatar was successfully set.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1448,18 +1213,16 @@ Returns true if the project relations were successfully edited, false otherwise.
 
 
 ---
-### `leantime.rpc.Projects.Projects.getProjectIdbyName`
+### `leantime.rpc.Projects.Projects.getAllProjects`
 
-Returns the project ID by its name from the given array of projects.
+Retrieves all projects.
 
 ```json
 {
-    "method": "leantime.rpc.Projects.Projects.getProjectIdbyName",
+    "method": "leantime.rpc.Projects.Projects.getAllProjects",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "allProjects": array,
-        "projectName": string,
     }
 }
 ```
@@ -1472,194 +1235,9 @@ Returns the project ID by its name from the given array of projects.
 
 
 
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `allProjects` | **array** | An array of projects. |
-| `projectName` | **string** | The name of the project to search for. |
-
 
 **Returns:**
-The ID of the project if found, or false if not found.
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": int|bool
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.updateProjectSorting`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.updateProjectSorting",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "params": ,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `params` | **** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": false|void
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.editProject`
-
-Edits a project with the given values.
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.editProject",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "values": mixed,
-        "id": int,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `values` | **mixed** | The values to update the project with. |
-| `id` | **int** | The ID of the project to edit. |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": void
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.updateProjectStatusAndSorting`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.updateProjectStatusAndSorting",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "params": ,
-        "handler": ,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `params` | **** |  |
-| `handler` | **** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": bool
-}
-```
-
-
-
----
-### `leantime.rpc.Projects.Projects.getClientManagerProjects`
-
-Gets all the projects a company manager has access to.
-
-```json
-{
-    "method": "leantime.rpc.Projects.Projects.getClientManagerProjects",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "userId": int,
-        "clientId": int,
-    }
-}
-```
-
-
-Includes all projects within a client + all assigned projects
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `userId` | **int** |  |
-| `clientId` | **int** |  |
-
-
-**Returns:**
-
+The projects.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1673,7 +1251,7 @@ Includes all projects within a client + all assigned projects
 ---
 ### `leantime.rpc.Projects.Projects.getAll`
 
-
+Gets all the projects for the current user.
 
 ```json
 {
@@ -1687,7 +1265,7 @@ Includes all projects within a client + all assigned projects
 ```
 
 
-
+By default, closed projects are not included.
 
 
 
@@ -1698,11 +1276,11 @@ Includes all projects within a client + all assigned projects
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `showClosedProjects` | **bool** |  |
+| `showClosedProjects` | **bool** | (optional) Set to true to include closed projects. |
 
 
 **Returns:**
-
+Returns an array of projects.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1716,7 +1294,7 @@ Includes all projects within a client + all assigned projects
 ---
 ### `leantime.rpc.Projects.Projects.findProject`
 
-
+Finds projects based on a search term.
 
 ```json
 {
@@ -1741,11 +1319,11 @@ Includes all projects within a client + all assigned projects
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `term` | **string** |  |
+| `term` | **string** | The search term (optional) |
 
 
 **Returns:**
-
+The filtered projects that match the search term
 ```json
 {
     "jsonrpc": "2.0",
@@ -1759,7 +1337,7 @@ Includes all projects within a client + all assigned projects
 ---
 ### `leantime.rpc.Projects.Projects.pollForNewProjects`
 
-
+Polls for new projects for the current user session.
 
 ```json
 {
@@ -1772,7 +1350,7 @@ Includes all projects within a client + all assigned projects
 ```
 
 
-
+Retrieves all projects for the current user and prepares the dates for API response.
 
 
 
@@ -1781,7 +1359,7 @@ Includes all projects within a client + all assigned projects
 
 
 **Returns:**
-
+An array of projects with prepared dates for API response.
 ```json
 {
     "jsonrpc": "2.0",
@@ -1795,7 +1373,7 @@ Includes all projects within a client + all assigned projects
 ---
 ### `leantime.rpc.Projects.Projects.pollForUpdatedProjects`
 
-
+Polls for updated projects.
 
 ```json
 {
@@ -1808,7 +1386,8 @@ Includes all projects within a client + all assigned projects
 ```
 
 
-
+Retrieves all the projects the current user has access to and prepares them for API response.
+Adds the modified timestamp to the project ID for tracking updates.
 
 
 

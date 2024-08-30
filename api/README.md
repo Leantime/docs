@@ -91,7 +91,7 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 
 | Available Services | Description |
 |---    |---          |
-| [Projects](api/classes/Leantime/Domain/Projects/Services/Projects.md) | |
+| [Projects](api/classes/Leantime/Domain/Projects/Services/Projects.md) | Class Projects|
 
 ## `leantime.rpc.Queue`
 
