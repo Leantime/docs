@@ -8,12 +8,9 @@ footer: false
 This is an automatically generated documentation for **Leantime Code Reference**.
 
 
-## Namespaces
+## \Leantime\Command
 
-
-### \Leantime\Command
-
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -33,9 +30,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Config
+## \Leantime\Config
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -44,9 +41,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core
+## \Leantime\Core
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -60,9 +57,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Bootstrap
+## \Leantime\Core\Bootstrap
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -72,9 +69,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Configuration
+## \Leantime\Core\Configuration
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -85,9 +82,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Console
+## \Leantime\Core\Console
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -97,9 +94,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Contracts
+## \Leantime\Core\Contracts
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -107,7 +104,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-#### Interfaces
+### Interfaces
 
 | Interface | Description |
 |---    |---          |
@@ -115,9 +112,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Controller
+## \Leantime\Core\Controller
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -129,9 +126,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Db
+## \Leantime\Core\Db
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -141,16 +138,16 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Events
+## \Leantime\Core\Events
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
 | [EventDispatcher](technical/classes/Leantime/Core/Events/EventDispatcher.md) | EventDispatcher class - Handles all events and filters|
 
 
-#### Traits
+### Traits
 
 | Trait | Description |
 |---    |---          |
@@ -159,9 +156,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Exceptions
+## \Leantime\Core\Exceptions
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -175,9 +172,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Http
+## \Leantime\Core\Http
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -189,9 +186,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Http\Client
+## \Leantime\Core\Http\Client
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -200,9 +197,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Middleware
+## \Leantime\Core\Middleware
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -220,9 +217,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Providers
+## \Leantime\Core\Providers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -240,9 +237,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Core\Support
+## \Leantime\Core\Support
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -256,9 +253,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Api\Controllers
+## \Leantime\Domain\Api\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -304,9 +301,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Api\Models
+## \Leantime\Domain\Api\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -315,9 +312,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Api\Repositories
+## \Leantime\Domain\Api\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -326,9 +323,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Api\Services
+## \Leantime\Domain\Api\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -337,9 +334,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Audit\Repositories
+## \Leantime\Domain\Audit\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -348,9 +345,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Auth\Controllers
+## \Leantime\Domain\Auth\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -363,9 +360,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Auth\Models
+## \Leantime\Domain\Auth\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -375,9 +372,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Auth\Repositories
+## \Leantime\Domain\Auth\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -386,9 +383,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Auth\Services
+## \Leantime\Domain\Auth\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -397,9 +394,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Calendar\Controllers
+## \Leantime\Domain\Calendar\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -418,9 +415,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Calendar\Repositories
+## \Leantime\Domain\Calendar\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -429,9 +426,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Calendar\Services
+## \Leantime\Domain\Calendar\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -440,9 +437,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Canvas\Controllers
+## \Leantime\Domain\Canvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -457,9 +454,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Canvas\Repositories
+## \Leantime\Domain\Canvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -468,9 +465,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Canvas\Services
+## \Leantime\Domain\Canvas\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -479,9 +476,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Clients\Controllers
+## \Leantime\Domain\Clients\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -494,9 +491,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Clients\Repositories
+## \Leantime\Domain\Clients\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -505,9 +502,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Clients\Services
+## \Leantime\Domain\Clients\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -516,9 +513,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Comments\Controllers
+## \Leantime\Domain\Comments\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -527,9 +524,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Comments\Repositories
+## \Leantime\Domain\Comments\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -538,9 +535,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Comments\Services
+## \Leantime\Domain\Comments\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -549,9 +546,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Connector\Controllers
+## \Leantime\Domain\Connector\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -562,9 +559,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Connector\Models
+## \Leantime\Domain\Connector\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -577,9 +574,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Connector\Repositories
+## \Leantime\Domain\Connector\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -589,9 +586,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Connector\Services
+## \Leantime\Domain\Connector\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -601,7 +598,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-#### Interfaces
+### Interfaces
 
 | Interface | Description |
 |---    |---          |
@@ -609,9 +606,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Cpcanvas\Controllers
+## \Leantime\Domain\Cpcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -626,9 +623,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Cpcanvas\Repositories
+## \Leantime\Domain\Cpcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -637,9 +634,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Cron\Controllers
+## \Leantime\Domain\Cron\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -648,9 +645,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Cron\Services
+## \Leantime\Domain\Cron\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -659,9 +656,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\CsvImport\Controllers
+## \Leantime\Domain\CsvImport\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -670,9 +667,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\CsvImport\Listeners
+## \Leantime\Domain\CsvImport\Listeners
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -681,9 +678,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\CsvImport\Services
+## \Leantime\Domain\CsvImport\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -692,9 +689,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Dashboard\Controllers
+## \Leantime\Domain\Dashboard\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -704,9 +701,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Dashboard\Repositories
+## \Leantime\Domain\Dashboard\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -715,9 +712,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Dbmcanvas\Controllers
+## \Leantime\Domain\Dbmcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -732,9 +729,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Dbmcanvas\Repositories
+## \Leantime\Domain\Dbmcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -743,9 +740,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Eacanvas\Controllers
+## \Leantime\Domain\Eacanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -760,9 +757,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Eacanvas\Repositories
+## \Leantime\Domain\Eacanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -771,9 +768,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Emcanvas\Controllers
+## \Leantime\Domain\Emcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -788,9 +785,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Emcanvas\Repositories
+## \Leantime\Domain\Emcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -799,9 +796,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Entityrelations\Repositories
+## \Leantime\Domain\Entityrelations\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -810,9 +807,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Entityrelations\Services
+## \Leantime\Domain\Entityrelations\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -821,9 +818,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Errors\Controllers
+## \Leantime\Domain\Errors\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -835,9 +832,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Files\Controllers
+## \Leantime\Domain\Files\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -848,9 +845,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Files\Repositories
+## \Leantime\Domain\Files\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -859,9 +856,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Files\Services
+## \Leantime\Domain\Files\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -870,9 +867,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Gamecenter\Controllers
+## \Leantime\Domain\Gamecenter\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -881,9 +878,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Goalcanvas\Controllers
+## \Leantime\Domain\Goalcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -899,9 +896,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Goalcanvas\Repositories
+## \Leantime\Domain\Goalcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -910,9 +907,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Goalcanvas\Services
+## \Leantime\Domain\Goalcanvas\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -921,9 +918,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Help\Composers
+## \Leantime\Domain\Help\Composers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -932,12 +929,12 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Help\Contracts
+## \Leantime\Domain\Help\Contracts
 
 
 
 
-#### Interfaces
+### Interfaces
 
 | Interface | Description |
 |---    |---          |
@@ -945,9 +942,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Help\Controllers
+## \Leantime\Domain\Help\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -958,9 +955,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Help\Services
+## \Leantime\Domain\Help\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -972,9 +969,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Ideas\Controllers
+## \Leantime\Domain\Ideas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -988,9 +985,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Ideas\Repositories
+## \Leantime\Domain\Ideas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -999,9 +996,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Ideas\Services
+## \Leantime\Domain\Ideas\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1010,9 +1007,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Insightscanvas\Controllers
+## \Leantime\Domain\Insightscanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1027,9 +1024,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Insightscanvas\Repositories
+## \Leantime\Domain\Insightscanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1038,9 +1035,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Install\Controllers
+## \Leantime\Domain\Install\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1050,9 +1047,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Install\Repositories
+## \Leantime\Domain\Install\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1061,9 +1058,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Install\Services
+## \Leantime\Domain\Install\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1072,9 +1069,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Lbmcanvas\Controllers
+## \Leantime\Domain\Lbmcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1089,9 +1086,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Lbmcanvas\Repositories
+## \Leantime\Domain\Lbmcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1100,9 +1097,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Ldap\Services
+## \Leantime\Domain\Ldap\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1111,9 +1108,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Leancanvas\Controllers
+## \Leantime\Domain\Leancanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1128,9 +1125,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Leancanvas\Repositories
+## \Leantime\Domain\Leancanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1139,9 +1136,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Menu\Composers
+## \Leantime\Domain\Menu\Composers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1152,9 +1149,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Menu\Hxcontrollers
+## \Leantime\Domain\Menu\Hxcontrollers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1163,9 +1160,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Menu\Repositories
+## \Leantime\Domain\Menu\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1174,9 +1171,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Menu\Services
+## \Leantime\Domain\Menu\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1185,9 +1182,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Minempathycanvas\Controllers
+## \Leantime\Domain\Minempathycanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1202,9 +1199,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Minempathycanvas\Repositories
+## \Leantime\Domain\Minempathycanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1213,9 +1210,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\ModuleManager\Controllers
+## \Leantime\Domain\ModuleManager\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1224,9 +1221,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Modulemanager\Services
+## \Leantime\Domain\Modulemanager\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1235,9 +1232,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Notifications\Controllers
+## \Leantime\Domain\Notifications\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1246,9 +1243,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Notifications\Hxcontrollers
+## \Leantime\Domain\Notifications\Hxcontrollers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1258,9 +1255,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Notifications\Listeners
+## \Leantime\Domain\Notifications\Listeners
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1269,9 +1266,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Notifications\Models
+## \Leantime\Domain\Notifications\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1280,9 +1277,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Notifications\Repositories
+## \Leantime\Domain\Notifications\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1291,9 +1288,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Notifications\Services
+## \Leantime\Domain\Notifications\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1304,9 +1301,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Obmcanvas\Controllers
+## \Leantime\Domain\Obmcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1321,9 +1318,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Obmcanvas\Repositories
+## \Leantime\Domain\Obmcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1332,9 +1329,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Oidc\Controllers
+## \Leantime\Domain\Oidc\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1344,9 +1341,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Oidc\Services
+## \Leantime\Domain\Oidc\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1355,12 +1352,12 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Plugins\Contracts
+## \Leantime\Domain\Plugins\Contracts
 
 
 
 
-#### Interfaces
+### Interfaces
 
 | Interface | Description |
 |---    |---          |
@@ -1369,9 +1366,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Plugins\Controllers
+## \Leantime\Domain\Plugins\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1383,9 +1380,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Plugins\Hxcontrollers
+## \Leantime\Domain\Plugins\Hxcontrollers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1395,9 +1392,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Plugins\Models
+## \Leantime\Domain\Plugins\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1407,9 +1404,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Plugins\Repositories
+## \Leantime\Domain\Plugins\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1418,9 +1415,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Plugins\Services
+## \Leantime\Domain\Plugins\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1430,9 +1427,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Projects\Controllers
+## \Leantime\Domain\Projects\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1448,9 +1445,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Projects\Hxcontrollers
+## \Leantime\Domain\Projects\Hxcontrollers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1462,9 +1459,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Projects\Models
+## \Leantime\Domain\Projects\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1473,9 +1470,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Projects\Repositories
+## \Leantime\Domain\Projects\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1484,9 +1481,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Projects\Services
+## \Leantime\Domain\Projects\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1495,9 +1492,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Queue\Repositories
+## \Leantime\Domain\Queue\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1506,9 +1503,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Queue\Services
+## \Leantime\Domain\Queue\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1517,9 +1514,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Queue\Workers
+## \Leantime\Domain\Queue\Workers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1530,9 +1527,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Reactions\Models
+## \Leantime\Domain\Reactions\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1541,9 +1538,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Reactions\Repositories
+## \Leantime\Domain\Reactions\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1552,9 +1549,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Reactions\Services
+## \Leantime\Domain\Reactions\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1563,9 +1560,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Read\Repositories
+## \Leantime\Domain\Read\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1574,9 +1571,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Reports\Controllers
+## \Leantime\Domain\Reports\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1585,9 +1582,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Reports\Models
+## \Leantime\Domain\Reports\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1596,9 +1593,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Reports\Repositories
+## \Leantime\Domain\Reports\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1607,9 +1604,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Reports\Services
+## \Leantime\Domain\Reports\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1618,9 +1615,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Retroscanvas\Controllers
+## \Leantime\Domain\Retroscanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1635,9 +1632,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Retroscanvas\Repositories
+## \Leantime\Domain\Retroscanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1646,9 +1643,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Riskscanvas\Controllers
+## \Leantime\Domain\Riskscanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1663,9 +1660,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Riskscanvas\Repositories
+## \Leantime\Domain\Riskscanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1674,9 +1671,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Sbcanvas\Controllers
+## \Leantime\Domain\Sbcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1691,9 +1688,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Sbcanvas\Repositories
+## \Leantime\Domain\Sbcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1702,9 +1699,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Setting\Controllers
+## \Leantime\Domain\Setting\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1714,9 +1711,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Setting\Repositories
+## \Leantime\Domain\Setting\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1725,9 +1722,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Setting\Services
+## \Leantime\Domain\Setting\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1736,9 +1733,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Smcanvas\Controllers
+## \Leantime\Domain\Smcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1753,9 +1750,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Smcanvas\Repositories
+## \Leantime\Domain\Smcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1764,9 +1761,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Sprints\Controllers
+## \Leantime\Domain\Sprints\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1776,9 +1773,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Sprints\Models
+## \Leantime\Domain\Sprints\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1787,9 +1784,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Sprints\Repositories
+## \Leantime\Domain\Sprints\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1798,9 +1795,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Sprints\Services
+## \Leantime\Domain\Sprints\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1809,9 +1806,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Sqcanvas\Controllers
+## \Leantime\Domain\Sqcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1826,9 +1823,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Sqcanvas\Repositories
+## \Leantime\Domain\Sqcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1837,9 +1834,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Strategy\Controllers
+## \Leantime\Domain\Strategy\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1848,9 +1845,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Swotcanvas\Controllers
+## \Leantime\Domain\Swotcanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1865,9 +1862,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Swotcanvas\Repositories
+## \Leantime\Domain\Swotcanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1876,9 +1873,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Tags\Services
+## \Leantime\Domain\Tags\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1887,9 +1884,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Tickets\Controllers
+## \Leantime\Domain\Tickets\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1911,9 +1908,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Tickets\Hxcontrollers
+## \Leantime\Domain\Tickets\Hxcontrollers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1925,9 +1922,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Tickets\Models
+## \Leantime\Domain\Tickets\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1936,9 +1933,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Tickets\Repositories
+## \Leantime\Domain\Tickets\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1948,9 +1945,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Tickets\Services
+## \Leantime\Domain\Tickets\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1959,9 +1956,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Timesheets\Controllers
+## \Leantime\Domain\Timesheets\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1975,9 +1972,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Timesheets\Hxcontrollers
+## \Leantime\Domain\Timesheets\Hxcontrollers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1986,9 +1983,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Timesheets\Repositories
+## \Leantime\Domain\Timesheets\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -1997,9 +1994,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Timesheets\Services
+## \Leantime\Domain\Timesheets\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2008,9 +2005,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\TwoFA\Controllers
+## \Leantime\Domain\TwoFA\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2020,9 +2017,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Users\Controllers
+## \Leantime\Domain\Users\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2035,9 +2032,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Users\Repositories
+## \Leantime\Domain\Users\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2046,9 +2043,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Users\Services
+## \Leantime\Domain\Users\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2057,9 +2054,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Valuecanvas\Controllers
+## \Leantime\Domain\Valuecanvas\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2074,9 +2071,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Valuecanvas\Repositories
+## \Leantime\Domain\Valuecanvas\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2085,9 +2082,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Widgets\Controllers
+## \Leantime\Domain\Widgets\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2096,9 +2093,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Widgets\Hxcontrollers
+## \Leantime\Domain\Widgets\Hxcontrollers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2110,9 +2107,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Widgets\Models
+## \Leantime\Domain\Widgets\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2121,9 +2118,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Widgets\Services
+## \Leantime\Domain\Widgets\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2132,9 +2129,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Wiki\Controllers
+## \Leantime\Domain\Wiki\Controllers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2148,9 +2145,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Wiki\Models
+## \Leantime\Domain\Wiki\Models
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2161,9 +2158,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Wiki\Repositories
+## \Leantime\Domain\Wiki\Repositories
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2172,9 +2169,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Domain\Wiki\Services
+## \Leantime\Domain\Wiki\Services
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2183,9 +2180,9 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-### \Leantime\Views\Composers
+## \Leantime\Views\Composers
 
-#### Classes
+### Classes
 
 | Class | Description |
 |---    |---          |
@@ -2201,6 +2198,6 @@ This is an automatically generated documentation for **Leantime Code Reference**
 ---
 > Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
 
-#### Hooks
+### Hooks
 
 [Reference Here](hooks.md)

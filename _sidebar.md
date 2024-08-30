@@ -15,9 +15,6 @@
   - [API Endpoints](api/README.md)
   - [Event Hooks/Filters](technical/hooks.md)
   - [Source Code](technical/README.md)
- 
-**Getting Started**
-  - [Quick Start](getting-started/new-project.md)
 
 **External Links**
 - [Github Repository](https://github.com/Leantime/leantime/)
