@@ -20,7 +20,7 @@ Template class - Template routing
 __construct - get instance of frontcontroller
 
 ```php
-public Template::__construct(\Leantime\Core\Theme $theme, \Leantime\Core\Language $language, \Leantime\Core\Frontcontroller $frontcontroller, \Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\Environment $config, \Leantime\Core\AppSettings $settings, \Leantime\Domain\Auth\Services\Auth $login, \Leantime\Domain\Auth\Models\Roles $roles, \Illuminate\Contracts\View\Factory|null $viewFactory = null, \Illuminate\View\Compilers\Compiler|null $bladeCompiler = null): mixed
+public Template::__construct(\Leantime\Core\Theme $theme, \Leantime\Core\Language $language, \Leantime\Core\Controller\Frontcontroller $frontcontroller, \Leantime\Core\Http\IncomingRequest $incomingRequest, \Leantime\Core\Configuration\Environment $config, \Leantime\Core\Configuration\AppSettings $settings, \Leantime\Domain\Auth\Services\Auth $login, \Leantime\Domain\Auth\Models\Roles $roles, \Illuminate\Contracts\View\Factory|null $viewFactory = null, \Illuminate\View\Compilers\Compiler|null $bladeCompiler = null): mixed
 ```
 
 
@@ -36,10 +36,10 @@ public Template::__construct(\Leantime\Core\Theme $theme, \Leantime\Core\Languag
 |-----------|------|-------------|
 | `theme` | **\Leantime\Core\Theme** |  |
 | `language` | **\Leantime\Core\Language** |  |
-| `frontcontroller` | **\Leantime\Core\Frontcontroller** |  |
-| `incomingRequest` | **\Leantime\Core\IncomingRequest** |  |
-| `config` | **\Leantime\Core\Environment** |  |
-| `settings` | **\Leantime\Core\AppSettings** |  |
+| `frontcontroller` | **\Leantime\Core\Controller\Frontcontroller** |  |
+| `incomingRequest` | **\Leantime\Core\Http\IncomingRequest** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
+| `settings` | **\Leantime\Core\Configuration\AppSettings** |  |
 | `login` | **\Leantime\Domain\Auth\Services\Auth** |  |
 | `roles` | **\Leantime\Domain\Auth\Models\Roles** |  |
 | `viewFactory` | **\Illuminate\Contracts\View\Factory|null** |  |
@@ -58,7 +58,7 @@ public Template::__construct(\Leantime\Core\Theme $theme, \Leantime\Core\Languag
 Create View Factory capable of rendering PHP and Blade templates
 
 ```php
-public Template::setupBlade(\Leantime\Core\Application $app, \Illuminate\Events\Dispatcher $eventDispatcher): void
+public Template::setupBlade(\Leantime\Core\Bootstrap\Application $app, \Illuminate\Events\Dispatcher $eventDispatcher): void
 ```
 
 
@@ -72,7 +72,7 @@ public Template::setupBlade(\Leantime\Core\Application $app, \Illuminate\Events\
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `app` | **\Leantime\Core\Application** |  |
+| `app` | **\Leantime\Core\Bootstrap\Application** |  |
 | `eventDispatcher` | **\Illuminate\Events\Dispatcher** |  |
 
 
@@ -963,7 +963,7 @@ private Template::dispatchTplHook(string $type, string $hookName, mixed $payload
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -994,7 +994,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -1026,7 +1026,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -1056,7 +1056,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -1079,7 +1079,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -1106,4 +1106,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

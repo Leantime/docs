@@ -20,7 +20,7 @@ footer: false
 __construct - get database connection
 
 ```php
-public News::__construct(\Leantime\Core\Db $db, \Leantime\Domain\Notifications\Repositories\Notifications $notificationsRepo, \Leantime\Domain\Users\Repositories\Users $userRepository, \Leantime\Core\Language $language, \Leantime\Domain\Setting\Services\Setting $settingService): mixed
+public News::__construct(\Leantime\Core\Db\Db $db, \Leantime\Domain\Notifications\Repositories\Notifications $notificationsRepo, \Leantime\Domain\Users\Repositories\Users $userRepository, \Leantime\Core\Language $language, \Leantime\Domain\Setting\Services\Setting $settingService): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public News::__construct(\Leantime\Core\Db $db, \Leantime\Domain\Notifications\R
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 | `notificationsRepo` | **\Leantime\Domain\Notifications\Repositories\Notifications** |  |
 | `userRepository` | **\Leantime\Domain\Users\Repositories\Users** |  |
 | `language` | **\Leantime\Core\Language** |  |
@@ -132,4 +132,4 @@ public News::getFeed(): \SimpleXMLElement
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

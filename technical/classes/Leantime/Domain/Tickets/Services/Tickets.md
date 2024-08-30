@@ -20,7 +20,7 @@ footer: false
 Constructor method for the class.
 
 ```php
-public Tickets::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Language $language, \Leantime\Core\Environment $config, \Leantime\Domain\Projects\Repositories\Projects $projectRepository, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepository, \Leantime\Domain\Timesheets\Repositories\Timesheets $timesheetsRepo, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheetService, \Leantime\Domain\Sprints\Services\Sprints $sprintService, \Leantime\Domain\Tickets\Repositories\TicketHistory $ticketHistoryRepo, \Leantime\Domain\Goalcanvas\Services\Goalcanvas $goalcanvasService, \Leantime\Core\Support\DateTimeHelper $dateTimeHelper): mixed
+public Tickets::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Language $language, \Leantime\Core\Configuration\Environment $config, \Leantime\Domain\Projects\Repositories\Projects $projectRepository, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepository, \Leantime\Domain\Timesheets\Repositories\Timesheets $timesheetsRepo, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheetService, \Leantime\Domain\Sprints\Services\Sprints $sprintService, \Leantime\Domain\Tickets\Repositories\TicketHistory $ticketHistoryRepo, \Leantime\Domain\Goalcanvas\Services\Goalcanvas $goalcanvasService, \Leantime\Core\Support\DateTimeHelper $dateTimeHelper): mixed
 ```
 
 
@@ -36,7 +36,7 @@ public Tickets::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Languag
 |-----------|------|-------------|
 | `tpl` | **\Leantime\Core\Template** | The template core instance. |
 | `language` | **\Leantime\Core\Language** | The language core instance. |
-| `config` | **\Leantime\Core\Environment** | The environment core instance. |
+| `config` | **\Leantime\Core\Configuration\Environment** | The environment core instance. |
 | `projectRepository` | **\Leantime\Domain\Projects\Repositories\Projects** | The project repository instance. |
 | `ticketRepository` | **\Leantime\Domain\Tickets\Repositories\Tickets** | The ticket repository instance. |
 | `timesheetsRepo` | **\Leantime\Domain\Timesheets\Repositories\Timesheets** | The timesheet repository instance. |
@@ -646,6 +646,36 @@ public Tickets::getOpenUserTicketsByProject( $userId,  $projectId): array
 
 
 ---
+### getOpenUserTicketsByPriority
+
+
+
+```php
+public Tickets::getOpenUserTicketsByPriority( $userId,  $projectId): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **** |  |
+| `projectId` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### getOpenUserTicketsBySprint
 
 
@@ -1020,7 +1050,7 @@ public Tickets::updateTicket(array $values): array|bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **array** | The array containing the ticket values to update.<br />Accepted keys are:<br />- &#039;id&#039; =&gt; The ticket ID.<br />- &#039;headline&#039; =&gt; The ticket headline. (optional)<br />- &#039;type&#039; =&gt; The ticket type. (optional)<br />- &#039;description&#039; =&gt; The ticket description. (optional)<br />- &#039;projectId&#039; =&gt; The project ID. Defaults to $_SESSION[&#039;currentProject&#039;]. (optional)<br />- &#039;editorId&#039; =&gt; The editor ID. (optional)<br />- &#039;date&#039; =&gt; The ticket date. Defaults to the current date and time. (optional)<br />- &#039;dateToFinish&#039; =&gt; The ticket deadline date. (optional)<br />- &#039;timeToFinish&#039; =&gt; The ticket deadline time. (optional)<br />- &#039;status&#039; =&gt; The ticket status. (optional)<br />- &#039;planHours&#039; =&gt; The planned hours for the ticket. (optional)<br />- &#039;tags&#039; =&gt; The tags for the ticket. (optional)<br />- &#039;sprint&#039; =&gt; The sprint for the ticket. (optional)<br />- &#039;storypoints&#039; =&gt; The story points for the ticket. (optional)<br />- &#039;hourRemaining&#039; =&gt; The remaining hours for the ticket. (optional)<br />- &#039;priority&#039; =&gt; The ticket priority. (optional)<br />- &#039;acceptanceCriteria&#039; =&gt; The ticket acceptance criteria. (optional)<br />- &#039;editFrom&#039; =&gt; The ticket edit &#039;from&#039; date-time. (optional)<br />- &#039;time |
+| `values` | **array** | The array containing the ticket values to update.<br />Accepted keys are:<br />- &#039;id&#039; =&gt; The ticket ID.<br />- &#039;headline&#039; =&gt; The ticket headline. (optional)<br />- &#039;type&#039; =&gt; The ticket type. (optional)<br />- &#039;description&#039; =&gt; The ticket description. (optional)<br />- &#039;projectId&#039; =&gt; The project ID. Defaults to session(&quot;currentProject&quot;). (optional);<br />- &#039;editorId&#039; =&gt; The editor ID. (optional)<br />- &#039;date&#039; =&gt; The ticket date. Defaults to the current date and time. (optional)<br />- &#039;dateToFinish&#039; =&gt; The ticket deadline date. (optional)<br />- &#039;timeToFinish&#039; =&gt; The ticket deadline time. (optional)<br />- &#039;status&#039; =&gt; The ticket status. (optional)<br />- &#039;planHours&#039; =&gt; The planned hours for the ticket. (optional)<br />- &#039;tags&#039; =&gt; The tags for the ticket. (optional)<br />- &#039;sprint&#039; =&gt; The sprint for the ticket. (optional)<br />- &#039;storypoints&#039; =&gt; The story points for the ticket. (optional)<br />- &#039;hourRemaining&#039; =&gt; The remaining hours for the ticket. (optional)<br />- &#039;priority&#039; =&gt; The ticket priority. (optional)<br />- &#039;acceptanceCriteria&#039; =&gt; The ticket acceptance criteria. (optional)<br />- &#039;editFrom&#039; =&gt; The ticket edit &#039;from&#039; date-time. (optional)<br />- &#039;time* @api |
 
 
 **Return Value:**
@@ -1468,6 +1498,216 @@ public Tickets::prepareTicketDates(mixed& $values): mixed
 
 
 ---
+### findMilestone
+
+
+
+```php
+public Tickets::findMilestone(string $term, int $projectId): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `term` | **string** |  |
+| `projectId` | **int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### findTicket
+
+
+
+```php
+public Tickets::findTicket(string $term, int $projectId, ?int $userId): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `term` | **string** |  |
+| `projectId` | **int** |  |
+| `userId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### pollForNewAccountMilestones
+
+
+
+```php
+public Tickets::pollForNewAccountMilestones(?int $projectId = null, ?int $userId = null): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `userId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### pollForUpdatedAccountMilestones
+
+
+
+```php
+public Tickets::pollForUpdatedAccountMilestones(?int $projectId = null, ?int $userId = null): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `userId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### pollForNewAccountTodos
+
+
+
+```php
+public Tickets::pollForNewAccountTodos(?int $projectId = null, ?int $userId = null): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `userId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### pollForUpdatedAccountTodos
+
+
+
+```php
+public Tickets::pollForUpdatedAccountTodos(?int $projectId = null, ?int $userId = null): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `userId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### prepareDatesForApiResponse
+
+
+
+```php
+private Tickets::prepareDatesForApiResponse(mixed $todo): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `todo` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 
 
 ## Inherited methods
@@ -1477,7 +1717,7 @@ public Tickets::prepareTicketDates(mixed& $values): mixed
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -1508,7 +1748,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -1540,7 +1780,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -1570,7 +1810,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -1593,7 +1833,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -1620,4 +1860,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

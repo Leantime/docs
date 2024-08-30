@@ -10,7 +10,7 @@ footer: false
 
 
 * Full name: `\Leantime\Domain\Menu\Composers\HeadMenu`
-* Parent class: [\Leantime\Core\Composer](../../../Core/Composer.md)
+* Parent class: [\Leantime\Core\Controller\Composer](../../../Core/Controller/Composer.md)
 
 
 
@@ -156,4 +156,4 @@ protected Composer::with(): array
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

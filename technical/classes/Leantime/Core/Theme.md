@@ -32,7 +32,7 @@ theme - Engine for handling themes
 __construct - Constructor
 
 ```php
-public Theme::__construct(\Leantime\Core\environment $config, \Leantime\Core\appSettings $settings, \Leantime\Core\Language $language, array $iniData = []): mixed
+public Theme::__construct(\Leantime\Core\Configuration\Environment $config, \Leantime\Core\Configuration\AppSettings $settings, \Leantime\Core\Language $language, array $iniData = []): mixed
 ```
 
 
@@ -46,8 +46,8 @@ public Theme::__construct(\Leantime\Core\environment $config, \Leantime\Core\app
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `config` | **\Leantime\Core\environment** |  |
-| `settings` | **\Leantime\Core\appSettings** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
+| `settings` | **\Leantime\Core\Configuration\AppSettings** |  |
 | `language` | **\Leantime\Core\Language** |  |
 | `iniData` | **array** |  |
 
@@ -61,7 +61,7 @@ public Theme::__construct(\Leantime\Core\environment $config, \Leantime\Core\app
 ---
 ### getAvailableColorSchemes
 
-
+Retrieves the available color schemes.
 
 ```php
 public Theme::getAvailableColorSchemes(): array
@@ -77,7 +77,7 @@ public Theme::getAvailableColorSchemes(): array
 
 **Return Value:**
 
-
+The available color schemes.
 
 
 
@@ -844,7 +844,7 @@ public static Theme::clearCache(): void
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -875,7 +875,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -907,7 +907,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -937,7 +937,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -960,7 +960,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -987,4 +987,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

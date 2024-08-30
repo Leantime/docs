@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Ldap::__construct(bool|\Leantime\Core\Environment $differentConfig = false): mixed
+public Ldap::__construct(bool|\Leantime\Core\Configuration\Environment $differentConfig = false): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Ldap::__construct(bool|\Leantime\Core\Environment $differentConfig = fals
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `differentConfig` | **bool|\Leantime\Core\Environment** |  |
+| `differentConfig` | **bool|\Leantime\Core\Configuration\Environment** |  |
 
 
 **Return Value:**
@@ -239,4 +239,4 @@ public Ldap::upsertUsers( $ldapUsers): bool
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

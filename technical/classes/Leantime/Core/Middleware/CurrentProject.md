@@ -20,7 +20,7 @@ footer: false
 Set the current project
 
 ```php
-public CurrentProject::handle(\Leantime\Core\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
+public CurrentProject::handle(\Leantime\Core\Http\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -34,7 +34,7 @@ public CurrentProject::handle(\Leantime\Core\IncomingRequest $request, \Closure 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `request` | **\Leantime\Core\IncomingRequest** |  |
+| `request` | **\Leantime\Core\Http\IncomingRequest** |  |
 | `next` | **\Closure** |  |
 
 
@@ -48,4 +48,4 @@ public CurrentProject::handle(\Leantime\Core\IncomingRequest $request, \Closure 
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

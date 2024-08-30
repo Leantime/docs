@@ -20,7 +20,7 @@ The TrustProxies class is responsible for handling incoming requests and checkin
 Constructor for the class.
 
 ```php
-public TrustProxies::__construct(\Leantime\Core\Environment $config): mixed
+public TrustProxies::__construct(\Leantime\Core\Configuration\Environment $config): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public TrustProxies::__construct(\Leantime\Core\Environment $config): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `config` | **\Leantime\Core\Environment** | An instance of the Environment class. |
+| `config` | **\Leantime\Core\Configuration\Environment** | An instance of the Environment class. |
 
 
 **Return Value:**
@@ -49,7 +49,7 @@ public TrustProxies::__construct(\Leantime\Core\Environment $config): mixed
 Handle the incoming request and pass it to the next middleware.
 
 ```php
-public TrustProxies::handle(\Leantime\Core\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
+public TrustProxies::handle(\Leantime\Core\Http\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
 ```
 
 If the request is not from a trusted proxy, it returns a response with an error message.
@@ -63,7 +63,7 @@ If the request is not from a trusted proxy, it returns a response with an error 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `request` | **\Leantime\Core\IncomingRequest** | The incoming request. |
+| `request` | **\Leantime\Core\Http\IncomingRequest** | The incoming request. |
 | `next` | **\Closure** | The next middleware closure. |
 
 
@@ -83,7 +83,7 @@ The response returned by the next middleware.
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -114,7 +114,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -146,7 +146,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -176,7 +176,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -199,7 +199,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -226,4 +226,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

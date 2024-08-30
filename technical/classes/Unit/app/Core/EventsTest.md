@@ -18,7 +18,7 @@ footer: false
 
 ### testDispatchEvent
 
-This test will check the dispatch_event method of the Events class.
+This test will check the dispatch_event method of the EventDispatcher class.
 
 ```php
 public EventsTest::testDispatchEvent(): mixed
@@ -41,7 +41,7 @@ It will dispatch an event and assert if it is added to the available_hooks array
 ---
 ### testFindEventListeners
 
-This test will check the findEventListeners method of the Events class.
+This test will check the findEventListeners method of the EventDispatcher class.
 
 ```php
 public EventsTest::testFindEventListeners(): mixed
@@ -64,7 +64,7 @@ public EventsTest::testFindEventListeners(): mixed
 ---
 ### testGetRegistries
 
-This test will check the get_registries method of the Events class.
+This test will check the get_registries method of the EventDispatcher class.
 
 ```php
 public EventsTest::testGetRegistries(): mixed
@@ -89,4 +89,4 @@ are in the registry arrays.
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

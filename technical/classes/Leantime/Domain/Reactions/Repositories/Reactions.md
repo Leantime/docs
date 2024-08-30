@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Reactions::__construct(\Leantime\Core\Db $db): mixed
+public Reactions::__construct(\Leantime\Core\Db\Db $db): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Reactions::__construct(\Leantime\Core\Db $db): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 
 
 **Return Value:**
@@ -232,4 +232,4 @@ public Reactions::getReactionsByModule(string $module, ?int $moduleId = null): a
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
