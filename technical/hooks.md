@@ -1989,7 +1989,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$tickets` |  | 
 
-Source: [app/Domain/Tickets/Services/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php#L29-L2133)
+Source: [app/Domain/Tickets/Services/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php#L29-L2130)
 
 ### `Leantime.Domain.Projects.Controllers.ChangeCurrentProject.get.defaultProjectUrl`
 

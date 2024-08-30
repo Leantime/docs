@@ -58,10 +58,10 @@ public Tickets::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Languag
 ---
 ### getStatusLabels
 
-getStatusLabels - Gets all status labels for the current set project
+Gets all status labels for the current set project
 
 ```php
-public Tickets::getStatusLabels(null $projectId = null): array
+public Tickets::getStatusLabels(int $projectId = null): array
 ```
 
 
@@ -75,12 +75,12 @@ public Tickets::getStatusLabels(null $projectId = null): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **null** |  |
+| `projectId` | **int** | project id to get status labels for |
 
 
 **Return Value:**
 
-
+returns an array of status labels
 
 
 
