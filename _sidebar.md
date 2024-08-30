@@ -12,6 +12,7 @@
   - [CLI](development/commandline.md)
 
 **References**
+  - [API Endpoints](api/README.md)
   - [Event Hooks/Filters](technical/hooks.md)
   - [Source Code](technical/README.md)
  
