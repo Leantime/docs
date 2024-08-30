@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Help\Composers\Helpermodal`
 
-* Full name: `\Leantime\Domain\Help\Composers\Helpermodal`
 * Parent class: [\Leantime\Core\Controller\Composer](../../../Core/Controller/Composer.md)
 
 

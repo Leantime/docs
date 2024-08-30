@@ -8,8 +8,8 @@ footer: false
 Class UpdateLeantime
 
 
+`\Leantime\Command\UpdateLeantime`
 
-* Full name: `\Leantime\Command\UpdateLeantime`
 * Parent class: [Command](../../../classes.md)
 
 

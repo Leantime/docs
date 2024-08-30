@@ -8,8 +8,8 @@ footer: false
 Class Clients
 
 
+`\Leantime\Domain\Clients\Services\Clients`
 
-* Full name: `\Leantime\Domain\Clients\Services\Clients`
 
 
 

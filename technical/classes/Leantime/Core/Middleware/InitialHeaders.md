@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Middleware\InitialHeaders`
 
-* Full name: `\Leantime\Core\Middleware\InitialHeaders`
 
 
 

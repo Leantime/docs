@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Core\Controller\Controller`
 
-* Full name: `\Leantime\Core\Controller\Controller`
 
 
 

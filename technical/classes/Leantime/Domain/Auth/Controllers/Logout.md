@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Auth\Controllers\Logout`
 
-* Full name: `\Leantime\Domain\Auth\Controllers\Logout`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

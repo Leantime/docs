@@ -8,8 +8,8 @@ footer: false
 Class DelAPIKey
 
 This class is responsible for deleting an API key.
+`\Leantime\Domain\Api\Controllers\DelAPIKey`
 
-* Full name: `\Leantime\Domain\Api\Controllers\DelAPIKey`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

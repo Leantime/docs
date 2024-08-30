@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Middleware\Localization`
 
-* Full name: `\Leantime\Core\Middleware\Localization`
 
 
 

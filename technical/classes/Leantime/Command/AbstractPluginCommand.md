@@ -8,8 +8,8 @@ footer: false
 Class AbstractPluginCommand
 
 
+`\Leantime\Command\AbstractPluginCommand`
 
-* Full name: `\Leantime\Command\AbstractPluginCommand`
 * Parent class: [Command](../../../classes.md)
 
 

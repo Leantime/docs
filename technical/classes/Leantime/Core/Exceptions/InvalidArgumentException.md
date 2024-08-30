@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Exceptions\InvalidArgumentException`
 
-* Full name: `\Leantime\Core\Exceptions\InvalidArgumentException`
 * Parent class: [Exception](../../../../classes.md)
 
 

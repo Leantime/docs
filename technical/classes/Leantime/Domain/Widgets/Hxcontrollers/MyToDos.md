@@ -8,8 +8,8 @@ footer: false
 Class MyToDos
 
 This class extends the HtmxController class and represents a controller for managing to-do items.
+`\Leantime\Domain\Widgets\Hxcontrollers\MyToDos`
 
-* Full name: `\Leantime\Domain\Widgets\Hxcontrollers\MyToDos`
 * Parent class: [\Leantime\Core\Controller\HtmxController](../../../Core/Controller/HtmxController.md)
 
 

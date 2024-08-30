@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Exceptions\HandleExceptions`
 
-* Full name: `\Leantime\Core\Exceptions\HandleExceptions`
 
 
 

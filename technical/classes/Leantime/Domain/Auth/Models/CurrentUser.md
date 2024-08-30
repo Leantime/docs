@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Auth\Models\CurrentUser`
 
-* Full name: `\Leantime\Domain\Auth\Models\CurrentUser`
 
 
 

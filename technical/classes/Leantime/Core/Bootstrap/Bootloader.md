@@ -8,8 +8,8 @@ footer: false
 Bootloader
 
 
+`\Leantime\Core\Bootstrap\Bootloader`
 
-* Full name: `\Leantime\Core\Bootstrap\Bootloader`
 
 
 

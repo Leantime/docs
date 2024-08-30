@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Help\Services\ProjectDefinitionStep`
 
-* Full name: `\Leantime\Domain\Help\Services\ProjectDefinitionStep`
 * This class implements: \Leantime\Domain\Help\Contracts\OnboardingSteps
 
 

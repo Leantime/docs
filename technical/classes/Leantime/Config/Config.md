@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Config\Config`
 
-* Full name: `\Leantime\Config\Config`
 
 
 

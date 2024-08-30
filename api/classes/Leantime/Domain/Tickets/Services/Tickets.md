@@ -1744,4 +1744,184 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 ---
+### `leantime.rpc.Tickets.Tickets.pollForNewAccountMilestones`
+
+
+
+```json
+{
+    "method": "leantime.rpc.Tickets.Tickets.pollForNewAccountMilestones",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "projectId": ?int,
+        "userId": ?int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `userId` | **?int** |  |
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array
+}
+```
+
+
+
+---
+### `leantime.rpc.Tickets.Tickets.pollForUpdatedAccountMilestones`
+
+
+
+```json
+{
+    "method": "leantime.rpc.Tickets.Tickets.pollForUpdatedAccountMilestones",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "projectId": ?int,
+        "userId": ?int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `userId` | **?int** |  |
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array
+}
+```
+
+
+
+---
+### `leantime.rpc.Tickets.Tickets.pollForNewAccountTodos`
+
+
+
+```json
+{
+    "method": "leantime.rpc.Tickets.Tickets.pollForNewAccountTodos",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "projectId": ?int,
+        "userId": ?int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `userId` | **?int** |  |
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array
+}
+```
+
+
+
+---
+### `leantime.rpc.Tickets.Tickets.pollForUpdatedAccountTodos`
+
+
+
+```json
+{
+    "method": "leantime.rpc.Tickets.Tickets.pollForUpdatedAccountTodos",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "projectId": ?int,
+        "userId": ?int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `userId` | **?int** |  |
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array
+}
+```
+
+
+
+---
 

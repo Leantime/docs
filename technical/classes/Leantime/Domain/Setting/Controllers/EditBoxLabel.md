@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Setting\Controllers\EditBoxLabel`
 
-* Full name: `\Leantime\Domain\Setting\Controllers\EditBoxLabel`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

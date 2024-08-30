@@ -8,8 +8,8 @@ footer: false
 Template class For exporting class as XML file
 
 
+`\Leantime\Domain\Canvas\Controllers\Export`
 
-* Full name: `\Leantime\Domain\Canvas\Controllers\Export`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

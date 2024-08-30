@@ -8,8 +8,8 @@ footer: false
 Class Ideas
 
 This class represents a controller for handling ideas related requests.
+`\Leantime\Domain\Api\Controllers\Ideas`
 
-* Full name: `\Leantime\Domain\Api\Controllers\Ideas`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

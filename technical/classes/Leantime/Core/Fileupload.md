@@ -8,8 +8,8 @@ footer: false
 Fileupload class - Data filuploads
 
 
+`\Leantime\Core\Fileupload`
 
-* Full name: `\Leantime\Core\Fileupload`
 
 
 

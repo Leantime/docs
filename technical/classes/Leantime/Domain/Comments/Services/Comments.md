@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Comments\Services\Comments`
 
-* Full name: `\Leantime\Domain\Comments\Services\Comments`
 
 
 
@@ -173,7 +173,7 @@ public Comments::deleteComment( $commentId): bool
 
 
 ```php
-public Comments::pollComments(?int $projectId = null, ?int $moduleId = null): array|false
+public Comments::pollComments(?int $projectId = null, ?int $moduleId = null): array
 ```
 
 
@@ -187,8 +187,8 @@ public Comments::pollComments(?int $projectId = null, ?int $moduleId = null): ar
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **?int** |  |
-| `moduleId` | **?int** |  |
+| `projectId` | **?int** | Project ID |
+| `moduleId` | **?int** | Id of the entity to pull comments from |
 
 
 **Return Value:**

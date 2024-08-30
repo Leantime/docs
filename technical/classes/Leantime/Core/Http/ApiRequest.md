@@ -8,8 +8,8 @@ footer: false
 Class ApiRequest
 
 Represents an API request.
+`\Leantime\Core\Http\ApiRequest`
 
-* Full name: `\Leantime\Core\Http\ApiRequest`
 * Parent class: [\Leantime\Core\Http\IncomingRequest](technical/IncomingRequest.md)
 
 

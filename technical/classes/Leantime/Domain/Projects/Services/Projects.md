@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Projects\Services\Projects`
 
-* Full name: `\Leantime\Domain\Projects\Services\Projects`
 
 
 
@@ -1244,7 +1244,7 @@ public Projects::getAll(bool $showClosedProjects = false): array
 
 
 ```php
-public Projects::findProject(string $term = &quot;&quot;): mixed
+public Projects::findProject(string $term = &quot;&quot;): array
 ```
 
 
@@ -1273,7 +1273,7 @@ public Projects::findProject(string $term = &quot;&quot;): mixed
 
 
 ```php
-public Projects::pollForNewProjects(): mixed
+public Projects::pollForNewProjects(): array
 ```
 
 

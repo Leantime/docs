@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Api\Controllers\Smcanvas`
 
-* Full name: `\Leantime\Domain\Api\Controllers\Smcanvas`
 * Parent class: [\Leantime\Domain\Api\Controllers\Canvas](technical/Canvas.md)
 
 

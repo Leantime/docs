@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Tickets\Controllers\EditMilestone`
 
-* Full name: `\Leantime\Domain\Tickets\Controllers\EditMilestone`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

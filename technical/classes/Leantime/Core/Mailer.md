@@ -8,8 +8,8 @@ footer: false
 Mail class - mails with php mail()
 
 
+`\Leantime\Core\Mailer`
 
-* Full name: `\Leantime\Core\Mailer`
 
 
 

@@ -8,8 +8,8 @@ footer: false
 Class TrustProxies
 
 The TrustProxies class is responsible for handling incoming requests and checking if they are from trusted proxies.
+`\Leantime\Core\Middleware\TrustProxies`
 
-* Full name: `\Leantime\Core\Middleware\TrustProxies`
 
 
 

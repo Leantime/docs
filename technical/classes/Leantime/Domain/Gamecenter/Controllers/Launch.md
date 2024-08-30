@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Gamecenter\Controllers\Launch`
 
-* Full name: `\Leantime\Domain\Gamecenter\Controllers\Launch`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Controller\Composer`
 
-* Full name: `\Leantime\Core\Controller\Composer`
 
 
 

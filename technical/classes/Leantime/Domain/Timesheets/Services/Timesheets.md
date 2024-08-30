@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Timesheets\Services\Timesheets`
 
-* Full name: `\Leantime\Domain\Timesheets\Services\Timesheets`
 
 
 
@@ -460,7 +460,7 @@ public Timesheets::getBookedHourTypes(): array|string[]
 
 
 ```php
-public Timesheets::pollForNewTimesheets(?int $projectId = null): array|false
+public Timesheets::pollForNewTimesheets(?int $projectId = null): array
 ```
 
 
@@ -489,7 +489,7 @@ public Timesheets::pollForNewTimesheets(?int $projectId = null): array|false
 
 
 ```php
-public Timesheets::pollForUpdatedTimesheets(?int $projectId = null): array|false
+public Timesheets::pollForUpdatedTimesheets(?int $projectId = null): array
 ```
 
 

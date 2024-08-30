@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Support\Cast`
 
-* Full name: `\Leantime\Core\Support\Cast`
 
 
 

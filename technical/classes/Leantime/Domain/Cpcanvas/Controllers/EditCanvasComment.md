@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Cpcanvas\Controllers\EditCanvasComment`
 
-* Full name: `\Leantime\Domain\Cpcanvas\Controllers\EditCanvasComment`
 * Parent class: [\Leantime\Domain\Canvas\Controllers\EditCanvasComment](../../Canvas/Controllers/EditCanvasComment.md)
 
 

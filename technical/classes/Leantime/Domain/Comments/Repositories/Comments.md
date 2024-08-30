@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Comments\Repositories\Comments`
 
-* Full name: `\Leantime\Domain\Comments\Repositories\Comments`
 
 
 

@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Minempathycanvas\Controllers\BoardDialog`
 
-* Full name: `\Leantime\Domain\Minempathycanvas\Controllers\BoardDialog`
 * Parent class: [\Leantime\Domain\Canvas\Controllers\BoardDialog](../../Canvas/Controllers/BoardDialog.md)
 
 

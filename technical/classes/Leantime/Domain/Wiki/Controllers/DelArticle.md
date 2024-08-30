@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Wiki\Controllers\DelArticle`
 
-* Full name: `\Leantime\Domain\Wiki\Controllers\DelArticle`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

@@ -8,8 +8,8 @@ footer: false
 Class SaveSettingCommand
 
 Command for saving a setting, will create it if it doesn't exist.
+`\Leantime\Command\SaveSettingCommand`
 
-* Full name: `\Leantime\Command\SaveSettingCommand`
 * Parent class: [Command](../../../classes.md)
 
 

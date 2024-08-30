@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Goalcanvas\Services\Goalcanvas`
 
-* Full name: `\Leantime\Domain\Goalcanvas\Services\Goalcanvas`
 
 
 
@@ -281,7 +281,7 @@ public Goalcanvas::getSingleCanvas(mixed $id): mixed
 
 
 ```php
-public Goalcanvas::createGoal(mixed $values): mixed
+public Goalcanvas::createGoal(array $values): int
 ```
 
 
@@ -295,7 +295,7 @@ public Goalcanvas::createGoal(mixed $values): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **mixed** |  |
+| `values` | **array** |  |
 
 
 **Return Value:**
@@ -310,7 +310,7 @@ public Goalcanvas::createGoal(mixed $values): mixed
 
 
 ```php
-public Goalcanvas::pollGoals(?int $projectId = null, ?int $board = null): mixed
+public Goalcanvas::pollGoals(?int $projectId = null, ?int $board = null): array
 ```
 
 
@@ -340,7 +340,7 @@ public Goalcanvas::pollGoals(?int $projectId = null, ?int $board = null): mixed
 
 
 ```php
-public Goalcanvas::pollForUpdatedGoals(?int $projectId = null, ?int $board = null): array|false
+public Goalcanvas::pollForUpdatedGoals(?int $projectId = null, ?int $board = null): array
 ```
 
 

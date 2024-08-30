@@ -8,8 +8,8 @@ footer: false
 Incoming Request information
 
 
+`\Leantime\Core\Http\IncomingRequest`
 
-* Full name: `\Leantime\Core\Http\IncomingRequest`
 * Parent class: [Request](../../../../classes.md)
 
 

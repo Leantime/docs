@@ -8,8 +8,8 @@ footer: false
 Application Class - IoC Container for the application
 
 
+`\Leantime\Core\Bootstrap\Application`
 
-* Full name: `\Leantime\Core\Bootstrap\Application`
 * Parent class: [Container](../../../../classes.md)
 
 

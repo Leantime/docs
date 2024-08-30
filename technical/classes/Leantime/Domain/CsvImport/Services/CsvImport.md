@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\CsvImport\Services\CsvImport`
 
-* Full name: `\Leantime\Domain\CsvImport\Services\CsvImport`
 * Parent class: [\Leantime\Domain\Connector\Models\Provider](../../Connector/Models/Provider.md)
 * This class implements: \Leantime\Domain\Connector\Services\ProviderIntegration
 

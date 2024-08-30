@@ -8,8 +8,8 @@ footer: false
 HtmxController Class - Base class For all htmx controllers
 
 
+`\Leantime\Domain\Projects\Hxcontrollers\ProjectHubProjects`
 
-* Full name: `\Leantime\Domain\Projects\Hxcontrollers\ProjectHubProjects`
 * Parent class: [\Leantime\Core\Controller\HtmxController](../../../Core/Controller/HtmxController.md)
 
 

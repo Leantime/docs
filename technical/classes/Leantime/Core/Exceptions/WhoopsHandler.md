@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Exceptions\WhoopsHandler`
 
-* Full name: `\Leantime\Core\Exceptions\WhoopsHandler`
 
 
 

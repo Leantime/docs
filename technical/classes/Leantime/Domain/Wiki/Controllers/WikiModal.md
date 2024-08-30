@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Wiki\Controllers\WikiModal`
 
-* Full name: `\Leantime\Domain\Wiki\Controllers\WikiModal`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

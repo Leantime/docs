@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\ModuleManager\Controllers\Notavailable`
 
-* Full name: `\Leantime\Domain\ModuleManager\Controllers\Notavailable`
 
 
 

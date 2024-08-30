@@ -8,8 +8,8 @@ footer: false
 Class InstallPluginCommand
 
 This class represents a command that installs plugins.
+`\Leantime\Command\InstallPluginCommand`
 
-* Full name: `\Leantime\Command\InstallPluginCommand`
 * Parent class: [\Leantime\Command\AbstractPluginCommand](technical/AbstractPluginCommand.md)
 
 

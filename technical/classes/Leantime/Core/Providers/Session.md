@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Providers\Session`
 
-* Full name: `\Leantime\Core\Providers\Session`
 * Parent class: [ServiceProvider](../../../../classes.md)
 
 

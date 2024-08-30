@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Providers\Cache`
 
-* Full name: `\Leantime\Core\Providers\Cache`
 * Parent class: [ServiceProvider](../../../../classes.md)
 
 

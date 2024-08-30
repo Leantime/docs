@@ -8,8 +8,8 @@ footer: false
 Class AddCSVImportProvider
 
 The AddCSVImportProvider class is responsible for adding a CSV import provider to the given payload.
+`\Leantime\Domain\CsvImport\Listeners\AddCSVImportProvider`
 
-* Full name: `\Leantime\Domain\CsvImport\Listeners\AddCSVImportProvider`
 
 
 

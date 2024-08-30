@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Providers\Redis`
 
-* Full name: `\Leantime\Core\Providers\Redis`
 * Parent class: [ServiceProvider](../../../../classes.md)
 
 

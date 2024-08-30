@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Queue\Workers\EmailWorker`
 
-* Full name: `\Leantime\Domain\Queue\Workers\EmailWorker`
 
 
 

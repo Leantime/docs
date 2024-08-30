@@ -8,8 +8,8 @@ footer: false
 editCanvasItem class - Generic canvas controller / Edit Canvas Item
 
 
+`\Leantime\Domain\Goalcanvas\Controllers\BigRock`
 
-* Full name: `\Leantime\Domain\Goalcanvas\Controllers\BigRock`
 * Parent class: [\Leantime\Domain\Canvas\Controllers\EditCanvasItem](../../Canvas/Controllers/EditCanvasItem.md)
 
 

@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Menu\Composers\ProjectSelector`
 
-* Full name: `\Leantime\Domain\Menu\Composers\ProjectSelector`
 * Parent class: [\Leantime\Core\Controller\Composer](../../../Core/Controller/Composer.md)
 
 

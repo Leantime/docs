@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Sprints\Controllers\EditSprint`
 
-* Full name: `\Leantime\Domain\Sprints\Controllers\EditSprint`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

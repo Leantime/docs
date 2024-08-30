@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Wiki\Repositories\Wiki`
 
-* Full name: `\Leantime\Domain\Wiki\Repositories\Wiki`
 * Parent class: [\Leantime\Domain\Canvas\Repositories\Canvas](../../Canvas/Repositories/Canvas.md)
 
 

@@ -11,8 +11,8 @@ Command to back up the database.
 
 Usage:
   php bin/console db:backup
+`\Leantime\Command\BackupDbCommand`
 
-* Full name: `\Leantime\Command\BackupDbCommand`
 * Parent class: [Command](../../../classes.md)
 
 

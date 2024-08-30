@@ -8,8 +8,8 @@ footer: false
 Represents a static asset file.
 
 
+`\Leantime\Domain\Api\Models\StaticAsset`
 
-* Full name: `\Leantime\Domain\Api\Models\StaticAsset`
 
 
 

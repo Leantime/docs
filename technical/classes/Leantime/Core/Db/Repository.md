@@ -8,8 +8,8 @@ footer: false
 Repository
 
 
+`\Leantime\Core\Db\Repository`
 
-* Full name: `\Leantime\Core\Db\Repository`
 
 
 

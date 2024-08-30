@@ -8,8 +8,8 @@ footer: false
 Default Configuration Class
 
 
+`\Leantime\Core\Configuration\DefaultConfig`
 
-* Full name: `\Leantime\Core\Configuration\DefaultConfig`
 
 
 

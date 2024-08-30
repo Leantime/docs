@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Calendar\Controllers\DelEvent`
 
-* Full name: `\Leantime\Domain\Calendar\Controllers\DelEvent`
 * Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 

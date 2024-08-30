@@ -8,8 +8,8 @@ footer: false
 Template class For exporting class as XML file
 
 
+`\Leantime\Domain\Minempathycanvas\Controllers\Export`
 
-* Full name: `\Leantime\Domain\Minempathycanvas\Controllers\Export`
 * Parent class: [\Leantime\Domain\Canvas\Controllers\Export](../../Canvas/Controllers/Export.md)
 
 

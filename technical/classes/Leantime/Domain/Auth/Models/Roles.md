@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Auth\Models\Roles`
 
-* Full name: `\Leantime\Domain\Auth\Models\Roles`
 
 
 

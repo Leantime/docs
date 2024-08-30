@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Cron\Services\Cron`
 
-* Full name: `\Leantime\Domain\Cron\Services\Cron`
 
 
 

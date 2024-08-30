@@ -8,8 +8,8 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Leancanvas\Controllers\DelCanvasItem`
 
-* Full name: `\Leantime\Domain\Leancanvas\Controllers\DelCanvasItem`
 * Parent class: [\Leantime\Domain\Canvas\Controllers\DelCanvasItem](../../Canvas/Controllers/DelCanvasItem.md)
 
 

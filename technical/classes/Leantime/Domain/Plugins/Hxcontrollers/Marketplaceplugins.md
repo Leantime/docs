@@ -8,8 +8,8 @@ footer: false
 HtmxController Class - Base class For all htmx controllers
 
 
+`\Leantime\Domain\Plugins\Hxcontrollers\Marketplaceplugins`
 
-* Full name: `\Leantime\Domain\Plugins\Hxcontrollers\Marketplaceplugins`
 * Parent class: [\Leantime\Core\Controller\HtmxController](../../../Core/Controller/HtmxController.md)
 
 

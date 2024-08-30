@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Plugins\Repositories\Plugins`
 
-* Full name: `\Leantime\Domain\Plugins\Repositories\Plugins`
 
 
 

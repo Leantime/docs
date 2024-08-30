@@ -9,8 +9,8 @@ Class CarbonMacros
 
 This class provides macros for formatting date and time using the Carbon library.
 Class is being loaded via mixins and then available to the Carbon object
+`\Leantime\Core\Support\CarbonMacros`
 
-* Full name: `\Leantime\Core\Support\CarbonMacros`
 
 
 

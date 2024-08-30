@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Connector\Models\Field`
 
-* Full name: `\Leantime\Domain\Connector\Models\Field`
 
 
 

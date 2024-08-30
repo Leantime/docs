@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Modulemanager\Services\Modulemanager`
 
-* Full name: `\Leantime\Domain\Modulemanager\Services\Modulemanager`
 
 
 
