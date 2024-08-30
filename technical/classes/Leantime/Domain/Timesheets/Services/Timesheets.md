@@ -455,7 +455,94 @@ public Timesheets::getBookedHourTypes(): array|string[]
 
 
 ---
+### pollForNewTimesheets
+
+
+
+```php
+public Timesheets::pollForNewTimesheets(?int $projectId = null): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+### pollForUpdatedTimesheets
+
+
+
+```php
+public Timesheets::pollForUpdatedTimesheets(?int $projectId = null): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### prepareDatesForApiResponse
+
+
+
+```php
+private Timesheets::prepareDatesForApiResponse(mixed $timesheet): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `timesheet` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+
+
+---
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

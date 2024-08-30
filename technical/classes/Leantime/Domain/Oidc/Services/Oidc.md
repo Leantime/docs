@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Oidc::__construct(\Leantime\Core\Environment $config, \Leantime\Core\Language $language, \Leantime\Domain\Auth\Services\Auth $authService, \Leantime\Domain\Users\Repositories\Users $userRepo): mixed
+public Oidc::__construct(\Leantime\Core\Configuration\Environment $config, \Leantime\Core\Language $language, \Leantime\Domain\Auth\Services\Auth $authService, \Leantime\Domain\Users\Repositories\Users $userRepo): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Oidc::__construct(\Leantime\Core\Environment $config, \Leantime\Core\Lang
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `config` | **\Leantime\Core\Environment** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
 | `language` | **\Leantime\Core\Language** |  |
 | `authService` | **\Leantime\Domain\Auth\Services\Auth** |  |
 | `userRepo` | **\Leantime\Domain\Users\Repositories\Users** |  |
@@ -651,4 +651,4 @@ private Oidc::displayError(string $translationKey, string $values): void
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

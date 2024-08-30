@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Localization::__construct(\Leantime\Domain\Setting\Services\Setting $settings, \Leantime\Core\Environment $config, \Leantime\Core\Language $language): mixed
+public Localization::__construct(\Leantime\Domain\Setting\Services\Setting $settings, \Leantime\Core\Configuration\Environment $config, \Leantime\Core\Language $language): mixed
 ```
 
 
@@ -35,7 +35,7 @@ public Localization::__construct(\Leantime\Domain\Setting\Services\Setting $sett
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `settings` | **\Leantime\Domain\Setting\Services\Setting** |  |
-| `config` | **\Leantime\Core\Environment** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
 | `language` | **\Leantime\Core\Language** |  |
 
 
@@ -51,7 +51,7 @@ public Localization::__construct(\Leantime\Domain\Setting\Services\Setting $sett
 Handle the incoming request.
 
 ```php
-public Localization::handle(\Leantime\Core\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
+public Localization::handle(\Leantime\Core\Http\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -65,7 +65,7 @@ public Localization::handle(\Leantime\Core\IncomingRequest $request, \Closure $n
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `request` | **\Leantime\Core\IncomingRequest** | The incoming request object. |
+| `request` | **\Leantime\Core\Http\IncomingRequest** | The incoming request object. |
 | `next` | **\Closure** | The closure to execute next. |
 
 
@@ -79,4 +79,4 @@ The response object.
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

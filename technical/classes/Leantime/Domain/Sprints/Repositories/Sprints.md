@@ -20,7 +20,7 @@ footer: false
 __construct - get database connection
 
 ```php
-public Sprints::__construct(\Leantime\Core\Db $db): mixed
+public Sprints::__construct(\Leantime\Core\Db\Db $db): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Sprints::__construct(\Leantime\Core\Db $db): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 
 
 **Return Value:**
@@ -279,4 +279,4 @@ public Sprints::delSprint( $id): void
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

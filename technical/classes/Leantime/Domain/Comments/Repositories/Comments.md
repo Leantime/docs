@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Comments::__construct(\Leantime\Core\Db $db): mixed
+public Comments::__construct(\Leantime\Core\Db\Db $db): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Comments::__construct(\Leantime\Core\Db $db): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 
 
 **Return Value:**
@@ -253,7 +253,37 @@ public Comments::editComment( $text,  $id): bool
 
 
 ---
+### getAllAccountComments
+
+
+
+```php
+public Comments::getAllAccountComments(?int $projectId, ?int $moduleId): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `moduleId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+
+
+---
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

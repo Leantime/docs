@@ -109,7 +109,40 @@ public Queue::addToQueue(\Leantime\Domain\Queue\Workers\Workers $channel, string
 
 
 ---
+### addJob
+
+
+
+```php
+public static Queue::addJob(\Leantime\Domain\Queue\Workers\Workers $channel, string $subject, mixed $message, ?int $userId = null, ?int $projectId = null): mixed
+```
+
+
+
+* This method is **static**.
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `channel` | **\Leantime\Domain\Queue\Workers\Workers** |  |
+| `subject` | **string** |  |
+| `message` | **mixed** |  |
+| `userId` | **?int** |  |
+| `projectId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+
+
+---
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

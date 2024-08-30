@@ -276,7 +276,125 @@ public Goalcanvas::getSingleCanvas(mixed $id): mixed
 
 
 ---
+### createGoal
+
+
+
+```php
+public Goalcanvas::createGoal(mixed $values): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+### pollGoals
+
+
+
+```php
+public Goalcanvas::pollGoals(?int $projectId = null, ?int $board = null): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `board` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### pollForUpdatedGoals
+
+
+
+```php
+public Goalcanvas::pollForUpdatedGoals(?int $projectId = null, ?int $board = null): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
+| `board` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### prepareDatesForApiResponse
+
+
+
+```php
+private Goalcanvas::prepareDatesForApiResponse(mixed $goal): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `goal` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+
+
+---
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
