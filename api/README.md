@@ -3,7 +3,7 @@ title: Leantime Api
 footer: false
 ---
 
-# Leantime Api jsonRPC method namespaces
+# Leantime Api JsonRPC 2.0 namespaces
 
 For an introduction into connecting to the Leantime API please see [Api Usage](https://docs.leantime.io/#/api/usage)
 
