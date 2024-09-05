@@ -31,7 +31,7 @@ sudo nano leantime.conf
 6. Add the following code in `leantime.conf` and save it:
 
 ```leantime.conf
-<VirtualHost *:80>
+<VirtualHost *:8080>
         ServerName leantime
         DocumentRoot /var/www/html/leantime/public
 
@@ -40,8 +40,13 @@ sudo nano leantime.conf
 </VirtualHost>
 ```
 
+Use a port other than `80`, as it is the default port. Then add the following line in `etc/apache2/ports.conf` file:
+
+```
+Listen <<your port number>>
+```
+
 7. Enable the new site configuration, rewrite module and restart apache:
-<!-- sudo a2dissite 000-default.conf -->
 
 ```bash
 sudo a2ensite leantime.conf
@@ -54,8 +59,6 @@ sudo systemctl restart apache2
 9. Fill in your database credentials (username, password, host, dbname) in `.env`
 
 ```.env
-LEAN_APP_URL =<your base url>           # Base URL
-
 LEAN_DB_HOST=<your host name>
 LEAN_DB_USER=<your db_user name>
 LEAN_DB_PASSWORD=<your db_user password>
@@ -102,6 +105,8 @@ server {
 }
 ```
 
+**Note**: Make sure `PHP-FPM` is installed and running
+
 7. Enable the new site configuration, rewrite module and restart apache:
 
 ```bash
@@ -115,14 +120,14 @@ sudo systemctl restart nginx
 9. Fill in your database credentials (username, password, host, dbname) in `.env`
 
 ```.env
-LEAN_APP_URL =<your base url>           # Base URL
-
 LEAN_DB_HOST=<your host name>
 LEAN_DB_USER=<your db_user name>
 LEAN_DB_PASSWORD=<your db_user password>
 LEAN_DB_DATABASE=<your db name. From step 1>
 LEAN_DB_PORT='3306'                     # Database default port
 ```
+
+<!-- LEAN_APP_URL =<your base url>           # Base URL -->
 
 10. Navigate to `<yourdomain.com>/install`
 
