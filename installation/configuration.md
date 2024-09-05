@@ -7,9 +7,10 @@ Leantime can be configured to setup database, customize theme, email and file ha
 Leantime has flexible file storage option. You can choose between local file storage or Amazon S3. Here's how to set up S3 storage:
 
 Before setup, make sure you have the following:
-* A S3 bucket in your preferred region
-* An AWS account with write permissions
-* An AWS access and secret key
+
+- A S3 bucket in your preferred region
+- An AWS account with write permissions
+- An AWS access and secret key
 
 Navigate to the `config/.env` file and update the following settings:
 
@@ -50,6 +51,10 @@ LEAN_EMAIL_SMTP_PORT=''           # Port (usually one of 25, 465, 587, 2526)
 Common issues that users encounter such as if port is closed, check firewall settings to ensure the given port is open. Also, depending on the host, some may require you to use their own SMTP servers.
 
 ## LDAP Configuration
+
+**Since: v2.1.9**
+
+_LDAP is not supported in Leantime with versions earlier than v2.1.9._
 
 Leantime supports basic LDAP integration via configuration of the environament variables. Follow the porcess below to setup LDAP:
 
@@ -109,10 +114,11 @@ LEAN_LDAP_GROUP_ASSIGNMENT="{
   }
 }"
 ```
+
 Here each of these levels is associated with two attributes:
 
-* `ltRole`: The role in your application.
-* `ldapRole`: The role in the LDAP directory.
+- `ltRole`: The role in your application.
+- `ldapRole`: The role in the LDAP directory.
 
 Set the roles as per your setup. This allows you to manage user roles accross the system, and ensures the right permission is given to the users.
 
@@ -143,7 +149,7 @@ rewrite ^/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1.$2&id=$3;
 
 ## Theme Configuration
 
-Leantime allows you to white label the entire system by changing the color scheme of your site, set your own logo, and also set primary and secondary color. This can be easily done by updating the `config/.env` file:
+Leantime allows you to customize the color scheme and logo by setting the corresponding values in your environment file. Open the `config/.env` file and update the following fields:
 
 ```php
 LEAN_LOGO_PATH='/dist/images/logo.svg'           # Default logo path, can be changed later
@@ -167,13 +173,11 @@ LEAN_DEFAULT_TIMEZONE='America/Los_Angeles'      # Set default timezone
 
 ## OpenID-Conenct (OIDC) Configuration
 
-Warning! This is still experimental and may not be a 100% secure.
-
 You can connect Leantime to a OIDC provider of your choice. The reference implementation is Authentik, but any compliant provider which implements x5c certificates should work.
 
 For a basic Keycloak or Authentik connection, only the provider URL, client id and client secret are required.
 
-The callback url is:  `<<yourdomain>>/oidc/callback`
+The callback url is: `<<yourdomain>>/oidc/callback`
 
 To understand some of the more advanced options, take a look at the github example below.
 
@@ -205,7 +209,7 @@ LEAN_OIDC_CLIENT_SECRET=
 #LEAN_OIDC_CERTIFICATE_FILE =
 
 # optional - override the requested scopes
-#LEAN_OIDC_SCOPES = 
+#LEAN_OIDC_SCOPES =
 
 # optional - override the keys used for login and name - these can be nested with dots, if neccesarry (e.g.: user.info.email)
 #LEAN_OIDC_FIELD_EMAIL =
@@ -228,19 +232,22 @@ LEAN_OIDC_CLIENT_SECRET=
 #LEAN_OIDC_JWKS_URL_OVERRIDE = https://www.googleapis.com/oauth2/v1/certs
 ```
 
-<!--
-
 ## Cron Jobs
-To ensure users get the notifications at the time they need them Leantime has 2 options to run cron jobs. The shortest time Leantime will process the queue is 5 minutes. We recommend to run the job at least every 15 minutes.
+
+To ensure users receive timely notifications, Leantime offers two options for running cron jobs. The system processes the queue at intervals as short as every 5 minutes, but we recommend running the job at least once every 15 minutes for optimal performance.
 
 **Note: To run the cron tab you MUST set `$appURL` in your config file. Otherwise links within the email will not work properly.**
 
-Option 1: Using the command line
+#### Option 1: Using the command line
+
+Run the following command from your Leantime installation directory to manually trigger the cron job:
 
 ```
 ./bin/leantime cron:run
 ```
 
-Option 2: Using endpoint
+#### Option 2: Using the Cron Endpoint
 
-Call `<<yourdomain>>/cron/run` -->
+You can also trigger the cron job by calling the following endpoint in your browser or from a scheduling tool:
+
+Call `<<yourdomain>>/cron/run`
