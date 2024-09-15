@@ -8,8 +8,8 @@ footer: false
 Class AddCSVImportProvider
 
 The AddCSVImportProvider class is responsible for adding a CSV import provider to the given payload.
+`\Leantime\Domain\CsvImport\Listeners\AddCSVImportProvider`
 
-* Full name: `\Leantime\Domain\CsvImport\Listeners\AddCSVImportProvider`
 
 
 
@@ -47,4 +47,4 @@ public AddCSVImportProvider::handle(mixed $payload): mixed
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

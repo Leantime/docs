@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\CsvImport\Services\CsvImport`
 
-* Full name: `\Leantime\Domain\CsvImport\Services\CsvImport`
 * Parent class: [\Leantime\Domain\Connector\Models\Provider](../../Connector/Models/Provider.md)
 * This class implements: \Leantime\Domain\Connector\Services\ProviderIntegration
 
@@ -249,4 +249,4 @@ public Provider::__construct(): mixed
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

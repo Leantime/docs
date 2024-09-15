@@ -8,8 +8,8 @@ footer: false
 Class ApiRateLimiter
 
 This class is responsible for rate limiting requests, login requests and api requests
+`\Leantime\Core\Middleware\RequestRateLimiter`
 
-* Full name: `\Leantime\Core\Middleware\RequestRateLimiter`
 
 
 
@@ -21,7 +21,7 @@ __construct
 Constructor method for the class.
 
 ```php
-public RequestRateLimiter::__construct(): void
+public RequestRateLimiter::__construct(\Leantime\Core\Configuration\Environment $config, \Illuminate\Cache\RateLimiter $limiter): void
 ```
 
 
@@ -30,6 +30,13 @@ public RequestRateLimiter::__construct(): void
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
+| `limiter` | **\Illuminate\Cache\RateLimiter** | The RateLimiter object to be initialized. |
 
 
 **Return Value:**
@@ -44,7 +51,7 @@ public RequestRateLimiter::__construct(): void
 Handle the incoming request.
 
 ```php
-public RequestRateLimiter::handle(\Leantime\Core\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
+public RequestRateLimiter::handle(\Leantime\Core\Http\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -58,13 +65,43 @@ public RequestRateLimiter::handle(\Leantime\Core\IncomingRequest $request, \Clos
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `request` | **\Leantime\Core\IncomingRequest** | The incoming request object. |
+| `request` | **\Leantime\Core\Http\IncomingRequest** | The incoming request object. |
 | `next` | **\Closure** | The next middleware closure. |
 
 
 **Return Value:**
 
 The response object.
+
+
+
+---
+### getHeaders
+
+Get rate limiter headers for response.
+
+```php
+private RequestRateLimiter::getHeaders(string $key, string $limit): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `key` | **string** |  |
+| `limit` | **string** |  |
+
+
+**Return Value:**
+
+
 
 
 
@@ -78,7 +115,7 @@ The response object.
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -109,7 +146,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -141,7 +178,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -171,7 +208,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -194,7 +231,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -221,4 +258,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

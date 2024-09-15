@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Notifications\Services\Notifications`
 
-* Full name: `\Leantime\Domain\Notifications\Services\Notifications`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - get database connection
 
 ```php
-public Notifications::__construct(\Leantime\Core\Db $db, \Leantime\Domain\Notifications\Repositories\Notifications $notificationsRepo, \Leantime\Domain\Users\Repositories\Users $userRepository, \Leantime\Core\Language $language): mixed
+public Notifications::__construct(\Leantime\Core\Db\Db $db, \Leantime\Domain\Notifications\Repositories\Notifications $notificationsRepo, \Leantime\Domain\Users\Repositories\Users $userRepository, \Leantime\Core\Language $language): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Notifications::__construct(\Leantime\Core\Db $db, \Leantime\Domain\Notifi
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 | `notificationsRepo` | **\Leantime\Domain\Notifications\Repositories\Notifications** |  |
 | `userRepository` | **\Leantime\Domain\Users\Repositories\Users** |  |
 | `language` | **\Leantime\Core\Language** |  |
@@ -175,4 +175,4 @@ public Notifications::processMentions(string $content, string $module, int $modu
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

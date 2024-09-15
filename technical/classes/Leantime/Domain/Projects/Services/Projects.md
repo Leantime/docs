@@ -5,11 +5,13 @@ footer: false
 
 # Projects
 
+Class Projects
 
+This class represents a collection of methods related to projects.
+It provides functionality to retrieve project types, project data,
+project progress, users to notify in a project, and send project notifications.
+`\Leantime\Domain\Projects\Services\Projects`
 
-
-
-* Full name: `\Leantime\Domain\Projects\Services\Projects`
 
 
 
@@ -53,7 +55,7 @@ public Projects::__construct(\Leantime\Core\Template $tpl, \Leantime\Domain\Proj
 ---
 ### getProjectTypes
 
-
+Gets the project types.
 
 ```php
 public Projects::getProjectTypes(): mixed
@@ -76,10 +78,10 @@ public Projects::getProjectTypes(): mixed
 ---
 ### getProject
 
-
+Gets the project with the given ID.
 
 ```php
-public Projects::getProject(int $id): array|bool
+public Projects::getProject(int $id): bool|array
 ```
 
 
@@ -93,25 +95,26 @@ public Projects::getProject(int $id): array|bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int** |  |
+| `id` | **int** | The ID of the project to retrieve. |
 
 
 **Return Value:**
 
-
+Returns the project data as an associative array if the project exists, otherwise returns false.
 
 
 
 ---
 ### getProjectProgress
 
-
+Gets the progress of a project.
 
 ```php
-public Projects::getProjectProgress( $projectId): array
+public Projects::getProjectProgress(int $projectId): array
 ```
 
-
+Calculates the completion percentage, estimated completion date,
+and planned completion date of the project.
 
 
 
@@ -122,22 +125,22 @@ public Projects::getProjectProgress( $projectId): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Return Value:**
 
-
+The progress of the project.
 
 
 
 ---
 ### getUsersToNotify
 
-
+Gets an array of user IDs to notify for a given project.
 
 ```php
-public Projects::getUsersToNotify( $projectId): array
+public Projects::getUsersToNotify(int $projectId): array
 ```
 
 
@@ -151,22 +154,22 @@ public Projects::getUsersToNotify( $projectId): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project to get users to notify for. |
 
 
 **Return Value:**
 
-
+An array of user IDs.
 
 
 
 ---
 ### getAllUserInfoToNotify
 
-
+Gets all the users who need to be notified for a given project.
 
 ```php
-public Projects::getAllUserInfoToNotify( $projectId): array
+public Projects::getAllUserInfoToNotify(int $projectId): array
 ```
 
 
@@ -180,19 +183,19 @@ public Projects::getAllUserInfoToNotify( $projectId): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Return Value:**
 
-
+An array of users to notify.
 
 
 
 ---
 ### notifyProjectUsers
 
-
+Notifies the users associated with a project about a notification.
 
 ```php
 public Projects::notifyProjectUsers(\Leantime\Domain\Notifications\Models\Notification $notification): void
@@ -209,7 +212,7 @@ public Projects::notifyProjectUsers(\Leantime\Domain\Notifications\Models\Notifi
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `notification` | **\Leantime\Domain\Notifications\Models\Notification** |  |
+| `notification` | **\Leantime\Domain\Notifications\Models\Notification** | The notification object to send. |
 
 
 **Return Value:**
@@ -221,10 +224,10 @@ public Projects::notifyProjectUsers(\Leantime\Domain\Notifications\Models\Notifi
 ---
 ### getProjectName
 
-
+Retrieves the name of a project based on its ID.
 
 ```php
-public Projects::getProjectName( $projectId): mixed|void
+public Projects::getProjectName(int $projectId): string|null
 ```
 
 
@@ -238,22 +241,22 @@ public Projects::getProjectName( $projectId): mixed|void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Return Value:**
 
-
+The name of the project, or null if the project does not exist.
 
 
 
 ---
 ### getProjectIdAssignedToUser
 
-
+Gets the project IDs assigned to a specified user.
 
 ```php
-public Projects::getProjectIdAssignedToUser( $userId): array|false
+public Projects::getProjectIdAssignedToUser(int $userId): false|array
 ```
 
 
@@ -267,22 +270,22 @@ public Projects::getProjectIdAssignedToUser( $userId): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
+| `userId` | **int** | The ID of the user. |
 
 
 **Return Value:**
 
-
+The project IDs assigned to the user, or false if no projects are found.
 
 
 
 ---
 ### getProjectsAssignedToUser
 
-
+Gets projects assigned to a user.
 
 ```php
-public Projects::getProjectsAssignedToUser( $userId, string $projectStatus = &quot;open&quot;,  $clientId = null): array
+public Projects::getProjectsAssignedToUser(int $userId, string $projectStatus = &quot;open&quot;, int|null $clientId = null): array
 ```
 
 
@@ -296,24 +299,24 @@ public Projects::getProjectsAssignedToUser( $userId, string $projectStatus = &qu
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `projectStatus` | **string** |  |
-| `clientId` | **** |  |
+| `userId` | **int** | The ID of the user. |
+| `projectStatus` | **string** | The status of the projects. Defaults to &quot;open&quot;. |
+| `clientId` | **int|null** | The ID of the client. Defaults to null. |
 
 
 **Return Value:**
 
-
+The projects assigned to the user.
 
 
 
 ---
 ### findMyChildren
 
-
+Finds all children projects for a given parent project.
 
 ```php
-public Projects::findMyChildren( $currentParentId, array $projects): array
+public Projects::findMyChildren(mixed $currentParentId, array $projects): array
 ```
 
 
@@ -327,26 +330,27 @@ public Projects::findMyChildren( $currentParentId, array $projects): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `currentParentId` | **** |  |
-| `projects` | **array** |  |
+| `currentParentId` | **mixed** | The ID of the current parent project. |
+| `projects` | **array** | An array of projects to search for children. |
 
 
 **Return Value:**
 
-
+An array of children projects found.
 
 
 
 ---
 ### cleanParentRelationship
 
-Ensures all projects have a valid parent. If not the parent is removed.
+Cleans the parent relationship in the given array of projects.
 
 ```php
 public Projects::cleanParentRelationship(array $projects): array
 ```
 
-This way a user can still access a project even if they don't have access to the child.
+Removes projects that have a parent project that does not exist in the array.
+Assigns a parent id of 0 to projects that have no parent.
 
 
 
@@ -357,22 +361,22 @@ This way a user can still access a project even if they don't have access to the
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projects` | **array** |  |
+| `projects` | **array** | An array of projects |
 
 
 **Return Value:**
 
-
+The cleaned array of projects
 
 
 
 ---
 ### getProjectHierarchyAssignedToUser
 
-
+Gets the hierarchy of projects assigned to a user.
 
 ```php
-public Projects::getProjectHierarchyAssignedToUser( $userId, string $projectStatus = &quot;open&quot;,  $clientId = null): array
+public Projects::getProjectHierarchyAssignedToUser(int $userId, string $projectStatus = &quot;open&quot;, int|null $clientId = null): array
 ```
 
 
@@ -386,24 +390,24 @@ public Projects::getProjectHierarchyAssignedToUser( $userId, string $projectStat
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `projectStatus` | **string** |  |
-| `clientId` | **** |  |
+| `userId` | **int** | The ID of the user. |
+| `projectStatus` | **string** | The project status. Default is &quot;open&quot;. |
+| `clientId` | **int|null** | The ID of the client. Default is null. |
 
 
 **Return Value:**
 
-
+An array containing the assigned projects, the project hierarchy, and the favorite projects.
 
 
 
 ---
 ### getProjectHierarchyAvailableToUser
 
-
+Gets the project hierarchy available to a user.
 
 ```php
-public Projects::getProjectHierarchyAvailableToUser( $userId, string $projectStatus = &quot;open&quot;,  $clientId = null): array
+public Projects::getProjectHierarchyAvailableToUser(int $userId, string $projectStatus = &quot;open&quot;, int|null $clientId = null): array
 ```
 
 
@@ -417,14 +421,17 @@ public Projects::getProjectHierarchyAvailableToUser( $userId, string $projectSta
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `projectStatus` | **string** |  |
-| `clientId` | **** |  |
+| `userId` | **int** | The ID of the user. |
+| `projectStatus` | **string** | The status of the projects to retrieve. Defaults to &quot;open&quot;. |
+| `clientId` | **int|null** | The ID of the client. Defaults to null. |
 
 
 **Return Value:**
 
-
+Returns an array containing the following keys:
+- "allAvailableProjects": An array of all projects available to the user.
+- "allAvailableProjectsHierarchy": An array representing the project hierarchy available to the user.
+- "clients": An array of clients associated with the projects available to the user.
 
 
 
@@ -437,8 +444,7 @@ Gets all the clients available to a user.
 public Projects::getAllClientsAvailableToUser(int $userId, string $projectStatus = &quot;open&quot;): array
 ```
 
-Clients are determined by the projects
-the user is assigned to.
+
 
 
 
@@ -450,12 +456,12 @@ the user is assigned to.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `userId` | **int** | The ID of the user. |
-| `projectStatus` | **string** | (optional) The status of the projects to consider. Defaults to &quot;open&quot;. |
+| `projectStatus` | **string** | The status of the projects to be considered. Defaults to &quot;open&quot;. |
 
 
 **Return Value:**
 
-An array of client objects.
+An array of clients available to the user.
 
 
 
@@ -491,10 +497,10 @@ public Projects::getClientsFromProjectList(array $projects): array
 ---
 ### getProjectRole
 
-
+Gets the role of a user in a specific project.
 
 ```php
-public Projects::getProjectRole( $userId,  $projectId): mixed|string
+public Projects::getProjectRole(mixed $userId, mixed $projectId): mixed
 ```
 
 
@@ -508,23 +514,23 @@ public Projects::getProjectRole( $userId,  $projectId): mixed|string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
-| `projectId` | **** |  |
+| `userId` | **mixed** | The user ID. |
+| `projectId` | **mixed** | The project ID. |
 
 
 **Return Value:**
 
-
+The role of the user in the project (string) or an empty string if the user is not assigned to the project or if the project role is not defined.
 
 
 
 ---
 ### getProjectsUserHasAccessTo
 
-
+Gets the projects that a user has access to.
 
 ```php
-public Projects::getProjectsUserHasAccessTo( $userId): array|false
+public Projects::getProjectsUserHasAccessTo(int $userId): array|false
 ```
 
 
@@ -538,27 +544,30 @@ public Projects::getProjectsUserHasAccessTo( $userId): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **** |  |
+| `userId` | **int** | The ID of the user. |
 
 
 **Return Value:**
 
-
+The array of projects if the user has access, false otherwise.
 
 
 
 ---
 ### setCurrentProject
 
-Sets the current project in the session.
+Sets the current project for the user.
 
 ```php
 public Projects::setCurrentProject(): void
 ```
 
-If a project ID is provided in the query string, it is used to set the current project.
-If no project ID is provided, the last visited project or the first assigned project is set as the current project.
-If no project is found, an exception is thrown.
+If projectId is present in the query string, it sets the project based on that.
+If projectId is not present, it checks if the currentProject is set in the session and sets the project based on that.
+If currentProject is not set, it sets the currentProject to 0.
+If lastProject setting is set in the user's settings, it sets the project based on that.
+If lastProject setting is not set, it sets the currentProject to the first project assigned to the user.
+If no projects are assigned to the user, it throws an Exception.
 
 
 
@@ -575,13 +584,14 @@ If no project is found, an exception is thrown.
 ---
 ### getCurrentProjectId
 
-Get current project id or 0 if no current project is set.
+Gets the current project ID.
 
 ```php
 public Projects::getCurrentProjectId(): int
 ```
 
-
+If the session variable "currentProject" is set, it returns its integer value.
+Otherwise, it returns 0.
 
 
 
@@ -591,17 +601,17 @@ public Projects::getCurrentProjectId(): int
 
 **Return Value:**
 
-
+The current project ID.
 
 
 
 ---
 ### changeCurrentSessionProject
 
-
+Change the current session project to the specified projectId.
 
 ```php
-public Projects::changeCurrentSessionProject( $projectId): bool
+public Projects::changeCurrentSessionProject(mixed $projectId): bool
 ```
 
 
@@ -615,19 +625,19 @@ public Projects::changeCurrentSessionProject( $projectId): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **mixed** | The ID of the project to set as current. |
 
 
 **Return Value:**
 
-
+Returns true if the current project is successfully changed, false otherwise.
 
 
 
 ---
 ### resetCurrentProject
 
-
+Resets the current project by clearing all session data related to the project.
 
 ```php
 public Projects::resetCurrentProject(): void
@@ -650,10 +660,10 @@ public Projects::resetCurrentProject(): void
 ---
 ### getUsersAssignedToProject
 
-
+Gets all the users assigned to a specific project.
 
 ```php
-public Projects::getUsersAssignedToProject( $projectId): array
+public Projects::getUsersAssignedToProject(int $projectId): array
 ```
 
 
@@ -667,19 +677,19 @@ public Projects::getUsersAssignedToProject( $projectId): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Return Value:**
 
-
+An array of users assigned to the project.
 
 
 
 ---
 ### isUserAssignedToProject
 
-
+Checks if a user is assigned to a particular project.
 
 ```php
 public Projects::isUserAssignedToProject(int $userId, int $projectId): bool
@@ -696,26 +706,26 @@ public Projects::isUserAssignedToProject(int $userId, int $projectId): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int** |  |
-| `projectId` | **int** |  |
+| `userId` | **int** | The ID of the user being checked. |
+| `projectId` | **int** | The ID of the project being checked. |
 
 
 **Return Value:**
 
-
+Returns true if the user is assigned to the project, false otherwise.
 
 
 
 ---
 ### isUserMemberOfProject
 
-Checks if a user is directly assigned to a project.
+Checks if a user is a member of a specific project.
 
 ```php
 public Projects::isUserMemberOfProject(int $userId, int $projectId): bool
 ```
 
-Client assignments or projects available to entire organization are not considered true.
+
 
 
 
@@ -726,20 +736,20 @@ Client assignments or projects available to entire organization are not consider
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int** |  |
-| `projectId` | **int** |  |
+| `userId` | **int** | - The ID of the user. |
+| `projectId` | **int** | - The ID of the project. |
 
 
 **Return Value:**
 
-
+- Returns true if the user is a member of the project, otherwise false.
 
 
 
 ---
 ### addProject
 
-Adds a new project to the system.
+Adds a new project.
 
 ```php
 public Projects::addProject(array $values): int|false
@@ -756,19 +766,19 @@ public Projects::addProject(array $values): int|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **array** | An associative array containing the project details.<br />- name: The name of the project.<br />- details: Additional details of the project (optional, default: &#039;&#039;).<br />- clientId: The ID of the client associated with the project.<br />- hourBudget: The hour budget for the project (optional, default: 0).<br />- assignedUsers: Comma-separated list of user IDs assigned to the project (optional, default: &#039;&#039;).<br />- dollarBudget: The dollar budget for the project (optional, default: 0).<br />- psettings: The settings for the project (optional, default: &#039;restricted&#039;).<br />- type: The type of the project (optional, default: &#039;project&#039;).<br />- start: The start date of the project in user format (YYYY-MM-DD).<br />- end: The end date of the project in user format (YYYY-MM-DD). |
+| `values` | **array** | The project data.<br />- name: string (required) The name of the project.<br />- details: string (optional) Additional details about the project.<br />- clientId: int (required) The ID of the client associated with the project.<br />- hourBudget: int (optional) The hour budget for the project (defaults to 0).<br />- assignedUsers: string (optional) The list of assigned users (defaults to an empty string).<br />- dollarBudget: int (optional) The dollar budget for the project (defaults to 0).<br />- psettings: string (optional) The project settings (defaults to &#039;restricted&#039;).<br />- type: string (fixed value &#039;project&#039;) The type of the project.<br />- start: string&amp;#124;null The start date of the project in user format or null.<br />- end: string&amp;#124;null The end date of the project in user format or null. |
 
 
 **Return Value:**
 
-The ID of the newly added project
+The ID of the added project, or false if the project could not be added.
 
 
 
 ---
 ### duplicateProject
 
-
+Duplicates a project with the specified details.
 
 ```php
 public Projects::duplicateProject(int $projectId, int $clientId, string $projectName, string $userStartDate, bool $assignSameUsers): bool|int
@@ -785,23 +795,23 @@ public Projects::duplicateProject(int $projectId, int $clientId, string $project
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int** |  |
-| `clientId` | **int** |  |
-| `projectName` | **string** |  |
-| `userStartDate` | **string** |  |
-| `assignSameUsers` | **bool** |  |
+| `projectId` | **int** | The ID of the project to duplicate. |
+| `clientId` | **int** | The ID of the client for the duplicate project. |
+| `projectName` | **string** | The name of the duplicate project. |
+| `userStartDate` | **string** | The start date of the duplicate project in the format specified by the language setting. |
+| `assignSameUsers` | **bool** | Whether to assign the same users as the original project. |
 
 
 **Return Value:**
 
-
+Returns true if the project was successfully duplicated, or the ID of the new project if successful.
 
 
 
 ---
 ### duplicateCanvas
 
-
+Duplicate a canvas from one project to another.
 
 ```php
 private Projects::duplicateCanvas(string $repository, int $originalProjectId, int $newProjectId, string $canvasTypeName = &#039;&#039;): bool
@@ -818,25 +828,25 @@ private Projects::duplicateCanvas(string $repository, int $originalProjectId, in
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `repository` | **string** |  |
-| `originalProjectId` | **int** |  |
-| `newProjectId` | **int** |  |
-| `canvasTypeName` | **string** |  |
+| `repository` | **string** | The repository class to use for CRUD operations |
+| `originalProjectId` | **int** | The ID of the original project |
+| `newProjectId` | **int** | The ID of the new project |
+| `canvasTypeName` | **string** | The canvas type name (optional) |
 
 
 **Return Value:**
 
-
+True if the canvas is duplicated successfully, false otherwise
 
 
 
 ---
 ### getProjectUserRelation
 
-
+Retrieves the relation between a project and its users.
 
 ```php
-public Projects::getProjectUserRelation( $id): array
+public Projects::getProjectUserRelation(int $id): array
 ```
 
 
@@ -850,22 +860,22 @@ public Projects::getProjectUserRelation( $id): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** | The ID of the project. |
 
 
 **Return Value:**
 
-
+The relation between the project and its users.
 
 
 
 ---
 ### patch
 
-
+Updates a project with the given parameters.
 
 ```php
-public Projects::patch( $id,  $params): bool
+public Projects::patch(int $id, array $params): bool
 ```
 
 
@@ -879,23 +889,23 @@ public Projects::patch( $id,  $params): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
-| `params` | **** |  |
+| `id` | **int** | The ID of the project. |
+| `params` | **array** | The parameters to update the project. |
 
 
 **Return Value:**
 
-
+Returns true if the project was successfully updated, false otherwise.
 
 
 
 ---
 ### getProjectAvatar
 
-
+Retrieves the avatar for a project.
 
 ```php
-public Projects::getProjectAvatar( $id): mixed
+public Projects::getProjectAvatar(mixed $id): mixed
 ```
 
 
@@ -909,22 +919,22 @@ public Projects::getProjectAvatar( $id): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **mixed** | The ID of the project. |
 
 
 **Return Value:**
 
-
+The avatar for the project.
 
 
 
 ---
 ### setProjectAvatar
 
-
+Sets the avatar for a project.
 
 ```php
-public Projects::setProjectAvatar( $file,  $project): null
+public Projects::setProjectAvatar(mixed $file, mixed $project): bool
 ```
 
 
@@ -938,23 +948,23 @@ public Projects::setProjectAvatar( $file,  $project): null
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `file` | **** |  |
-| `project` | **** |  |
+| `file` | **mixed** | The file containing the avatar. |
+| `project` | **mixed** | The project object. |
 
 
 **Return Value:**
 
-
+Indicates whether the avatar was successfully set.
 
 
 
 ---
 ### getAllProjects
 
-
+Retrieves all projects.
 
 ```php
-public Projects::getAllProjects(): mixed
+public Projects::getAllProjects(): array
 ```
 
 
@@ -967,17 +977,17 @@ public Projects::getAllProjects(): mixed
 
 **Return Value:**
 
-
+The projects.
 
 
 
 ---
 ### getProjectSetupChecklist
 
-
+Retrieves the setup checklist for a project.
 
 ```php
-public Projects::getProjectSetupChecklist( $projectId): array
+public Projects::getProjectSetupChecklist(int $projectId): array
 ```
 
 
@@ -991,22 +1001,22 @@ public Projects::getProjectSetupChecklist( $projectId): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Return Value:**
 
-
+The setup checklist for the project.
 
 
 
 ---
 ### updateProjectProgress
 
-
+Updates the progress of a project.
 
 ```php
-public Projects::updateProjectProgress( $stepsComplete,  $projectId): void
+public Projects::updateProjectProgress(string|array $stepsComplete, int $projectId): void
 ```
 
 
@@ -1020,8 +1030,8 @@ public Projects::updateProjectProgress( $stepsComplete,  $projectId): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `stepsComplete` | **** |  |
-| `projectId` | **** |  |
+| `stepsComplete` | **string|array** | The steps completed for the project. |
+| `projectId` | **int** | The ID of the project. |
 
 
 **Return Value:**
@@ -1051,22 +1061,22 @@ public Projects::editUserProjectRelations(int $id, array $projects): bool
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `id` | **int** | The ID of the user. |
-| `projects` | **array** | An array of project IDs to be assigned to the user. |
+| `projects` | **array** | The projects to be edited. |
 
 
 **Return Value:**
 
-Returns true if the project relations were successfully edited, false otherwise.
+True if the project relations were successfully edited, false otherwise.
 
 
 
 ---
 ### getProjectIdbyName
 
-Returns the project ID by its name from the given array of projects.
+Retrieves the ID of a project by its name.
 
 ```php
-public Projects::getProjectIdbyName(array $allProjects, string $projectName): int|bool
+public Projects::getProjectIdbyName(array $allProjects, string $projectName): mixed
 ```
 
 
@@ -1080,8 +1090,8 @@ public Projects::getProjectIdbyName(array $allProjects, string $projectName): in
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `allProjects` | **array** | An array of projects. |
-| `projectName` | **string** | The name of the project to search for. |
+| `allProjects` | **array** | The array of all projects. |
+| `projectName` | **string** | The name of the project to retrieve the ID for. |
 
 
 **Return Value:**
@@ -1093,10 +1103,10 @@ The ID of the project if found, or false if not found.
 ---
 ### updateProjectSorting
 
-
+Updates the sorting of multiple projects.
 
 ```php
-public Projects::updateProjectSorting( $params): false|void
+public Projects::updateProjectSorting(array $params): bool
 ```
 
 
@@ -1110,19 +1120,19 @@ public Projects::updateProjectSorting( $params): false|void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **** |  |
+| `params` | **array** | The array containing the project IDs as keys and their corresponding sort index as values (ticketId: sortIndex). |
 
 
 **Return Value:**
 
-
+Returns true if the sorting update was successful, false otherwise.
 
 
 
 ---
 ### editProject
 
-Edits a project with the given values.
+Edits a project.
 
 ```php
 public Projects::editProject(mixed $values, int $id): void
@@ -1139,8 +1149,8 @@ public Projects::editProject(mixed $values, int $id): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **mixed** | The values to update the project with. |
-| `id` | **int** | The ID of the project to edit. |
+| `values` | **mixed** | The values to be updated in the project. |
+| `id` | **int** | The ID of the project to be edited. |
 
 
 **Return Value:**
@@ -1152,10 +1162,10 @@ public Projects::editProject(mixed $values, int $id): void
 ---
 ### updateProjectStatusAndSorting
 
-
+Updates the status and sorting of projects.
 
 ```php
-public Projects::updateProjectStatusAndSorting( $params,  $handler = null): bool
+public Projects::updateProjectStatusAndSorting(array $params, null $handler = null): bool
 ```
 
 
@@ -1169,26 +1179,26 @@ public Projects::updateProjectStatusAndSorting( $params,  $handler = null): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **** |  |
-| `handler` | **** |  |
+| `params` | **array** | An associative array representing the project status and sorting.<br />The key is the status and the value is the serialized project list. |
+| `handler` | **null** | Optional parameter for handling the project update process. |
 
 
 **Return Value:**
 
-
+Returns true if the update process is successful, false otherwise.
 
 
 
 ---
 ### getClientManagerProjects
 
-Gets all the projects a company manager has access to.
+Retrieves the projects for a client manager.
 
 ```php
 public Projects::getClientManagerProjects(int $userId, int $clientId): array
 ```
 
-Includes all projects within a client + all assigned projects
+
 
 
 
@@ -1199,23 +1209,52 @@ Includes all projects within a client + all assigned projects
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int** |  |
-| `clientId` | **int** |  |
+| `userId` | **int** | The ID of the user. |
+| `clientId` | **int** | The ID of the client. |
 
 
 **Return Value:**
 
-
+The projects for the client manager.
 
 
 
 ---
 ### getAll
 
-
+Gets all the projects for the current user.
 
 ```php
 public Projects::getAll(bool $showClosedProjects = false): array
+```
+
+By default, closed projects are not included.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `showClosedProjects` | **bool** | (optional) Set to true to include closed projects. |
+
+
+**Return Value:**
+
+Returns an array of projects.
+
+
+
+---
+### findProject
+
+Finds projects based on a search term.
+
+```php
+public Projects::findProject(string $term = &quot;&quot;): array
 ```
 
 
@@ -1229,7 +1268,54 @@ public Projects::getAll(bool $showClosedProjects = false): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `showClosedProjects` | **bool** |  |
+| `term` | **string** | The search term (optional) |
+
+
+**Return Value:**
+
+The filtered projects that match the search term
+
+
+
+---
+### pollForNewProjects
+
+Polls for new projects for the current user session.
+
+```php
+public Projects::pollForNewProjects(): array
+```
+
+Retrieves all projects for the current user and prepares the dates for API response.
+
+
+
+
+
+
+
+**Return Value:**
+
+An array of projects with prepared dates for API response.
+
+
+
+---
+### pollForUpdatedProjects
+
+Polls for updated projects.
+
+```php
+public Projects::pollForUpdatedProjects(): array
+```
+
+Retrieves all the projects the current user has access to and prepares them for API response.
+Adds the modified timestamp to the project ID for tracking updates.
+
+
+
+
+
 
 
 **Return Value:**
@@ -1248,7 +1334,7 @@ public Projects::getAll(bool $showClosedProjects = false): array
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -1279,7 +1365,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -1311,7 +1397,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -1341,7 +1427,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -1364,7 +1450,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -1391,4 +1477,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

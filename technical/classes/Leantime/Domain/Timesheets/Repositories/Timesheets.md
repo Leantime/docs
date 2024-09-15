@@ -8,9 +8,9 @@ footer: false
 Repository
 
 
+`\Leantime\Domain\Timesheets\Repositories\Timesheets`
 
-* Full name: `\Leantime\Domain\Timesheets\Repositories\Timesheets`
-* Parent class: [\Leantime\Core\Repository](../../../Core/Repository.md)
+* Parent class: [\Leantime\Core\Db\Repository](../../../Core/Db/Repository.md)
 
 
 
@@ -21,7 +21,7 @@ Repository
 Get database connection
 
 ```php
-public Timesheets::__construct(\Leantime\Core\Db $db): mixed
+public Timesheets::__construct(\Leantime\Core\Db\Db $db): mixed
 ```
 
 
@@ -35,7 +35,7 @@ public Timesheets::__construct(\Leantime\Core\Db $db): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 
 
 **Return Value:**
@@ -103,6 +103,35 @@ public Timesheets::getUsersHours(int $id): mixed
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `id` | **int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### getAllAccountTimesheets
+
+
+
+```php
+public Timesheets::getAllAccountTimesheets(?int $projectId): array|false
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** |  |
 
 
 **Return Value:**
@@ -196,64 +225,6 @@ public Timesheets::getUsersTicketHours(int $ticketId, int $userId): int|mixed
 
 
 ---
-### addTime
-
-addTime - add user-specific time entry
-
-```php
-public Timesheets::addTime(array $values): void
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `values` | **array** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### upsertTimesheetEntry
-
-addTime - add user-specific time entry
-
-```php
-public Timesheets::upsertTimesheetEntry(array $values): void
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `values` | **array** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
 ### getTimesheet
 
 getTime - get a specific time entry
@@ -274,64 +245,6 @@ public Timesheets::getTimesheet(int $id): mixed
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `id` | **int** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### updateTime
-
-updatTime - update specific time entry
-
-```php
-public Timesheets::updateTime(array $values): void
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `values` | **array** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
-### updateHours
-
-updatTime - update specific time entry
-
-```php
-public Timesheets::updateHours(array $values): void
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `values` | **array** |  |
 
 
 **Return Value:**
@@ -399,12 +312,12 @@ public Timesheets::getLoggedHoursForTicket(int $ticketId): array
 
 
 ---
-### deleteTime
+### isClocked
 
-
+isClocked - Checks to see whether a user is clocked in
 
 ```php
-public Timesheets::deleteTime(int $id): void
+public Timesheets::isClocked(int $id): array|false
 ```
 
 
@@ -418,7 +331,7 @@ public Timesheets::deleteTime(int $id): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int** |  |
+| `id` | **int** | $id |
 
 
 **Return Value:**
@@ -428,36 +341,12 @@ public Timesheets::deleteTime(int $id): void
 
 
 ---
-### cleanUpEmptyTimesheets
+### addTime
 
-Clean up empty timesheets.
-
-```php
-public Timesheets::cleanUpEmptyTimesheets(): void
-```
-
-This function deletes all timesheets from the "zp_timesheets" table
-where the hours value is equal to 0.
-
-
-
-
-
-
-
-**Return Value:**
-
-
-
-
-
----
-### updateInvoices
-
-updateInvoices
+addTime - add user-specific time entry
 
 ```php
-public Timesheets::updateInvoices(array $invEmpl, array $invComp = [], array $paid = []): bool
+public Timesheets::addTime(array $values): void
 ```
 
 
@@ -471,9 +360,7 @@ public Timesheets::updateInvoices(array $invEmpl, array $invComp = [], array $pa
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `invEmpl` | **array** |  |
-| `invComp` | **array** |  |
-| `paid` | **array** |  |
+| `values` | **array** |  |
 
 
 **Return Value:**
@@ -541,12 +428,12 @@ public Timesheets::punchOut(int $ticketId): float|false|int
 
 
 ---
-### isClocked
+### upsertTimesheetEntry
 
-isClocked - Checks to see whether a user is clocked in
+addTime - add user-specific time entry
 
 ```php
-public Timesheets::isClocked(int $id): array|false
+public Timesheets::upsertTimesheetEntry(array $values): void
 ```
 
 
@@ -560,7 +447,149 @@ public Timesheets::isClocked(int $id): array|false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int** | $id |
+| `values` | **array** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### updateTime
+
+updatTime - update specific time entry
+
+```php
+public Timesheets::updateTime(array $values): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **array** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### updateHours
+
+updatTime - update specific time entry
+
+```php
+public Timesheets::updateHours(array $values): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **array** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### updateInvoices
+
+updateInvoices
+
+```php
+public Timesheets::updateInvoices(array $invEmpl, array $invComp = [], array $paid = []): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `invEmpl` | **array** |  |
+| `invComp` | **array** |  |
+| `paid` | **array** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### deleteTime
+
+
+
+```php
+public Timesheets::deleteTime(int $id): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### cleanUpEmptyTimesheets
+
+Clean up empty timesheets.
+
+```php
+public Timesheets::cleanUpEmptyTimesheets(): void
+```
+
+This function deletes all timesheets from the "zp_timesheets" table
+where the hours value is equal to 0.
+
+
+
+
+
 
 
 **Return Value:**
@@ -785,7 +814,7 @@ protected Repository::getDbFields(object|string $class): array
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -816,7 +845,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -848,7 +877,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -878,7 +907,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -901,7 +930,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -928,4 +957,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

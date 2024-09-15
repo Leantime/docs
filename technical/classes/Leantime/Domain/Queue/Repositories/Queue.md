@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Queue\Repositories\Queue`
 
-* Full name: `\Leantime\Domain\Queue\Repositories\Queue`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Queue::__construct(\Leantime\Core\Db $db, \Leantime\Domain\Users\Repositories\Users $users): mixed
+public Queue::__construct(\Leantime\Core\Db\Db $db, \Leantime\Domain\Users\Repositories\Users $users): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Queue::__construct(\Leantime\Core\Db $db, \Leantime\Domain\Users\Reposito
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 | `users` | **\Leantime\Domain\Users\Repositories\Users** |  |
 
 
@@ -173,4 +173,4 @@ public Queue::addMessageToQueue(mixed $channel, string $subject,  $message, mixe
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

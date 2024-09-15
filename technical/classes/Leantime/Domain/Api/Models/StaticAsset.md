@@ -8,8 +8,8 @@ footer: false
 Represents a static asset file.
 
 
+`\Leantime\Domain\Api\Models\StaticAsset`
 
-* Full name: `\Leantime\Domain\Api\Models\StaticAsset`
 
 
 
@@ -49,4 +49,4 @@ public StaticAsset::__construct(string $key, string $absPath, \Leantime\Domain\A
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

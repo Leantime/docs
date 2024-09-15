@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Entityrelations\Repositories\Entityrelations`
 
-* Full name: `\Leantime\Domain\Entityrelations\Repositories\Entityrelations`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - neu db connection
 
 ```php
-public Entityrelations::__construct(\Leantime\Core\Db $db): mixed
+public Entityrelations::__construct(\Leantime\Core\Db\Db $db): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Entityrelations::__construct(\Leantime\Core\Db $db): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 
 
 **Return Value:**
@@ -158,4 +158,4 @@ public Entityrelations::checkIfInstalled(): bool
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

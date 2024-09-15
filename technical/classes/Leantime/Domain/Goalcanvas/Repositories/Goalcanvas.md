@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Goalcanvas\Repositories\Goalcanvas`
 
-* Full name: `\Leantime\Domain\Goalcanvas\Repositories\Goalcanvas`
 * Parent class: [\Leantime\Domain\Canvas\Repositories\Canvas](../../Canvas/Repositories/Canvas.md)
 
 
@@ -80,16 +80,12 @@ public Goalcanvas::getSingleCanvas( $canvasId): array|false
 
 
 ---
+### getAllAccountGoals
 
-
-## Inherited methods
-
-### __construct
-
-__construct - get db connection
+Gets all goals related to a milestone
 
 ```php
-public Canvas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $language, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepo): void
+public Goalcanvas::getAllAccountGoals(?int $projectId, ?int $boardId): array|false
 ```
 
 
@@ -103,7 +99,70 @@ public Canvas::__construct(\Leantime\Core\Db $db, \Leantime\Core\Language $langu
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `projectId` | **?int** |  |
+| `boardId` | **?int** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+### createGoal
+
+
+
+```php
+public Goalcanvas::createGoal( $values): false|string
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
+
+
+## Inherited methods
+
+### __construct
+
+__construct - get db connection
+
+```php
+public Canvas::__construct(\Leantime\Core\Db\Db $db, \Leantime\Core\Language $language, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepo): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `db` | **\Leantime\Core\Db\Db** |  |
 | `language` | **\Leantime\Core\Language** |  |
 | `ticketRepo` | **\Leantime\Domain\Tickets\Repositories\Tickets** |  |
 
@@ -904,4 +963,4 @@ public Canvas::getTags(int $projectId): array
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

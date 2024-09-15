@@ -15,52 +15,53 @@
 
       gtag("config", "G-FKZP7LPS4X");
     </script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
-    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+
 
     <style>
-      :root {
-        --base-font-size: 14px;
-        --theme-color: #1b75bb;
-      }
 
-      nav {
-        border-bottom: 1px solid #ddd;
-      }
+        :root {
+            --theme-color   : #006C9E;
+            --base-font-size       : 14px;
+            --content-max-width: 60em;
+            --sidebar-width: 20rem;
+        }
 
-      nav a {
-        display: inline-block;
-        padding: 0px 10px;
-        color: #1b75bb;
-      }
+        /* Top nav bar - Plugin */
+        nav {
+        }
 
-      nav a:hover {
-        color: #333;
-      }
+        nav a {
+            display:inline-block;
+            padding:0px 10px;
+            color:#006C9E;
+        }
 
-      section.content {
-        padding-top: 12px;
-      }
+        nav a:hover {
+            text-decoration:underline;
+        }
 
-      .markdown-section > div:first-child {
-        float: right;
-        padding-top: 38px;
-      }
 
-      .markdown-section a:hover {
-        color: #1b75bb;
-      }
 
-      .markdown-section > div:first-child a {
-        text-decoration: none !important;
-      }
+        .markdown-section > div:first-child {
+            float:right;
+            padding-top:38px;
+        }
+
+        .markdown-section a:hover {
+            color:#006C9E;
+        }
+
+        .markdown-section > div:first-child a {
+            text-decoration:none !important;
+        }
     </style>
   </head>
   <body>
@@ -77,42 +78,23 @@
           "/.*/_sidebar.md": "/_sidebar.md",
         },
         loadNavbar: true,
-
-        name: "Leantime",
-        logo: "/_images/leantime_logo.png",
+        name: 'Leantime',
+        logo: '/_images/leantime-gradient-logo-350-100-transparent.webp',
         relativePath: false,
         themeable: {
           readyTransition: true, // default
           responsiveTables: true, // default
         },
-        auto2top: true,
-        maxLevel: 3,
-        subMaxLevel: 3,
-        sidebarDisplayLevel: 1,
+        auto2top   : true,
+        maxLevel   : 3,
+        subMaxLevel: 2,
         plugins: [
-          EditOnGithubPlugin.create(
-            "https://github.com/Leantime/docs/edit/master/",
-            null,
-            '<img src="_images/icons/github.svg" style="vertical-align: text-bottom"/> Edit on Github'
-          ),
-          function (hook) {
-            var footer = [
-              "<hr/>",
-              "<footer>",
-              '<span><a href="https://leantime.io">Leantime</a> &copy;2023. </span>',
-              '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify/" target="_blank">docsify</a>.</span>',
-              "</footer>",
-            ].join("");
 
-            hook.afterEach(function (html) {
-              return html + footer;
-            });
-          },
         ],
         search: {
-          maxAge: 5000, // Expiration time, the default one day
-          paths: "auto", // or 'auto'
-          placeholder: "Type to search",
+            maxAge: 1000, // Expiration time, the default one day
+            paths: 'auto', // or 'auto'
+            placeholder: 'Type to search',
 
           noData: "No Results!",
 
@@ -121,14 +103,27 @@
 
           hideOtherSidebarContent: false, // whether or not to hide other sidebar content
         }, // default
-      };
-    </script>
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-    <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+        pagination: {
+            previousText: 'previous',
+            // or
+            nextText: 'next',
+            crossChapter: true,
+            crossChapterText: true,
+        },
 
-    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-  </body>
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+<script src="https://unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="https://unpkg.com/docsify-copy-code@2"></script>
+
+<script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+
+   
+</body>
+
 </html>

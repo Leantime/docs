@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Comments\Services\Comments`
 
-* Full name: `\Leantime\Domain\Comments\Services\Comments`
 
 
 
@@ -109,6 +109,36 @@ public Comments::addComment( $values,  $module,  $entityId,  $entity): bool
 
 
 ---
+### editComment
+
+
+
+```php
+public Comments::editComment( $values,  $id): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **** |  |
+| `id` | **** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### deleteComment
 
 
@@ -138,7 +168,37 @@ public Comments::deleteComment( $commentId): bool
 
 
 ---
+### pollComments
+
+
+
+```php
+public Comments::pollComments(?int $projectId = null, ?int $moduleId = null): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **?int** | Project ID |
+| `moduleId` | **?int** | Id of the entity to pull comments from |
+
+
+**Return Value:**
+
+
+
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+
+
+---
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

@@ -8,8 +8,8 @@ footer: false
 Class AddUserCommand
 
 This command adds a new user.
+`\Leantime\Command\AddUserCommand`
 
-* Full name: `\Leantime\Command\AddUserCommand`
 * Parent class: [Command](../../../classes.md)
 
 
@@ -72,4 +72,4 @@ protected AddUserCommand::execute(\Symfony\Component\Console\Input\InputInterfac
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

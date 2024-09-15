@@ -8,8 +8,8 @@ footer: false
 Class ListPluginCommand
 
 This class represents a command that lists all plugins.
+`\Leantime\Command\ListPluginCommand`
 
-* Full name: `\Leantime\Command\ListPluginCommand`
 * Parent class: [\Leantime\Command\AbstractPluginCommand](technical/AbstractPluginCommand.md)
 * This class is marked as **final** and can't be subclassed
 
@@ -233,4 +233,4 @@ protected AbstractPluginCommand::getPlugin(string $name): \Leantime\Domain\Plugi
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

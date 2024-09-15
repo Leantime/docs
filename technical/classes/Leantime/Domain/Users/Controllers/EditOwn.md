@@ -8,9 +8,9 @@ footer: false
 Controller Class - Base class For all controllers
 
 
+`\Leantime\Domain\Users\Controllers\EditOwn`
 
-* Full name: `\Leantime\Domain\Users\Controllers\EditOwn`
-* Parent class: [\Leantime\Core\Controller](../../../Core/Controller.md)
+* Parent class: [\Leantime\Core\Controller\Controller](../../../Core/Controller/Controller.md)
 
 
 
@@ -55,7 +55,7 @@ public EditOwn::init(\Leantime\Core\Language $language, \Leantime\Core\Theme $th
 
 
 ```php
-public EditOwn::get(): void
+public EditOwn::get(): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -78,7 +78,7 @@ public EditOwn::get(): void
 
 
 ```php
-public EditOwn::post(): void
+public EditOwn::post(): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -96,6 +96,32 @@ public EditOwn::post(): void
 
 
 ---
+### getSupportedDateTimeFormats
+
+Returns list of supported varying date-time formats.
+
+```php
+private EditOwn::getSupportedDateTimeFormats(): string[]
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+Format of ID => date-time string
+
+
+**See Also:**
+
+* https://www.php.net/manual/en/class.datetimeinterface.php#datetimeinterface.constants.types - 
+
+---
 
 
 ## Inherited methods
@@ -105,7 +131,7 @@ public EditOwn::post(): void
 constructor - initialize private variables
 
 ```php
-public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, \Leantime\Core\template $tpl, \Leantime\Core\language $language): mixed
+public Controller::__construct(\Leantime\Core\Http\IncomingRequest $incomingRequest, \Leantime\Core\Template $tpl, \Leantime\Core\Language $language): mixed
 ```
 
 
@@ -119,9 +145,9 @@ public Controller::__construct(\Leantime\Core\IncomingRequest $incomingRequest, 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `incomingRequest` | **\Leantime\Core\IncomingRequest** | The request to be initialized. |
-| `tpl` | **\Leantime\Core\template** | The template to be initialized. |
-| `language` | **\Leantime\Core\language** | The language to be initialized. |
+| `incomingRequest` | **\Leantime\Core\Http\IncomingRequest** | The request to be initialized. |
+| `tpl` | **\Leantime\Core\Template** | The template to be initialized. |
+| `language` | **\Leantime\Core\Language** | The language to be initialized. |
 
 
 **Return Value:**
@@ -161,12 +187,35 @@ private Controller::executeActions(string $method, object|array $params): void
 
 
 ---
+### getResponse
+
+getResponse - returns the response
+
+```php
+public Controller::getResponse(): \Symfony\Component\HttpFoundation\Response
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+The response object.
+
+
+
+---
 ### dispatch_event
 
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -197,7 +246,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -229,7 +278,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-private static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -259,7 +308,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -282,7 +331,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(null $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -296,7 +345,7 @@ This way we don't have to use much memory by using debug_backtrace
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `functionInt` | **null** |  |
+| `functionInt` | **?int** |  |
 
 
 **Return Value:**
@@ -309,4 +358,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2023-10-14 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

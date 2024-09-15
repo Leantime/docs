@@ -13,7 +13,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array("ticketId" => $id, "status" => $value, "action" => "ticketStatusUpdate")` |  | 
 
-Source: [app/Domain/Tickets/Repositories/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php), [line 1738](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php#L1738-L1754)
+Source: [app/Domain/Tickets/Repositories/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php), [line 1744](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php#L1744-L1760)
 
 ### `Leantime.Domain.Tickets.Repositories.Tickets.updateTicketStatus.ticketStatusUpdate`
 
@@ -23,7 +23,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array("ticketId" => $ticketId, "status" => $status, "action" => "ticketStatusUpdate", "handler" => $handler)` |  | 
 
-Source: [app/Domain/Tickets/Repositories/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php), [line 1860](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php#L1860-L1898)
+Source: [app/Domain/Tickets/Repositories/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php), [line 1868](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Repositories/Tickets.php#L1868-L1906)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.filters.afterLefthandSectionOpen`
 
@@ -53,7 +53,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTicketGroups]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 91](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L91-L91)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 92](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L92-L92)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.beforeHead`
 
@@ -63,7 +63,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 109](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L109-L109)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 110](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L110-L110)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.beforeHeadRow`
 
@@ -73,7 +73,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 111](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L111-L111)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 112](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L112-L112)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterHeadRow`
 
@@ -83,7 +83,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 128](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L128-L128)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 129](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L129-L129)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterHead`
 
@@ -93,7 +93,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 130](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L130-L130)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 131](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L131-L131)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.beforeFirstRow`
 
@@ -103,7 +103,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 132](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L132-L132)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 133](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L133-L133)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterRowStart`
 
@@ -113,7 +113,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['rowNum' => $rowNum, 'tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 135](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L135-L135)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 136](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L136-L136)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.beforeRowEnd`
 
@@ -123,7 +123,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets, 'rowNum' => $rowNum]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 369](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L369-L369)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 370](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L370-L370)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterLastRow`
 
@@ -133,7 +133,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 372](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L372-L372)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 373](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L373-L373)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterBody`
 
@@ -143,7 +143,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 374](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L374-L374)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 375](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L375-L375)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.allTicketsTable.afterClose`
 
@@ -153,17 +153,17 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['tickets' => $allTickets]` |  | 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 380](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L380-L380)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 381](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L381-L381)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.scripts.afterOpen`
 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 396](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L396-L396)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 397](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L397-L397)
 
 ### `Leantime.Domain.Tickets.Templates.showAll.tpl.scripts.beforeClose`
 
 
-Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 416](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L416-L416)
+Source: [app/Domain/Tickets/Templates/showAll.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php), [line 417](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Templates/showAll.tpl.php#L417-L417)
 
 ### `Leantime.Domain.Tickets.Templates.showAllMilestones.tpl.filters.afterLefthandSectionOpen`
 
@@ -895,7 +895,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array("values" => $values, "oldProject" => $oldProject)` |  | 
 
-Source: [app/Domain/Projects/Repositories/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php), [line 755](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php#L755-L817)
+Source: [app/Domain/Projects/Repositories/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php), [line 768](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php#L768-L830)
 
 ### `Leantime.Domain.Projects.Repositories.Projects.addProjectRelation.userAddedToProject`
 
@@ -905,7 +905,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array("userId" => $userId, "projectId" => $projectId, "projectRole" => $projectRole, "oldProject" => $oldProject)` |  | 
 
-Source: [app/Domain/Projects/Repositories/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php), [line 1231](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php#L1231-L1261)
+Source: [app/Domain/Projects/Repositories/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php), [line 1243](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Repositories/Projects.php#L1243-L1273)
 
 ### `Leantime.Domain.Projects.Templates.showProject.tpl.projectTabsList`
 
@@ -915,7 +915,7 @@ Source: [app/Domain/Projects/Templates/showProject.tpl.php](https://github.com/L
 ### `Leantime.Domain.Projects.Templates.showProject.tpl.projectTabsContent`
 
 
-Source: [app/Domain/Projects/Templates/showProject.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/showProject.tpl.php), [line 372](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/showProject.tpl.php#L372-L372)
+Source: [app/Domain/Projects/Templates/showProject.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/showProject.tpl.php), [line 381](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Templates/showProject.tpl.php#L381-L381)
 
 ### `Leantime.Domain.Projects.Templates.newProject.tpl.beforeClientPicker`
 
@@ -939,6 +939,12 @@ Source: [app/Domain/Projects/Templates/submodules/projectDetails.sub.php](https:
 
 ### `Leantime.Domain.Projects.Services.Projects.notifyProjectUsers.notifyProjectUsers`
 
+*This event is fired to notify project users of important updates.*
+
+An event "notifyProjectUsers" is dispatched with an array of variables required for the notification.
+These variables include the type of update, module affected, entity ID, message and subject of notification,
+users to be notified, and url if present. This event belongs to the "domain.services.projects" context.
+
 **Arguments**
 
 Argument | Type | Description
@@ -946,9 +952,11 @@ Argument | Type | Description
 `array("type" => "projectUpdate", "module" => $notification->module, "moduleId" => $entityId, "message" => $notification->message, "subject" => $notification->subject, "users" => $this->getAllUserInfoToNotify($notification->projectId), "url" => $notification->url['url'])` |  | 
 `"domain.services.projects"` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 236](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L236-L328)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 359](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L359-L376)
 
 ### `Leantime.Domain.Projects.Services.Projects.changeCurrentSessionProject.projects.setCurrentProject`
+
+*Change the current session project to the specified projectId.*
 
 **Arguments**
 
@@ -956,7 +964,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$project` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 646](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L646-L734)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 739](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L739-L838)
 
 ### `Leantime.Domain.Calendar.Templates.export.tpl.afterFormOpen`
 
@@ -1367,17 +1375,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['authService' => app()->make(self::class)]` |  | 
 
-Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 399](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L399-L430)
-
-### `Leantime.Domain.Goalcanvas.Templates.canvasDialog.tpl.beforeMeasureGoalContainer`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$canvasItem` |  | 
-
-Source: [app/Domain/Goalcanvas/Templates/canvasDialog.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Goalcanvas/Templates/canvasDialog.tpl.php), [line 84](https://github.com/Leantime/leantime/blob/master/app/Domain/Goalcanvas/Templates/canvasDialog.tpl.php#L84-L84)
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 384](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L384-L412)
 
 ### `Leantime.Domain.Cron.Services.Cron.runCron.addJobToBeginning`
 
@@ -1387,7 +1385,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$lastEvent` |  | 
 
-Source: [app/Domain/Cron/Services/Cron.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php#L40-L68)
+Source: [app/Domain/Cron/Services/Cron.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php#L44-L75)
 
 ### `Leantime.Domain.Cron.Services.Cron.runCron.addJobToEnd`
 
@@ -1397,7 +1395,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$lastEvent` |  | 
 
-Source: [app/Domain/Cron/Services/Cron.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php#L40-L91)
+Source: [app/Domain/Cron/Services/Cron.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Cron/Services/Cron.php#L44-L98)
 
 ### `Leantime.Domain.Setting.Templates.editCompanySettings.tpl.beforeTelemetrySettings`
 
@@ -1412,7 +1410,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array("companyId" => $companyId)` |  | 
 
-Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 146](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L146-L189)
+Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 163](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L163-L208)
 
 ### `Leantime.Domain.Users.Services.Users.editUser.editUser`
 
@@ -1422,7 +1420,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `["id" => $id, "values" => $values]` |  | 
 
-Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 65](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L65-L74)
+Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 70](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L70-L81)
 
 ### `Leantime.Domain.Users.Services.Users.editOwn.editUser`
 
@@ -1432,7 +1430,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `["id" => $id, "values" => $values]` |  | 
 
-Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 359](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L359-L372)
+Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 390](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L390-L405)
 
 ### `Leantime.Domain.Api.Controllers.NewApiKey.init.api_key_init`
 
@@ -1458,6 +1456,52 @@ Argument | Type | Description
 
 Source: [app/Domain/Api/Controllers/ApiKey.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Api/Controllers/ApiKey.php), [line 23](https://github.com/Leantime/leantime/blob/master/app/Domain/Api/Controllers/ApiKey.php#L23-L38)
 
+### `Leantime.Core.Events.DispatchesEvents.dispatch_event.{$hook}`
+
+*dispatches an event with context*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$available_params` | `mixed` | 
+`static::get_event_context($function)` |  | 
+
+Source: [app/Core/Events/DispatchesEvents.php](https://github.com/Leantime/leantime/blob/master/app/Core/Events/DispatchesEvents.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/Core/Events/DispatchesEvents.php#L15-L28)
+
+### `Leantime.Core.Events.EventDispatcher.dispatch.{$eventName->message}`
+
+*EventDispatcher class - Handles all events and filters*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$payload` |  | 
+`$context` |  | 
+
+Source: [app/Core/Events/EventDispatcher.php](https://github.com/Leantime/leantime/blob/master/app/Core/Events/EventDispatcher.php), [line 12](https://github.com/Leantime/leantime/blob/master/app/Core/Events/EventDispatcher.php#L12-L84)
+
+### `Leantime.Core.Events.EventDispatcher.dispatch.{$eventName}`
+
+*EventDispatcher class - Handles all events and filters*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$payload` |  | 
+`$context` |  | 
+
+Source: [app/Core/Events/EventDispatcher.php](https://github.com/Leantime/leantime/blob/master/app/Core/Events/EventDispatcher.php), [line 12](https://github.com/Leantime/leantime/blob/master/app/Core/Events/EventDispatcher.php#L12-L88)
+
+### `Leantime.Core.Middleware.StartSession.handle.session_initialized`
+
+*Handle an incoming request.*
+
+
+Source: [app/Core/Middleware/StartSession.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/StartSession.php), [line 49](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/StartSession.php#L49-L64)
+
 ### `Leantime.Core.Middleware.Auth.handle.logged_in`
 
 *Handle the request*
@@ -1468,7 +1512,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['application' => $this]` |  | 
 
-Source: [app/Core/Middleware/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Auth.php), [line 68](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Auth.php#L68-L90)
+Source: [app/Core/Middleware/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Auth.php), [line 67](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Auth.php#L67-L92)
 
 ### `Leantime.Core.Middleware.Installed.handle.after_install`
 
@@ -1487,71 +1531,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['application' => app()]` |  | 
 
-Source: [app/Core/Middleware/ApiAuth.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/ApiAuth.php), [line 19](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/ApiAuth.php#L19-L31)
-
-### `Leantime.Core.Bootloader.boot.config_initialized`
-
-*Execute the Application lifecycle.*
-
-
-Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 119](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L119-L139)
-
-### `Leantime.Core.Bootloader.boot.session_initialized`
-
-*Execute the Application lifecycle.*
-
-
-Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 119](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L119-L143)
-
-### `Leantime.Core.Bootloader.boot.beginning`
-
-*Execute the Application lifecycle.*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['bootloader' => $this]` |  | 
-
-Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 119](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L119-L165)
-
-### `Leantime.Core.Bootloader.boot.end`
-
-*Execute the Application lifecycle.*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['bootloader' => $this]` |  | 
-
-Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 119](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L119-L177)
-
-### `Leantime.Core.Repository.__call.beforeExecute`
-
-*executes the sql call - uses \PDO*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this->getArgs()` |  | 
-`4` |  | 
-
-Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 155](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L155-L172)
-
-### `Leantime.Core.Repository.__call.afterExecute`
-
-*executes the sql call - uses \PDO*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this->getArgs()` |  | 
-`4` |  | 
-
-Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 155](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L155-L185)
+Source: [app/Core/Middleware/ApiAuth.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/ApiAuth.php), [line 20](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/ApiAuth.php#L20-L32)
 
 ### `Leantime.Core.Mailer.dispatchMailerHook.{$hook}`
 
@@ -1563,7 +1543,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$payload` | `mixed` | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 231](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L231-L258)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 233](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L233-L260)
 
 ### `Leantime.Core.Mailer.sendMail.sendMailTo`
 
@@ -1576,7 +1556,7 @@ Argument | Type | Description
 `$to` | `array` | 
 `[]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L269-L282)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L271-L284)
 
 ### `Leantime.Core.Mailer.sendMail.sendMailFrom`
 
@@ -1589,7 +1569,7 @@ Argument | Type | Description
 `$from` | `mixed` | 
 `[]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L269-L283)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L271-L285)
 
 ### `Leantime.Core.Mailer.sendMail.bodyTemplate`
 
@@ -1624,7 +1604,7 @@ Argument | Type | Description
                 </tr>
             </table>'` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 312](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L312-L337)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 314](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L314-L339)
 
 ### `Leantime.Core.Mailer.sendMail.mailBodyParams`
 
@@ -1634,7 +1614,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['inlineLogoContent' => $inlineLogoContent, 'headline' => $this->language->__('email_notifications.hi'), 'content' => $this->nl2br ? nl2br($this->html) : $this->html, 'unsub_link' => sprintf($this->language->__('email_notifications.unsubscribe'), BASE_URL . '/users/editOwn/')]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 338](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L338-L346)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 340](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L340-L348)
 
 ### `Leantime.Core.Mailer.sendMail.bodyContent`
 
@@ -1647,7 +1627,7 @@ Argument | Type | Description
 `$mailBody` |  | 
 `[['companyColor' => $this->companyColor, 'logoUrl' => $inlineLogoContent, 'languageHiText' => $this->language->__('email_notifications.hi'), 'emailContentsHtml' => nl2br($this->html), 'unsubLink' => sprintf($this->language->__('email_notifications.unsubscribe'), BASE_URL . '/users/editOwn/')]]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L269-L361)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L271-L363)
 
 ### `Leantime.Core.Mailer.sendMail.altBody`
 
@@ -1660,31 +1640,7 @@ Argument | Type | Description
 `$this->text` |  | 
 `[]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L269-L369)
-
-### `Leantime.Core.Frontcontroller.executeAction.execute_action_start`
-
-*executeAction - includes the class in includes/modules by the Request*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`["action" => $actionName, "module" => $moduleName]` |  | 
-
-Source: [app/Core/Frontcontroller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Frontcontroller.php), [line 84](https://github.com/Leantime/leantime/blob/master/app/Core/Frontcontroller.php#L84-L99)
-
-### `Leantime.Core.Frontcontroller.executeAction.execute_action_end`
-
-*executeAction - includes the class in includes/modules by the Request*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`["action" => $actionName, "module" => $moduleName]` |  | 
-
-Source: [app/Core/Frontcontroller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Frontcontroller.php), [line 84](https://github.com/Leantime/leantime/blob/master/app/Core/Frontcontroller.php#L84-L128)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L271-L371)
 
 ### `Leantime.Core.Template.displayNotification.notification_displayed`
 
@@ -1696,7 +1652,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$note` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 636](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L636-L670)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 647](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L647-L681)
 
 ### `Leantime.Core.Template.displayInlineNotification.notification_displayed`
 
@@ -1708,7 +1664,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$note` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 705](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L705-L744)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 721](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L721-L760)
 
 ### `Leantime.Core.Template.dispatchTplHook.{$hookName}`
 
@@ -1719,9 +1675,9 @@ Argument | Type | Description
 `$payload` | `mixed` | 
 `$this->hookContext` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 1047](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L1047-L1065)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 1068](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L1068-L1086)
 
-### `Leantime.Core.HttpKernel.terminate.request_terminated`
+### `Leantime.Core.Http.HttpKernel.terminate.request_terminated`
 
 *Terminate the request.*
 
@@ -1731,9 +1687,174 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['request' => $request, 'response' => $response]` |  | 
 
-Source: [app/Core/HttpKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/HttpKernel.php), [line 93](https://github.com/Leantime/leantime/blob/master/app/Core/HttpKernel.php#L93-L126)
+Source: [app/Core/Http/HttpKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Http/HttpKernel.php), [line 76](https://github.com/Leantime/leantime/blob/master/app/Core/Http/HttpKernel.php#L76-L109)
 
-### `Leantime.Core.ConsoleKernel.schedule.cron`
+### `Leantime.Core.Providers.Environment.boot.config_initialized`
+
+
+Source: [app/Core/Providers/Environment.php](https://github.com/Leantime/leantime/blob/master/app/Core/Providers/Environment.php), [line 72](https://github.com/Leantime/leantime/blob/master/app/Core/Providers/Environment.php#L72-L72)
+
+### `Leantime.Core.Db.Repository.__call.beforeExecute`
+
+*executes the sql call - uses \PDO*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this->getArgs()` |  | 
+`4` |  | 
+
+Source: [app/Core/Db/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php), [line 156](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php#L156-L173)
+
+### `Leantime.Core.Db.Repository.__call.afterExecute`
+
+*executes the sql call - uses \PDO*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this->getArgs()` |  | 
+`4` |  | 
+
+Source: [app/Core/Db/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php), [line 156](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php#L156-L186)
+
+### `Leantime.Core.Controller.Frontcontroller.executeAction.execute_action_start`
+
+*executeAction - includes the class in includes/modules by the Request*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`["action" => $actionName, "module" => $moduleName]` |  | 
+
+Source: [app/Core/Controller/Frontcontroller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Frontcontroller.php), [line 87](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Frontcontroller.php#L87-L102)
+
+### `Leantime.Core.Controller.Frontcontroller.executeAction.execute_action_end`
+
+*executeAction - includes the class in includes/modules by the Request*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`["action" => $actionName, "module" => $moduleName]` |  | 
+
+Source: [app/Core/Controller/Frontcontroller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Frontcontroller.php), [line 87](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Frontcontroller.php#L87-L131)
+
+### `Leantime.Core.Controller.HtmxController.__construct.begin`
+
+*constructor - initialize private variables*
+
+
+Source: [app/Core/Controller/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/HtmxController.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/HtmxController.php#L32-L46)
+
+### `Leantime.Core.Controller.HtmxController.__construct.end`
+
+*constructor - initialize private variables*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this` |  | 
+
+Source: [app/Core/Controller/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/HtmxController.php), [line 32](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/HtmxController.php#L32-L54)
+
+### `Leantime.Core.Controller.HtmxController.executeActions.before_init`
+
+*Allows hooking into all controllers with events*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['controller' => $this]` |  | 
+
+Source: [app/Core/Controller/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/HtmxController.php), [line 57](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/HtmxController.php#L57-L67)
+
+### `Leantime.Core.Controller.HtmxController.executeActions.before_action`
+
+*Allows hooking into all controllers with events*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['controller' => $this]` |  | 
+
+Source: [app/Core/Controller/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/HtmxController.php), [line 57](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/HtmxController.php#L57-L72)
+
+### `Leantime.Core.Controller.Controller.__construct.begin`
+
+*constructor - initialize private variables*
+
+
+Source: [app/Core/Controller/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Controller.php), [line 30](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Controller.php#L30-L50)
+
+### `Leantime.Core.Controller.Controller.__construct.end`
+
+*constructor - initialize private variables*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this` |  | 
+
+Source: [app/Core/Controller/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Controller.php), [line 30](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Controller.php#L30-L58)
+
+### `Leantime.Core.Controller.Controller.executeActions.before_init`
+
+*Allows hooking into all controllers with events*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$available_params` |  | 
+
+Source: [app/Core/Controller/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Controller.php), [line 61](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Controller.php#L61-L86)
+
+### `Leantime.Core.Controller.Controller.executeActions.before_action`
+
+*Allows hooking into all controllers with events*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$available_params` |  | 
+
+Source: [app/Core/Controller/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Controller.php), [line 61](https://github.com/Leantime/leantime/blob/master/app/Core/Controller/Controller.php#L61-L91)
+
+### `Leantime.Core.Bootstrap.Bootloader.boot.beginning`
+
+*Execute the Application lifecycle.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['bootloader' => $this]` |  | 
+
+Source: [app/Core/Bootstrap/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootstrap/Bootloader.php), [line 104](https://github.com/Leantime/leantime/blob/master/app/Core/Bootstrap/Bootloader.php#L104-L120)
+
+### `Leantime.Core.Bootstrap.Bootloader.boot.end`
+
+*Execute the Application lifecycle.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`['bootloader' => $this]` |  | 
+
+Source: [app/Core/Bootstrap/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootstrap/Bootloader.php), [line 104](https://github.com/Leantime/leantime/blob/master/app/Core/Bootstrap/Bootloader.php#L104-L133)
+
+### `Leantime.Core.Console.ConsoleKernel.schedule.cron`
 
 **Arguments**
 
@@ -1742,9 +1863,9 @@ Argument | Type | Description
 `['schedule' => $schedule]` |  | 
 `'schedule'` |  | 
 
-Source: [app/Core/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/ConsoleKernel.php), [line 192](https://github.com/Leantime/leantime/blob/master/app/Core/ConsoleKernel.php#L192-L192)
+Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 214](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L214-L214)
 
-### `Leantime.Core.ConsoleKernel.terminate.command`
+### `Leantime.Core.Console.ConsoleKernel.terminate.command`
 
 *Terminate the application.*
 
@@ -1754,106 +1875,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['input' => $input, 'status' => $status]` |  | 
 
-Source: [app/Core/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/ConsoleKernel.php), [line 273](https://github.com/Leantime/leantime/blob/master/app/Core/ConsoleKernel.php#L273-L290)
-
-### `Leantime.Core.Eventhelpers.dispatch_event.{$hook}`
-
-*dispatches an event with context*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$available_params` | `mixed` | 
-`static::get_event_context($function)` |  | 
-
-Source: [app/Core/Eventhelpers.php](https://github.com/Leantime/leantime/blob/master/app/Core/Eventhelpers.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/Core/Eventhelpers.php#L15-L28)
-
-### `Leantime.Core.HtmxController.__construct.begin`
-
-*constructor - initialize private variables*
-
-
-Source: [app/Core/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php#L29-L43)
-
-### `Leantime.Core.HtmxController.__construct.end`
-
-*constructor - initialize private variables*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this` |  | 
-
-Source: [app/Core/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php#L29-L51)
-
-### `Leantime.Core.HtmxController.executeActions.before_init`
-
-*Allows hooking into all controllers with events*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['controller' => $this]` |  | 
-
-Source: [app/Core/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php), [line 54](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php#L54-L64)
-
-### `Leantime.Core.HtmxController.executeActions.before_action`
-
-*Allows hooking into all controllers with events*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`['controller' => $this]` |  | 
-
-Source: [app/Core/HtmxController.php](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php), [line 54](https://github.com/Leantime/leantime/blob/master/app/Core/HtmxController.php#L54-L69)
-
-### `Leantime.Core.Controller.__construct.begin`
-
-*constructor - initialize private variables*
-
-
-Source: [app/Core/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php), [line 24](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php#L24-L44)
-
-### `Leantime.Core.Controller.__construct.end`
-
-*constructor - initialize private variables*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this` |  | 
-
-Source: [app/Core/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php), [line 24](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php#L24-L52)
-
-### `Leantime.Core.Controller.executeActions.before_init`
-
-*Allows hooking into all controllers with events*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$available_params` |  | 
-
-Source: [app/Core/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php), [line 55](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php#L55-L74)
-
-### `Leantime.Core.Controller.executeActions.before_action`
-
-*Allows hooking into all controllers with events*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$available_params` |  | 
-
-Source: [app/Core/Controller.php](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php), [line 55](https://github.com/Leantime/leantime/blob/master/app/Core/Controller.php#L55-L79)
+Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 295](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L295-L312)
 
 ### `Leantime.Plugins.Llamadorian.Templates.statusUpdates.tpl.beforePageHeaderOpen`
 
@@ -1975,7 +1997,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$tickets` |  | 
 
-Source: [app/Domain/Tickets/Services/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php), [line 31](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php#L31-L1968)
+Source: [app/Domain/Tickets/Services/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php#L29-L2130)
 
 ### `Leantime.Domain.Projects.Controllers.ChangeCurrentProject.get.defaultProjectUrl`
 
@@ -1992,25 +2014,31 @@ Source: [app/Domain/Projects/Controllers/ChangeCurrentProject.php](https://githu
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectTypes.filterProjectType`
 
+*Gets the project types.*
+
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$types` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 76](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L76-L84)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 81](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L81-L93)
 
 ### `Leantime.Domain.Projects.Services.Projects.notifyProjectUsers.notificationFilter`
+
+*Notifies the users associated with a project about a notification.*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$notification` | `\Notification` | 
+`$notification` | `\Notification` | The notification object to send.
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 236](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L236-L245)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 262](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L262-L274)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterLoadingProjects`
+
+*Gets the hierarchy of projects assigned to a user.*
 
 **Arguments**
 
@@ -2018,9 +2046,11 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 428](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L428-L444)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 495](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L495-L516)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectHierarchy`
+
+*Gets the hierarchy of projects assigned to a user.*
 
 **Arguments**
 
@@ -2029,9 +2059,11 @@ Argument | Type | Description
 `$projectHierarchy` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 428](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L428-L450)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 495](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L495-L522)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectFavorites`
+
+*Gets the hierarchy of projects assigned to a user.*
 
 **Arguments**
 
@@ -2040,9 +2072,11 @@ Argument | Type | Description
 `$favorites` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 428](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L428-L459)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 495](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L495-L531)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAvailableToUser.afterLoadingProjects`
+
+*Gets the project hierarchy available to a user.*
 
 **Arguments**
 
@@ -2050,9 +2084,11 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 468](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L468-L484)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 540](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L540-L563)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAvailableToUser.afterPopulatingProjectHierarchy`
+
+*Gets the project hierarchy available to a user.*
 
 **Arguments**
 
@@ -2061,14 +2097,11 @@ Argument | Type | Description
 `$projectHierarchy` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 468](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L468-L490)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 540](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L540-L569)
 
 ### `Leantime.Domain.Projects.Services.Projects.getAllClientsAvailableToUser.afterLoadingProjects`
 
 *Gets all the clients available to a user.*
-
-Clients are determined by the projects
-the user is assigned to.
 
 **Arguments**
 
@@ -2076,9 +2109,11 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 502](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L502-L521)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 581](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L581-L600)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectAvatar.afterGettingAvatar`
+
+*Retrieves the avatar for a project.*
 
 **Arguments**
 
@@ -2087,7 +2122,7 @@ Argument | Type | Description
 `$avatar` |  | 
 `array("projectId" => $id)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 1199](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L1199-L1207)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 1332](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L1332-L1343)
 
 ### `Leantime.Domain.Install.Controllers.Update.get.customUpdatePage`
 
@@ -2121,7 +2156,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$query` |  | 
 
-Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 308](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L308-L351)
+Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 580](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L580-L625)
 
 ### `Leantime.Domain.Timesheets.Repositories.Timesheets.upsertTimesheetEntry.sql`
 
@@ -2133,7 +2168,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$query` |  | 
 
-Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 376](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L376-L416)
+Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 748](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L748-L790)
 
 ### `Leantime.Domain.Timesheets.Repositories.Timesheets.updateHours.sql`
 
@@ -2145,7 +2180,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$query` |  | 
 
-Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 526](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L526-L548)
+Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 864](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L864-L887)
 
 ### `Leantime.Domain.Plugins.Controllers.CssLoader.get.pluginCss`
 
@@ -2168,7 +2203,7 @@ Argument | Type | Description
 `$installedPluginsById` |  | 
 `array("enabledOnly" => $enabledOnly)` |  | 
 
-Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 125](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L125-L129)
+Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 137](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L137-L143)
 
 ### `Leantime.Domain.Plugins.Services.Plugins.getEnabledPlugins.beforeReturnCachedPlugins`
 
@@ -2176,10 +2211,10 @@ Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/le
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$_SESSION['enabledPlugins']` |  | 
+`session("enabledPlugins")` |  | 
 `array("enabledOnly" => true)` |  | 
 
-Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 152](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L152-L160)
+Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 168](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L168-L178)
 
 ### `Leantime.Domain.Plugins.Services.Plugins.getEnabledPlugins.beforeReturnCachedPlugins`
 
@@ -2189,10 +2224,10 @@ Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/le
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$_SESSION['enabledPlugins']` |  | 
+`session("enabledPlugins")` |  | 
 `array("enabledOnly" => true)` |  | 
 
-Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 166](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L166-L170)
+Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 184](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L184-L190)
 
 ### `Leantime.Domain.Wiki.Templates.templates.tpl.documentTemplates`
 
@@ -2204,15 +2239,15 @@ Argument | Type | Description
 
 Source: [app/Domain/Wiki/Templates/templates.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Wiki/Templates/templates.tpl.php), [line 469](https://github.com/Leantime/leantime/blob/master/app/Domain/Wiki/Templates/templates.tpl.php#L469-L469)
 
-### `Leantime.Domain.Auth.Services.Auth.setUserSession.user_session_vars`
+### `Leantime.Domain.Auth.Services.Auth.setUsersession.user_session_vars`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`['role' => $this->role, 'id' => $this->userId, 'name' => $this->name, 'profileId' => $this->profileId, 'mail' => $this->mail, 'clientId' => $this->clientId, 'settings' => $this->settings, 'twoFAEnabled' => $this->twoFAEnabled, 'twoFAVerified' => false, 'twoFASecret' => $this->twoFASecret, 'isLdap' => $isLdap, 'createdOn' => $user['createdOn'] ?? '', 'modified' => $user['modified'] ?? date("Y-m-d H:i:s")]` |  | 
+`$currentUser` |  | 
 
-Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 298](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L298-L337)
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 298](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L298-L328)
 
 ### `Leantime.Domain.Auth.Services.Auth.logout.sessions_vars_to_destroy`
 
@@ -2224,7 +2259,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['userdata', 'template', 'subdomainData', 'currentProject', 'currentSprint', 'projectsettings', 'currentSubscriptions', 'lastTicketView', 'lastFilterdTicketTableView']` |  | 
 
-Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 399](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L399-L424)
+Source: [app/Domain/Auth/Services/Auth.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php), [line 384](https://github.com/Leantime/leantime/blob/master/app/Domain/Auth/Services/Auth.php#L384-L406)
 
 ### `Leantime.Domain.Auth.Models.Roles.getFilteredRoles.available_roles`
 
@@ -2245,7 +2280,7 @@ Argument | Type | Description
 `"/dashboard/show"` |  | 
 `array("type" => $project["type"])` |  | 
 
-Source: [app/Domain/Dashboard/Controllers/Show.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Controllers/Show.php), [line 68](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Controllers/Show.php#L68-L84)
+Source: [app/Domain/Dashboard/Controllers/Show.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Controllers/Show.php), [line 66](https://github.com/Leantime/leantime/blob/master/app/Domain/Dashboard/Controllers/Show.php#L66-L82)
 
 ### `Leantime.Domain.Menu.Repositories.Menu.buildMenuStructure.{$filter}`
 
@@ -2256,7 +2291,7 @@ Argument | Type | Description
 `payload: $this->buildMenuStructure($menuItem['submenu'], $filter)` |  | 
 `function: 'getMenuStructure'` |  | 
 
-Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 234](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L234-L238)
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 233](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L233-L237)
 
 ### `Leantime.Domain.Menu.Repositories.Menu.getMenuStructure.{$filter}`
 
@@ -2264,10 +2299,10 @@ Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/lean
 
 Argument | Type | Description
 -------- | ---- | -----------
-`payload: $this->buildMenuStructure($menu, $filter)` |  | 
-`function: 'getMenuStructure'` |  | 
+`$this->buildMenuStructure($menu, $filter)` |  | 
+`'getMenuStructure'` |  | 
 
-Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 256](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L256-L260)
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 257](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L257-L261)
 
 ### `Leantime.Domain.Menu.Repositories.Menu.getMenuStructure.menuStructures`
 
@@ -2280,7 +2315,7 @@ Argument | Type | Description
 `$menuCollection` |  | 
 `['menuType' => $menuType]` |  | 
 
-Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 244](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L244-L266)
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 243](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L243-L269)
 
 ### `Leantime.Domain.Menu.Repositories.Menu.getSectionMenuType.menuSections`
 
@@ -2291,7 +2326,17 @@ Argument | Type | Description
 `$sections` |  | 
 `array("currentRoute" => $currentRoute, "default" => $default)` |  | 
 
-Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 15](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L15-L442)
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L16-L444)
+
+### `Leantime.Domain.Menu.Hxcontrollers.ProjectSelector.updateMenu.startSomething`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`"#/projects/createnew"` |  | 
+
+Source: [app/Domain/Menu/Hxcontrollers/ProjectSelector.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Hxcontrollers/ProjectSelector.php), [line 46](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Hxcontrollers/ProjectSelector.php#L46-L118)
 
 ### `Leantime.Domain.Menu.Services.Menu.getProjectTypeAvatars.projectTypeAvatars`
 
@@ -2321,7 +2366,17 @@ Argument | Type | Description
 -------- | ---- | -----------
 `"#/projects/createnew"` |  | 
 
-Source: [app/Domain/Menu/Composers/ProjectSelector.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Composers/ProjectSelector.php), [line 45](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Composers/ProjectSelector.php#L45-L93)
+Source: [app/Domain/Menu/Composers/ProjectSelector.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Composers/ProjectSelector.php), [line 44](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Composers/ProjectSelector.php#L44-L92)
+
+### `Leantime.Domain.Menu.Composers.Menu.with.startSomething`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`"#/projects/createnew"` |  | 
+
+Source: [app/Domain/Menu/Composers/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Composers/Menu.php), [line 43](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Composers/Menu.php#L43-L112)
 
 ### `Leantime.Domain.Reactions.Models.Reactions.getReactions.available_reactions`
 
@@ -2381,7 +2436,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$telemetry` |  | 
 
-Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 146](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L146-L281)
+Source: [app/Domain/Reports/Services/Reports.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php), [line 163](https://github.com/Leantime/leantime/blob/master/app/Domain/Reports/Services/Reports.php#L163-L300)
 
 ### `Leantime.Domain.Widgets.Services.Widgets.__construct.availableWidgets`
 
@@ -2395,7 +2450,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this->availableWidgets` |  | 
 
-Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 33](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L33-L117)
+Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L37-L122)
 
 ### `Leantime.Domain.Widgets.Services.Widgets.__construct.defaultWidgets`
 
@@ -2410,7 +2465,7 @@ Argument | Type | Description
 `$this->defaultWidgets` |  | 
 `array("availableWidgets" => $this->availableWidgets)` |  | 
 
-Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 33](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L33-L118)
+Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L37-L123)
 
 ### `Leantime.Domain.Widgets.Services.Widgets.getAll.availableWidgets`
 
@@ -2422,7 +2477,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this->availableWidgets` |  | 
 
-Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 121](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L121-L128)
+Source: [app/Domain/Widgets/Services/Widgets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php), [line 126](https://github.com/Leantime/leantime/blob/master/app/Domain/Widgets/Services/Widgets.php#L126-L135)
 
 ### `Leantime.Domain.Users.Services.Users.getAll.getAll`
 
@@ -2432,7 +2487,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$users` |  | 
 
-Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 99](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L99-L107)
+Source: [app/Domain/Users/Services/Users.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php), [line 108](https://github.com/Leantime/leantime/blob/master/app/Domain/Users/Services/Users.php#L108-L118)
 
 ### `Leantime.Domain.Modulemanager.Controllers.Notavailable.run.notAvailableRedirect`
 
@@ -2468,7 +2523,21 @@ Argument | Type | Description
 -------- | ---- | -----------
 `"/../../public/userfiles"` |  | 
 
-Source: [app/Core/Fileupload.php](https://github.com/Leantime/leantime/blob/master/app/Core/Fileupload.php), [line 178](https://github.com/Leantime/leantime/blob/master/app/Core/Fileupload.php#L178-L184)
+Source: [app/Core/Fileupload.php](https://github.com/Leantime/leantime/blob/master/app/Core/Fileupload.php), [line 179](https://github.com/Leantime/leantime/blob/master/app/Core/Fileupload.php#L179-L185)
+
+### `Leantime.Core.Events.DispatchesEvents.dispatch_filter.{$hook}`
+
+*dispatches a filter with context*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$payload` | `mixed` | 
+`$available_params` | `mixed` | 
+`static::get_event_context($function)` |  | 
+
+Source: [app/Core/Events/DispatchesEvents.php](https://github.com/Leantime/leantime/blob/master/app/Core/Events/DispatchesEvents.php), [line 31](https://github.com/Leantime/leantime/blob/master/app/Core/Events/DispatchesEvents.php#L31-L45)
 
 ### `Leantime.Core.Middleware.Updated.redirectToUpdate.allowedRoutes`
 
@@ -2480,7 +2549,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$allowedRoutes` |  | 
 
-Source: [app/Core/Middleware/Updated.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Updated.php), [line 47](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Updated.php#L47-L58)
+Source: [app/Core/Middleware/Updated.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Updated.php), [line 50](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Updated.php#L50-L61)
 
 ### `Leantime.Core.Middleware.Updated.redirectToUpdate.redirectroute`
 
@@ -2492,9 +2561,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$route` |  | 
 
-Source: [app/Core/Middleware/Updated.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Updated.php), [line 47](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Updated.php#L47-L64)
+Source: [app/Core/Middleware/Updated.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Updated.php), [line 50](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Updated.php#L50-L67)
 
-### `Leantime.Core.Middleware.RequestRateLimiter.handle.rateLimit`
+### `Leantime.Core.Middleware.RequestRateLimiter.handle.rateLimitKey`
 
 *Handle the incoming request.*
 
@@ -2505,7 +2574,7 @@ Argument | Type | Description
 `$key` |  | 
 `["bootloader" => $this]` |  | 
 
-Source: [app/Core/Middleware/RequestRateLimiter.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/RequestRateLimiter.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/RequestRateLimiter.php#L40-L76)
+Source: [app/Core/Middleware/RequestRateLimiter.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/RequestRateLimiter.php), [line 41](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/RequestRateLimiter.php#L41-L92)
 
 ### `Leantime.Core.Middleware.RequestRateLimiter.handle.rateLimit`
 
@@ -2518,7 +2587,7 @@ Argument | Type | Description
 `$limit` |  | 
 `["bootloader" => $this, "key" => $key]` |  | 
 
-Source: [app/Core/Middleware/RequestRateLimiter.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/RequestRateLimiter.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/RequestRateLimiter.php#L40-L85)
+Source: [app/Core/Middleware/RequestRateLimiter.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/RequestRateLimiter.php), [line 41](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/RequestRateLimiter.php#L41-L101)
 
 ### `Leantime.Core.Middleware.TrustProxies.__construct.trustedProxies`
 
@@ -2531,7 +2600,19 @@ Argument | Type | Description
 `explode(",", $config->trustedProxies)` |  | 
 `['bootloader' => $this]` |  | 
 
-Source: [app/Core/Middleware/TrustProxies.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/TrustProxies.php), [line 45](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/TrustProxies.php#L45-L61)
+Source: [app/Core/Middleware/TrustProxies.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/TrustProxies.php), [line 40](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/TrustProxies.php#L40-L56)
+
+### `Leantime.Core.Middleware.InitialHeaders.handle.cspParts`
+
+*Set up the initial headers*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$cspParts` |  | 
+
+Source: [app/Core/Middleware/InitialHeaders.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/InitialHeaders.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/InitialHeaders.php#L14-L35)
 
 ### `Leantime.Core.Middleware.InitialHeaders.handle.headers`
 
@@ -2543,7 +2624,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['X-Frame-Options' => 'SAMEORIGIN', 'X-XSS-Protection' => '1; mode=block', 'X-Content-Type-Options' => 'nosniff', 'Referrer-Policy', 'same-origin', 'Access-Control-Allow-Origin' => BASE_URL, 'Cache-Control' => 'no-cache, no-store, must-revalidate', 'Pragma' => 'no-cache', 'Content-Security-Policy' => $csp]` |  | 
 
-Source: [app/Core/Middleware/InitialHeaders.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/InitialHeaders.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/InitialHeaders.php#L14-L46)
+Source: [app/Core/Middleware/InitialHeaders.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/InitialHeaders.php), [line 14](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/InitialHeaders.php#L14-L48)
 
 ### `Leantime.Core.Middleware.Auth.__construct.publicActions`
 
@@ -2566,7 +2647,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$allowedRoutes` |  | 
 
-Source: [app/Core/Middleware/Installed.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Installed.php), [line 88](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Installed.php#L88-L99)
+Source: [app/Core/Middleware/Installed.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Installed.php), [line 86](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Installed.php#L86-L97)
 
 ### `Leantime.Core.Middleware.Installed.redirectToInstall.redirectroute`
 
@@ -2578,104 +2659,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$route` |  | 
 
-Source: [app/Core/Middleware/Installed.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Installed.php), [line 88](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Installed.php#L88-L105)
-
-### `Leantime.Core.Bootloader.boot.initialized`
-
-*Execute the Application lifecycle.*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$app` |  | 
-`['bootloader' => $this]` |  | 
-
-Source: [app/Core/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php), [line 119](https://github.com/Leantime/leantime/blob/master/app/Core/Bootloader.php#L119-L145)
-
-### `Leantime.Core.Repository.prepare.sql`
-
-*prepares sql for entry; wrapper for PDO\prepare()*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$sql` | `string` | 
-`$this->getArgs(['prepareArgs' => $args])` |  | 
-`4` |  | 
-
-Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 77](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L77-L90)
-
-### `Leantime.Core.Repository.bindValue.binding.str_replace()`
-
-*binds values for search/replace of sql; wrapper for PDO\bindValue()*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$replace` | `string` | - value to replace with
-`$this->getArgs()` |  | 
-`4` |  | 
-
-Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 95](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L95-L109)
-
-### `Leantime.Core.Repository.getArgs.args`
-
-*Gets the arguments to pass along to events/filter*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$args` |  | 
-`[]` |  | 
-`5` |  | 
-
-Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 135](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L135-L150)
-
-### `Leantime.Core.Repository.__call.stmn`
-
-*executes the sql call - uses \PDO*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this->stmn` |  | 
-`$this->getArgs()` |  | 
-`4` |  | 
-
-Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 155](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L155-L174)
-
-### `Leantime.Core.Repository.__call.method`
-
-*executes the sql call - uses \PDO*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$method` | `string` | 
-`$this->getArgs()` |  | 
-`4` |  | 
-
-Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 155](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L155-L175)
-
-### `Leantime.Core.Repository.__call.return`
-
-*executes the sql call - uses \PDO*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$values` |  | 
-`$this->getArgs()` |  | 
-`4` |  | 
-
-Source: [app/Core/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php), [line 155](https://github.com/Leantime/leantime/blob/master/app/Core/Repository.php#L155-L187)
+Source: [app/Core/Middleware/Installed.php](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Installed.php), [line 86](https://github.com/Leantime/leantime/blob/master/app/Core/Middleware/Installed.php#L86-L103)
 
 ### `Leantime.Core.Mailer.__construct.fromEmail`
 
@@ -2688,7 +2672,7 @@ Argument | Type | Description
 `$this->emailDomain` |  | 
 `$this` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 86](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L86-L101)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 88](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L88-L103)
 
 ### `Leantime.Core.Mailer.dispatchMailerHook.{$hook}`
 
@@ -2701,7 +2685,7 @@ Argument | Type | Description
 `$payload` | `mixed` | 
 `$additional_params` | `array` | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 231](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L231-L256)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 233](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L233-L258)
 
 ### `Leantime.Core.Mailer.sendMail.sendMailTo`
 
@@ -2714,7 +2698,7 @@ Argument | Type | Description
 `$to` | `array` | 
 `[]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L269-L282)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L271-L284)
 
 ### `Leantime.Core.Mailer.sendMail.sendMailFrom`
 
@@ -2727,7 +2711,7 @@ Argument | Type | Description
 `$from` | `mixed` | 
 `[]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L269-L283)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L271-L285)
 
 ### `Leantime.Core.Mailer.sendMail.bodyTemplate`
 
@@ -2762,7 +2746,7 @@ Argument | Type | Description
                 </tr>
             </table>'` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 312](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L312-L337)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 314](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L314-L339)
 
 ### `Leantime.Core.Mailer.sendMail.mailBodyParams`
 
@@ -2772,7 +2756,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['inlineLogoContent' => $inlineLogoContent, 'headline' => $this->language->__('email_notifications.hi'), 'content' => $this->nl2br ? nl2br($this->html) : $this->html, 'unsub_link' => sprintf($this->language->__('email_notifications.unsubscribe'), BASE_URL . '/users/editOwn/')]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 338](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L338-L346)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 340](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L340-L348)
 
 ### `Leantime.Core.Mailer.sendMail.bodyContent`
 
@@ -2785,7 +2769,7 @@ Argument | Type | Description
 `$mailBody` |  | 
 `[['companyColor' => $this->companyColor, 'logoUrl' => $inlineLogoContent, 'languageHiText' => $this->language->__('email_notifications.hi'), 'emailContentsHtml' => nl2br($this->html), 'unsubLink' => sprintf($this->language->__('email_notifications.unsubscribe'), BASE_URL . '/users/editOwn/')]]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L269-L361)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L271-L363)
 
 ### `Leantime.Core.Mailer.sendMail.altBody`
 
@@ -2798,7 +2782,7 @@ Argument | Type | Description
 `$this->text` |  | 
 `[]` |  | 
 
-Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 269](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L269-L369)
+Source: [app/Core/Mailer.php](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Mailer.php#L271-L371)
 
 ### `Leantime.Core.Support.Mix.__construct.mix_manifest_directories`
 
@@ -2822,7 +2806,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$value` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 383](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L383-L387)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 393](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L393-L397)
 
 ### `Leantime.Core.Template.getTemplatePath.template_path__{$namespace}_{$path}`
 
@@ -2835,7 +2819,7 @@ Argument | Type | Description
 `"{$namespace}::{$path}"` |  | 
 `['namespace' => $namespace, 'path' => $path]` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 418](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L418-L441)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 428](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L428-L451)
 
 ### `Leantime.Core.Template.display.template`
 
@@ -2847,7 +2831,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$template` | `string` | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 466](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L466-L478)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 476](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L476-L488)
 
 ### `Leantime.Core.Template.display.template.{$template}`
 
@@ -2859,7 +2843,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$template` | `string` | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 466](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L466-L479)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 476](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L476-L489)
 
 ### `Leantime.Core.Template.display.content`
 
@@ -2871,7 +2855,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$content` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 466](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L466-L510)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 476](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L476-L520)
 
 ### `Leantime.Core.Template.display.content.{$template}`
 
@@ -2883,7 +2867,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$content` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 466](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L466-L511)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 476](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L476-L521)
 
 ### `Leantime.Core.Template.confirmLayoutName.layout`
 
@@ -2895,7 +2879,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$layout` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 517](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L517-L527)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 527](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L527-L537)
 
 ### `Leantime.Core.Template.confirmLayoutName.layout.{$template}`
 
@@ -2907,7 +2891,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$layout` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 517](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L517-L528)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 527](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L527-L538)
 
 ### `Leantime.Core.Template.displayNotification.message`
 
@@ -2920,7 +2904,7 @@ Argument | Type | Description
 `$language->__($message_id)` |  | 
 `$note` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 636](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L636-L654)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 647](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L647-L665)
 
 ### `Leantime.Core.Template.displayNotification.message_{$message_id}`
 
@@ -2933,7 +2917,7 @@ Argument | Type | Description
 `$message` |  | 
 `$note` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 636](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L636-L659)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 647](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L647-L670)
 
 ### `Leantime.Core.Template.displayInlineNotification.message`
 
@@ -2946,7 +2930,7 @@ Argument | Type | Description
 `$language->__($message_id)` |  | 
 `$note` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 705](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L705-L723)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 721](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L721-L739)
 
 ### `Leantime.Core.Template.displayInlineNotification.message_{$message_id}`
 
@@ -2959,7 +2943,7 @@ Argument | Type | Description
 `$message` |  | 
 `$note` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 705](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L705-L728)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 721](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L721-L744)
 
 ### `Leantime.Core.Template.dispatchTplHook.{$hookName}`
 
@@ -2971,9 +2955,9 @@ Argument | Type | Description
 `$available_params` | `array` | 
 `$this->hookContext` |  | 
 
-Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 1047](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L1047-L1062)
+Source: [app/Core/Template.php](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php), [line 1068](https://github.com/Leantime/leantime/blob/master/app/Core/Template.php#L1068-L1083)
 
-### `Leantime.Core.HttpKernel.handle.plugins_middleware`
+### `Leantime.Core.Http.HttpKernel.handle.plugins_middleware`
 
 **Arguments**
 
@@ -2982,9 +2966,9 @@ Argument | Type | Description
 `payload: []` |  | 
 `function: 'handle'` |  | 
 
-Source: [app/Core/HttpKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/HttpKernel.php), [line 58](https://github.com/Leantime/leantime/blob/master/app/Core/HttpKernel.php#L58-L62)
+Source: [app/Core/Http/HttpKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Http/HttpKernel.php), [line 64](https://github.com/Leantime/leantime/blob/master/app/Core/Http/HttpKernel.php#L64-L68)
 
-### `Leantime.Core.HttpKernel.handle.beforeSendResponse`
+### `Leantime.Core.Http.HttpKernel.handle.beforeSendResponse`
 
 *Handle the incoming request.*
 
@@ -2994,9 +2978,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$response` |  | 
 
-Source: [app/Core/HttpKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/HttpKernel.php), [line 37](https://github.com/Leantime/leantime/blob/master/app/Core/HttpKernel.php#L37-L66)
+Source: [app/Core/Http/HttpKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Http/HttpKernel.php), [line 43](https://github.com/Leantime/leantime/blob/master/app/Core/Http/HttpKernel.php#L43-L72)
 
-### `Leantime.Core.HttpKernel.getMiddleware.http_middleware`
+### `Leantime.Core.Http.HttpKernel.getMiddleware.http_middleware`
 
 *Get the application middleware*
 
@@ -3004,39 +2988,13 @@ Source: [app/Core/HttpKernel.php](https://github.com/Leantime/leantime/blob/mast
 
 Argument | Type | Description
 -------- | ---- | -----------
-`[\Leantime\Core\Middleware\TrustProxies::class, \Leantime\Core\Middleware\InitialHeaders::class, \Leantime\Core\Middleware\Installed::class, \Leantime\Core\Middleware\Updated::class, \Leantime\Core\Middleware\RequestRateLimiter::class, app()->make(\Leantime\Core\IncomingRequest::class) instanceof \Leantime\Core\ApiRequest ? \Leantime\Core\Middleware\ApiAuth::class : \Leantime\Core\Middleware\Auth::class, \Leantime\Core\Middleware\Localization::class, \Leantime\Core\Middleware\CurrentProject::class]` |  | 
+`[\Leantime\Core\Middleware\TrustProxies::class, \Leantime\Core\Middleware\InitialHeaders::class, \Leantime\Core\Middleware\StartSession::class, \Leantime\Core\Middleware\Installed::class, \Leantime\Core\Middleware\Updated::class, \Leantime\Core\Middleware\RequestRateLimiter::class, $this->app->make(\Leantime\Core\Http\IncomingRequest::class) instanceof \Leantime\Core\Http\ApiRequest ? \Leantime\Core\Middleware\ApiAuth::class : \Leantime\Core\Middleware\Auth::class, \Leantime\Core\Middleware\Localization::class, \Leantime\Core\Middleware\CurrentProject::class]` |  | 
 
-Source: [app/Core/HttpKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/HttpKernel.php), [line 141](https://github.com/Leantime/leantime/blob/master/app/Core/HttpKernel.php#L141-L158)
-
-### `Leantime.Core.ConsoleKernel.commands.additional_commands`
-
-*Other commands to be included*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`[\Illuminate\Console\Scheduling\ScheduleRunCommand::class, \Illuminate\Console\Scheduling\ScheduleFinishCommand::class, \Illuminate\Console\Scheduling\ScheduleListCommand::class, \Illuminate\Console\Scheduling\ScheduleTestCommand::class, \Illuminate\Console\Scheduling\ScheduleWorkCommand::class, \Illuminate\Console\Scheduling\ScheduleClearCacheCommand::class, \Illuminate\Cache\Console\ClearCommand::class]` |  | 
-
-Source: [app/Core/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/ConsoleKernel.php), [line 148](https://github.com/Leantime/leantime/blob/master/app/Core/ConsoleKernel.php#L148-L161)
-
-### `Leantime.Core.Eventhelpers.dispatch_filter.{$hook}`
-
-*dispatches a filter with context*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$payload` | `mixed` | 
-`$available_params` | `mixed` | 
-`static::get_event_context($function)` |  | 
-
-Source: [app/Core/Eventhelpers.php](https://github.com/Leantime/leantime/blob/master/app/Core/Eventhelpers.php), [line 31](https://github.com/Leantime/leantime/blob/master/app/Core/Eventhelpers.php#L31-L45)
+Source: [app/Core/Http/HttpKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Http/HttpKernel.php), [line 124](https://github.com/Leantime/leantime/blob/master/app/Core/Http/HttpKernel.php#L124-L142)
 
 ### `Leantime.Core.Theme.getAvailableColorSchemes.colorschemes`
 
-*theme - Engine for handling themes*
+*Retrieves the available color schemes.*
 
 **Arguments**
 
@@ -3044,7 +3002,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$parsedColorSchemes` |  | 
 
-Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L13-L167)
+Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 150](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L150-L177)
 
 ### `Leantime.Core.Theme.getAvailableFonts.fonts`
 
@@ -3056,7 +3014,104 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this->fonts` |  | 
 
-Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 13](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L13-L174)
+Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L17-L184)
+
+### `Leantime.Core.Db.Repository.prepare.sql`
+
+*prepares sql for entry; wrapper for PDO\prepare()*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$sql` | `string` | 
+`$this->getArgs(['prepareArgs' => $args])` |  | 
+`4` |  | 
+
+Source: [app/Core/Db/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php), [line 78](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php#L78-L91)
+
+### `Leantime.Core.Db.Repository.bindValue.binding.str_replace()`
+
+*binds values for search/replace of sql; wrapper for PDO\bindValue()*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$replace` | `string` | - value to replace with
+`$this->getArgs()` |  | 
+`4` |  | 
+
+Source: [app/Core/Db/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php), [line 96](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php#L96-L110)
+
+### `Leantime.Core.Db.Repository.getArgs.args`
+
+*Gets the arguments to pass along to events/filter*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$args` |  | 
+`[]` |  | 
+`5` |  | 
+
+Source: [app/Core/Db/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php), [line 136](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php#L136-L151)
+
+### `Leantime.Core.Db.Repository.__call.stmn`
+
+*executes the sql call - uses \PDO*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this->stmn` |  | 
+`$this->getArgs()` |  | 
+`4` |  | 
+
+Source: [app/Core/Db/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php), [line 156](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php#L156-L175)
+
+### `Leantime.Core.Db.Repository.__call.method`
+
+*executes the sql call - uses \PDO*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$method` | `string` | 
+`$this->getArgs()` |  | 
+`4` |  | 
+
+Source: [app/Core/Db/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php), [line 156](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php#L156-L176)
+
+### `Leantime.Core.Db.Repository.__call.return`
+
+*executes the sql call - uses \PDO*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$values` |  | 
+`$this->getArgs()` |  | 
+`4` |  | 
+
+Source: [app/Core/Db/Repository.php](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php), [line 156](https://github.com/Leantime/leantime/blob/master/app/Core/Db/Repository.php#L156-L188)
+
+### `Leantime.Core.Bootstrap.Bootloader.boot.initialized`
+
+*Execute the Application lifecycle.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this->app` |  | 
+`['bootloader' => $this]` |  | 
+
+Source: [app/Core/Bootstrap/Bootloader.php](https://github.com/Leantime/leantime/blob/master/app/Core/Bootstrap/Bootloader.php), [line 104](https://github.com/Leantime/leantime/blob/master/app/Core/Bootstrap/Bootloader.php#L104-L118)
 
 ### `Leantime.Core.Language.readIni.language_resources`
 
@@ -3066,10 +3121,10 @@ Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/ap
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$_SESSION['cache.language_resources_' . $this->language]` |  | 
+`\Illuminate\Support\Facades\Cache::store('installation')->get('cache.language_resources_' . $this->language)` |  | 
 `['language' => $this->language]` |  | 
 
-Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 161](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L161-L177)
+Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 183](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L183-L200)
 
 ### `Leantime.Core.Language.readIni.language_files`
 
@@ -3089,7 +3144,7 @@ Argument | Type | Description
 ]` |  | 
 `['language' => $this->language]` |  | 
 
-Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 161](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L161-L197)
+Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 183](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L183-L222)
 
 ### `Leantime.Core.Language.readIni.language_resources`
 
@@ -3102,7 +3157,7 @@ Argument | Type | Description
 `$mainLanguageArray` |  | 
 `['language' => $this->language]` |  | 
 
-Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 161](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L161-L207)
+Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 183](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L183-L232)
 
 ### `Leantime.Core.Language.getLanguageList.languages`
 
@@ -3118,7 +3173,19 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$langlist` |  | 
 
-Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 246](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L246-L278)
+Source: [app/Core/Language.php](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php), [line 271](https://github.com/Leantime/leantime/blob/master/app/Core/Language.php#L271-L303)
+
+### `Leantime.Core.Console.ConsoleKernel.commands.additional_commands`
+
+*Load and register the commands for the application.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`[\Illuminate\Console\Scheduling\ScheduleRunCommand::class, \Illuminate\Console\Scheduling\ScheduleFinishCommand::class, \Illuminate\Console\Scheduling\ScheduleListCommand::class, \Illuminate\Console\Scheduling\ScheduleTestCommand::class, \Illuminate\Console\Scheduling\ScheduleWorkCommand::class, \Illuminate\Console\Scheduling\ScheduleClearCacheCommand::class]` |  | 
+
+Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 113](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L113-L176)
 
 ### `Leantime.Views.Composers.App.with.appAnnouncement`
 

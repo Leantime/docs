@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Core\Middleware\Updated`
 
-* Full name: `\Leantime\Core\Middleware\Updated`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 Check if Leantime is installed
 
 ```php
-public Updated::handle(\Leantime\Core\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
+public Updated::handle(\Leantime\Core\Http\IncomingRequest $request, \Closure $next): \Symfony\Component\HttpFoundation\Response
 ```
 
 
@@ -34,7 +34,7 @@ public Updated::handle(\Leantime\Core\IncomingRequest $request, \Closure $next):
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `request` | **\Leantime\Core\IncomingRequest** |  |
+| `request` | **\Leantime\Core\Http\IncomingRequest** |  |
 | `next` | **\Closure** |  |
 
 
@@ -68,6 +68,35 @@ private Updated::redirectToUpdate(): \Symfony\Component\HttpFoundation\Response|
 
 
 ---
+### getVersionInt
+
+
+
+```php
+private Updated::getVersionInt(mixed $version): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `version` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 
 
 ## Inherited methods
@@ -77,7 +106,7 @@ private Updated::redirectToUpdate(): \Symfony\Component\HttpFoundation\Response|
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -108,7 +137,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -140,7 +169,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -170,7 +199,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -193,7 +222,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -220,4 +249,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

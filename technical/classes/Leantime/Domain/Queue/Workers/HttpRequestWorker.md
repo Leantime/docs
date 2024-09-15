@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Queue\Workers\HttpRequestWorker`
 
-* Full name: `\Leantime\Domain\Queue\Workers\HttpRequestWorker`
 
 
 
@@ -80,4 +80,4 @@ public HttpRequestWorker::handleQueue(mixed $messages): mixed
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

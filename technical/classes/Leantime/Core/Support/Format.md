@@ -8,8 +8,8 @@ footer: false
 Class Format
 
 This class provides various formatting methods for simple data types (strings, ints, floats)
+`\Leantime\Core\Support\Format`
 
-* Full name: `\Leantime\Core\Support\Format`
 
 
 
@@ -314,4 +314,4 @@ The decimal number formatted with two decimal places.
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

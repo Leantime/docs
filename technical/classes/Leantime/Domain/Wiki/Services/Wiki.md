@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Wiki\Services\Wiki`
 
-* Full name: `\Leantime\Domain\Wiki\Services\Wiki`
 
 
 
@@ -282,4 +282,4 @@ public Wiki::updateArticle(\Leantime\Domain\Wiki\Models\Article $article): bool
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

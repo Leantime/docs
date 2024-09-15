@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Connector\Models\FieldTypes`
 
-* Full name: `\Leantime\Domain\Connector\Models\FieldTypes`
 * This class is marked as **final** and can't be subclassed
 
 
@@ -42,4 +42,4 @@ public FieldTypes::__construct(): mixed
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

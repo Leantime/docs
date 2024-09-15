@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Calendar\Services\Calendar`
 
-* Full name: `\Leantime\Domain\Calendar\Services\Calendar`
 
 
 
@@ -411,4 +411,4 @@ private Calendar::mapEventData(string $title, string $description, bool $allDay,
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

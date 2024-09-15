@@ -8,9 +8,9 @@ footer: false
 
 
 
+`\Leantime\Views\Composers\Header`
 
-* Full name: `\Leantime\Views\Composers\Header`
-* Parent class: [\Leantime\Core\Composer](../../Core/Composer.md)
+* Parent class: [\Leantime\Core\Controller\Composer](../../Core/Controller/Composer.md)
 
 
 
@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-public Header::init(\Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Core\Environment $config, \Leantime\Core\AppSettings $appSettings, \Leantime\Core\Theme $themeCore): void
+public Header::init(\Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Core\Configuration\Environment $config, \Leantime\Core\Configuration\AppSettings $appSettings, \Leantime\Core\Theme $themeCore): void
 ```
 
 
@@ -36,8 +36,8 @@ public Header::init(\Leantime\Domain\Setting\Repositories\Setting $settingsRepo,
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
-| `config` | **\Leantime\Core\Environment** |  |
-| `appSettings` | **\Leantime\Core\AppSettings** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
+| `appSettings` | **\Leantime\Core\Configuration\AppSettings** |  |
 | `themeCore` | **\Leantime\Core\Theme** |  |
 
 
@@ -153,4 +153,4 @@ protected Composer::with(): array
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

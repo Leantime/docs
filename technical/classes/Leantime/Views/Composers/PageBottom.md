@@ -8,9 +8,9 @@ footer: false
 
 
 
+`\Leantime\Views\Composers\PageBottom`
 
-* Full name: `\Leantime\Views\Composers\PageBottom`
-* Parent class: [\Leantime\Core\Composer](../../Core/Composer.md)
+* Parent class: [\Leantime\Core\Controller\Composer](../../Core/Controller/Composer.md)
 
 
 
@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-public PageBottom::init(\Leantime\Core\AppSettings $settings, \Leantime\Core\Environment $environment): void
+public PageBottom::init(\Leantime\Core\Configuration\AppSettings $settings, \Leantime\Core\Configuration\Environment $environment): void
 ```
 
 
@@ -35,8 +35,8 @@ public PageBottom::init(\Leantime\Core\AppSettings $settings, \Leantime\Core\Env
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `settings` | **\Leantime\Core\AppSettings** |  |
-| `environment` | **\Leantime\Core\Environment** |  |
+| `settings` | **\Leantime\Core\Configuration\AppSettings** |  |
+| `environment` | **\Leantime\Core\Configuration\Environment** |  |
 
 
 **Return Value:**
@@ -151,4 +151,4 @@ protected Composer::with(): array
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

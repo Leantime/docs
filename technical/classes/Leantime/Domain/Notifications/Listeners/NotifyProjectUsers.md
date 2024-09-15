@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Notifications\Listeners\NotifyProjectUsers`
 
-* Full name: `\Leantime\Domain\Notifications\Listeners\NotifyProjectUsers`
 
 
 
@@ -47,4 +47,4 @@ public NotifyProjectUsers::handle( $payload): void
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

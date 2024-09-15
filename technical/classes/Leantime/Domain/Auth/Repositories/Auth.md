@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Auth\Repositories\Auth`
 
-* Full name: `\Leantime\Domain\Auth\Repositories\Auth`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Auth::__construct(\Leantime\Core\Db $db, \Leantime\Core\Environment $config, \Leantime\Domain\Users\Repositories\Users $userRepo): mixed
+public Auth::__construct(\Leantime\Core\Db\Db $db, \Leantime\Core\Configuration\Environment $config, \Leantime\Domain\Users\Repositories\Users $userRepo): mixed
 ```
 
 
@@ -34,8 +34,8 @@ public Auth::__construct(\Leantime\Core\Db $db, \Leantime\Core\Environment $conf
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
-| `config` | **\Leantime\Core\Environment** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
 | `userRepo` | **\Leantime\Domain\Users\Repositories\Users** |  |
 
 
@@ -309,4 +309,4 @@ public Auth::changePW(string $password, string $hash): bool
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

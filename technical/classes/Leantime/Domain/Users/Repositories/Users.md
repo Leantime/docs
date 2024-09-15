@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Users\Repositories\Users`
 
-* Full name: `\Leantime\Domain\Users\Repositories\Users`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - neu db connection
 
 ```php
-public Users::__construct(\Leantime\Core\Environment $config, \Leantime\Core\Db $db): mixed
+public Users::__construct(\Leantime\Core\Configuration\Environment $config, \Leantime\Core\Db\Db $db): mixed
 ```
 
 
@@ -34,8 +34,8 @@ public Users::__construct(\Leantime\Core\Environment $config, \Leantime\Core\Db 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `config` | **\Leantime\Core\Environment** |  |
-| `db` | **\Leantime\Core\Db** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 
 
 **Return Value:**
@@ -595,4 +595,4 @@ Identifier of user or false, if not found
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

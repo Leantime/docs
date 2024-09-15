@@ -8,9 +8,9 @@ footer: false
 
 
 
+`\Leantime\Domain\Menu\Composers\ProjectSelector`
 
-* Full name: `\Leantime\Domain\Menu\Composers\ProjectSelector`
-* Parent class: [\Leantime\Core\Composer](../../../Core/Composer.md)
+* Parent class: [\Leantime\Core\Controller\Composer](../../../Core/Controller/Composer.md)
 
 
 
@@ -21,7 +21,7 @@ footer: false
 
 
 ```php
-public ProjectSelector::init(\Leantime\Domain\Menu\Repositories\Menu $menuRepo, \Leantime\Domain\Menu\Services\Menu $menuService, \Leantime\Core\IncomingRequest $request): void
+public ProjectSelector::init(\Leantime\Domain\Menu\Repositories\Menu $menuRepo, \Leantime\Domain\Menu\Services\Menu $menuService, \Leantime\Core\Http\IncomingRequest $request): void
 ```
 
 
@@ -37,7 +37,7 @@ public ProjectSelector::init(\Leantime\Domain\Menu\Repositories\Menu $menuRepo, 
 |-----------|------|-------------|
 | `menuRepo` | **\Leantime\Domain\Menu\Repositories\Menu** |  |
 | `menuService` | **\Leantime\Domain\Menu\Services\Menu** |  |
-| `request` | **\Leantime\Core\IncomingRequest** |  |
+| `request` | **\Leantime\Core\Http\IncomingRequest** |  |
 
 
 **Return Value:**
@@ -79,7 +79,7 @@ public ProjectSelector::with(): array
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -110,7 +110,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -142,7 +142,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -172,7 +172,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -195,7 +195,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -297,4 +297,4 @@ protected Composer::with(): array
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

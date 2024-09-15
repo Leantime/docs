@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Files\Services\Files`
 
-* Full name: `\Leantime\Domain\Files\Services\Files`
 
 
 
@@ -141,4 +141,4 @@ public Files::deleteFile( $fileId): bool
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

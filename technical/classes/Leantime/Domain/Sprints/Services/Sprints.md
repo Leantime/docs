@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Sprints\Services\Sprints`
 
-* Full name: `\Leantime\Domain\Sprints\Services\Sprints`
 
 
 
@@ -313,4 +313,4 @@ public Sprints::getCummulativeReport( $project): array|false
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

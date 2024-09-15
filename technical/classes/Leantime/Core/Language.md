@@ -8,8 +8,8 @@ footer: false
 Either takes the translation from ini_array or the default
 
 
+`\Leantime\Core\Language`
 
-* Full name: `\Leantime\Core\Language`
 
 
 
@@ -27,7 +27,7 @@ Either takes the translation from ini_array or the default
 Constructor method for initializing an instance of the class.
 
 ```php
-public Language::__construct(\Leantime\Core\Environment $config, \Leantime\Core\ApiRequest $apiRequest): mixed
+public Language::__construct(\Leantime\Core\Configuration\Environment $config, \Leantime\Core\Http\ApiRequest $apiRequest): mixed
 ```
 
 
@@ -41,8 +41,8 @@ public Language::__construct(\Leantime\Core\Environment $config, \Leantime\Core\
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `config` | **\Leantime\Core\Environment** | The configuration environment. |
-| `apiRequest` | **\Leantime\Core\ApiRequest** | The API request object. |
+| `config` | **\Leantime\Core\Configuration\Environment** | The configuration environment. |
+| `apiRequest` | **\Leantime\Core\Http\ApiRequest** | The API request object. |
 
 
 **Return Value:**
@@ -251,7 +251,7 @@ The translated string or the default value if the index is not found.
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -282,7 +282,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -314,7 +314,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -344,7 +344,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -367,7 +367,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -394,4 +394,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

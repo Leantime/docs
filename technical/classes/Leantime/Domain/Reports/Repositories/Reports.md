@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Reports\Repositories\Reports`
 
-* Full name: `\Leantime\Domain\Reports\Repositories\Reports`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - get database connection
 
 ```php
-public Reports::__construct(\Leantime\Core\Db $db): mixed
+public Reports::__construct(\Leantime\Core\Db\Db $db): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Reports::__construct(\Leantime\Core\Db $db): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 
 
 **Return Value:**
@@ -222,4 +222,4 @@ public Reports::getFullReport( $project): array|false
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

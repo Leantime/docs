@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Dashboard\Repositories\Dashboard`
 
-* Full name: `\Leantime\Domain\Dashboard\Repositories\Dashboard`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - neu db connection
 
 ```php
-public Dashboard::__construct(\Leantime\Core\Db $db): mixed
+public Dashboard::__construct(\Leantime\Core\Db\Db $db): mixed
 ```
 
 
@@ -34,7 +34,7 @@ public Dashboard::__construct(\Leantime\Core\Db $db): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db** |  |
+| `db` | **\Leantime\Core\Db\Db** |  |
 
 
 **Return Value:**
@@ -47,4 +47,4 @@ public Dashboard::__construct(\Leantime\Core\Db $db): mixed
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)

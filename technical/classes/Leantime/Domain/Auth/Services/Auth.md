@@ -8,8 +8,8 @@ footer: false
 
 
 
+`\Leantime\Domain\Auth\Services\Auth`
 
-* Full name: `\Leantime\Domain\Auth\Services\Auth`
 
 
 
@@ -20,7 +20,7 @@ footer: false
 __construct - getInstance of session and get sessionId and refers to login if post is set
 
 ```php
-public Auth::__construct(\Leantime\Core\Environment $config, \Leantime\Core\Session $session, \Leantime\Core\Language $language, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Domain\Auth\Repositories\Auth $authRepo, \Leantime\Domain\Users\Repositories\Users $userRepo): mixed
+public Auth::__construct(\Leantime\Core\Configuration\Environment $config, \Illuminate\Session\SessionManager $session, \Leantime\Core\Language $language, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Domain\Auth\Repositories\Auth $authRepo, \Leantime\Domain\Users\Repositories\Users $userRepo): mixed
 ```
 
 
@@ -34,8 +34,8 @@ public Auth::__construct(\Leantime\Core\Environment $config, \Leantime\Core\Sess
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `config` | **\Leantime\Core\Environment** |  |
-| `session` | **\Leantime\Core\Session** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
+| `session` | **\Illuminate\Session\SessionManager** |  |
 | `language` | **\Leantime\Core\Language** |  |
 | `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
 | `authRepo` | **\Leantime\Domain\Auth\Repositories\Auth** |  |
@@ -108,12 +108,12 @@ public Auth::login(string $username, string $password): bool
 
 
 ---
-### setUserSession
+### setUsersession
 
 
 
 ```php
-public Auth::setUserSession(mixed $user, bool $isLdap = false): false|void
+public Auth::setUsersession(mixed $user, bool $isLdap = false): false|void
 ```
 
 
@@ -210,29 +210,6 @@ public static Auth::isLoggedIn(): bool
 **Return Value:**
 
 Returns true if the user is logged in, false otherwise.
-
-
-
----
-### getSessionId
-
-
-
-```php
-public Auth::getSessionId(): string|null
-```
-
-
-
-
-
-
-
-
-
-**Return Value:**
-
-
 
 
 
@@ -672,7 +649,7 @@ private Auth::logFailedLogin(string $user): void
 dispatches an event with context
 
 ```php
-public static Eventhelpers::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
+public static DispatchesEvents::dispatch_event(string $hook, mixed $available_params = [], string|int|null $function = null): void
 ```
 
 
@@ -703,7 +680,7 @@ public static Eventhelpers::dispatch_event(string $hook, mixed $available_params
 dispatches a filter with context
 
 ```php
-public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
+public static DispatchesEvents::dispatch_filter(string $hook, mixed $payload, mixed $available_params = [], string|int|null $function = null): mixed
 ```
 
 
@@ -735,7 +712,7 @@ public static Eventhelpers::dispatch_filter(string $hook, mixed $payload, mixed 
 Gets the context of the event
 
 ```php
-protected static Eventhelpers::get_event_context( $function): string
+protected static DispatchesEvents::get_event_context( $function): string
 ```
 
 
@@ -765,7 +742,7 @@ Gets the class Context based on path, this uses the same method as the autoloade
 Helps create unique strings for events/filters
 
 ```php
-private static Eventhelpers::set_class_context(): string
+private static DispatchesEvents::set_class_context(): string
 ```
 
 
@@ -788,7 +765,7 @@ private static Eventhelpers::set_class_context(): string
 Gets the caller function name
 
 ```php
-private static Eventhelpers::get_function_context(?int $functionInt = null): string
+private static DispatchesEvents::get_function_context(?int $functionInt = null): string
 ```
 
 This way we don't have to use much memory by using debug_backtrace
@@ -815,4 +792,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-05-07 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
