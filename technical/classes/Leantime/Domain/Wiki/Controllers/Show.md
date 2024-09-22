@@ -104,6 +104,35 @@ public Show::post( $params): \Symfony\Component\HttpFoundation\Response
 
 
 ---
+### setWikiAndRedirect
+
+
+
+```php
+protected Show::setWikiAndRedirect(mixed $id): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 
 
 ## Inherited methods
@@ -340,4 +369,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

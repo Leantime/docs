@@ -41,4 +41,4 @@ public LeantimeEntities::__construct(): mixed
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

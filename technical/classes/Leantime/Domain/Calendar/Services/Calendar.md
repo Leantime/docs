@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Calendar::__construct(\Leantime\Domain\Calendar\Repositories\Calendar $calendarRepo, \Leantime\Core\Language $language): mixed
+public Calendar::__construct(\Leantime\Domain\Calendar\Repositories\Calendar $calendarRepo, \Leantime\Core\Language $language, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Core\Configuration\Environment $config): mixed
 ```
 
 
@@ -36,6 +36,8 @@ public Calendar::__construct(\Leantime\Domain\Calendar\Repositories\Calendar $ca
 |-----------|------|-------------|
 | `calendarRepo` | **\Leantime\Domain\Calendar\Repositories\Calendar** |  |
 | `language` | **\Leantime\Core\Language** |  |
+| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
+| `config` | **\Leantime\Core\Configuration\Environment** |  |
 
 
 **Return Value:**
@@ -369,6 +371,52 @@ public Calendar::getCalendar(int $userId): array
 
 
 ---
+### getICalUrl
+
+
+
+```php
+public Calendar::getICalUrl(): mixed
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
+### generateIcalHash
+
+
+
+```php
+public Calendar::generateIcalHash(): mixed
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### mapEventData
 
 Generates an event array for fullcalendar.io frontend.
@@ -411,4 +459,4 @@ private Calendar::mapEventData(string $title, string $description, bool $allDay,
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

@@ -5,11 +5,9 @@ footer: false
 
 # Projects
 
-Class Projects
+The Projects class is responsible for managing projects and project-related operations.
 
-This class represents a collection of methods related to projects.
-It provides functionality to retrieve project types, project data,
-project progress, users to notify in a project, and send project notifications.
+
 `\Leantime\Domain\Projects\Services\Projects`
 
 
@@ -1006,7 +1004,7 @@ public Projects::getProjectSetupChecklist(int $projectId): array
 
 **Return Value:**
 
-The setup checklist for the project.
+The setup checklist for the project
 
 
 
@@ -1068,6 +1066,8 @@ public Projects::editUserProjectRelations(int $id, array $projects): bool
 
 True if the project relations were successfully edited, false otherwise.
 
+@api
+
 
 
 ---
@@ -1097,6 +1097,8 @@ public Projects::getProjectIdbyName(array $allProjects, string $projectName): mi
 **Return Value:**
 
 The ID of the project if found, or false if not found.
+
+@api
 
 
 
@@ -1155,7 +1157,7 @@ public Projects::editProject(mixed $values, int $id): void
 
 **Return Value:**
 
-
+@api
 
 
 
@@ -1216,6 +1218,8 @@ public Projects::getClientManagerProjects(int $userId, int $clientId): array
 **Return Value:**
 
 The projects for the client manager.
+
+@api
 
 
 
@@ -1477,4 +1481,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

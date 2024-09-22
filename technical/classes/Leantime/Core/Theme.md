@@ -32,7 +32,7 @@ theme - Engine for handling themes
 __construct - Constructor
 
 ```php
-public Theme::__construct(\Leantime\Core\Configuration\Environment $config, \Leantime\Core\Configuration\AppSettings $settings, \Leantime\Core\Language $language, array $iniData = []): mixed
+public Theme::__construct(\Leantime\Core\Configuration\Environment $config, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Core\Language $language, \Leantime\Core\Configuration\AppSettings $appSettings): mixed
 ```
 
 
@@ -47,9 +47,9 @@ public Theme::__construct(\Leantime\Core\Configuration\Environment $config, \Lea
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `config` | **\Leantime\Core\Configuration\Environment** |  |
-| `settings` | **\Leantime\Core\Configuration\AppSettings** |  |
+| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
 | `language` | **\Leantime\Core\Language** |  |
-| `iniData` | **array** |  |
+| `appSettings` | **\Leantime\Core\Configuration\AppSettings** |  |
 
 
 **Return Value:**
@@ -987,4 +987,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

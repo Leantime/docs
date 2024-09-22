@@ -20,7 +20,7 @@ footer: false
 
 
 ```php
-public Menu::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Language $language, \Leantime\Core\Configuration\Environment $config, \Leantime\Domain\Projects\Repositories\Projects $projectRepository, \Leantime\Domain\Tickets\Repositories\Tickets $ticketRepository, \Leantime\Domain\Timesheets\Repositories\Timesheets $timesheetsRepo, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheetService, \Leantime\Domain\Sprints\Services\Sprints $sprintService, \Leantime\Domain\Users\Services\Users $userService, \Leantime\Domain\Setting\Services\Setting $settingSvc): mixed
+public Menu::__construct(\Leantime\Domain\Projects\Services\Projects $projectService, \Leantime\Domain\Timesheets\Services\Timesheets $timesheetService, \Leantime\Domain\Sprints\Services\Sprints $sprintService, \Leantime\Domain\Users\Services\Users $userService, \Leantime\Domain\Setting\Services\Setting $settingSvc): mixed
 ```
 
 
@@ -34,13 +34,6 @@ public Menu::__construct(\Leantime\Core\Template $tpl, \Leantime\Core\Language $
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `tpl` | **\Leantime\Core\Template** |  |
-| `language` | **\Leantime\Core\Language** |  |
-| `config` | **\Leantime\Core\Configuration\Environment** |  |
-| `projectRepository` | **\Leantime\Domain\Projects\Repositories\Projects** |  |
-| `ticketRepository` | **\Leantime\Domain\Tickets\Repositories\Tickets** |  |
-| `timesheetsRepo` | **\Leantime\Domain\Timesheets\Repositories\Timesheets** |  |
-| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
 | `projectService` | **\Leantime\Domain\Projects\Services\Projects** |  |
 | `timesheetService` | **\Leantime\Domain\Timesheets\Services\Timesheets** |  |
 | `sprintService` | **\Leantime\Domain\Sprints\Services\Sprints** |  |
@@ -283,4 +276,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)
