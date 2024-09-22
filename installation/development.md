@@ -44,7 +44,7 @@ npm install
 to load Javascript dependencies and finally run the grunt task to create the compiled js files
 
 ```
-grunt Build-All
+npx mix
 ```
 
 - Point your local domain to the public/ directory
