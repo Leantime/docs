@@ -312,6 +312,35 @@ public Timesheets::getLoggedHoursForTicket(int $ticketId): array
 
 
 ---
+### getTimesheetsByTicket
+
+
+
+```php
+public Timesheets::getTimesheetsByTicket(mixed $id): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **mixed** |  |
+
+
+**Return Value:**
+
+
+
+
+
+---
 ### isClocked
 
 isClocked - Checks to see whether a user is clocked in
@@ -957,4 +986,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

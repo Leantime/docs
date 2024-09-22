@@ -234,6 +234,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 | [RateLimiter](technical/classes/Leantime/Core/Providers/RateLimiter.md) | |
 | [Redis](technical/classes/Leantime/Core/Providers/Redis.md) | |
 | [Session](technical/classes/Leantime/Core/Providers/Session.md) | |
+| [Theme](technical/classes/Leantime/Core/Providers/Theme.md) | |
 
 
 
@@ -352,7 +353,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 | Class | Description |
 |---    |---          |
-| [KeepAlive](technical/classes/Leantime/Domain/Auth/Controllers/KeepAlive.md) | Controller Class - Base class For all controllers|
+| [KeepAlive](technical/classes/Leantime/Domain/Auth/Controllers/KeepAlive.md) | Keeping the session alive when not active|
 | [Login](technical/classes/Leantime/Domain/Auth/Controllers/Login.md) | Controller Class - Base class For all controllers|
 | [Logout](technical/classes/Leantime/Domain/Auth/Controllers/Logout.md) | Controller Class - Base class For all controllers|
 | [ResetPw](technical/classes/Leantime/Domain/Auth/Controllers/ResetPw.md) | Controller Class - Base class For all controllers|
@@ -1488,7 +1489,7 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 | Class | Description |
 |---    |---          |
-| [Projects](technical/classes/Leantime/Domain/Projects/Services/Projects.md) | Class Projects|
+| [Projects](technical/classes/Leantime/Domain/Projects/Services/Projects.md) | The Projects class is responsible for managing projects and project-related operations.|
 
 
 
@@ -2182,23 +2183,8 @@ This is an automatically generated documentation for **Leantime Code Reference**
 
 
 
-## \Leantime\Views\Composers
-
-### Classes
-
-| Class | Description |
-|---    |---          |
-| [App](technical/classes/Leantime/Views/Composers/App.md) | |
-| [Entry](technical/classes/Leantime/Views/Composers/Entry.md) | |
-| [Footer](technical/classes/Leantime/Views/Composers/Footer.md) | |
-| [Header](technical/classes/Leantime/Views/Composers/Header.md) | |
-| [PageBottom](technical/classes/Leantime/Views/Composers/PageBottom.md) | |
-
-
-
-
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)
 
 #### Hooks
 

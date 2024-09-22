@@ -26,7 +26,7 @@ footer: false
 
 
 ```php
-public Menu::__construct(\Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Core\Language $language, \Leantime\Core\Configuration\Environment $config, \Leantime\Domain\Tickets\Services\Tickets $ticketsService, \Leantime\Domain\Auth\Services\Auth $authService): mixed
+public Menu::__construct(\Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Core\Language $language, \Leantime\Core\Configuration\Environment $config, \Leantime\Domain\Tickets\Services\Tickets $ticketsService): mixed
 ```
 
 
@@ -44,7 +44,6 @@ public Menu::__construct(\Leantime\Domain\Setting\Repositories\Setting $settings
 | `language` | **\Leantime\Core\Language** |  |
 | `config` | **\Leantime\Core\Configuration\Environment** |  |
 | `ticketsService` | **\Leantime\Domain\Tickets\Services\Tickets** |  |
-| `authService` | **\Leantime\Domain\Auth\Services\Auth** |  |
 
 
 **Return Value:**
@@ -138,10 +137,10 @@ public Menu::getSubmenuState(string $submenu): mixed
 ---
 ### buildMenuStructure
 
-
+Builds the menu structure recursively.
 
 ```php
-protected Menu::buildMenuStructure(array $menuStructure, string $filter): array
+protected Menu::buildMenuStructure(array& $menuStructure, string $filter): array
 ```
 
 
@@ -155,13 +154,13 @@ protected Menu::buildMenuStructure(array $menuStructure, string $filter): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `menuStructure` | **array** |  |
-| `filter` | **string** |  |
+| `menuStructure` | **array** | The menu structure to build. Passed by reference. |
+| `filter` | **string** | The filter to apply to the menu structure. |
 
 
 **Return Value:**
 
-
+The built menu structure.
 
 
 
@@ -476,4 +475,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

@@ -59,7 +59,7 @@ footer: false
 ---
 ### `leantime.rpc.Wiki.Wiki.getAllProjectWikis`
 
-
+Gets all project wikis. Creates one if there aren't any
 
 ```json
 {

@@ -1,14 +1,14 @@
 ---
-title: \Leantime\Core\Providers\Logging
+title: \Leantime\Core\Providers\Theme
 footer: false
 ---
 
-# Logging
+# Theme
 
 
 
 
-`\Leantime\Core\Providers\Logging`
+`\Leantime\Core\Providers\Theme`
 
 * Parent class: [ServiceProvider](../../../../classes.md)
 
@@ -21,7 +21,7 @@ footer: false
 Register any application services.
 
 ```php
-public Logging::register(): void
+public Theme::register(): void
 ```
 
 

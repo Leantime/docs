@@ -21,7 +21,7 @@ Controller Class - Base class For all controllers
 init - initialize private variables
 
 ```php
-public Export::init(\Leantime\Core\Configuration\Environment $config, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo): void
+public Export::init(\Leantime\Core\Configuration\Environment $config, \Leantime\Domain\Setting\Repositories\Setting $settingsRepo, \Leantime\Domain\Calendar\Services\Calendar $calendarService): void
 ```
 
 
@@ -37,6 +37,7 @@ public Export::init(\Leantime\Core\Configuration\Environment $config, \Leantime\
 |-----------|------|-------------|
 | `config` | **\Leantime\Core\Configuration\Environment** |  |
 | `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
+| `calendarService` | **\Leantime\Domain\Calendar\Services\Calendar** |  |
 
 
 **Return Value:**
@@ -305,4 +306,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

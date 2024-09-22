@@ -91,7 +91,7 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 
 | Available Services | Description |
 |---    |---          |
-| [Projects](api/classes/Leantime/Domain/Projects/Services/Projects.md) | Class Projects|
+| [Projects](api/classes/Leantime/Domain/Projects/Services/Projects.md) | The Projects class is responsible for managing projects and project-related operations.|
 
 ## `leantime.rpc.Queue`
 
@@ -171,5 +171,5 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 | [Wiki](api/classes/Leantime/Domain/Wiki/Services/Wiki.md) | |
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)
 

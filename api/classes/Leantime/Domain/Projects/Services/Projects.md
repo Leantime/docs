@@ -5,11 +5,9 @@ footer: false
 
 # Projects
 
-Class Projects
+The Projects class is responsible for managing projects and project-related operations.
 
-This class represents a collection of methods related to projects.
-It provides functionality to retrieve project types, project data,
-project progress, users to notify in a project, and send project notifications.
+
 `leantime.rpc.Projects.Projects.`
 
 

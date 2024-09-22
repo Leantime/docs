@@ -5,7 +5,7 @@ footer: false
 
 # KeepAlive
 
-Controller Class - Base class For all controllers
+Keeping the session alive when not active
 
 
 `\Leantime\Domain\Auth\Controllers\KeepAlive`
@@ -310,4 +310,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)

@@ -952,7 +952,7 @@ Argument | Type | Description
 `array("type" => "projectUpdate", "module" => $notification->module, "moduleId" => $entityId, "message" => $notification->message, "subject" => $notification->subject, "users" => $this->getAllUserInfoToNotify($notification->projectId), "url" => $notification->url['url'])` |  | 
 `"domain.services.projects"` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 359](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L359-L376)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 356](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L356-L373)
 
 ### `Leantime.Domain.Projects.Services.Projects.changeCurrentSessionProject.projects.setCurrentProject`
 
@@ -964,7 +964,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$project` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 739](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L739-L838)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 736](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L736-L835)
 
 ### `Leantime.Domain.Calendar.Templates.export.tpl.afterFormOpen`
 
@@ -1119,7 +1119,7 @@ Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.co
 ### `Leantime.Domain.Calendar.Templates.showMyCalendar.tpl.scripts.beforeClose`
 
 
-Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php), [line 294](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php#L294-L294)
+Source: [app/Domain/Calendar/Templates/showMyCalendar.tpl.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php), [line 326](https://github.com/Leantime/leantime/blob/master/app/Domain/Calendar/Templates/showMyCalendar.tpl.php#L326-L326)
 
 ### `Leantime.Domain.Auth.Controllers.UserInvite.post.userSignUpSuccess`
 
@@ -1863,7 +1863,7 @@ Argument | Type | Description
 `['schedule' => $schedule]` |  | 
 `'schedule'` |  | 
 
-Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 214](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L214-L214)
+Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 215](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L215-L215)
 
 ### `Leantime.Core.Console.ConsoleKernel.terminate.command`
 
@@ -1875,7 +1875,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `['input' => $input, 'status' => $status]` |  | 
 
-Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 295](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L295-L312)
+Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 296](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L296-L313)
 
 ### `Leantime.Plugins.Llamadorian.Templates.statusUpdates.tpl.beforePageHeaderOpen`
 
@@ -1991,13 +1991,15 @@ Source: [app/Plugins/PgmPro/Templates/showProgram.tpl.php](https://github.com/Le
 
 ### `Leantime.Domain.Tickets.Services.Tickets.getToDoWidgetAssignments.myTodoWidgetTasks`
 
+*Retrieves the assignments for the ToDoWidget.*
+
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$tickets` |  | 
 
-Source: [app/Domain/Tickets/Services/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php), [line 29](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php#L29-L2130)
+Source: [app/Domain/Tickets/Services/Tickets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php), [line 2119](https://github.com/Leantime/leantime/blob/master/app/Domain/Tickets/Services/Tickets.php#L2119-L2196)
 
 ### `Leantime.Domain.Projects.Controllers.ChangeCurrentProject.get.defaultProjectUrl`
 
@@ -2022,7 +2024,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$types` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 81](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L81-L93)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 78](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L78-L90)
 
 ### `Leantime.Domain.Projects.Services.Projects.notifyProjectUsers.notificationFilter`
 
@@ -2034,7 +2036,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$notification` | `\Notification` | The notification object to send.
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 262](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L262-L274)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 259](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L259-L271)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterLoadingProjects`
 
@@ -2046,7 +2048,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 495](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L495-L516)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 492](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L492-L513)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectHierarchy`
 
@@ -2059,7 +2061,7 @@ Argument | Type | Description
 `$projectHierarchy` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 495](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L495-L522)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 492](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L492-L519)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAssignedToUser.afterPopulatingProjectFavorites`
 
@@ -2072,7 +2074,7 @@ Argument | Type | Description
 `$favorites` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 495](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L495-L531)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 492](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L492-L528)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAvailableToUser.afterLoadingProjects`
 
@@ -2084,7 +2086,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 540](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L540-L563)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 537](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L537-L560)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectHierarchyAvailableToUser.afterPopulatingProjectHierarchy`
 
@@ -2097,7 +2099,7 @@ Argument | Type | Description
 `$projectHierarchy` |  | 
 `array("projects" => $projects)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 540](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L540-L569)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 537](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L537-L566)
 
 ### `Leantime.Domain.Projects.Services.Projects.getAllClientsAvailableToUser.afterLoadingProjects`
 
@@ -2109,7 +2111,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projects` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 581](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L581-L600)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 578](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L578-L597)
 
 ### `Leantime.Domain.Projects.Services.Projects.getProjectAvatar.afterGettingAvatar`
 
@@ -2122,7 +2124,7 @@ Argument | Type | Description
 `$avatar` |  | 
 `array("projectId" => $id)` |  | 
 
-Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 1332](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L1332-L1343)
+Source: [app/Domain/Projects/Services/Projects.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php), [line 1329](https://github.com/Leantime/leantime/blob/master/app/Domain/Projects/Services/Projects.php#L1329-L1340)
 
 ### `Leantime.Domain.Install.Controllers.Update.get.customUpdatePage`
 
@@ -2156,7 +2158,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$query` |  | 
 
-Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 580](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L580-L625)
+Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 607](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L607-L652)
 
 ### `Leantime.Domain.Timesheets.Repositories.Timesheets.upsertTimesheetEntry.sql`
 
@@ -2168,7 +2170,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$query` |  | 
 
-Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 748](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L748-L790)
+Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 775](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L775-L817)
 
 ### `Leantime.Domain.Timesheets.Repositories.Timesheets.updateHours.sql`
 
@@ -2180,7 +2182,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$query` |  | 
 
-Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 864](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L864-L887)
+Source: [app/Domain/Timesheets/Repositories/Timesheets.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php), [line 891](https://github.com/Leantime/leantime/blob/master/app/Domain/Timesheets/Repositories/Timesheets.php#L891-L914)
 
 ### `Leantime.Domain.Plugins.Controllers.CssLoader.get.pluginCss`
 
@@ -2203,7 +2205,7 @@ Argument | Type | Description
 `$installedPluginsById` |  | 
 `array("enabledOnly" => $enabledOnly)` |  | 
 
-Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 137](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L137-L143)
+Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 138](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L138-L143)
 
 ### `Leantime.Domain.Plugins.Services.Plugins.getEnabledPlugins.beforeReturnCachedPlugins`
 
@@ -2211,7 +2213,7 @@ Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/le
 
 Argument | Type | Description
 -------- | ---- | -----------
-`session("enabledPlugins")` |  | 
+`\Illuminate\Support\Facades\Cache::store("installation")->get("enabledPlugins")` |  | 
 `array("enabledOnly" => true)` |  | 
 
 Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 168](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L168-L178)
@@ -2224,10 +2226,10 @@ Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/le
 
 Argument | Type | Description
 -------- | ---- | -----------
-`session("enabledPlugins")` |  | 
-`array("enabledOnly" => true)` |  | 
+`payload: \Illuminate\Support\Facades\Cache::store("installation")->get("enabledPlugins")` |  | 
+`available_params: array("enabledOnly" => true)` |  | 
 
-Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 184](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L184-L190)
+Source: [app/Domain/Plugins/Services/Plugins.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php), [line 184](https://github.com/Leantime/leantime/blob/master/app/Domain/Plugins/Services/Plugins.php#L184-L192)
 
 ### `Leantime.Domain.Wiki.Templates.templates.tpl.documentTemplates`
 
@@ -2284,25 +2286,16 @@ Source: [app/Domain/Dashboard/Controllers/Show.php](https://github.com/Leantime/
 
 ### `Leantime.Domain.Menu.Repositories.Menu.buildMenuStructure.{$filter}`
 
+*Builds the menu structure recursively.*
+
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`payload: $this->buildMenuStructure($menuItem['submenu'], $filter)` |  | 
+`payload: $menuItem['submenu']` |  | 
 `function: 'getMenuStructure'` |  | 
 
-Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 233](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L233-L237)
-
-### `Leantime.Domain.Menu.Repositories.Menu.getMenuStructure.{$filter}`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this->buildMenuStructure($menu, $filter)` |  | 
-`'getMenuStructure'` |  | 
-
-Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 257](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L257-L261)
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 221](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L221-L246)
 
 ### `Leantime.Domain.Menu.Repositories.Menu.getMenuStructure.menuStructures`
 
@@ -2312,10 +2305,23 @@ Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/lean
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$menuCollection` |  | 
+`$this->menuStructures` |  | 
 `['menuType' => $menuType]` |  | 
 
-Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 243](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L243-L269)
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 253](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L253-L271)
+
+### `Leantime.Domain.Menu.Repositories.Menu.getMenuStructure.{$filter}`
+
+*getMenu - Return a specific menu structure*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this->menuStructures[$menuType]` |  | 
+`['menuType' => $menuType]` |  | 
+
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 253](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L253-L285)
 
 ### `Leantime.Domain.Menu.Repositories.Menu.getSectionMenuType.menuSections`
 
@@ -2326,7 +2332,7 @@ Argument | Type | Description
 `$sections` |  | 
 `array("currentRoute" => $currentRoute, "default" => $default)` |  | 
 
-Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L16-L444)
+Source: [app/Domain/Menu/Repositories/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php), [line 16](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Repositories/Menu.php#L16-L456)
 
 ### `Leantime.Domain.Menu.Hxcontrollers.ProjectSelector.updateMenu.startSomething`
 
@@ -2346,7 +2352,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projectTypeAvatars` |  | 
 
-Source: [app/Domain/Menu/Services/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Services/Menu.php), [line 163](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Services/Menu.php#L163-L175)
+Source: [app/Domain/Menu/Services/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Services/Menu.php), [line 136](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Services/Menu.php#L136-L148)
 
 ### `Leantime.Domain.Menu.Services.Menu.getProjectSelectorGroupingOptions.projectSelectorGrouping`
 
@@ -2356,7 +2362,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$projectSelectGrouping` |  | 
 
-Source: [app/Domain/Menu/Services/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Services/Menu.php), [line 178](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Services/Menu.php#L178-L191)
+Source: [app/Domain/Menu/Services/Menu.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Services/Menu.php), [line 151](https://github.com/Leantime/leantime/blob/master/app/Domain/Menu/Services/Menu.php#L151-L164)
 
 ### `Leantime.Domain.Menu.Composers.ProjectSelector.with.startSomething`
 
@@ -2502,9 +2508,9 @@ Source: [app/Domain/Modulemanager/Controllers/Notavailable.php](https://github.c
 
 ### `Leantime.Domain.Modulemanager.Services.Modulemanager.isModuleAvailable.moduleAvailability`
 
-*Checks if a module is available.*
+*Checks if a module is available and enabled.*
 
-In Progress: This method is a stub to hook into via filters.
+This also checks plugins and whether they are installed and enabled
 
 **Arguments**
 
@@ -2513,7 +2519,7 @@ Argument | Type | Description
 `$available` |  | 
 `["module" => $module]` |  | 
 
-Source: [app/Domain/Modulemanager/Services/Modulemanager.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Modulemanager/Services/Modulemanager.php), [line 73](https://github.com/Leantime/leantime/blob/master/app/Domain/Modulemanager/Services/Modulemanager.php#L73-L96)
+Source: [app/Domain/Modulemanager/Services/Modulemanager.php](https://github.com/Leantime/leantime/blob/master/app/Domain/Modulemanager/Services/Modulemanager.php), [line 58](https://github.com/Leantime/leantime/blob/master/app/Domain/Modulemanager/Services/Modulemanager.php#L58-L80)
 
 ### `Leantime.Core.Fileupload.getPublicFilesPath.relative_path`
 
@@ -3002,7 +3008,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$parsedColorSchemes` |  | 
 
-Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 150](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L150-L177)
+Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 157](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L157-L183)
 
 ### `Leantime.Core.Theme.getAvailableFonts.fonts`
 
@@ -3014,7 +3020,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this->fonts` |  | 
 
-Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L17-L184)
+Source: [app/Core/Theme.php](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php), [line 17](https://github.com/Leantime/leantime/blob/master/app/Core/Theme.php#L17-L190)
 
 ### `Leantime.Core.Db.Repository.prepare.sql`
 
@@ -3185,7 +3191,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `[\Illuminate\Console\Scheduling\ScheduleRunCommand::class, \Illuminate\Console\Scheduling\ScheduleFinishCommand::class, \Illuminate\Console\Scheduling\ScheduleListCommand::class, \Illuminate\Console\Scheduling\ScheduleTestCommand::class, \Illuminate\Console\Scheduling\ScheduleWorkCommand::class, \Illuminate\Console\Scheduling\ScheduleClearCacheCommand::class]` |  | 
 
-Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 113](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L113-L176)
+Source: [app/Core/Console/ConsoleKernel.php](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php), [line 114](https://github.com/Leantime/leantime/blob/master/app/Core/Console/ConsoleKernel.php#L114-L177)
 
 ### `Leantime.Views.Composers.App.with.appAnnouncement`
 

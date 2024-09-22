@@ -55,13 +55,13 @@ footer: false
 
 
 ---
-### `leantime.rpc.Plugins.Plugins.isPluginEnabled`
+### `leantime.rpc.Plugins.Plugins.isEnabled`
 
 
 
 ```json
 {
-    "method": "leantime.rpc.Plugins.Plugins.isPluginEnabled",
+    "method": "leantime.rpc.Plugins.Plugins.isEnabled",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {

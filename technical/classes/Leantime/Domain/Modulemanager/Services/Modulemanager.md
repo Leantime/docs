@@ -44,44 +44,15 @@ public Modulemanager::__construct(\Leantime\Domain\Plugins\Services\Plugins $plu
 
 
 ---
-### isModuleEnabled
-
-
-
-```php
-public static Modulemanager::isModuleEnabled( $module): bool
-```
-
-
-
-* This method is **static**.
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `module` | **** |  |
-
-
-**Return Value:**
-
-
-
-
-
----
 ### isModuleAvailable
 
-Checks if a module is available.
+Checks if a module is available and enabled.
 
 ```php
 public Modulemanager::isModuleAvailable(string $module): bool
 ```
 
-In Progress: This method is a stub to hook into via filters.
+This also checks plugins and whether they are installed and enabled
 
 
 
@@ -254,4 +225,4 @@ This way we don't have to use much memory by using debug_backtrace
 
 
 ---
-> Automatically generated from source code comments on 2024-08-30 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)
