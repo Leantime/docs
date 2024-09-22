@@ -1066,8 +1066,6 @@ public Projects::editUserProjectRelations(int $id, array $projects): bool
 
 True if the project relations were successfully edited, false otherwise.
 
-@api
-
 
 
 ---

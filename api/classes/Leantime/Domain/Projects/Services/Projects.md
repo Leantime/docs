@@ -1247,6 +1247,51 @@ The projects.
 
 
 ---
+### `leantime.rpc.Projects.Projects.editUserProjectRelations`
+
+Edits the project relations of a user.
+
+```json
+{
+    "method": "leantime.rpc.Projects.Projects.editUserProjectRelations",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "id": int,
+        "projects": array,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | The ID of the user. |
+| `projects` | **array** | The projects to be edited. |
+
+
+**Returns:**
+True if the project relations were successfully edited, false otherwise.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
 ### `leantime.rpc.Projects.Projects.getAll`
 
 Gets all the projects for the current user.
