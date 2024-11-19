@@ -133,6 +133,7 @@ LEAN_LDAP_DEFAULT_ROLE_KEY=20;                   # Default Leantime Role on crea
 Using nginx under Plesk is quite easy but still not advised to edit the nginx.config of a domain, so instead of doing the above metod we'll fix the uri rewriting by adding the instructions in the "Additional nginx directives" under the "Apache & nginx Settings" page of the domain.
 
 ```php
+
 if ($ssl_protocol = "") {
 	rewrite ^/(.*) https://$server_name/$1 permanent;
 }
@@ -145,6 +146,7 @@ rewrite ^/update/([^/\.]+)/?$ /index.php?update=true;
 rewrite ^/?$ /index.php?act=dashboard.show;
 rewrite ^/([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1.$2;
 rewrite ^/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1.$2&id=$3;
+
 ```
 
 ## Theme Configuration
