@@ -12,6 +12,7 @@
 - [Development/Local](installation/development.md)
 - [Connect to API](api/usage.md)
 - [Using the Leantime CLI](development/commandline.md)
+- [Plugin Development](development/plugin-development.md)
 
 **References**
 
