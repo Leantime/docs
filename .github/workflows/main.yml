@@ -12,7 +12,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: docs.leantime.io
-        server-dir: docs.leantime.io/
+        server-dir: ./docs.leantime.io/
         username: ${{ secrets.FTPUSER }}
         password: ${{ secrets.FTPPASS }}
         log-level: verbose
