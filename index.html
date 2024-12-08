@@ -75,8 +75,10 @@
       window.$docsify = {
         el: "#main",
         loadSidebar: true,
+        routerMode: 'history',
         alias: {
           "/.*/_sidebar.md": "/_sidebar.md",
+          '/.*/_navbar.md': '/_navbar.md',
         },
         loadNavbar: true,
         name: 'Leantime',
