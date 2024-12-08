@@ -1,14 +1,21 @@
-# Leantime Overview
+<div align="center">
+<a href="https://leantime.io"><img src="https://leantime.io/wp-content/uploads/2023/03/leantime_logo.png" alt="Leantime Logo" width="300"/></a>
 
-We believe every team should have access to tools that make work efficient — resulting in the best outcomes. Our mission is to commoditize project management.  Open Source Software makes that possible by allowing more managers to access the tools we offer while remaining flexible enough to integrate with existing workflows.
+### Leantime&reg; ###
 
-The documentation is split into three major sections as outlined below.
+Leantime is an open source project management system for non-project manager.<br />We combine strategy, planning and executing while making it easy for everyone on the team to use. Building with ADHD, dyslexia and autism in mind. <br />It's an alternative to ClickUp, Monday, or Asana. As simple as Trello but as feature-rich as Jira.<br />[https://leantime.io](https://leantime.io)<br />
 
-| Developer Docs | Leantime Features | Concepts/Methodolgies |
-|---|---|---| 
-| - [System Requirements](installation/system-requirements.md)<br />- [Installation](installation/quick-installation.md)<br />- [Configuration](installation/configuration.md)<br />- [Contributors & Plugin Developers](technical/README.md)|  - [Task Management](using-leantime/task-management.md)<br />- [Roadmap Planning](using-leantime/roadmap-planning.md)<br />- [Research Boards](using-leantime/research-boards.md)<br />- [Idea Management](using-leantime/idea-management.md)<br />- [Retrospectives](using-leantime/retrospectives.md)<br />- [Timesheets](using-leantime/timesheets.md)<br />- [User Management](using-leantime/user-management.md)<br />- [Managing Projects](using-leantime/managing-projects.md)<br />- [Managing Clients](using-leantime/managing-clients.md)<br />- [Integrations](using-leantime/integrations.md)<br />- [Company Settings](using-leantime/company-settings.md)|- [Leantime Workflow](knowledge-base/wheretostart.md)<br />- [Agile in Leantime](knowledge-base/agile.md)<br />- [Lean Methodology](knowledge-base/whatislean.md)<br />- [Idea Development](knowledge-base/idea-development.md)<br />- [Product Validation](knowledge-base/product-validation.md)<br />- [Team Happiness](knowledge-base/team-happiness.md)
+[![License Badge](https://img.shields.io/github/license/leantime/leantime?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0.en.html)
+[![Docker Hub Badge](https://img.shields.io/docker/pulls/leantime/leantime?style=flat-square)](https://hub.docker.com/r/leantime/leantime)
+![Github Downloads](https://img.shields.io/github/downloads/leantime/leantime/total)
+[![Discord Badge](https://img.shields.io/discord/990001288026677318?label=Discord&style=flat-square)](https://discord.gg/4zMzJtAq9z)
+[![Crowdin](https://badges.crowdin.net/leantime/localized.svg)](https://crowdin.com/project/leantime)
+![GitHub Sponsors](https://img.shields.io/github/sponsors/leantime)
+<br />
 
-To get started right away start here: [Quick Start](getting-started/new-project.md)
+</div>
+
+To get started with installation go to: [Quick Start](installation/installation-types.md)
 
 # Contributing
 
