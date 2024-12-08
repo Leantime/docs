@@ -13,11 +13,7 @@ Leantime is an open source project management system for non-project manager.<br
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/leantime)
 <br />
 
+To get started with installation go to <br />[Quick Start](installation/installation-types.md)
+
 </div>
 
-To get started with installation go to: [Quick Start](installation/installation-types.md)
-
-# Contributing
-
-We love contributions. If you have updates to the docs please create a pull request. For issues or questions please use our main repository at:
-[https://github.com/Leantime/leantime/issues/new](https://github.com/Leantime/leantime/issues/new)
