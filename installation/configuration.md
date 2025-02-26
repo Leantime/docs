@@ -245,7 +245,7 @@ To ensure users receive timely notifications, Leantime offers two options for ru
 Run the following command from your Leantime installation directory to manually trigger the cron job:
 
 ```
-./bin/leantime cron:run
+ php bin/leantime schedule:run
 ```
 
 #### Option 2: Using the Cron Endpoint
