@@ -22,7 +22,7 @@ LEAN_S3_SECRET=''               # S3 Secret, hardcoded in s3ninja
 LEAN_S3_BUCKET=''               # S3 bucket name
 LEAN_S3_USE_PATH_STYLE_ENDPOINT=true            # Sets the endpoint style: false => https://[bucket].[endpoint] ; true => https://[endpoint]/[bucket]
 LEAN_S3_REGION=''               # S3 region
-LEAN_S3_FOLDER_NAME=''          # Foldername within S3 (can be emtpy)
+LEAN_S3_FOLDER_NAME=''          # Foldername within S3 (can be empyy)
 LEAN_S3_END_POINT=''            # S3 EndPoint S3 Compatible
 ```
 
@@ -56,7 +56,7 @@ Common issues that users encounter such as if port is closed, check firewall set
 
 _LDAP is not supported in Leantime with versions earlier than v2.1.9._
 
-Leantime supports basic LDAP integration via configuration of the environament variables. Follow the porcess below to setup LDAP:
+Leantime supports basic LDAP integration via configuration of the environment variables. Follow the process below to setup LDAP:
 
 Navigate to the `config/.env` file and update the following settings:
 
@@ -84,7 +84,7 @@ LEAN_LDAP_KEYS="{
      }"
 ```
 
-Then configure LDAP Group Assignments to match leantime roles to roles in the directory:
+Then configure LDAP Group Assignments to match Leantime roles to roles in the directory:
 
 ```php
 LEAN_LDAP_GROUP_ASSIGNMENT="{
@@ -120,7 +120,7 @@ Here each of these levels is associated with two attributes:
 - `ltRole`: The role in your application.
 - `ldapRole`: The role in the LDAP directory.
 
-Set the roles as per your setup. This allows you to manage user roles accross the system, and ensures the right permission is given to the users.
+Set the roles as per your setup. This allows you to manage user roles across the system, and ensures the right permission is given to the users.
 
 Lastly, you can set the default role for users when they are first created by updating:
 
@@ -130,7 +130,7 @@ LEAN_LDAP_DEFAULT_ROLE_KEY=20;                   # Default Leantime Role on crea
 
 ## Plesk Nginx configuration
 
-Using nginx under Plesk is quite easy but still not advised to edit the nginx.config of a domain, so instead of doing the above metod we'll fix the uri rewriting by adding the instructions in the "Additional nginx directives" under the "Apache & nginx Settings" page of the domain.
+Using nginx under Plesk is quite easy but still not advised to edit the nginx.config of a domain, so instead of doing the above method we'll fix the URI rewriting by adding the instructions in the "Additional nginx directives" under the "Apache & nginx Settings" page of the domain.
 
 ```php
 
@@ -163,9 +163,9 @@ LEAN_SECONDARY_COLOR='#81B1A8'                   # Secondary Theme Color
 
 These settings can also be changed within Leantime under Account->Theme.
 
-## Sitename, Language and Timezone
+## Site name, Language and Timezone
 
-Configure sitename, your default language and timezone by updating the default settings section in `config/.env`:
+Configure site name, your default language and timezone by updating the default settings section in `config/.env`:
 
 ```php
 LEAN_SITENAME='Leantime'                         # Name of your site, can be changed later
@@ -173,7 +173,7 @@ LEAN_LANGUAGE='en-US'                            # Default language
 LEAN_DEFAULT_TIMEZONE='America/Los_Angeles'      # Set default timezone
 ```
 
-## OpenID-Conenct (OIDC) Configuration
+## OpenID-Connect (OIDC) Configuration
 
 You can connect Leantime to a OIDC provider of your choice. The reference implementation is Authentik, but any compliant provider which implements x5c certificates should work.
 
@@ -181,7 +181,7 @@ For a basic Keycloak or Authentik connection, only the provider URL, client id a
 
 The callback url is: `<<yourdomain>>/oidc/callback`
 
-To understand some of the more advanced options, take a look at the github example below.
+To understand some of the more advanced options, take a look at the GitHub example below.
 
 The following environment variables can be used:
 
@@ -203,7 +203,7 @@ LEAN_OIDC_CLIENT_SECRET=
 #LEAN_OIDC_AUTH_URL_OVERRIDE=
 #LEAN_OIDC_TOKEN_URL_OVERRIDE
 
-# this enables the userinfo endpoint to login using only OAuth2 - if you require multiple sources, you can add them comma seperated.
+# this enables the userinfo endpoint to login using only OAuth2 - if you require multiple sources, you can add them comma separated.
 #LEAN_OIDC_USERINFO_URL_OVERRIDE
 
 # optional - override the public key for RSA validation
@@ -213,7 +213,7 @@ LEAN_OIDC_CLIENT_SECRET=
 # optional - override the requested scopes
 #LEAN_OIDC_SCOPES =
 
-# optional - override the keys used for login and name - these can be nested with dots, if neccesarry (e.g.: user.info.email)
+# optional - override the keys used for login and name - these can be nested with dots, if necessary (e.g.: user.info.email)
 #LEAN_OIDC_FIELD_EMAIL =
 #LEAN_OIDC_FIELD_FIRSTNAME =
 #LEAN_OIDC_FIELD_LASTNAME =
@@ -264,7 +264,7 @@ The data we collect is anonymized and only contains aggregate data from your ins
 
 date - the date of the collection
 companyId - A UUID for this instance.
-version - The current leantime version
+version - The current Leantime version
 language - The language as set in the config file
 numUsers - The number of users
 lastUserLogin - The last login of any user
@@ -278,7 +278,7 @@ numIdeaItems - Total number of ideas across all boards
 numResearchItems - Total number of cards in research boards
 numRetroItems - Total number of cards in retrospective boards
 numHoursBooked - Total number of hours booked in timesheets
-We do not collect any personal identifieble information or anything that would allow us to identify the company using leantime (not even company name). IP addresses, locations or any other server information that might be sent is also not stored anywhere.
+We do not collect any personal identifiable information or anything that would allow us to identify the company using Leantime (not even company name). IP addresses, locations or any other server information that might be sent is also not stored anywhere.
 
 To opt out of telemetry you can set the `LEAN_ALLOW_TELEMETRY` to `false`. This will disable the telemetry submission and remove your unique instance id.
 
