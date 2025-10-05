@@ -173,7 +173,7 @@ LEAN_LANGUAGE='en-US'                            # Default language
 LEAN_DEFAULT_TIMEZONE='America/Los_Angeles'      # Set default timezone
 ```
 
-## OpenID-Conenct (OIDC) Configuration
+## OpenID-Connect (OIDC) Configuration
 
 You can connect Leantime to a OIDC provider of your choice. The reference implementation is Authentik, but any compliant provider which implements x5c certificates should work.
 
