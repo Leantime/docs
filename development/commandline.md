@@ -44,7 +44,7 @@ php ./bin/leantime setting:save
 # Test Email
 Sends a test email
 ```
-php ./bin/leantime email:test
+php bin/leantime email:testemail --address="YOUREMAILADDRESS"
 ```
 
 # Plugins
