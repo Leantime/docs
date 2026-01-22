@@ -15,7 +15,7 @@ If you are starting from scratch and don't have a database server set up we sugg
 
 Docker compose allows you to define and run multi-container docker applications. The configurations stored in a `docker-compose.yml` file is used to install Leantime with MySQL, dedicated network and volumes for the db, userfiles and configs.
 
-1. Clone the Leantime Docker repoository from [here](https://github.com/Leantime/docker-leantime):
+1. Clone the Leantime Docker repository from [here](https://github.com/Leantime/docker-leantime):
 
 ```
 git clone https://github.com/Leantime/docker-leantime.git
