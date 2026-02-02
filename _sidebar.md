@@ -10,6 +10,7 @@
    - [Email Configuration](installation/email-configuration.md)
    - [Authentication Configuration](installation/authentication-configuration.md)
    - [Common Issues](installation/common-issues.md)
+   - [Upgrade Guide](installation/upgrade-guide.md)
 
 **Development**
 
