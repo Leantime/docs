@@ -23,7 +23,7 @@ php ./bin/leantime user:add
 # DB Updates
 Runs any pending db updates. This can also be used to install the db.
 ```
-php ./bin/leantime db:update
+php ./bin/leantime db:migrate
 ```
 
 
