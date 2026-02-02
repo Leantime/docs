@@ -6,10 +6,10 @@
         - [Docker Troubleshooting](installation/docker-troubleshooting.md)
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
+   - [Plugin Configuration](installation/plugin-configuratio.md)
    - [Email Configuration](installation/email-configuration.md)
    - [Authentication Configuration](installation/authentication-configuration.md)
-   - [Plugin Configuration](installation/plugin-configuratio.md)
-  - [Common Problems](installation/common-issues.md)
+   - [Common Issues](installation/common-issues.md)
 
 **Development**
 
