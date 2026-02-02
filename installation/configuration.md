@@ -30,25 +30,41 @@ The `LEAN_S3_FOLDER_NAME` is optional but can be helpful if you store other obje
 
 ## SMTP Configuration
 
-For outbound emails generally two methods can be used: the standard PHP `mail()` function and SMTP. While the `mail()` function is simpler, SMTP often provides better deliverability and security. The following guide shows process of configuring SMTP.
+For outbound emails, Leantime supports SMTP (recommended) or the standard PHP `mail()` function. SMTP provides better deliverability and detailed error logging.
+
+**For full setup instructions, provider-specific configurations (Gmail, Microsoft 365, SendGrid, etc.), and troubleshooting, see the [Email Configuration Guide](installation/email-configuration.md).**
+
+### Quick Setup
 
 Navigate to the `config/.env` file and update the SMTP configuration section:
 
 ```php
 ## Email
-LEAN_EMAIL_RETURN=''              # Valid return email address
-LEAN_EMAIL_USE_SMTP=true          # true -> SMTP, false -> php mail()
-LEAN_EMAIL_SMTP_HOSTS=''          # SMTP host
-LEAN_EMAIL_SMTP_AUTH=false        # true -> SMTP authentication required; email and password needed. false -> authentication not required
-LEAN_EMAIL_SMTP_USERNAME=''       # SMTP username
-LEAN_EMAIL_SMTP_PASSWORD=''       # SMTP password
-LEAN_EMAIL_SMTP_AUTO_TLS=true     # SMTP Enable TLS encryption automatically if a server supports it
-LEAN_EMAIL_SMTP_SECURE=''         # SMTP Security protocol (usually one of: TLS, SSL, STARTTLS)
-LEAN_EMAIL_SMTP_SSLNOVERIFY=true  # SMTP Allow insecure SSL: Don't verify certificate, accept self-signed, etc.
-LEAN_EMAIL_SMTP_PORT=''           # Port (usually one of 25, 465, 587, 2526)
+LEAN_EMAIL_RETURN='noreply@yourdomain.com'    # From address for outgoing emails
+LEAN_EMAIL_USE_SMTP=true                       # true = SMTP, false = PHP mail()
+LEAN_EMAIL_SMTP_HOSTS='smtp.example.com'       # SMTP server hostname
+LEAN_EMAIL_SMTP_AUTH=true                      # Most servers require authentication
+LEAN_EMAIL_SMTP_USERNAME='your-email'          # SMTP username
+LEAN_EMAIL_SMTP_PASSWORD='your-password'       # SMTP password
+LEAN_EMAIL_SMTP_AUTO_TLS=true                  # Auto-upgrade to TLS
+LEAN_EMAIL_SMTP_SECURE='tls'                   # Security: 'tls', 'ssl', or ''
+LEAN_EMAIL_SMTP_PORT='587'                     # Port: 587 (TLS) or 465 (SSL)
 ```
 
-Common issues that users encounter such as if port is closed, check firewall settings to ensure the given port is open. Also, depending on the host, some may require you to use their own SMTP servers.
+### Common Port/Security Combinations
+
+| Port | Security Setting | Use Case |
+|------|-----------------|----------|
+| 587 | `tls` | Most modern providers (recommended) |
+| 465 | `ssl` | Legacy/older providers |
+
+### Testing Email
+
+```bash
+php ./bin/leantime email:testemail --address="test@example.com"
+```
+
+For detailed troubleshooting, see [Email Configuration Guide](installation/email-configuration.md#troubleshooting).
 
 ## LDAP Configuration
 
