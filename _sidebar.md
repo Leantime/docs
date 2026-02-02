@@ -5,6 +5,7 @@
     - [Docker based Installation](installation/docker.md)
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
+  -     - [Email Configuration](installation/email-configuration.md)
   - [Plugin Configuration](installation/plugin-configuration.md)
   - [Common Problems](installation/common-issues.md)
 
