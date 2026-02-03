@@ -1,158 +1,176 @@
 # Configuration
 
-Leantime can be configured to setup database, customize theme, email and file handling:
+Leantime can be configured via environment variables in your `.env` file or through your container orchestrator. This guide covers database, file storage, email, authentication, theming, and system settings.
 
-## S3 Configuration
+## S3 File Storage
 
-Leantime has flexible file storage option. You can choose between local file storage or Amazon S3. Here's how to set up S3 storage:
+Leantime supports local file storage (default) or Amazon S3 / S3-compatible storage for uploads.
 
-Before setup, make sure you have the following:
+**Prerequisites:**
+- An S3 bucket in your preferred region
+- AWS credentials with write permissions to the bucket
 
-- A S3 bucket in your preferred region
-- An AWS account with write permissions
-- An AWS access and secret key
+Add these settings to your `.env` file:
 
-Navigate to the `config/.env` file and update the following settings:
-
-```php
-# S3 File Uploads
-LEAN_USE_S3=true                # Set to true for using S3
-LEAN_S3_KEY=''                  # S3 Key, hardcoded in s3ninja
-LEAN_S3_SECRET=''               # S3 Secret, hardcoded in s3ninja
-LEAN_S3_BUCKET=''               # S3 bucket name
-LEAN_S3_USE_PATH_STYLE_ENDPOINT=true            # Sets the endpoint style: false => https://[bucket].[endpoint] ; true => https://[endpoint]/[bucket]
-LEAN_S3_REGION=''               # S3 region
-LEAN_S3_FOLDER_NAME=''          # Foldername within S3 (can be emtpy)
-LEAN_S3_END_POINT=''            # S3 EndPoint S3 Compatible
+```env
+## S3 File Uploads
+LEAN_USE_S3=true                              # Enable S3 storage
+LEAN_S3_KEY=''                                # AWS Access Key ID
+LEAN_S3_SECRET=''                             # AWS Secret Access Key
+LEAN_S3_BUCKET=''                             # Bucket name
+LEAN_S3_REGION=''                             # AWS region (e.g., us-east-1)
+LEAN_S3_FOLDER_NAME=''                        # Optional subfolder within bucket
+LEAN_S3_END_POINT=''                          # Custom endpoint for S3-compatible services
+LEAN_S3_USE_PATH_STYLE_ENDPOINT=true          # Endpoint style:
+                                              # false → https://[bucket].[endpoint]
+                                              # true  → https://[endpoint]/[bucket]
 ```
 
-The `LEAN_S3_FOLDER_NAME` is optional but can be helpful if you store other objects in the same S3 bucket. After switching to S3, files previously uploaded to the local server will remain there but will no longer be accessible through Leantime.
+**Notes:**
+- `LEAN_S3_FOLDER_NAME` is optional but useful if sharing a bucket with other applications
+- After switching to S3, files previously uploaded locally will remain on the server but won't be accessible through Leantime
+- For S3-compatible services (MinIO, DigitalOcean Spaces, Backblaze B2), set `LEAN_S3_END_POINT` to your provider's endpoint
 
-## SMTP Configuration
+---
 
-For outbound emails, Leantime supports SMTP (recommended) or the standard PHP `mail()` function. SMTP provides better deliverability and detailed error logging.
+## Email Configuration
 
-**For full setup instructions, provider-specific configurations (Gmail, Microsoft 365, SendGrid, etc.), and troubleshooting, see the [Email Configuration Guide](installation/email-configuration.md).**
+Leantime uses email for user invitations, password resets, notifications, and project updates. SMTP is recommended for reliable delivery.
 
-### Quick Setup
+**→ See the [Email Configuration Guide](email-configuration.md)** for complete setup instructions including:
+- Provider-specific configurations (Gmail, Microsoft 365, SendGrid, Mailgun, Amazon SES)
+- Port and security settings
+- Testing and troubleshooting
+- Email queue configuration
 
-Navigate to the `config/.env` file and update the SMTP configuration section:
+### Quick Reference
 
-```php
-## Email
-LEAN_EMAIL_RETURN='noreply@yourdomain.com'    # From address for outgoing emails
-LEAN_EMAIL_USE_SMTP=true                       # true = SMTP, false = PHP mail()
-LEAN_EMAIL_SMTP_HOSTS='smtp.example.com'       # SMTP server hostname
-LEAN_EMAIL_SMTP_AUTH=true                      # Most servers require authentication
-LEAN_EMAIL_SMTP_USERNAME='your-email'          # SMTP username
-LEAN_EMAIL_SMTP_PASSWORD='your-password'       # SMTP password
-LEAN_EMAIL_SMTP_AUTO_TLS=true                  # Auto-upgrade to TLS
-LEAN_EMAIL_SMTP_SECURE='tls'                   # Security: 'tls', 'ssl', or ''
-LEAN_EMAIL_SMTP_PORT='587'                     # Port: 587 (TLS) or 465 (SSL)
+```env
+LEAN_EMAIL_RETURN='noreply@yourdomain.com'
+LEAN_EMAIL_USE_SMTP=true
+LEAN_EMAIL_SMTP_HOSTS='smtp.example.com'
+LEAN_EMAIL_SMTP_AUTH=true
+LEAN_EMAIL_SMTP_USERNAME='your-email'
+LEAN_EMAIL_SMTP_PASSWORD='your-password'
+LEAN_EMAIL_SMTP_SECURE='tls'
+LEAN_EMAIL_SMTP_PORT='587'
 ```
 
-### Common Port/Security Combinations
-
-| Port | Security Setting | Use Case |
-|------|-----------------|----------|
-| 587 | `tls` | Most modern providers (recommended) |
-| 465 | `ssl` | Legacy/older providers |
-
-### Testing Email
-
+**Test email configuration:**
 ```bash
 php ./bin/leantime email:testemail --address="test@example.com"
 ```
 
-For detailed troubleshooting, see [Email Configuration Guide](installation/email-configuration.md#troubleshooting).
+---
 
-## LDAP Configuration
+## Authentication (OIDC & LDAP)
 
-**Since: v2.1.9**
+Leantime supports single sign-on via OpenID Connect and enterprise directory integration via LDAP/Active Directory.
 
-_LDAP is not supported in Leantime with versions earlier than v2.1.9._
+**→ See the [Authentication Configuration Guide](authentication-configuration.md)** for complete setup including:
+- OIDC provider examples (Keycloak, Authentik, Google, GitHub, Azure AD)
+- LDAP/Active Directory configuration
+- Field mapping and group role assignment
+- Troubleshooting common issues
 
-Leantime supports basic LDAP integration via configuration of the environament variables. Follow the porcess below to setup LDAP:
+### Quick Reference
 
-Navigate to the `config/.env` file and update the following settings:
-
-```php
-## Ldap
-LEAN_LDAP_USE_LDAP=false          # Set to true for using LDAP
-LEAN_LDAP_LDAP_DOMAIN=''          # domain name that will be appended to usernames during login, so users can login without domain definition
-LEAN_LDAP_LDAP_TYPE='OL'          # Specifies LDAP directory type. Currently Supported: OL - OpenLdap, AD - Active Directory
-LEAN_LDAP_HOST=''                 # FQDN
-LEAN_LDAP_PORT=389                # Default Port; 389 is standard port unencrypted LDAP connection
-LEAN_LDAP_URI=''                  # ldap URI as alternative to hostname and port. If set, it overrides the LEAN_LDAP_HOST and LEAN_LDAP_PORT settings. Format -> ldap://hostname:port
-LEAN_LDAP_DN=''                   # Location of users, example: CN=users,DC=example,DC=com
+**OIDC:**
+```env
+LEAN_OIDC_ENABLE=true
+LEAN_OIDC_PROVIDER_URL=https://your-provider.com/
+LEAN_OIDC_CLIENT_ID=your-client-id
+LEAN_OIDC_CLIENT_SECRET=your-client-secret
 ```
 
-Configure the LDAP Keys to map to the fields in your LDAP directory
+Callback URL: `https://your-domain.com/oidc/callback`
 
-```php
-LEAN_LDAP_KEYS="{
-       \"username\":\"cn\",
-       \"groups\":\"memberOf\",
-       \"email\":\"mail\",
-       \"firstname\":\"givenName\",
-       \"lastname\":\"sn\",
-       \"phonenumber\":\"telephoneNumber\"
-     }"
+**LDAP:**
+```env
+LEAN_LDAP_USE_LDAP=true
+LEAN_LDAP_LDAP_TYPE=OL          # OL = OpenLDAP, AD = Active Directory
+LEAN_LDAP_HOST=ldap.example.com
+LEAN_LDAP_PORT=389
+LEAN_LDAP_DN=CN=users,DC=example,DC=com
 ```
 
-Then configure LDAP Group Assignments to match leantime roles to roles in the directory:
+---
 
-```php
-LEAN_LDAP_GROUP_ASSIGNMENT="{
-  \"5\": {
-    \"ltRole\":\"readonly\",
-    \"ldapRole\":\"readonly\"
-  },
-  \"10\": {
-    \"ltRole\":\"commenter\",
-    \"ldapRole\":\"commenter\"
-  },
-  \"20\": {
-    \"ltRole\":\"editor\",
-    \"ldapRole\":\"editor\"
-  },
-  \"30\": {
-    \"ltRole\":\"manager\",
-    \"ldapRole\":\"manager\"
-  },
-  \"40\": {
-    \"ltRole\":\"admin\",
-    \"ldapRole\":\"administrators\"
-  },
-  \"50\": {
-    \"ltRole\":\"owner\",
-    \"ldapRole\":\"administrators\"
-  }
-}"
+## Theme Configuration
+
+Customize Leantime's appearance with custom colors and logos:
+
+```env
+LEAN_LOGO_PATH='/dist/images/logo.svg'        # Main logo (SVG recommended)
+LEAN_PRINT_LOGO_URL='/dist/images/logo.jpg'   # Print logo (must be JPG or PNG)
+LEAN_DEFAULT_THEME='default'                  # Theme name
+LEAN_PRIMARY_COLOR='#1b75bb'                  # Primary brand color
+LEAN_SECONDARY_COLOR='#81B1A8'                # Secondary accent color
 ```
 
-Here each of these levels is associated with two attributes:
+**Note:** These can also be changed in the UI under Account → Theme.
 
-- `ltRole`: The role in your application.
-- `ldapRole`: The role in the LDAP directory.
+---
 
-Set the roles as per your setup. This allows you to manage user roles accross the system, and ensures the right permission is given to the users.
+## Site Name, Language & Timezone
 
-Lastly, you can set the default role for users when they are first created by updating:
+Configure basic site settings:
 
-```php
-LEAN_LDAP_DEFAULT_ROLE_KEY=20;                   # Default Leantime Role on creation. (set to editor)
+```env
+LEAN_SITENAME='Leantime'                      # Displayed in browser title and emails
+LEAN_LANGUAGE='en-US'                         # Default language
+LEAN_DEFAULT_TIMEZONE='America/Los_Angeles'   # Default timezone for dates/times
 ```
 
-## Plesk Nginx configuration
+**Available languages:** Check the `app/Language/` directory for supported locales.
 
-Using nginx under Plesk is quite easy but still not advised to edit the nginx.config of a domain, so instead of doing the above metod we'll fix the uri rewriting by adding the instructions in the "Additional nginx directives" under the "Apache & nginx Settings" page of the domain.
+---
 
-```php
+## Cron Jobs
 
+Cron jobs process the notification queue and other scheduled tasks. Run at least every 15 minutes for timely notifications.
+
+**Important:** You must set `LEAN_APP_URL` in your configuration for email links to work correctly.
+
+### Option 1: Command Line
+
+```bash
+php ./bin/leantime schedule:run
+```
+
+Add to crontab for automatic execution:
+```bash
+*/5 * * * * cd /var/www/leantime && php ./bin/leantime schedule:run >> /dev/null 2>&1
+```
+
+### Option 2: HTTP Endpoint
+
+Call this URL from an external scheduler or uptime monitor:
+```
+https://your-domain.com/cron/run
+```
+
+### Docker
+
+For Docker installations, add to your docker-compose.yml or use a sidecar container:
+
+```yaml
+# Using supercronic or similar
+command: >
+  sh -c "while true; do php ./bin/leantime schedule:run; sleep 300; done"
+```
+
+---
+
+## Plesk Nginx Configuration
+
+If running Leantime on Plesk with Nginx, add these rewrite rules to **Additional nginx directives** under **Apache & nginx Settings**:
+
+```nginx
 if ($ssl_protocol = "") {
-	rewrite ^/(.*) https://$server_name/$1 permanent;
+    rewrite ^/(.*) https://$server_name/$1 permanent;
 }
+
 rewrite ^/resetPassword$ /index.php?resetPassword=true;
 rewrite ^/resetPassword/([^/\.]+)/?$ /index.php?resetPassword=true&hash=$1;
 rewrite ^/install$ /index.php?install=true;
@@ -162,140 +180,59 @@ rewrite ^/update/([^/\.]+)/?$ /index.php?update=true;
 rewrite ^/?$ /index.php?act=dashboard.show;
 rewrite ^/([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1.$2;
 rewrite ^/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1.$2&id=$3;
-
 ```
 
-## Theme Configuration
-
-Leantime allows you to customize the color scheme and logo by setting the corresponding values in your environment file. Open the `config/.env` file and update the following fields:
-
-```php
-LEAN_LOGO_PATH='/dist/images/logo.svg'           # Default logo path, can be changed later
-LEAN_PRINT_LOGO_URL='/dist/images/logo.jpg'      # Default logo URL use for printing (must be jpg or png format)
-LEAN_DEFAULT_THEME='default'                     # Default theme
-LEAN_PRIMARY_COLOR='#1b75bb'                     # Primary Theme color
-LEAN_SECONDARY_COLOR='#81B1A8'                   # Secondary Theme Color
-```
-
-These settings can also be changed within Leantime under Account->Theme.
-
-## Sitename, Language and Timezone
-
-Configure sitename, your default language and timezone by updating the default settings section in `config/.env`:
-
-```php
-LEAN_SITENAME='Leantime'                         # Name of your site, can be changed later
-LEAN_LANGUAGE='en-US'                            # Default language
-LEAN_DEFAULT_TIMEZONE='America/Los_Angeles'      # Set default timezone
-```
-
-## OpenID-Conenct (OIDC) Configuration
-
-You can connect Leantime to a OIDC provider of your choice. The reference implementation is Authentik, but any compliant provider which implements x5c certificates should work.
-
-For a basic Keycloak or Authentik connection, only the provider URL, client id and client secret are required.
-
-The callback url is: `<<yourdomain>>/oidc/callback`
-
-To understand some of the more advanced options, take a look at the github example below.
-
-The following environment variables can be used:
-
-```
-#Enable OIDC-Connect
-LEAN_OIDC_ENABLE=true
-
-#Provider URL:
-#LEAN_OIDC_PROVIDER_URL = https://auth.example.org/application/o/<slug>/           #Authentik
-#LEAN_OIDC_PROVIDER_URL = https://auth.example.org/realms/<realm>/                 #Keycloak
-
-#Provider credentials
-LEAN_OIDC_CLIENT_ID=
-LEAN_OIDC_CLIENT_SECRET=
-
-# optional - these will be read from the well-known configuration if possible
-# adjusting these values should allow connecting to most OAuth2 providers
-#LEAN_OIDC_PROVIDER_URL=
-#LEAN_OIDC_AUTH_URL_OVERRIDE=
-#LEAN_OIDC_TOKEN_URL_OVERRIDE
-
-# this enables the userinfo endpoint to login using only OAuth2 - if you require multiple sources, you can add them comma seperated.
-#LEAN_OIDC_USERINFO_URL_OVERRIDE
-
-# optional - override the public key for RSA validation
-#LEAN_OIDC_CERTIFICATE_STRING =
-#LEAN_OIDC_CERTIFICATE_FILE =
-
-# optional - override the requested scopes
-#LEAN_OIDC_SCOPES =
-
-# optional - override the keys used for login and name - these can be nested with dots, if neccesarry (e.g.: user.info.email)
-#LEAN_OIDC_FIELD_EMAIL =
-#LEAN_OIDC_FIELD_FIRSTNAME =
-#LEAN_OIDC_FIELD_LASTNAME =
-
-# this is an example configuration for a github login
-#LEAN_OIDC_PROVIDER_URL = https://token.actions.githubusercontent.com/
-#LEAN_OIDC_AUTH_URL_OVERRIDE = https://github.com/login/oauth/authorize
-#LEAN_OIDC_TOKEN_URL_OVERRIDE = https://github.com/login/oauth/access_token
-#LEAN_OIDC_USERINFO_URL_OVERRIDE = https://api.github.com/user,https://api.github.com/user/emails
-#LEAN_OIDC_SCOPES = user:email
-#LEAN_OIDC_FIELD_EMAIL = 0.email
-
-# this is an example configuration for a Google Cloud login (Also for Workspace)
-#LEAN_OIDC_ENABLE = true
-#LEAN_OIDC_PROVIDER_URL = https://accounts.google.com/
-#LEAN_OIDC_CLIENT_ID =
-#LEAN_OIDC_CLIENT_SECRET =
-#LEAN_OIDC_JWKS_URL_OVERRIDE = https://www.googleapis.com/oauth2/v1/certs
-```
-
-## Cron Jobs
-
-To ensure users receive timely notifications, Leantime offers two options for running cron jobs. The system processes the queue at intervals as short as every 5 minutes, but we recommend running the job at least once every 15 minutes for optimal performance.
-
-**Note: To run the cron tab you MUST set `$appURL` in your config file. Otherwise links within the email will not work properly.**
-
-#### Option 1: Using the command line
-
-Run the following command from your Leantime installation directory to manually trigger the cron job:
-
-```
- php bin/leantime schedule:run
-```
-
-#### Option 2: Using the Cron Endpoint
-
-You can also trigger the cron job by calling the following endpoint in your browser or from a scheduling tool:
-
-Call `<<yourdomain>>/cron/run`
+---
 
 ## Telemetry
 
-Telemetry data optionally shared from your Leantime servers is used to identify help improve the quality of Leantime software and related services, and to make design decisions for future releases.
+Leantime can optionally share anonymous usage data to help improve the software. No personally identifiable information is collected.
 
-Telemetry data is encrypted in transit, does not include personally identifiable information or message contents, and details of how the information is used and processed is available here.
+**Data collected:**
+- Instance UUID (anonymous identifier)
+- Leantime version and configured language
+- Aggregate counts: users, projects, clients, tickets, milestones, comments, boards, timesheets
+- Last user login timestamp
 
-The data we collect is anonymized and only contains aggregate data from your instance. The data we collect is:
+**Not collected:** Company names, user names, email addresses, IP addresses, or any content.
 
-date - the date of the collection
-companyId - A UUID for this instance.
-version - The current leantime version
-language - The language as set in the config file
-numUsers - The number of users
-lastUserLogin - The last login of any user
-numProjects - The total number of projects
-numClients - Total number of clients
-numComments - Total number of comments
-numMilestones - Total number of milestones
-numTickets - Total number of To-Dos
-numBoards - Total number of boards across ideas, retrospectives & research boards
-numIdeaItems - Total number of ideas across all boards
-numResearchItems - Total number of cards in research boards
-numRetroItems - Total number of cards in retrospective boards
-numHoursBooked - Total number of hours booked in timesheets
-We do not collect any personal identifieble information or anything that would allow us to identify the company using leantime (not even company name). IP addresses, locations or any other server information that might be sent is also not stored anywhere.
+**Opt out:**
+```env
+LEAN_ALLOW_TELEMETRY=false
+```
 
-To opt out of telemetry you can set the `LEAN_ALLOW_TELEMETRY` to `false`. This will disable the telemetry submission and remove your unique instance id.
+This removes your instance ID and stops all telemetry submission.
 
-We appreciate your support in helping us!
+---
+
+## Session Configuration
+
+Configure session handling for security and compatibility:
+
+```env
+LEAN_SESSION_PASSWORD='your-secret-key'       # Session encryption key
+LEAN_SESSION_EXPIRATION=28800                 # Session timeout in seconds (8 hours default)
+LEAN_SESSION_SECURE=true                      # Require HTTPS for session cookies
+```
+
+**Important:** Set `LEAN_SESSION_SECURE=true` when running over HTTPS, `false` only for local development over HTTP.
+
+---
+
+## Debug Mode
+
+Enable detailed error logging for troubleshooting:
+
+```env
+LEAN_DEBUG=1
+```
+
+Logs are written to `storage/logs/leantime-YYYY-MM-DD.log`
+
+**Warning:** Do not enable debug mode in production as it may expose sensitive information.
+
+---
+
+## All Environment Variables Reference
+
+For a complete list of all available environment variables, see the [.env.sample](https://github.com/Leantime/leantime/blob/master/.env.sample) file in the Leantime repository.
