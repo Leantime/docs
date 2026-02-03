@@ -60,32 +60,34 @@ The easiest way to install plugins is through the built-in marketplace interface
 
 ### Step 1: Access the Marketplace
 
-1. Log in to Leantime as an administrator
-2. Click the **gear icon** (Settings) in the sidebar
-3. Select **Plugins** from the menu
-4. Click **Marketplace** to browse available plugins
+1. Log in to your Leantime instance as an administrator
+2. Click the Company from the top menu
+3. Select Leantime Apps in the sidebar
+4. Select **Explore Apps** 
+5. Click **Learn More** to see more about the plugin
 
 ### Step 2: Purchase or Select a Plugin
 
 1. Browse or search for the plugin you need
 2. Click on the plugin to view details
-3. For paid plugins, complete the purchase on [marketplace.leantime.io](https://marketplace.leantime.io/)
-4. For free plugins, click **Install**
+3. Click **Get a License**, complete the purchase on [marketplace.leantime.io](https://marketplace.leantime.io/). 
 
 ### Step 3: Enter License Key (Paid Plugins)
 
 If you purchased a plugin or bundle:
 
-1. Go to **Settings → Plugins**
-2. Click **Enter License Key**
-3. Paste your license key from your marketplace purchase confirmation
-4. Click **Verify**
-5. Your purchased plugins will appear and be available for installation
+You will get a license key for each plugin individually and will need to install them separately. 
+
+1. Return to the Leantime Apps under the Company menu point
+2. Click "Learn More" from the Plugin you purchased
+3. Copy and paste the license key from the marketplace (the individual license key) and click **Install**
+4. Your purchased plugins will appear and be available for installation
+5. You can then go to My Apps to complete the installation and enabling of the plugin. 
 
 ### Step 4: Install and Enable
 
 1. Find the plugin in your available plugins list
-2. Click **Install**
+2. Click **Activate**
 3. Once installed, toggle the **Enable** switch to activate the plugin
 4. Some plugins may require additional configuration (see Plugin Configuration below)
 
