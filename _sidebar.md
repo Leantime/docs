@@ -7,7 +7,7 @@
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
    - [Plugin Installation](installation/plugin-installation.md)
-     - [Using Plugins](installation/using-plugins.md)
+   - [Plugin Use](installation/using-plugins.md)
    - [Email Configuration](installation/email-configuration.md)
    - [Authentication Configuration](installation/authentication-configuration.md)
    - [Common Issues](installation/common-issues.md)
