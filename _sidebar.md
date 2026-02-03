@@ -11,6 +11,7 @@
    - [Authentication Configuration](installation/authentication-configuration.md)
    - [Common Issues](installation/common-issues.md)
    - [Upgrade Guide](installation/upgrade-guide.md)
+   - [Backup & Restore](installation/backup-restore.md)
 
 **Development**
 
