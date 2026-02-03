@@ -6,15 +6,12 @@
         - [Docker Troubleshooting](installation/docker-troubleshooting.md)
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
-   - [Plugin Installation](installation/plugin-installation.md)
-   - [Plugin Use](installation/using-plugins.md)
-   - [Email Configuration](installation/email-configuration.md)
-   - [Authentication Configuration](installation/authentication-configuration.md)
-   - [Common Issues](installation/common-issues.md)
-   - [Upgrade Guide](installation/upgrade-guide.md)
+    - [Email](installation/email-configuration.md)
+    - [Plugin](installation/plugin-installation.md)
+    - [Authentication](installation/authentication-configuration.md)
    - [Backup & Restore](installation/backup-restore.md)
- - [Leantime's MCP Server](installation/leantime-mcp.md)
- - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md)
+   - [Upgrade Guide](installation/upgrade-guide.md)
+   - [Common Issues](installation/common-issues.md)
 
 **Development**
 
@@ -28,6 +25,12 @@
 - [API Endpoints](api/README.md)
 - [Event Hooks/Filters](technical/hooks.md)
 - [Source Code](technical/README.md)
+
+**Everything Else**
+
+ - [Leantime's MCP Server](installation/leantime-mcp.md)
+ - [Using Plugins](installation/using-plugins.md)
+ - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md)
 
 **External Links**
 
