@@ -1,0 +1,370 @@
+# Backup & Restore Guide
+
+Regular backups protect your projects, tasks, and team data. This guide covers backup strategies for all Leantime deployment types.
+
+---
+
+## What to Back Up
+
+Every Leantime backup needs three components:
+
+| Component | Location | Contains |
+|-----------|----------|----------|
+| **Database** | MySQL/MariaDB/PostgreSQL | Projects, tasks, users, comments, timesheets |
+| **User Files** | `/userfiles/` and `/public/userfiles/` | Uploaded attachments, images, documents |
+| **Configuration** | `.env` file or environment variables | Database credentials, SMTP settings, app URL |
+
+> **Tip:** Your `.env` file rarely changes after initial setup. Back it up once and update the backup when you change settings.
+
+---
+
+## Quick Backup Commands
+
+### Docker
+
+```bash
+# Database
+docker exec leantime_db mysqldump -u leantime -p leantime > backup-$(date +%Y%m%d).sql
+
+# User files
+docker cp leantime:/var/www/html/userfiles ./userfiles-backup
+docker cp leantime:/var/www/html/public/userfiles ./public-userfiles-backup
+
+# Configuration (if using .env file inside container)
+docker cp leantime:/var/www/html/.env ./env-backup
+```
+
+### Package Install (Apache/Nginx)
+
+```bash
+# Database
+mysqldump -u leantime -p leantime > backup-$(date +%Y%m%d).sql
+
+# User files
+cp -r /var/www/html/userfiles ./userfiles-backup
+cp -r /var/www/html/public/userfiles ./public-userfiles-backup
+
+# Configuration
+cp /var/www/html/.env ./env-backup
+```
+
+### Shared Hosting (cPanel)
+
+1. **Database:** Use phpMyAdmin → Export → Quick export as SQL
+2. **User files:** Use File Manager to download `/userfiles/` and `/public/userfiles/` folders
+3. **Configuration:** Download your `.env` file
+
+---
+
+## Automated Backup Script
+
+Save this script and run it via cron for automated daily backups.
+
+### For Docker Deployments
+
+```bash
+#!/bin/bash
+# leantime-backup.sh
+# Automated backup script for Leantime (Docker)
+
+# Configuration
+BACKUP_DIR="/path/to/backups"
+CONTAINER_DB="leantime_db"
+CONTAINER_APP="leantime"
+DB_USER="leantime"
+DB_NAME="leantime"
+RETENTION_DAYS=30
+
+# Create backup directory
+DATE=$(date +%Y%m%d_%H%M%S)
+BACKUP_PATH="$BACKUP_DIR/$DATE"
+mkdir -p "$BACKUP_PATH"
+
+# Backup database
+echo "Backing up database..."
+docker exec $CONTAINER_DB mysqldump -u $DB_USER -p$DB_PASS $DB_NAME > "$BACKUP_PATH/database.sql"
+
+# Backup user files
+echo "Backing up user files..."
+docker cp $CONTAINER_APP:/var/www/html/userfiles "$BACKUP_PATH/userfiles"
+docker cp $CONTAINER_APP:/var/www/html/public/userfiles "$BACKUP_PATH/public-userfiles"
+
+# Compress backup
+echo "Compressing..."
+tar -czf "$BACKUP_DIR/leantime-$DATE.tar.gz" -C "$BACKUP_DIR" "$DATE"
+rm -rf "$BACKUP_PATH"
+
+# Remove old backups
+find "$BACKUP_DIR" -name "leantime-*.tar.gz" -mtime +$RETENTION_DAYS -delete
+
+echo "Backup complete: leantime-$DATE.tar.gz"
+```
+
+**Add to cron (daily at 2 AM):**
+```bash
+0 2 * * * /path/to/leantime-backup.sh >> /var/log/leantime-backup.log 2>&1
+```
+
+### For Package Installs
+
+```bash
+#!/bin/bash
+# leantime-backup.sh
+# Automated backup script for Leantime (Package Install)
+
+# Configuration
+BACKUP_DIR="/path/to/backups"
+LEANTIME_DIR="/var/www/html"
+DB_USER="leantime"
+DB_NAME="leantime"
+RETENTION_DAYS=30
+
+# Create backup directory
+DATE=$(date +%Y%m%d_%H%M%S)
+BACKUP_PATH="$BACKUP_DIR/$DATE"
+mkdir -p "$BACKUP_PATH"
+
+# Backup database
+echo "Backing up database..."
+mysqldump -u $DB_USER -p$DB_PASS $DB_NAME > "$BACKUP_PATH/database.sql"
+
+# Backup user files
+echo "Backing up user files..."
+cp -r "$LEANTIME_DIR/userfiles" "$BACKUP_PATH/"
+cp -r "$LEANTIME_DIR/public/userfiles" "$BACKUP_PATH/public-userfiles"
+
+# Backup configuration
+cp "$LEANTIME_DIR/.env" "$BACKUP_PATH/"
+
+# Compress backup
+echo "Compressing..."
+tar -czf "$BACKUP_DIR/leantime-$DATE.tar.gz" -C "$BACKUP_DIR" "$DATE"
+rm -rf "$BACKUP_PATH"
+
+# Remove old backups
+find "$BACKUP_DIR" -name "leantime-*.tar.gz" -mtime +$RETENTION_DAYS -delete
+
+echo "Backup complete: leantime-$DATE.tar.gz"
+```
+
+---
+
+## Restore Procedures
+
+### Restore to Same Server
+
+#### Docker
+
+```bash
+# 1. Stop the application (optional but recommended)
+docker-compose stop leantime
+
+# 2. Restore database
+docker exec -i leantime_db mysql -u leantime -p leantime < backup-20260202.sql
+
+# 3. Restore user files
+docker cp ./userfiles-backup/. leantime:/var/www/html/userfiles/
+docker cp ./public-userfiles-backup/. leantime:/var/www/html/public/userfiles/
+
+# 4. Fix permissions
+docker exec leantime chown -R www-data:www-data /var/www/html/userfiles/
+docker exec leantime chown -R www-data:www-data /var/www/html/public/userfiles/
+
+# 5. Restart
+docker-compose start leantime
+```
+
+#### Package Install
+
+```bash
+# 1. Restore database
+mysql -u leantime -p leantime < backup-20260202.sql
+
+# 2. Restore user files
+cp -r ./userfiles-backup/* /var/www/html/userfiles/
+cp -r ./public-userfiles-backup/* /var/www/html/public/userfiles/
+
+# 3. Fix permissions
+chown -R www-data:www-data /var/www/html/userfiles/
+chown -R www-data:www-data /var/www/html/public/userfiles/
+
+# 4. Clear cache
+php /var/www/html/bin/leantime cache:clear
+```
+
+---
+
+## Migrating to a New Server
+
+### Step 1: Back Up Everything on Old Server
+
+```bash
+# Create complete backup
+mysqldump -u leantime -p leantime > leantime-full.sql
+tar -czf leantime-files.tar.gz /var/www/html/userfiles /var/www/html/public/userfiles
+cp /var/www/html/.env leantime-env-backup
+```
+
+### Step 2: Set Up New Server
+
+Install Leantime on the new server but **do not run the installer**. Stop at the point where you would normally visit `/install`.
+
+### Step 3: Transfer Files
+
+```bash
+# Copy to new server
+scp leantime-full.sql user@newserver:/tmp/
+scp leantime-files.tar.gz user@newserver:/tmp/
+scp leantime-env-backup user@newserver:/tmp/
+```
+
+### Step 4: Restore on New Server
+
+```bash
+# Import database
+mysql -u leantime -p leantime < /tmp/leantime-full.sql
+
+# Extract and restore files
+tar -xzf /tmp/leantime-files.tar.gz -C /
+# Or for Docker:
+# docker cp /tmp/userfiles leantime:/var/www/html/
+
+# Restore configuration
+cp /tmp/leantime-env-backup /var/www/html/.env
+```
+
+### Step 5: Update Configuration
+
+Edit `.env` on the new server:
+
+```env
+# Update these for new server
+LEAN_APP_URL='https://new-domain.com'
+LEAN_DB_HOST='localhost'  # or new database host
+```
+
+### Step 6: Verify
+
+1. Clear cache: `php bin/leantime cache:clear`
+2. Visit your new URL
+3. Log in and verify projects/tasks appear correctly
+4. Test file uploads to confirm permissions are correct
+
+---
+
+## Pre-Upgrade Backup Checklist
+
+**Always back up before upgrading Leantime.**
+
+```bash
+# 1. Note your current version
+cat version.php  # or check Settings > About in the UI
+
+# 2. Back up database
+mysqldump -u leantime -p leantime > pre-upgrade-$(date +%Y%m%d).sql
+
+# 3. Back up user files
+tar -czf userfiles-pre-upgrade.tar.gz userfiles/ public/userfiles/
+
+# 4. Back up configuration
+cp .env .env.pre-upgrade
+
+# 5. Now proceed with upgrade
+```
+
+**If upgrade fails:**
+```bash
+# Restore database
+mysql -u leantime -p leantime < pre-upgrade-20260202.sql
+
+# Restore files (if needed)
+tar -xzf userfiles-pre-upgrade.tar.gz
+
+# Restore config
+cp .env.pre-upgrade .env
+
+# Roll back code (package install)
+# Re-download the previous version and extract over current installation
+```
+
+---
+
+## Backup Storage Recommendations
+
+| Option | Pros | Cons |
+|--------|------|------|
+| **Local disk** | Fast, simple | Lost if server fails |
+| **Mounted NFS/NAS** | Separate from server | Network dependency |
+| **S3/Object storage** | Durable, off-site | Requires setup, has cost |
+| **rsync to remote** | Simple, reliable | Requires SSH access |
+
+### Example: Sync to Remote Server
+
+Add to your backup script:
+```bash
+# After creating backup
+rsync -avz "$BACKUP_DIR/leantime-$DATE.tar.gz" user@backup-server:/backups/leantime/
+```
+
+### Example: Upload to S3
+
+```bash
+# Requires AWS CLI configured
+aws s3 cp "$BACKUP_DIR/leantime-$DATE.tar.gz" s3://your-bucket/leantime-backups/
+```
+
+---
+
+## Testing Your Backups
+
+Backups are only useful if they work. Test quarterly:
+
+1. **Spin up a test environment** (local Docker or VM)
+2. **Restore from backup** using the procedures above
+3. **Verify data integrity:**
+   - Can you log in?
+   - Are all projects visible?
+   - Do uploaded files display correctly?
+   - Are comments and timesheets intact?
+
+---
+
+## Troubleshooting
+
+### "Access denied" when restoring database
+
+Check your database user has the necessary permissions:
+```sql
+GRANT ALL PRIVILEGES ON leantime.* TO 'leantime'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+### Files restored but not visible
+
+Usually a permissions issue:
+```bash
+chown -R www-data:www-data /var/www/html/userfiles/
+chmod -R 755 /var/www/html/userfiles/
+```
+
+### Restored database but site shows install page
+
+The database may not have imported correctly. Check:
+```bash
+mysql -u leantime -p -e "USE leantime; SHOW TABLES;" | wc -l
+```
+You should see 50+ tables. If empty, re-import the backup.
+
+---
+
+## Getting Help
+
+If you run into issues:
+
+1. Check the [Leantime Discord](https://discord.gg/4zMzJtAq9z) #self-hosted channel
+2. Search [GitHub Issues](https://github.com/leantime/leantime/issues)
+3. Include your Leantime version and deployment type when asking for help
+
+---
+
+*Last updated: February 2026*
