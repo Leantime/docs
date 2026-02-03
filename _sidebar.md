@@ -13,7 +13,8 @@
    - [Common Issues](installation/common-issues.md)
    - [Upgrade Guide](installation/upgrade-guide.md)
    - [Backup & Restore](installation/backup-restore.md)
- - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md) 
+ - [Leantime's MCP Server](installation/leantime-mcp.md)
+ - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md)
 
 **Development**
 
