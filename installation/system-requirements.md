@@ -2,7 +2,7 @@
 
 There are two main ways of installing Leantime, which are given below:
 
-- **Pacakge based installation** requires a Linux Distribution, preferably Ubuntu 20.04+.
+- **Package based installation** requires a Linux Distribution, preferably Ubuntu 20.04+.
 - **Docker-based installation** requires a system with [**Docker**](https://www.docker.com/) installed and **docker-compose**.
 
 Leantime can be installed on a variety of configurations. Here is a list of minimum requirements that have been tested and proven to work.
