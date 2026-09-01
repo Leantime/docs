@@ -32,6 +32,10 @@ LEAN_OIDC_CLIENT_SECRET=your-client-secret
 https://your-leantime-domain.com/oidc/callback
 ```
 
+**Key algorithms:** Configure your identity provider to use **RSA** keys for Leantime.
+
+**PKCE** is not currently supported by Leantime, disable this for Leantime in your identity provider.
+
 ### Provider-Specific Configuration
 
 #### Keycloak
