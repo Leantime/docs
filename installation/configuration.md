@@ -96,6 +96,16 @@ LEAN_LDAP_DN=CN=users,DC=example,DC=com
 
 ---
 
+## Project Integrations (Webhooks & Messaging)
+
+Leantime supports real-time project notifications to team communication platforms including **Telegram**, **Discord**, **Slack**, **Mattermost**, and **Zulip**.
+
+These are managed per-project inside the Leantime web UI under **Projects → [Select Project] → Settings → Integrations**.
+
+**→ See the [Project Integrations User Manual](../using-leantime/integrations.md)** for complete setup guides, webhook configuration, Telegram bot setup, and troubleshooting.
+
+---
+
 ## Theme Configuration
 
 Customize Leantime's appearance with custom colors and logos:
