@@ -2,8 +2,6 @@
 
 Leantime allows you to connect your projects directly with your team's favorite messaging and collaboration platforms. Once configured, Leantime will automatically broadcast real-time updates and activity notifications to your designated channels, groups, or topics.
 
----
-
 ## Overview
 
 Project integrations are configured on a **per-project** basis. This allows different teams or departments to route project notifications to their own dedicated communication channels (e.g., `#dev-alerts`, `#marketing-sprints`, or specific Telegram forum topics).
@@ -27,8 +25,6 @@ To configure integrations for a project:
 2. Open the project settings by clicking the **Settings** / **Edit Project** option.
 3. Switch to the **Integrations** tab.
 4. Locate your messaging platform below and follow the platform-specific instructions.
-
----
 
 ## 1. Telegram
 
@@ -67,8 +63,6 @@ If you prefer to enter details manually:
 - **Chat ID**: Enter your numeric Telegram Chat ID (group IDs typically start with a minus sign, e.g., `-1001234567890`).
 - **Topic ID**: If your group has Topics enabled and you want notifications posted to a specific thread, enter the numeric thread ID (can be retrieved from the topic's message link).
 
----
-
 ## 2. Discord
 
 Broadcast project progress and status changes directly into Discord text channels using native Discord webhooks.
@@ -86,8 +80,6 @@ Broadcast project progress and status changes directly into Discord text channel
 5. In Leantime, navigate to **Projects** $\rightarrow$ [Your Project] $\rightarrow$ **Integrations** $\rightarrow$ **Discord**.
 6. Paste your webhook URL into **Webhook URL 1**. (You can optionally paste up to two additional webhook URLs into fields 2 and 3).
 7. Click **Save**.
-
----
 
 ## 3. Slack
 
@@ -107,8 +99,6 @@ Post real-time project updates to any public or private channel in your Slack wo
 6. Paste the URL into the **Webhook URL** field.
 7. Click **Save**.
 
----
-
 ## 4. Mattermost
 
 Connect Leantime with your self-hosted or cloud Mattermost instance.
@@ -127,8 +117,6 @@ Connect Leantime with your self-hosted or cloud Mattermost instance.
 6. In Leantime, navigate to **Projects** $\rightarrow$ [Your Project] $\rightarrow$ **Integrations** $\rightarrow$ **Mattermost**.
 7. Paste the URL into the **Webhook URL** field.
 8. Click **Save**.
-
----
 
 ## 5. Zulip
 
@@ -155,16 +143,12 @@ Route notifications into Zulip streams and dedicated conversation topics.
    - **Topic**: The thread topic name (e.g., `Project Updates`).
 7. Click **Save**.
 
----
-
 ## Project Mute & Notification Control
 
 If you or your team members prefer not to receive notifications for a specific project:
 
 - **Mute Project Notifications**: Individual users can mute notifications from specific projects through their user notification settings.
 - **Mute Indicators**: When users have muted a project, a notice (`Muted by X team members`) appears at the top of the project's Integrations tab to inform project administrators.
-
----
 
 ## Troubleshooting & Best Practices
 
