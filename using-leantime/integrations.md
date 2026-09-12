@@ -1,5 +1,16 @@
 # Project Integrations (User Manual)
 
+<style>
+.sidebar-nav img {
+  display: none !important;
+}
+.heading-icon {
+  vertical-align: -4px;
+  margin-left: 8px;
+  display: inline-block;
+}
+</style>
+
 Leantime allows you to connect your projects directly with your team's favorite messaging and collaboration platforms. Once configured, Leantime will automatically broadcast real-time updates and activity notifications to your designated channels, groups, or topics.
 
 ## Overview
@@ -26,11 +37,9 @@ To configure integrations for a project:
 3. Switch to the **Integrations** tab.
 4. Locate your messaging platform below and follow the platform-specific instructions.
 
-## 1. Telegram
+## 1. Telegram <img src="/_images/icons/telegram.svg" class="heading-icon" alt="Telegram" width="24" height="24" />
 
 Leantime includes a native Telegram integration supporting direct chats, private/public groups, and **Telegram Forum Supergroups** with topic thread targeting.
-
-![Telegram](https://raw.githubusercontent.com/Leantime/leantime/master/public/dist/images/telegram-logo.png)
 
 ### Key Features
 - **Auto-Detection**: Leantime can automatically detect your `Chat ID` (and `Topic ID`) simply by sending a message to your bot.
@@ -63,7 +72,7 @@ If you prefer to enter details manually:
 - **Chat ID**: Enter your numeric Telegram Chat ID (group IDs typically start with a minus sign, e.g., `-1001234567890`).
 - **Topic ID**: If your group has Topics enabled and you want notifications posted to a specific thread, enter the numeric thread ID (can be retrieved from the topic's message link).
 
-## 2. Discord
+## 2. Discord <img src="/_images/icons/discord.svg" class="heading-icon" alt="Discord" width="24" height="24" />
 
 Broadcast project progress and status changes directly into Discord text channels using native Discord webhooks.
 
@@ -81,7 +90,7 @@ Broadcast project progress and status changes directly into Discord text channel
 6. Paste your webhook URL into **Webhook URL 1**. (You can optionally paste up to two additional webhook URLs into fields 2 and 3).
 7. Click **Save**.
 
-## 3. Slack
+## 3. Slack <img src="/_images/icons/slack.svg" class="heading-icon" alt="Slack" width="24" height="24" />
 
 Post real-time project updates to any public or private channel in your Slack workspace.
 
@@ -99,7 +108,7 @@ Post real-time project updates to any public or private channel in your Slack wo
 6. Paste the URL into the **Webhook URL** field.
 7. Click **Save**.
 
-## 4. Mattermost
+## 4. Mattermost <img src="/_images/icons/mattermost.svg" class="heading-icon" alt="Mattermost" width="24" height="24" />
 
 Connect Leantime with your self-hosted or cloud Mattermost instance.
 
@@ -118,7 +127,7 @@ Connect Leantime with your self-hosted or cloud Mattermost instance.
 7. Paste the URL into the **Webhook URL** field.
 8. Click **Save**.
 
-## 5. Zulip
+## 5. Zulip <img src="/_images/icons/zulip.svg" class="heading-icon" alt="Zulip" width="24" height="24" />
 
 Route notifications into Zulip streams and dedicated conversation topics.
 
