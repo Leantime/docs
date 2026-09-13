@@ -55,21 +55,25 @@ Leantime includes a native Telegram integration supporting direct chats, private
 4. Copy the **HTTP API Bot Token** provided by BotFather (looks like `123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ`).
 
 #### Step 2: Add the Bot to Your Chat or Group
-- **For a Group or Channel**: Add your newly created bot to the group as a member. Ensure the bot has permission to post messages.
 - **For Direct Messages**: Start a private chat with your bot and send `/start` or any greeting message.
-- **For Forum Supergroups (with Topics)**: Add the bot to the supergroup and post a message in the specific topic where you want updates to appear.
+- **For Channels**: Telegram requires bots in channels to be added as an **Administrator** with **"Post Messages"** permission (bots cannot be added as regular channel members). Post a test message in the channel after adding the bot.
+- **For Groups / Supergroups**: Add the bot to your group. Because Telegram enables *Group Privacy Mode* by default, either promote the bot to **Administrator** or send a message that explicitly mentions the bot (e.g., `/test @YourBotUsername`) so Telegram captures the update.
+- **For Forum Supergroups (with Topics)**: Add the bot as an **Administrator** with permission to post in topics, and send a message inside the specific topic thread where you want project notifications to appear.
 
 #### Step 3: Connect in Leantime (Automatic Detection)
 1. Go to your project's **Integrations** tab in Leantime.
 2. Under **Telegram**, paste your **Bot Token** into the token field.
 3. Leave the **Chat ID** and **Topic ID** fields empty.
-4. Send a message to your bot in Telegram (e.g., "hello").
+4. Send a message to your bot in Telegram (e.g., "hello" or `/test @YourBotUsername`).
 5. In Leantime, click **Save**.
 6. Leantime will query the Telegram API, automatically detect the recent chat (and topic thread ID if applicable), and populate the fields for you!
 
 #### Step 4: Manual Configuration (Optional)
 If you prefer to enter details manually:
-- **Chat ID**: Enter your numeric Telegram Chat ID (group IDs typically start with a minus sign, e.g., `-1001234567890`).
+- **Chat ID**: Enter your numeric Telegram Chat ID:
+  - **Direct Messages**: Your personal user ID (positive integer, e.g., `6722762348`).
+  - **Groups & Channels**: Group/channel IDs start with a minus sign, and channels/supergroups always start with **`-100`** (e.g., `-1001234567890`).
+  > **Important**: Do **not** enter the Bot's own user ID (the number preceding the colon `:` in your Bot Token) as the Chat ID. A bot cannot send messages to itself; doing so will cause Telegram to reject requests with `403 Forbidden: the bot can't send messages to the bot`.
 - **Topic ID**: If your group has Topics enabled and you want notifications posted to a specific thread, enter the numeric thread ID (can be retrieved from the topic's message link).
 
 ## 2. Discord <img src="/_images/icons/discord.svg" class="heading-icon" alt="Discord" width="24" height="24" />
@@ -166,9 +170,13 @@ Leantime includes an internal URL security guard (`OutboundUrlGuard`) to prevent
 - Public services (Telegram, Discord, Slack, Zulip Cloud) are supported out of the box.
 - If you are running self-hosted Mattermost or Zulip on a private local network (e.g., `192.168.x.x` or `10.x.x.x`), ensure your server network configuration and Leantime security environment allow outbound requests to the internal IP or hostname.
 
-### 2. Telegram: "Chat Not Found" Error
-- Make sure you have started the bot or added it to the group **before** clicking Save.
-- Send at least one message (e.g., `/start` or `hello`) in the chat or topic thread so Telegram has an active update for Leantime to detect.
+### 2. Telegram: "Chat Not Found" or "Forbidden" Error
+- **"Chat not found" (400)**:
+  - Make sure you added the bot to the group or channel **before** configuring it in Leantime. A bot cannot message chats it is not a member of.
+  - If using a **Channel** or **Forum Supergroup**, confirm the bot is promoted to **Administrator** with **Post Messages** permission.
+  - Send at least one message (e.g., `/start`, `/test @YourBotUsername`, or a channel post) in the target chat or topic so Telegram registers an active update.
+- **"Forbidden: the bot can't send messages to the bot" (403)**:
+  - Verify you did not paste the bot's own user ID (the numbers before `:` in the Bot Token) into the **Telegram Chat ID** field. The Chat ID must be your personal user ID or your group/channel ID (`-100...`).
 
 ### 3. Telegram Forum Topics
 - When using a supergroup with Topics enabled, ensure you provide the numeric `Topic ID`. If notifications are posting to the *General* topic instead of your desired thread, check that the Topic ID was properly detected or entered.
