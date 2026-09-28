@@ -45,6 +45,15 @@ Then similar to above, the `LEAN_APP_URL` in `config/.env` should be changed.
 
 Thank you @lamping7 for providing this guide!
 
+## Easypanel
+
+[Easypanel](https://easypanel.io) is a self-hosted Docker deployment platform, and Leantime has a one-click deployment template there:
+
+[![Deploy on Easypanel][easypanel-btn]][easypanel-deploy]
+
+[easypanel-btn]: https://easypanel.io/img/deploy-on-easypanel-40.svg
+[easypanel-deploy]: https://easypanel.io/templates/leantime
+
 <!-- ## Subfolder installation
 
 We recommend running Leantime as the main application under a domain or subdomain (eg leantime.yourcompany.com), however it is possible to run Leantime within a subfolder (eg. yourcompany.com/leantime).
