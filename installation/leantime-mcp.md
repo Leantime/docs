@@ -16,124 +16,104 @@ MCP (Model Context Protocol) is a standardized way for AI assistants to interact
 
 ## Prerequisites
 
-- Leantime 3.x or later (self-hosted)
-- MCP Server plugin from the Leantime Marketplace
-- Node.js 18+ (for the MCP bridge)
-- An MCP-compatible AI client (Claude Desktop, VS Code, Cursor, etc.)
+- **Self-hosted:** Leantime 3.10.3 or later with the [MCP Server plugin](https://marketplace.leantime.io/product/mcp-server/) installed and enabled. **Leantime Cloud:** nothing to install.
+- An access token (see below)
+- An MCP client that supports remote (Streamable HTTP) servers: Claude Code, Cursor, VS Code, Windsurf, etc. Claude Desktop works too, via `mcp-remote` (see below).
 
-## Installation
+No bridge or extra package is needed — clients connect straight to your Leantime's `/mcp` endpoint:
 
-### Step 1: Install the MCP Server Plugin
+```
+https://your-leantime-url/mcp
+```
+
+## Step 1: Install the MCP Server Plugin (self-hosted only)
 
 1. Go to **Settings → Plugins** in your Leantime instance
-2. Navigate to the Leantime Marketplace
-3. Find and purchase the "MCP Server" plugin
-4. Enter your license key and click Install
-5. Enable the plugin
+2. Open the Marketplace tab and find **MCP Server**
+3. Purchase, enter your license key and click Install
+4. Enable the plugin
 
-Once enabled, the `/mcp` endpoint becomes available at `https://your-leantime-url/mcp`.
+## Step 2: Create an Access Token
 
-### Step 2: Install the MCP Bridge
+The endpoint accepts either of these:
 
-The bridge connects your local AI client to your remote Leantime server:
+**Option A: Personal Access Token (recommended)** — sent as `Authorization: Bearer <token>`
 
-```bash
-npm install -g leantime-mcp
-```
+Personal tokens act as *you*, so "my tasks", "log time for me" etc. work and everything respects your project access.
 
-Alternative installation from source:
-```bash
-git clone https://github.com/leantime/leantime-mcp.git
-cd leantime-mcp
-npm install
-npm run build
-npm install -g .
-```
+1. Open your profile (**My Profile → Personal Access Tokens**)
+2. Click **Create Token**, give it a name (e.g. "Claude Code")
+3. Copy the token — it is only shown once
 
-### Step 3: Generate an Access Token
+**Option B: API Key** — sent as `x-api-key: lt_...`
 
-**Option A: Personal Access Token (Recommended)**
+API keys are service accounts created by an admin under **Company Settings → API Keys**. They act as that service user, not as you, so "my tasks" refers to the API user. Good for automations and shared agents.
 
-Personal tokens are tied to your user account, so queries like "my tasks" work correctly.
-
-1. Go to **Profile → Personal Access Tokens**
-2. Click "Generate New Token"
-3. Copy and save the token securely
-
-**Option B: Standard API Key**
-
-API keys are service accounts not tied to a specific user.
-
-1. Go to **Settings → API**
-2. Generate a new API key (format: `lt_{username}_{hash}`)
-
-Note: With API keys, user-specific queries won't work. Use personal access tokens for the best experience.
+> If your account uses two-factor authentication, use a token — tokens are not affected by 2FA.
 
 ## Client Configuration
 
-### Claude Desktop
+Replace `https://your-leantime-url` and the token in the examples. Use `"x-api-key": "lt_..."` instead of `Authorization` if you are using an API key.
 
-Edit your Claude Desktop configuration file:
+### Claude Code
 
-**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+```bash
+claude mcp add --transport http leantime https://your-leantime-url/mcp \
+  --header "Authorization: Bearer YOUR_TOKEN"
+```
+
+### Cursor
+
+`~/.cursor/mcp.json` (or `.cursor/mcp.json` in a project):
 
 ```json
 {
   "mcpServers": {
     "leantime": {
-      "command": "leantime-mcp",
-      "args": [
-        "https://your-leantime-url.com/mcp",
-        "--token",
-        "YOUR_ACCESS_TOKEN"
-      ]
+      "url": "https://your-leantime-url/mcp",
+      "headers": { "Authorization": "Bearer YOUR_TOKEN" }
     }
   }
 }
 ```
 
-Restart Claude Desktop after saving.
+### VS Code
 
-### VS Code (with MCP Extension)
-
-Add to your VS Code settings:
+`.vscode/mcp.json` (or **MCP: Add Server…** from the command palette):
 
 ```json
 {
-  "mcp.servers": {
+  "servers": {
     "leantime": {
-      "command": "leantime-mcp",
-      "args": [
-        "https://your-leantime-url.com/mcp",
-        "--token",
-        "YOUR_ACCESS_TOKEN"
-      ]
+      "type": "http",
+      "url": "https://your-leantime-url/mcp",
+      "headers": { "Authorization": "Bearer YOUR_TOKEN" }
     }
   }
 }
 ```
 
-### Cursor
+### Windsurf
 
-Open Cursor Settings → Extensions → MCP and add:
+`~/.codeium/windsurf/mcp_config.json`:
 
 ```json
 {
-  "leantime": {
-    "command": "leantime-mcp",
-    "args": [
-      "https://your-leantime-url.com/mcp",
-      "--token",
-      "YOUR_ACCESS_TOKEN"
-    ]
+  "mcpServers": {
+    "leantime": {
+      "serverUrl": "https://your-leantime-url/mcp",
+      "headers": { "Authorization": "Bearer YOUR_TOKEN" }
+    }
   }
 }
 ```
 
-### Using mcp-remote (Alternative)
+### Claude Desktop
 
-If you prefer not to install the Leantime bridge:
+Claude Desktop's built-in remote connectors don't support custom auth headers yet, so use the generic [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) helper (requires Node.js 18+). Edit `claude_desktop_config.json`:
+
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
@@ -141,40 +121,33 @@ If you prefer not to install the Leantime bridge:
     "leantime": {
       "command": "npx",
       "args": [
-        "mcp-remote",
-        "https://your-leantime-url.com/mcp",
-        "--header",
-        "Authorization: Bearer YOUR_ACCESS_TOKEN"
+        "-y", "mcp-remote",
+        "https://your-leantime-url/mcp",
+        "--header", "Authorization:${LEANTIME_AUTH}"
       ],
-      "env": {
-        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
-      }
+      "env": { "LEANTIME_AUTH": "Bearer YOUR_TOKEN" }
     }
   }
 }
 ```
 
-Note: Only set `NODE_TLS_REJECT_UNAUTHORIZED` to "0" for self-signed certificates in development.
+Restart Claude Desktop after saving. (Keeping the header value in `env` avoids argument-quoting problems with the space in `Bearer ...`, especially on Windows.)
 
-### Local/STDIO Mode (Self-Hosted)
+### Any other client
 
-For direct server-side connections without the HTTP bridge:
+Any MCP client that supports Streamable HTTP works: point it at `https://your-leantime-url/mcp` and send one of the two auth headers. You can check connectivity with curl:
 
-```json
-{
-  "mcpServers": {
-    "leantime": {
-      "command": "php",
-      "args": [
-        "/path-to-leantime/bin/leantime",
-        "lt-mcp:start",
-        "--transport=stdio",
-        "--token=YOUR_TOKEN"
-      ]
-    }
-  }
-}
+```bash
+curl https://your-leantime-url/mcp \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"curl","version":"1"}}}'
 ```
+
+A JSON response containing `"serverInfo":{"name":"Leantime MCP Server"...}` means everything is set up. A `401` means the token is missing or invalid.
+
+> **Upgrading from the `leantime-mcp` npm bridge?** It is no longer needed and has been deprecated. Replace the `leantime-mcp` command in your config with one of the setups above — your existing token keeps working.
 
 ## Available Tools
 
@@ -202,6 +175,7 @@ The MCP server exposes comprehensive Leantime functionality:
 | `bulkAddTasks` | Create multiple tasks at once |
 | `bulkEditTasks` | Update multiple tasks at once |
 | `getStatusLabels` | Get available status options for a project |
+| `getTaskStatusSummary` | Task counts by status for a project (3.10.3+) |
 
 ### Milestones
 | Tool | Description |
@@ -510,46 +484,6 @@ and add the 'needs-docs' label."
 Format as a Slack message."
 ```
 
-## Server Configuration
-
-### Environment Variables
-
-Add these to your `.env` file to customize the MCP server:
-
-```bash
-# Enable/disable MCP server
-MCP_SERVER_ENABLED=true
-
-# Transport settings
-MCP_SERVER_HOST=127.0.0.1
-MCP_SERVER_PORT=3001
-MCP_TRANSPORT=stdio
-
-# Authentication
-MCP_REQUIRE_AUTH=true
-MCP_REQUIRED_ROLE=editor
-
-# Security
-MCP_ALLOWED_IPS=127.0.0.1,::1
-MCP_RATE_LIMIT=100
-
-# Performance
-MCP_AUTO_DISCOVER_TOOLS=true
-MCP_CACHE_TOOLS=true
-MCP_MAX_EXECUTION_TIME=30
-MCP_MEMORY_LIMIT=256M
-MCP_MAX_RESPONSE_SIZE=10485760
-```
-
-### Security Best Practices
-
-1. **Always use HTTPS** in production
-2. **Use Personal Access Tokens** instead of API keys when possible
-3. **Configure IP whitelisting** with `MCP_ALLOWED_IPS`
-4. **Set rate limits** to prevent abuse
-5. **Rotate tokens regularly**
-6. **Monitor logs** for suspicious activity
-
 ## Hybrid Human-AI Teams
 
 The MCP server enables AI agents to work alongside human team members on the same project board:
@@ -570,86 +504,48 @@ The MCP server enables AI agents to work alongside human team members on the sam
 - Use status updates to communicate progress
 - Human team maintains oversight via comments
 
+## Security & Limits
+
+- Always use HTTPS in production.
+- Prefer Personal Access Tokens; every tool call runs with that user's role and project access.
+- Revoke tokens you no longer use from **My Profile → Personal Access Tokens** (or delete the API key).
+- MCP requests are rate limited (default 300/minute per user and IP). Self-hosted admins can change this with `LEAN_RATELIMIT_MCP`.
+
 ## Troubleshooting
 
-### Connection Issues
+**`401 Unauthorized`**
+- Check the header: `Authorization: Bearer <personal token>` or `x-api-key: lt_...` (not both mixed up)
+- The token may have been revoked or expired — create a new one
+- If a reverse proxy sits in front of Leantime, make sure it forwards the `Authorization` header
 
-**"Connection refused" error:**
-- Verify the MCP plugin is installed and enabled
-- Check that `/mcp` endpoint is accessible
-- Ensure your token is valid
+**`404` on `/mcp`**
+- Self-hosted: the MCP Server plugin isn't installed or enabled
+- Leantime is installed in a subfolder: include it, e.g. `https://example.com/leantime/mcp`
 
-**SSL/Certificate errors:**
-- For self-signed certs, add `NODE_TLS_REJECT_UNAUTHORIZED=0` to env
-- In production, use a valid SSL certificate
+**Tools return "not allowed" / empty results**
+- The token's user doesn't have access to that project. MCP uses exactly the same permissions as the web UI.
+- "My tasks" returns nothing with an API key: API keys are service users — use a Personal Access Token.
 
-### Authentication Errors
+**Too many requests (`429`)**
+- You hit the rate limit; use the bulk tools (`bulkAddTasks`, `bulkEditTasks`, …) or raise `LEAN_RATELIMIT_MCP`
 
-**"Unauthorized" or "Invalid token":**
-- Regenerate your Personal Access Token
-- Ensure the token hasn't expired
-- Check that your user has the required role (default: editor)
+**SSL errors with a self-signed certificate (local development only)**
+- `mcp-remote`: add `"NODE_TLS_REJECT_UNAUTHORIZED": "0"` to `env`. Never do this in production.
 
-**"My tasks" queries return nothing:**
-- You're likely using an API key instead of Personal Access Token
-- API keys are service accounts, not tied to users
-- Generate a Personal Access Token from your Profile page
-
-### Performance Issues
-
-**Slow responses:**
-- Enable tool caching: `MCP_CACHE_TOOLS=true`
-- Increase memory limit: `MCP_MEMORY_LIMIT=512M`
-- Use bulk operations instead of individual calls
-
-**Rate limiting:**
-- Increase `MCP_RATE_LIMIT` value
-- Batch requests where possible
-
-### Debugging
-
-Enable verbose logging:
-
-```bash
-MCP_LOG_REQUESTS=true
-MCP_EXPOSE_ERRORS=true
-```
-
-Check logs at: `storage/logs/leantime-xx-xx-xx.log`
-
-**Bridge debugging:**
-```bash
-# View debug output
-leantime-mcp https://your-url.com/mcp --token YOUR_TOKEN 2>debug.log
-```
-
-**Claude Desktop logs (macOS):**
-`~/Library/Logs/Claude/mcp-server-leantime.log`
-
-### Tool Discovery Issues
-
-If tools aren't appearing:
-
-```bash
-php bin/leantime lt-mcp:discover
-```
-
-This rebuilds the tool cache.
+**Logs**
+- Server: `storage/logs/` in your Leantime installation
+- Claude Desktop (macOS): `~/Library/Logs/Claude/mcp-server-leantime.log`
 
 ## Alternative: Community MCP Server
 
-There's also a community-maintained MCP server that doesn't require the plugin:
+There's also a community-maintained MCP server that doesn't require the plugin and talks to the JSON-RPC API directly (requires Python/uv):
 
 ```json
 {
   "mcpServers": {
     "leantime": {
       "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/daniel-eder/leantime-mcp.git",
-        "leantime-mcp"
-      ],
+      "args": ["--from", "git+https://github.com/daniel-eder/leantime-mcp.git", "leantime-mcp"],
       "env": {
         "LEANTIME_URL": "https://your-leantime-instance.com",
         "LEANTIME_API_KEY": "your_api_key_here",
@@ -660,12 +556,8 @@ There's also a community-maintained MCP server that doesn't require the plugin:
 }
 ```
 
-This uses Leantime's JSON-RPC API directly and requires Python/uv.
-
 ## Resources
 
 - [MCP Server Plugin](https://marketplace.leantime.io/product/mcp-server/) - Leantime Marketplace
-- [leantime-mcp Bridge](https://www.npmjs.com/package/leantime-mcp) - npm package
-- [GitHub: leantime-mcp](https://github.com/Leantime/leantime-mcp) - Bridge source code
 - [MCP Protocol Specification](https://modelcontextprotocol.io/) - Official MCP docs
 - [Leantime Support](https://support.leantime.io/en/article/leantime-mcp-server-dkomm9/) - Official documentation
