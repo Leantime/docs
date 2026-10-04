@@ -438,7 +438,7 @@ Not built-in, but you can use the API or extend functionality with plugins.
 
 ### Is there an MCP (Model Context Protocol) server?
 
-Yes, the MCP Server Plugin allows AI assistants like Claude to interact with Leantime directly. It's available in the Leantime Marketplace.
+Yes, the MCP Server Plugin allows AI assistants like Claude to interact with Leantime directly. It's available in the Leantime Marketplace and built into Leantime Cloud. Clients connect straight to `https://your-leantime-url/mcp` with a Personal Access Token — see [Leantime's MCP Server](installation/leantime-mcp.md).
 
 ---
 
