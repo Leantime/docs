@@ -1,6 +1,6 @@
 # Docker based Installation
 
-We host our offical docker image on Docker Hub https://hub.docker.com/r/leantime/leantime. Your device needs to have Docker Installed. Please check the [Offcicial Docker](https://docs.docker.com/get-docker/) page, if you don't have Docker installed
+We host our offical docker image on Docker Hub https://hub.docker.com/r/leantime/leantime. Your device needs to have Docker Installed. Please check the [Offcial Docker](https://docs.docker.com/get-docker/) page, if you don't have Docker installed
 There are various other custom leantime images on docker hub which are not supported.
 
 You have two options to install Leantime via docker depending on your use case:
