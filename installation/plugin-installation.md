@@ -263,7 +263,13 @@ Additionally, ensure `LEAN_APP_URL` is set correctly for OAuth callbacks:
 LEAN_APP_URL=https://yourdomain.com
 ```
 
-The callback URL for all providers is: `yourdomain.com/advancedAuth/callback?driver={provider}`
+Register this callback (redirect) URL with each provider:
+
+```
+https://yourdomain.com/advancedAuth/callback/{provider}
+```
+
+`{provider}` is the provider's key in lowercase, for example `https://yourdomain.com/advancedAuth/callback/google`. Leantime builds this URL from `LEAN_APP_URL` and sends it to the provider, and most providers require an exact match.
 
 Once provider configuration is added to the environment file, the UI will show a toggle to enable/disable the provider.
 
@@ -403,12 +409,26 @@ APP.NET_SECRET=your-secret
 
 All file paths are relative to the Leantime root directory.
 
+In your identity provider, register Leantime as a service provider:
+
+- **Assertion Consumer Service (reply) URL:** `https://yourdomain.com/advancedAuth/callback/saml2`
+- **Entity ID:** the value of `SAML2_SP_ENTITY_ID`, or `https://yourdomain.com/auth/saml2` if you don't set it
+
+Then tell Leantime about your identity provider, using **either** its metadata **or** its details entered by hand. If `SAML2_ACS` is set, Leantime uses the details entered by hand and ignores `SAML2_METADATA`.
+
 ```ini
-# Required
-SAML2_METADATA=/path/to/metadata.xml
-SAML2_ENTITY_ID=your-entity-id
-SAML2_ACS=https://yourdomain.com/advancedAuth/callback?driver=saml2
-SAML2_CERTIFICATE=/path/to/certificate.pem
+# Option A: your identity provider's metadata (URL, file path, or XML)
+SAML2_METADATA=https://idp.example.com/metadata.xml
+# Only needed if the metadata lists several identity providers: which one to use
+SAML2_ENTITY_ID=https://idp.example.com/entity-id
+
+# Option B: your identity provider's details entered by hand
+# SAML2_ACS is your identity provider's single sign-on URL, not Leantime's
+SAML2_ACS=https://idp.example.com/sso
+SAML2_ENTITY_ID=https://idp.example.com/entity-id
+SAML2_CERTIFICATE=/path/to/idp-signing-certificate.pem
+
+# Both options: map your identity provider's attribute names to Leantime's
 SAML2_ATTRIBUTE_MAP={"email": "email", "name": "displayName"}
 
 # Optional validation settings
@@ -524,7 +544,8 @@ ALTER TABLE zp_plugins ADD COLUMN format VARCHAR(45);
 
 1. Verify `LEAN_APP_URL` matches your actual domain exactly (including https://)
 2. Check the callback URL in your identity provider settings:
-   - Format: `https://yourdomain.com/advancedAuth/callback?driver={provider}`
+   - Format: `https://yourdomain.com/advancedAuth/callback/{provider}` (for example `.../advancedAuth/callback/google`)
+   - For SAML, the reply URL is `https://yourdomain.com/advancedAuth/callback/saml2`
 3. Ensure `LEAN_SESSION_SECURE=true` only if using HTTPS
 4. For SAML: verify certificate paths are correct and files are readable by the web server
 
