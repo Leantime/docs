@@ -87,6 +87,22 @@ LEAN_EMAIL_SMTP_PORT='587'
 
 > **Note:** Replace `us-east-1` with your SES region.
 
+### Groundmail
+
+```env
+LEAN_EMAIL_RETURN='noreply@yourdomain.com'
+LEAN_EMAIL_USE_SMTP=true
+LEAN_EMAIL_SMTP_HOSTS='smtp.groundmail.dev'
+LEAN_EMAIL_SMTP_AUTH=true
+LEAN_EMAIL_SMTP_USERNAME='groundmail'
+LEAN_EMAIL_SMTP_PASSWORD='your-groundmail-smtp-credential'
+LEAN_EMAIL_SMTP_AUTO_TLS=true
+LEAN_EMAIL_SMTP_SECURE='tls'
+LEAN_EMAIL_SMTP_PORT='587'
+```
+
+> **Note:** Until you verify a sending domain and add a payment method, Groundmail only sends from `noreply@mail.groundmail.dev` to your own account email; other recipients are rejected. See [Groundmail SMTP](https://docs.groundmail.dev/smtp).
+
 ## Port & Security Settings
 
 This is the most common source of configuration issues. Use the following combinations:
