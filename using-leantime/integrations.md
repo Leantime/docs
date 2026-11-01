@@ -86,11 +86,11 @@ Broadcast project progress and status changes directly into Discord text channel
 
 ### Setup Instructions
 
-1. Open Discord and go to your server's settings (**Server Settings** $\rightarrow$ **Integrations** $\rightarrow$ **Webhooks**).
+1. Open Discord and go to your server's settings (**Server Settings** → **Integrations** → **Webhooks**).
 2. Click **New Webhook**.
 3. Choose a name for the webhook (e.g., "Leantime Updates") and select the target channel.
 4. Click **Copy Webhook URL** (e.g., `https://discord.com/api/webhooks/1234567890/abcdef...`).
-5. In Leantime, navigate to **Projects** $\rightarrow$ [Your Project] $\rightarrow$ **Integrations** $\rightarrow$ **Discord**.
+5. In Leantime, navigate to **Projects** → [Your Project] → **Integrations** → **Discord**.
 6. Paste your webhook URL into **Webhook URL 1**. (You can optionally paste up to two additional webhook URLs into fields 2 and 3).
 7. Click **Save**.
 
@@ -108,7 +108,7 @@ Post real-time project updates to any public or private channel in your Slack wo
 2. Click **Add to Slack** or **Create an App** with an *Incoming Webhook*.
 3. Choose the channel where project notifications should be posted.
 4. Copy the generated **Webhook URL** (e.g., `https://hooks.slack.com/services/T000/B000/XXXX`).
-5. In Leantime, navigate to **Projects** $\rightarrow$ [Your Project] $\rightarrow$ **Integrations** $\rightarrow$ **Slack**.
+5. In Leantime, navigate to **Projects** → [Your Project] → **Integrations** → **Slack**.
 6. Paste the URL into the **Webhook URL** field.
 7. Click **Save**.
 
@@ -123,11 +123,11 @@ Connect Leantime with your self-hosted or cloud Mattermost instance.
 ### Setup Instructions
 
 1. Log in to Mattermost and click your team name/menu in the top left.
-2. Navigate to **Integrations** $\rightarrow$ **Incoming Webhooks**.
+2. Navigate to **Integrations** → **Incoming Webhooks**.
 3. Click **Add Incoming Webhook**.
 4. Fill in the display title and select the target channel.
 5. Copy the generated **Webhook URL**.
-6. In Leantime, navigate to **Projects** $\rightarrow$ [Your Project] $\rightarrow$ **Integrations** $\rightarrow$ **Mattermost**.
+6. In Leantime, navigate to **Projects** → [Your Project] → **Integrations** → **Mattermost**.
 7. Paste the URL into the **Webhook URL** field.
 8. Click **Save**.
 
@@ -141,13 +141,13 @@ Route notifications into Zulip streams and dedicated conversation topics.
 
 ### Setup Instructions
 
-1. In your Zulip organization, open **Settings** (gear icon) $\rightarrow$ **Organization settings**.
-2. Navigate to **Bots** $\rightarrow$ **Add a new bot**.
+1. In your Zulip organization, open **Settings** (gear icon) → **Organization settings**.
+2. Navigate to **Bots** → **Add a new bot**.
 3. Choose **Generic bot**, give it a name (e.g., "Leantime Bot"), and submit.
 4. Download or copy the bot's credentials:
    - **Bot Email**
    - **Bot API Key**
-5. In Leantime, go to **Projects** $\rightarrow$ [Your Project] $\rightarrow$ **Integrations** $\rightarrow$ **Zulip**.
+5. In Leantime, go to **Projects** → [Your Project] → **Integrations** → **Zulip**.
 6. Fill in the integration fields:
    - **Base URL**: Your Zulip server URL (e.g., `https://yourteam.zulipchat.com` or `https://zulip.internal.domain`).
    - **Bot Email**: The email address generated for the bot.

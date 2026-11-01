@@ -102,7 +102,7 @@ Leantime supports real-time project notifications to team communication platform
 
 These are managed per-project inside the Leantime web UI under **Projects → [Select Project] → Settings → Integrations**.
 
-**→ See the [Project Integrations User Manual](../using-leantime/integrations.md)** for complete setup guides, webhook configuration, Telegram bot setup, and troubleshooting.
+**→ See the [Project Integrations User Manual](using-leantime/integrations.md)** for complete setup guides, webhook configuration, Telegram bot setup, and troubleshooting.
 
 ---
 
