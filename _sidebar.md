@@ -4,6 +4,7 @@
     - [Package based Installation](installation/package-installation.md)
     - [Docker based Installation](installation/docker.md)
         - [Docker Troubleshooting](installation/docker-troubleshooting.md)
+        - [Synology NAS](installation/synology.md)
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
     - [Email](installation/email-configuration.md)
