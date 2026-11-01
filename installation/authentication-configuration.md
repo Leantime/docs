@@ -32,6 +32,10 @@ LEAN_OIDC_CLIENT_SECRET=your-client-secret
 https://your-leantime-domain.com/oidc/callback
 ```
 
+**Key algorithms:** Configure your identity provider to sign tokens with **RSA** keys. Elliptic-curve (EC/ES256) keys are not supported yet.
+
+**PKCE:** Leantime sends PKCE (S256) since v3.13.2, so providers that require it work. On older versions, disable PKCE for the Leantime client in your identity provider.
+
 ### Provider-Specific Configuration
 
 #### Keycloak
