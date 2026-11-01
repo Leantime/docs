@@ -9,6 +9,7 @@
     - [Email](installation/email-configuration.md)
     - [Plugin](installation/plugin-installation.md)
     - [Authentication](installation/authentication-configuration.md)
+    - [Project Integrations](using-leantime/integrations.md)
    - [Backup & Restore](installation/backup-restore.md)
    - [Upgrade Guide](installation/upgrade-guide.md)
    - [Common Issues](installation/common-issues.md)
