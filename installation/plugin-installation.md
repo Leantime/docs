@@ -271,7 +271,9 @@ https://yourdomain.com/advancedAuth/callback/{provider}
 
 `{provider}` is the provider's key in lowercase, for example `https://yourdomain.com/advancedAuth/callback/google`. Leantime builds this URL from `LEAN_APP_URL` and sends it to the provider, and most providers require an exact match.
 
-Once provider configuration is added to the environment file, the UI will show a toggle to enable/disable the provider.
+Once provider configuration is added to the environment file, the UI will show a toggle that adds or removes the provider's button on the login page.
+
+> **Note:** In AdvancedAuth 1.4.1 and earlier, switching a provider off only hides its button. Anyone who knows the sign-in URL can still use a configured provider. To fully disable a provider, remove its credentials from the environment file.
 
 ### Enabling a Provider
 
@@ -305,7 +307,7 @@ These options are under **Company Settings → Authentication Settings**:
 
 | Setting | What it does |
 |---------|--------------|
-| **Restrict to specific domain** | Only emails at the domain you enter (for example `example.com`) can sign in, with a provider or with a password. |
+| **Restrict to specific domain** | Only emails at the domain you enter (for example `example.com`) can sign in, with a provider or with a password. The domain must match exactly: subdomains don't count, and the check is case-sensitive, so enter it in lowercase. |
 | **Hide Login Form** | Removes the email and password form from the login page. Only turn this on after you have confirmed a provider login works. |
 | **Auto-redirect to provider** | When exactly one provider is enabled, the login page sends users straight to it. After a failed provider login, the redirect is skipped for the rest of that browser session so users don't get stuck in a loop. |
 
@@ -314,6 +316,8 @@ If you hide the login form and then can't sign in, turn it back on from the serv
 ```bash
 php ./bin/leantime setting:save --key=auth.hideDefaultLogin --value=off
 ```
+
+The website caches settings for up to an hour, separately from the command line, so the login form can take up to an hour to come back. With the default file cache, delete the contents of `storage/framework/cache/` to apply the change immediately.
 
 ### Mobile App Sign-In
 
@@ -374,6 +378,8 @@ GITLAB_CLIENT_ID=your-client-id
 GITLAB_CLIENT_SECRET=your-client-secret
 ```
 
+This provider only works with GitLab.com. For a self-managed GitLab instance, use [OpenID Connect](installation/authentication-configuration.md#openid-connect-oidc) instead.
+
 #### Google (Key: `GOOGLE`)
 [Documentation](https://github.com/SocialiteProviders/Google-Plus)
 
@@ -381,7 +387,7 @@ GITLAB_CLIENT_SECRET=your-client-secret
 2. Go to **Google Auth Platform → Branding** (shown as **OAuth consent screen** in some accounts) and fill in the app name and support email.
 3. Under **Audience**, choose who can sign in:
    - **Internal:** only users in your Google Workspace organization. This is the simplest way to keep other Google accounts out.
-   - **External:** any Google account. While the app's status is **Testing**, only the test users you list can sign in. Click **Publish app** when you're ready. Leantime only asks for the basic `openid`, `email` and `profile` scopes, so publishing doesn't normally need a Google review.
+   - **External:** any Google account. Leantime only asks for the basic `openid`, `email` and `profile` scopes, so Google's test-user list does **not** limit who can sign in, even while the app's status is **Testing**. Don't rely on it for access control. Publishing doesn't normally need a Google review.
 4. Go to **Clients → Create client** and choose **Web application**.
 5. Under **Authorized redirect URIs**, add `https://yourdomain.com/advancedAuth/callback/google`. You don't need to add any JavaScript origins.
 6. Click **Create** and copy the **Client ID** and **Client secret**. Copy the secret right away, because Google may not show it again.
@@ -491,18 +497,10 @@ EDUID_CLIENT_SECRET=your-client-secret
 EDUID_USE_TEST_IDP=false
 ```
 
-#### App.net (Key: `APP.NET`)
-[Documentation](https://github.com/SocialiteProviders/App.net)
-
-```ini
-APP.NET_KEY=your-key
-APP.NET_SECRET=your-secret
-```
-
 #### SAML 2.0 (Key: `SAML2`)
 [Documentation](https://github.com/SocialiteProviders/Saml2)
 
-All file paths are relative to the Leantime root directory.
+Use absolute paths for any file paths below.
 
 In your identity provider, register Leantime as a service provider:
 
@@ -523,8 +521,10 @@ SAML2_ACS=https://idp.example.com/sso
 SAML2_ENTITY_ID=https://idp.example.com/entity-id
 SAML2_CERTIFICATE=/path/to/idp-signing-certificate.pem
 
-# Both options: map your identity provider's attribute names to Leantime's
-SAML2_ATTRIBUTE_MAP={"email": "email", "name": "displayName"}
+# Both options: map your identity provider's attribute names to Leantime's.
+# Do not set this in AdvancedAuth 1.4.1 and earlier: any value breaks SAML sign-in.
+# The defaults already read the standard email and name claims.
+# SAML2_ATTRIBUTE_MAP={"email": "email", "name": "displayName"}
 
 # Optional validation settings
 SAML2_VALIDATION_CLOCK_SKEW=120
@@ -644,7 +644,7 @@ ALTER TABLE zp_plugins ADD COLUMN format VARCHAR(45);
 3. Ensure `LEAN_SESSION_SECURE=true` only if using HTTPS
 4. For SAML: verify certificate paths are correct and files are readable by the web server
 
-A GitHub error that says *"The redirect_uri is not associated with this application"* means the callback URL doesn't match. Usually `LEAN_APP_URL` is empty, or it differs from the GitHub app's callback URL (http vs https, a subfolder, or a trailing slash).
+A GitHub error that says *"The redirect_uri is not associated with this application"* means the callback URL Leantime sent doesn't match the one registered with GitHub. Compare them for http vs https, a subfolder, or a trailing slash. If `LEAN_APP_URL` is empty, Leantime builds the callback from the incoming request, which behind a reverse proxy can come out as `http://` or an internal hostname. Set `LEAN_APP_URL` to your public URL.
 
 ### Auth Plugin: Provider Not Showing in UI
 
