@@ -273,6 +273,52 @@ https://yourdomain.com/advancedAuth/callback/{provider}
 
 Once provider configuration is added to the environment file, the UI will show a toggle to enable/disable the provider.
 
+### Enabling a Provider
+
+1. Add the provider's variables to `config/.env` (or your container's environment variables) and restart PHP-FPM or the container.
+2. Sign in as an Owner or Admin and go to **Company Settings → Authentication Settings**.
+3. The provider's tile now shows a toggle instead of **(Not configured)**. Switch it on and click **Save Settings**.
+4. Open the login page in a private window. A button for the provider appears below the login form.
+
+### How Users Are Matched
+
+Leantime signs a user in by matching the email address the provider returns to the email of an existing Leantime user.
+
+If no user has that email, the login is refused unless automatic account creation is turned on in the environment file:
+
+```ini
+# Create a Leantime account on a user's first provider login
+AUTH_CREATE_USER=true
+```
+
+New accounts get the **Manager** role and use the provider's display name as their first name. You can change both afterwards in user management.
+
+> **Note:** The **Automatically create user accounts** toggle in Authentication Settings does not control this in AdvancedAuth 1.4.1 and earlier. Set `AUTH_CREATE_USER=true` instead.
+
+Leantime refuses a login when the provider reports the email as unverified. If your provider marks real users as unverified, you can turn this check off with `AUTH_REQUIRE_VERIFIED_EMAIL=false`.
+
+Leantime's own two-factor authentication still applies after a provider login.
+
+### Authentication Settings
+
+These options are under **Company Settings → Authentication Settings**:
+
+| Setting | What it does |
+|---------|--------------|
+| **Restrict to specific domain** | Only emails at the domain you enter (for example `example.com`) can sign in, with a provider or with a password. |
+| **Hide Login Form** | Removes the email and password form from the login page. Only turn this on after you have confirmed a provider login works. |
+| **Auto-redirect to provider** | When exactly one provider is enabled, the login page sends users straight to it. After a failed provider login, the redirect is skipped for the rest of that browser session so users don't get stuck in a loop. |
+
+If you hide the login form and then can't sign in, turn it back on from the server:
+
+```bash
+php ./bin/leantime setting:save --key=auth.hideDefaultLogin --value=off
+```
+
+### Mobile App Sign-In
+
+With AdvancedAuth 1.4.0 or later on Leantime 3.10.2 or later, the Leantime mobile app shows a button for each enabled provider on its login screen. You don't need to configure anything else: the app uses the same callback URL as the browser. Leantime's two-factor authentication applies in the app too. SAML 2.0 isn't available in the mobile app yet.
+
 ### Supported Providers
 
 #### Authentik (Key: `AUTHENTIK`)
@@ -305,10 +351,20 @@ GITEA_CLIENT_SECRET=your-client-secret
 #### GitHub (Key: `GITHUB`)
 [Documentation](https://github.com/SocialiteProviders/GitHub)
 
+1. In GitHub, go to **Settings → Developer settings → OAuth Apps → New OAuth App**. For an organization, use **Organization settings → Developer settings → OAuth Apps**. Create an OAuth App, not a GitHub App.
+2. Fill in:
+   - **Homepage URL:** `https://yourdomain.com`
+   - **Authorization callback URL:** `https://yourdomain.com/advancedAuth/callback/github`
+3. Click **Register application**, copy the **Client ID**, then click **Generate a new client secret** and copy the secret.
+4. Add them to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
+LEAN_APP_URL=https://yourdomain.com
 GITHUB_CLIENT_ID=your-client-id
 GITHUB_CLIENT_SECRET=your-client-secret
 ```
+
+Leantime uses the **primary, verified** email of the GitHub account to [match the user](#how-users-are-matched). That email must be the user's Leantime email. If users' primary GitHub email is a personal address, **Restrict to specific domain** will block them.
 
 #### GitLab (Key: `GITLAB`)
 [Documentation](https://github.com/SocialiteProviders/GitLab)
@@ -321,10 +377,23 @@ GITLAB_CLIENT_SECRET=your-client-secret
 #### Google (Key: `GOOGLE`)
 [Documentation](https://github.com/SocialiteProviders/Google-Plus)
 
+1. Open the [Google Cloud Console](https://console.cloud.google.com/) and select or create a project.
+2. Go to **Google Auth Platform → Branding** (shown as **OAuth consent screen** in some accounts) and fill in the app name and support email.
+3. Under **Audience**, choose who can sign in:
+   - **Internal:** only users in your Google Workspace organization. This is the simplest way to keep other Google accounts out.
+   - **External:** any Google account. While the app's status is **Testing**, only the test users you list can sign in. Click **Publish app** when you're ready. Leantime only asks for the basic `openid`, `email` and `profile` scopes, so publishing doesn't normally need a Google review.
+4. Go to **Clients → Create client** and choose **Web application**.
+5. Under **Authorized redirect URIs**, add `https://yourdomain.com/advancedAuth/callback/google`. You don't need to add any JavaScript origins.
+6. Click **Create** and copy the **Client ID** and **Client secret**. Copy the secret right away, because Google may not show it again.
+7. Add them to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
-GOOGLE_CLIENT_ID=your-client-id
+LEAN_APP_URL=https://yourdomain.com
+GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=your-client-secret
 ```
+
+Leantime matches the Google account's email to the user's Leantime email, and it refuses Google accounts whose email isn't verified. With an **External** audience, anyone with a Google account can reach the login step. If `AUTH_CREATE_USER=true`, also turn on **Restrict to specific domain** so only your organization's emails get accounts.
 
 #### Keycloak (Key: `KEYCLOAK`)
 [Documentation](https://github.com/SocialiteProviders/Keycloak)
@@ -348,18 +417,44 @@ LARAVELPASSPORT_HOST=https://your-passport-server.com
 #### Microsoft (Key: `MICROSOFT`)
 [Documentation](https://github.com/SocialiteProviders/Microsoft)
 
+Use this provider for Microsoft 365 / Entra ID work and school accounts, and for personal Microsoft accounts.
+
+1. Open the [Microsoft Entra admin center](https://entra.microsoft.com/) (or **Microsoft Entra ID** in the Azure portal) and go to **App registrations → New registration**.
+2. Enter a name and choose **Supported account types**. For most organizations, pick **Accounts in this organizational directory only (Single tenant)**.
+3. Under **Redirect URI**, choose the **Web** platform and enter `https://yourdomain.com/advancedAuth/callback/microsoft`.
+4. Click **Register**. On the **Overview** page, copy the **Application (client) ID** and the **Directory (tenant) ID**.
+5. Go to **Certificates & secrets → Client secrets → New client secret**. Copy the secret's **Value** (not the Secret ID). Note the expiry date: when the secret expires, Microsoft sign-in stops working until you create a new one and update `MICROSOFT_CLIENT_SECRET`.
+6. Under **API permissions**, keep the default **Microsoft Graph → User.Read** (delegated) permission. If your organization blocks user consent, click **Grant admin consent**.
+7. Add the values to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
-MICROSOFT_CLIENT_ID=your-client-id
-MICROSOFT_CLIENT_SECRET=your-client-secret
-MICROSOFT_TENANT_ID=common
-# Optional settings
+LEAN_APP_URL=https://yourdomain.com
+MICROSOFT_CLIENT_ID=your-application-client-id
+MICROSOFT_CLIENT_SECRET=your-client-secret-value
+MICROSOFT_TENANT_ID=your-directory-tenant-id
+# Optional: send Microsoft requests through a proxy
 MICROSOFT_PROXY=
-MICROSOFT_TENANT_FIELDS=[]
-MICROSOFT_INCLUDE_AVATAR=true
 ```
+
+`MICROSOFT_TENANT_ID` controls which accounts can sign in. It must match the **Supported account types** of the app registration, or Microsoft shows an `AADSTS` error.
+
+| Value | Who can sign in |
+|-------|-----------------|
+| Your directory (tenant) ID | Only accounts in your organization (recommended) |
+| `organizations` | Any work or school account, from any organization |
+| `consumers` | Personal Microsoft accounts only |
+| `common` (default if unset) | Any Microsoft account, work, school or personal |
+
+> **Warning:** With `common` or `organizations` and `AUTH_CREATE_USER=true`, anyone with a matching Microsoft account can create a Leantime account. Use your tenant ID, or turn on **Restrict to specific domain**.
+
+Leantime matches users by the account's **user principal name (UPN)**, not its `mail` attribute. They are usually the same. When they differ (for example `jane@contoso.onmicrosoft.com` vs `jane@contoso.com`), the user's Leantime email must be the UPN.
+
+> **Note:** Leave `MICROSOFT_TENANT_FIELDS` unset. Setting it to `[]` in the environment file breaks sign-in for work and school accounts.
 
 #### Microsoft Azure (Key: `AZURE`)
 [Documentation](https://github.com/SocialiteProviders/Microsoft-Azure)
+
+An older provider for Entra ID work and school accounts. For new setups, use the Microsoft provider above instead. Configuration is the same except for the variable names and the callback URL, `https://yourdomain.com/advancedAuth/callback/azure`. It also matches users by UPN.
 
 ```ini
 AZURE_CLIENT_ID=your-client-id
@@ -549,12 +644,21 @@ ALTER TABLE zp_plugins ADD COLUMN format VARCHAR(45);
 3. Ensure `LEAN_SESSION_SECURE=true` only if using HTTPS
 4. For SAML: verify certificate paths are correct and files are readable by the web server
 
+A GitHub error that says *"The redirect_uri is not associated with this application"* means the callback URL doesn't match. Usually `LEAN_APP_URL` is empty, or it differs from the GitHub app's callback URL (http vs https, a subfolder, or a trailing slash).
+
 ### Auth Plugin: Provider Not Showing in UI
 
 1. Verify environment variables are set correctly (check for typos)
 2. Restart your web server or PHP-FPM after changing `.env`
 3. Clear cache: `php ./bin/leantime cache:clear`
 4. Check that both `CLIENT_ID` and `CLIENT_SECRET` are set for the provider
+5. If the tile shows a toggle but there's no button on the login page, switch the toggle on and click **Save Settings**
+
+### Auth Plugin: Returned to the Login Page After Signing In
+
+- **"Invalid user":** no Leantime user has the email the provider returned, and `AUTH_CREATE_USER` isn't `true`. Create the user with that email, or [turn on automatic account creation](#how-users-are-matched).
+- **"Invalid domain":** **Restrict to specific domain** is on and the email is at a different domain.
+- **Email not verified:** the provider reported the email as unverified. Verify it with the provider, or see `AUTH_REQUIRE_VERIFIED_EMAIL` under [How Users Are Matched](#how-users-are-matched).
 
 ---
 

@@ -9,6 +9,7 @@ Leantime supports multiple authentication methods to integrate with your organiz
 | **Built-in** | Small teams, simple setup | None (default) |
 | **OIDC** | SSO with modern identity providers | OIDC-compliant provider |
 | **LDAP** | Enterprise Active Directory / OpenLDAP | LDAP server access |
+| **AdvancedAuth plugin** | Sign-in buttons for Google, Microsoft, GitHub and other providers, or SAML 2.0 | [AdvancedAuth plugin](installation/plugin-installation.md#advanced-auth-plugin) |
 
 ---
 
