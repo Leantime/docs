@@ -330,11 +330,28 @@ With AdvancedAuth 1.4.0 or later on Leantime 3.10.2 or later, the Leantime mobil
 #### Authentik (Key: `AUTHENTIK`)
 [Documentation](https://github.com/SocialiteProviders/Authentik)
 
+1. In the Authentik admin interface, go to **Applications → Applications** and click **Create with provider**. (In older versions, create an **OAuth2/OpenID Provider** under **Applications → Providers** first, then an application that uses it.)
+2. Enter a name and slug for the application, then choose **OAuth2/OpenID Provider** as the provider type.
+3. In the provider settings:
+   - **Client type:** Confidential
+   - **Redirect URIs:** `https://yourdomain.com/advancedAuth/callback/authentik` (matching mode **Strict**)
+   - **Signing key:** select an RSA certificate, for example the built-in self-signed one
+   - Keep the default scope mappings (`openid`, `email`, `profile`)
+4. Copy the **Client ID** and **Client Secret** from the provider.
+5. Under the application's **Policy / Group / User Bindings**, bind the groups or users who may sign in to Leantime. Without bindings, every Authentik user can.
+6. Add the values to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
-AUTHENTIK_BASE_URL=https://your-authentik-instance.com
+LEAN_APP_URL=https://yourdomain.com
+# The Authentik server's root URL, not the application's URL
+AUTHENTIK_BASE_URL=https://auth.example.com
 AUTHENTIK_CLIENT_ID=your-client-id
 AUTHENTIK_CLIENT_SECRET=your-client-secret
 ```
+
+> **Authentik 2025.10 and later:** The default `email` scope mapping reports every email as **unverified**, and Leantime refuses unverified emails. Either replace the default `email` mapping on the provider with a custom scope mapping that returns `email_verified` (see Authentik's [verify email address](https://docs.goauthentik.io/add-secure-apps/providers/oauth2/verify-email-address/) guide), or set `AUTH_REQUIRE_VERIFIED_EMAIL=false` if every Authentik address is trusted.
+
+Leantime also requests the `goauthentik.io/api` scope. If Authentik rejects the request with a scope error, add the **authentik default OAuth Mapping: authentik API access** mapping to the provider.
 
 #### Auth0 (Key: `AUTH0`)
 [Documentation](https://github.com/SocialiteProviders/Auth0)
@@ -406,12 +423,27 @@ Leantime matches the Google account's email to the user's Leantime email, and it
 #### Keycloak (Key: `KEYCLOAK`)
 [Documentation](https://github.com/SocialiteProviders/Keycloak)
 
+1. In the Keycloak admin console, select your realm and go to **Clients → Create client**.
+2. Choose **OpenID Connect** as the client type, enter a **Client ID** (for example `leantime`), and click **Next**.
+3. Turn on **Client authentication** and keep **Standard flow** checked. Click **Next**.
+4. Under **Valid redirect URIs**, enter `https://yourdomain.com/advancedAuth/callback/keycloak`. Click **Save**.
+5. Open the client's **Credentials** tab and copy the **Client secret**.
+6. Open the client's **Client scopes** tab and check that `email` and `profile` are assigned as **Default**. Leantime only requests the `openid` scope, so the email reaches Leantime only through these default scopes.
+7. Add the values to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
-KEYCLOAK_CLIENT_ID=your-client-id
-KEYCLOAK_CLIENT_SECRET=your-client-secret
-KEYCLOAK_BASE_URL=https://your-keycloak-instance.com
+LEAN_APP_URL=https://yourdomain.com
+# The Keycloak server's root URL, without /realms/...
+KEYCLOAK_BASE_URL=https://keycloak.example.com
+# Defaults to "master" if not set
 KEYCLOAK_REALM=your-realm
+KEYCLOAK_CLIENT_ID=leantime
+KEYCLOAK_CLIENT_SECRET=your-client-secret
 ```
+
+Leantime builds the endpoints as `{KEYCLOAK_BASE_URL}/realms/{KEYCLOAK_REALM}/protocol/openid-connect/...`. Keycloak 16 and earlier serve these under `/auth`, so include it there: `KEYCLOAK_BASE_URL=https://keycloak.example.com/auth`.
+
+Keycloak sends `email_verified` for each user, and Leantime refuses unverified emails. For users created by an administrator, switch on **Email verified** in the user's details, or set `AUTH_REQUIRE_VERIFIED_EMAIL=false`.
 
 #### Laravel Passport (Key: `LARAVELPASSPORT`)
 [Documentation](https://github.com/SocialiteProviders/Laravel-Passport)
@@ -475,11 +507,24 @@ AZURE_PROXY=
 #### Okta (Key: `OKTA`)
 [Documentation](https://github.com/SocialiteProviders/Okta)
 
+1. In the Okta Admin Console, go to **Applications → Applications → Create App Integration**.
+2. Choose **OIDC - OpenID Connect** as the sign-in method and **Web Application** as the application type. Click **Next**.
+3. Enter a name, keep **Authorization Code** as the grant type, and set **Sign-in redirect URIs** to `https://yourdomain.com/advancedAuth/callback/okta`.
+4. Under **Assignments**, choose who may use the app (everyone, or selected groups). Click **Save**.
+5. On the app's **General** tab, copy the **Client ID** and **Client secret**.
+6. Add the values to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
+LEAN_APP_URL=https://yourdomain.com
+# Your Okta org URL only: no trailing slash, no /oauth2/default
 OKTA_BASE_URL=https://your-org.okta.com
 OKTA_CLIENT_ID=your-client-id
 OKTA_CLIENT_SECRET=your-client-secret
 ```
+
+Leantime uses Okta's org authorization server (`{OKTA_BASE_URL}/oauth2/v1/...`), which every Okta org has. Custom authorization servers such as `default` aren't supported.
+
+Users who aren't assigned to the app see an Okta error ("User is not assigned to the client application"). Assign them, or their group, under the app's **Assignments** tab.
 
 #### PropelAuth (Key: `PROPELAUTH`)
 [Documentation](https://github.com/SocialiteProviders/PropelAuth)
