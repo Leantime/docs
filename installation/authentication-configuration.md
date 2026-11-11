@@ -77,6 +77,8 @@ LEAN_OIDC_CLIENT_SECRET=your-client-secret
 
 **Authentik setup:** In the OAuth2/OpenID provider, select an RSA certificate as the **Signing Key** and leave the **Encryption Key** empty. Without a signing key, Authentik signs with HS256, which Leantime rejects. With an encryption key, tokens are encrypted, and login fails with errors like "Undefined array key kid" or "JWT could not be decoded".
 
+**Authentik 2025.10 and later:** The default `email` scope mapping reports every email as unverified (`email_verified: false`), so Leantime refuses the login. Replace it on the provider with a custom mapping that returns `email_verified` (see Authentik's [verify email address](https://docs.goauthentik.io/add-secure-apps/providers/oauth2/verify-email-address/) guide), or set `LEAN_OIDC_REQUIRE_VERIFIED_EMAIL=false` if every Authentik address is trusted.
+
 #### Google / Google Workspace
 
 ```env
