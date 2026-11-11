@@ -299,6 +299,8 @@ New accounts get the **Manager** role and use the provider's display name as the
 
 Leantime refuses a login when the provider reports the email as unverified. If your provider marks real users as unverified, you can turn this check off with `AUTH_REQUIRE_VERIFIED_EMAIL=false`.
 
+If a user's email changes at the provider, Leantime no longer recognizes them: they get a new account (or are refused). Update their email in Leantime first.
+
 Leantime's own two-factor authentication still applies after a provider login.
 
 ### Authentication Settings
@@ -317,7 +319,7 @@ If you hide the login form and then can't sign in, turn it back on from the serv
 php ./bin/leantime setting:save --key=auth.hideDefaultLogin --value=off
 ```
 
-The website caches settings for up to an hour, separately from the command line, so the login form can take up to an hour to come back. With the default file cache, delete the contents of `storage/framework/cache/` to apply the change immediately.
+If `LEAN_APP_URL` isn't set, the website and the command line use separate setting caches, and the website can keep serving the old value for up to an hour. To apply the change immediately, delete the contents of `storage/framework/cache/` (with the default file cache).
 
 ### Mobile App Sign-In
 
@@ -644,7 +646,7 @@ ALTER TABLE zp_plugins ADD COLUMN format VARCHAR(45);
 3. Ensure `LEAN_SESSION_SECURE=true` only if using HTTPS
 4. For SAML: verify certificate paths are correct and files are readable by the web server
 
-A GitHub error that says *"The redirect_uri is not associated with this application"* means the callback URL Leantime sent doesn't match the one registered with GitHub. Compare them for http vs https, a subfolder, or a trailing slash. If `LEAN_APP_URL` is empty, Leantime builds the callback from the incoming request, which behind a reverse proxy can come out as `http://` or an internal hostname. Set `LEAN_APP_URL` to your public URL.
+A GitHub error that says *"The redirect_uri is not associated with this application"* (Microsoft shows this as error `AADSTS50011`) means the callback URL Leantime sent doesn't match the one registered with the provider. Compare them for http vs https, a subfolder, or a trailing slash. If `LEAN_APP_URL` is empty, Leantime builds the callback from the incoming request, which behind a reverse proxy can come out as `http://` or an internal hostname. Set `LEAN_APP_URL` to your public URL.
 
 ### Auth Plugin: Provider Not Showing in UI
 
