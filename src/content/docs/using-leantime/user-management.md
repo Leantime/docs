@@ -21,7 +21,7 @@ click on the drop down next to your name/account information.  *Click User Manag
  Click on the project name and the arrow to assign which side that project is on.  The left side shows the projects that can be assigned and the right side
  shows the projects actually assigned to the user.
       
- ## Roles
+## Roles
  
  You can has 5 different user roles that can be assigned globally per user or on a per project basis.
  Admins and Owners cannot be overwritten by project roles. 

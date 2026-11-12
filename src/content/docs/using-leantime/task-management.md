@@ -29,7 +29,7 @@ large concept projects into the whole project, to milestones, and to sprints -- 
  Once you click save, a new "Saved!" box will pop up.  It will direct you to the Backlog view so that you can drag and drop your tasks into the current Sprint.  
  Again, this backlog view is the home for all tasks.  You can either move a ready made task into the Sprint or quick-add a new one from this screen as seen below.
  
- ## Backlog
+## Backlog
  
   ![logo](/_images/getting-started/taskbacklogquickadd.png)
   

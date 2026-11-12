@@ -32,7 +32,7 @@ for (const path of pages(ROOT)) {
 			else if (marker[1][0] === fence) fence = null;
 			return;
 		}
-		const heading = !fence && line.match(/^(#{1,6})\s+\S/);
+		const heading = !fence && line.match(/^ {0,3}(#{1,6})\s+\S/); // CommonMark allows up to 3 spaces of indent
 		if (!heading) return;
 		const level = heading[1].length;
 		const where = `${relative('.', path)}:${index + offset + 1}`;

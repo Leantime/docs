@@ -91,6 +91,9 @@ var h=location.hash;
 if(h.indexOf('#/')===0){var p=h.slice(2),id='',q=p.indexOf('?id=');
 if(q>-1){id=p.slice(q+4);p=p.slice(0,q);}
 p=p.replace(/\\.md$/,'').replace(/(^|\\/)README$/i,'').replace(/^\\/+|\\/+$/g,'');
+// Same slug rules as the migrated pages: decoded, lower case, spaces as hyphens.
+try{p=decodeURIComponent(p);}catch(e){}
+p=p.toLowerCase().replace(/\\s+/g,'-');
 location.replace('/'+(p?p+'/':'')+(id?'#'+id:''));return;}
 var m=location.search.match(/[?&]id=([^&]+)/);
 if(m){var a=decodeURIComponent(m[1]);history.replaceState(null,'',location.pathname+'#'+m[1]);

@@ -242,7 +242,7 @@ def convert(page_src, dest):
         f.write('\n'.join(head) + '\n\n' + body)
 
 
-HEADING = re.compile(r'^(#{1,6})(\s+.*)$')
+HEADING = re.compile(r'^ {0,3}(#{1,6})(\s+.*)$')  # CommonMark allows up to 3 spaces of indent
 
 # Callout label (lower case, without the colon) -> Starlight aside type.
 CALLOUTS = {

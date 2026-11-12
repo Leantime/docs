@@ -143,7 +143,7 @@ The `-v` flag deletes the volumes, and with them all your data. `docker compose 
 
 ## How do I use my own domain with HTTPS?
 
-Put a reverse proxy (Nginx, Caddy, Traefik or your NAS's built-in one) in front of port 8080 to handle the certificate, then set these in `.env` (or with `-e` on `docker run`) and restart Leantime:
+Put a reverse proxy (Nginx, Caddy, Traefik or your NAS's built-in one) in front of port 8080 to handle the certificate, then set these in `.env` (or with `-e` on `docker run`):
 
 ```ini title=".env"
 LEAN_APP_URL = 'https://projects.example.com'
@@ -151,6 +151,8 @@ LEAN_SESSION_SECURE = true
 ```
 
 `LEAN_SESSION_SECURE = true` sends the login cookie over HTTPS only. Leave it `false` while you use plain `http://`, or you won't be able to log in.
+
+A restart keeps the old settings, so recreate the container to apply them: with Compose, run `docker compose up -d` (it recreates the container when `.env` changes); with `docker run`, remove the container and start it again as in the update steps below.
 
 ## How do I update Leantime in Docker?
 

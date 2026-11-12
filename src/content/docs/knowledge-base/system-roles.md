@@ -3,7 +3,7 @@ title: "Agile roles in Leantime"
 description: "How Leantime roles map to Scrum: the manager as Scrum Master, the client as Product Owner and team members as developers."
 ---
 
- ### Roles in Agile
+## Roles in Agile
     
     Three Agile / Scrum Roles in Leantime:  
     
