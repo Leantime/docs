@@ -64,7 +64,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 						<p class="lt-chip">
 							<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7Z"/></svg>
 							<span class="lt-chip-label">Time</span>
-							<span>About {glance.minutes} min</span>
+							<span>{glance.maxMinutes ? `${glance.minutes}–${glance.maxMinutes} min` : `About ${glance.minutes} min`}</span>
 						</p>
 					)}
 					{glance.level && (

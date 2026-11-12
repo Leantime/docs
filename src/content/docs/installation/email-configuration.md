@@ -1,6 +1,17 @@
 ---
 title: "Email and SMTP configuration"
 description: "Configure email in self-hosted Leantime: SMTP settings for Gmail, Microsoft 365, SendGrid, Mailgun and Amazon SES, sending a test email, and fixing delivery errors."
+glance:
+  minutes: 15
+  level: "Some experience"
+  needs:
+    - "SMTP details from your email provider: server, port, username and password (an app password for Gmail with 2-Step Verification)"
+    - "The address Leantime sends from"
+  where:
+    - "Your email provider's settings, for the SMTP details"
+    - "Leantime's `config/.env` file, or the container's environment"
+    - "A terminal on your server, to send a test email"
+  result: "Leantime sending invitations, password resets and notifications through your mail server, confirmed with a test email."
 ---
 
 Leantime uses email for user invitations, password resets, notifications, and project updates. This guide covers how to configure email correctly and troubleshoot common issues.

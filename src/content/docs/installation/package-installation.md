@@ -1,6 +1,19 @@
 ---
 title: "Install from the release package (Apache or Nginx)"
 description: "Install Leantime from the release package on your own server with PHP and MySQL or MariaDB, configured for Apache or Nginx."
+glance:
+  minutes: 30
+  maxMinutes: 60
+  level: "Some experience"
+  needs:
+    - "A Linux server that meets the [system requirements](/installation/system-requirements/), with Apache or Nginx, PHP and MySQL or MariaDB"
+    - "Administrator (sudo) rights on that server"
+  where:
+    - "A terminal on your server"
+    - "Your web server's site configuration (Apache or Nginx)"
+    - "Leantime's `config/.env` file"
+    - "Your browser, at `<yourdomain.com>/install`"
+  result: "Leantime running on your own web server, with its database set up and your first user account created."
 ---
 
 <!-- These are the steps required to install Leantime. They work for most configurations. -->

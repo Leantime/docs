@@ -1,6 +1,18 @@
 ---
 title: "Upgrade guide"
 description: "Upgrade self-hosted Leantime safely on Docker, package and shared-hosting installs: a pre-upgrade checklist, the CLI update command and version-specific notes."
+glance:
+  minutes: 15
+  maxMinutes: 45
+  level: "Some experience"
+  needs:
+    - "A fresh backup of your database and files (see [Backup and restore](/installation/backup-restore/))"
+    - "PHP 8.2 or later, for package and shared-hosting installs"
+  where:
+    - "The [release notes](https://github.com/Leantime/leantime/releases), to check for breaking changes"
+    - "A terminal on your server (on shared hosting: cPanel and FTP)"
+    - "Leantime in your browser, to run the database update if asked and check that everything works"
+  result: "Leantime on the new version, with your projects, settings, files and plugins."
 ---
 
 This guide covers how to safely upgrade Leantime across all deployment types, with version-specific notes for known issues.

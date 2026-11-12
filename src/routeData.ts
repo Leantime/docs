@@ -129,7 +129,7 @@ export const onRequest = defineRouteMiddleware(async (context) => {
 	else if (EXPERT.some((prefix) => id.startsWith(prefix))) article.proficiencyLevel = 'Expert';
 	else if (BEGINNER.some((prefix) => id.startsWith(prefix))) article.proficiencyLevel = 'Beginner';
 	if (glance?.level) article.educationalLevel = glance.level;
-	if (glance?.minutes) article.timeRequired = `PT${glance.minutes}M`;
+	if (glance?.minutes) article.timeRequired = `PT${glance.maxMinutes ?? glance.minutes}M`;
 	if (isApiReference) {
 		article.programmingModel = 'JSON-RPC 2.0';
 		article.targetPlatform = 'Leantime';

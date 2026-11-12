@@ -21,6 +21,8 @@ export const collections = {
 				glance: z
 					.object({
 						minutes: z.number().int().positive().optional(),
+						/** For a range: `minutes: 10` and `maxMinutes: 30` show "10–30 min". */
+						maxMinutes: z.number().int().positive().optional(),
 						level: z.enum(['Beginner', 'Some experience', 'Advanced']).optional(),
 						needs: z.array(z.string()).optional(),
 						where: z.array(z.string()).optional(),

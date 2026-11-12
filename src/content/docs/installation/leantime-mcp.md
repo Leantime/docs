@@ -1,6 +1,17 @@
 ---
 title: "MCP server: connect AI assistants to Leantime"
 description: "Connect Claude, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server plugin: tokens, client setup, every tool, and security."
+glance:
+  minutes: 15
+  level: "Some experience"
+  needs:
+    - "Leantime Cloud, or self-hosted Leantime 3.13 or later with a license for the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin"
+    - "An AI assistant that connects to remote MCP servers with a custom header: Claude Code, Cursor, VS Code, Windsurf, Codex, or Claude Desktop with Node.js 18+"
+  where:
+    - "Leantime, under **Leantime Apps** (self-hosted only), to install the plugin"
+    - "Leantime, under **My Profile → Personal Access Tokens**"
+    - "Your AI assistant's MCP settings (for Claude Code, a terminal)"
+  result: "An AI assistant that lists your Leantime projects and can find and update to-dos, log time and more, with your permissions."
 ---
 
 :::caution[Beta Notice]

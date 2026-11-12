@@ -22,8 +22,10 @@ What it does:
      `?id=a` and `https://docs.leantime.io/#/x` become `/installation/x/#a`;
      `../_images/...` becomes `/_images/...`.
   4. Applies scripts/page-metadata.json: hand-written search titles and
-     descriptions, and `draft: true` for empty pages. To change those on the
-     already-migrated pages, edit the JSON and run with --metadata-only.
+     descriptions, `draft: true` for empty pages, and the "At a glance" box
+     (`glance`) for task pages. A page that gets a glance loses its portable
+     "**At a glance**" Markdown block, which the box replaces. To change these
+     on the already-migrated pages, edit the JSON and run with --metadata-only.
   5. Tidies every page (also on its own with --post-only):
      - headings: a page body starts at H2 (Starlight renders the title as the
        only H1), so leftover H1s move down a level, and no level is skipped
@@ -354,8 +356,52 @@ def post_process():
 METADATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'page-metadata.json')
 
 
+GLANCE_LEVELS = ('Beginner', 'Some experience', 'Advanced')
+GLANCE_KEYS = ('minutes', 'maxMinutes', 'level', 'needs', 'where', 'result')
+# The portable block content pages carry for the docsify site: "**At a glance**", a blank line, a list.
+INLINE_GLANCE = re.compile(r'^\*\*At a glance\*\*[ \t]*\n\n(?:[-*] .*\n)+\n?', re.M)
+
+
+def frontmatter_blocks(text):
+    """Split a page into (ordered {key: raw YAML lines}, body). Keeps nested blocks like glance intact."""
+    m = re.match(r'---\n(.*?)\n---\n', text, re.S)
+    if not m:
+        return {}, text
+    blocks, key = {}, None
+    for line in m.group(1).splitlines():
+        top = re.match(r'^([A-Za-z_][\w-]*):(.*)$', line)
+        if top:
+            key = top.group(1)
+            blocks[key] = [line]
+        elif key:
+            blocks[key].append(line)
+    return blocks, text[m.end():]
+
+
+def glance_yaml(rel, glance):
+    """The glance object from page-metadata.json as front matter lines. Fails loudly on a typo."""
+    unknown = set(glance) - set(GLANCE_KEYS)
+    if unknown:
+        sys.exit(f'page-metadata.json: {rel}: unknown glance keys {sorted(unknown)}')
+    if glance.get('level') and glance['level'] not in GLANCE_LEVELS:
+        sys.exit(f'page-metadata.json: {rel}: level must be one of {GLANCE_LEVELS}')
+    lines = ['glance:']
+    for key in GLANCE_KEYS:
+        if key not in glance:
+            continue
+        value = glance[key]
+        if key in ('minutes', 'maxMinutes'):
+            lines.append(f'  {key}: {int(value)}')
+        elif isinstance(value, list):
+            lines.append(f'  {key}:')
+            lines += [f'    - {yaml_str(item)}' for item in value]
+        else:
+            lines.append(f'  {key}: {yaml_str(value)}')
+    return lines
+
+
 def apply_metadata():
-    """Set the search title, description and draft flag from scripts/page-metadata.json."""
+    """Set the search title, description, draft flag and glance from scripts/page-metadata.json."""
     meta = json.load(open(METADATA, encoding='utf-8'))
     applied = 0
     for rel, values in meta.items():
@@ -367,17 +413,20 @@ def apply_metadata():
         if not os.path.exists(path):
             print('page-metadata.json: no page at ' + path)
             continue
-        text = open(path, encoding='utf-8').read()
-        m = re.match(r'---\n(.*?)\n---\n', text, re.S)
-        fields = dict(line.split(': ', 1) for line in m.group(1).splitlines()) if m else {}
+        blocks, body = frontmatter_blocks(open(path, encoding='utf-8').read())
         for key in ('title', 'description'):
             if key in values:
-                fields[key] = yaml_str(values[key])
+                blocks[key] = [f'{key}: {yaml_str(values[key])}']
         if values.get('draft'):
-            fields['draft'] = 'true'
-        head = '---\n' + ''.join(f'{k}: {v}\n' for k, v in fields.items()) + '---\n'
+            blocks['draft'] = ['draft: true']
+        if 'glance' in values:
+            blocks['glance'] = glance_yaml(rel, values['glance'])
+            body = INLINE_GLANCE.sub('', body, count=1)
+        elif INLINE_GLANCE.search(body):
+            print(f'page-metadata.json: {rel} has an "At a glance" block but no glance entry; the block stays in the text')
+        head = '---\n' + ''.join(line + '\n' for lines in blocks.values() for line in lines) + '---\n'
         with open(path, 'w', encoding='utf-8') as f:
-            f.write(head + (text[m.end():] if m else text))
+            f.write(head + body)
         applied += 1
     print(f'Applied metadata to {applied} pages.')
 

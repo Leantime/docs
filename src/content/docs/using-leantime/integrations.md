@@ -1,6 +1,16 @@
 ---
 title: "Project integrations: Slack, Discord, Mattermost, Telegram and Zulip"
 description: "Send Leantime project updates to Slack, Discord, Mattermost, Telegram or Zulip: which events trigger messages and how to set up each one."
+glance:
+  minutes: 10
+  level: "Beginner"
+  needs:
+    - "A project in Leantime whose settings you can change"
+    - "Permission to add a bot or webhook in your chat app (Telegram, Discord, Slack, Mattermost or Zulip)"
+  where:
+    - "Your chat app, to create the bot or webhook"
+    - "Leantime, in the project's settings, **Integrations** tab"
+  result: "Updates from the project (to-dos, milestones, ideas, comments and files) posted to your chat channel."
 ---
 
 <style>

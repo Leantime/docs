@@ -47,6 +47,10 @@ glance:
 
 Put places in `where`, not in `needs`: "a terminal" is where you work, Docker is something you need. Name the place as precisely as you can (which machine, which screen), and use the same names as the code block titles further down.
 
+For a time range, add `maxMinutes` (`minutes: 10` and `maxMinutes: 30` show "10–30 min").
+
+Pages converted from the old docs get their box from `scripts/page-metadata.json` (`glance`, the same fields), so a re-run of the migration keeps it. Override pages and new pages set `glance` in their own front matter.
+
 `needs`, `where` and `result` accept `code`, **bold** and [links](/path/). The box is also published as structured data and included in the page's Markdown copy.
 
 ## Components

@@ -1,6 +1,15 @@
 ---
 title: "Backup and restore"
 description: "Back up and restore a self-hosted Leantime instance: what to save (database, uploaded files, configuration), how to back up Docker and package installs, and how to restore."
+glance:
+  minutes: 15
+  level: "Some experience"
+  needs:
+    - "Your database name, user and password (they're in `config/.env`)"
+    - "Somewhere safe to keep the backup, away from the Leantime server"
+  where:
+    - "A terminal on your server (on shared hosting: cPanel's **phpMyAdmin** and **File Manager**)"
+  result: "A copy of your database and of `config/.env`, `userfiles/` and `app/Plugins/` that you can restore from."
 ---
 
 Regular backups are essential to protect your Leantime data. This guide covers what to backup, how to create backups, and how to restore.

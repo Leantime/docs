@@ -1,6 +1,16 @@
 ---
 title: "Authentication: OIDC, LDAP and single sign-on"
 description: "Set up single sign-on for self-hosted Leantime with OpenID Connect or LDAP and Active Directory: environment variables, roles and troubleshooting."
+glance:
+  minutes: 30
+  level: "Advanced"
+  needs:
+    - "An identity provider that supports OpenID Connect (such as Keycloak, Authentik, Google or Microsoft Entra ID), or an LDAP or Active Directory server"
+    - "For LDAP: the PHP `ldap` extension on the Leantime server"
+  where:
+    - "Your identity provider's admin console, to register Leantime (OIDC)"
+    - "Leantime's `.env` file, or the container's environment"
+  result: "People sign in to Leantime with their company accounts, through OIDC single sign-on or LDAP."
 ---
 
 Leantime supports multiple authentication methods to integrate with your organization's identity infrastructure. This guide covers OpenID Connect (OIDC) and LDAP configuration.

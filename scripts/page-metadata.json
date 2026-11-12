@@ -1,5 +1,5 @@
 {
-  "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build. New pages can set these in their own front matter instead.",
+  "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build, 'glance' is the At a glance box of a task page (minutes, maxMinutes, level, needs, where, result; see CONTRIBUTING.md) and replaces the page's '**At a glance**' Markdown block. New pages and override pages set these in their own front matter instead.",
 
   "api/index.md": {
     "title": "JSON-RPC API reference",
@@ -7,7 +7,20 @@
   },
   "api/usage.md": {
     "title": "Connect to the JSON-RPC API",
-    "description": "Call the Leantime JSON-RPC 2.0 API: create an API key, send authenticated POST and GET requests to the single endpoint, and read the results."
+    "description": "Call the Leantime JSON-RPC 2.0 API: create an API key, send authenticated POST and GET requests to the single endpoint, and read the results.",
+    "glance": {
+      "minutes": 10,
+      "level": "Some experience",
+      "needs": [
+        "Access to **Company Settings** in Leantime, to create an API key",
+        "A way to send HTTP requests, like `curl` or your own code"
+      ],
+      "where": [
+        "Leantime, under **Company Settings → API Keys**",
+        "A terminal or your code, calling `/api/jsonrpc`"
+      ],
+      "result": "An API key, and a JSON-RPC request that returns data from your Leantime."
+    }
   },
   "development/commandline.md": {
     "title": "Command-line interface (CLI)",
@@ -26,11 +39,36 @@
   },
   "installation/authentication-configuration.md": {
     "title": "Authentication: OIDC, LDAP and single sign-on",
-    "description": "Set up single sign-on for self-hosted Leantime with OpenID Connect or LDAP and Active Directory: environment variables, roles and troubleshooting."
+    "description": "Set up single sign-on for self-hosted Leantime with OpenID Connect or LDAP and Active Directory: environment variables, roles and troubleshooting.",
+    "glance": {
+      "minutes": 30,
+      "level": "Advanced",
+      "needs": [
+        "An identity provider that supports OpenID Connect (such as Keycloak, Authentik, Google or Microsoft Entra ID), or an LDAP or Active Directory server",
+        "For LDAP: the PHP `ldap` extension on the Leantime server"
+      ],
+      "where": [
+        "Your identity provider's admin console, to register Leantime (OIDC)",
+        "Leantime's `.env` file, or the container's environment"
+      ],
+      "result": "People sign in to Leantime with their company accounts, through OIDC single sign-on or LDAP."
+    }
   },
   "installation/backup-restore.md": {
     "title": "Backup and restore",
-    "description": "Back up and restore a self-hosted Leantime instance: what to save (database, uploaded files, configuration), how to back up Docker and package installs, and how to restore."
+    "description": "Back up and restore a self-hosted Leantime instance: what to save (database, uploaded files, configuration), how to back up Docker and package installs, and how to restore.",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "Your database name, user and password (they're in `config/.env`)",
+        "Somewhere safe to keep the backup, away from the Leantime server"
+      ],
+      "where": [
+        "A terminal on your server (on shared hosting: cPanel's **phpMyAdmin** and **File Manager**)"
+      ],
+      "result": "A copy of your database and of `config/.env`, `userfiles/` and `app/Plugins/` that you can restore from."
+    }
   },
   "installation/common-issues.md": {
     "title": "Common issues",
@@ -42,7 +80,20 @@
   },
   "installation/development.md": {
     "title": "Local development setup",
-    "description": "Run Leantime locally to work on the code: the Docker development environment with MySQL, mail and S3 servers, or a setup on your own machine."
+    "description": "Run Leantime locally to work on the code: the Docker development environment with MySQL, mail and S3 servers, or a setup on your own machine.",
+    "glance": {
+      "minutes": 20,
+      "level": "Advanced",
+      "needs": [
+        "`docker`, `docker compose`, `make`, `composer` and `npm` installed",
+        "A copy (clone) of the Leantime repository"
+      ],
+      "where": [
+        "A terminal in the root of the Leantime repository",
+        "Your browser, to open Leantime and the test tools"
+      ],
+      "result": "A local Leantime for development, with its own MySQL database, a mail catcher (MailDev), phpMyAdmin and S3 test storage."
+    }
   },
   "installation/docker-troubleshooting.md": {
     "title": "Docker troubleshooting",
@@ -54,7 +105,21 @@
   },
   "installation/email-configuration.md": {
     "title": "Email and SMTP configuration",
-    "description": "Configure email in self-hosted Leantime: SMTP settings for Gmail, Microsoft 365, SendGrid, Mailgun and Amazon SES, sending a test email, and fixing delivery errors."
+    "description": "Configure email in self-hosted Leantime: SMTP settings for Gmail, Microsoft 365, SendGrid, Mailgun and Amazon SES, sending a test email, and fixing delivery errors.",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "SMTP details from your email provider: server, port, username and password (an app password for Gmail with 2-Step Verification)",
+        "The address Leantime sends from"
+      ],
+      "where": [
+        "Your email provider's settings, for the SMTP details",
+        "Leantime's `config/.env` file, or the container's environment",
+        "A terminal on your server, to send a test email"
+      ],
+      "result": "Leantime sending invitations, password resets and notifications through your mail server, confirmed with a test email."
+    }
   },
   "installation/frequently-asked-questions.md": {
     "title": "Frequently asked questions",
@@ -66,11 +131,37 @@
   },
   "installation/kubernetes.md": {
     "title": "Install on Kubernetes (Helm)",
-    "description": "Install Leantime on Kubernetes with the community gissilabs Helm chart. Data is not persistent by default, so set the chart's storage options."
+    "description": "Install Leantime on Kubernetes with the community gissilabs Helm chart. Data is not persistent by default, so set the chart's storage options.",
+    "glance": {
+      "minutes": 10,
+      "level": "Advanced",
+      "needs": [
+        "A Kubernetes cluster",
+        "Helm, set up to reach that cluster"
+      ],
+      "where": [
+        "A terminal where `helm` can reach your cluster"
+      ],
+      "result": "Leantime running in your cluster from the community gissilabs chart. Data isn't kept by default: set the chart's storage options."
+    }
   },
   "installation/leantime-mcp.md": {
     "title": "MCP server: connect AI assistants to Leantime",
-    "description": "Connect Claude, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server plugin: tokens, client setup, every tool, and security."
+    "description": "Connect Claude, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server plugin: tokens, client setup, every tool, and security.",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "Leantime Cloud, or self-hosted Leantime 3.13 or later with a license for the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin",
+        "An AI assistant that connects to remote MCP servers with a custom header: Claude Code, Cursor, VS Code, Windsurf, Codex, or Claude Desktop with Node.js 18+"
+      ],
+      "where": [
+        "Leantime, under **Leantime Apps** (self-hosted only), to install the plugin",
+        "Leantime, under **My Profile → Personal Access Tokens**",
+        "Your AI assistant's MCP settings (for Claude Code, a terminal)"
+      ],
+      "result": "An AI assistant that lists your Leantime projects and can find and update to-dos, log time and more, with your permissions."
+    }
   },
   "installation/other-methods.md": {
     "title": "Other installation methods",
@@ -78,11 +169,42 @@
   },
   "installation/package-installation.md": {
     "title": "Install from the release package (Apache or Nginx)",
-    "description": "Install Leantime from the release package on your own server with PHP and MySQL or MariaDB, configured for Apache or Nginx."
+    "description": "Install Leantime from the release package on your own server with PHP and MySQL or MariaDB, configured for Apache or Nginx.",
+    "glance": {
+      "minutes": 30,
+      "maxMinutes": 60,
+      "level": "Some experience",
+      "needs": [
+        "A Linux server that meets the [system requirements](/installation/system-requirements/), with Apache or Nginx, PHP and MySQL or MariaDB",
+        "Administrator (sudo) rights on that server"
+      ],
+      "where": [
+        "A terminal on your server",
+        "Your web server's site configuration (Apache or Nginx)",
+        "Leantime's `config/.env` file",
+        "Your browser, at `<yourdomain.com>/install`"
+      ],
+      "result": "Leantime running on your own web server, with its database set up and your first user account created."
+    }
   },
   "installation/plugin-installation.md": {
     "title": "Install and configure plugins",
-    "description": "Install Leantime plugins from the marketplace or by hand, add license keys, and set up AdvancedAuth single sign-on with GitHub, Google, Microsoft and more."
+    "description": "Install Leantime plugins from the marketplace or by hand, add license keys, and set up AdvancedAuth single sign-on with GitHub, Google, Microsoft and more.",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "An administrator account in Leantime",
+        "A license key from the [Leantime Marketplace](https://marketplace.leantime.io/), for paid plugins",
+        "On Docker: the plugins folder kept in a volume, so plugins survive a restart"
+      ],
+      "where": [
+        "The [Leantime Marketplace](https://marketplace.leantime.io/), to get a license key",
+        "Leantime, under **Company → Leantime Apps**",
+        "Leantime's `config/.env` file, only for plugins that need settings (such as Advanced Authentication)"
+      ],
+      "result": "The plugin installed and enabled in Leantime, ready to use."
+    }
   },
   "installation/subfolder.md": {
     "title": "Run Leantime in a subfolder",
@@ -90,7 +212,23 @@
   },
   "installation/synology.md": {
     "title": "Install on a Synology NAS",
-    "description": "Self-host Leantime on a Synology NAS with Container Manager (DSM 7.2+) and the official Docker image, with all data kept in a shared folder."
+    "description": "Self-host Leantime on a Synology NAS with Container Manager (DSM 7.2+) and the official Docker image, with all data kept in a shared folder.",
+    "glance": {
+      "minutes": 30,
+      "level": "Some experience",
+      "needs": [
+        "A Synology NAS with DSM 7.2 or later and Container Manager",
+        "About 650 MB of free memory for the two containers"
+      ],
+      "where": [
+        "DSM **Control Panel**, to turn on SSH",
+        "**File Station**, in the `docker` shared folder",
+        "A terminal on the NAS, over SSH",
+        "**Container Manager → Project**",
+        "Your browser, at `http://<nas-ip>:8080/install`"
+      ],
+      "result": "Leantime running on your NAS, with all its data in `/volume1/docker/leantime` where you can back it up."
+    }
   },
   "installation/system-requirements.md": {
     "title": "System requirements",
@@ -98,7 +236,22 @@
   },
   "installation/upgrade-guide.md": {
     "title": "Upgrade guide",
-    "description": "Upgrade self-hosted Leantime safely on Docker, package and shared-hosting installs: a pre-upgrade checklist, the CLI update command and version-specific notes."
+    "description": "Upgrade self-hosted Leantime safely on Docker, package and shared-hosting installs: a pre-upgrade checklist, the CLI update command and version-specific notes.",
+    "glance": {
+      "minutes": 15,
+      "maxMinutes": 45,
+      "level": "Some experience",
+      "needs": [
+        "A fresh backup of your database and files (see [Backup and restore](/installation/backup-restore/))",
+        "PHP 8.2 or later, for package and shared-hosting installs"
+      ],
+      "where": [
+        "The [release notes](https://github.com/Leantime/leantime/releases), to check for breaking changes",
+        "A terminal on your server (on shared hosting: cPanel and FTP)",
+        "Leantime in your browser, to run the database update if asked and check that everything works"
+      ],
+      "result": "Leantime on the new version, with your projects, settings, files and plugins."
+    }
   },
   "installation/using-plugins.md": {
     "title": "Using plugins",
@@ -151,7 +304,20 @@
   },
   "using-leantime/integrations.md": {
     "title": "Project integrations: Slack, Discord, Mattermost, Telegram and Zulip",
-    "description": "Send Leantime project updates to Slack, Discord, Mattermost, Telegram or Zulip: which events trigger messages and how to set up each one."
+    "description": "Send Leantime project updates to Slack, Discord, Mattermost, Telegram or Zulip: which events trigger messages and how to set up each one.",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "A project in Leantime whose settings you can change",
+        "Permission to add a bot or webhook in your chat app (Telegram, Discord, Slack, Mattermost or Zulip)"
+      ],
+      "where": [
+        "Your chat app, to create the bot or webhook",
+        "Leantime, in the project's settings, **Integrations** tab"
+      ],
+      "result": "Updates from the project (to-dos, milestones, ideas, comments and files) posted to your chat channel."
+    }
   },
   "using-leantime/managing-clients.md": {
     "title": "Managing clients",
@@ -184,5 +350,59 @@
   "using-leantime/user-management.md": {
     "title": "User management",
     "description": "Add and invite people to Leantime, choose their role, and give team members and clients access to the right projects."
+  },
+  "installation/move-server.md": {
+    "glance": {
+      "minutes": 30,
+      "maxMinutes": 60,
+      "level": "Some experience",
+      "needs": [
+        "Access to both servers",
+        "A time when nobody uses Leantime (changes made during the move are lost)",
+        "Access to your domain's DNS settings, if the address moves with it"
+      ],
+      "where": [
+        "A terminal on the old server",
+        "A terminal on the new server",
+        "Your DNS provider, to point your domain at the new server",
+        "Leantime on the new server, to check that everything moved"
+      ],
+      "result": "Leantime running on the new server with all projects, to-dos, files, users and plugins. Large file folders take longer to copy."
+    }
+  },
+  "ai/keycloak-sso.md": {
+    "glance": {
+      "minutes": 30,
+      "level": "Some experience",
+      "needs": [
+        "Leantime 3.13.2 or later (older versions don't send PKCE; leave **Require PKCE** off on those)",
+        "A Keycloak server, with an administrator account"
+      ],
+      "where": [
+        "The Keycloak admin console",
+        "Leantime's `.env` file, or the Leantime container's environment",
+        "A terminal on the Leantime server, to apply the settings",
+        "Leantime's login page, in a private browser window"
+      ],
+      "result": "An **OIDC Login** button on Leantime's login page that signs people in with Keycloak. People who sign in for the first time get a Leantime account automatically, if you allow it."
+    }
+  },
+  "using-leantime/import-csv.md": {
+    "glance": {
+      "minutes": 10,
+      "maxMinutes": 30,
+      "level": "Beginner",
+      "needs": [
+        "An administrator account in Leantime",
+        "A CSV export from your old tool",
+        "Your team and projects already in Leantime, if the file assigns to-dos to them"
+      ],
+      "where": [
+        "Your old tool, to export the CSV",
+        "A spreadsheet app, to rename the columns",
+        "Leantime, under **Integrations → CSV Import** in the company menu"
+      ],
+      "result": "Your to-dos in Leantime, with their titles, descriptions, assignees, statuses and due dates."
+    }
   }
 }

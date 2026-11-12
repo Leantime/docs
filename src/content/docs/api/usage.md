@@ -1,6 +1,16 @@
 ---
 title: "Connect to the JSON-RPC API"
 description: "Call the Leantime JSON-RPC 2.0 API: create an API key, send authenticated POST and GET requests to the single endpoint, and read the results."
+glance:
+  minutes: 10
+  level: "Some experience"
+  needs:
+    - "Access to **Company Settings** in Leantime, to create an API key"
+    - "A way to send HTTP requests, like `curl` or your own code"
+  where:
+    - "Leantime, under **Company Settings → API Keys**"
+    - "A terminal or your code, calling `/api/jsonrpc`"
+  result: "An API key, and a JSON-RPC request that returns data from your Leantime."
 ---
 
 Leantime provides a JSON RPC API Endpoint following the 2.0 conventions as outlined here [JSON RPC V2.0 Specifications](https://www.jsonrpc.org/specification).

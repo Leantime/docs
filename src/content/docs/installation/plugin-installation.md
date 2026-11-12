@@ -1,6 +1,18 @@
 ---
 title: "Install and configure plugins"
 description: "Install Leantime plugins from the marketplace or by hand, add license keys, and set up AdvancedAuth single sign-on with GitHub, Google, Microsoft and more."
+glance:
+  minutes: 10
+  level: "Beginner"
+  needs:
+    - "An administrator account in Leantime"
+    - "A license key from the [Leantime Marketplace](https://marketplace.leantime.io/), for paid plugins"
+    - "On Docker: the plugins folder kept in a volume, so plugins survive a restart"
+  where:
+    - "The [Leantime Marketplace](https://marketplace.leantime.io/), to get a license key"
+    - "Leantime, under **Company → Leantime Apps**"
+    - "Leantime's `config/.env` file, only for plugins that need settings (such as Advanced Authentication)"
+  result: "The plugin installed and enabled in Leantime, ready to use."
 ---
 
 Leantime supports plugins to extend core functionality without modifying the codebase. Plugins are available through the [Leantime Marketplace](https://marketplace.leantime.io/) and can also be installed manually for custom development.

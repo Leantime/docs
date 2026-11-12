@@ -1,6 +1,15 @@
 ---
 title: "Install on Kubernetes (Helm)"
 description: "Install Leantime on Kubernetes with the community gissilabs Helm chart. Data is not persistent by default, so set the chart's storage options."
+glance:
+  minutes: 10
+  level: "Advanced"
+  needs:
+    - "A Kubernetes cluster"
+    - "Helm, set up to reach that cluster"
+  where:
+    - "A terminal where `helm` can reach your cluster"
+  result: "Leantime running in your cluster from the community gissilabs chart. Data isn't kept by default: set the chart's storage options."
 ---
 
 ## Kubernetes Helm (3rd Party)

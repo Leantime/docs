@@ -1,6 +1,19 @@
 ---
 title: "Install on a Synology NAS"
 description: "Self-host Leantime on a Synology NAS with Container Manager (DSM 7.2+) and the official Docker image, with all data kept in a shared folder."
+glance:
+  minutes: 30
+  level: "Some experience"
+  needs:
+    - "A Synology NAS with DSM 7.2 or later and Container Manager"
+    - "About 650 MB of free memory for the two containers"
+  where:
+    - "DSM **Control Panel**, to turn on SSH"
+    - "**File Station**, in the `docker` shared folder"
+    - "A terminal on the NAS, over SSH"
+    - "**Container Manager → Project**"
+    - "Your browser, at `http://<nas-ip>:8080/install`"
+  result: "Leantime running on your NAS, with all its data in `/volume1/docker/leantime` where you can back it up."
 ---
 
 Leantime runs well on a Synology NAS using Container Manager (DSM 7.2+) and the official [Docker image](https://hub.docker.com/r/leantime/leantime). This guide uses bind mounts, so all data lives in one shared folder you can back up with Hyper Backup.

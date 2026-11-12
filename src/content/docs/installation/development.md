@@ -1,6 +1,16 @@
 ---
 title: "Local development setup"
 description: "Run Leantime locally to work on the code: the Docker development environment with MySQL, mail and S3 servers, or a setup on your own machine."
+glance:
+  minutes: 20
+  level: "Advanced"
+  needs:
+    - "`docker`, `docker compose`, `make`, `composer` and `npm` installed"
+    - "A copy (clone) of the Leantime repository"
+  where:
+    - "A terminal in the root of the Leantime repository"
+    - "Your browser, to open Leantime and the test tools"
+  result: "A local Leantime for development, with its own MySQL database, a mail catcher (MailDev), phpMyAdmin and S3 test storage."
 ---
 
 ## Development using Docker
