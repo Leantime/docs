@@ -286,6 +286,8 @@ You don't call these tools yourself. The assistant picks them based on what you 
 | `addProject` | Creates a project (Managers and above) | Adds |
 | `editProject`, `patchProject` | Changes a project (Managers and above) | Changes |
 
+> **Known issue:** in the current version, `editProject` also resets the project fields you don't mention (access, client, budget, dates, program). Until this is fixed, change project settings in Leantime itself, not through the assistant.
+
 ### Goals
 
 | Tool | What it does | |
@@ -312,6 +314,8 @@ These work on **your own** calendar.
 | `scheduleTaskOnCalendar` | Blocks time for a task | Changes |
 | `scheduleDay` | Places events and tasks into the free slots of a day | Adds |
 | `breakdownTask` | Splits a task into subtasks and schedules them | Adds |
+
+> **Known issue:** in the current version, editing an event with `editEvent` or `bulkEditEvents` turns it into an all-day event. Until this is fixed, change existing events in Leantime itself. Creating and deleting events works as expected.
 
 ### Comments and status updates
 
@@ -408,7 +412,7 @@ Leantime doesn't run the agent on a schedule. The agent runs when you (or your a
 
 ## Security and privacy
 
-- **Same permissions as the app.** Every request runs as the token's user, with that user's role and project access. A user can't reach a project through MCP that they can't open in Leantime.
+- **Same permissions as the app.** Every request runs as the token's user, with that user's role and project access. Tools are built to return only the projects, tasks and entries that user can access. If you find a tool returning something the user can't open in Leantime, please [report it](https://github.com/Leantime/leantime/security/policy) privately.
 - **Tokens are full-access keys.** A token can do everything its user can. There are no read-only tokens yet. Treat tokens like passwords, never paste them into a chat or commit them to a repository, and use a separate, limited user (see above) for agents.
 - **Keep approvals on.** Most assistants ask before running a tool that changes data. Leantime marks its tools as read-only, adding data, or changing data, so your assistant can tell them apart. `deleteEvent` is the only tool that deletes.
 - **Data goes to your AI provider.** The results of every tool call (task titles, descriptions, comments, time entries) become part of the conversation with the AI provider you use.
@@ -479,7 +483,7 @@ Yes. Use the address you open Leantime Cloud with, plus `/mcp`, and a Personal A
 Not yet. Their connectors only work with servers that sign in through OAuth. Use Claude Desktop, Claude Code, Cursor, VS Code, Windsurf or Codex.
 
 **Can I give the assistant read-only access?**
-Not with a token setting yet. Use your assistant's tool approval settings to allow only the read tools, or connect with a separate user that has the **Read Only** role.
+Not with a token setting yet. Use your assistant's tool approval settings to allow only the read tools, or connect with a separate user that has the **Read Only** role. (In the current version, a Read Only user can still add and edit events on their own calendar through MCP.)
 
 **Can the assistant delete my tasks or projects?**
 No. The only tool that deletes anything is `deleteEvent`, for calendar events. The assistant can still change tasks (status, assignee, dates), so keep approvals on for changes.
