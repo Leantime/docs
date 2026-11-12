@@ -70,7 +70,7 @@ LEAN_OIDC_CREATE_USER = true
 LEAN_OIDC_DEFAULT_ROLE = 20
 ```
 
-- `LEAN_OIDC_PROVIDER_URL` must be **exactly** the issuer: the realm address, with no `/.well-known/...` and no trailing slash.
+- `LEAN_OIDC_PROVIDER_URL` must be **exactly** the issuer: the realm address, with no `/.well-known/...` on the end. A trailing slash doesn't matter: Leantime removes it before comparing.
 - `LEAN_OIDC_CREATE_USER = true` creates a Leantime account the first time someone signs in. With `false`, only people who already have a Leantime account with the same email can sign in.
 - `LEAN_OIDC_DEFAULT_ROLE` is the role for new accounts: 5 Read Only, 10 Commenter, 20 Editor, 30 Manager, 40 Administrator.
 - Leantime reads the email, first name and last name from Keycloak's standard `email`, `given_name` and `family_name` claims, so no mapping is needed.
@@ -87,7 +87,7 @@ Then apply the settings. In Docker, run `docker compose up -d`; a restart alone 
 
 ### "The received provider … does not match the local setting …"
 
-`LEAN_OIDC_PROVIDER_URL` isn't exactly the issuer in Keycloak's token. Copy the `issuer` value from `https://auth.example.com/realms/leantime/.well-known/openid-configuration` and paste it as the setting, without a trailing slash.
+`LEAN_OIDC_PROVIDER_URL` isn't exactly the issuer in Keycloak's token. Copy the `issuer` value from `https://auth.example.com/realms/leantime/.well-known/openid-configuration` and paste it as the setting.
 
 This happened in our test because Leantime and Keycloak ran on the same computer. See [Testing on one machine](ai/keycloak-sso.md?id=testing-on-one-machine).
 
