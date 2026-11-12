@@ -190,7 +190,11 @@ export default defineConfig({
 				},
 				{
 					label: 'AI with Leantime',
-					items: [{ label: 'MCP server: connect AI assistants', slug: 'installation/leantime-mcp' }],
+					items: [
+						// ai/ pages (overview, working with AI, glossary, walkthroughs) once #66 merges
+						{ autogenerate: { directory: 'ai' } },
+						{ label: 'MCP server: connect AI assistants', slug: 'installation/leantime-mcp' },
+					],
 				},
 				{
 					label: 'Plugins & FAQ',
