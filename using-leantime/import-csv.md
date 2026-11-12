@@ -37,7 +37,7 @@ Leantime fills in the matching automatically when a column has the same name as 
 | `Due Date` | When it's due | A date, like `2026-12-01` |
 | `Priority` | How urgent it is | A **number**: 1 Critical, 2 High, 3 Medium, 4 Low, 5 Lowest |
 | `Project` | Which project it goes into | The project's exact name in Leantime |
-| `Milestone` | Which milestone it belongs to | The milestone's name |
+| `Milestone` | Which milestone it belongs to | The milestone's **ID number** in Leantime, not its name. The milestone must already exist. |
 | `Tags` | Labels | Text |
 
 Also check:
@@ -55,10 +55,10 @@ Also check:
 3. **What are you importing?** Choose **To-Dos** (or Projects, Users, Ideas, Goals or Milestones) and click **Next**.
 4. **Field matching:** check that every column points at the right Leantime field. Columns you renamed in step 2 are already matched. Choose **Don't map** for anything you don't want.
 
-   > **Important:** Columns Leantime doesn't recognise are set to **Id** at first. Change each one to the right field, or to **Don't map**, before you continue. Otherwise that column isn't imported.
+   > **Important:** Columns Leantime doesn't recognise are set to **Id** at first. Change each one to the right field, or to **Don't map**, before you continue. A column left on **Id** is read as Leantime IDs: a row whose number matches an existing to-do or project **updates that item** instead of creating a new one. Only match a column to **Id** when it holds IDs from this Leantime, on purpose (see [updating items](using-leantime/import-csv.md?id=can-i-update-items-i-already-imported)).
 
-5. **Review:** Leantime lists any problems it found, such as an unknown email address or effort value. Fix them in the CSV and upload it again, or continue.
-6. Click **Confirm**. You'll see **Your data was synced successfully.**
+5. **Review:** Leantime lists any problems it found, such as an unknown email address, a missing required column or an effort value it doesn't know. While there are problems, you can only click **Go back**: fix the matching, or fix the CSV and upload it again.
+6. When there are no problems, click **Confirm**. You'll see **Your data was synced successfully.**
 
 > **Tip:** Try a file with three or four rows first, check the result on the board, then import the rest.
 
@@ -67,17 +67,25 @@ Also check:
 | Import | Fields you can fill |
 |---|---|
 | To-Dos | Title, Description, Type (`task`, `bug`, `story`), Assigned To, Priority, Status, Due Date, Effort, Plan Hours, Hours Remaining, Sprint, Tags, Milestone, Project, Created On, Edit From / Edit To |
-| Projects | Project Name, Details, Start Date, End Date, Hour Budget, Dollar Budget, Assigned Users |
+| Projects | Project Name, **ClientId** (required: the ID of an existing client, or `0` for none), Details, Start Date, End Date, Hour Budget, Dollar Budget, Assigned Users, Permission Settings |
 | Users | Email, First Name, Last Name, Role, Job Title, Job Level, Department, Phone, Send Invite |
-| Ideas | Title, Description, Author, Status |
-| Goals | Title, Metric, Status, Start Value, Current Value, End Value, Start Date, End Date, Assigned To |
+| Ideas | Title, Description, **CanvasId** (required: the ID of an existing idea board), Author, Status, MilestoneId |
+| Goals | Title, **CanvasId** (required: the ID of an existing goal board), Start Value, Current Value, End Value (all required), Metric, Status, Start Date, End Date, Assigned To |
 | Milestones | Title, Description, Assigned To, Status, Edit From / Edit To (the milestone's dates), Project |
 
 Comments, attachments and time entries aren't part of the CSV import.
 
 ## Can I update items I already imported?
 
-Yes. Include an `Id` column with the Leantime IDs of the items and match it to **Id**. Rows with an ID update that item; rows without one create a new item.
+Yes, for most imports. Export or note the Leantime IDs, put them in an `Id` column and match it to **Id**. How rows are handled depends on what you import:
+
+| Import | Rows with an Id | Rows without an Id |
+|---|---|---|
+| To-Dos, Projects | Update that item | Create a new item |
+| Ideas, Goals, Milestones | Update that item | Also treated as updates, so nothing new is created |
+| Users | No Id column. Users are matched by email: an existing email updates that user | A new email creates a user |
+
+So for ideas, goals and milestones, put new items and updates in **separate files**, and leave the Id column out of the file with new items.
 
 ## Related
 
