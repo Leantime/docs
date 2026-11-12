@@ -1,246 +1,176 @@
-# Docker based Installation
+# Install Leantime with Docker
 
-We host our official docker image on Docker Hub https://hub.docker.com/r/leantime/leantime. Your device needs to have Docker Installed. Please check the [Official Docker](https://docs.docker.com/get-docker/) page, if you don't have Docker installed
-There are various other custom leantime images on docker hub which are not supported.
+**At a glance**
 
-You have two options to install Leantime via docker depending on your use case:
+- **Time:** about 10 minutes
+- **Level:** Some experience. You have used a terminal before.
+- **You need:** a computer or server with [Docker and Docker Compose](https://docs.docker.com/get-docker/) installed, and a terminal on it (on a server, usually over SSH).
+- **At the end:** Leantime running at `http://localhost:8080` (or your server's address) with its own MySQL database, and your data kept safe in Docker volumes.
 
-1. Use our docker-compose file as a template to both MySql and Leantime set up
-2. Use docker run to just launch the leantime image.
+The official [`leantime/leantime`](https://hub.docker.com/r/leantime/leantime) image has everything Leantime needs: PHP, the web server and all the PHP extensions. You add a MySQL database, and Docker Compose can start that for you too.
 
-If you are starting from scratch and don't have a database server set up we suggest you use docker-compose. Otherwise, if you have a database server you would like to use go with docker run.
+## Which way should I install?
 
-## Installation
-### Docker Compose
+- **Docker Compose** (recommended): one file starts Leantime and a MySQL database together. Choose this if you are starting from scratch.
+- **docker run**: start the containers one by one. Choose this if you already run a MySQL or MariaDB server you want to use.
 
-Docker compose allows you to define and run multi-container docker applications. The configurations stored in a `docker-compose.yml` file is used to install Leantime with MySQL, dedicated network and volumes for the db, userfiles and configs.
+Both are below. The update steps further down cover both too.
 
-1. Clone the Leantime Docker repository from [here](https://github.com/Leantime/docker-leantime):
+## Install Leantime
 
-```
-git clone https://github.com/Leantime/docker-leantime.git
-```
+### With Docker Compose (recommended)
 
-2. Navigate to the cloned directory and create a local environment file
 
-```
-cd docker-leantime
-cp sample.env .env
-```
+1. **Download the Compose files.** Run this on the machine that will host Leantime:
 
-3. Edit the `.env` file. Ensure the following changes are made to the file, in order to create and configure a new MySQL container:
+   ```sh
+   git clone https://github.com/Leantime/docker-leantime.git
+   cd docker-leantime
+   ```
 
-```
-# Database - MySQL container
-MYSQL_ROOT_PASSWORD = <Add a root password>                  # Database password
-MYSQL_DATABASE = <Add name of the db>                        # Database name
-MYSQL_USER = <Add a db username>                             # Database username
-MYSQL_PASSWORD = <Add a db user password. different from root password>                    # Database password
-```
+2. **Create your settings file** from the sample:
 
-4. Additionally, in the `.env`, update the leantime configuration:
+   ```sh
+   cp sample.env .env
+   ```
 
-```
-# Database - leantime container
-LEAN_DB_HOST = 'mysql_leantime'                    # Database host
-LEAN_DB_USER = <db username. same as MYSQL_USER>
-LEAN_DB_PASSWORD = <db password. same as MYSQL_PASSWORD>
-LEAN_DB_DATABASE = <db name. same as MYSQL_DATABASE>
-LEAN_DB_PORT = '3306'                              # Database port
-## Default Settings
-LEAN_SITENAME = 'Leantime'                         # Name of your site, can be changed later
-LEAN_SESSION_PASSWORD = <Add a strong session password>
-```
+3. **Change the default passwords.** Open `.env` in a text editor (for example `nano .env`) and replace these values. The sample passwords are public, so never keep them.
 
-On top of this changes, other variables can also be changed as per your need. After making the changes save and exit the file.
+   | Setting | What to put there |
+   |---|---|
+   | `MYSQL_ROOT_PASSWORD` | A new, strong password for the database's root user |
+   | `MYSQL_PASSWORD` | A new, strong password for Leantime's database user |
+   | `LEAN_DB_PASSWORD` | **The same** password as `MYSQL_PASSWORD` |
+   | `LEAN_SESSION_PASSWORD` | A long random string. It protects login sessions. |
 
-5. The `docker-compose.yml` file is already updated and no changes are required to be made. The configurations executed are given below:
+   To make a strong random value, run `openssl rand -base64 32` and copy the result.
 
-   - Define leantime as a MySQL db and run it's own docker container.
-   - Configure leantime container to connect to the database container.
-   - Volumes are defined to ensure data persistence, even if containers are stopped or rebuilt.
+4. **Start Leantime and the database:**
 
-6. Start the docker containers:
+   ```sh
+   docker compose up -d
+   ```
 
-```
-docker-compose up -d
-```
+   The first start downloads the images and prepares the database, which can take a few minutes. Run `docker compose ps` to check: when both containers say `healthy` or `running`, you are ready.
 
-This command builds and starts the Docker containers defined in the `docker-compose.yml` file. The `-d` flag runs the container in detached mode(in the background)
+5. **Open the installer.** In your browser, go to `http://localhost:8080`, or `http://<your-server-address>:8080` on a server. Leantime opens its installer. Enter your email address, name and company name and click **Install**. Then set your password and click through the short welcome steps.
 
-7. Navigate to `<yourdomain.com>/install` and follow the process to complete installation.
+### With docker run
 
-You can stop the running containers without removing them by:
 
-```
-docker-compose stop
-```
+1. **Create a network** so Leantime can reach the database:
 
-Or you can stop and remove all containers by:
+   ```sh
+   docker network create leantime-net
+   ```
 
-```
-docker-compose down
-```
+2. **Start MySQL.** Skip this step if you use an existing database server. Replace each `<...>` with your own value:
 
-### Docker Run
+   ```sh
+   docker run -d --restart unless-stopped --network leantime-net \
+     -v leantime_db:/var/lib/mysql \
+     -e MYSQL_ROOT_PASSWORD='<root password>' \
+     -e MYSQL_DATABASE=leantime \
+     -e MYSQL_USER=lean \
+     -e MYSQL_PASSWORD='<database password>' \
+     --name mysql_leantime mysql:8.4 \
+     --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+   ```
 
-The other quick way to to intall Leantime, is by using Docker run to spin up an Leantime instance. Follow the steps below:
+   Wait about a minute: MySQL prepares its data the first time it starts.
 
-1. **Create a Docker Network**:
-   To allow leantime to communicate with the MySQL container, you first need to create a Docker network:
+> **Using your own database server?** Create an empty database and a user for it, then use its address as `LEAN_DB_HOST` in the next step. If that database runs in another container, connect it to the network with `docker network connect leantime-net <container name>`.
 
-```
-docker network create leantime-net
-```
+3. **Start Leantime.** Use the same database name, user and password as in step 2:
 
-2. **Create a MySQL Container**:
-   If you don't have a MySQL database, follow these steps to create a MySQL container:
+   ```sh
+   docker run -d --restart unless-stopped --network leantime-net -p 8080:8080 \
+     -v leantime_userfiles:/var/www/html/userfiles \
+     -v leantime_public_userfiles:/var/www/html/public/userfiles \
+     -v leantime_plugins:/var/www/html/app/Plugins \
+     -v leantime_logs:/var/www/html/storage/logs \
+     -e LEAN_DB_HOST=mysql_leantime \
+     -e LEAN_DB_DATABASE=leantime \
+     -e LEAN_DB_USER=lean \
+     -e LEAN_DB_PASSWORD='<database password>' \
+     -e LEAN_SESSION_PASSWORD='<long random string>' \
+     --name leantime leantime/leantime:latest
+   ```
 
-```
-docker run -d --restart unless-stopped -p 3306:3306 --network leantime-net \
--e MYSQL_ROOT_PASSWORD=<Add a root password> \
--e MYSQL_DATABASE=<Add name of the db> \
--e MYSQL_USER=<Add a db username> \
--e MYSQL_PASSWORD=<Add a db user password. different from root password> \
---name mysql_leantime mysql:8.0 --character-set-server=UTF8MB4 --collation-server=UTF8MB4_unicode_ci
-```
+   Leantime listens on port **8080** inside the container. `-p 8080:8080` makes it reachable on port 8080 of your machine; use `-p 80:8080` to serve it on port 80 instead.
 
-The above command does a few things, explained below:
+4. **Open the installer.** In your browser, go to `http://localhost:8080`, or `http://<your-server-address>:8080` on a server. Enter your email address, name and company name and click **Install**. Then set your password and click through the short welcome steps.
 
-- `docker run -d`: creates and runs a container in detached mode(run in background)
-- `--restart unless-stopped`: Sets the container to restart automatically if it crashes or if the Docker daemon restarts.
-- `-p 3306: 3306`: maps the container's port to host machines port
-- `--network leantime-net`: Connects the container to a Docker network, in this case `leantime-net` created in step 1.
-- The following 4 lines sets the root password for MySQL, creates a new databasse, and creates and sets new username and their respective password.
-- `--name mysql_leantime mysql:8.0 --character-set-server=UTF8MB4 --collation-server=UTF8MB4_unicode_ci`: names the container `mysql_leantime` and uses the MySQL 8.0 image and configures Character set and collation.
+> **It worked if…** You see the Leantime dashboard, and you can log out and back in with your email address and new password.
 
-3. If you already had a MySQL container and did not execute **_Step 2_**, the you must ensure the created network is connected to your MySQL container by running:
+## Where is my data stored?
 
-```
-docker network connect leantime-net <your MySQL container name>
-```
+In Docker volumes, so it survives restarts, updates and new containers:
 
-To verify if the connection was successful, run
+| Volume | What it holds |
+|---|---|
+| `db_data` (Compose) or `leantime_db` | The MySQL database: projects, to-dos, users, everything you type |
+| `userfiles` | Files people upload to to-dos, projects and docs |
+| `public_userfiles` | Your logo and other public images |
+| `plugins` | Plugins installed from the marketplace |
+| `logs` | Leantime's error log |
 
-```
-docker network inspect leantime-net
-```
+Back up the database and the two file volumes. See [Backup and restore](installation/backup-restore.md).
 
-and check "Containers" section. Then run
+> **Don't run `docker compose down -v`:** The `-v` flag deletes the volumes, and with them all your data. `docker compose down` on its own is safe.
 
-```
-docker inspect <your MySQL container name>
+## How do I use my own domain with HTTPS?
+
+Put a reverse proxy (Nginx, Caddy, Traefik or your NAS's built-in one) in front of port 8080 to handle the certificate, then set these in `.env` (or with `-e` on `docker run`):
+
+```ini
+LEAN_APP_URL = 'https://projects.example.com'
+LEAN_SESSION_SECURE = true
 ```
 
-and check "Network" section and verify 'leantime-net' is included
+`LEAN_SESSION_SECURE = true` sends the login cookie over HTTPS only. Leave it `false` while you use plain `http://`, or you won't be able to log in.
 
-4. **Create a Leantime container**: Now, you have to create a leantime container and configure it to connect to the MySQL container:
+A restart keeps the old settings, so recreate the container to apply them: with Compose, run `docker compose up -d` (it recreates the container when `.env` changes); with `docker run`, remove the container and start it again as in the update steps below.
 
-```
-docker run -d --restart unless-stopped -p 80:80 --network leantime-net \
--e LEAN_DB_HOST=mysql_leantime \
--e LEAN_DB_USER=<db username. same as MYSQL_USER> \
--e LEAN_DB_PASSWORD=<db user password. same as MYSQL_PASSWORD> \
--e LEAN_DB_DATABASE=<db name. same as MYSQL_DATABASE> \
---name leantime leantime/leantime:latest
-```
+## How do I update Leantime in Docker?
 
-Similar to step 2, a new conatiner **leantime** is created and run in detached mode, mapped port 80, and connected to container `leantime-net` network. Please ensure the `LEAN_DB_USER`, `LEAN_DB_PASSWORD` and `LEAN_DB_DATABASE` are same as `MYSQL_USER`, `MYSQL_PASSWORD` and `MYSQL_DATABASE` from Step 2 (or the DB you are using).
+Back up first. Then:
 
-5. Once both the containers are running, go to `<yourdomain.com>/install` and follow the process to complete installation.
+### With Docker Compose
 
-You can stop a specific container by running
-
-```
-docker stop leantime
+```sh
+docker compose pull
+docker compose up -d
 ```
 
-or multiple containers using
+Docker downloads the new image and recreates the Leantime container. Your volumes stay as they are.
 
-```
-docker stop leantime mysql_leantime
-```
+### With docker run
 
-### Docker Volumes
-
-Volumes are used to store permanent data on the host of your docker container. That way you can update, tear down, restart your containers without having to worry about your uploaded data. You can learn more about docker volumes at https://docs.docker.com/storage/volumes/
-
-Leantime creates 2 mounts for for userfiles. These are the files users upload to Leantime. If you are keen on changing the configuration file manually you could add a third volume to `config:/var/www/html/config/`
-
-### Plugins
-
-If you are planning on using and installing plugins from the marketplace please ensure to mount the Plugin folder as suggested in the docker-compose file. Otherwise plugin installation may fail or plugins will disapper after a restart of the container.
-
-
-## Updates
-
-When a new version of Leantime is realeased, we create a new image on docker hub and update our leantime-docker github repository. You would have to manually update your local docker image, using either docker-compose or docker run
-
-### Using Docker compose
-
-Using `docker-compose` updating is easy. All you have to do is run the following commands in the directory where `docker-compose.yml` exist:
-
-```
-docker-compose pull
-docker-compose up -d
-```
-Docker will handle the download, stopping and recreation of your containers.
-
-### Using Docker run
-
-1. To check the version that is currently installed, run:
-
-```
-docker images
-```
-
-2. Look for leantime, and if the version says `latest`, check the date of the image and compare when leantime was last updated on `https://hub.docker.com/r/leantime/leantime/tags`
-
-You can pull the latest version from docker hub using:
-
-```
+```sh
 docker pull leantime/leantime:latest
+docker stop leantime
+docker rm leantime
 ```
 
-3. Now that you have the latest image you need to update your container. This step requires you to stop and remove your current container and start a new one.
+Then run the `docker run` command from step 3 again, with the same volumes and settings. Removing the container doesn't touch the volumes, so your files and plugins stay.
 
-> But wait, won't I lose all my configuration changes and files?
 
-Yes, this is why we created volumes above to keep your uploaded files. Configuration file values are passed in using the docker run or docker compose file.
+When you next open Leantime, it shows an **Update Database** page. Click **Update Now!** Or run the database update from the terminal:
 
-4. Next let’s find the old Leantime container using:
-
-```
-docker ps -a --filter "ancestor=leantime/leantime:latest" 
-```
-(**Note:** If you installed Leantime with a specific version tag you should search for that version instead of "latest")
-
-You should see a list of all docker containers with that version. 
-
-5. You can now stop all containers using:
-
-```
-docker stop $(docker ps -aq --filter "ancestor=leantime/leantime:latest")
+```sh
+docker exec leantime php bin/leantime db:migrate
 ```
 
-(**Note:** If not "latest", replace with your version)
+With Compose, use `docker compose exec leantime php bin/leantime db:migrate`. For notes on specific versions, see the [Upgrade guide](installation/upgrade-guide.md).
 
-Alternatively you can use the container id from the previous output and stop a container via
+## How do I install plugins in Docker?
 
-```
-docker stop <<containerID>>
-```
+Install them from **My Apps** in Leantime as usual. They are saved in the `plugins` volume, so keep that volume mounted; without it, plugins disappear when the container is recreated. See [Install and configure plugins](installation/plugin-installation.md).
 
-6. Now remove the old containers:
+## What if something goes wrong?
 
-```
-docker rm $(docker ps -aq --filter "ancestor=leantime:latest")
-```
+- [Docker troubleshooting](installation/docker-troubleshooting.md) covers containers that won't start, `unhealthy` status and redirect loops.
+- [Common issues](installation/common-issues.md) covers login, upload and permission problems.
 
-or
-
-```
-docker rm <<containerID>>
-```
-
-7. You can now follow the instructions above to set up an updated Leantime container using Docker run.
+> **Ask an AI assistant:** Give your AI assistant this page's Markdown version (`https://docs.leantime.io/installation/docker.md`) and add the error message or the output of `docker compose logs leantime`. Remove passwords from anything you paste.
