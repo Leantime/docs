@@ -1,6 +1,6 @@
 ---
-title: "Leantime MCP Server Guide"
-description: "The Model Context Protocol (MCP) server turns your Leantime instance into an AI-accessible project management hub. AI assistants like Claude, ChatGPT…"
+title: "MCP server: connect AI assistants to Leantime"
+description: "Connect Claude, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server plugin: tokens, client setup, every tool, and security."
 ---
 
 > **Beta Notice:** The MCP Server plugin is currently in beta and may contain bugs. If you encounter issues, please [submit a bug report on GitHub](https://github.com/Leantime/leantime/issues).

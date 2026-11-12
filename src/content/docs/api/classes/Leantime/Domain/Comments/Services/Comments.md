@@ -1,6 +1,6 @@
 ---
 title: "Comments API"
-description: "JSON-RPC methods of the Leantime Comments Comments service: leantime.rpc.Comments.Comments.*"
+description: "Reference for the Leantime Comments JSON-RPC service: every leantime.rpc.Comments method with its parameters and return values."
 ---
 
 `leantime.rpc.Comments.Comments.`

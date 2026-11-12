@@ -1,6 +1,6 @@
 ---
-title: "Task Management"
-description: "Task management (or your To Do boards) may likely be where you spend most of your time. Staying organized here is important -- these are the fine…"
+title: "Task management"
+description: "Manage to-dos in Leantime with the kanban board and backlog: statuses, sprints, filters and time tracking."
 ---
 
 Task management (or your To Do boards) may likely be where you spend most of your time.  Staying organized here is important -- these are the fine details

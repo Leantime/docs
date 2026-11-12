@@ -1,5 +1,6 @@
 ---
 title: "The Phases of a Project"
+draft: true
 ---
 
 #### Design Phase

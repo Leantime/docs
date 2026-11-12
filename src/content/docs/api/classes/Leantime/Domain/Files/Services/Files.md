@@ -1,6 +1,6 @@
 ---
 title: "Files API"
-description: "JSON-RPC methods of the Leantime Files Files service: leantime.rpc.Files.Files.*"
+description: "Reference for the Leantime Files JSON-RPC service: every leantime.rpc.Files method with its parameters and return values."
 ---
 
 `leantime.rpc.Files.Files.`

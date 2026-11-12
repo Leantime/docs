@@ -1,6 +1,6 @@
 ---
-title: "Backup & Restore Guide"
-description: "Regular backups are essential to protect your Leantime data. This guide covers what to backup, how to create backups, and how to restore."
+title: "Backup and restore"
+description: "Back up and restore a self-hosted Leantime instance: what to save (database, uploaded files, configuration), how to back up Docker and package installs, and how to restore."
 ---
 
 Regular backups are essential to protect your Leantime data. This guide covers what to backup, how to create backups, and how to restore.

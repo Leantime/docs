@@ -1,6 +1,6 @@
 ---
 title: "Ideas API"
-description: "JSON-RPC methods of the Leantime Ideas Ideas service: leantime.rpc.Ideas.Ideas.*"
+description: "Reference for the Leantime Ideas JSON-RPC service: every leantime.rpc.Ideas method with its parameters and return values."
 ---
 
 `leantime.rpc.Ideas.Ideas.`

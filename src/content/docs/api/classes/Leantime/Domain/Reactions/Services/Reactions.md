@@ -1,6 +1,6 @@
 ---
 title: "Reactions API"
-description: "JSON-RPC methods of the Leantime Reactions Reactions service: leantime.rpc.Reactions.Reactions.*"
+description: "Reference for the Leantime Reactions JSON-RPC service: every leantime.rpc.Reactions method with its parameters and return values."
 ---
 
 `leantime.rpc.Reactions.Reactions.`

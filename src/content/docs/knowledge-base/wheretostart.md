@@ -1,6 +1,6 @@
 ---
 title: "Where do I start?"
-description: "The hardest thing about starting anything new is wondering, \"Where do I start?\" \"How does my idea, project, thing fit into this?\""
+description: "New to Leantime? Start with a project and your team, then see how ideas, research, milestones and to-dos fit together."
 ---
 
 The hardest thing about starting anything new is wondering, "Where do I start?" "How does my idea, project, thing fit into this?"  

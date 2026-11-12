@@ -1,6 +1,6 @@
 ---
-title: "Common Issues"
-description: "First check the output of /storage/logs/leantime-xx-xx-xx.log"
+title: "Common issues"
+description: "Fixes for common self-hosted Leantime problems: login that only refreshes, 404 on /install, upload errors, missing vendor folder, broken styles and PHP errors."
 ---
 
 ## Common Problems

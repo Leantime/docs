@@ -1,6 +1,6 @@
 ---
 title: "Queue API"
-description: "JSON-RPC methods of the Leantime Queue Queue service: leantime.rpc.Queue.Queue.*"
+description: "Reference for the Leantime Queue JSON-RPC service: every leantime.rpc.Queue method with its parameters and return values."
 ---
 
 `leantime.rpc.Queue.Queue.`

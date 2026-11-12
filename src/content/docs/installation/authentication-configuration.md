@@ -1,6 +1,6 @@
 ---
-title: "Authentication Configuration"
-description: "Leantime supports multiple authentication methods to integrate with your organization's identity infrastructure. This guide covers OpenID Connect…"
+title: "Authentication: OIDC, LDAP and single sign-on"
+description: "Set up single sign-on for self-hosted Leantime with OpenID Connect or LDAP and Active Directory: environment variables, roles and troubleshooting."
 ---
 
 Leantime supports multiple authentication methods to integrate with your organization's identity infrastructure. This guide covers OpenID Connect (OIDC) and LDAP configuration.

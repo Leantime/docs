@@ -1,6 +1,6 @@
 ---
 title: "Tags API"
-description: "JSON-RPC methods of the Leantime Tags Tags service: leantime.rpc.Tags.Tags.*"
+description: "Reference for the Leantime Tags JSON-RPC service: every leantime.rpc.Tags method with its parameters and return values."
 ---
 
 `leantime.rpc.Tags.Tags.`

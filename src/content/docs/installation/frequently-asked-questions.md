@@ -1,6 +1,6 @@
 ---
-title: "Leantime Frequently Asked Questions (FAQ)"
-description: "This FAQ document addresses common questions and issues gathered from GitHub issues, discussions, and community feedback."
+title: "Frequently asked questions"
+description: "Answers to common questions about self-hosted Leantime: installation, email, users and roles, SSO, tasks, timesheets, plugins, upgrades, the API and troubleshooting."
 ---
 
 This FAQ document addresses common questions and issues gathered from GitHub issues, discussions, and community feedback.

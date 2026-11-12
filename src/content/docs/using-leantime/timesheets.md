@@ -1,6 +1,6 @@
 ---
-title: "Time Sheets"
-description: "Timesheets has two primary views: My Timesheets and Timesheets."
+title: "Timesheets and time tracking"
+description: "Track time in Leantime: start a timer from a to-do, log hours in My Timesheets, and review billable time for the team."
 ---
 
 Timesheets has two primary views: *My Timesheets* and *Timesheets*.

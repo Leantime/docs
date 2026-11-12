@@ -1,6 +1,6 @@
 ---
-title: "System Requirements"
-description: "There are two main ways of installing Leantime, which are given below:"
+title: "System requirements"
+description: "What a server needs to run self-hosted Leantime: PHP and its extensions, Apache or Nginx, and MySQL or MariaDB, or a Docker host."
 ---
 
 There are two main ways of installing Leantime, which are given below:

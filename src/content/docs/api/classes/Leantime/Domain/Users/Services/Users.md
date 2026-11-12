@@ -1,6 +1,6 @@
 ---
 title: "Users API"
-description: "JSON-RPC methods of the Leantime Users Users service: leantime.rpc.Users.Users.*"
+description: "Reference for the Leantime Users JSON-RPC service: every leantime.rpc.Users method with its parameters and return values."
 ---
 
 `leantime.rpc.Users.Users.`

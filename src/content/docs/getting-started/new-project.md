@@ -1,6 +1,6 @@
 ---
-title: "Setting up a new project"
-description: "You’re official. The ink is just drying on your new venture. Welcome. The journey is the best part. Beginning your journey, you will start here. The…"
+title: "Set up your first project"
+description: "Plan a new project in Leantime from idea to execution: research boards, milestones, to-dos and your first sprint, step by step."
 ---
 
 You’re official.  The ink is just drying on your new venture.  Welcome.  The journey is the best part.

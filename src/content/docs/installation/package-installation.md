@@ -1,6 +1,6 @@
 ---
-title: "Package based Installation"
-description: "To get started with Leantime, make sure you meet the system requirements and dependencies, and then follow the installation steps below either using…"
+title: "Install from the release package (Apache or Nginx)"
+description: "Install Leantime from the release package on your own server with PHP and MySQL or MariaDB, configured for Apache or Nginx."
 ---
 
 <!-- These are the steps required to install Leantime. They work for most configurations. -->

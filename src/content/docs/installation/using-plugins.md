@@ -1,6 +1,6 @@
 ---
-title: "Using Leantime Plugins"
-description: "This guide covers how to use Leantime's marketplace plugins after installation. For installation instructions, see Plugin Installation & Configuration."
+title: "Using plugins"
+description: "How to use Leantime plugins after you install them: Custom Fields, Strategy Pro, Recurring Tasks, Whiteboards, Program Management, Notes and the Pomodoro Timer."
 ---
 
 This guide covers how to use Leantime's marketplace plugins after installation. For installation instructions, see [Plugin Installation & Configuration](/installation/plugin-installation/).

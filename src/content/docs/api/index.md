@@ -1,6 +1,6 @@
 ---
-title: "Leantime Api JsonRPC 2.0 namespaces"
-description: "For an introduction into connecting to the Leantime API please see Api Usage"
+title: "JSON-RPC API reference"
+description: "Every Leantime JSON-RPC 2.0 namespace and service, with links to the method reference for tasks, projects, timesheets, users, calendars and more."
 ---
 
 For an introduction into connecting to the Leantime API please see [Api Usage](/api/usage/)

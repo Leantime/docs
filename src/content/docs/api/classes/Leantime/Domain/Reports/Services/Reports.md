@@ -1,6 +1,6 @@
 ---
 title: "Reports API"
-description: "JSON-RPC methods of the Leantime Reports Reports service: leantime.rpc.Reports.Reports.*"
+description: "Reference for the Leantime Reports JSON-RPC service: every leantime.rpc.Reports method with its parameters and return values."
 ---
 
 `leantime.rpc.Reports.Reports.`

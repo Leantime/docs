@@ -1,6 +1,6 @@
 ---
-title: "Company Settings"
-description: "To find and edit the company settings page, click on your profile image on the top right corner. This drop down will bring down Company Settings."
+title: "Company settings"
+description: "Set your company name, logo and theme colors for Leantime screens and emails, and choose whether to share telemetry."
 ---
 
 To find and edit the company settings page, click on your profile image on the top right corner.  This drop down will bring down Company Settings.  

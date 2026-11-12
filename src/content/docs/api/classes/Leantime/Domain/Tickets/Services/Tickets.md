@@ -1,6 +1,6 @@
 ---
 title: "Tickets API"
-description: "JSON-RPC methods of the Leantime Tickets Tickets service: leantime.rpc.Tickets.Tickets.*"
+description: "Reference for the Leantime Tickets JSON-RPC service: every leantime.rpc.Tickets method with its parameters and return values."
 ---
 
 `leantime.rpc.Tickets.Tickets.`

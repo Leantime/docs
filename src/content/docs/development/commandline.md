@@ -1,6 +1,6 @@
 ---
-title: "List all Commands"
-description: "Leantime offers a simple CLI to run a few administrative tasks. To execute the CLI just run"
+title: "Command-line interface (CLI)"
+description: "Run Leantime admin tasks from the command line with bin/leantime: add users, run database updates and cron, save settings, send test email, manage plugins."
 ---
 
 ## Command Line

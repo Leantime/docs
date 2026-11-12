@@ -1,6 +1,6 @@
 ---
 title: "Canvas API"
-description: "JSON-RPC methods of the Leantime Canvas Canvas service: leantime.rpc.Canvas.Canvas.*"
+description: "Reference for the Leantime Canvas JSON-RPC service: every leantime.rpc.Canvas method with its parameters and return values."
 ---
 
 `leantime.rpc.Canvas.Canvas.`

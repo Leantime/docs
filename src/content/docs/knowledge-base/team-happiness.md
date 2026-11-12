@@ -1,6 +1,6 @@
 ---
-title: "Team Happiness & Productivity"
-description: "Business pressure, timelines, budgets, changing requirements... all these things can become distractions towards productivity. Ironically, though…"
+title: "Team happiness and productivity"
+description: "Why small, happy teams get more done, and the Leantime features that help teams stay focused and productive."
 ---
 
 Business pressure, timelines, budgets, changing requirements... all these things can become distractions towards productivity. Ironically, though, better productivity can relieve some of the "stresses" of product and business development. So why not increase productivity?  

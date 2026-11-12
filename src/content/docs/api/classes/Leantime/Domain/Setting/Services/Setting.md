@@ -1,6 +1,6 @@
 ---
 title: "Setting API"
-description: "JSON-RPC methods of the Leantime Setting Setting service: leantime.rpc.Setting.Setting.*"
+description: "Reference for the Leantime Setting JSON-RPC service: every leantime.rpc.Setting method with its parameters and return values."
 ---
 
 `leantime.rpc.Setting.Setting.`

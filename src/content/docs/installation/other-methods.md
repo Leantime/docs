@@ -1,6 +1,6 @@
 ---
-title: "Other Methods"
-description: "It is also possible to run Leantime within a subfolder (eg. yourcompany.com/leantime). For subfolder installation follow the steps below:"
+title: "Other installation methods"
+description: "More ways to run Leantime: in a subfolder of your domain, on a Raspberry Pi, or on Kubernetes with a community Helm chart."
 ---
 
 ## Subfolder installation

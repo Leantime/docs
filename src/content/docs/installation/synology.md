@@ -1,6 +1,6 @@
 ---
-title: "Synology NAS Installation"
-description: "Leantime runs well on a Synology NAS using Container Manager (DSM 7.2+) and the official Docker image. This guide uses bind mounts, so all data lives…"
+title: "Install on a Synology NAS"
+description: "Self-host Leantime on a Synology NAS with Container Manager (DSM 7.2+) and the official Docker image, with all data kept in a shared folder."
 ---
 
 Leantime runs well on a Synology NAS using Container Manager (DSM 7.2+) and the official [Docker image](https://hub.docker.com/r/leantime/leantime). This guide uses bind mounts, so all data lives in one shared folder you can back up with Hyper Backup.

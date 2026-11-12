@@ -1,6 +1,6 @@
 ---
-title: "Product Validation"
-description: "The concept of Lean was originally based out of Toyota Manufacturing. It is framed for efficiency, low waste, and iterative, flexible processes while…"
+title: "Lean product validation"
+description: "Validate a product idea with lean methods before you build it: the Lean Canvas, research boards and problem-solution fit in Leantime."
 ---
 
 ## Lean?

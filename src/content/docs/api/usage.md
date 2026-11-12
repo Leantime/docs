@@ -1,6 +1,6 @@
 ---
-title: "JSON RPC API"
-description: "Leantime provides a JSON RPC API Endpoint following the 2.0 conventions as outlined here JSON RPC V2.0 Specifications. As opposed to a REST API, the…"
+title: "Connect to the JSON-RPC API"
+description: "Call the Leantime JSON-RPC 2.0 API: create an API key, send authenticated POST and GET requests to the single endpoint, and read the results."
 ---
 
 Leantime provides a JSON RPC API Endpoint following the 2.0 conventions as outlined here [JSON RPC V2.0 Specifications](https://www.jsonrpc.org/specification).

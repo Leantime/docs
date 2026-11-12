@@ -1,6 +1,6 @@
 ---
-title: "Docker Troubleshooting"
-description: "This guide covers common issues when deploying Leantime with Docker and how to resolve them."
+title: "Docker troubleshooting"
+description: "Fix common problems when running Leantime in Docker: diagnostic commands for containers, logs and the database, redirect loops after a fresh install and more."
 ---
 
 This guide covers common issues when deploying Leantime with Docker and how to resolve them.

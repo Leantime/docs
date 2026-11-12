@@ -1,6 +1,6 @@
 ---
 title: "Widgets API"
-description: "JSON-RPC methods of the Leantime Widgets Widgets service: leantime.rpc.Widgets.Widgets.*"
+description: "Reference for the Leantime Widgets JSON-RPC service: every leantime.rpc.Widgets method with its parameters and return values."
 ---
 
 `leantime.rpc.Widgets.Widgets.`

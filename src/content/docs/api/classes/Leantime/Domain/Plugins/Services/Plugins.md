@@ -1,6 +1,6 @@
 ---
 title: "Plugins API"
-description: "JSON-RPC methods of the Leantime Plugins Plugins service: leantime.rpc.Plugins.Plugins.*"
+description: "Reference for the Leantime Plugins JSON-RPC service: every leantime.rpc.Plugins method with its parameters and return values."
 ---
 
 `leantime.rpc.Plugins.Plugins.`

@@ -1,6 +1,6 @@
 ---
 title: "Timesheets API"
-description: "JSON-RPC methods of the Leantime Timesheets Timesheets service: leantime.rpc.Timesheets.Timesheets.*"
+description: "Reference for the Leantime Timesheets JSON-RPC service: every leantime.rpc.Timesheets method with its parameters and return values."
 ---
 
 `leantime.rpc.Timesheets.Timesheets.`

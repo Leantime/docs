@@ -1,6 +1,6 @@
 ---
-title: "Managing Clients"
-description: "Managing clients can be found in the drop down from your account profile name on the top right corner. Click Managing Clients."
+title: "Managing clients"
+description: "See your clients and their projects in Leantime, open a client's details, and add new clients."
 ---
 
 Managing clients can be found in the drop down from your account profile name on the top right corner.  Click Managing Clients.

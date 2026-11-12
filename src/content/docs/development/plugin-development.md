@@ -1,6 +1,6 @@
 ---
-title: "Leantime Plugin Development Guide"
-description: "Leantime plugins provide a way to extend the core functionality of Leantime without modifying the core codebase. Plugins can add new features, modify…"
+title: "Plugin development guide"
+description: "Build a Leantime plugin from the Hello World example: composer.json, register.php, language files, controllers, Blade views and menu items."
 ---
 
 ## Introduction to the Hello World Plugin

@@ -1,6 +1,6 @@
 ---
 title: "Retrospectives"
-description: "Retrospectives are that important end piece to every Sprint and even great for the end of a milestone or project completion. This is that final meeting…"
+description: "Run a retrospective in Leantime at the end of a sprint, milestone or project: what went well, what didn't, and what to change."
 ---
 
 Retrospectives are that important end piece to every Sprint and even great for the end of a milestone or project completion.  This is that final meeting

@@ -1,0 +1,188 @@
+{
+  "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build. New pages can set these in their own front matter instead.",
+
+  "api/index.md": {
+    "title": "JSON-RPC API reference",
+    "description": "Every Leantime JSON-RPC 2.0 namespace and service, with links to the method reference for tasks, projects, timesheets, users, calendars and more."
+  },
+  "api/usage.md": {
+    "title": "Connect to the JSON-RPC API",
+    "description": "Call the Leantime JSON-RPC 2.0 API: create an API key, send authenticated POST and GET requests to the single endpoint, and read the results."
+  },
+  "development/commandline.md": {
+    "title": "Command-line interface (CLI)",
+    "description": "Run Leantime admin tasks from the command line with bin/leantime: add users, run database updates and cron, save settings, send test email, manage plugins."
+  },
+  "development/plugin-development.md": {
+    "title": "Plugin development guide",
+    "description": "Build a Leantime plugin from the Hello World example: composer.json, register.php, language files, controllers, Blade views and menu items."
+  },
+  "getting-started/agencies.md": { "draft": true },
+  "getting-started/product-managers.md": { "draft": true },
+  "getting-started/startups.md": { "draft": true },
+  "getting-started/new-project.md": {
+    "title": "Set up your first project",
+    "description": "Plan a new project in Leantime from idea to execution: research boards, milestones, to-dos and your first sprint, step by step."
+  },
+  "installation/authentication-configuration.md": {
+    "title": "Authentication: OIDC, LDAP and single sign-on",
+    "description": "Set up single sign-on for self-hosted Leantime with OpenID Connect or LDAP and Active Directory: environment variables, roles and troubleshooting."
+  },
+  "installation/backup-restore.md": {
+    "title": "Backup and restore",
+    "description": "Back up and restore a self-hosted Leantime instance: what to save (database, uploaded files, configuration), how to back up Docker and package installs, and how to restore."
+  },
+  "installation/common-issues.md": {
+    "title": "Common issues",
+    "description": "Fixes for common self-hosted Leantime problems: login that only refreshes, 404 on /install, upload errors, missing vendor folder, broken styles and PHP errors."
+  },
+  "installation/configuration.md": {
+    "title": "Configuration reference",
+    "description": "Configure self-hosted Leantime with .env variables: database, S3 file storage, email, OIDC and LDAP, project integrations, themes, language, timezone and cron jobs."
+  },
+  "installation/development.md": {
+    "title": "Local development setup",
+    "description": "Run Leantime locally to work on the code: the Docker development environment with MySQL, mail and S3 servers, or a setup on your own machine."
+  },
+  "installation/docker-troubleshooting.md": {
+    "title": "Docker troubleshooting",
+    "description": "Fix common problems when running Leantime in Docker: diagnostic commands for containers, logs and the database, redirect loops after a fresh install and more."
+  },
+  "installation/docker.md": {
+    "title": "Install Leantime with Docker",
+    "description": "Self-host Leantime, the open source project management system, with the official Docker image: Docker Compose or docker run, volumes, plugins and updates."
+  },
+  "installation/email-configuration.md": {
+    "title": "Email and SMTP configuration",
+    "description": "Configure email in self-hosted Leantime: SMTP settings for Gmail, Microsoft 365, SendGrid, Mailgun and Amazon SES, sending a test email, and fixing delivery errors."
+  },
+  "installation/frequently-asked-questions.md": {
+    "title": "Frequently asked questions",
+    "description": "Answers to common questions about self-hosted Leantime: installation, email, users and roles, SSO, tasks, timesheets, plugins, upgrades, the API and troubleshooting."
+  },
+  "installation/installation-types.md": {
+    "title": "Installation options",
+    "description": "Ways to self-host Leantime, the free open source project management system: the release package on Apache or Nginx, Docker, Synology NAS and other setups."
+  },
+  "installation/kubernetes.md": {
+    "title": "Install on Kubernetes (Helm)",
+    "description": "Install Leantime on Kubernetes with the community gissilabs Helm chart. Data is not persistent by default, so set the chart's storage options."
+  },
+  "installation/leantime-mcp.md": {
+    "title": "MCP server: connect AI assistants to Leantime",
+    "description": "Connect Claude, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server plugin: tokens, client setup, every tool, and security."
+  },
+  "installation/other-methods.md": {
+    "title": "Other installation methods",
+    "description": "More ways to run Leantime: in a subfolder of your domain, on a Raspberry Pi, or on Kubernetes with a community Helm chart."
+  },
+  "installation/package-installation.md": {
+    "title": "Install from the release package (Apache or Nginx)",
+    "description": "Install Leantime from the release package on your own server with PHP and MySQL or MariaDB, configured for Apache or Nginx."
+  },
+  "installation/plugin-installation.md": {
+    "title": "Install and configure plugins",
+    "description": "Install Leantime plugins from the marketplace or by hand, add license keys, and set up AdvancedAuth single sign-on with GitHub, Google, Microsoft and more."
+  },
+  "installation/subfolder.md": {
+    "title": "Run Leantime in a subfolder",
+    "description": "Run Leantime under a path such as yourcompany.com/leantime instead of its own domain or subdomain, and the settings that change."
+  },
+  "installation/synology.md": {
+    "title": "Install on a Synology NAS",
+    "description": "Self-host Leantime on a Synology NAS with Container Manager (DSM 7.2+) and the official Docker image, with all data kept in a shared folder."
+  },
+  "installation/system-requirements.md": {
+    "title": "System requirements",
+    "description": "What a server needs to run self-hosted Leantime: PHP and its extensions, Apache or Nginx, and MySQL or MariaDB, or a Docker host."
+  },
+  "installation/upgrade-guide.md": {
+    "title": "Upgrade guide",
+    "description": "Upgrade self-hosted Leantime safely on Docker, package and shared-hosting installs: a pre-upgrade checklist, the CLI update command and version-specific notes."
+  },
+  "installation/using-plugins.md": {
+    "title": "Using plugins",
+    "description": "How to use Leantime plugins after you install them: Custom Fields, Strategy Pro, Recurring Tasks, Whiteboards, Program Management, Notes and the Pomodoro Timer."
+  },
+  "knowledge-base/agile.md": {
+    "title": "Agile project management in Leantime",
+    "description": "Agile basics and how Leantime supports them: kanban, Scrum, sprints, retrospectives, and estimating effort and velocity."
+  },
+  "knowledge-base/idea-development.md": {
+    "title": "Design thinking",
+    "description": "The five stages of design thinking (empathize, define, ideate, prototype, test) and how to use Leantime's boards for each one."
+  },
+  "knowledge-base/phasesofproject.md": { "draft": true },
+  "knowledge-base/product-validation.md": {
+    "title": "Lean product validation",
+    "description": "Validate a product idea with lean methods before you build it: the Lean Canvas, research boards and problem-solution fit in Leantime."
+  },
+  "knowledge-base/system-roles.md": {
+    "title": "Agile roles in Leantime",
+    "description": "How Leantime roles map to Scrum: the manager as Scrum Master, the client as Product Owner and team members as developers."
+  },
+  "knowledge-base/team-happiness.md": {
+    "title": "Team happiness and productivity",
+    "description": "Why small, happy teams get more done, and the Leantime features that help teams stay focused and productive."
+  },
+  "knowledge-base/time-management.md": { "draft": true },
+  "knowledge-base/whatislean.md": {
+    "title": "Lean methodology",
+    "description": "How Leantime uses lean methods: kanban from lean manufacturing, and lean startup practices for business models and research."
+  },
+  "knowledge-base/wheretostart.md": {
+    "title": "Where do I start?",
+    "description": "New to Leantime? Start with a project and your team, then see how ideas, research, milestones and to-dos fit together."
+  },
+  "technical/hooks.md": {
+    "title": "Events and filters (hooks) reference"
+  },
+  "using-leantime/calendars.md": {
+    "title": "Calendar",
+    "description": "Plan work and deadlines in Leantime with My Calendar: where to find it and how to add events."
+  },
+  "using-leantime/company-settings.md": {
+    "title": "Company settings",
+    "description": "Set your company name, logo and theme colors for Leantime screens and emails, and choose whether to share telemetry."
+  },
+  "using-leantime/idea-management.md": {
+    "title": "Idea management",
+    "description": "Collect, discuss and track ideas in Leantime with the Idea Wall and Idea Kanban, from first thought to implementation."
+  },
+  "using-leantime/integrations.md": {
+    "title": "Project integrations: Slack, Discord, Mattermost, Telegram and Zulip",
+    "description": "Send Leantime project updates to Slack, Discord, Mattermost, Telegram or Zulip: which events trigger messages and how to set up each one."
+  },
+  "using-leantime/managing-clients.md": {
+    "title": "Managing clients",
+    "description": "See your clients and their projects in Leantime, open a client's details, and add new clients."
+  },
+  "using-leantime/managing-projects.md": {
+    "title": "Managing projects",
+    "description": "Edit the current project's settings, see all your projects in one list, and create new projects in Leantime."
+  },
+  "using-leantime/research-boards.md": {
+    "title": "Research boards",
+    "description": "Test an idea before you build it with Leantime's research board: define the customer, the problem, the solution and the details."
+  },
+  "using-leantime/retrospectives.md": {
+    "title": "Retrospectives",
+    "description": "Run a retrospective in Leantime at the end of a sprint, milestone or project: what went well, what didn't, and what to change."
+  },
+  "using-leantime/roadmap-planning.md": {
+    "title": "Roadmap and milestones",
+    "description": "Plan your roadmap in Leantime with milestones, and see where your to-dos sit on the timeline in the milestone view."
+  },
+  "using-leantime/task-management.md": {
+    "title": "Task management",
+    "description": "Manage to-dos in Leantime with the kanban board and backlog: statuses, sprints, filters and time tracking."
+  },
+  "using-leantime/timesheets.md": {
+    "title": "Timesheets and time tracking",
+    "description": "Track time in Leantime: start a timer from a to-do, log hours in My Timesheets, and review billable time for the team."
+  },
+  "using-leantime/user-management.md": {
+    "title": "User management",
+    "description": "Add and invite people to Leantime, choose their role, and give team members and clients access to the right projects."
+  }
+}

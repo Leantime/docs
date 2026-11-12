@@ -1,6 +1,6 @@
 ---
-title: "Agile in Leantime"
-description: "Agile is a software development methodology designed to create value in incremental chunks of development. Rather than obtaining value when development…"
+title: "Agile project management in Leantime"
+description: "Agile basics and how Leantime supports them: kanban, Scrum, sprints, retrospectives, and estimating effort and velocity."
 ---
 
 ### Synopsis of Agile

@@ -1,6 +1,6 @@
 ---
-title: "Kubernetes"
-description: "Minimal install on Kubernetes using 3rd party Helm chart. Note that by default data is not persistent, see chart options for more details."
+title: "Install on Kubernetes (Helm)"
+description: "Install Leantime on Kubernetes with the community gissilabs Helm chart. Data is not persistent by default, so set the chart's storage options."
 ---
 
 ## Kubernetes Helm (3rd Party)

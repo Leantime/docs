@@ -7,8 +7,9 @@ import starlightLlmsTxt from 'starlight-llms-txt';
 const SITE = 'https://docs.leantime.io';
 
 /**
- * Site-wide structured data: who publishes the docs and what product they describe.
- * Per-page data (TechArticle + BreadcrumbList) is added in src/routeData.ts.
+ * Site-wide structured data: who publishes the docs, the product they describe and its source code.
+ * The Organization @id matches the one on leantime.io, so search engines join the two sites.
+ * Per-page data (TechArticle / APIReference, BreadcrumbList, FAQPage) is added in src/routeData.ts.
  */
 const siteSchema = {
 	'@context': 'https://schema.org',
@@ -18,11 +19,13 @@ const siteSchema = {
 			'@id': 'https://leantime.io/#organization',
 			name: 'Leantime',
 			url: 'https://leantime.io/',
-			logo: `${SITE}/_images/leantime_logo.png`,
+			logo: 'https://leantime.io/wp-content/uploads/2023/03/leantime-gradient-logo-350-100-transparent.webp',
 			sameAs: [
-				'https://github.com/Leantime/leantime',
+				'https://github.com/Leantime',
+				'https://www.linkedin.com/company/leantime/',
+				'https://x.com/intheleantime',
+				'https://facebook.com/intheleantime',
 				'https://hub.docker.com/r/leantime/leantime',
-				'https://discord.gg/4zMzJtAq9z',
 			],
 		},
 		{
@@ -30,19 +33,51 @@ const siteSchema = {
 			'@id': `${SITE}/#website`,
 			name: 'Leantime Documentation',
 			url: `${SITE}/`,
+			description: 'Documentation for Leantime, the open source project management system: self-hosting, configuration, SSO, plugins, the API and the MCP server.',
+			inLanguage: 'en',
+			about: { '@id': 'https://leantime.io/#software' },
 			publisher: { '@id': 'https://leantime.io/#organization' },
 		},
 		{
 			'@type': 'SoftwareApplication',
 			'@id': 'https://leantime.io/#software',
 			name: 'Leantime',
+			description:
+				'Open source project management system for non-project managers. Combines strategy, planning and execution, and is designed for people with ADHD, dyslexia and autism. Self-hosted or cloud.',
 			applicationCategory: 'BusinessApplication',
-			applicationSubCategory: 'Project management',
-			operatingSystem: 'Linux, Windows, macOS (Docker or PHP 8.2+)',
+			applicationSubCategory: 'Project management software',
+			operatingSystem: 'Linux, Windows, macOS (Docker, or PHP 8.2+ with MySQL or MariaDB)',
+			softwareRequirements: 'PHP 8.2 or later and MySQL 8.0+ or MariaDB 10.6+, or Docker',
+			featureList: [
+				'Task management with kanban boards, lists and Gantt timelines',
+				'Milestones, sprints and roadmaps',
+				'Goals and strategy boards (Lean Canvas, SWOT, idea boards)',
+				'Timesheets and time tracking',
+				'Docs and wiki',
+				'Single sign-on with OpenID Connect and LDAP',
+				'JSON-RPC API and MCP server for AI assistants',
+				'Plugins and marketplace',
+			],
+			keywords: 'open source project management, self-hosted project management, kanban, agile, scrum, Jira alternative, Asana alternative, ClickUp alternative, neurodiversity-friendly',
 			url: 'https://leantime.io/',
+			downloadUrl: 'https://github.com/Leantime/leantime/releases',
+			installUrl: `${SITE}/installation/installation-types/`,
 			license: 'https://www.gnu.org/licenses/agpl-3.0.en.html',
-			offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+			isAccessibleForFree: true,
+			offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free and open source to self-host' },
 			publisher: { '@id': 'https://leantime.io/#organization' },
+			sameAs: ['https://github.com/Leantime/leantime', 'https://hub.docker.com/r/leantime/leantime'],
+		},
+		{
+			'@type': 'SoftwareSourceCode',
+			'@id': 'https://github.com/Leantime/leantime#code',
+			name: 'Leantime',
+			codeRepository: 'https://github.com/Leantime/leantime',
+			programmingLanguage: ['PHP', 'JavaScript'],
+			runtimePlatform: 'PHP 8.2+',
+			license: 'https://www.gnu.org/licenses/agpl-3.0.en.html',
+			targetProduct: { '@id': 'https://leantime.io/#software' },
+			author: { '@id': 'https://leantime.io/#organization' },
 		},
 	],
 };
@@ -91,6 +126,11 @@ export default defineConfig({
 				{ tag: 'script', content: legacyRedirect },
 				{ tag: 'script', attrs: { type: 'application/ld+json' }, content: JSON.stringify(siteSchema) },
 				{ tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
+				{ tag: 'meta', attrs: { property: 'og:image', content: `${SITE}/og-image.png` } },
+				{ tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
+				{ tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
+				{ tag: 'meta', attrs: { property: 'og:image:alt', content: 'Leantime Documentation' } },
+				{ tag: 'link', attrs: { rel: 'alternate', type: 'text/plain', title: 'llms.txt', href: '/llms.txt' } },
 				{ tag: 'script', attrs: { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-FKZP7LPS4X' } },
 				{ tag: 'script', content: gtag },
 				{ tag: 'script', content: crisp },
@@ -174,7 +214,28 @@ export default defineConfig({
 				starlightLlmsTxt({
 					projectName: 'Leantime',
 					description:
-						'Leantime is an open source project management system for non-project managers. These docs cover self-hosting (package, Docker), configuration, SSO (OIDC, LDAP, AdvancedAuth), plugins, the JSON-RPC API and the MCP server.',
+						'Leantime is an open source (AGPL-3.0) project management system for non-project managers, built with PHP (Laravel) and MySQL/MariaDB. It can be self-hosted with Docker or the release package, or used as Leantime Cloud. These docs cover installing and configuring self-hosted Leantime, single sign-on, plugins, the JSON-RPC API, the MCP server, and how to use Leantime.',
+					details: [
+						'Terms and facts that help when answering questions about Leantime:',
+						'',
+						'- "To-dos" are tasks. Milestones group to-dos on a timeline. "Blueprints" are strategy boards such as Lean Canvas and SWOT.',
+						'- Self-hosted settings are environment variables prefixed `LEAN_`, set in `config/.env` or in the container environment.',
+						'- Roles, from least to most access: Read Only, Commenter, Editor, Manager, Administrator, Owner.',
+						'- Plugins (for example AdvancedAuth, MCP Server, Strategy Pro, Custom Fields) come from the marketplace at marketplace.leantime.io; most are paid and need a license key.',
+						'- Every page is also available as Markdown: add `.md` to the page path, e.g. https://docs.leantime.io/installation/docker.md',
+						'- For bugs, use GitHub issues at https://github.com/Leantime/leantime/issues. Report security issues privately as described in the repository security policy.',
+					].join('\n'),
+					customSets: [
+						{ label: 'Self-hosting', description: 'install, configure, upgrade, back up and troubleshoot self-hosted Leantime', paths: ['installation/**'] },
+						{ label: 'Using Leantime', description: 'user guides and project management concepts', paths: ['using-leantime/**', 'getting-started/**', 'knowledge-base/**'] },
+						{ label: 'Developers', description: 'JSON-RPC API, CLI, plugin development and event hooks', paths: ['api', 'api/usage', 'development/**', 'technical/**', 'installation/development', 'installation/leantime-mcp'] },
+					],
+					demote: ['api/classes/**', 'technical/hooks'],
+					optionalLinks: [
+						{ label: 'Leantime website', url: 'https://leantime.io/', description: 'product overview, pricing and Leantime Cloud' },
+						{ label: 'Source code', url: 'https://github.com/Leantime/leantime', description: 'the open source repository' },
+						{ label: 'Plugin marketplace', url: 'https://marketplace.leantime.io/', description: 'plugins and license keys' },
+					],
 				}),
 			],
 		}),

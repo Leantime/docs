@@ -1,6 +1,6 @@
 ---
 title: "Calendar API"
-description: "JSON-RPC methods of the Leantime Calendar Calendar service: leantime.rpc.Calendar.Calendar.*"
+description: "Reference for the Leantime Calendar JSON-RPC service: every leantime.rpc.Calendar method with its parameters and return values."
 ---
 
 `leantime.rpc.Calendar.Calendar.`

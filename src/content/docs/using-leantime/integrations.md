@@ -1,6 +1,6 @@
 ---
-title: "Project Integrations (User Manual)"
-description: "Leantime allows you to connect your projects directly with your team's favorite messaging and collaboration platforms. Once configured, Leantime will…"
+title: "Project integrations: Slack, Discord, Mattermost, Telegram and Zulip"
+description: "Send Leantime project updates to Slack, Discord, Mattermost, Telegram or Zulip: which events trigger messages and how to set up each one."
 ---
 
 <style>

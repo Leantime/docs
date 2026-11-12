@@ -1,6 +1,6 @@
 ---
-title: "Roadmap Planning"
-description: "In Leantime, we've made milestones innate to your task management. Now you have a view that shows you where your tasks are in your timeline."
+title: "Roadmap and milestones"
+description: "Plan your roadmap in Leantime with milestones, and see where your to-dos sit on the timeline in the milestone view."
 ---
 
 In Leantime, we've made milestones innate to your task management.  Now you have a view that shows you where your tasks are in your timeline.      

@@ -1,6 +1,6 @@
 ---
 title: "Messengers API (Notifications)"
-description: "JSON-RPC methods of the Leantime Notifications Messengers service: leantime.rpc.Notifications.Messengers.*"
+description: "Reference for the Leantime Notifications Messengers JSON-RPC service: every leantime.rpc.Notifications.Messengers method with its parameters and return values."
 ---
 
 `leantime.rpc.Notifications.Messengers.`

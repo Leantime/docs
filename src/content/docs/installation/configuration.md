@@ -1,6 +1,6 @@
 ---
-title: "Configuration"
-description: "Leantime can be configured via environment variables in your .env file or through your container orchestrator. This guide covers database, file…"
+title: "Configuration reference"
+description: "Configure self-hosted Leantime with .env variables: database, S3 file storage, email, OIDC and LDAP, project integrations, themes, language, timezone and cron jobs."
 ---
 
 Leantime can be configured via environment variables in your `.env` file or through your container orchestrator. This guide covers database, file storage, email, authentication, theming, and system settings.

@@ -1,6 +1,6 @@
 ---
-title: "Idea Management"
-description: "Project life is dynamic. While you're building one thing, you are likely working on another piece of it. The Idea Wall & Idea Kanban in Leantime is set…"
+title: "Idea management"
+description: "Collect, discuss and track ideas in Leantime with the Idea Wall and Idea Kanban, from first thought to implementation."
 ---
 
 Project life is dynamic.  While you're building one thing, you are likely working on another piece of it.  The Idea Wall & Idea Kanban in Leantime is set up in order

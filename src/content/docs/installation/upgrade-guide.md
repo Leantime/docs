@@ -1,6 +1,6 @@
 ---
-title: "Upgrading Leantime"
-description: "This guide covers how to safely upgrade Leantime across all deployment types, with version-specific notes for known issues."
+title: "Upgrade guide"
+description: "Upgrade self-hosted Leantime safely on Docker, package and shared-hosting installs: a pre-upgrade checklist, the CLI update command and version-specific notes."
 ---
 
 This guide covers how to safely upgrade Leantime across all deployment types, with version-specific notes for known issues.

@@ -1,6 +1,6 @@
 ---
-title: "Managing Projects"
-description: "In order to manage projects, you can find two separate views. You have an option for Project Settings -- this view allows you to edit the details of…"
+title: "Managing projects"
+description: "Edit the current project's settings, see all your projects in one list, and create new projects in Leantime."
 ---
 
 In order to manage projects, you can find two separate views.  You have an option for Project Settings -- this view allows you to edit the details of the current

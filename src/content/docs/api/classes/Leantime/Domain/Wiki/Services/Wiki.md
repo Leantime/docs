@@ -1,6 +1,6 @@
 ---
 title: "Wiki API"
-description: "JSON-RPC methods of the Leantime Wiki Wiki service: leantime.rpc.Wiki.Wiki.*"
+description: "Reference for the Leantime Wiki JSON-RPC service: every leantime.rpc.Wiki method with its parameters and return values."
 ---
 
 `leantime.rpc.Wiki.Wiki.`

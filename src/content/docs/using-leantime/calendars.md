@@ -1,6 +1,6 @@
 ---
-title: "Calendars"
-description: "Wanting to plan your work and deadlines? The My Calendar function allows you to create dates, deadlines, and plan for work tasks. To get to this…"
+title: "Calendar"
+description: "Plan work and deadlines in Leantime with My Calendar: where to find it and how to add events."
 ---
 
 Wanting to plan your work and deadlines?  The My Calendar function allows you to create dates, deadlines, and plan for work tasks.  

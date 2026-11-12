@@ -1,5 +1,5 @@
 ---
-title: "Hooks"
+title: "Events and filters (hooks) reference"
 description: "Events and filters Leantime dispatches, with their names, arguments and source locations, for plugin developers."
 ---
 

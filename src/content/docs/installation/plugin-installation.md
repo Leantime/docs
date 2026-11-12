@@ -1,6 +1,6 @@
 ---
-title: "Plugin Installation & Configuration"
-description: "Leantime supports plugins to extend core functionality without modifying the codebase. Plugins are available through the Leantime Marketplace and can…"
+title: "Install and configure plugins"
+description: "Install Leantime plugins from the marketplace or by hand, add license keys, and set up AdvancedAuth single sign-on with GitHub, Google, Microsoft and more."
 ---
 
 Leantime supports plugins to extend core functionality without modifying the codebase. Plugins are available through the [Leantime Marketplace](https://marketplace.leantime.io/) and can also be installed manually for custom development.

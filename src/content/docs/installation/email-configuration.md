@@ -1,6 +1,6 @@
 ---
-title: "Email & SMTP Configuration"
-description: "Leantime uses email for user invitations, password resets, notifications, and project updates. This guide covers how to configure email correctly and…"
+title: "Email and SMTP configuration"
+description: "Configure email in self-hosted Leantime: SMTP settings for Gmail, Microsoft 365, SendGrid, Mailgun and Amazon SES, sending a test email, and fixing delivery errors."
 ---
 
 Leantime uses email for user invitations, password resets, notifications, and project updates. This guide covers how to configure email correctly and troubleshoot common issues.

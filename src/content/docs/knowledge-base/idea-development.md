@@ -1,6 +1,6 @@
 ---
-title: "Design Thinking"
-description: "Design thinking is a human-centric methodology for the development of solutions for complex, open ended problems. It is an iterative process that…"
+title: "Design thinking"
+description: "The five stages of design thinking (empathize, define, ideate, prototype, test) and how to use Leantime's boards for each one."
 ---
 
 ## Synopsis

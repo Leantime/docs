@@ -1,6 +1,6 @@
 ---
-title: "User Management"
-description: "In User Management, you can add new team members, clients or other roles that you may need to give access to their projects. To get to the User…"
+title: "User management"
+description: "Add and invite people to Leantime, choose their role, and give team members and clients access to the right projects."
 ---
 
 ## Adding Users

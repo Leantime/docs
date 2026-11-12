@@ -1,6 +1,6 @@
 ---
-title: "Research Boards"
-description: "The Research Board is the home for idea, project, or user testing. When you're building, you want to be sure that you're building with purpose and that…"
+title: "Research boards"
+description: "Test an idea before you build it with Leantime's research board: define the customer, the problem, the solution and the details."
 ---
 
 The Research Board is the home for idea, project, or user testing.  When you're building, you want to be sure that you're building with purpose and that you're building something that people want, need, and are willing to pay for.  

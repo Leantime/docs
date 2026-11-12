@@ -1,6 +1,6 @@
 ---
-title: "Subfolder"
-description: "We recommend running Leantime as the main application under a domain or subdomain (eg leantime.yourcompany.com), however it is possible to run Leantime…"
+title: "Run Leantime in a subfolder"
+description: "Run Leantime under a path such as yourcompany.com/leantime instead of its own domain or subdomain, and the settings that change."
 ---
 
 ## Subfolder installation

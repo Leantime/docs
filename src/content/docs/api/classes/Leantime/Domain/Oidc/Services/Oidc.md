@@ -1,6 +1,6 @@
 ---
 title: "Oidc API"
-description: "JSON-RPC methods of the Leantime Oidc Oidc service: leantime.rpc.Oidc.Oidc.*"
+description: "Reference for the Leantime Oidc JSON-RPC service: every leantime.rpc.Oidc method with its parameters and return values."
 ---
 
 `leantime.rpc.Oidc.Oidc.`

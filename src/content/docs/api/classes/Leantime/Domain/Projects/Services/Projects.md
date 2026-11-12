@@ -1,6 +1,6 @@
 ---
 title: "Projects API"
-description: "JSON-RPC methods of the Leantime Projects Projects service: leantime.rpc.Projects.Projects.*"
+description: "Reference for the Leantime Projects JSON-RPC service: every leantime.rpc.Projects method with its parameters and return values."
 ---
 
 The Projects class is responsible for managing projects and project-related operations.

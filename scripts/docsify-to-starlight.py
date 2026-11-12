@@ -21,8 +21,12 @@ What it does:
   3. Rewrites links: `installation/x.md#a`, `/installation/x.md`,
      `?id=a` and `https://docs.leantime.io/#/x` become `/installation/x/#a`;
      `../_images/...` becomes `/_images/...`.
+  4. Applies scripts/page-metadata.json: hand-written search titles and
+     descriptions, and `draft: true` for empty pages. To change those on the
+     already-migrated pages, edit the JSON and run with --metadata-only.
 """
 
+import json
 import os
 import re
 import subprocess
@@ -215,7 +219,9 @@ def convert(page_src, dest):
         service = os.path.splitext(parts[-1])[0]
         domain = parts[4] if len(parts) > 5 else service
         title = f'{service} API ({domain})' if domain != service else f'{service} API'
-        description = f'JSON-RPC methods of the Leantime {domain} {service} service: leantime.rpc.{domain}.{service}.*'
+        name, ns = (service, service) if domain == service else (f'{domain} {service}', f'{domain}.{service}')
+        description = (f'Reference for the Leantime {name} JSON-RPC service: '
+                       f'every leantime.rpc.{ns} method with its parameters and return values.')
     body = rewrite_links('\n'.join(lines).lstrip('\n') + '\n', page_src)
 
     head = ['---', 'title: ' + yaml_str(title)]
@@ -226,7 +232,39 @@ def convert(page_src, dest):
         f.write('\n'.join(head) + '\n\n' + body)
 
 
+METADATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'page-metadata.json')
+
+
+def apply_metadata():
+    """Set the search title, description and draft flag from scripts/page-metadata.json."""
+    meta = json.load(open(METADATA, encoding='utf-8'))
+    applied = 0
+    for rel, values in meta.items():
+        if rel.startswith('_'):
+            continue
+        path = os.path.join(DEST, rel)
+        if not os.path.exists(path):
+            print('page-metadata.json: no page at ' + path)
+            continue
+        text = open(path, encoding='utf-8').read()
+        m = re.match(r'---\n(.*?)\n---\n', text, re.S)
+        fields = dict(line.split(': ', 1) for line in m.group(1).splitlines()) if m else {}
+        for key in ('title', 'description'):
+            if key in values:
+                fields[key] = yaml_str(values[key])
+        if values.get('draft'):
+            fields['draft'] = 'true'
+        head = '---\n' + ''.join(f'{k}: {v}\n' for k, v in fields.items()) + '---\n'
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(head + (text[m.end():] if m else text))
+        applied += 1
+    print(f'Applied metadata to {applied} pages.')
+
+
 def main():
+    if '--metadata-only' in sys.argv:
+        apply_metadata()
+        return
     if os.path.exists(DEST):
         sys.exit(DEST + ' already exists; migration already ran.')
     pages = collect()
@@ -244,6 +282,7 @@ def main():
     for src, dest in moved:
         convert(src, dest)
     print(f'Moved and converted {len(moved)} pages.')
+    apply_metadata()
 
 
 if __name__ == '__main__':

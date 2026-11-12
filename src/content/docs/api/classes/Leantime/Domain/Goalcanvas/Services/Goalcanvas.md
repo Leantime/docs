@@ -1,6 +1,6 @@
 ---
 title: "Goalcanvas API"
-description: "JSON-RPC methods of the Leantime Goalcanvas Goalcanvas service: leantime.rpc.Goalcanvas.Goalcanvas.*"
+description: "Reference for the Leantime Goalcanvas JSON-RPC service: every leantime.rpc.Goalcanvas method with its parameters and return values."
 ---
 
 `leantime.rpc.Goalcanvas.Goalcanvas.`

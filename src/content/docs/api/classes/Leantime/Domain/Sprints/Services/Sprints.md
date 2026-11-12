@@ -1,6 +1,6 @@
 ---
 title: "Sprints API"
-description: "JSON-RPC methods of the Leantime Sprints Sprints service: leantime.rpc.Sprints.Sprints.*"
+description: "Reference for the Leantime Sprints JSON-RPC service: every leantime.rpc.Sprints method with its parameters and return values."
 ---
 
 `leantime.rpc.Sprints.Sprints.`

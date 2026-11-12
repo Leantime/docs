@@ -1,6 +1,6 @@
 ---
-title: "Docker based Installation"
-description: "We host our official docker image on Docker Hub https://hub.docker.com/r/leantime/leantime. Your device needs to have Docker Installed. Please check…"
+title: "Install Leantime with Docker"
+description: "Self-host Leantime, the open source project management system, with the official Docker image: Docker Compose or docker run, volumes, plugins and updates."
 ---
 
 We host our official docker image on Docker Hub https://hub.docker.com/r/leantime/leantime. Your device needs to have Docker Installed. Please check the [Official Docker](https://docs.docker.com/get-docker/) page, if you don't have Docker installed

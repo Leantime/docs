@@ -1,6 +1,6 @@
 ---
-title: "Lean Methodology"
-description: "In our efforts to include the best methods of project management, we've incorporated Lean methodologies into our practice. Not only are we looking at…"
+title: "Lean methodology"
+description: "How Leantime uses lean methods: kanban from lean manufacturing, and lean startup practices for business models and research."
 ---
 
 In our efforts to include the best methods of project management, we've incorporated Lean methodologies into our practice.  Not only are we looking at the agility component of Lean as in Toyota manufacturing (kanban), 

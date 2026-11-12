@@ -1,6 +1,6 @@
 ---
 title: "Clients API"
-description: "JSON-RPC methods of the Leantime Clients Clients service: leantime.rpc.Clients.Clients.*"
+description: "Reference for the Leantime Clients JSON-RPC service: every leantime.rpc.Clients method with its parameters and return values."
 ---
 
 Class Clients

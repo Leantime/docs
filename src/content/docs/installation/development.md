@@ -1,6 +1,6 @@
 ---
-title: "Development"
-description: "For development, we use a dockerized development environment. You will need to have docker, docker compose, make, composer and npm installed. to run…"
+title: "Local development setup"
+description: "Run Leantime locally to work on the code: the Docker development environment with MySQL, mail and S3 servers, or a setup on your own machine."
 ---
 
 ## Development using Docker
