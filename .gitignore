@@ -1,1 +1,4 @@
 /.codebuddy/
+node_modules/
+dist/
+.astro/
