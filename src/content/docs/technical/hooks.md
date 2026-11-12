@@ -1,6 +1,6 @@
 ---
 title: "Hooks"
-description: "Source: app/Domain/Tickets/Repositories/Tickets.php, line 1504"
+description: "Events and filters Leantime dispatches, with their names, arguments and source locations, for plugin developers."
 ---
 
 - [Events](#events)
