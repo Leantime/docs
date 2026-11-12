@@ -1,12 +1,142 @@
-/* Leantime brand accent (was --theme-color #006C9E in the docsify theme). */
+/*
+ * Leantime docs theme.
+ *
+ * Built for people who skim, get interrupted and come back: one colour per section, so you
+ * always know where you are; calm, high-contrast text; numbered steps that stand out; and an
+ * Easy-read text option. Colour never carries meaning on its own: every coloured element also
+ * has a label or an icon.
+ */
+
+/* Brand accent (dark theme is Starlight's default :root). */
 :root {
 	--sl-color-accent-low: #00283b;
 	--sl-color-accent: #0083bf;
 	--sl-color-accent-high: #b3e3f7;
+
+	/* Section colours, dark theme. Each passes WCAG AA as text on the page background. */
+	--lt-section-install: #5cc8f5;
+	--lt-section-use: #3fd4a8;
+	--lt-section-ai: #b9a0f8;
+	--lt-section-learn: #f5bd5c;
+	--lt-section-dev: #f79a78;
+	--lt-accent: var(--sl-color-accent-high);
 }
 
 :root[data-theme='light'] {
 	--sl-color-accent-low: #cdeaf7;
 	--sl-color-accent: #006c9e;
 	--sl-color-accent-high: #003a55;
+
+	--lt-section-install: #006c9e;
+	--lt-section-use: #00745a;
+	--lt-section-ai: #6a3fc2;
+	--lt-section-learn: #8a5300;
+	--lt-section-dev: #b03a14;
+	--lt-accent: var(--sl-color-accent);
+}
+
+[data-section='install'],
+:root[data-section='install'] { --lt-accent: var(--lt-section-install); }
+[data-section='use'],
+:root[data-section='use'] { --lt-accent: var(--lt-section-use); }
+[data-section='ai'],
+:root[data-section='ai'] { --lt-accent: var(--lt-section-ai); }
+[data-section='learn'],
+:root[data-section='learn'] { --lt-accent: var(--lt-section-learn); }
+[data-section='dev'],
+:root[data-section='dev'] { --lt-accent: var(--lt-section-dev); }
+
+/* Sidebar: a coloured bar beside each top-level group, matching the section label on its pages.
+   Later rules win: the install group also links one using-leantime page, and the AI and
+   developer groups also link /installation/ pages. */
+.sidebar-content .top-level > li > details {
+	border-inline-start: 3px solid transparent;
+	padding-inline-start: 0.4rem;
+	margin-inline-start: -0.4rem;
+}
+.sidebar-content .top-level > li > details:has(a[href^='/using-leantime/']),
+.sidebar-content .top-level > li > details:has(a[href^='/getting-started/']) { border-color: var(--lt-section-use); }
+.sidebar-content .top-level > li > details:has(a[href^='/installation/']) { border-color: var(--lt-section-install); }
+.sidebar-content .top-level > li > details:has(a[href^='/ai/']),
+.sidebar-content .top-level > li > details:has(a[href='/installation/leantime-mcp/']) { border-color: var(--lt-section-ai); }
+.sidebar-content .top-level > li > details:has(a[href^='/knowledge-base/']) { border-color: var(--lt-section-learn); }
+.sidebar-content .top-level > li > details:has(a[href^='/api/']) { border-color: var(--lt-section-dev); }
+
+/* Headings: a little more air above sections, so the page reads as chunks. */
+.sl-markdown-content h2 {
+	margin-top: 2.5rem;
+	padding-top: 0.25rem;
+}
+.sl-markdown-content h2 + p,
+.sl-markdown-content h3 + p {
+	margin-top: 0.6rem;
+}
+
+/* Steps: bigger, coloured step numbers so you can find your place again after switching windows. */
+.sl-markdown-content .sl-steps > li::before {
+	background-color: color-mix(in srgb, var(--lt-accent) 18%, var(--sl-color-bg));
+	color: var(--lt-accent);
+	font-weight: 700;
+	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--lt-accent) 45%, transparent);
+}
+.sl-markdown-content .sl-steps > li::after {
+	background-color: color-mix(in srgb, var(--lt-accent) 30%, transparent);
+}
+
+/* "Where does this run?" labels on code blocks (expressive-code titles). */
+.expressive-code .frame .header .title {
+	font-weight: 600;
+}
+
+/* Collapsible "More detail" sections keep the main path short. */
+.sl-markdown-content details {
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.5rem;
+	padding: 0.6rem 1rem;
+}
+.sl-markdown-content details > summary {
+	cursor: pointer;
+	font-weight: 600;
+}
+.sl-markdown-content details[open] > summary {
+	margin-bottom: 0.5rem;
+}
+
+/* Easy-read text: Atkinson Hyperlegible, more spacing, shorter lines. */
+:root[data-reading='easy'] {
+	--sl-font: 'Atkinson Hyperlegible', var(--sl-font-system);
+	--sl-line-height: 1.9;
+	--sl-content-width: 40rem;
+}
+:root[data-reading='easy'] .sl-markdown-content {
+	letter-spacing: 0.012em;
+	word-spacing: 0.06em;
+}
+:root[data-reading='easy'] .sl-markdown-content :is(p, li) + :is(p, li) {
+	margin-top: 0.9rem;
+}
+
+/* Respect "reduce motion". */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}
+
+/* Home page task cards: coloured to match the section they lead to. */
+.lt-tasks {
+	display: flex;
+}
+.lt-tasks .card {
+	flex: 1;
+	border-top: 4px solid var(--lt-accent);
+}
+.lt-tasks .card {
+	--sl-card-border: var(--lt-accent);
+	--sl-card-bg: color-mix(in srgb, var(--lt-accent) 14%, transparent);
 }

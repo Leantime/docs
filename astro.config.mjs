@@ -97,6 +97,18 @@ if(m){var a=decodeURIComponent(m[1]);history.replaceState(null,'',location.pathn
 document.addEventListener('DOMContentLoaded',function(){var el=document.getElementById(a);if(el)el.scrollIntoView();});}
 }catch(e){}})();`;
 
+/**
+ * Easy-read text (src/components/ThemeSelect.astro): apply the saved choice before the page
+ * paints, and load Atkinson Hyperlegible only for readers who chose it.
+ */
+const readingMode = `(function(){
+window.ltLoadReadingFont=function(){if(document.getElementById('lt-reading-font'))return;
+var l=document.createElement('link');l.id='lt-reading-font';l.rel='stylesheet';
+l.href='https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap';
+document.head.appendChild(l);};
+try{if(localStorage.getItem('lt-reading')==='easy'){document.documentElement.dataset.reading='easy';window.ltLoadReadingFont();}}catch(e){}
+})();`;
+
 const crisp = `window.$crisp=[];window.CRISP_WEBSITE_ID="-K4sjRan9gm59MvONQG-";(function(){var d=document,s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`;
 
 const gtag = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FKZP7LPS4X');`;
@@ -118,12 +130,17 @@ export default defineConfig({
 			editLink: { baseUrl: 'https://github.com/Leantime/docs/edit/master/' },
 			lastUpdated: true,
 			routeMiddleware: './src/routeData.ts',
+			components: {
+				PageTitle: './src/components/PageTitle.astro',
+				ThemeSelect: './src/components/ThemeSelect.astro',
+			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/Leantime/leantime' },
 				{ icon: 'discord', label: 'Community chat', href: 'https://discord.gg/4zMzJtAq9z' },
 			],
 			head: [
 				{ tag: 'script', content: legacyRedirect },
+				{ tag: 'script', content: readingMode },
 				{ tag: 'script', attrs: { type: 'application/ld+json' }, content: JSON.stringify(siteSchema) },
 				{ tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
 				{ tag: 'meta', attrs: { property: 'og:image', content: `${SITE}/og-image.png` } },
@@ -169,9 +186,12 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'AI & Plugins',
+					label: 'AI with Leantime',
+					items: [{ label: 'MCP server: connect AI assistants', slug: 'installation/leantime-mcp' }],
+				},
+				{
+					label: 'Plugins & FAQ',
 					items: [
-						{ label: "Leantime's MCP Server", slug: 'installation/leantime-mcp' },
 						{ label: 'Using Plugins', slug: 'installation/using-plugins' },
 						{ label: 'FAQ', slug: 'installation/frequently-asked-questions' },
 					],

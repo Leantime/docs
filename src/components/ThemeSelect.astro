@@ -1,0 +1,60 @@
+---
+/**
+ * Starlight's theme switch plus a "Text" switch: Standard, or Easy-read
+ * (Atkinson Hyperlegible, the accessibility font the Leantime app ships, with more line and
+ * paragraph spacing and a shorter line length). The choice is kept in this browser only.
+ * An inline script in the page head (astro.config.mjs) applies it before the page paints.
+ */
+import Default from '@astrojs/starlight/components/ThemeSelect.astro';
+import Select from '@astrojs/starlight/components/Select.astro';
+---
+
+<Default />
+<lt-reading-select>
+	<Select
+		icon="document"
+		label="Text style"
+		options={[
+			{ label: 'Standard', selected: true, value: 'standard' },
+			{ label: 'Easy-read', selected: false, value: 'easy' },
+		]}
+		width="7.5em"
+	/>
+</lt-reading-select>
+
+<script>
+	const KEY = 'lt-reading';
+
+	function apply(mode: string): void {
+		const easy = mode === 'easy';
+		if (easy) document.documentElement.dataset.reading = 'easy';
+		else delete document.documentElement.dataset.reading;
+		(window as unknown as { ltLoadReadingFont?: () => void }).ltLoadReadingFont?.();
+		try {
+			if (easy) localStorage.setItem(KEY, 'easy');
+			else localStorage.removeItem(KEY);
+		} catch {
+			// storage blocked: the choice lasts for this page only
+		}
+		document.querySelectorAll<HTMLSelectElement>('lt-reading-select select').forEach((select) => {
+			select.value = easy ? 'easy' : 'standard';
+		});
+	}
+
+	class ReadingSelect extends HTMLElement {
+		constructor() {
+			super();
+			const select = this.querySelector('select');
+			if (!select) return;
+			select.value = document.documentElement.dataset.reading === 'easy' ? 'easy' : 'standard';
+			select.addEventListener('change', () => apply(select.value));
+		}
+	}
+	customElements.define('lt-reading-select', ReadingSelect);
+</script>
+
+<style>
+	lt-reading-select {
+		display: contents;
+	}
+</style>

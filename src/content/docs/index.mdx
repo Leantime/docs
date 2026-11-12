@@ -8,8 +8,8 @@ head:
 hero:
   tagline: Leantime is an open source project management system for non-project managers. It combines strategy, planning and execution, and is built with ADHD, dyslexia and autism in mind.
   actions:
-    - text: Install Leantime
-      link: /installation/installation-types/
+    - text: Install with Docker
+      link: /installation/docker/
       icon: right-arrow
     - text: Leantime Cloud
       link: https://leantime.io/pricing/
@@ -17,31 +17,65 @@ hero:
       variant: minimal
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Self-hosting
-
-<CardGrid>
-	<LinkCard title="System requirements" href="/installation/system-requirements/" description="PHP, database and server requirements." />
-	<LinkCard title="Docker" href="/installation/docker/" description="Run the official image with Docker or Docker Compose." />
-	<LinkCard title="Configuration" href="/installation/configuration/" description="Environment variables for database, files, email, cache and more." />
-	<LinkCard title="Upgrade guide" href="/installation/upgrade-guide/" description="Update safely, with version-specific notes." />
-</CardGrid>
-
-## Sign-in and integrations
+## What do you want to do?
 
 <CardGrid>
-	<LinkCard title="Authentication (OIDC, LDAP)" href="/installation/authentication-configuration/" description="Single sign-on with your identity provider." />
-	<LinkCard title="Plugins and AdvancedAuth" href="/installation/plugin-installation/" description="Install plugins; GitHub, Google, Microsoft, Okta, Keycloak and Authentik sign-in." />
-	<LinkCard title="MCP server" href="/installation/leantime-mcp/" description="Connect Claude, Cursor, VS Code and other AI assistants to Leantime." />
-	<LinkCard title="JSON-RPC API" href="/api/usage/" description="Automate Leantime with API keys and personal access tokens." />
-</CardGrid>
-
-## Using Leantime
-
-<CardGrid>
-	<LinkCard title="Task management" href="/using-leantime/task-management/" description="To-dos, boards, statuses and subtasks." />
-	<LinkCard title="Timesheets" href="/using-leantime/timesheets/" description="Track and report time." />
-	<LinkCard title="Where do I start?" href="/knowledge-base/wheretostart/" description="How Leantime's pieces fit together." />
-	<LinkCard title="FAQ" href="/installation/frequently-asked-questions/" description="Answers to common questions." />
+<div data-section="install" class="lt-tasks">
+<Card title="Install Leantime" icon="rocket">
+- [With Docker](/installation/docker/), about 10 minutes
+- [On your own server](/installation/package-installation/) with PHP and MySQL
+- [What your server needs](/installation/system-requirements/)
+</Card>
+</div>
+<div data-section="install" class="lt-tasks">
+<Card title="Fix a problem" icon="warning">
+- [Common issues](/installation/common-issues/): login, uploads, errors
+- [Docker troubleshooting](/installation/docker-troubleshooting/)
+- [Frequently asked questions](/installation/frequently-asked-questions/)
+</Card>
+</div>
+<div data-section="install" class="lt-tasks">
+<Card title="Set up sign-in" icon="padlock">
+- [OpenID Connect and LDAP](/installation/authentication-configuration/)
+- [GitHub, Google, Microsoft, Okta and more](/installation/plugin-installation/)
+- [Email and SMTP](/installation/email-configuration/)
+</Card>
+</div>
+<div data-section="ai" class="lt-tasks">
+<Card title="Use AI with Leantime" icon="comment">
+- [Connect Claude, Cursor or VS Code](/installation/leantime-mcp/) with the MCP server
+- Every page has **Copy page for AI**, for help from your assistant
+- [llms.txt](/llms.txt): all the docs for AI tools
+</Card>
+</div>
+<div data-section="use" class="lt-tasks">
+<Card title="Learn Leantime" icon="open-book">
+- [Where do I start?](/knowledge-base/wheretostart/)
+- [Set up your first project](/getting-started/new-project/)
+- [To-dos and boards](/using-leantime/task-management/)
+</Card>
+</div>
+<div data-section="use" class="lt-tasks">
+<Card title="Add features with plugins" icon="puzzle">
+- [What each plugin does](/installation/using-plugins/)
+- [Install a plugin](/installation/plugin-installation/)
+- [Browse the marketplace](https://marketplace.leantime.io/)
+</Card>
+</div>
+<div data-section="install" class="lt-tasks">
+<Card title="Keep it running" icon="setting">
+- [Upgrade to a new version](/installation/upgrade-guide/)
+- [Back up and restore](/installation/backup-restore/)
+- [All settings](/installation/configuration/)
+</Card>
+</div>
+<div data-section="dev" class="lt-tasks">
+<Card title="Build on Leantime" icon="code-branch">
+- [Connect to the API](/api/usage/)
+- [Write a plugin](/development/plugin-development/)
+- [Run Leantime locally](/installation/development/)
+</Card>
+</div>
 </CardGrid>

@@ -123,8 +123,13 @@ export const onRequest = defineRouteMiddleware(async (context) => {
 	if (description) article.description = description;
 	if (section) article.articleSection = section;
 	if (route.lastUpdated) article.dateModified = route.lastUpdated.toISOString();
-	if (EXPERT.some((prefix) => id.startsWith(prefix))) article.proficiencyLevel = 'Expert';
+	const { glance } = entry.data;
+	if (glance?.level === 'Beginner') article.proficiencyLevel = 'Beginner';
+	else if (glance?.level === 'Advanced') article.proficiencyLevel = 'Expert';
+	else if (EXPERT.some((prefix) => id.startsWith(prefix))) article.proficiencyLevel = 'Expert';
 	else if (BEGINNER.some((prefix) => id.startsWith(prefix))) article.proficiencyLevel = 'Beginner';
+	if (glance?.level) article.educationalLevel = glance.level;
+	if (glance?.minutes) article.timeRequired = `PT${glance.minutes}M`;
 	if (isApiReference) {
 		article.programmingModel = 'JSON-RPC 2.0';
 		article.targetPlatform = 'Leantime';

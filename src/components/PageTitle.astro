@@ -1,0 +1,221 @@
+---
+/**
+ * Page title, extended:
+ * - a colour-coded section label above the title, so you always know where you are;
+ * - "Copy for AI" and "Markdown" buttons that hand the page to an AI assistant;
+ * - the "At a glance" box from the `glance` front matter (time, level, what you need, result).
+ */
+// Same id as Starlight's own PageTitle (PAGE_TITLE_ID), which the table of contents links to.
+const PAGE_TITLE_ID = '_top';
+import { SECTION_NAMES, sectionOf } from '../lib/sections';
+
+const { entry, id } = Astro.locals.starlightRoute;
+const { title, glance, section: sectionOverride, draft } = entry.data;
+const section = sectionOf(id, sectionOverride);
+const markdownUrl = id && !draft ? `/${id}.md` : undefined;
+/** Front matter text with `code`, **bold** and [links](/path/) written as Markdown. */
+const inline = (text: string) =>
+	text
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/`([^`]+)`/g, '<code>$1</code>')
+		.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+		.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
+const levelHint = {
+	Beginner: 'No server experience needed',
+	'Some experience': 'You have used a terminal before',
+	Advanced: 'For administrators and developers',
+};
+---
+
+{
+	section && (
+		<p class="lt-eyebrow" data-section={section}>
+			<span class="lt-dot" aria-hidden="true" />
+			{SECTION_NAMES[section]}
+		</p>
+	)
+}
+
+<h1 id={PAGE_TITLE_ID}>{title}</h1>
+
+{/* The section colour also tints step numbers and other accents further down the page. */}
+{section && <script is:inline define:vars={{ section }}>document.documentElement.dataset.section = section;</script>}
+
+{
+	markdownUrl && (
+		<div class="lt-page-tools not-content">
+			<button type="button" class="lt-tool" data-copy-md={markdownUrl} aria-live="polite">
+				<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16h-9V7h9v14Z"/></svg>
+				<span data-label>Copy page for AI</span>
+			</button>
+			<a class="lt-tool" href={markdownUrl} title="This page as plain Markdown, for AI assistants and tools">
+				<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M20.6 5H3.4C2.6 5 2 5.6 2 6.4v11.2c0 .8.6 1.4 1.4 1.4h17.2c.8 0 1.4-.6 1.4-1.4V6.4c0-.8-.6-1.4-1.4-1.4ZM12 16h-2v-4l-1.5 2L7 12v4H5V8h2l1.5 2L10 8h2v8Zm4.5.5L13.5 13H15V8h3v5h1.5l-3 3.5Z"/></svg>
+				<span>Markdown</span>
+			</a>
+		</div>
+	)
+}
+
+{
+	glance && (
+		<section class="lt-glance not-content" data-section={section} aria-label="At a glance">
+			<p class="lt-glance-title">At a glance</p>
+			<dl>
+				{glance.minutes && (
+					<div>
+						<dt>Time</dt>
+						<dd>About {glance.minutes} minutes</dd>
+					</div>
+				)}
+				{glance.level && (
+					<div>
+						<dt>Level</dt>
+						<dd>
+							{glance.level}
+							<span class="lt-muted"> · {levelHint[glance.level]}</span>
+						</dd>
+					</div>
+				)}
+				{glance.needs && glance.needs.length > 0 && (
+					<div class="lt-wide">
+						<dt>You need</dt>
+						<dd>
+							<ul>
+								{glance.needs.map((need) => (
+									<li set:html={inline(need)} />
+								))}
+							</ul>
+						</dd>
+					</div>
+				)}
+				{glance.result && (
+					<div class="lt-wide">
+						<dt>At the end</dt>
+						<dd set:html={inline(glance.result)} />
+					</div>
+				)}
+			</dl>
+		</section>
+	)
+}
+
+<script>
+	// "Copy page for AI": put the page's Markdown copy on the clipboard.
+	document.querySelectorAll<HTMLButtonElement>('[data-copy-md]').forEach((button) => {
+		const label = button.querySelector('[data-label]');
+		const original = label?.textContent ?? '';
+		const say = (text: string) => {
+			if (!label) return;
+			label.textContent = text;
+			setTimeout(() => (label.textContent = original), 2500);
+		};
+		button.addEventListener('click', async () => {
+			try {
+				const response = await fetch(button.dataset.copyMd!);
+				if (!response.ok) throw new Error(String(response.status));
+				await navigator.clipboard.writeText(await response.text());
+				say('Copied. Paste it into your AI chat');
+			} catch {
+				window.location.href = button.dataset.copyMd!;
+			}
+		});
+	});
+</script>
+
+<style>
+	h1 {
+		margin-top: 0.25rem;
+		font-size: var(--sl-text-h1);
+		line-height: var(--sl-line-height-headings);
+		font-weight: 600;
+		color: var(--sl-color-white);
+	}
+	.lt-eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		margin-top: 1rem;
+		padding: 0.15rem 0.7rem 0.15rem 0.55rem;
+		border-radius: 999px;
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		color: var(--lt-accent);
+		background: color-mix(in srgb, var(--lt-accent) 13%, transparent);
+	}
+	.lt-dot {
+		width: 0.55rem;
+		height: 0.55rem;
+		border-radius: 50%;
+		background: var(--lt-accent);
+	}
+	.lt-page-tools {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 0.85rem;
+	}
+	.lt-tool {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.3rem 0.7rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.4rem;
+		background: transparent;
+		color: var(--sl-color-gray-2);
+		font: inherit;
+		font-size: var(--sl-text-xs);
+		text-decoration: none;
+		cursor: pointer;
+	}
+	.lt-tool:hover,
+	.lt-tool:focus-visible {
+		color: var(--sl-color-white);
+		border-color: var(--sl-color-gray-3);
+	}
+	.lt-glance {
+		margin-top: 1.25rem;
+		padding: 0.9rem 1.1rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-inline-start: 4px solid var(--lt-accent);
+		border-radius: 0.5rem;
+		background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+	}
+	.lt-glance-title {
+		margin: 0 0 0.5rem;
+		font-size: var(--sl-text-xs);
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--lt-accent);
+	}
+	.lt-glance dl {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+		gap: 0.6rem 1.5rem;
+		margin: 0;
+	}
+	.lt-glance .lt-wide {
+		grid-column: 1 / -1;
+	}
+	.lt-glance dt {
+		font-size: var(--sl-text-xs);
+		font-weight: 600;
+		color: var(--sl-color-gray-3);
+	}
+	.lt-glance dd {
+		margin: 0.1rem 0 0;
+		color: var(--sl-color-white);
+	}
+	.lt-glance ul {
+		margin: 0;
+		padding-inline-start: 1.1rem;
+	}
+	.lt-glance li + li {
+		margin-top: 0.15rem;
+	}
+	.lt-muted {
+		color: var(--sl-color-gray-3);
+	}
+</style>
