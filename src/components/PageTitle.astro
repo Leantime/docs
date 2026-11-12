@@ -3,7 +3,7 @@
  * Page title, extended:
  * - a colour-coded section label above the title, so you always know where you are;
  * - "Copy for AI" and "Markdown" buttons that hand the page to an AI assistant;
- * - the "At a glance" box from the `glance` front matter (time, level, what you need, where to do it, result).
+ * - the "At a glance" box from the `glance` front matter (time, level, what you need, where you'll work, result).
  */
 // Same id as Starlight's own PageTitle (PAGE_TITLE_ID), which the table of contents links to.
 const PAGE_TITLE_ID = '_top';
@@ -94,7 +94,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 					<div class="lt-glance-block">
 						<h3 class="lt-block-title">
 							<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-							Where to do it
+							Where you'll work
 						</h3>
 						<ol class="lt-where">
 							{glance.where.map((place) => (
@@ -191,7 +191,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		color: var(--sl-color-white);
 		border-color: var(--sl-color-gray-3);
 	}
-	/* At a glance: a header strip (time, level), then "You need", "Where to do it" and "At the end",
+	/* At a glance: a header strip (time, level), then "You need", "Where you'll work" and "At the end",
 	   side by side when there's room and stacked when there isn't.
 	   Everything is tinted with the section colour, so the box matches the page it sits on. */
 	.lt-glance {
