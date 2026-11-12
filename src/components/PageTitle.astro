@@ -3,7 +3,7 @@
  * Page title, extended:
  * - a colour-coded section label above the title, so you always know where you are;
  * - "Copy for AI" and "Markdown" buttons that hand the page to an AI assistant;
- * - the "At a glance" box from the `glance` front matter (time, level, what you need, result).
+ * - the "At a glance" box from the `glance` front matter (time, level, what you need, where to do it, result).
  */
 // Same id as Starlight's own PageTitle (PAGE_TITLE_ID), which the table of contents links to.
 const PAGE_TITLE_ID = '_top';
@@ -21,11 +21,6 @@ const inline = (text: string) =>
 		.replace(/`([^`]+)`/g, '<code>$1</code>')
 		.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
 		.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
-const levelHint = {
-	Beginner: 'No server experience needed',
-	'Some experience': 'You have used a terminal before',
-	Advanced: 'For administrators and developers',
-};
 /** How many of the three meter bars the level fills. */
 const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 ---
@@ -73,14 +68,13 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 						</p>
 					)}
 					{glance.level && (
-						<p class="lt-chip" title={levelHint[glance.level]}>
+						<p class="lt-chip">
 							<span class="lt-meter" data-level={levelRank[glance.level]} aria-hidden="true"><i /><i /><i /></span>
 							<span class="lt-chip-label">Level</span>
 							<span>{glance.level}</span>
 						</p>
 					)}
 				</div>
-				{glance.level && <p class="lt-glance-hint">{levelHint[glance.level]}</p>}
 			</header>
 			<div class="lt-glance-body">
 				{glance.needs && glance.needs.length > 0 && (
@@ -94,6 +88,19 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 								<li set:html={inline(need)} />
 							))}
 						</ul>
+					</div>
+				)}
+				{glance.where && glance.where.length > 0 && (
+					<div class="lt-glance-block">
+						<h3 class="lt-block-title">
+							<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+							Where to do it
+						</h3>
+						<ol class="lt-where">
+							{glance.where.map((place) => (
+								<li set:html={inline(place)} />
+							))}
+						</ol>
 					</div>
 				)}
 				{glance.result && (
@@ -184,7 +191,8 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		color: var(--sl-color-white);
 		border-color: var(--sl-color-gray-3);
 	}
-	/* At a glance: a header strip (time, level), then "You need" and "At the end" side by side.
+	/* At a glance: a header strip (time, level), then "You need", "Where to do it" and "At the end",
+	   side by side when there's room and stacked when there isn't.
 	   Everything is tinted with the section colour, so the box matches the page it sits on. */
 	.lt-glance {
 		margin-top: 1.25rem;
@@ -255,21 +263,25 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	.lt-meter[data-level='3'] i {
 		background: var(--lt-accent);
 	}
-	.lt-glance-hint {
-		flex-basis: 100%;
-		margin: 0;
-		font-size: var(--sl-text-xs);
-		color: var(--sl-color-gray-2);
-	}
 	.lt-glance-body {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 	}
 	.lt-glance-block {
 		padding: 0.85rem 1rem 1rem;
 	}
 	.lt-glance-block + .lt-glance-block {
-		border-inline-start: 1px solid var(--sl-color-gray-5);
+		border-top: 1px solid var(--sl-color-gray-5);
+	}
+	/* Side by side once each block has room for a short line of text. */
+	@container (width >= 40rem) {
+		.lt-glance-body {
+			grid-auto-flow: column;
+			grid-auto-columns: 1fr;
+		}
+		.lt-glance-block + .lt-glance-block {
+			border-top: 0;
+			border-inline-start: 1px solid var(--sl-color-gray-5);
+		}
 	}
 	.lt-block-title {
 		display: flex;
@@ -306,19 +318,43 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		border: 2px solid var(--lt-accent);
 		border-radius: 0.2rem;
 	}
+	/* Numbered, because the order is the order you go there in. */
+	.lt-where {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		counter-reset: lt-where;
+	}
+	.lt-where li {
+		position: relative;
+		padding-inline-start: 1.75rem;
+		color: var(--sl-color-white);
+		counter-increment: lt-where;
+	}
+	.lt-where li + li {
+		margin-top: 0.4rem;
+	}
+	.lt-where li::before {
+		content: counter(lt-where);
+		position: absolute;
+		inset-inline-start: 0;
+		top: 0.15em;
+		width: 1.2rem;
+		height: 1.2rem;
+		border-radius: 50%;
+		background: var(--lt-accent);
+		color: var(--sl-color-black);
+		font-size: 0.75rem;
+		font-weight: 700;
+		line-height: 1.2rem;
+		text-align: center;
+	}
 	.lt-result {
 		background: color-mix(in srgb, var(--lt-accent) 7%, transparent);
 	}
 	.lt-result p {
 		margin: 0;
 		color: var(--sl-color-white);
-	}
-	/* Stacked when the box is narrow (the grid wraps below 2 × 15rem): a line between the blocks instead of beside them. */
-	@container (width < 30rem) {
-		.lt-glance-block + .lt-glance-block {
-			border-inline-start: 0;
-			border-top: 1px solid var(--sl-color-gray-5);
-		}
 	}
 	.lt-glance :global(code) {
 		font-size: 0.875em;

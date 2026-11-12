@@ -42,6 +42,7 @@ export const GET: APIRoute<{ entry: CollectionEntry<'docs'> }> = ({ props }) => 
 		if (glance.minutes) header.push(`- Time: about ${glance.minutes} minutes`);
 		if (glance.level) header.push(`- Level: ${glance.level}`);
 		if (glance.needs?.length) header.push(`- You need: ${glance.needs.join('; ')}`);
+		if (glance.where?.length) header.push(`- Where to do it, in order: ${glance.where.map((place, i) => `${i + 1}. ${place}`).join('; ')}`);
 		if (glance.result) header.push(`- At the end: ${glance.result}`);
 		header.push('');
 	}

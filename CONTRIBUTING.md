@@ -36,13 +36,18 @@ Every how-to page has the same shape:
 glance:
   minutes: 10                      # honest estimate for a first-timer
   level: Beginner                  # Beginner | Some experience | Advanced
-  needs:
+  needs:                           # what to have ready before you start
     - A server with Docker installed
     - An admin account in Leantime
+  where:                           # where you do the work, in the order you go there
+    - A terminal on the server
+    - Leantime, under **Company Settings**
   result: Leantime running at `http://localhost:8080` with its own database.
 ```
 
-`needs` and `result` accept `code`, **bold** and [links](/path/). The box is also published as structured data and included in the page's Markdown copy.
+Put places in `where`, not in `needs`: "a terminal" is where you work, Docker is something you need. Name the place as precisely as you can (which machine, which screen), and use the same names as the code block titles further down.
+
+`needs`, `where` and `result` accept `code`, **bold** and [links](/path/). The box is also published as structured data and included in the page's Markdown copy.
 
 ## Components
 

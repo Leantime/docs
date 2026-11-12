@@ -15,7 +15,7 @@ export const collections = {
 				section: z.enum(['install', 'use', 'ai', 'learn', 'dev']).optional(),
 				/**
 				 * The "At a glance" box under the title: how long the task takes, who it's for,
-				 * what you need before you start and what you have at the end.
+				 * what you need before you start, where you do the work (in order) and what you have at the end.
 				 * Also published as timeRequired / educationalLevel in the page's structured data.
 				 */
 				glance: z
@@ -23,6 +23,7 @@ export const collections = {
 						minutes: z.number().int().positive().optional(),
 						level: z.enum(['Beginner', 'Some experience', 'Advanced']).optional(),
 						needs: z.array(z.string()).optional(),
+						where: z.array(z.string()).optional(),
 						result: z.string().optional(),
 					})
 					.optional(),
