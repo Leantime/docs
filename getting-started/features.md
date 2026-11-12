@@ -70,6 +70,12 @@ Not sure yet? Install the open source edition with [Docker](installation/docker.
 | CSV import of to-dos, projects, users, ideas, goals and milestones | Core | Yes |
 | [MCP Server](https://marketplace.leantime.io/product/mcp-server/): let Claude, Cursor, VS Code and other AI assistants work in Leantime | Plugin | <!-- TODO confirm --> To confirm |
 
+### On your phone
+
+| Feature | Open source | Cloud |
+|---|---|---|
+| Leantime Mobile for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile), connected to your own server through Leantime's open source API | Core API; signing in from the app needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin | <!-- TODO confirm --> To confirm |
+
 ### AI
 
 | Feature | Open source | Cloud |
@@ -235,6 +241,12 @@ Yes, with the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) 
 #### Does Leantime have built-in AI?
 
 Yes, in Leantime Cloud: to-do prioritisation, task breakdown, status updates and status reports. These aren't part of the open source edition.
+
+### Mobile
+
+#### Is there a Leantime mobile app?
+
+Yes. Leantime Mobile is available for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile). It connects to your self-hosted Leantime through the open source API. To sign in from the app, with a password or with single sign-on, your server needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin. Single sign-on itself is set up as for the web app; see [Authentication](installation/authentication-configuration.md).
 
 ### Accessibility
 
