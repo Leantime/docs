@@ -525,7 +525,7 @@ UPDATE zp_plugins SET enabled = 0 WHERE foldername = 'PluginName';
 
 3. Clear cache: `php ./bin/leantime cache:clear`
 4. Check `storage/logs/leantime-*.log` for error details
-5. Verify PHP version compatibility (most plugins require PHP 8.0+)
+5. Verify PHP version compatibility (Leantime and its plugins need PHP 8.2 or later)
 
 ### Database Schema Mismatch After Upgrade
 
