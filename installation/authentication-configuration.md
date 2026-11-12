@@ -112,7 +112,7 @@ LEAN_OIDC_CLIENT_ID=your-github-client-id
 LEAN_OIDC_CLIENT_SECRET=your-github-client-secret
 ```
 
-> **Warning:** `0.email` is the first address on the user's GitHub account. That isn't necessarily their primary or a verified address. Because users are matched by email, only use this when people's first GitHub email is their work address. The [AdvancedAuth plugin's GitHub provider](installation/plugin-installation.md#advanced-auth-plugin) uses the primary, verified email instead.
+> **Warning: don't use this for sign-in in production.** `0.email` is simply the first address GitHub lists for the user. It can be an address they added but never verified, and core OIDC only checks a top-level `email_verified` claim, which GitHub doesn't send. Because users are matched by email, someone could add an existing colleague's address to their GitHub account and sign in as that colleague. Use the [AdvancedAuth plugin's GitHub provider](installation/plugin-installation.md#advanced-auth-plugin) instead: it only uses the primary, verified address.
 
 #### Azure AD / Entra ID
 
@@ -178,7 +178,7 @@ LEAN_OIDC_SKIP_TLS_VERIFY=false                # Never enable in production
    ```
    If the provider is only reachable by an internal hostname, fix the container's networking or set the `*_URL_OVERRIDE` variables.
 2. Check that `LEAN_APP_URL` matches your actual domain (including https).
-3. If `LEAN_SESSION_SECURE=true` is set but users reach Leantime over plain HTTP, the browser never sends the session cookie back and every request starts a new login. Remove the setting (it's auto-detected) or serve Leantime over HTTPS.
+3. If `LEAN_SESSION_SECURE=true` is set but users reach Leantime over plain HTTP, the browser never sends the session cookie back and every request starts a new login. Serve Leantime over HTTPS (and keep `LEAN_SESSION_SECURE=true`), or set it to `false` only if you really run plain HTTP. It is not detected automatically: when unset, cookies are sent without the Secure flag.
 
 #### "User not found"
 
@@ -340,8 +340,8 @@ The JSON isn't valid, so Leantime uses its defaults. Write it on one line in sin
 #### Correct Password, but the Login Page Just Reloads
 
 The session cookie isn't being kept:
-- If `LEAN_SESSION_SECURE=true` is set but you serve plain HTTP, the browser drops the cookie. Remove the setting (it's auto-detected) or use HTTPS.
-- Leave `LEAN_APP_DIR` empty unless Leantime really runs in a subfolder. A wrong value sets the cookie for the wrong path.
+- If `LEAN_SESSION_SECURE=true` is set but you serve plain HTTP, the browser drops the cookie. Use HTTPS, or set `LEAN_SESSION_SECURE=false` for an intentional HTTP-only install. On HTTPS, set it to `true`: it isn't detected automatically.
+- Check the session cookie in the browser's developer tools (Application → Cookies). It belongs only to the exact host you opened (for example `pm.example.com`, not `www.pm.example.com`). If `LEAN_APP_URL` points to a different host than the one users type, Leantime's redirects move them to that host and the cookie from the first one is lost. Make `LEAN_APP_URL` the address people actually use.
 
 #### There's No Password Field on the Login Page
 
