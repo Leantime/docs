@@ -6,7 +6,7 @@ To get started with Leantime, make sure you meet the [**system requirements and 
 
 1. Download the latest [**release package**](https://github.com/Leantime/leantime/releases)
 
-2. Create a empty MySQL database
+2. Create an empty database (MySQL 8.0+ or MariaDB 10.6+) and a database user that can use it
 
 3. Create a leantime directory and set appropriate permissions
 
@@ -21,7 +21,7 @@ sudo chmod -R 755 leantime
 
 ## Apache Installation Process
 
-5. Configure Apache to point to `public\` of leantime
+5. Configure Apache to serve the `public/` folder of Leantime
 
 ```bash
 cd /etc/apache2/sites-available/
@@ -31,22 +31,24 @@ sudo nano leantime.conf
 6. Add the following code in `leantime.conf` and save it:
 
 ```leantime.conf
-<VirtualHost *:8080>
-        ServerName leantime
+<VirtualHost *:80>
+        ServerName <your domain>
         DocumentRoot /var/www/html/leantime/public
+
+        # Leantime's public/.htaccess sends every request to index.php
+        <Directory /var/www/html/leantime/public>
+                AllowOverride All
+                Require all granted
+        </Directory>
 
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
 
-Use a port other than `80`, as it is the default port. Then add the following line in `etc/apache2/ports.conf` file:
+Replace `<your domain>` with the domain people will use, for example `leantime.example.com`. If Apache already serves another site on port 80 for that domain, use a different port: change `*:80` to that port and add `Listen <your port>` to `/etc/apache2/ports.conf`.
 
-```
-Listen <<your port number>>
-```
-
-7. Enable the new site configuration, rewrite module and restart apache:
+7. Enable the new site configuration and the rewrite module, then restart Apache:
 
 ```bash
 sudo a2ensite leantime.conf
@@ -54,7 +56,7 @@ sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```
 
-8. Navigate to the `config/` directory in your leantime installation. Rename `.env.sample` to `.env`
+8. Navigate to the `config/` directory in your leantime installation. Copy `sample.env` to `.env`
 
 9. Fill in your database credentials (username, password, host, dbname) in `.env`
 
@@ -62,7 +64,7 @@ sudo systemctl restart apache2
 LEAN_DB_HOST=<your host name>
 LEAN_DB_USER=<your db_user name>
 LEAN_DB_PASSWORD=<your db_user password>
-LEAN_DB_DATABASE=<your db name. From step 1>
+LEAN_DB_DATABASE=<your db name. From step 2>
 LEAN_DB_PORT='3306'                     # Database default port
 ```
 
@@ -72,7 +74,7 @@ LEAN_DB_PORT='3306'                     # Database default port
 
 ## Nginx Installation Process
 
-5. Configure Nginx to point to `public\` of leantime
+5. Configure Nginx to serve the `public/` folder of Leantime
 
 ```bash
 cd /etc/nginx/sites-available/
@@ -84,7 +86,7 @@ sudo nano leantime
 ```leantime
 server {
     listen 80;
-    server_name leantime;
+    server_name <your domain>;
     root /var/www/html/leantime/public;
     index index.php index.html index.htm;
 
@@ -107,7 +109,7 @@ server {
 
 **Note**: Make sure `PHP-FPM` is installed and running
 
-7. Enable the new site configuration, rewrite module and restart apache:
+7. Enable the new site, test the configuration and restart Nginx:
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/leantime /etc/nginx/sites-enabled/
@@ -115,7 +117,7 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
-8. Navigate to the `config/` directory in your leantime installation. Rename `.env.sample` to `.env`
+8. Navigate to the `config/` directory in your leantime installation. Copy `sample.env` to `.env`
 
 9. Fill in your database credentials (username, password, host, dbname) in `.env`
 
@@ -123,7 +125,7 @@ sudo systemctl restart nginx
 LEAN_DB_HOST=<your host name>
 LEAN_DB_USER=<your db_user name>
 LEAN_DB_PASSWORD=<your db_user password>
-LEAN_DB_DATABASE=<your db name. From step 1>
+LEAN_DB_DATABASE=<your db name. From step 2>
 LEAN_DB_PORT='3306'                     # Database default port
 ```
 
