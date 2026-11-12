@@ -82,6 +82,8 @@ The words that come up when you install and run Leantime, in plain language. Kno
 
 **Two-factor authentication (2FA).** A second step at login, usually a code from an authenticator app.
 
-**API key** / **personal access token.** A long secret that lets a script or AI assistant use Leantime's API in your name. Treat it like a password.
+**Personal access token.** A long secret that lets a script or AI assistant use Leantime as **you**, with your projects and permissions. Treat it like a password.
+
+**API key.** A secret for a separate service account that an administrator creates. It acts as its own user with its own role, not as you.
 
 **MCP (Model Context Protocol).** The standard AI assistants use to connect to tools. Leantime's [MCP server](installation/leantime-mcp.md) lets assistants work with your projects.

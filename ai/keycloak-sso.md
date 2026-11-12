@@ -8,7 +8,7 @@ Your team can sign in to Leantime with their Keycloak accounts, using the OpenID
 
 - **Time:** about 30 minutes
 - **Level:** Some experience. You can edit Leantime's settings and you have an administrator account in Keycloak.
-- **You need:** Leantime 3.13 or later, a Keycloak server, and access to Leantime's `.env` file (or its Docker environment).
+- **You need:** Leantime 3.13.2 or later (older versions don't send PKCE; leave **Require PKCE** off on those), a Keycloak server, and access to Leantime's `.env` file (or its Docker environment).
 - **At the end:** an **OIDC Login** button on Leantime's login page that signs people in with Keycloak. People who sign in for the first time get a Leantime account automatically, if you allow it.
 
 ## How does Keycloak sign-in work?
