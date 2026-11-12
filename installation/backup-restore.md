@@ -8,8 +8,9 @@ Regular backups are essential to protect your Leantime data. This guide covers w
 |-----------|----------|----------|
 | **Database** | MySQL/MariaDB/PostgreSQL | Projects, tasks, users, comments, timesheets |
 | **User Files** | `userfiles/` | Uploaded attachments, documents, images |
+| **Public Files** | `public/userfiles/` | Your company logo and other files Leantime shows publicly |
 | **Configuration** | `config/.env` | Database credentials, SMTP, OIDC settings |
-| **Custom Plugins** | `app/Plugins/` | Third-party or custom plugins |
+| **Plugins** | `app/Plugins/` | Marketplace and custom plugins |
 
 ## Database Backup
 
@@ -17,20 +18,23 @@ Regular backups are essential to protect your Leantime data. This guide covers w
 
 ```bash
 # Basic backup
-mysqldump -u leantime -p leantime > leantime_backup_$(date +%Y%m%d).sql
+mysqldump --no-tablespaces -u leantime -p leantime > leantime_backup_$(date +%Y%m%d).sql
 
 # With compression
-mysqldump -u leantime -p leantime | gzip > leantime_backup_$(date +%Y%m%d).sql.gz
+mysqldump --no-tablespaces -u leantime -p leantime | gzip > leantime_backup_$(date +%Y%m%d).sql.gz
 ```
+
+`--no-tablespaces` lets a database user without the `PROCESS` privilege make the backup. Without it, MySQL 8 shows "Access denied; you need (at least one of) the PROCESS privilege(s)".
 
 ### Docker
 
-```bash
-docker exec leantime_db mysqldump -u leantime -p'password' leantime > backup.sql
+Run this in the folder with your `docker-compose.yml`. It uses the database name, user and password from the `.env` file of the [official Docker setup](installation/docker.md), so you don't need to type them:
 
-# Or with docker-compose
-docker-compose exec db mysqldump -u leantime -p'password' leantime > backup.sql
+```bash
+docker compose exec -T leantime_db sh -c 'exec mysqldump --no-tablespaces -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' > leantime_backup_$(date +%Y%m%d).sql
 ```
+
+`leantime_db` is the database service's name in the official `docker-compose.yml`. If you named it differently, use your name.
 
 ### PostgreSQL
 
@@ -57,14 +61,19 @@ For larger databases, use **Custom** export with compression enabled.
 tar -czvf leantime_files_$(date +%Y%m%d).tar.gz \
     config/.env \
     userfiles/ \
+    public/userfiles/ \
     app/Plugins/
 ```
 
 ### Docker
 
+The official setup keeps files in Docker volumes. Copy them out of the `leantime` service:
+
 ```bash
-docker cp leantime:/var/www/html/userfiles ./userfiles_backup
-docker cp leantime:/var/www/html/app/Plugins ./plugins_backup
+docker compose cp leantime:/var/www/html/userfiles ./userfiles_backup
+docker compose cp leantime:/var/www/html/public/userfiles ./public_userfiles_backup
+docker compose cp leantime:/var/www/html/app/Plugins ./plugins_backup
+cp .env ./env_backup
 ```
 
 ### Shared Hosting (cPanel)
@@ -73,8 +82,9 @@ docker cp leantime:/var/www/html/app/Plugins ./plugins_backup
 2. Navigate to your Leantime directory
 3. Select and compress these folders:
    - `userfiles/`
+   - `public/userfiles/`
    - `config/` (contains `.env`)
-   - `app/Plugins/` (if you have custom plugins)
+   - `app/Plugins/` (if you use plugins)
 4. Download the zip file
 
 ## Automated Backup Script
@@ -89,10 +99,10 @@ DATE=$(date +%Y%m%d)
 mkdir -p "$BACKUP_DIR/$DATE"
 
 # Database
-mysqldump -u leantime -p'password' leantime | gzip > "$BACKUP_DIR/$DATE/db.sql.gz"
+mysqldump --no-tablespaces -u leantime -p'password' leantime | gzip > "$BACKUP_DIR/$DATE/db.sql.gz"
 
 # Files
-tar -czvf "$BACKUP_DIR/$DATE/files.tar.gz" config/.env userfiles/ app/Plugins/
+tar -czvf "$BACKUP_DIR/$DATE/files.tar.gz" config/.env userfiles/ public/userfiles/ app/Plugins/
 
 # Cleanup old backups (30 days)
 find "$BACKUP_DIR" -type d -mtime +30 -exec rm -rf {} +
@@ -117,8 +127,8 @@ mysql -u leantime -p leantime < backup.sql
 # From compressed
 gunzip < backup.sql.gz | mysql -u leantime -p leantime
 
-# Docker
-docker exec -i leantime_db mysql -u leantime -p'password' leantime < backup.sql
+# Docker (in the folder with your docker-compose.yml)
+docker compose exec -T leantime_db sh -c 'exec mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' < backup.sql
 ```
 
 ### Restore Files
@@ -129,7 +139,17 @@ tar -xzvf files.tar.gz -C /var/www/leantime/
 
 # Fix permissions
 chown -R www-data:www-data /var/www/leantime/userfiles
+chown -R www-data:www-data /var/www/leantime/public/userfiles
 chown -R www-data:www-data /var/www/leantime/app/Plugins
+```
+
+With Docker, copy the folders back into the `leantime` service and give them back to the web server user. Files you copy in are owned by your own user, and Leantime can't change or delete them until you do this:
+
+```bash
+docker compose cp ./userfiles_backup/. leantime:/var/www/html/userfiles
+docker compose cp ./public_userfiles_backup/. leantime:/var/www/html/public/userfiles
+docker compose cp ./plugins_backup/. leantime:/var/www/html/app/Plugins
+docker compose exec -u root leantime chown -R www-data:www-data /var/www/html/userfiles /var/www/html/public/userfiles /var/www/html/app/Plugins
 ```
 
 ### Post-Restore
@@ -153,15 +173,15 @@ Moving Leantime to a new server requires backing up from the old server, install
 
 ```bash
 # Database
-mysqldump -u leantime -p leantime | gzip > leantime_migration.sql.gz
+mysqldump --no-tablespaces -u leantime -p leantime | gzip > leantime_migration.sql.gz
 
 # Files
-tar -czvf leantime_files.tar.gz config/.env userfiles/ app/Plugins/
+tar -czvf leantime_files.tar.gz config/.env userfiles/ public/userfiles/ app/Plugins/
 ```
 
 ### Step 2: Install Leantime on New Server
 
-Follow the standard [installation guide](/installation/quick-start.md) but **stop before the web installer**. You'll restore your existing database instead of creating a new one.
+Follow the standard [installation guide](installation/installation-types.md) but **stop before the web installer**. You'll restore your existing database instead of creating a new one.
 
 ### Step 3: Transfer Backup Files
 
@@ -185,7 +205,7 @@ gunzip < /tmp/leantime_migration.sql.gz | mysql -u leantime -p leantime
 tar -xzvf /tmp/leantime_files.tar.gz -C /var/www/leantime/
 
 # Fix permissions
-chown -R www-data:www-data /var/www/leantime/userfiles
+chown -R www-data:www-data /var/www/leantime/userfiles /var/www/leantime/public/userfiles /var/www/leantime/app/Plugins
 ```
 
 ### Step 5: Update Configuration
@@ -217,10 +237,10 @@ Always backup before upgrading Leantime. This protects you if an upgrade fails o
 2. **Create a full backup:**
    ```bash
    # Quick pre-upgrade backup
-   mysqldump -u leantime -p leantime | gzip > pre_upgrade_$(date +%Y%m%d).sql.gz
-   tar -czvf pre_upgrade_files_$(date +%Y%m%d).tar.gz config/.env userfiles/ app/Plugins/
+   mysqldump --no-tablespaces -u leantime -p leantime | gzip > pre_upgrade_$(date +%Y%m%d).sql.gz
+   tar -czvf pre_upgrade_files_$(date +%Y%m%d).tar.gz config/.env userfiles/ public/userfiles/ app/Plugins/
    ```
-3. **Note your current version** (found in Company Settings or `composer.json`)
+3. **Note your current version.** Click the **?** (help) icon in the top right of Leantime. The version is at the bottom, under **System**.
 4. **Test in staging first** if possible
 
 ### If Upgrade Fails
@@ -267,8 +287,10 @@ aws s3 sync /backups/ s3://bucket/leantime-backups/
 
 ### Access denied during backup
 
+If the message mentions the `PROCESS` privilege, add `--no-tablespaces` to the `mysqldump` command. Otherwise, give the user the privileges a backup needs:
+
 ```sql
-GRANT SELECT, LOCK TABLES ON leantime.* TO 'leantime'@'localhost';
+GRANT SELECT, LOCK TABLES, SHOW VIEW, TRIGGER ON leantime.* TO 'leantime'@'localhost';
 ```
 
 ### Permission denied after restore
@@ -289,12 +311,12 @@ mysql -u leantime -p --max_allowed_packet=512M leantime < backup.sql
 
 ### Files missing after restore
 
-Check that both `userfiles/` locations are restored:
-- `userfiles/` (root directory)
-- `public/userfiles/` (some versions)
+Check that both file folders are restored:
+- `userfiles/`: attachments and documents
+- `public/userfiles/`: your logo and other public files
 
 ## Getting Help
 
-1. Check [Common Problems](/installation/common-issues.md)
+1. Check [Common Problems](installation/common-issues.md)
 2. Search [GitHub Issues](https://github.com/Leantime/leantime/issues)
 3. Ask in [Discord](https://discord.gg/4zMzJtAq9z) #self-hosted

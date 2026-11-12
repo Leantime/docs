@@ -1,55 +1,74 @@
+# Development Setup
+
+How to run Leantime from source to work on its code. To run Leantime for your team, use [Docker](installation/docker.md) or a [package installation](installation/package-installation.md) instead.
+
 ## Development using Docker
-  
-For development, we use a dockerized development environment. You will need to have
-``docker``, ``docker compose``, ``make``, ``composer`` and ``npm`` installed. to run the application for development, in the root of this repository, run a primer with
 
-```make clean build```
+You need `git`, `docker` (with `docker compose`), `make`, `composer` and `npm`.
 
-afterwards, run 
+1. Clone the repository and open its folder:
 
-```make run-dev```
+   ```bash
+   git clone https://github.com/Leantime/leantime.git
+   cd leantime
+   ```
 
-this will start the development server on port 8080.
+2. Install the dependencies, build the JavaScript and CSS, and start the containers:
 
-The dev environment  provides a mysql server, mail server, s3 server, and should be good to go for your needs out of the box. The configuration of the development environment is found in ``.dev/.env``, and is already seeded with the appropriate values. **You should probably not be modifying this unless you plan to work on a feature for a specific integration**. the applications you get are as follows
+   ```bash
+   make run-dev
+   ```
 
-* [http://localhost:8080](http://localhost:8080) : leantime
-* [http://localhost:8081](http://localhost:8081) : maildev - to check emails sent
-* [http://localhost:8082](http://localhost:8082) : phpmyadmin(authentication ``leantime:leantime``) to check the DB schema and data
-* [http://localhost:8083](http://localhost:8083) : s3ninja - to check s3 uploads. You need to enable this in the ``.dev/.env`` file by enabling s3
+3. Open [http://localhost:5080](http://localhost:5080) (or `https://localhost:5443`) and follow the installer.
 
-Additionally, XDebug is enabled, but you will have to modify your 
-IDE key in the ``.dev/xdebug.ini`` file(or alternatively, on your IDE). You also need to have port 9003 temporarily open on your firewall so you can utilize it effectively. This is because connections from docker to the host will count as external inbound connection
+The containers mount your repository folder, so code changes show up without a rebuild. After changing JavaScript or CSS, run `npx mix` again.
 
+### What the development environment includes
 
-## Development on host
+| Service | What it's for | How to reach it |
+|---------|---------------|-----------------|
+| `leantime-dev` | Leantime, with Xdebug | `http://localhost:5080` |
+| `leantime-db` | MySQL 8.4. Database, user and password are all `leantime` | From your computer: run `docker compose --file .dev/docker-compose.yaml port leantime-db 3306` for the port |
+| `maildev` | Catches emails so you can read them | Web interface: run `docker compose --file .dev/docker-compose.yaml port maildev 8081` for the port |
+| `leantime-redis` | Redis, for testing the Redis cache and sessions | Inside Docker as `leantime-redis` |
+| `s3ninja` | A local S3 server, for testing S3 file storage | Inside Docker as `s3ninja` |
 
-For development environments and to make changes to Leantime follow the steps below:
+The database settings are set in `.dev/docker-compose.yaml`. Leantime doesn't send email to MailDev until you point it there in `config/.env`:
 
-- Install composer and npm
-- Clone repository to your local server
-- Create MySQL database
-- Run composer to load php dependencies
-
-```
-composer install
-```
-
-then
-
-```
-npm install
+```ini
+LEAN_EMAIL_USE_SMTP = true
+LEAN_EMAIL_SMTP_HOSTS = 'maildev'
+LEAN_EMAIL_SMTP_PORT = 465
+LEAN_EMAIL_SMTP_AUTH = false
+LEAN_EMAIL_SMTP_AUTO_TLS = false
 ```
 
-to load Javascript dependencies and finally run the grunt task to create the compiled js files
+### Xdebug
 
+Xdebug is on and connects to port 9003 on your computer, with the IDE key `PHPSTORM`. Change the key in `.dev/xdebug.ini` if your IDE uses another one. Your firewall must allow incoming connections on port 9003, because connections from Docker to your computer count as external.
+
+### Tests
+
+```bash
+make unit-test          # unit tests
+make acceptance-test    # browser tests
 ```
-npx mix
-```
 
-- Point your local domain to the public/ directory
-- Rename config/configuration.sample.php to config/configuration.php
-- Fill in your database credentials (username, password, host, dbname) in config/configuration.php
-- Navigate to <localdomain>/install
-- Follow instructions to install database and user account     
+Both start their own containers, with Leantime on port 8002.
 
+## Development on your own machine
+
+You need PHP 8.2 or later with the extensions in [System Requirements](installation/system-requirements.md), MySQL 8.0+ or MariaDB 10.6+, a web server, `composer` and `npm`.
+
+1. Clone the repository and create an empty database.
+2. Install the dependencies and build the JavaScript and CSS:
+
+   ```bash
+   make build-dev
+   ```
+
+   This runs `npm install`, `composer install` and `npx mix`.
+
+3. Point your web server's document root at the `public/` folder.
+4. Copy `config/sample.env` to `config/.env` and fill in your database settings (`LEAN_DB_HOST`, `LEAN_DB_USER`, `LEAN_DB_PASSWORD`, `LEAN_DB_DATABASE`).
+5. Open `http://<your local domain>/install` and follow the installer.

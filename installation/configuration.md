@@ -245,4 +245,4 @@ Logs are written to `storage/logs/leantime-YYYY-MM-DD.log`
 
 ## All Environment Variables Reference
 
-For a complete list of all available environment variables, see the [.env.sample](https://github.com/Leantime/leantime/blob/master/.env.sample) file in the Leantime repository.
+For a complete list of all available environment variables, see the [sample.env](https://github.com/Leantime/leantime/blob/master/config/sample.env) file in the Leantime repository.
