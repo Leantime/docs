@@ -7,7 +7,7 @@ Business pressure, timelines, budgets, changing requirements... all these things
 
 Create a happier team, create more productivity. 
 
-#### What makes a team happier?
+## What makes a team happier?
 
 Research is starting to support the idea that teams of 5-10 people are more productive, have more engagement, more effective communication, innovate better, and are overall more supportive of each other.  While this isn't always possible in all organizations, breaking work into smaller functioning teams can improve morale and project outcomes.  When not available, managers can boost team morale by incorporating use of collaborative technologies (like Leantime), increasing visibility of objectives and goals, creating autonomy with monitoring output vs hours, and investing in employees.
 
@@ -15,7 +15,7 @@ No matter the team size, teams undoubtedly function better with better managers.
 
 The goal of Leantime is to increase accessibility, visibility, and make managing work efficient.  When plans are clear, work is straight forward, autonomous and easy to communicate, then you've effectively set your projects up for team success. Leantime was built to move teams through the product life cycle rather than for product development to overtake the team.
 
-#### Team Functions in Leantime
+## Team Functions in Leantime
 
 1. Increase Visibility:  See project status, work in progress, team member status, ideas, product research, and more in quick access.
 2. Accessible: Straight forward, easy to use no matter the team member role or background.

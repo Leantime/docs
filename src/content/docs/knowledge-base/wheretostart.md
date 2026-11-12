@@ -21,7 +21,7 @@ To learn more about these methodologies in Leantime click here: [Design Thinking
 
 If this is a new project, idea, or effort -- this is how we'd suggest to start -- knowing that these steps can be revisited as your project progresses, more information is learned or as portions finish and new ones start.
 
-### What if I've already got an idea?
+## What if I've already got an idea?
   
 Odds are, this is likely the case.  Human beings are problem solvers; it's how we evolve and improve on things. We aim to make things better. The methodology here is not meant to confuse your process but rather it is here to validate it and increase successful outcomes.  
 
@@ -34,7 +34,7 @@ So your order might look like:
 3. Milestones
 4. To Dos
 
-### What if I've...
+## What if I've...
 
 Have a unique situation that needs navigating?  Please reach out at support@leantime.io.
 

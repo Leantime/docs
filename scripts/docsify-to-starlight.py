@@ -24,6 +24,16 @@ What it does:
   4. Applies scripts/page-metadata.json: hand-written search titles and
      descriptions, and `draft: true` for empty pages. To change those on the
      already-migrated pages, edit the JSON and run with --metadata-only.
+  5. Tidies every page (also on its own with --post-only):
+     - headings: a page body starts at H2 (Starlight renders the title as the
+       only H1), so leftover H1s move down a level, and no level is skipped
+       (an H4 right under an H2 becomes an H3);
+     - callouts: a blockquote that starts with **Note:**, **Tip:**,
+       **Important:**, **Warning:** or **Danger:** becomes a Starlight aside
+       (:::note, :::tip, :::caution, :::danger);
+     - overrides: files in scripts/overrides/ replace the converted page at the
+       same path (an override x.mdx replaces x.md). Pages that use components
+       (Steps, Tabs, Cards) live there so a re-run keeps them.
 """
 
 import json
@@ -232,6 +242,115 @@ def convert(page_src, dest):
         f.write('\n'.join(head) + '\n\n' + body)
 
 
+HEADING = re.compile(r'^(#{1,6})(\s+.*)$')
+
+# Callout label (lower case, without the colon) -> Starlight aside type.
+CALLOUTS = {
+    'note': 'note', 'info': 'note', 'tip': 'tip', 'hint': 'tip',
+    'important': 'caution', 'warning': 'caution', 'caution': 'caution',
+    'security note': 'caution', 'beta notice': 'caution', 'danger': 'danger',
+}
+CALLOUT_START = re.compile(r'^>\s*\*\*([A-Za-z ]+?):?\*\*:?\s*(.*)$')
+DEFAULT_TITLE = {'note': 'note', 'tip': 'tip', 'caution': 'caution', 'danger': 'danger'}
+
+
+def normalize_headings(body):
+    """One H1 per page (the title) and no skipped levels. Leaves code fences alone.
+
+    Each heading lands one level below the nearest heading above it that was
+    written at a higher level, so siblings stay siblings: a page whose sections
+    were all H4 gets H2 sections, and a stray "# Related" becomes an H2.
+    """
+    lines = body.split('\n')
+    in_fence = False
+    stack = []  # (written level, new level)
+    for i, line in enumerate(lines):
+        if FENCE.match(line):
+            in_fence = not in_fence
+            continue
+        m = None if in_fence else HEADING.match(line)
+        if not m:
+            continue
+        written = len(m.group(1))
+        while stack and stack[-1][0] >= written:
+            stack.pop()
+        level = min(stack[-1][1] + 1 if stack else 2, 6)
+        stack.append((written, level))
+        lines[i] = '#' * level + m.group(2)
+    return '\n'.join(lines)
+
+
+def convert_callouts(body):
+    """> **Note:** text  ->  :::note ... :::  (the label is the aside title unless it is the default)."""
+    lines = body.split('\n')
+    out, i, in_fence = [], 0, False
+    while i < len(lines):
+        line = lines[i]
+        if FENCE.match(line):
+            in_fence = not in_fence
+        m = None if in_fence else CALLOUT_START.match(line)
+        kind = CALLOUTS.get(m.group(1).strip().lower()) if m else None
+        if not kind:
+            out.append(line)
+            i += 1
+            continue
+        label = m.group(1).strip()
+        content = [m.group(2)]
+        i += 1
+        while i < len(lines) and lines[i].startswith('>'):
+            content.append(re.sub(r'^>\s?', '', lines[i]))
+            i += 1
+        title = '' if label.lower() == DEFAULT_TITLE[kind] else f'[{label}]'
+        out += [f':::{kind}{title}', *content, ':::']
+    return '\n'.join(out)
+
+
+OVERRIDES = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'overrides')
+
+
+def apply_overrides():
+    """Copy scripts/overrides/** over the converted pages."""
+    count = 0
+    for root, _, files in os.walk(OVERRIDES):
+        for name in files:
+            src = os.path.join(root, name)
+            rel = os.path.relpath(src, OVERRIDES)
+            dest = os.path.join(DEST, rel)
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            stem, ext = os.path.splitext(dest)
+            other = stem + ('.md' if ext == '.mdx' else '.mdx')
+            if os.path.exists(other):
+                os.remove(other)
+            with open(src, encoding='utf-8') as f, open(dest, 'w', encoding='utf-8') as g:
+                g.write(f.read())
+            count += 1
+    print(f'Applied {count} overrides.')
+
+
+def tidy_pages():
+    """Heading levels and callouts on every converted Markdown page."""
+    changed = 0
+    for root, _, files in os.walk(DEST):
+        for name in files:
+            if not name.endswith('.md'):
+                continue
+            path = os.path.join(root, name)
+            text = open(path, encoding='utf-8').read()
+            fm, sep, body = text.partition('\n---\n') if text.startswith('---\n') else ('', '', text)
+            new_body = convert_callouts(normalize_headings(body))
+            if new_body != body:
+                with open(path, 'w', encoding='utf-8') as f:
+                    f.write(fm + sep + new_body)
+                changed += 1
+    print(f'Tidied {changed} pages.')
+
+
+def post_process():
+    tidy_pages()
+    apply_overrides()
+    apply_metadata()
+
+
 METADATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'page-metadata.json')
 
 
@@ -242,6 +361,8 @@ def apply_metadata():
     for rel, values in meta.items():
         if rel.startswith('_'):
             continue
+        if any(os.path.exists(os.path.join(OVERRIDES, r)) for r in (rel, rel + 'x')):
+            continue  # an override page sets its own front matter
         path = os.path.join(DEST, rel)
         if not os.path.exists(path):
             print('page-metadata.json: no page at ' + path)
@@ -265,6 +386,9 @@ def main():
     if '--metadata-only' in sys.argv:
         apply_metadata()
         return
+    if '--post-only' in sys.argv:
+        post_process()
+        return
     if os.path.exists(DEST):
         sys.exit(DEST + ' already exists; migration already ran.')
     pages = collect()
@@ -282,7 +406,7 @@ def main():
     for src, dest in moved:
         convert(src, dest)
     print(f'Moved and converted {len(moved)} pages.')
-    apply_metadata()
+    post_process()
 
 
 if __name__ == '__main__':

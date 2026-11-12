@@ -21,7 +21,7 @@ This view is geared towards those ideas or projects that need some validation or
 
 Ready to Answer?  Click *Add New*.
 
-### The Customer
+## The Customer
 
 ![logo](/_images/getting-started/image7.png)
 
@@ -53,13 +53,13 @@ In the end, it should look something like this:
 
 Click *Save & Close*.
 
-### The Problem
+## The Problem
 
 This section is laid out similar to The Customer and asks the same questions.
 
 ![logo](/_images/getting-started/HelperContent-GettingStarted-ResearchBoard-TheProblem.png)
 
-### The Solution
+## The Solution
 
 The pattern continues from The Customer & The Problem sections.  In these windows, you will assign text to the information, click Save & Close or Save and can also link to existing milestones or to create new ones.  
 
@@ -67,7 +67,7 @@ The pattern continues from The Customer & The Problem sections.  In these window
 
 For more information on Milestones: [Roadmap Planning](/using-leantime/roadmap-planning/)
 
-### The Little Details
+## The Little Details
 
 All the arrows here will point to changes you can make to the board:
 

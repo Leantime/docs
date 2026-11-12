@@ -3,13 +3,13 @@ title: "The Phases of a Project"
 draft: true
 ---
 
-#### Design Phase
+## Design Phase
 
-#### Discovery / Research
+## Discovery / Research
 
-#### Execute
+## Execute
 
-#### Support / Maintanence 
+## Support / Maintanence 
 
   
 

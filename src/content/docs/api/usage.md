@@ -7,7 +7,7 @@ Leantime provides a JSON RPC API Endpoint following the 2.0 conventions as outli
 As opposed to a REST API, the JSON RPC API focuses on transactions rather than domain objects. That means that you can get the results of service methods and have thus more flexibility in the usage of the API. 
 You can connec to the single endpoint using either `GET` or `POST`. 
 
-# Connect
+## Connect
 
 First create a new API Key under "Company Settings". Similar to the user set up API Keys can have roles and projects assigned to them limiting the scope. 
 When you create the endpoint please take note of the secret and store it in a secure place. This is the only time you will see the secret, after the creation secrets are hashed in the database and cannot be retrieved again.
@@ -29,7 +29,7 @@ curl https://{{YOURDOMAIN}}/api/jsonrpc
 This is the only endpoint you will use as any further interactions are defined in the body/header of the request. 
 Each request needs to contain the `x-api-key` header to authenticate a transaction. There is no concept of sessions. 
 
-# Sending a POST Request
+## Sending a POST Request
 
 The format of each request is based on the JSON RPC v2 specifications and follows the same structure:
 
@@ -67,7 +67,7 @@ The fully formed body for the POST request to get one ticket with the id "9" wou
 } 
 ```
 
-# Sending a GET Request
+## Sending a GET Request
 
 We recommend using POST requests for most interactions with the API. If this is not possible you can use GET requests as well. The format is the same however the `params` property needs to be in base64 and then url encoded. The equivalent GET request for the example above is:
 

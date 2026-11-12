@@ -30,7 +30,9 @@ LEAN_EMAIL_SMTP_SECURE='tls'
 LEAN_EMAIL_SMTP_PORT='587'
 ```
 
-> **Important:** Gmail requires an [App Password](https://support.google.com/accounts/answer/185833) if 2-Step Verification is enabled. Your regular password will not work.
+:::caution[Important]
+Gmail requires an [App Password](https://support.google.com/accounts/answer/185833) if 2-Step Verification is enabled. Your regular password will not work.
+:::
 
 ### Microsoft 365 / Outlook
 
@@ -88,7 +90,9 @@ LEAN_EMAIL_SMTP_SECURE='tls'
 LEAN_EMAIL_SMTP_PORT='587'
 ```
 
-> **Note:** Replace `us-east-1` with your SES region.
+:::note
+Replace `us-east-1` with your SES region.
+:::
 
 ## Port & Security Settings
 
@@ -125,7 +129,9 @@ LEAN_EMAIL_SMTP_AUTO_TLS=true                  # Auto-upgrade to TLS if availabl
 LEAN_EMAIL_SMTP_SSLNOVERIFY=false              # Set to true only for self-signed certificates
 ```
 
-> **Security note:** Set `LEAN_EMAIL_SMTP_SSLNOVERIFY=true` only if you're using self-signed certificates in a development environment. For production, always use valid SSL certificates.
+:::caution[Security note]
+Set `LEAN_EMAIL_SMTP_SSLNOVERIFY=true` only if you're using self-signed certificates in a development environment. For production, always use valid SSL certificates.
+:::
 
 ## Testing Your Configuration
 

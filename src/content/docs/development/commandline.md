@@ -18,40 +18,40 @@ php ./bin/leantime list
 ```
 
 
-# Add Users
+## Add Users
 Allows you to add users
 ```
 php ./bin/leantime user:add 
 ```
 
-# DB Updates
+## DB Updates
 Runs any pending db updates. This can also be used to install the db.
 ```
 php ./bin/leantime db:migrate
 ```
 
 
-# Cron Jobs
+## Cron Jobs
 Executes the cron job queue
 
 ```
 php ./bin/leantime cron:run
 ```
 
-# Save Settings
+## Save Settings
 Saves any setting to the settings table (key value pair)
 
 ```
 php ./bin/leantime setting:save
 ```
 
-# Test Email
+## Test Email
 Sends a test email
 ```
 php ./bin/leantime email:testemail --address="YOUREMAILADDRESS"
 ```
 
-# Plugins
+## Plugins
 List all plugins
 ```
 php ./bin/leantime plugin:list

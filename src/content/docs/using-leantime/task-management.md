@@ -67,7 +67,7 @@ Starting work will start a task timer that allows you to track the time spent on
   ![logo](/_images/getting-started/timestartwork.png)
   
   
-# Related
+## Related
  
 - [Agile](/knowledge-base/agile/)
 - [Timesheets](/using-leantime/timesheets/)
