@@ -10,7 +10,7 @@ This FAQ document addresses common questions and issues gathered from GitHub iss
 
 Leantime 3.2 and later require:
 - PHP 8.2 or higher
-- MySQL 8.0+ or MariaDB 10.6+
+- MySQL 8.0+, MariaDB 10.6+, or PostgreSQL (since Leantime 3.6)
 - Web server (Apache, Nginx, or IIS)
 - Minimum 512MB RAM (1GB recommended)
 

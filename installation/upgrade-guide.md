@@ -144,7 +144,7 @@ Known issues in 3.6.0/3.6.1:
 
 All fixed in v3.6.2.
 
-**Requirements:** PHP 8.2+ (required since Leantime 3.2) and MySQL 8.0+ or MariaDB 10.6+.
+**Requirements:** PHP 8.2+ (required since Leantime 3.2) and MySQL 8.0+, MariaDB 10.6+ or PostgreSQL.
 
 ### Upgrading to 3.2.x
 
