@@ -15,6 +15,14 @@
    - [Upgrade Guide](installation/upgrade-guide.md)
    - [Common Issues](installation/common-issues.md)
 
+**AI with Leantime**
+
+- [Overview](ai/README.md)
+- [Working with AI assistants](ai/working-with-ai.md)
+- [Glossary](ai/glossary.md)
+- [Keycloak SSO with an AI assistant](ai/keycloak-sso.md)
+- [MCP server](installation/leantime-mcp.md)
+
 **Development**
 
 - [Development/Local](installation/development.md)
