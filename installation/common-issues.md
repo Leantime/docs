@@ -36,7 +36,9 @@ If a plugin isn't compatible with the new version, Leantime shows it as **Not co
 - **Nginx:** add `try_files $uri $uri/ /index.php?$args;` to `location /`. See [Install from the release package](installation/package-installation.md).
 - **IIS:** install the IIS URL Rewrite module. Leantime ships the rules in `public/web.config`. Set `index.php` as the default document and give the IIS user write access to `storage/`, `bootstrap/cache/`, `userfiles/`, `public/userfiles/` and `app/Plugins/`.
 
-**It keeps redirecting to /install:** set `LEAN_APP_URL` with the protocol and, if you use one, the port. Then empty `storage/framework/cache/` and `storage/framework/sessions/` and start with an empty database.
+**It keeps redirecting to /install:** set `LEAN_APP_URL` with the protocol and, if you use one, the port. Then empty `storage/framework/cache/` and `storage/framework/sessions/`. If this is a **new install with no data yet**, also start again with an empty database.
+
+> **Danger:** Never empty the database of a Leantime that's already in use. An existing install that suddenly redirects to `/install` usually has wrong database settings in `.env`; fix those instead, and back up before you change anything.
 
 > **Note:** A log line like `Table 'leantime.zp_user' doesn't exist` before you've run the installer is expected. It means Leantime hasn't been installed yet.
 
@@ -50,7 +52,7 @@ If a plugin isn't compatible with the new version, Leantime shows it as **Not co
 
 ## Folder 'vendor' cannot be found
 
-You downloaded the source code instead of the release package. Use the `Latest-*.zip` file from [GitHub releases](https://github.com/Leantime/leantime/releases), or build the source as described in [Local development setup](installation/development.md).
+You downloaded the source code instead of the release package. Use the release package, `Leantime-vX.Y.Z.zip` (for example `Leantime-v3.14.0.zip`), from [GitHub releases](https://github.com/Leantime/leantime/releases), not the "Source code" download, or build the source as described in [Local development setup](installation/development.md).
 
 ## Leantime looks unstyled after installing
 

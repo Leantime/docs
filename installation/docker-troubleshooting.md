@@ -19,7 +19,7 @@ Inside the container, Leantime's own log is in `storage/logs/`:
 docker compose exec leantime sh -c 'tail -n 50 storage/logs/leantime*.log'
 ```
 
-For more detail, add `LEAN_DEBUG=1` to `.env`, run `docker compose up -d`, try again, then remove it.
+For more detail, add `LEAN_DEBUG=1` to `.env` and run `docker compose up -d`. Try again, then remove the line and run `docker compose up -d` once more: the container keeps the settings it was created with, so removing the line alone leaves debug mode on.
 
 To check that Leantime and its database answer, open `http://<your server>:8080/health`. It returns `{"status":"ok"}`, or an error when the database can't be reached.
 
@@ -31,10 +31,10 @@ You see `(unhealthy)` in `docker compose ps`, or `nginx entered FATAL state, too
 - **File permissions on volumes.** Since 3.4 the image runs as user 1000 instead of root. Volumes created by an older image can still belong to root. Fix each one once, for example:
 
   ```bash
-  docker run --rm -v leantime_userfiles:/v alpine sh -c 'chgrp -R 0 /v && chmod -R g=u /v'
+  docker run --rm -v leantime_userfiles:/v alpine sh -c 'chown -R 1000:0 /v && chmod -R g=u /v'
   ```
 
-  Repeat for the `public_userfiles`, `plugins` and `logs` volumes (`docker volume ls` shows their exact names).
+  This makes user 1000 (the image's `www-data`) the owner and gives group 0 the same rights, so it also works with `user: "<uid>:0"` below. Repeat for the `public_userfiles`, `plugins` and `logs` volumes (`docker volume ls` shows their exact names).
 - **Your NAS or platform forces another user ID** (Unraid, TrueNAS, rootless Podman). Run the container with group 0, for example `user: "1001:0"` in `docker-compose.yml`. The writable folders in the image belong to group 0.
 - **An old image.** Run `docker compose pull` and `docker compose up -d`. A local `latest` tag doesn't update by itself.
 
@@ -107,7 +107,10 @@ Don't mount all of `/var/www/html/storage`: that hides folders the image needs f
 
 ## Uploads fail for large files
 
-The image accepts uploads up to 100 MB. If larger files fail or smaller ones fail with `413`, raise the limit on your reverse proxy (`client_max_body_size` on Nginx).
+The image accepts uploads up to 100 MB.
+
+- **Files under 100 MB fail** (often with `413 Request Entity Too Large`): your reverse proxy has a lower limit. Raise it, for example `client_max_body_size 100M;` on Nginx.
+- **Files over 100 MB:** the image's own limits apply too (`client_max_body_size` in its Nginx and `upload_max_filesize` / `post_max_size` in PHP). Raising them means mounting your own configuration files over the image's, so consider [S3 file storage](installation/configuration.md?id=s3-file-storage) or sharing large files by link instead.
 
 ## Leantime is slow
 
@@ -123,17 +126,9 @@ The image includes the PostgreSQL driver. Set `LEAN_DB_DEFAULT_CONNECTION=pgsql`
 
 Logging uses `LEAN_LOG_CHANNELS` (comma-separated: `single`, `syslog`, `sentry`, `stderr`). In containers, `stderr` sends Leantime's log to `docker compose logs`.
 
-## Kubernetes (Helm chart)
+## Kubernetes
 
-The community [gissilabs Helm chart](https://github.com/gissilabs/charts) pins an old MariaDB image tag. If the pull fails with `Failed to pull image 'docker.io/bitnami/mariadb:...'`, override the tag in your values:
-
-```yaml
-mariadb:
-  image:
-    tag: "10.6"
-```
-
-See [Install on Kubernetes](installation/kubernetes.md).
+See [Install on Kubernetes](installation/kubernetes.md) for the community Helm chart.
 
 ## Still stuck?
 
