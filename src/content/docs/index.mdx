@@ -1,0 +1,44 @@
+---
+title: Leantime Documentation
+description: Install, configure and use Leantime, the open source project management system for non-project managers. Self-hosting, Docker, SSO, plugins, API and MCP.
+template: splash
+hero:
+  tagline: Leantime is an open source project management system for non-project managers. It combines strategy, planning and execution, and is built with ADHD, dyslexia and autism in mind.
+  actions:
+    - text: Install Leantime
+      link: /installation/installation-types/
+      icon: right-arrow
+    - text: Leantime Cloud
+      link: https://leantime.io/pricing/
+      icon: external
+      variant: minimal
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Self-hosting
+
+<CardGrid>
+	<LinkCard title="System requirements" href="/installation/system-requirements/" description="PHP, database and server requirements." />
+	<LinkCard title="Docker" href="/installation/docker/" description="Run the official image with Docker or Docker Compose." />
+	<LinkCard title="Configuration" href="/installation/configuration/" description="Environment variables for database, files, email, cache and more." />
+	<LinkCard title="Upgrade guide" href="/installation/upgrade-guide/" description="Update safely, with version-specific notes." />
+</CardGrid>
+
+## Sign-in and integrations
+
+<CardGrid>
+	<LinkCard title="Authentication (OIDC, LDAP)" href="/installation/authentication-configuration/" description="Single sign-on with your identity provider." />
+	<LinkCard title="Plugins and AdvancedAuth" href="/installation/plugin-installation/" description="Install plugins; GitHub, Google, Microsoft, Okta, Keycloak and Authentik sign-in." />
+	<LinkCard title="MCP server" href="/installation/leantime-mcp/" description="Connect Claude, Cursor, VS Code and other AI assistants to Leantime." />
+	<LinkCard title="JSON-RPC API" href="/api/usage/" description="Automate Leantime with API keys and personal access tokens." />
+</CardGrid>
+
+## Using Leantime
+
+<CardGrid>
+	<LinkCard title="Task management" href="/using-leantime/task-management/" description="To-dos, boards, statuses and subtasks." />
+	<LinkCard title="Timesheets" href="/using-leantime/timesheets/" description="Track and report time." />
+	<LinkCard title="Where do I start?" href="/knowledge-base/wheretostart/" description="How Leantime's pieces fit together." />
+	<LinkCard title="FAQ" href="/installation/frequently-asked-questions/" description="Answers to common questions." />
+</CardGrid>

@@ -1,19 +1,44 @@
-<div align="center">
-<a href="https://leantime.io"><img src="https://leantime.io/wp-content/uploads/2023/03/leantime_logo.png" alt="Leantime Logo" width="300"/></a>
+# Leantime Documentation
 
-### Leantime&reg; ###
+Source of [docs.leantime.io](https://docs.leantime.io), built with [Astro Starlight](https://starlight.astro.build/).
 
-Leantime is an open source project management system for non-project manager.<br />We combine strategy, planning and executing while making it easy for everyone on the team to use. Building with ADHD, dyslexia and autism in mind. <br />It's an alternative to ClickUp, Monday, or Asana. As simple as Trello but as feature-rich as Jira.<br />[https://leantime.io](https://leantime.io)<br />
+## Editing a page
 
-[![License Badge](https://img.shields.io/github/license/leantime/leantime?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0.en.html)
-[![Docker Hub Badge](https://img.shields.io/docker/pulls/leantime/leantime?style=flat-square)](https://hub.docker.com/r/leantime/leantime)
-![Github Downloads](https://img.shields.io/github/downloads/leantime/leantime/total)
-[![Discord Badge](https://img.shields.io/discord/990001288026677318?label=Discord&style=flat-square)](https://discord.gg/4zMzJtAq9z)
-[![Crowdin](https://badges.crowdin.net/leantime/localized.svg)](https://crowdin.com/project/leantime)
-![GitHub Sponsors](https://img.shields.io/github/sponsors/leantime)
-<br />
+Pages are Markdown files in [`src/content/docs/`](src/content/docs/). The file path is the URL:
+`src/content/docs/installation/docker.md` → `https://docs.leantime.io/installation/docker/`.
 
-To get started with installation go to <br />[Quick Start](installation/installation-types.md)
+Every page starts with front matter:
 
-</div>
+```markdown
+---
+title: Docker based Installation
+description: One or two sentences for search results and link previews (about 150 characters).
+---
 
+Page content starts here. Don't repeat the title as a "# " heading; Starlight renders it.
+```
+
+- Link to other pages by their URL: `[Docker](/installation/docker/)`, `[a section](/installation/docker/#volumes)`.
+- Images go in `public/_images/` and are linked as `/_images/...`.
+- New pages appear in the sidebar automatically in `using-leantime/`, `getting-started/`, `knowledge-base/` and `api/classes/`. For other sections, add them to `sidebar` in [`astro.config.mjs`](astro.config.mjs).
+
+## Running it locally
+
+Requires Node.js 22.23.4 or later.
+
+```bash
+npm ci
+npm run dev       # live preview at http://localhost:4321
+npm run build     # production build in dist/, fails on broken internal links
+npm run preview   # serve the production build
+```
+
+## Publishing
+
+Every pull request is built by the **Build docs** workflow, which also checks all internal links. After merging to `master`, run the **🚀 Deploy Docs** workflow manually to build and upload the site.
+
+## Search engines and AI tools
+
+Each page is static HTML with its own title, description, canonical URL and structured data (schema.org `TechArticle` and `BreadcrumbList`, plus site-wide `Organization`, `WebSite` and `SoftwareApplication` in `astro.config.mjs` and `src/routeData.ts`). The build also writes `sitemap-index.xml`, `robots.txt` and `llms.txt` / `llms-full.txt` for AI assistants.
+
+Old docsify links (`/#/installation/docker`, `?id=section`) are redirected in the browser.

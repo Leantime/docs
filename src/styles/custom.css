@@ -1,0 +1,12 @@
+/* Leantime brand accent (was --theme-color #006C9E in the docsify theme). */
+:root {
+	--sl-color-accent-low: #00283b;
+	--sl-color-accent: #0083bf;
+	--sl-color-accent-high: #b3e3f7;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #cdeaf7;
+	--sl-color-accent: #006c9e;
+	--sl-color-accent-high: #003a55;
+}
