@@ -134,6 +134,7 @@ export default defineConfig({
 			lastUpdated: true,
 			routeMiddleware: './src/routeData.ts',
 			components: {
+				Header: './src/components/Header.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 			},
