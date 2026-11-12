@@ -26,6 +26,8 @@ const levelHint = {
 	'Some experience': 'You have used a terminal before',
 	Advanced: 'For administrators and developers',
 };
+/** How many of the three meter bars the level fills. */
+const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 ---
 
 {
@@ -59,43 +61,51 @@ const levelHint = {
 
 {
 	glance && (
-		<section class="lt-glance not-content" data-section={section} aria-label="At a glance">
-			<p class="lt-glance-title">At a glance</p>
-			<dl>
-				{glance.minutes && (
-					<div>
-						<dt>Time</dt>
-						<dd>About {glance.minutes} minutes</dd>
-					</div>
-				)}
-				{glance.level && (
-					<div>
-						<dt>Level</dt>
-						<dd>
-							{glance.level}
-							<span class="lt-muted"> · {levelHint[glance.level]}</span>
-						</dd>
-					</div>
-				)}
+		<section class="lt-glance not-content" data-section={section} aria-labelledby="lt-glance-title">
+			<header class="lt-glance-head">
+				<h2 id="lt-glance-title" class="lt-glance-title">At a glance</h2>
+				<div class="lt-glance-meta">
+					{glance.minutes && (
+						<p class="lt-chip">
+							<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7Z"/></svg>
+							<span class="lt-chip-label">Time</span>
+							<span>About {glance.minutes} min</span>
+						</p>
+					)}
+					{glance.level && (
+						<p class="lt-chip" title={levelHint[glance.level]}>
+							<span class="lt-meter" data-level={levelRank[glance.level]} aria-hidden="true"><i /><i /><i /></span>
+							<span class="lt-chip-label">Level</span>
+							<span>{glance.level}</span>
+						</p>
+					)}
+				</div>
+				{glance.level && <p class="lt-glance-hint">{levelHint[glance.level]}</p>}
+			</header>
+			<div class="lt-glance-body">
 				{glance.needs && glance.needs.length > 0 && (
-					<div class="lt-wide">
-						<dt>You need</dt>
-						<dd>
-							<ul>
-								{glance.needs.map((need) => (
-									<li set:html={inline(need)} />
-								))}
-							</ul>
-						</dd>
+					<div class="lt-glance-block">
+						<h3 class="lt-block-title">
+							<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-9 14-5-5 1.4-1.4 3.6 3.6 7.6-7.6L19 8l-9 9Z"/></svg>
+							You need
+						</h3>
+						<ul class="lt-needs">
+							{glance.needs.map((need) => (
+								<li set:html={inline(need)} />
+							))}
+						</ul>
 					</div>
 				)}
 				{glance.result && (
-					<div class="lt-wide">
-						<dt>At the end</dt>
-						<dd set:html={inline(glance.result)} />
+					<div class="lt-glance-block lt-result">
+						<h3 class="lt-block-title">
+							<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6Z"/></svg>
+							At the end
+						</h3>
+						<p set:html={inline(glance.result)} />
 					</div>
 				)}
-			</dl>
+			</div>
 		</section>
 	)
 }
@@ -174,48 +184,143 @@ const levelHint = {
 		color: var(--sl-color-white);
 		border-color: var(--sl-color-gray-3);
 	}
+	/* At a glance: a header strip (time, level), then "You need" and "At the end" side by side.
+	   Everything is tinted with the section colour, so the box matches the page it sits on. */
 	.lt-glance {
 		margin-top: 1.25rem;
-		padding: 0.9rem 1.1rem;
-		border: 1px solid var(--sl-color-gray-5);
-		border-inline-start: 4px solid var(--lt-accent);
-		border-radius: 0.5rem;
-		background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+		border: 1px solid color-mix(in srgb, var(--lt-accent) 35%, var(--sl-color-gray-5));
+		border-radius: 0.75rem;
+		overflow: hidden;
+		background: var(--sl-color-bg);
+		container-type: inline-size;
+	}
+	.lt-glance-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 1rem;
+		padding: 0.75rem 1rem;
+		background: color-mix(in srgb, var(--lt-accent) 14%, var(--sl-color-bg));
+		border-bottom: 1px solid color-mix(in srgb, var(--lt-accent) 30%, transparent);
 	}
 	.lt-glance-title {
-		margin: 0 0 0.5rem;
-		font-size: var(--sl-text-xs);
+		margin: 0;
+		font-size: var(--sl-text-sm);
 		font-weight: 700;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 		color: var(--lt-accent);
 	}
-	.lt-glance dl {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-		gap: 0.6rem 1.5rem;
+	.lt-glance-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.lt-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
 		margin: 0;
-	}
-	.lt-glance .lt-wide {
-		grid-column: 1 / -1;
-	}
-	.lt-glance dt {
-		font-size: var(--sl-text-xs);
+		padding: 0.2rem 0.65rem;
+		border-radius: 999px;
+		background: var(--sl-color-bg);
+		border: 1px solid color-mix(in srgb, var(--lt-accent) 40%, transparent);
+		font-size: var(--sl-text-sm);
 		font-weight: 600;
-		color: var(--sl-color-gray-3);
-	}
-	.lt-glance dd {
-		margin: 0.1rem 0 0;
 		color: var(--sl-color-white);
 	}
-	.lt-glance ul {
-		margin: 0;
-		padding-inline-start: 1.1rem;
+	.lt-chip svg {
+		color: var(--lt-accent);
 	}
-	.lt-glance li + li {
-		margin-top: 0.15rem;
-	}
-	.lt-muted {
+	.lt-chip-label {
+		font-weight: 500;
 		color: var(--sl-color-gray-3);
+	}
+	.lt-meter {
+		display: inline-flex;
+		align-items: flex-end;
+		gap: 2px;
+		height: 0.85rem;
+	}
+	.lt-meter i {
+		width: 4px;
+		border-radius: 1px;
+		background: color-mix(in srgb, var(--lt-accent) 25%, transparent);
+	}
+	.lt-meter i:nth-child(1) { height: 40%; }
+	.lt-meter i:nth-child(2) { height: 70%; }
+	.lt-meter i:nth-child(3) { height: 100%; }
+	.lt-meter[data-level='1'] i:nth-child(-n + 1),
+	.lt-meter[data-level='2'] i:nth-child(-n + 2),
+	.lt-meter[data-level='3'] i {
+		background: var(--lt-accent);
+	}
+	.lt-glance-hint {
+		flex-basis: 100%;
+		margin: 0;
+		font-size: var(--sl-text-xs);
+		color: var(--sl-color-gray-2);
+	}
+	.lt-glance-body {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	}
+	.lt-glance-block {
+		padding: 0.85rem 1rem 1rem;
+	}
+	.lt-glance-block + .lt-glance-block {
+		border-inline-start: 1px solid var(--sl-color-gray-5);
+	}
+	.lt-block-title {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		margin: 0 0 0.5rem;
+		font-size: var(--sl-text-xs);
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--lt-accent);
+	}
+	.lt-needs {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.lt-needs li {
+		position: relative;
+		padding-inline-start: 1.5rem;
+		color: var(--sl-color-white);
+	}
+	.lt-needs li + li {
+		margin-top: 0.4rem;
+	}
+	/* An empty tick box per item: "do I have this?" */
+	.lt-needs li::before {
+		content: '';
+		position: absolute;
+		inset-inline-start: 0;
+		top: 0.3em;
+		width: 0.9rem;
+		height: 0.9rem;
+		border: 2px solid var(--lt-accent);
+		border-radius: 0.2rem;
+	}
+	.lt-result {
+		background: color-mix(in srgb, var(--lt-accent) 7%, transparent);
+	}
+	.lt-result p {
+		margin: 0;
+		color: var(--sl-color-white);
+	}
+	/* Stacked when the box is narrow (the grid wraps below 2 × 15rem): a line between the blocks instead of beside them. */
+	@container (width < 30rem) {
+		.lt-glance-block + .lt-glance-block {
+			border-inline-start: 0;
+			border-top: 1px solid var(--sl-color-gray-5);
+		}
+	}
+	.lt-glance :global(code) {
+		font-size: 0.875em;
 	}
 </style>
