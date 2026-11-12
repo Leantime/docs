@@ -312,7 +312,7 @@ These work on **your own** calendar.
 | `editEvent`, `bulkEditEvents` | Changes calendar events | Changes |
 | `deleteEvent` | Deletes a calendar event | **Deletes** |
 | `scheduleTaskOnCalendar` | Blocks time for a task | Changes |
-| `scheduleDay` | Places events and tasks into the free slots of a day | Adds |
+| `scheduleDay` | Places events into the free slots of a day, and reschedules the tasks you name | Adds and changes |
 | `breakdownTask` | Splits a task into subtasks and schedules them | Adds |
 
 > **Known issue:** in the current version, editing an event with `editEvent` or `bulkEditEvents` turns it into an all-day event. Until this is fixed, change existing events in Leantime itself. Creating and deleting events works as expected.
@@ -483,7 +483,7 @@ Yes. Use the address you open Leantime Cloud with, plus `/mcp`, and a Personal A
 Not yet. Their connectors only work with servers that sign in through OAuth. Use Claude Desktop, Claude Code, Cursor, VS Code, Windsurf or Codex.
 
 **Can I give the assistant read-only access?**
-Not with a token setting yet. Use your assistant's tool approval settings to allow only the read tools, or connect with a separate user that has the **Read Only** role. (In the current version, a Read Only user can still add and edit events on their own calendar through MCP.)
+Not with a token setting yet. Use your assistant's tool approval settings to allow only the read tools, or connect with a separate user that has the **Read Only** role. (In the current version, a Read Only user can still add, edit and delete events on their own calendar through MCP.)
 
 **Can the assistant delete my tasks or projects?**
 No. The only tool that deletes anything is `deleteEvent`, for calendar events. The assistant can still change tasks (status, assignee, dates), so keep approvals on for changes.
