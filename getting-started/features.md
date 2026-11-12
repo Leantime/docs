@@ -104,7 +104,7 @@ Yes, MariaDB 10.6 or later. See [System requirements](installation/system-requir
 
 #### Does Leantime work with PostgreSQL?
 
-Yes, since Leantime 3.6. Set `LEAN_DB_DEFAULT_CONNECTION = 'pgsql'` before you install. See [System requirements](installation/system-requirements.md?id=using-postgresql).
+Yes, since Leantime 3.6. Set `LEAN_DB_DEFAULT_CONNECTION = 'pgsql'` before you install. See [System requirements](installation/system-requirements.md).
 
 #### Can Leantime run on Windows or IIS?
 
@@ -220,7 +220,7 @@ Yes, through a CSV file. Export your data from the other tool as CSV, then in Le
 
 #### Can I export my data?
 
-Yes. To-do lists and timesheets export to CSV, Blueprint boards export to XML, and reports print to PDF from your browser. For a full copy, [back up the database](installation/backup-restore.md).
+Yes. To-do lists and timesheets export to CSV, Blueprint boards export to XML, and reports print to PDF from your browser. For a full copy of a self-hosted instance, [back up](installation/backup-restore.md) both the database and the uploaded files (`userfiles/` and `public/userfiles/`).
 
 #### Does Leantime have an activity log?
 
