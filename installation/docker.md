@@ -102,7 +102,7 @@ docker run -d --restart unless-stopped -p 3306:3306 --network leantime-net \
 -e MYSQL_DATABASE=<Add name of the db> \
 -e MYSQL_USER=<Add a db username> \
 -e MYSQL_PASSWORD=<Add a db user password. different from root password> \
---name mysql_leantime mysql:8.0 --character-set-server=UTF8MB4 --collation-server=UTF8MB4_unicode_ci
+--name mysql_leantime mysql:8.4 --character-set-server=UTF8MB4 --collation-server=UTF8MB4_unicode_ci
 ```
 
 The above command does a few things, explained below:
@@ -112,7 +112,7 @@ The above command does a few things, explained below:
 - `-p 3306: 3306`: maps the container's port to host machines port
 - `--network leantime-net`: Connects the container to a Docker network, in this case `leantime-net` created in step 1.
 - The following 4 lines sets the root password for MySQL, creates a new databasse, and creates and sets new username and their respective password.
-- `--name mysql_leantime mysql:8.0 --character-set-server=UTF8MB4 --collation-server=UTF8MB4_unicode_ci`: names the container `mysql_leantime` and uses the MySQL 8.0 image and configures Character set and collation.
+- `--name mysql_leantime mysql:8.4 --character-set-server=UTF8MB4 --collation-server=UTF8MB4_unicode_ci`: names the container `mysql_leantime` and uses the MySQL 8.4 LTS image and configures Character set and collation.
 
 3. If you already had a MySQL container and did not execute **_Step 2_**, the you must ensure the created network is connected to your MySQL container by running:
 

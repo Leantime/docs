@@ -36,7 +36,7 @@ If the styles are not applied and the system looks as if it came straight from t
 
 ### I see `PHP Parse error: syntax error, unexpected '|', expecting ';' or '{'`**
 
-You are running Leantime using PHP7.X Leantime required PHP8 to run. 
+Your server runs a PHP version that is too old. Leantime 3.2 and later need PHP 8.2 or later; see [System Requirements](installation/system-requirements.md).
 
 ### HX, PATCH, PUT, DELETE methods return 404
 

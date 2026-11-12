@@ -1,22 +1,65 @@
 # System Requirements
 
-There are two main ways of installing Leantime, which are given below:
+Leantime needs **PHP 8.2 or later** and **MySQL 8.0+ or MariaDB 10.6+**, or a machine that runs **Docker**. These requirements apply to Leantime 3.2 and later.
 
-- **Package based installation** requires a Linux Distribution, preferably Ubuntu 20.04+.
-- **Docker-based installation** requires a system with [**Docker**](https://www.docker.com/) installed and **docker-compose**.
+## What do I need to run Leantime with Docker?
 
-Leantime can be installed on a variety of configurations. Here is a list of minimum requirements that have been tested and proven to work.
+- **Docker with Docker Compose.** The official image [`leantime/leantime`](https://hub.docker.com/r/leantime/leantime) already contains PHP, the web server and every PHP extension Leantime needs. It runs on amd64 and ARM (arm64 and 32-bit arm), so it works on Raspberry Pi, Apple Silicon and ARM cloud servers.
+- **A MySQL 8.0+ or MariaDB 10.6+ database.** The example Docker Compose file starts MySQL 8.4 for you.
 
-- **Runtime:** [PHP](https://www.php.net/) 8.0 and up
-- **Webserver:** [Apache](https://www.apache.org/) with mod_rewrite or [Nginx](https://nginx.org/en/)
-- **Database:** [MySQL](https://www.mysql.com/) 5.7+ along with necessary credentials (Username, Password, Host Information)
+See [Docker based installation](installation/docker.md).
 
-**PHP Extensions needed**
+## What do I need for a package installation?
 
-- Required: MySQL, mbstring
-- Optional: Curl (for Integrations), gd, imagick, xml (for 2FA QR code generation), ldap
+| Component | Requirement |
+|---|---|
+| PHP | 8.2 or later. The official Docker image uses PHP 8.4. |
+| Database | MySQL 8.0 or later (8.4 LTS recommended) or MariaDB 10.6 or later |
+| Web server | Apache 2.4 with `mod_rewrite`, or Nginx with PHP-FPM. IIS works with some changes. |
+| Operating system | Any Linux distribution that provides PHP 8.2+. Ubuntu 24.04 LTS ships PHP 8.3 and Debian 12 ships PHP 8.2. Ubuntu 22.04 ships PHP 8.1, which is too old; install a newer PHP from a third-party repository. |
 
-**Other considerations**
+See [Package based installation](installation/package-installation.md).
 
-- The Leantime folder should be writeable by the server user (usually apache or www-data)
-- Strict mode is currently not supported
+## Which PHP extensions does Leantime need?
+
+All of these must be enabled:
+
+- BC Math (`bcmath`)
+- Ctype
+- cURL
+- DOM
+- Exif
+- Fileinfo
+- Filter
+- GD
+- Hash
+- LDAP
+- Multibyte String (`mbstring`)
+- MySQL (`mysqli` and `pdo_mysql`)
+- OPcache
+- OpenSSL
+- PCNTL
+- PCRE
+- PDO
+- Phar
+- POSIX
+- Session
+- SimpleXML
+- Tokenizer
+- Zip
+
+Run `php -m` on the server to list the extensions that are enabled.
+
+## How should the database be set up?
+
+- Create an empty database and a user with full rights on it. The installer at `/install` creates the tables.
+- Use the `utf8mb4` character set with the `utf8mb4_unicode_ci` collation. Leantime uses these by default (`LEAN_DB_CHARSET`, `LEAN_DB_COLLATION`).
+- You don't need to change the server's SQL mode. Leantime sets its own SQL mode for its connections.
+
+## Which folders must be writable?
+
+The web server user (usually `www-data` or `apache`) must be able to write to `storage/`, `userfiles/`, `public/userfiles/` and `app/Plugins/`. See [Common issues](installation/common-issues.md) if logins or uploads fail after installation.
+
+## Can I run Leantime on an older PHP version?
+
+No. Leantime 3.2 and later need PHP 8.2; only Leantime 3.0 and 3.1 ran on PHP 8.1. Older releases don't get security fixes, so upgrade PHP rather than stay on an old Leantime version. See the [upgrade guide](installation/upgrade-guide.md).
