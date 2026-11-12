@@ -1,7 +1,8 @@
 ---
 /**
  * Site header, calmer than Starlight's default:
- * - the logo with a "Docs" label, so it's clear which Leantime site you're on;
+ * - the logo with a "Docs" label, so it's clear which Leantime site you're on, and the Leantime
+ *   version the docs describe (src/lib/version.ts), linking to its release notes;
  * - the five colour-coded sections as links, with the one you're in marked (wide screens only;
  *   on smaller screens they're in the sidebar);
  * - a compact search button on the right instead of a wide search bar. It opens the same
@@ -15,6 +16,7 @@ import SiteTitle from 'virtual:starlight/components/SiteTitle';
 import SocialIcons from 'virtual:starlight/components/SocialIcons';
 import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
 import { sectionOf, type SectionKey } from '../lib/sections';
+import { RELEASE_URL, SHORT_VERSION } from '../lib/version';
 
 const { entry, id } = Astro.locals.starlightRoute;
 const current = id ? sectionOf(id, entry.data.section as SectionKey | undefined) : undefined;
@@ -36,6 +38,14 @@ const sections: Array<{ key: SectionKey; label: string; page: string | undefined
 	<div class="lt-brand">
 		<SiteTitle />
 		<span class="lt-docs-label" aria-hidden="true">Docs</span>
+		<a
+			class="lt-version"
+			href={RELEASE_URL}
+			title={`Docs for Leantime ${SHORT_VERSION}. See what's new in this release.`}
+			aria-label={`Docs for Leantime ${SHORT_VERSION}: release notes`}
+		>
+			{SHORT_VERSION}
+		</a>
 	</div>
 
 	<nav class="lt-sections print:hidden" aria-label="Sections">
@@ -130,6 +140,28 @@ const sections: Array<{ key: SectionKey; label: string; page: string | undefined
 		padding-inline-start: 0.6rem;
 		border-inline-start: 1px solid var(--sl-color-gray-5);
 		line-height: 1.4;
+	}
+
+	/* The version: a quiet pill next to "Docs". Hidden where the header gets crowded. */
+	.lt-version {
+		padding: 0.05rem 0.45rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 999px;
+		color: var(--sl-color-gray-3);
+		font-size: var(--sl-text-xs);
+		font-weight: 600;
+		line-height: 1.5;
+		text-decoration: none;
+		font-variant-numeric: tabular-nums;
+	}
+	.lt-version:hover {
+		color: var(--sl-color-white);
+		border-color: var(--sl-color-gray-4);
+	}
+	@media (max-width: 22rem) {
+		.lt-version {
+			display: none;
+		}
 	}
 
 	/* Section links: wide screens only. */

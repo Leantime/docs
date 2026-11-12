@@ -140,3 +140,9 @@
 	--sl-card-border: var(--lt-accent);
 	--sl-card-bg: color-mix(in srgb, var(--lt-accent) 14%, transparent);
 }
+
+/* Dark mode shows the app's white logo (src/assets/leantime-logo-white.svg). Its artwork fills the
+   whole image while the light logo has some room around it, so it's drawn a little smaller to match. */
+.site-title img[src*='leantime-logo-white'] {
+	height: 1.85rem;
+}

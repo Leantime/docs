@@ -123,7 +123,8 @@ export default defineConfig({
 			title: 'Leantime Documentation',
 			description:
 				'Install, configure and use Leantime, the open source project management system for non-project managers. Self-hosting, Docker, SSO, plugins, API and MCP.',
-			logo: { src: './src/assets/leantime-logo.webp', alt: 'Leantime', replacesTitle: true },
+			// Dark mode uses the app's white logo; the gradient one is hard to read on dark.
+			logo: { light: './src/assets/leantime-logo.webp', dark: './src/assets/leantime-logo-white.svg', alt: 'Leantime', replacesTitle: true },
 			favicon: '/favicon.ico',
 			customCss: ['./src/styles/custom.css'],
 			expressiveCode: {
@@ -135,6 +136,7 @@ export default defineConfig({
 			routeMiddleware: './src/routeData.ts',
 			components: {
 				Header: './src/components/Header.astro',
+				Footer: './src/components/Footer.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 			},
