@@ -79,6 +79,8 @@ If the command line doesn't work either, switch it off in the database:
 UPDATE zp_plugins SET enabled = 0 WHERE foldername = '<PluginFolder>';
 ```
 
+Leantime keeps its list of enabled plugins in a file cache, so then delete everything inside `storage/framework/cache/installation/data/` in the Leantime folder. Leantime rebuilds it on the next page load. With Docker, run `docker compose exec leantime sh -c 'rm -rf /var/www/html/storage/framework/cache/installation/data/*'`.
+
 ## What happens to plugins when I update Leantime?
 
 Each plugin says which Leantime versions it supports. If you update Leantime to a version a plugin doesn't support, Leantime stops loading that plugin instead of letting it break pages:
