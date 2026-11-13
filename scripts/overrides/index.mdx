@@ -1,0 +1,81 @@
+---
+title: Leantime Documentation
+description: Install, configure and use Leantime, the open source project management system for non-project managers. Self-hosting, Docker, SSO, plugins, API and MCP.
+template: splash
+head:
+  - tag: title
+    content: 'Leantime Documentation: install, configure and use Leantime'
+hero:
+  tagline: Leantime is an open source project management system for non-project managers. It combines strategy, planning and execution, and is built with ADHD, dyslexia and autism in mind.
+  actions:
+    - text: Install with Docker
+      link: /installation/docker/
+      icon: right-arrow
+    - text: Leantime Cloud
+      link: https://leantime.io/pricing/
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What do you want to do?
+
+<CardGrid>
+<div data-section="install" class="lt-tasks">
+<Card title="Install Leantime" icon="rocket">
+- [With Docker](/installation/docker/), about 10 minutes
+- [On your own server](/installation/package-installation/) with PHP and MySQL
+- [What your server needs](/installation/system-requirements/)
+</Card>
+</div>
+<div data-section="install" class="lt-tasks">
+<Card title="Fix a problem" icon="warning">
+- [Common issues](/installation/common-issues/): login, uploads, errors
+- [Docker troubleshooting](/installation/docker-troubleshooting/)
+- [Frequently asked questions](/installation/frequently-asked-questions/)
+</Card>
+</div>
+<div data-section="install" class="lt-tasks">
+<Card title="Set up sign-in" icon="padlock">
+- [OpenID Connect and LDAP](/installation/authentication-configuration/)
+- [GitHub, Google, Microsoft, Okta and more](/installation/plugin-installation/)
+- [Email and SMTP](/installation/email-configuration/)
+</Card>
+</div>
+<div data-section="ai" class="lt-tasks">
+<Card title="Use AI with Leantime" icon="comment">
+- [Connect Claude, Cursor or VS Code](/installation/leantime-mcp/) with the MCP server
+- Every page has **Copy page for AI**, for help from your assistant
+- [llms.txt](/llms.txt): all the docs for AI tools
+</Card>
+</div>
+<div data-section="use" class="lt-tasks">
+<Card title="Learn Leantime" icon="open-book">
+- [Where do I start?](/knowledge-base/wheretostart/)
+- [Set up your first project](/getting-started/new-project/)
+- [To-dos and boards](/using-leantime/task-management/)
+</Card>
+</div>
+<div data-section="use" class="lt-tasks">
+<Card title="Add features with plugins" icon="puzzle">
+- [What each plugin does](/installation/using-plugins/)
+- [Install a plugin](/installation/plugin-installation/)
+- [Browse the marketplace](https://marketplace.leantime.io/)
+</Card>
+</div>
+<div data-section="install" class="lt-tasks">
+<Card title="Keep it running" icon="setting">
+- [Upgrade to a new version](/installation/upgrade-guide/)
+- [Back up and restore](/installation/backup-restore/)
+- [All settings](/installation/configuration/)
+</Card>
+</div>
+<div data-section="dev" class="lt-tasks">
+<Card title="Build on Leantime" icon="code-branch">
+- [Connect to the API](/api/usage/)
+- [Write a plugin](/development/plugin-development/)
+- [Run Leantime locally](/installation/development/)
+</Card>
+</div>
+</CardGrid>

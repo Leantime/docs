@@ -1,0 +1,93 @@
+---
+title: Leantime Documentation
+description: Install, configure and use Leantime, the open source project management system for non-project managers. Self-hosting, Docker, SSO, plugins, API and MCP.
+template: splash
+head:
+  - tag: title
+    content: 'Leantime Documentation: install, configure and use Leantime'
+hero:
+  tagline: Leantime is an open source project management system for non-project managers. It combines strategy, planning and execution, and is built with ADHD, dyslexia and autism in mind.
+  actions:
+    - text: Install with Docker
+      link: /installation/docker/
+      icon: right-arrow
+    - text: Leantime Cloud
+      link: https://leantime.io/pricing/
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What do you want to do?
+
+<CardGrid>
+<div class="lt-tasks">
+<Card title="Install and run Leantime" icon="rocket">
+- [With Docker](/installation/docker/), about 10 minutes
+- [On your own server](/installation/package-installation/) with PHP and MySQL
+- [Sign-in and SSO](/installation/authentication-configuration/)
+- [Upgrade to a new version](/installation/upgrade-guide/)
+</Card>
+</div>
+<div class="lt-tasks">
+<Card title="Use Leantime" icon="open-book">
+- [Where do I start?](/knowledge-base/wheretostart/)
+- [Set up your first project](/getting-started/new-project/)
+- [Add features with plugins](/installation/using-plugins/)
+</Card>
+</div>
+<div class="lt-tasks">
+<Card title="Use AI with Leantime" icon="comment">
+- [Connect Claude, Cursor or VS Code](/installation/leantime-mcp/)
+- [llms.txt](/llms.txt): all the docs for AI tools
+</Card>
+</div>
+<div class="lt-tasks">
+<Card title="Build on Leantime" icon="code-branch">
+- [Connect to the API](/api/usage/)
+- [Write a plugin](/development/plugin-development/)
+- [Run Leantime locally](/installation/development/)
+</Card>
+</div>
+</CardGrid>
+
+## Common questions
+
+<div class="lt-questions">
+<div>
+
+### Installing and running
+
+- [How do I install Leantime with Docker?](/installation/docker/)
+- [What does my server need to run Leantime?](/installation/system-requirements/)
+- [How do I update Leantime to a new version?](/installation/upgrade-guide/)
+- [How do I back up and restore Leantime?](/installation/backup-restore/)
+- [Can I sign in with SSO, LDAP or OpenID Connect?](/installation/authentication-configuration/)
+- [Why aren't emails being sent?](/installation/frequently-asked-questions/#why-arent-emails-being-sent-from-leantime)
+- [Why does login just refresh the page?](/installation/common-issues/#login-just-refreshes-no-error-message)
+- [Can I run Leantime on a Synology NAS?](/installation/synology/)
+
+</div>
+<div>
+
+### Using Leantime
+
+- [Where do I start?](/knowledge-base/wheretostart/)
+- [How do I set up my first project?](/getting-started/new-project/)
+- [How do I add users and choose their roles?](/using-leantime/user-management/)
+- [How do I track time?](/using-leantime/timesheets/)
+- [How do I plan a roadmap with milestones?](/using-leantime/roadmap-planning/)
+
+</div>
+<div>
+
+### Plugins, AI and the API
+
+- [How do I install a plugin and enter its license key?](/installation/plugin-installation/)
+- [How do I connect Claude, Cursor or VS Code to Leantime?](/installation/leantime-mcp/)
+- [How do I use the Leantime API?](/api/usage/)
+- [How do I write a plugin?](/development/plugin-development/)
+
+</div>
+</div>

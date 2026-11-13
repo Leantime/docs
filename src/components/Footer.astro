@@ -1,0 +1,156 @@
+---
+/**
+ * Starlight's footer (edit link, last updated, previous/next) followed by the site footer
+ * (SiteFooter.astro), with "Was this page helpful?" above them on every content page
+ * (not on the home page). A click sends a `page_feedback` event to Google Analytics and/or
+ * PostHog (whichever the page loads; this component doesn't load either) and says thanks; "No" also
+ * offers the chat (Crisp), or Discord and GitHub when the chat isn't available.
+ */
+import Default from '@astrojs/starlight/components/Footer.astro';
+import SiteFooter from './SiteFooter.astro';
+
+const { entry } = Astro.locals.starlightRoute;
+const showFeedback = entry.data.template !== 'splash';
+---
+
+{
+	showFeedback && (
+		<section class="lt-feedback print:hidden" aria-labelledby="lt-feedback-question">
+			<div class="lt-feedback-ask">
+				<p id="lt-feedback-question" class="lt-feedback-question">Was this page helpful?</p>
+				<div class="lt-feedback-buttons">
+					<button type="button" data-feedback="yes">Yes</button>
+					<button type="button" data-feedback="no">No</button>
+				</div>
+			</div>
+			<div class="lt-feedback-thanks" aria-live="polite">
+				<p class="lt-feedback-done" data-for="yes" hidden>Thanks, glad it helped.</p>
+				<div class="lt-feedback-done" data-for="no" hidden>
+					<p>Thanks for telling us. What was missing?</p>
+					<p class="lt-feedback-links">
+						<button type="button" class="lt-feedback-chat" hidden>Tell us in the chat</button>
+						<a class="lt-feedback-alt" href="https://discord.gg/4zMzJtAq9z" rel="noopener">Ask on Discord</a>
+						<a class="lt-feedback-alt" href="https://github.com/Leantime/docs/issues/new" rel="noopener">Open an issue on GitHub</a>
+					</p>
+				</div>
+			</div>
+		</section>
+	)
+}
+
+<Default />
+
+<SiteFooter />
+
+<script>
+	type CrispQueue = { push: (command: unknown[]) => void };
+	type Gtag = (...args: unknown[]) => void;
+	type PostHog = { capture?: (event: string, properties: Record<string, string>) => void };
+
+	for (const box of document.querySelectorAll<HTMLElement>('.lt-feedback')) {
+		const ask = box.querySelector<HTMLElement>('.lt-feedback-ask');
+		const chat = box.querySelector<HTMLButtonElement>('.lt-feedback-chat');
+		const crisp = () => (window as unknown as { $crisp?: CrispQueue }).$crisp;
+
+		for (const button of box.querySelectorAll<HTMLButtonElement>('[data-feedback]')) {
+			button.addEventListener('click', () => {
+				const answer = button.dataset.feedback ?? '';
+				// Sent to whichever analytics the page has: Google Analytics and/or PostHog.
+				const analytics = window as unknown as { gtag?: Gtag; posthog?: PostHog };
+				if (typeof analytics.gtag === 'function') {
+					analytics.gtag('event', 'page_feedback', { value: answer === 'yes' ? 1 : 0, answer, page_path: location.pathname });
+				}
+				if (typeof analytics.posthog?.capture === 'function') {
+					analytics.posthog.capture('page_feedback', { helpful: answer, path: location.pathname });
+				}
+				if (ask) ask.hidden = true;
+				const done = box.querySelector<HTMLElement>(`.lt-feedback-done[data-for="${answer}"]`);
+				if (done) done.hidden = false;
+				if (answer === 'no' && chat && crisp()) {
+					// The chat is there: offer it first, and keep Discord and GitHub as other options.
+					chat.hidden = false;
+				}
+				(done?.querySelector<HTMLElement>('button:not([hidden]), a') ?? done)?.focus?.();
+			});
+		}
+
+		chat?.addEventListener('click', () => {
+			const queue = crisp();
+			queue?.push(['do', 'chat:show']);
+			queue?.push(['do', 'chat:open']);
+		});
+	}
+</script>
+
+<style>
+	.lt-feedback {
+		margin-top: 3rem;
+		padding: 1rem 1.25rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.75rem;
+		background-color: var(--sl-color-gray-7, var(--sl-color-gray-6));
+	}
+	.lt-feedback p {
+		margin: 0;
+	}
+	.lt-feedback-ask {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem 1.5rem;
+	}
+	.lt-feedback-ask[hidden] {
+		display: none;
+	}
+	.lt-feedback-question {
+		font-weight: 600;
+		color: var(--sl-color-white);
+	}
+	.lt-feedback-buttons {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.lt-feedback button {
+		min-width: 4.5rem;
+		padding: 0.4rem 1rem;
+		border: 1px solid var(--sl-color-gray-4);
+		border-radius: 999px;
+		background-color: transparent;
+		color: var(--sl-color-white);
+		font: inherit;
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.lt-feedback button:hover {
+		border-color: var(--sl-color-accent);
+		color: var(--sl-color-accent-high);
+	}
+	.lt-feedback button:focus-visible,
+	.lt-feedback a:focus-visible {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 2px;
+	}
+	.lt-feedback-done {
+		color: var(--sl-color-gray-2);
+	}
+	.lt-feedback-done[hidden],
+	.lt-feedback button[hidden] {
+		display: none;
+	}
+	.lt-feedback a {
+		color: var(--sl-color-text-accent);
+	}
+	.lt-feedback a:hover {
+		color: var(--sl-color-white);
+	}
+	.lt-feedback-links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 1.25rem;
+		margin-top: 0.6rem !important;
+		font-size: var(--sl-text-sm);
+	}
+</style>

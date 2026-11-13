@@ -1,0 +1,462 @@
+#!/usr/bin/env python3
+"""
+One-time move of the docsify docs into Starlight's layout.
+
+Run from the repository root on a clean checkout of master:
+
+    python3 scripts/docsify-to-starlight.py
+
+It is idempotent only in the sense that it refuses to run twice (it checks for
+src/content/docs). To pick up docs merged after the migration branch was cut,
+reset the branch to the scaffold commit, rebase it on master and run it again.
+
+What it does:
+  1. git mv every docs page into src/content/docs/ (README.md in a folder
+     becomes index.md, "System Roles.md" becomes system-roles.md) and the
+     images/icons into public/. technical/classes/ and its index technical/README.md (generated in Feb 2025) are
+     left where they are and are not part of the site.
+  2. Gives every page front matter: the first "# " heading becomes `title`
+     (and is removed, because Starlight renders the title), the first
+     paragraph becomes `description` (max ~155 chars).
+  3. Rewrites links: `installation/x.md#a`, `/installation/x.md`,
+     `?id=a` and `https://docs.leantime.io/#/x` become `/installation/x/#a`;
+     `../_images/...` becomes `/_images/...`.
+  4. Applies scripts/page-metadata.json: hand-written search titles and
+     descriptions, `draft: true` for empty pages, and the "At a glance" box
+     (`glance`) for task pages. A page that gets a glance loses its portable
+     "**At a glance**" Markdown block, which the box replaces. To change these
+     on the already-migrated pages, edit the JSON and run with --metadata-only.
+  5. Tidies every page (also on its own with --post-only):
+     - headings: a page body starts at H2 (Starlight renders the title as the
+       only H1), so leftover H1s move down a level, and no level is skipped
+       (an H4 right under an H2 becomes an H3);
+     - callouts: a blockquote that starts with **Note:**, **Tip:**,
+       **Important:**, **Warning:** or **Danger:** becomes a Starlight aside
+       (:::note, :::tip, :::caution, :::danger);
+     - overrides: files in scripts/overrides/ replace the converted page at the
+       same path (an override x.mdx replaces x.md). Pages that use components
+       (Steps, Tabs, Cards) live there so a re-run keeps them.
+"""
+
+import json
+import os
+import re
+import subprocess
+import sys
+
+DEST = 'src/content/docs'
+SECTIONS = ['ai', 'api', 'development', 'getting-started', 'installation', 'knowledge-base', 'technical', 'using-leantime']
+EXCLUDE_PREFIXES = ['technical/classes/', 'technical/README.md']  # generated Feb 2025, not migrated
+RENAMES = {'knowledge-base/System Roles.md': 'knowledge-base/system-roles.md'}
+# Links that were already broken on the docsify site, pointed at the page they meant.
+BROKEN_LINK_FIXES = {
+    'installation/quick-start.md': 'installation/installation-types.md',
+    'installation/quick-installation.md': 'installation/package-installation.md',
+    'knowledge-base/idea-management.md': 'using-leantime/idea-management.md',
+}
+SOURCE_PAGES = set()
+PUBLIC = ['_images', 'favicon.ico', 'apple-touch-icon.png']
+
+
+def git(*args):
+    subprocess.run(['git', *args], check=True)
+
+
+def target_path(src):
+    """Repo-relative source path -> path below src/content/docs."""
+    if src in RENAMES:
+        return RENAMES[src]
+    d, f = os.path.split(src)
+    if f.lower() == 'readme.md':
+        return os.path.join(d, 'index.md')
+    return src
+
+
+def slug_for(src):
+    """Repo-relative source .md path -> site URL path (with trailing slash)."""
+    t = target_path(src)[:-3]
+    if t.endswith('/index') or t == 'index':
+        t = t[: -len('index')].rstrip('/')
+    # Starlight lowercases slugs and turns spaces into hyphens
+    t = '/'.join(re.sub(r'\s+', '-', seg.lower()) for seg in t.split('/'))
+    return '/' + (t + '/' if t else '')
+
+
+def collect():
+    pages = []
+    for section in SECTIONS:
+        for root, _dirs, files in os.walk(section):
+            for f in files:
+                if not f.endswith('.md') or f.startswith('_'):
+                    continue
+                p = os.path.join(root, f)
+                if any(p.startswith(x) for x in EXCLUDE_PREFIXES):
+                    continue
+                pages.append(p)
+    return sorted(pages)
+
+
+FENCE = re.compile(r'^\s*(```|~~~)')
+
+
+def split_frontmatter(text):
+    if text.startswith('---\n'):
+        end = text.find('\n---\n', 4)
+        if end != -1:
+            fm = {}
+            for line in text[4:end].splitlines():
+                if ':' in line:
+                    k, v = line.split(':', 1)
+                    fm[k.strip()] = v.strip().strip('"\'')
+            return fm, text[end + 5:]
+    return {}, text
+
+
+def strip_md(s):
+    s = re.sub(r'!\[[^\]]*\]\([^)]*\)', '', s)
+    s = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', s)
+    s = re.sub(r'<[^>]+>', '', s)
+    s = re.sub(r'[*_`]', '', s)
+    s = s.replace('&reg;', '®').replace('&nbsp;', ' ')
+    return re.sub(r'\s+', ' ', s).strip()
+
+
+def first_paragraph(lines):
+    para, in_fence, in_style = [], False, False
+    for line in lines:
+        if re.search(r'<style', line, re.I):
+            in_style = True
+        if in_style:
+            if re.search(r'</style>', line, re.I):
+                in_style = False
+            continue
+        if FENCE.match(line):
+            in_fence = not in_fence
+            if para:
+                break
+            continue
+        if in_fence:
+            continue
+        st = line.strip()
+        if not st:
+            if para:
+                break
+            continue
+        if st.startswith(('#', '>', '|', '-', '*', '<', '![', '[!', '1.')) or ' | ' in st:
+            if para:
+                break
+            continue
+        para.append(st)
+    text = strip_md(' '.join(para))
+    if len(text) > 155:
+        text = text[:152].rsplit(' ', 1)[0].rstrip(',.;:') + '…'
+    return text
+
+
+def yaml_str(s):
+    return '"' + s.replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+
+def resolve_md_link(url, page_src):
+    """Return the new URL for a link to a .md page, or None if not a page link."""
+    m = re.match(r'^([^#?]*\.md)(?:(?:#|\?id=)(.*))?$', url)
+    if not m:
+        return None
+    path, anchor = m.group(1), m.group(2)
+    path = path.replace('%20', ' ')
+    if path.startswith('/'):
+        path = path[1:]
+    elif path.startswith('./') or path.startswith('../'):
+        path = os.path.normpath(os.path.join(os.path.dirname(page_src), path))
+    # docsify had relativePath: false, so bare paths are relative to the root.
+    # Some pages still link siblings by bare name (e.g. "email-configuration.md");
+    # fall back to the page's own folder when the root path doesn't exist.
+    if path not in SOURCE_PAGES:
+        sibling = os.path.normpath(os.path.join(os.path.dirname(page_src), path))
+        if sibling in SOURCE_PAGES:
+            path = sibling
+    path = BROKEN_LINK_FIXES.get(path, path)
+    return slug_for(path) + ('#' + anchor if anchor else '')
+
+
+def rewrite_links(body, page_src):
+    out, in_fence = [], False
+    for line in body.splitlines(keepends=True):
+        if FENCE.match(line):
+            in_fence = not in_fence
+        if in_fence:
+            out.append(line)
+            continue
+
+        def repl(m):
+            url = m.group(2)
+            new = None
+            hm = re.match(r'^https?://docs\.leantime\.io/#/([^?#)]*)(?:\?id=([^)]*))?$', url)
+            if hm:
+                p = hm.group(1).strip('/')
+                new = '/' + (p + '/' if p else '') + ('#' + hm.group(2) if hm.group(2) else '')
+            elif url.startswith('?id='):
+                new = '#' + url[4:]
+            elif re.search(r'_images/', url) and not url.startswith('http'):
+                new = '/_images/' + url.split('_images/', 1)[1]
+            elif not url.startswith(('http', 'mailto:', '#')):
+                new = resolve_md_link(url, page_src)
+            return m.group(1) + (new or url) + m.group(3)
+
+        line = re.sub(r'(\]\()([^)\s]+)(\s*(?:"[^"]*")?\))', repl, line)
+        line = re.sub(r'(src=["\'])(?:\.\./|\./|/)?_images/', r'\1/_images/', line)
+        out.append(line)
+    return ''.join(out)
+
+
+def convert(page_src, dest):
+    text = open(dest, encoding='utf-8').read()
+    fm, body = split_frontmatter(text)
+    lines = body.splitlines()
+
+    title, in_fence = None, False
+    for i, line in enumerate(lines):
+        if FENCE.match(line):
+            in_fence = not in_fence
+        if not in_fence and re.match(r'^#\s+\S', line):
+            title = strip_md(re.sub(r'#+\s*$', '', line[1:]))
+            del lines[i]
+            break
+    if not title:
+        title = fm.get('title') or os.path.splitext(os.path.basename(dest))[0].replace('-', ' ').title()
+
+    description = first_paragraph(lines)
+    if page_src.startswith('api/classes/'):
+        parts = page_src.split('/')
+        service = os.path.splitext(parts[-1])[0]
+        domain = parts[4] if len(parts) > 5 else service
+        title = f'{service} API ({domain})' if domain != service else f'{service} API'
+        name, ns = (service, service) if domain == service else (f'{domain} {service}', f'{domain}.{service}')
+        description = (f'Reference for the Leantime {name} JSON-RPC service: '
+                       f'every leantime.rpc.{ns} method with its parameters and return values.')
+    body = rewrite_links('\n'.join(lines).lstrip('\n') + '\n', page_src)
+
+    head = ['---', 'title: ' + yaml_str(title)]
+    if description:
+        head.append('description: ' + yaml_str(description))
+    head.append('---')
+    with open(dest, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(head) + '\n\n' + body)
+
+
+HEADING = re.compile(r'^ {0,3}(#{1,6})(\s+.*)$')  # CommonMark allows up to 3 spaces of indent
+
+# Callout label (lower case, without the colon) -> Starlight aside type.
+CALLOUTS = {
+    'note': 'note', 'info': 'note', 'tip': 'tip', 'hint': 'tip',
+    'important': 'caution', 'warning': 'caution', 'caution': 'caution',
+    'security note': 'caution', 'beta notice': 'caution', 'danger': 'danger',
+}
+CALLOUT_START = re.compile(r'^>\s*\*\*([A-Za-z ]+?):?\*\*:?\s*(.*)$')
+DEFAULT_TITLE = {'note': 'note', 'tip': 'tip', 'caution': 'caution', 'danger': 'danger'}
+
+
+def normalize_headings(body):
+    """One H1 per page (the title) and no skipped levels. Leaves code fences alone.
+
+    Each heading lands one level below the nearest heading above it that was
+    written at a higher level, so siblings stay siblings: a page whose sections
+    were all H4 gets H2 sections, and a stray "# Related" becomes an H2.
+    """
+    lines = body.split('\n')
+    in_fence = False
+    stack = []  # (written level, new level)
+    for i, line in enumerate(lines):
+        if FENCE.match(line):
+            in_fence = not in_fence
+            continue
+        m = None if in_fence else HEADING.match(line)
+        if not m:
+            continue
+        written = len(m.group(1))
+        while stack and stack[-1][0] >= written:
+            stack.pop()
+        level = min(stack[-1][1] + 1 if stack else 2, 6)
+        stack.append((written, level))
+        lines[i] = '#' * level + m.group(2)
+    return '\n'.join(lines)
+
+
+def convert_callouts(body):
+    """> **Note:** text  ->  :::note ... :::  (the label is the aside title unless it is the default)."""
+    lines = body.split('\n')
+    out, i, in_fence = [], 0, False
+    while i < len(lines):
+        line = lines[i]
+        if FENCE.match(line):
+            in_fence = not in_fence
+        m = None if in_fence else CALLOUT_START.match(line)
+        kind = CALLOUTS.get(m.group(1).strip().lower()) if m else None
+        if not kind:
+            out.append(line)
+            i += 1
+            continue
+        label = m.group(1).strip()
+        content = [m.group(2)]
+        i += 1
+        while i < len(lines) and lines[i].startswith('>'):
+            content.append(re.sub(r'^>\s?', '', lines[i]))
+            i += 1
+        title = '' if label.lower() == DEFAULT_TITLE[kind] else f'[{label}]'
+        out += [f':::{kind}{title}', *content, ':::']
+    return '\n'.join(out)
+
+
+OVERRIDES = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'overrides')
+
+
+def apply_overrides():
+    """Copy scripts/overrides/** over the converted pages."""
+    count = 0
+    for root, _, files in os.walk(OVERRIDES):
+        for name in files:
+            src = os.path.join(root, name)
+            rel = os.path.relpath(src, OVERRIDES)
+            dest = os.path.join(DEST, rel)
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            stem, ext = os.path.splitext(dest)
+            other = stem + ('.md' if ext == '.mdx' else '.mdx')
+            if os.path.exists(other):
+                os.remove(other)
+            with open(src, encoding='utf-8') as f, open(dest, 'w', encoding='utf-8') as g:
+                g.write(f.read())
+            count += 1
+    print(f'Applied {count} overrides.')
+
+
+def tidy_pages():
+    """Heading levels and callouts on every converted Markdown page."""
+    changed = 0
+    for root, _, files in os.walk(DEST):
+        for name in files:
+            if not name.endswith('.md'):
+                continue
+            path = os.path.join(root, name)
+            text = open(path, encoding='utf-8').read()
+            fm, sep, body = text.partition('\n---\n') if text.startswith('---\n') else ('', '', text)
+            new_body = convert_callouts(normalize_headings(body))
+            if new_body != body:
+                with open(path, 'w', encoding='utf-8') as f:
+                    f.write(fm + sep + new_body)
+                changed += 1
+    print(f'Tidied {changed} pages.')
+
+
+def post_process():
+    tidy_pages()
+    apply_overrides()
+    apply_metadata()
+
+
+METADATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'page-metadata.json')
+
+
+GLANCE_LEVELS = ('Beginner', 'Some experience', 'Advanced')
+GLANCE_KEYS = ('minutes', 'maxMinutes', 'level', 'needs', 'where', 'result')
+# The portable block content pages carry for the docsify site: "**At a glance**", a blank line, a list.
+INLINE_GLANCE = re.compile(r'^\*\*At a glance\*\*[ \t]*\n\n(?:[-*] .*\n)+\n?', re.M)
+
+
+def frontmatter_blocks(text):
+    """Split a page into (ordered {key: raw YAML lines}, body). Keeps nested blocks like glance intact."""
+    m = re.match(r'---\n(.*?)\n---\n', text, re.S)
+    if not m:
+        return {}, text
+    blocks, key = {}, None
+    for line in m.group(1).splitlines():
+        top = re.match(r'^([A-Za-z_][\w-]*):(.*)$', line)
+        if top:
+            key = top.group(1)
+            blocks[key] = [line]
+        elif key:
+            blocks[key].append(line)
+    return blocks, text[m.end():]
+
+
+def glance_yaml(rel, glance):
+    """The glance object from page-metadata.json as front matter lines. Fails loudly on a typo."""
+    unknown = set(glance) - set(GLANCE_KEYS)
+    if unknown:
+        sys.exit(f'page-metadata.json: {rel}: unknown glance keys {sorted(unknown)}')
+    if glance.get('level') and glance['level'] not in GLANCE_LEVELS:
+        sys.exit(f'page-metadata.json: {rel}: level must be one of {GLANCE_LEVELS}')
+    lines = ['glance:']
+    for key in GLANCE_KEYS:
+        if key not in glance:
+            continue
+        value = glance[key]
+        if key in ('minutes', 'maxMinutes'):
+            lines.append(f'  {key}: {int(value)}')
+        elif isinstance(value, list):
+            lines.append(f'  {key}:')
+            lines += [f'    - {yaml_str(item)}' for item in value]
+        else:
+            lines.append(f'  {key}: {yaml_str(value)}')
+    return lines
+
+
+def apply_metadata():
+    """Set the search title, description, draft flag and glance from scripts/page-metadata.json."""
+    meta = json.load(open(METADATA, encoding='utf-8'))
+    applied = 0
+    for rel, values in meta.items():
+        if rel.startswith('_'):
+            continue
+        if any(os.path.exists(os.path.join(OVERRIDES, r)) for r in (rel, rel + 'x')):
+            continue  # an override page sets its own front matter
+        path = os.path.join(DEST, rel)
+        if not os.path.exists(path):
+            print('page-metadata.json: no page at ' + path)
+            continue
+        blocks, body = frontmatter_blocks(open(path, encoding='utf-8').read())
+        for key in ('title', 'description'):
+            if key in values:
+                blocks[key] = [f'{key}: {yaml_str(values[key])}']
+        if values.get('draft'):
+            blocks['draft'] = ['draft: true']
+        if 'glance' in values:
+            blocks['glance'] = glance_yaml(rel, values['glance'])
+            body = INLINE_GLANCE.sub('', body, count=1)
+        elif INLINE_GLANCE.search(body):
+            print(f'page-metadata.json: {rel} has an "At a glance" block but no glance entry; the block stays in the text')
+        head = '---\n' + ''.join(line + '\n' for lines in blocks.values() for line in lines) + '---\n'
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(head + body)
+        applied += 1
+    print(f'Applied metadata to {applied} pages.')
+
+
+def main():
+    if '--metadata-only' in sys.argv:
+        apply_metadata()
+        return
+    if '--post-only' in sys.argv:
+        post_process()
+        return
+    if os.path.exists(DEST):
+        sys.exit(DEST + ' already exists; migration already ran.')
+    pages = collect()
+    SOURCE_PAGES.update(pages)
+    moved = []
+    for src in pages:
+        dest = os.path.join(DEST, target_path(src))
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        git('mv', src, dest)
+        moved.append((src, dest))
+    os.makedirs('public', exist_ok=True)
+    for p in PUBLIC:
+        if os.path.exists(p):
+            git('mv', p, os.path.join('public', p))
+    for src, dest in moved:
+        convert(src, dest)
+    print(f'Moved and converted {len(moved)} pages.')
+    post_process()
+
+
+if __name__ == '__main__':
+    main()
