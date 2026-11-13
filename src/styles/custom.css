@@ -128,17 +128,98 @@
 	}
 }
 
-/* Home page task cards: coloured to match the section they lead to. */
+/* Home page cards: plain, so the links stand out. */
 .lt-tasks {
 	display: flex;
 }
 .lt-tasks .card {
 	flex: 1;
-	border-top: 4px solid var(--lt-accent);
+	--sl-card-border: var(--sl-color-gray-5);
+	--sl-card-bg: transparent;
+	border-radius: 0.6rem;
 }
-.lt-tasks .card {
-	--sl-card-border: var(--lt-accent);
-	--sl-card-bg: color-mix(in srgb, var(--lt-accent) 14%, transparent);
+.lt-tasks .card .icon {
+	color: var(--sl-color-gray-3);
+}
+
+/* Home page "Common questions": each group is a soft panel with its own heading, and the
+   questions inside it are rows you read down. Two columns on wide screens (the longest group on
+   the left), one on phones. */
+.lt-questions {
+	display: grid;
+	gap: 1rem;
+	align-items: start;
+}
+@media (min-width: 50rem) {
+	.lt-questions {
+		grid-template-columns: 1fr 1fr;
+	}
+	.lt-questions > div:first-child {
+		grid-row: span 2;
+	}
+}
+.lt-questions > div {
+	margin-top: 0 !important;
+	padding: 1.25rem 1.5rem 0.75rem;
+	border: 1px solid var(--sl-color-gray-6);
+	border-radius: 0.75rem;
+	background-color: var(--sl-color-gray-7);
+	box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+:root[data-theme='dark'] .lt-questions > div {
+	background-color: var(--sl-color-gray-6);
+	border-color: var(--sl-color-gray-5);
+}
+.lt-questions h3 {
+	margin: 0 0 0.25rem !important;
+	font-size: var(--sl-text-xl);
+	font-weight: 600;
+	color: var(--sl-color-white);
+}
+/* The group headings don't need Starlight's "link to this heading" icon. */
+.lt-questions .sl-anchor-link {
+	display: none;
+}
+.lt-questions .sl-heading-wrapper {
+	margin: 0 0 0.25rem !important;
+}
+.lt-questions ul {
+	margin-top: 0 !important;
+	padding-inline-start: 0;
+	list-style: none;
+}
+.lt-questions li {
+	margin: 0 !important;
+}
+.lt-questions li + li {
+	border-top: 1px solid var(--sl-color-gray-5);
+}
+.lt-questions li a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.65rem 0;
+	color: var(--sl-color-text-accent);
+	font-weight: 500;
+	text-decoration: none;
+}
+.lt-questions li a::after {
+	content: '→';
+	flex-shrink: 0;
+	color: var(--sl-color-gray-3);
+	transition: transform 0.15s ease;
+}
+.lt-questions li a:hover {
+	text-decoration: underline;
+}
+.lt-questions li a:hover::after {
+	color: var(--sl-color-text-accent);
+	transform: translateX(3px);
+}
+.lt-questions li a:focus-visible {
+	outline: 2px solid var(--sl-color-text-accent);
+	outline-offset: 2px;
 }
 
 /* Dark mode shows the app's white logo (src/assets/leantime-logo-white.svg). Its artwork fills the

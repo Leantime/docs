@@ -1,0 +1,156 @@
+---
+/**
+ * The site footer at the bottom of every page: the logo and what Leantime is, then links to the
+ * most-used docs, the community and leantime.io, and a copyright line.
+ */
+import { Image } from 'astro:assets';
+import logoDark from '../assets/leantime-logo-white.svg';
+import logoLight from '../assets/leantime-logo.webp';
+import { REPO_URL } from '../lib/stars';
+
+const columns: Array<{ title: string; links: Array<{ label: string; href: string }> }> = [
+	{
+		title: 'Docs',
+		links: [
+			{ label: 'Install with Docker', href: '/installation/docker/' },
+			{ label: 'System requirements', href: '/installation/system-requirements/' },
+			{ label: 'Upgrade Leantime', href: '/installation/upgrade-guide/' },
+			{ label: 'Common issues', href: '/installation/common-issues/' },
+			{ label: 'FAQ', href: '/installation/frequently-asked-questions/' },
+		],
+	},
+	{
+		title: 'Community',
+		links: [
+			{ label: 'GitHub', href: REPO_URL },
+			{ label: 'Discord', href: 'https://discord.gg/4zMzJtAq9z' },
+			{ label: 'Discussions', href: `${REPO_URL}/discussions` },
+			{ label: 'Report a bug', href: `${REPO_URL}/issues` },
+		],
+	},
+	{
+		title: 'Leantime',
+		links: [
+			{ label: 'leantime.io', href: 'https://leantime.io/' },
+			{ label: 'Leantime Cloud', href: 'https://leantime.io/pricing/' },
+			{ label: 'Plugin marketplace', href: 'https://marketplace.leantime.io/' },
+		],
+	},
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="lt-site-footer not-content print:hidden">
+	<div class="lt-site-footer-grid">
+		<div class="lt-site-footer-brand">
+			<a href="/" class="lt-site-footer-logo" aria-label="Leantime Docs home">
+				<Image src={logoLight} alt="" class="dark:sl-hidden" height={32} />
+				<Image src={logoDark} alt="" class="light:sl-hidden" height={22} />
+			</a>
+			<p>Open source project management for non-project managers. Built with ADHD, dyslexia and autism in mind.</p>
+		</div>
+		{
+			columns.map((column) => (
+				<nav aria-label={column.title}>
+					<p class="lt-site-footer-title">{column.title}</p>
+					<ul>
+						{column.links.map((link) => (
+							<li>
+								<a href={link.href}>{link.label}</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			))
+		}
+	</div>
+	<p class="lt-site-footer-legal">
+		© {year} Leantime. Leantime is open source under the <a href={`${REPO_URL}/blob/master/LICENSE`}>AGPLv3 license</a>.
+	</p>
+</footer>
+
+<style>
+	/* The layout follows the room the footer has (wide on the home page, narrower next to the
+	   sidebar on doc pages), not the screen width. */
+	.lt-site-footer {
+		container-type: inline-size;
+		margin-top: 4rem;
+		padding-top: 2.5rem;
+		border-top: 1px solid var(--sl-color-gray-5);
+		font-size: var(--sl-text-sm);
+	}
+	.lt-site-footer-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem 1.5rem;
+	}
+	.lt-site-footer-brand {
+		grid-column: 1 / -1;
+	}
+	.lt-site-footer-brand p {
+		max-width: 28rem;
+	}
+	@container (min-width: 32rem) {
+		.lt-site-footer-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	@container (min-width: 56rem) {
+		.lt-site-footer-grid {
+			grid-template-columns: 2fr 1fr 1fr 1fr;
+		}
+		.lt-site-footer-brand {
+			grid-column: auto;
+		}
+		.lt-site-footer-brand p {
+			max-width: 20rem;
+		}
+	}
+	.lt-site-footer-logo {
+		display: inline-flex;
+	}
+	.lt-site-footer-logo img {
+		width: auto;
+	}
+	.lt-site-footer-brand p {
+		margin: 0.75rem 0 0;
+		color: var(--sl-color-gray-2);
+		line-height: 1.6;
+	}
+	.lt-site-footer-title {
+		margin: 0 0 0.75rem;
+		font-weight: 600;
+		color: var(--sl-color-white);
+	}
+	.lt-site-footer ul {
+		display: grid;
+		gap: 0.5rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.lt-site-footer a {
+		color: var(--sl-color-gray-2);
+		text-decoration: none;
+	}
+	.lt-site-footer a:hover {
+		color: var(--sl-color-text-accent);
+		text-decoration: underline;
+	}
+	.lt-site-footer a:focus-visible {
+		outline: 2px solid var(--sl-color-text-accent);
+		outline-offset: 2px;
+	}
+	.lt-site-footer-legal {
+		margin: 2.5rem 0 0;
+		padding-block: 1.25rem 0.5rem;
+		border-top: 1px solid var(--sl-color-gray-6);
+		color: var(--sl-color-gray-3);
+		font-size: var(--sl-text-xs);
+	}
+	.lt-site-footer-legal a {
+		color: inherit;
+		text-decoration: underline;
+	}
+</style>

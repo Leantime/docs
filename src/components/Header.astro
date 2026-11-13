@@ -3,35 +3,19 @@
  * Site header, calmer than Starlight's default:
  * - the logo with a "Docs" label, so it's clear which Leantime site you're on, and the Leantime
  *   version the docs describe (src/lib/version.ts), linking to its release notes;
- * - the five colour-coded sections as links, with the one you're in marked (wide screens only;
- *   on smaller screens they're in the sidebar);
  * - a compact search button on the right instead of a wide search bar. It opens the same
  *   search dialog, with ⌘K / Ctrl+K and "/" as shortcuts;
- * - theme and text style together behind one "Display" button, then GitHub and Discord.
+ * - theme and text style together behind one "Display" button;
+ * - a "Star" button with the repository's star count (src/lib/stars.ts). GitHub and Discord
+ *   are also in the mobile menu.
  */
-import { getCollection } from 'astro:content';
 import { Icon } from '@astrojs/starlight/components';
 import Search from 'virtual:starlight/components/Search';
 import SiteTitle from 'virtual:starlight/components/SiteTitle';
-import SocialIcons from 'virtual:starlight/components/SocialIcons';
 import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
-import { sectionOf, type SectionKey } from '../lib/sections';
+import { REPO_URL, STARS, STARS_SHORT } from '../lib/stars';
 import { RELEASE_URL, SHORT_VERSION } from '../lib/version';
 
-const { entry, id } = Astro.locals.starlightRoute;
-const current = id ? sectionOf(id, entry.data.section as SectionKey | undefined) : undefined;
-
-const pages = new Set((await getCollection('docs')).map((page) => page.id));
-/** The first page of each section that exists (the AI overview arrives with the ai/ pages). */
-const firstExisting = (...ids: string[]) => ids.find((page) => pages.has(page));
-
-const sections: Array<{ key: SectionKey; label: string; page: string | undefined }> = [
-	{ key: 'install', label: 'Self-hosting', page: firstExisting('installation/installation-types') },
-	{ key: 'use', label: 'Using Leantime', page: firstExisting('getting-started/new-project', 'using-leantime/task-management') },
-	{ key: 'ai', label: 'AI', page: firstExisting('ai', 'installation/leantime-mcp') },
-	{ key: 'learn', label: 'Knowledge base', page: firstExisting('knowledge-base/wheretostart') },
-	{ key: 'dev', label: 'Developers', page: firstExisting('api/usage', 'development/plugin-development') },
-];
 ---
 
 <div class="lt-header">
@@ -47,27 +31,6 @@ const sections: Array<{ key: SectionKey; label: string; page: string | undefined
 			{SHORT_VERSION}
 		</a>
 	</div>
-
-	<nav class="lt-sections print:hidden" aria-label="Sections">
-		<ul>
-			{
-				sections
-					.filter((section) => section.page)
-					.map((section) => (
-						<li>
-							<a
-								href={`/${section.page}/`}
-								data-section={section.key}
-								aria-current={section.key === current ? 'true' : undefined}
-							>
-								<span class="lt-dot" aria-hidden="true" />
-								{section.label}
-							</a>
-						</li>
-					))
-			}
-		</ul>
-	</nav>
 
 	<div class="lt-tools print:hidden">
 		<div class="lt-search">
@@ -85,9 +48,16 @@ const sections: Array<{ key: SectionKey; label: string; page: string | undefined
 			</div>
 		</details>
 
-		<div class="lt-social sl-hidden md:sl-flex">
-			<SocialIcons />
-		</div>
+		<a
+			class="lt-star sl-hidden md:sl-flex"
+			href={REPO_URL}
+			title="Star Leantime on GitHub"
+			aria-label={STARS ? `Star Leantime on GitHub, ${STARS.toLocaleString('en-US')} stars` : 'Star Leantime on GitHub'}
+		>
+			<Icon name="github" size="1rem" />
+			<span class="lt-star-label">Star</span>
+			{STARS_SHORT && <span class="lt-star-count">{STARS_SHORT}</span>}
+		</a>
 	</div>
 </div>
 
@@ -162,54 +132,6 @@ const sections: Array<{ key: SectionKey; label: string; page: string | undefined
 		.lt-version {
 			display: none;
 		}
-	}
-
-	/* Section links: wide screens only. */
-	.lt-sections {
-		display: none;
-	}
-	@media (min-width: 72rem) {
-		.lt-sections {
-			display: block;
-			margin-inline-start: 1rem;
-		}
-	}
-	.lt-sections ul {
-		display: flex;
-		gap: 0.25rem;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	.lt-sections a {
-		display: flex;
-		align-items: center;
-		gap: 0.45rem;
-		padding: 0.35rem 0.7rem;
-		border-radius: 999px;
-		color: var(--sl-color-gray-2);
-		font-size: var(--sl-text-sm);
-		font-weight: 600;
-		text-decoration: none;
-		white-space: nowrap;
-	}
-	.lt-sections a:hover {
-		color: var(--sl-color-white);
-		background-color: var(--sl-color-gray-6);
-	}
-	.lt-sections .lt-dot {
-		width: 0.5rem;
-		height: 0.5rem;
-		border-radius: 50%;
-		background-color: var(--lt-accent);
-		opacity: 0.55;
-	}
-	.lt-sections a[aria-current='true'] {
-		color: var(--lt-accent);
-		background-color: color-mix(in srgb, var(--lt-accent) 12%, transparent);
-	}
-	.lt-sections a[aria-current='true'] .lt-dot {
-		opacity: 1;
 	}
 
 	.lt-tools {
@@ -289,14 +211,33 @@ const sections: Array<{ key: SectionKey; label: string; page: string | undefined
 		color: var(--sl-color-gray-3);
 	}
 
-	.lt-social {
-		gap: 0.75rem;
+	/* Star on GitHub: a pill like Display, with the star count after a divider. */
+	.lt-star {
 		align-items: center;
+		gap: 0.4rem;
+		height: 2.25rem;
+		padding-inline: 0.65rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 999px;
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-sm);
+		text-decoration: none;
+		white-space: nowrap;
 	}
-
+	.lt-star:hover {
+		border-color: var(--sl-color-gray-2);
+		color: var(--sl-color-white);
+	}
+	.lt-star-count {
+		padding-inline-start: 0.5rem;
+		border-inline-start: 1px solid var(--sl-color-gray-5);
+		font-weight: 600;
+		font-variant-numeric: tabular-nums;
+	}
 	/* Between tablet and wide screens: icon-only Display button to leave room. */
 	@media (max-width: 60rem) {
-		.lt-display-label {
+		.lt-display-label,
+		.lt-star-label {
 			display: none;
 		}
 	}

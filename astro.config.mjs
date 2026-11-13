@@ -133,6 +133,8 @@ export default defineConfig({
 			},
 			editLink: { baseUrl: 'https://github.com/Leantime/docs/edit/master/' },
 			lastUpdated: true,
+			// No Previous/Next links: the sidebar isn't a sequence, so they often pointed somewhere unrelated.
+			pagination: false,
 			routeMiddleware: './src/routeData.ts',
 			components: {
 				Header: './src/components/Header.astro',

@@ -22,56 +22,28 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 ## What do you want to do?
 
 <CardGrid>
-<div data-section="install" class="lt-tasks">
-<Card title="Install Leantime" icon="rocket">
+<div class="lt-tasks">
+<Card title="Install and run Leantime" icon="rocket">
 - [With Docker](/installation/docker/), about 10 minutes
 - [On your own server](/installation/package-installation/) with PHP and MySQL
-- [What your server needs](/installation/system-requirements/)
+- [Sign-in and SSO](/installation/authentication-configuration/)
+- [Upgrade to a new version](/installation/upgrade-guide/)
 </Card>
 </div>
-<div data-section="install" class="lt-tasks">
-<Card title="Fix a problem" icon="warning">
-- [Common issues](/installation/common-issues/): login, uploads, errors
-- [Docker troubleshooting](/installation/docker-troubleshooting/)
-- [Frequently asked questions](/installation/frequently-asked-questions/)
+<div class="lt-tasks">
+<Card title="Use Leantime" icon="open-book">
+- [Where do I start?](/knowledge-base/wheretostart/)
+- [Set up your first project](/getting-started/new-project/)
+- [Add features with plugins](/installation/using-plugins/)
 </Card>
 </div>
-<div data-section="install" class="lt-tasks">
-<Card title="Set up sign-in" icon="padlock">
-- [OpenID Connect and LDAP](/installation/authentication-configuration/)
-- [GitHub, Google, Microsoft, Okta and more](/installation/plugin-installation/)
-- [Email and SMTP](/installation/email-configuration/)
-</Card>
-</div>
-<div data-section="ai" class="lt-tasks">
+<div class="lt-tasks">
 <Card title="Use AI with Leantime" icon="comment">
-- [Connect Claude, Cursor or VS Code](/installation/leantime-mcp/) with the MCP server
-- Every page has **Copy page for AI**, for help from your assistant
+- [Connect Claude, Cursor or VS Code](/installation/leantime-mcp/)
 - [llms.txt](/llms.txt): all the docs for AI tools
 </Card>
 </div>
-<div data-section="use" class="lt-tasks">
-<Card title="Learn Leantime" icon="open-book">
-- [Where do I start?](/knowledge-base/wheretostart/)
-- [Set up your first project](/getting-started/new-project/)
-- [To-dos and boards](/using-leantime/task-management/)
-</Card>
-</div>
-<div data-section="use" class="lt-tasks">
-<Card title="Add features with plugins" icon="puzzle">
-- [What each plugin does](/installation/using-plugins/)
-- [Install a plugin](/installation/plugin-installation/)
-- [Browse the marketplace](https://marketplace.leantime.io/)
-</Card>
-</div>
-<div data-section="install" class="lt-tasks">
-<Card title="Keep it running" icon="setting">
-- [Upgrade to a new version](/installation/upgrade-guide/)
-- [Back up and restore](/installation/backup-restore/)
-- [All settings](/installation/configuration/)
-</Card>
-</div>
-<div data-section="dev" class="lt-tasks">
+<div class="lt-tasks">
 <Card title="Build on Leantime" icon="code-branch">
 - [Connect to the API](/api/usage/)
 - [Write a plugin](/development/plugin-development/)
@@ -79,3 +51,43 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 </Card>
 </div>
 </CardGrid>
+
+## Common questions
+
+<div class="lt-questions">
+<div>
+
+### Installing and running
+
+- [How do I install Leantime with Docker?](/installation/docker/)
+- [What does my server need to run Leantime?](/installation/system-requirements/)
+- [How do I update Leantime to a new version?](/installation/upgrade-guide/)
+- [How do I back up and restore Leantime?](/installation/backup-restore/)
+- [Can I sign in with SSO, LDAP or OpenID Connect?](/installation/authentication-configuration/)
+- [Why aren't emails being sent?](/installation/frequently-asked-questions/#why-arent-emails-being-sent-from-leantime)
+- [Why does login just refresh the page?](/installation/common-issues/#login-just-refreshes-no-error-message)
+- [Can I run Leantime on a Synology NAS?](/installation/synology/)
+
+</div>
+<div>
+
+### Using Leantime
+
+- [Where do I start?](/knowledge-base/wheretostart/)
+- [How do I set up my first project?](/getting-started/new-project/)
+- [How do I add users and choose their roles?](/using-leantime/user-management/)
+- [How do I track time?](/using-leantime/timesheets/)
+- [How do I plan a roadmap with milestones?](/using-leantime/roadmap-planning/)
+
+</div>
+<div>
+
+### Plugins, AI and the API
+
+- [How do I install a plugin and enter its license key?](/installation/plugin-installation/)
+- [How do I connect Claude, Cursor or VS Code to Leantime?](/installation/leantime-mcp/)
+- [How do I use the Leantime API?](/api/usage/)
+- [How do I write a plugin?](/development/plugin-development/)
+
+</div>
+</div>
