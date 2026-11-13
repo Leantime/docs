@@ -32,7 +32,7 @@ To add someone to a client:
 
 You can also change an existing user's client in **Company → User Management** (see [User Management](using-leantime/user-management.md)).
 
-> **Tip:** For a customer who should only read and comment, give them the **Commenter** or **Read Only** role.
+> **Tip:** For a customer who should follow along and leave comments, give them the **Commenter** role. **Read Only** lets them look but not comment.
 
 ## What else is on a client's page?
 
@@ -42,7 +42,9 @@ You can also change an existing user's client in **Company → User Management**
 
 ## How do I delete a client?
 
-Open the client and click **Delete** at the bottom of the page. Leantime won't delete a client while its projects still have to-dos ("Client has to-dos & projects assigned"). Move those projects to another client, or delete them, first.
+Open the client and click **Delete** at the bottom of the page. **Deleting a client also deletes its projects.** Move any project you want to keep to another client first.
+
+Leantime won't delete a client while its projects still have to-dos ("Client has to-dos & projects assigned"). Move those projects to another client, or delete them, first.
 
 ## What if something goes wrong?
 
