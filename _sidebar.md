@@ -28,6 +28,13 @@
 - [Event Hooks/Filters](technical/hooks.md)
 - [Source Code](technical/README.md)
 
+**Using Leantime**
+
+- [My Work Dashboard](using-leantime/my-work-dashboard.md)
+- [Projects](using-leantime/managing-projects.md)
+- [Clients](using-leantime/managing-clients.md)
+- [Notifications](using-leantime/notifications.md)
+
 **Everything Else**
 
  - [Leantime's MCP Server](installation/leantime-mcp.md)
