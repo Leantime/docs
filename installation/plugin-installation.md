@@ -58,38 +58,34 @@ Using File Manager:
 
 The easiest way to install plugins is through the built-in marketplace interface.
 
-### Step 1: Access the Marketplace
+### Step 1: Open Leantime Apps
 
-1. Log in to your Leantime instance as an administrator
-2. Click the Company from the top menu
-3. Select Leantime Apps in the sidebar
-4. Select **Explore Apps** 
-5. Click **Learn More** to see more about the plugin
+1. Sign in to Leantime as an Owner or Administrator.
+2. Open **Company** in the top menu.
+3. In the left menu, under **Administration**, click **Leantime Apps**. The **Explore Apps** tab lists the plugins on the marketplace.
+4. Click **Learn More** on a plugin to see what it does and which Leantime versions it supports (the **Compatibility** tab).
 
-### Step 2: Purchase or Select a Plugin
+### Step 2: Get a License Key
 
-1. Browse or search for the plugin you need
-2. Click on the plugin to view details
-3. Click **Get a License**, complete the purchase on [marketplace.leantime.io](https://marketplace.leantime.io/). 
+1. On the plugin's **Learn More** screen, click **Get a license**. The plugin's page on [marketplace.leantime.io](https://marketplace.leantime.io/) opens.
+2. Choose the number of users and complete the purchase.
+3. Your license key arrives by email with your order receipt. Lost it? The [Lost License](https://marketplace.leantime.io/lost-license/) page sends it again.
 
-### Step 3: Enter License Key (Paid Plugins)
+Each plugin has its own license key, also when you buy a bundle. You install each plugin separately with its own key.
 
-If you purchased a plugin or bundle:
+### Step 3: Enter the Key and Install
 
-You will get a license key for each plugin individually and will need to install them separately. 
+1. Back in **Leantime Apps → Explore Apps**, click **Learn More** on the plugin you bought.
+2. Choose a version that supports your Leantime version (see the **Compatibility** tab), paste the key into **License Key** and click **Install**.
+3. Wait for "Plugin installed successfully!". If you see an error instead, see [License Key Not Recognized](#license-key-not-recognized).
 
-1. Return to the Leantime Apps under the Company menu point
-2. Click "Learn More" from the Plugin you purchased
-3. Copy and paste the license key from the marketplace (the individual license key) and click **Install**
-4. Your purchased plugins will appear and be available for installation
-5. You can then go to My Apps to complete the installation and enabling of the plugin. 
+### Step 4: Enable the Plugin
 
-### Step 4: Install and Enable
+1. Open the **My Apps** tab. The plugin is listed under **Installed Plugins**.
+2. Click **Enable**.
+3. Some plugins need more setup, for example variables in your `config/.env` file. If the plugin has a settings screen, a **Settings** link appears next to it. See [Plugin Configuration](#plugin-configuration).
 
-1. Find the plugin in your available plugins list
-2. Click **Activate**
-3. Once installed, toggle the **Enable** switch to activate the plugin
-4. Some plugins may require additional configuration (see Plugin Configuration below)
+Leantime stores the key with the plugin, so updates don't ask for it again. For what happens when you add users, update Leantime or a plugin fails, see [Plugin Licenses, Updates and Problems](installation/plugin-licenses.md).
 
 ---
 
@@ -142,16 +138,15 @@ A properly structured plugin folder should look like:
 ```
 app/Plugins/
 └── PluginName/
-    ├── composer.json      # Required: Plugin metadata
-    ├── register.php       # Required: Event/feature registration
-    ├── bootstrap.php      # Plugin initialization
-    ├── Controllers/       # Plugin controllers
-    ├── Views/             # Blade templates
+    ├── composer.json      # Required: plugin name, version and supported Leantime versions
+    ├── register.php       # Registers menus, events and settings
+    ├── Controllers/       # Pages
+    ├── Templates/         # Blade templates
     ├── Language/          # Translation files
     └── Services/          # Business logic
 ```
 
-The `composer.json` must include:
+The `composer.json` needs at least:
 
 ```json
 {
@@ -159,33 +154,27 @@ The `composer.json` must include:
   "description": "Plugin description",
   "version": "1.0.0",
   "type": "leantime-plugin",
-  "autoload": {
-    "psr-4": {
-      "Leantime\\Plugins\\PluginName\\": "/"
+  "extra": {
+    "leantime": {
+      "requires": ">=3.6 <4.0"
     }
   }
 }
 ```
 
-### Step 4: Enable in Admin Panel
+`extra.leantime.requires` lists the Leantime versions the plugin supports. Leantime doesn't load a plugin on other versions. A plugin that leaves it out is treated as supporting Leantime 3.x. See [Plugin Development](development/plugin-development.md).
 
-1. Go to **Settings → Plugins**
-2. Your manually installed plugin should appear in the list
-3. Toggle **Enable** to activate it
+### Step 4: Activate and Enable
+
+1. Go to **Company → Leantime Apps → My Apps**.
+2. Your plugin is listed under **Downloaded Plugins**. Click **Activate**.
+3. It moves to **Installed Plugins**. Click **Enable**.
 
 ---
 
 ## Plugin Bundles
 
-Leantime offers plugin bundles for different use cases:
-
-| Bundle | Description |
-|--------|-------------|
-| **Starter** | Essential plugins for micro-teams and side projects |
-| **Team** | Productivity toolkit for small teams |
-| **Business** | Comprehensive solution for larger teams |
-
-Bundles include a single license key that unlocks all included plugins. Enter the bundle license key in **Settings → Plugins → Enter License Key**.
+[Bundles](https://marketplace.leantime.io/product-category/plugins/bundles/) get you several plugins for one team size in one purchase. You still receive a separate license key for each plugin, and you [install each plugin](#step-3-enter-the-key-and-install) with its own key.
 
 ---
 
@@ -193,18 +182,20 @@ Bundles include a single license key that unlocks all included plugins. Enter th
 
 ### Marketplace Plugins
 
-1. Go to **Settings → Plugins**
-2. Plugins with available updates show an **Update** button
-3. Click **Update** to install the latest version
-4. Re-enable if the plugin was disabled during update
+1. Go to **Company → Leantime Apps → My Apps**. Leantime checks for updates once a day; click **Check for updates** to check now.
+2. A plugin with an update shows the new version, for example "v1.4.0 available". Click **Update**.
+
+Leantime uses the license key the plugin was installed with, and puts the previous version back if the new one doesn't load. To install minor and patch updates without clicking, turn on **Update plugins automatically**. See [How do plugin updates work?](installation/plugin-licenses.md#how-do-plugin-updates-work)
 
 ### Manual Updates
 
-1. Disable the plugin in **Settings → Plugins**
-2. Back up the existing plugin folder
-3. Replace with the new version files
+For plugins you installed from a folder:
+
+1. Disable the plugin in **My Apps**.
+2. Back up the existing plugin folder.
+3. Replace it with the new version's files.
 4. Clear the cache: `php ./bin/leantime cache:clear`
-5. Re-enable the plugin
+5. Enable the plugin again.
 
 ---
 
@@ -212,19 +203,18 @@ Bundles include a single license key that unlocks all included plugins. Enter th
 
 ### Disable First
 
-1. Go to **Settings → Plugins**
-2. Toggle the plugin to **Disabled**
-3. This preserves plugin data in the database
+1. Go to **Company → Leantime Apps → My Apps**.
+2. Click **Disable** next to the plugin.
+
+Disabling keeps the plugin's data. Click **Enable** to get it back.
 
 ### Complete Removal
 
-To fully remove a plugin:
+1. Back up your database.
+2. Disable the plugin, then click **Remove**.
+3. (Optional) Delete the plugin's folder from `app/Plugins/`.
 
-1. Disable the plugin
-2. Delete the plugin folder from `app/Plugins/`
-3. (Optional) Remove plugin tables from the database if you don't need the data
-
-**Note:** Some plugins create database tables. Removing the folder doesn't delete this data, which allows reinstallation without data loss.
+> **Note:** **Remove** runs the plugin's uninstall step, and some plugins delete their data there. Custom Fields, for example, deletes all your fields and their values. If you might want the data back, disable the plugin instead of removing it.
 
 ---
 
@@ -509,14 +499,21 @@ This indicates the Plugins folder is not properly mounted as a volume. Without a
 
 ### License Key Not Recognized
 
-- Ensure you're entering the key exactly as received (no extra spaces)
-- Check your Leantime version is compatible with the plugin
-- Verify your instance can reach `marketplace.leantime.io` (check firewall/proxy settings)
-- Contact support if the issue persists
+- Enter the key exactly as received, with no spaces before or after it.
+- Use the key for this plugin. A bundle gives you a separate key for each plugin, and each one only installs its own plugin.
+- Count your active users. If you have more than your license allows, the marketplace refuses the install. See [What counts as a user?](installation/plugin-licenses.md#what-counts-as-a-user-for-a-plugin-license)
+- Check the plugin's **Compatibility** tab supports your Leantime version.
+- Make sure your server can reach `https://marketplace.leantime.io` (check firewall and proxy settings).
+- Lost the key? The [Lost License](https://marketplace.leantime.io/lost-license/) page sends it again.
+- Still stuck? [Contact the marketplace](https://marketplace.leantime.io/contact/).
+
+### Plugin Was Disabled On Its Own
+
+Leantime switches a plugin off when it keeps failing or when your active users go over its license. It stops loading a plugin that doesn't support your Leantime version. In each case, Owners and Administrators get a notification that says why. See [Plugin Licenses, Updates and Problems](installation/plugin-licenses.md).
 
 ### Plugin Causes Errors After Enabling
 
-1. Disable the plugin immediately via **Settings → Plugins**
+1. Disable the plugin in **Company → Leantime Apps → My Apps**, or from the server with `php ./bin/leantime plugin:disable "<plugin name>"`
 2. If you can't access Settings, disable via database:
 
 ```sql
