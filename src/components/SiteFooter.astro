@@ -1,12 +1,14 @@
 ---
 /**
  * The site footer at the bottom of every page: the logo and what Leantime is, then links to the
- * most-used docs, the community and leantime.io, and a copyright line.
+ * most-used docs, the community and leantime.io, and a bottom line with the copyright and the
+ * Leantime version the docs describe (src/lib/version.ts), linking to its release notes.
  */
 import { Image } from 'astro:assets';
 import logoDark from '../assets/leantime-logo-white.svg';
 import logoLight from '../assets/leantime-logo.webp';
 import { REPO_URL } from '../lib/stars';
+import { LEANTIME_VERSION, RELEASE_URL } from '../lib/version';
 
 const columns: Array<{ title: string; links: Array<{ label: string; href: string }> }> = [
 	{
@@ -65,9 +67,10 @@ const year = new Date().getFullYear();
 			))
 		}
 	</div>
-	<p class="lt-site-footer-legal">
-		© {year} Leantime. Leantime is open source under the <a href={`${REPO_URL}/blob/master/LICENSE`}>AGPLv3 license</a>.
-	</p>
+	<div class="lt-site-footer-legal">
+		<p>© {year} Leantime. Leantime is open source under the <a href={`${REPO_URL}/blob/master/LICENSE`}>AGPLv3 license</a>.</p>
+		<p>Docs for Leantime {LEANTIME_VERSION} · <a href={RELEASE_URL}>Release notes</a></p>
+	</div>
 </footer>
 
 <style>
@@ -143,11 +146,18 @@ const year = new Date().getFullYear();
 		outline-offset: 2px;
 	}
 	.lt-site-footer-legal {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 0.25rem 1.5rem;
 		margin: 2.5rem 0 0;
 		padding-block: 1.25rem 0.5rem;
 		border-top: 1px solid var(--sl-color-gray-6);
 		color: var(--sl-color-gray-3);
 		font-size: var(--sl-text-xs);
+	}
+	.lt-site-footer-legal p {
+		margin: 0;
 	}
 	.lt-site-footer-legal a {
 		color: inherit;
