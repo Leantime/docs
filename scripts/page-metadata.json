@@ -1,5 +1,5 @@
 {
-  "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build, 'glance' is the At a glance box of a task page (minutes, maxMinutes, level, needs, where, result; see CONTRIBUTING.md) and replaces the page's '**At a glance**' Markdown block. New pages and override pages set these in their own front matter instead.",
+  "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'searchTitle' (optional) is the browser-tab and search-result title when it should say more than the heading, 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build, 'glance' is the At a glance box of a task page (minutes, maxMinutes, level, needs, where, result; see CONTRIBUTING.md) and replaces the page's '**At a glance**' Markdown block. New pages and override pages set these in their own front matter instead.",
 
   "api/index.md": {
     "title": "JSON-RPC API reference",
@@ -320,12 +320,24 @@
     }
   },
   "using-leantime/managing-clients.md": {
-    "title": "Managing clients",
-    "description": "See your clients and their projects in Leantime, open a client's details, and add new clients."
+    "title": "Clients",
+    "searchTitle": "Clients in Leantime: group projects by customer or department",
+    "description": "Group Leantime projects by customer, product or department, and let each customer's people see only their own projects."
   },
   "using-leantime/managing-projects.md": {
-    "title": "Managing projects",
-    "description": "Edit the current project's settings, see all your projects in one list, and create new projects in Leantime."
+    "title": "Projects",
+    "searchTitle": "Projects in Leantime: create, share and organize projects",
+    "description": "Create a project in Leantime, choose who can see it, add your team and their roles, switch features on or off, and copy, close or delete projects."
+  },
+  "using-leantime/my-work-dashboard.md": {
+    "title": "My Work Dashboard",
+    "searchTitle": "My Work dashboard in Leantime: your to-dos, calendar and projects",
+    "description": "What the Leantime My Work dashboard shows: your to-dos from every project, a calendar for time boxing your day, and widgets you can add or move."
+  },
+  "using-leantime/notifications.md": {
+    "title": "Notifications",
+    "searchTitle": "Leantime notifications: email, in-app and per-project settings",
+    "description": "Choose which Leantime notifications you get by email and in the app, mute busy projects, and fix notification emails that arrive late or not at all."
   },
   "using-leantime/research-boards.md": {
     "title": "Research boards",

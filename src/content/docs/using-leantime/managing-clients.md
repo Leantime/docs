@@ -1,6 +1,9 @@
 ---
-title: "Managing clients"
-description: "See your clients and their projects in Leantime, open a client's details, and add new clients."
+title: "Clients"
+description: "Group Leantime projects by customer, product or department, and let each customer's people see only their own projects."
+head:
+  - tag: title
+    content: "Clients in Leantime: group projects by customer or department"
 ---
 
 Managing clients can be found in the drop down from your account profile name on the top right corner.  Click Managing Clients.

@@ -21,8 +21,9 @@ What it does:
   3. Rewrites links: `installation/x.md#a`, `/installation/x.md`,
      `?id=a` and `https://docs.leantime.io/#/x` become `/installation/x/#a`;
      `../_images/...` becomes `/_images/...`.
-  4. Applies scripts/page-metadata.json: hand-written search titles and
-     descriptions, `draft: true` for empty pages, and the "At a glance" box
+  4. Applies scripts/page-metadata.json: hand-written titles, search titles
+     (`searchTitle`, the <title> tag when it should say more than the page
+     heading) and descriptions, `draft: true` for empty pages, and the "At a glance" box
      (`glance`) for task pages. A page that gets a glance loses its portable
      "**At a glance**" Markdown block, which the box replaces. To change these
      on the already-migrated pages, edit the JSON and run with --metadata-only.
@@ -401,7 +402,7 @@ def glance_yaml(rel, glance):
 
 
 def apply_metadata():
-    """Set the search title, description, draft flag and glance from scripts/page-metadata.json."""
+    """Set the title, search title, description, draft flag and glance from scripts/page-metadata.json."""
     meta = json.load(open(METADATA, encoding='utf-8'))
     applied = 0
     for rel, values in meta.items():
@@ -417,6 +418,9 @@ def apply_metadata():
         for key in ('title', 'description'):
             if key in values:
                 blocks[key] = [f'{key}: {yaml_str(values[key])}']
+        if 'searchTitle' in values:
+            # The browser-tab and search-result title, when it should say more than the page heading.
+            blocks['head'] = ['head:', '  - tag: title', f'    content: {yaml_str(values["searchTitle"])}']
         if values.get('draft'):
             blocks['draft'] = ['draft: true']
         if 'glance' in values:
