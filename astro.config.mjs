@@ -1,10 +1,40 @@
 // @ts-check
+import { existsSync, readdirSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 import starlightLlmsTxt from 'starlight-llms-txt';
 
 const SITE = 'https://docs.leantime.io';
+
+// "Use Leantime" is grouped by task, like the app's own menu. A page shows up once its file exists,
+// so pages from content PRs appear as soon as they're merged and converted. Every page in
+// using-leantime/ must be in one of these groups: the build stops and names any page that isn't.
+// "page|Label" sets a shorter menu label in the app's words; otherwise the page title is used.
+const DOCS_DIR = new URL('./src/content/docs/', import.meta.url);
+const pageExists = (slug) => ['.md', '.mdx'].some((ext) => existsSync(new URL(slug + ext, DOCS_DIR)));
+const USE_LEANTIME_GROUPS = [
+	['Your day', ['my-work-dashboard', 'calendars', 'timesheets|Time tracking', 'notifications']],
+	['Plan and track', ['managing-projects', 'task-management|To-Dos', 'roadmap-planning|Milestones', 'goals']],
+	['Think', ['idea-management|Ideas', 'blueprints', 'research-boards', 'retrospectives']],
+	['Write and share', ['docs', 'reports']],
+	['Your team and company', ['managing-clients', 'user-management', 'company-settings', 'integrations|Integrations', 'import-csv']],
+];
+const placedPages = new Set(USE_LEANTIME_GROUPS.flatMap(([, pages]) => pages.map((entry) => entry.split('|')[0])));
+const unplacedPages = readdirSync(new URL('using-leantime/', DOCS_DIR))
+	.filter((file) => /\.mdx?$/.test(file))
+	.map((file) => file.replace(/\.mdx?$/, ''))
+	.filter((page) => !placedPages.has(page));
+if (unplacedPages.length) {
+	throw new Error(`Add ${unplacedPages.map((p) => `using-leantime/${p}`).join(', ')} to a group in USE_LEANTIME_GROUPS (astro.config.mjs).`);
+}
+const useLeantimeGroups = USE_LEANTIME_GROUPS.map(([label, pages]) => ({
+	label,
+	items: pages
+		.map((entry) => entry.split('|'))
+		.filter(([page]) => pageExists(`using-leantime/${page}`))
+		.map(([page, menuLabel]) => (menuLabel ? { slug: `using-leantime/${page}`, label: menuLabel } : { slug: `using-leantime/${page}` })),
+})).filter((group) => group.items.length > 0);
 
 /**
  * Site-wide structured data: who publishes the docs, the product they describe and its source code.
@@ -175,7 +205,7 @@ export default defineConfig({
 				{
 					label: 'Use Leantime',
 					items: [
-						{ autogenerate: { directory: 'using-leantime' } },
+						...useLeantimeGroups,
 						{
 							label: 'AI with Leantime',
 							items: [
