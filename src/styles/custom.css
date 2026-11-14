@@ -54,21 +54,20 @@
 [data-section='dev'],
 :root[data-section='dev'] { --lt-accent: var(--lt-section-dev); }
 
-/* Sidebar: a coloured bar beside each top-level group, matching the section label on its pages.
-   Later rules win: the install group also links one using-leantime page, and the AI and
-   developer groups also link /installation/ pages. */
+/* Sidebar: a coloured bar beside each top-level group. Groups mix folders (MCP and plugins sit
+   under Use Leantime), so the colour follows the group's position, not its links. */
 .sidebar-content .top-level > li > details {
 	border-inline-start: 3px solid transparent;
 	padding-inline-start: 0.4rem;
 	margin-inline-start: -0.4rem;
 }
-.sidebar-content .top-level > li > details:has(a[href^='/using-leantime/']),
-.sidebar-content .top-level > li > details:has(a[href^='/getting-started/']) { border-color: var(--lt-section-use); }
-.sidebar-content .top-level > li > details:has(a[href^='/installation/']) { border-color: var(--lt-section-install); }
-.sidebar-content .top-level > li > details:has(a[href^='/ai/']),
-.sidebar-content .top-level > li > details:has(a[href='/installation/leantime-mcp/']) { border-color: var(--lt-section-ai); }
-.sidebar-content .top-level > li > details:has(a[href^='/knowledge-base/']) { border-color: var(--lt-section-learn); }
-.sidebar-content .top-level > li > details:has(a[href^='/api/']) { border-color: var(--lt-section-dev); }
+/* One colour per top-level menu group, in the order of the sidebar in astro.config.mjs:
+   Start here, Use Leantime, Self-host Leantime, Leantime Cloud, Build on Leantime. */
+.sidebar-content .top-level > li:nth-child(1) > details { border-color: var(--lt-section-learn); }
+.sidebar-content .top-level > li:nth-child(2) > details { border-color: var(--lt-section-use); }
+.sidebar-content .top-level > li:nth-child(3) > details { border-color: var(--lt-section-install); }
+.sidebar-content .top-level > li:nth-child(4) > details { border-color: var(--lt-section-ai); }
+.sidebar-content .top-level > li:nth-child(5) > details { border-color: var(--lt-section-dev); }
 
 /* Headings: smaller than Starlight's (h2 36px, h3 24px), with more air above each section, so
    the page reads as calm chunks instead of a wall of big titles. */

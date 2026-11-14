@@ -160,9 +160,36 @@ export default defineConfig({
 				{ tag: 'script', content: gtag },
 				{ tag: 'script', content: crisp },
 			],
+			// The menu is sorted by who it's for: everyone (Start here, Use Leantime), people who run
+			// their own Leantime (Self-host), Leantime Cloud customers, and developers (Build on).
+			// The label row under each page title says whether a page is core or a plugin and where it
+			// applies (src/lib/availability.ts).
 			sidebar: [
 				{
-					label: 'Installation & Updates',
+					label: 'Start here',
+					items: [
+						{ autogenerate: { directory: 'getting-started' } },
+						{ label: 'FAQ', slug: 'installation/frequently-asked-questions' },
+					],
+				},
+				{
+					label: 'Use Leantime',
+					items: [
+						{ autogenerate: { directory: 'using-leantime' } },
+						{
+							label: 'AI with Leantime',
+							items: [
+								// ai/ pages (overview, working with AI, glossary, walkthroughs) once #66 merges
+								{ autogenerate: { directory: 'ai' } },
+								{ label: 'MCP server: connect AI assistants', slug: 'installation/leantime-mcp' },
+							],
+						},
+						{ label: 'Plugins', items: [{ label: 'Using plugins', slug: 'installation/using-plugins' }] },
+						{ label: 'Methods and ideas', collapsed: true, items: [{ autogenerate: { directory: 'knowledge-base' } }] },
+					],
+				},
+				{
+					label: 'Self-host Leantime',
 					items: [
 						{ label: 'System Requirements', slug: 'installation/system-requirements' },
 						{
@@ -183,9 +210,8 @@ export default defineConfig({
 							items: [
 								{ label: 'Overview', slug: 'installation/configuration' },
 								{ label: 'Email', slug: 'installation/email-configuration' },
-								{ label: 'Plugins', slug: 'installation/plugin-installation' },
+								{ label: 'Installing plugins', slug: 'installation/plugin-installation' },
 								{ label: 'Authentication', slug: 'installation/authentication-configuration' },
-								{ label: 'Project Integrations', slug: 'using-leantime/integrations' },
 							],
 						},
 						{ label: 'Backup & Restore', slug: 'installation/backup-restore' },
@@ -194,50 +220,30 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'AI with Leantime',
+					label: 'Leantime Cloud',
 					items: [
-						// ai/ pages (overview, working with AI, glossary, walkthroughs) once #66 merges
-						{ autogenerate: { directory: 'ai' } },
-						{ label: 'MCP server: connect AI assistants', slug: 'installation/leantime-mcp' },
+						// Cloud pages (account, billing, what's included, support hours) once they're written.
+						{ label: 'Try Leantime Cloud', link: 'https://leantime.io/pricing/' },
+						{ label: 'Cloud help and support', link: 'https://support.leantime.io/' },
 					],
 				},
 				{
-					label: 'Plugins & FAQ',
-					items: [
-						{ label: 'Using Plugins', slug: 'installation/using-plugins' },
-						{ label: 'FAQ', slug: 'installation/frequently-asked-questions' },
-					],
-				},
-				{ label: 'Using Leantime', collapsed: true, items: [{ autogenerate: { directory: 'using-leantime' } }] },
-				{ label: 'Getting Started', collapsed: true, items: [{ autogenerate: { directory: 'getting-started' } }] },
-				{ label: 'Knowledge Base', collapsed: true, items: [{ autogenerate: { directory: 'knowledge-base' } }] },
-				{
-					label: 'Development',
+					label: 'Build on Leantime',
 					items: [
 						{ label: 'Development / Local', slug: 'installation/development' },
 						{ label: 'Connect to the API', slug: 'api/usage' },
 						{ label: 'Using the Leantime CLI', slug: 'development/commandline' },
 						{ label: 'Plugin Development', slug: 'development/plugin-development' },
-					],
-				},
-				{
-					label: 'References',
-					items: [
-						{ label: 'API Endpoints', slug: 'api' },
-						{ label: 'API Classes', collapsed: true, items: [{ autogenerate: { directory: 'api/classes' } }] },
-						{ label: 'Event Hooks / Filters', slug: 'technical/hooks' },
-						{ label: 'Source Code', link: 'https://github.com/Leantime/leantime/tree/master/app' },
-					],
-				},
-				{
-					label: 'Links',
-					items: [
-						{ label: 'Leantime.io', link: 'https://leantime.io/' },
-						{ label: 'Get Leantime', link: 'https://leantime.io/pricing/' },
-						{ label: 'Installation Support', link: 'https://marketplace.leantime.io/' },
-						{ label: 'Report a Bug', link: 'https://github.com/Leantime/leantime/issues/new' },
-						{ label: 'Community Forum', link: 'https://community.leantime.io/' },
-						{ label: 'Blog', link: 'https://leantime.io/blog/' },
+						{
+							label: 'References',
+							collapsed: true,
+							items: [
+								{ label: 'API Endpoints', slug: 'api' },
+								{ label: 'API Classes', collapsed: true, items: [{ autogenerate: { directory: 'api/classes' } }] },
+								{ label: 'Event Hooks / Filters', slug: 'technical/hooks' },
+								{ label: 'Source Code', link: 'https://github.com/Leantime/leantime/tree/master/app' },
+							],
+						},
 					],
 				},
 			],
@@ -253,14 +259,15 @@ export default defineConfig({
 						'- "To-dos" are tasks. Milestones group to-dos on a timeline. "Blueprints" are strategy boards such as Lean Canvas and SWOT.',
 						'- Self-hosted settings are environment variables prefixed `LEAN_`, set in `config/.env` or in the container environment.',
 						'- Roles, from least to most access: Read Only, Commenter, Editor, Manager, Administrator, Owner.',
-						'- Plugins (for example AdvancedAuth, MCP Server, Strategy Pro, Custom Fields) come from the marketplace at marketplace.leantime.io; most are paid and need a license key.',
+						'- Plugins (for example AdvancedAuth, MCP Server, Leantime Strategies, Custom Fields) come from the marketplace at marketplace.leantime.io when you self-host; most are paid and need a license key. On Leantime Cloud every plugin is included.',
+						'- The AI features inside Leantime are only on Leantime Cloud. Connecting your own AI assistant through the MCP Server works on Cloud and self-hosted.',
 						'- Every page is also available as Markdown: add `.md` to the page path, e.g. https://docs.leantime.io/installation/docker.md',
 						'- For bugs, use GitHub issues at https://github.com/Leantime/leantime/issues. Report security issues privately as described in the repository security policy.',
 					].join('\n'),
 					customSets: [
 						{ label: 'Self-hosting', description: 'install, configure, upgrade, back up and troubleshoot self-hosted Leantime', paths: ['installation/**'] },
-						{ label: 'Using Leantime', description: 'user guides and project management concepts', paths: ['using-leantime/**', 'getting-started/**', 'knowledge-base/**'] },
-						{ label: 'Developers', description: 'JSON-RPC API, CLI, plugin development and event hooks', paths: ['api', 'api/usage', 'development/**', 'technical/**', 'installation/development', 'installation/leantime-mcp'] },
+						{ label: 'Using Leantime', description: 'user guides, AI and MCP, plugins and project management concepts', paths: ['using-leantime/**', 'getting-started/**', 'knowledge-base/**', 'ai/**', 'installation/leantime-mcp', 'installation/using-plugins'] },
+						{ label: 'Developers', description: 'JSON-RPC API, CLI, plugin development and event hooks', paths: ['api', 'api/usage', 'development/**', 'technical/**', 'installation/development'] },
 					],
 					demote: ['api/classes/**', 'technical/hooks'],
 					optionalLinks: [

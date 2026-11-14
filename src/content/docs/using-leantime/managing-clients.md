@@ -4,6 +4,7 @@ description: "Group Leantime projects by customer, product or department, and le
 head:
   - tag: title
     content: "Clients in Leantime: group projects by customer or department"
+checked: "3.14"
 ---
 
 Managing clients can be found in the drop down from your account profile name on the top right corner.  Click Managing Clients.

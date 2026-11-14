@@ -16,6 +16,15 @@ export const collections = {
 				 */
 				section: z.enum(['install', 'use', 'ai', 'learn', 'dev']).optional(),
 				/**
+				 * Where the page applies, shown under the title (src/lib/availability.ts sets a default per folder):
+				 * `both` (Cloud and self-hosted), `self-hosted` or `cloud`.
+				 */
+				edition: z.enum(['both', 'self-hosted', 'cloud']).optional(),
+				/** The plugin the page is about. Shows "Plugin: name" (linked to `url`) instead of "Core feature". */
+				plugin: z.object({ name: z.string(), url: z.string().url().optional() }).optional(),
+				/** The Leantime version the page was last checked against, e.g. "3.14". */
+				checked: z.string().optional(),
+				/**
 				 * The "At a glance" box under the title: how long the task takes, who it's for,
 				 * what you need before you start, where you do the work (in order) and what you have at the end.
 				 * Also published as timeRequired / educationalLevel in the page's structured data.

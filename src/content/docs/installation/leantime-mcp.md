@@ -12,6 +12,9 @@ glance:
     - "Leantime, under **My Profile → Personal Access Tokens**"
     - "Your AI assistant's MCP settings (for Claude Code, a terminal)"
   result: "An AI assistant that lists your Leantime projects and can find and update to-dos, log time and more, with your permissions."
+plugin:
+  name: "MCP Server"
+  url: "https://marketplace.leantime.io/product/mcp-server/"
 ---
 
 :::caution[Beta Notice]

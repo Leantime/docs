@@ -3,14 +3,19 @@
  * Page title, extended:
  * - a colour-coded section label above the title, so you always know where you are;
  * - "Copy for AI" and "Markdown" buttons that hand the page to an AI assistant;
+ * - a row of labels: core feature or plugin, Cloud and/or self-hosted, and the version last checked
+ *   (src/lib/availability.ts, set per folder and by the `edition`, `plugin` and `checked` front matter);
  * - the "At a glance" box from the `glance` front matter (time, level, what you need, where you'll work, result).
  */
 // Same id as Starlight's own PageTitle (PAGE_TITLE_ID), which the table of contents links to.
 const PAGE_TITLE_ID = '_top';
 import { SECTION_NAMES, sectionOf } from '../lib/sections';
+import { EDITION_LABELS, MARKETPLACE_URL, availabilityOf } from '../lib/availability';
 
 const { entry, id } = Astro.locals.starlightRoute;
 const { title, glance, section: sectionOverride, draft } = entry.data;
+const availability = id ? availabilityOf(id, entry.data) : undefined;
+const hasLabels = availability && (availability.showFeature || availability.edition || availability.checked);
 const section = sectionOf(id, sectionOverride);
 const markdownUrl = id && !draft ? `/${id}.md` : undefined;
 /** Front matter text with `code`, **bold** and [links](/path/) written as Markdown. */
@@ -35,6 +40,25 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 }
 
 <h1 id={PAGE_TITLE_ID}>{title}</h1>
+
+{
+	hasLabels && (
+		<ul class="lt-labels not-content" aria-label="Where this applies">
+			{availability.showFeature && !availability.plugin && (
+				<li class="lt-label" data-kind="core" title="Part of every Leantime, free and open source">Core feature</li>
+			)}
+			{availability.plugin && (
+				<li class="lt-label" data-kind="plugin" title="Included in Leantime Cloud. A marketplace plugin when you self-host.">
+					<a href={availability.plugin.url ?? MARKETPLACE_URL}>Plugin: {availability.plugin.name}</a>
+				</li>
+			)}
+			{availability.edition && (
+				<li class="lt-label" data-kind={availability.edition}>{EDITION_LABELS[availability.edition]}</li>
+			)}
+			{availability.checked && <li class="lt-label lt-label-quiet">Checked with Leantime {availability.checked}</li>}
+		</ul>
+	)
+}
 
 {/* The section colour also tints step numbers and other accents further down the page. */}
 {section && <script is:inline define:vars={{ section }}>document.documentElement.dataset.section = section;</script>}
@@ -165,6 +189,42 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		height: 0.55rem;
 		border-radius: 50%;
 		background: var(--lt-accent);
+	}
+	/* Where the page applies: small, quiet pills under the title. */
+	.lt-labels {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin: 0.75rem 0 0;
+		padding: 0;
+		list-style: none;
+		font-size: var(--sl-text-xs);
+	}
+	.lt-label {
+		margin: 0;
+		padding: 0.15rem 0.65rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 999px;
+		color: var(--sl-color-gray-2);
+		line-height: 1.6;
+	}
+	.lt-label[data-kind='plugin'] {
+		border-color: color-mix(in srgb, var(--sl-color-accent) 55%, transparent);
+	}
+	.lt-label[data-kind='plugin'] a {
+		color: var(--sl-color-text-accent);
+		text-decoration: none;
+	}
+	.lt-label[data-kind='plugin'] a:hover {
+		text-decoration: underline;
+	}
+	.lt-label[data-kind='cloud'],
+	.lt-label[data-kind='self-hosted'] {
+		color: var(--sl-color-white);
+		font-weight: 600;
+	}
+	.lt-label-quiet {
+		border-style: dashed;
 	}
 	.lt-page-tools {
 		display: flex;

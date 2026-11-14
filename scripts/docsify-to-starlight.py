@@ -23,7 +23,7 @@ What it does:
      `../_images/...` becomes `/_images/...`.
   4. Applies scripts/page-metadata.json: hand-written titles, search titles
      (`searchTitle`, the <title> tag when it should say more than the page
-     heading) and descriptions, `draft: true` for empty pages, and the "At a glance" box
+     heading), descriptions, the label row (`edition`, `plugin`, `checked`), `draft: true` for empty pages, and the "At a glance" box
      (`glance`) for task pages. A page that gets a glance loses its portable
      "**At a glance**" Markdown block, which the box replaces. To change these
      on the already-migrated pages, edit the JSON and run with --metadata-only.
@@ -423,6 +423,20 @@ def apply_metadata():
             blocks['head'] = ['head:', '  - tag: title', f'    content: {yaml_str(values["searchTitle"])}']
         if values.get('draft'):
             blocks['draft'] = ['draft: true']
+        # The label row under the title (src/lib/availability.ts): where the page applies, the plugin
+        # it is about, and the Leantime version it was last checked against.
+        if 'edition' in values:
+            if values['edition'] not in ('both', 'self-hosted', 'cloud'):
+                sys.exit(f'page-metadata.json: {rel}: edition must be both, self-hosted or cloud')
+            blocks['edition'] = [f'edition: {values["edition"]}']
+        if 'plugin' in values:
+            plugin = values['plugin']
+            lines = ['plugin:', f'  name: {yaml_str(plugin["name"])}']
+            if plugin.get('url'):
+                lines.append(f'  url: {yaml_str(plugin["url"])}')
+            blocks['plugin'] = lines
+        if 'checked' in values:
+            blocks['checked'] = [f'checked: {yaml_str(str(values["checked"]))}']
         if 'glance' in values:
             blocks['glance'] = glance_yaml(rel, values['glance'])
             body = INLINE_GLANCE.sub('', body, count=1)

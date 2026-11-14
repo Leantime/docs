@@ -1,5 +1,5 @@
 {
-  "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'searchTitle' (optional) is the browser-tab and search-result title when it should say more than the heading, 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build, 'glance' is the At a glance box of a task page (minutes, maxMinutes, level, needs, where, result; see CONTRIBUTING.md) and replaces the page's '**At a glance**' Markdown block. New pages and override pages set these in their own front matter instead.",
+  "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'searchTitle' (optional) is the browser-tab and search-result title when it should say more than the heading, 'edition' (both, self-hosted or cloud), 'plugin' ({name, url}) and 'checked' (the Leantime version last checked, e.g. \"3.14\") set the label row under the title (defaults per folder in src/lib/availability.ts), 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build, 'glance' is the At a glance box of a task page (minutes, maxMinutes, level, needs, where, result; see CONTRIBUTING.md) and replaces the page's '**At a glance**' Markdown block. New pages and override pages set these in their own front matter instead.",
 
   "api/index.md": {
     "title": "JSON-RPC API reference",
@@ -161,7 +161,8 @@
         "Your AI assistant's MCP settings (for Claude Code, a terminal)"
       ],
       "result": "An AI assistant that lists your Leantime projects and can find and update to-dos, log time and more, with your permissions."
-    }
+    },
+    "plugin": { "name": "MCP Server", "url": "https://marketplace.leantime.io/product/mcp-server/" }
   },
   "installation/other-methods.md": {
     "title": "Other installation methods",
@@ -322,42 +323,50 @@
   "using-leantime/managing-clients.md": {
     "title": "Clients",
     "searchTitle": "Clients in Leantime: group projects by customer or department",
-    "description": "Group Leantime projects by customer, product or department, and let each customer's people see only their own projects."
+    "description": "Group Leantime projects by customer, product or department, and let each customer's people see only their own projects.",
+    "checked": "3.14"
   },
   "using-leantime/managing-projects.md": {
     "title": "Projects",
     "searchTitle": "Projects in Leantime: create, share and organize projects",
-    "description": "Create a project in Leantime, choose who can see it, add your team and their roles, switch features on or off, and copy, close or delete projects."
+    "description": "Create a project in Leantime, choose who can see it, add your team and their roles, switch features on or off, and copy, close or delete projects.",
+    "checked": "3.14"
   },
   "using-leantime/my-work-dashboard.md": {
     "title": "My Work Dashboard",
     "searchTitle": "My Work dashboard in Leantime: your to-dos, calendar and projects",
-    "description": "What the Leantime My Work dashboard shows: your to-dos from every project, a calendar for time boxing your day, and widgets you can add or move."
+    "description": "What the Leantime My Work dashboard shows: your to-dos from every project, a calendar for time boxing your day, and widgets you can add or move.",
+    "checked": "3.14"
   },
   "using-leantime/notifications.md": {
     "title": "Notifications",
     "searchTitle": "Leantime notifications: email, in-app and per-project settings",
-    "description": "Choose which Leantime notifications you get by email and in the app, mute busy projects, and fix notification emails that arrive late or not at all."
+    "description": "Choose which Leantime notifications you get by email and in the app, mute busy projects, and fix notification emails that arrive late or not at all.",
+    "checked": "3.14"
   },
   "using-leantime/goals.md": {
     "title": "Goals",
     "searchTitle": "Goals in Leantime: measurable targets linked to milestones",
-    "description": "Set measurable goals in Leantime, track their progress and link each goal to the milestones that move it. One milestone can count toward several goals."
+    "description": "Set measurable goals in Leantime, track their progress and link each goal to the milestones that move it. One milestone can count toward several goals.",
+    "checked": "3.14"
   },
   "using-leantime/docs.md": {
     "title": "Docs",
     "searchTitle": "Docs in Leantime: project wiki, checklists and templates",
-    "description": "Write project docs in Leantime: checklists, meeting notes and decisions next to the work, with templates, nested pages, drafts and links to milestones."
+    "description": "Write project docs in Leantime: checklists, meeting notes and decisions next to the work, with templates, nested pages, drafts and links to milestones.",
+    "checked": "3.14"
   },
   "using-leantime/blueprints.md": {
     "title": "Blueprints",
     "searchTitle": "Blueprints in Leantime: SWOT, Lean Canvas, Logic Model and more",
-    "description": "Think a project through with Leantime Blueprints: Project Value Canvas, SWOT, Lean Canvas, Business Model Canvas, Risk Analysis, Logic Model and more."
+    "description": "Think a project through with Leantime Blueprints: Project Value Canvas, SWOT, Lean Canvas, Business Model Canvas, Risk Analysis, Logic Model and more.",
+    "checked": "3.14"
   },
   "using-leantime/reports.md": {
     "title": "Reports",
     "searchTitle": "Project reports in Leantime: status report and delivery metrics",
-    "description": "See how a Leantime project is going: milestones done and in flight, goals, status updates, hours and cumulative flow per quarter. Print or save as PDF."
+    "description": "See how a Leantime project is going: milestones done and in flight, goals, status updates, hours and cumulative flow per quarter. Print or save as PDF.",
+    "checked": "3.14"
   },
   "using-leantime/research-boards.md": {
     "title": "Research boards",

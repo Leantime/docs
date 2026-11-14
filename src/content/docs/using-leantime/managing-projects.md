@@ -4,6 +4,7 @@ description: "Create a project in Leantime, choose who can see it, add your team
 head:
   - tag: title
     content: "Projects in Leantime: create, share and organize projects"
+checked: "3.14"
 ---
 
 In order to manage projects, you can find two separate views.  You have an option for Project Settings -- this view allows you to edit the details of the current
