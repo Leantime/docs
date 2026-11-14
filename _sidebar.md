@@ -34,6 +34,10 @@
 - [Projects](using-leantime/managing-projects.md)
 - [Clients](using-leantime/managing-clients.md)
 - [Notifications](using-leantime/notifications.md)
+- [Goals](using-leantime/goals.md)
+- [Docs](using-leantime/docs.md)
+- [Blueprints](using-leantime/blueprints.md)
+- [Reports](using-leantime/reports.md)
 
 **Everything Else**
 
