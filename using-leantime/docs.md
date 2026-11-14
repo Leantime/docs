@@ -44,7 +44,7 @@ The toolbar above the text has the everyday formatting: bold, italic, lists, lin
 ![The Details panel of a doc: Status set to Published and outlined, Parent, Milestone, Author and Last Updated](../_images/using-leantime/docs-details.webp)
 
 - **Published** docs are visible to everyone who can see the project.
-- **Drafts** only show in the **Contents** list for the person who wrote them, so you can work on a page before the team sees it.
+- **Drafts** only show in the **Contents** list for the person who wrote them, so the team doesn't come across unfinished pages. A draft isn't private, though: anyone who can see the project can still open it with its link. Don't put anything in a draft that the project team shouldn't read.
 - Writing and changing docs needs the **Editor** role or higher in the project.
 
 Each doc also keeps an **Activity** list under **Details** (who created it, renamed it or changed the text) and has a **Discussion** at the bottom for comments.
@@ -52,5 +52,5 @@ Each doc also keeps an **Activity** list under **Details** (who created it, rena
 ## What if something goes wrong?
 
 - **I don't see Docs in the left menu.** Docs may be switched off for this project on the **Modules** tab of **Project Settings** (see [How do I switch features on or off for a project?](using-leantime/managing-projects.md#how-do-i-switch-features-on-or-off-for-a-project)).
-- **A teammate can't find my doc.** Check that its **Status** is **Published**. Drafts only show for the person who wrote them.
+- **A teammate can't find my doc.** Check that its **Status** is **Published**. Drafts don't appear in other people's **Contents** list.
 - **"Save failed" appears under the title.** Your last change didn't reach Leantime, often because the connection dropped. Copy anything you just wrote, reload the page and paste it back in.
