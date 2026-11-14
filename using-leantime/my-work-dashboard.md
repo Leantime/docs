@@ -45,6 +45,6 @@ The palette button next to Update Dashboard changes your theme and colors.
 
 The left menu has your other personal pages:
 
-- **Project Hub:** your favorite projects and every project you're assigned to (see [Projects](using-leantime/managing-projects.md#where-do-i-find-my-projects)).
+- **Project Hub:** your projects as cards, with progress and status, and your favorites at the top (see [What's on the Project Hub?](using-leantime/managing-projects.md#whats-on-the-project-hub)).
 - **Timesheets:** the time you've logged (see [Timesheets](using-leantime/timesheets.md)).
 - **Calendar:** your full calendar.

@@ -76,10 +76,25 @@ The **Archived** status can't be renamed or removed.
 ## Where do I find my projects?
 
 - **The Projects menu** at the top lists your projects under **My Projects**, **Favorites**, **Recent** and **All Projects**. You can filter it by client and group it.
-- **My Work → Project Hub** shows your favorite projects and every project you're assigned to, with their progress.
+- **My Work → Project Hub** shows your projects as cards, with your favorites at the top (see [What's on the Project Hub?](#whats-on-the-project-hub)).
 - **Company → All Projects** lists every project in a table, closed ones included, for Managers, Administrators and Owners. The **Project Status** column shows which are closed.
 
-To make a project a favorite, click the star on its Project Overview.
+## What's on the Project Hub?
+
+The Projects menu is a list of names. That works when you know which project you want. A long list can be hard to scan, though, and it doesn't tell you how anything is going. The Project Hub shows the same projects as cards, with the ones you care about first and enough on each card to see where things stand without opening the project.
+
+![The Project Hub, with Website Redesign under My Favorites showing 20% progress and On Track, its star outlined, and the other projects below under All Assigned Projects](../_images/using-leantime/projects-hub.webp)
+
+Open it from **My Work → Project Hub**. Each card shows:
+
+- **The project and its client.** Click the name to open the project.
+- **Project Progress:** how much of the project is done.
+- **The latest status:** **On Track**, **At Risk** or **Off Track**, from the most recent [project update](#whats-on-the-project-overview). It says **No Status** until someone posts one.
+- **The team:** who's working on the project.
+
+**Keep your current projects at the top.** Click the star on a card to make the project a favorite. It moves up to **My Favorites**, above everything else, so the projects you're working on now are the first thing you see. Click the star again to move it back. The star on a project's Overview does the same.
+
+**Show one client at a time.** Choose a client under **All Clients** at the top right to show only that client's projects, so the others don't compete for your attention.
 
 ## What's on the Project Overview?
 
