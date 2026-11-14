@@ -12,13 +12,15 @@ This page lists what's included where, then answers the "Can Leantime…?" quest
 | **You pay** | Nothing | Once per plugin licence, sized by number of users. Includes one year of updates. | A monthly or yearly subscription per user |
 | **Who runs it** | You | You | Leantime |
 | **Features** | All core features below | Core features plus the plugins you buy | Everything, including AI features |
-| **Support** | Community ([Discord](https://discord.gg/4zMzJtAq9z), [GitHub](https://github.com/Leantime/leantime/issues)) | Community; [priority support plans](https://marketplace.leantime.io/) available | Included |
+| **Support** | Community ([Discord](https://discord.gg/4zMzJtAq9z), [GitHub](https://github.com/Leantime/leantime/issues)) | Community; [priority support plans](https://marketplace.leantime.io/) available | Yes |
 
 Not sure yet? Install the open source edition with [Docker](installation/docker.md) in about 10 minutes, or start a [Cloud trial](https://leantime.io/pricing/). You can move a self-hosted instance to Cloud later.
 
 ## Feature overview
 
 "Core" means it's included in the free open source edition. "Plugin" means you add it from the marketplace on a self-hosted instance.
+
+Trying Leantime Cloud? Every plugin is switched on there, so a Cloud workspace shows more than the open source edition has on its own. The **Open source** column below tells you which features are core and which come from a plugin.
 
 ### Plan and do the work
 
@@ -47,7 +49,7 @@ Not sure yet? Install the open source edition with [Docker](installation/docker.
 | Timers, timesheets, billable work types, invoiced and paid flags, CSV export | Core | Yes |
 | Calendar feed (iCal) to subscribe from Google, Outlook or Apple Calendar | Core | Yes |
 | Show an external iCal calendar inside Leantime (read-only) | Core | Yes |
-| [CalDAV Calendar Sync](https://marketplace.leantime.io/product/caldav-calendar-sync/): two-way sync with Nextcloud, ownCloud, Baikal, Radicale, Apple Calendar and Thunderbird | Plugin | <!-- TODO confirm --> To confirm |
+| [CalDAV Calendar Sync](https://marketplace.leantime.io/product/caldav-calendar-sync/): two-way sync with Nextcloud, ownCloud, Baikal, Radicale, Apple Calendar and Thunderbird | Plugin | Yes |
 
 ### Sign-in and security
 
@@ -58,7 +60,7 @@ Not sure yet? Install the open source edition with [Docker](installation/docker.
 | Two-factor authentication (authenticator apps) | Core | Yes |
 | Single sign-on with OpenID Connect (Keycloak, Authentik, Entra ID and others) | Core | <!-- TODO confirm --> To confirm |
 | LDAP and Active Directory | Core | <!-- TODO confirm --> To confirm |
-| [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/): SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more | Plugin | <!-- TODO confirm --> To confirm |
+| [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/): SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more | Plugin | Yes |
 
 ### Connect other tools
 
@@ -68,19 +70,19 @@ Not sure yet? Install the open source edition with [Docker](installation/docker.
 | Personal webhook: your notifications as JSON to your own URL | Core | Yes |
 | JSON-RPC API with API keys and personal access tokens | Core | Yes |
 | CSV import of to-dos, projects, users, ideas, goals and milestones | Core | Yes |
-| [MCP Server](https://marketplace.leantime.io/product/mcp-server/): let Claude, Cursor, VS Code and other AI assistants work in Leantime | Plugin | <!-- TODO confirm --> To confirm |
+| [MCP Server](https://marketplace.leantime.io/product/mcp-server/): let Claude, Cursor, VS Code and other AI assistants work in Leantime | Plugin | Yes |
 
 ### On your phone
 
 | Feature | Open source | Cloud |
 |---|---|---|
-| Leantime Mobile for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile), connected to your own server through Leantime's open source API | Core API; signing in from the app needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin | <!-- TODO confirm --> To confirm |
+| Leantime Mobile for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile), connected to your own server through Leantime's open source API | Core API; signing in from the app needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin | Yes |
 
 ### AI
 
 | Feature | Open source | Cloud |
 |---|---|---|
-| AI features (L.E.O.): to-do prioritisation, task breakdown, status updates and reports | No | Yes |
+| AI features (L.E.O.): to-do prioritisation, task breakdown, status updates and reports | No, Leantime Cloud only | Yes |
 
 ### Hosting and administration
 
@@ -236,7 +238,7 @@ Each to-do has a **History** tab, and docs show who changed what. There's no com
 
 #### Can I use Leantime with Claude, ChatGPT, Cursor or VS Code?
 
-Yes, with the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin. Your AI assistant can then find, create and update to-dos, log time and more, with your permissions. See [MCP server](installation/leantime-mcp.md).
+Yes, with the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin, which is included on Leantime Cloud. Your AI assistant can then find, create and update to-dos, log time and more, with your permissions. See [MCP server](installation/leantime-mcp.md).
 
 #### Does Leantime have built-in AI?
 
@@ -246,7 +248,7 @@ Yes, in Leantime Cloud: to-do prioritisation, task breakdown, status updates and
 
 #### Is there a Leantime mobile app?
 
-Yes. Leantime Mobile is available for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile). It connects to your self-hosted Leantime through the open source API. To sign in from the app, with a password or with single sign-on, your server needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin. Single sign-on itself is set up as for the web app; see [Authentication](installation/authentication-configuration.md).
+Yes. Leantime Mobile is available for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile). It works with Leantime Cloud, and connects to self-hosted Leantime through the open source API. On a self-hosted server, to sign in from the app, with a password or with single sign-on, your server needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin. Single sign-on itself is set up as for the web app; see [Authentication](installation/authentication-configuration.md).
 
 ### Accessibility
 
