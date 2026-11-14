@@ -48,7 +48,7 @@ plugin:
 checked: "3.14"
 ```
 
-On Leantime Cloud every plugin is included, so a plugin page is never "Self-hosted only" for that reason. The AI features inside Leantime are Cloud only. Update `checked` whenever you follow a page again on a new version.
+Leantime Cloud includes the marketplace plugins, except Advanced Authentication (self-hosted only: set `edition: self-hosted` on its page). OpenID Connect and LDAP sign-in are self-hosted only too. The AI features inside Leantime are Cloud only. Update `checked` whenever you follow a page again on a new version.
 
 ### The "At a glance" box
 
@@ -136,7 +136,7 @@ Plugins are how Leantime is funded, and they solve real problems. Write about th
 - Lead with **what it helps you do**, in one sentence, before any setup.
 - Say **who needs it** and who doesn't. "If your team signs in with Google Workspace…" is helpful. "Supercharge your workflow" is not.
 - Link to the plugin's marketplace page once, near the top: `[Get the plugin](https://marketplace.leantime.io/product/<plugin>/)`.
-- Say plainly that it's a paid plugin when you self-host, and that it's included in Leantime Cloud (every plugin is). Set `plugin:` in the front matter so the label row says so.
+- Say plainly that it's a paid plugin when you self-host, and whether it's included in Leantime Cloud (all are, except Advanced Authentication). Set `plugin:` in the front matter so the label row says so.
 - No superlatives, urgency or pricing claims; the marketplace page owns pricing.
 
 ## AI-friendly pages

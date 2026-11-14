@@ -48,7 +48,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 				<li class="lt-label" data-kind="core" title="Part of every Leantime, free and open source">Core feature</li>
 			)}
 			{availability.plugin && (
-				<li class="lt-label" data-kind="plugin" title="Included in Leantime Cloud. A marketplace plugin when you self-host.">
+				<li class="lt-label" data-kind="plugin" title={availability.edition === 'self-hosted' ? 'A marketplace plugin for self-hosted Leantime.' : 'Included in Leantime Cloud. A marketplace plugin when you self-host.'}>
 					<a href={availability.plugin.url ?? MARKETPLACE_URL}>Plugin: {availability.plugin.name}</a>
 				</li>
 			)}

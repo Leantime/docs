@@ -289,7 +289,7 @@ export default defineConfig({
 						'- "To-dos" are tasks. Milestones group to-dos on a timeline. "Blueprints" are strategy boards such as Lean Canvas and SWOT.',
 						'- Self-hosted settings are environment variables prefixed `LEAN_`, set in `config/.env` or in the container environment.',
 						'- Roles, from least to most access: Read Only, Commenter, Editor, Manager, Administrator, Owner.',
-						'- Plugins (for example AdvancedAuth, MCP Server, Leantime Strategies, Custom Fields) come from the marketplace at marketplace.leantime.io when you self-host; most are paid and need a license key. On Leantime Cloud every plugin is included.',
+						'- Plugins (for example AdvancedAuth, MCP Server, Leantime Strategies, Custom Fields) come from the marketplace at marketplace.leantime.io when you self-host; most are paid and need a license key. Leantime Cloud includes them, except Advanced Authentication, which is self-hosted only. OpenID Connect and LDAP sign-in are also self-hosted only.',
 						'- The AI features inside Leantime are only on Leantime Cloud. Connecting your own AI assistant through the MCP Server works on Cloud and self-hosted.',
 						'- Every page is also available as Markdown: add `.md` to the page path, e.g. https://docs.leantime.io/installation/docker.md',
 						'- For bugs, use GitHub issues at https://github.com/Leantime/leantime/issues. Report security issues privately as described in the repository security policy.',
