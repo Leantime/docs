@@ -1,0 +1,38 @@
+# Organize client work in Leantime
+
+For managed service providers (MSPs), agencies, consultancies and development firms: you do work for customers, and you also run your own business. The setup below keeps each customer's work separate, lets customers follow their own projects if you want them to, and keeps your internal work in the same place.
+
+## A setup that works
+
+| | What to create |
+|---|---|
+| **Each customer** | A [client](using-leantime/managing-clients.md), with a project per piece of work: "Website rebuild", "Managed IT, 2027", "Security audit" |
+| **Your own business** | Projects for your internal work, for example "Sales and marketing" and "Internal tools", with no client or with a client named after your company |
+| **Shared infrastructure** | A project for the servers and tools every customer depends on, with only your own staff on its team |
+
+Starting out with a few customers and a small team? One project per customer is enough. Add more projects for a customer when the work splits into separate pieces with different deadlines.
+
+## How do I keep each customer's work separate?
+
+1. **Add the customer as a client** under **Company → All Clients**.
+2. **Create their projects under that client**, and set **Who can access this project?** to **Only the users I choose under 'Team'** or **Everyone assigned to this client**.
+3. **Add your staff to each project's Team tab.** Your own team usually doesn't belong to a client, so add them to the projects they work on.
+4. **Optional: let the customer follow along.** Add their people to their client and give them the **Commenter** or **Read Only** role. With **Everyone assigned to this client**, they see their own projects and nothing else.
+
+Never set a customer project, or your internal projects, to **Everyone in this organization**: that includes your customers' accounts.
+
+## Keep sight of the why
+
+- **Write each project's purpose** in its description, in the customer's words: what will be better for them when it's done.
+- **Use milestones for the stages you agree with the customer**, like "Discovery", "Build" and "Launch", so both sides see where the work is.
+- **Give recurring work a goal**, for a managed-services contract for example "Tickets resolved within a day: 95%".
+- **Post a project update** when something changes; it shows on the Project Hub card as On Track, At Risk or Off Track.
+
+## Tips
+
+- **Track time per project** if you bill by the hour (see [Timesheets and time tracking](using-leantime/timesheets.md)).
+- **Copy a project** for work you repeat, like onboarding a new customer (see [How do I copy or duplicate a project in Leantime?](using-leantime/managing-projects.md#how-do-i-copy-or-duplicate-a-project-in-leantime)).
+- **Star the customers you're busy with this week** so they sit at the top of your Project Hub.
+- **Several projects for one big customer?** The Program Plans plugin groups them, so you can see the whole account in one place.
+
+Back to [How should I organize my work in Leantime?](getting-started/organize-your-work.md)

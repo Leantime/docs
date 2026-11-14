@@ -35,6 +35,16 @@
 - [Clients](using-leantime/managing-clients.md)
 - [Notifications](using-leantime/notifications.md)
 
+**Getting started**
+
+- [Get started with Leantime](getting-started/get-started.md)
+- [How should I organize my work?](getting-started/organize-your-work.md)
+  - [Client work](getting-started/client-work.md)
+  - [Product and game development](getting-started/product-and-game-development.md)
+  - [Non-profits and NGOs](getting-started/nonprofits.md)
+  - [Research and academic work](getting-started/research.md)
+  - [Your own work and career](getting-started/your-own-work.md)
+
 **Everything Else**
 
  - [Leantime's MCP Server](installation/leantime-mcp.md)
