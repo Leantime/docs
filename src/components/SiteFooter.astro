@@ -3,7 +3,14 @@
  * The site footer at the bottom of every page: the logo and what Leantime is, then links to the
  * most-used docs, the community and leantime.io, and a bottom line with the copyright and the
  * Leantime version the docs describe (src/lib/version.ts), linking to its release notes.
+ *
+ * `compact` (doc pages, which already have the docs menu on the left): no logo, no Docs column,
+ * just one row with the community and leantime.io links above the bottom line.
  */
+interface Props {
+	compact?: boolean;
+}
+const { compact = false } = Astro.props;
 import { Image } from 'astro:assets';
 import logoDark from '../assets/leantime-logo-white.svg';
 import logoLight from '../assets/leantime-logo.webp';
@@ -41,9 +48,22 @@ const columns: Array<{ title: string; links: Array<{ label: string; href: string
 ];
 
 const year = new Date().getFullYear();
+const compactLinks = columns.filter((column) => column.title !== 'Docs').flatMap((column) => column.links);
 ---
 
-<footer class="lt-site-footer not-content print:hidden">
+<footer class:list={['lt-site-footer not-content print:hidden', { 'lt-site-footer-compact': compact }]}>
+	{
+		compact ? (
+			<nav aria-label="Leantime and community">
+				<ul class="lt-site-footer-row">
+					{compactLinks.map((link) => (
+						<li>
+							<a href={link.href}>{link.label}</a>
+						</li>
+					))}
+				</ul>
+			</nav>
+		) : (
 	<div class="lt-site-footer-grid">
 		<div class="lt-site-footer-brand">
 			<a href="/" class="lt-site-footer-logo" aria-label="Leantime Docs home">
@@ -67,6 +87,8 @@ const year = new Date().getFullYear();
 			))
 		}
 	</div>
+		)
+	}
 	<div class="lt-site-footer-legal">
 		<p>© {year} Leantime. Leantime is open source under the <a href={`${REPO_URL}/blob/master/LICENSE`}>AGPLv3 license</a>.</p>
 		<p>Docs for Leantime {LEANTIME_VERSION} · <a href={RELEASE_URL}>Release notes</a></p>
@@ -144,6 +166,19 @@ const year = new Date().getFullYear();
 	.lt-site-footer a:focus-visible {
 		outline: 2px solid var(--sl-color-text-accent);
 		outline-offset: 2px;
+	}
+	.lt-site-footer-compact {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+	}
+	.lt-site-footer ul.lt-site-footer-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1.5rem;
+	}
+	.lt-site-footer-compact .lt-site-footer-legal {
+		margin-top: 1.25rem;
+		padding-top: 1rem;
 	}
 	.lt-site-footer-legal {
 		display: flex;

@@ -1,7 +1,7 @@
 ---
 /**
  * Starlight's footer (edit link, last updated, previous/next) followed by the site footer
- * (SiteFooter.astro), with "Was this page helpful?" above them on every content page
+ * (SiteFooter.astro, the short version on doc pages), with "Was this page helpful?" above them on every content page
  * (not on the home page). A click sends a `page_feedback` event to Google Analytics and/or
  * PostHog (whichever the page loads; this component doesn't load either) and says thanks; "No" also
  * offers the chat (Crisp), or Discord and GitHub when the chat isn't available.
@@ -40,7 +40,7 @@ const showFeedback = entry.data.template !== 'splash';
 
 <Default />
 
-<SiteFooter />
+<SiteFooter compact={showFeedback} />
 
 <script>
 	type CrispQueue = { push: (command: unknown[]) => void };
