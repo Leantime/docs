@@ -1,7 +1,7 @@
 ---
 title: Leantime Documentation
 description: Install, configure and use Leantime, the open source project management system for non-project managers. Self-hosting, Docker, SSO, plugins, API and MCP.
-template: splash
+tableOfContents: false
 editUrl: false
 lastUpdated: false
 head:
@@ -20,6 +20,9 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+
+{/* Marks the home page, so custom.css can give it a wider column than the reading pages. */}
+<span class="lt-home" hidden></span>
 
 ## What do you want to do?
 

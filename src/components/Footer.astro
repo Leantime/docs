@@ -9,8 +9,8 @@
 import Default from '@astrojs/starlight/components/Footer.astro';
 import SiteFooter from './SiteFooter.astro';
 
-const { entry } = Astro.locals.starlightRoute;
-const showFeedback = entry.data.template !== 'splash';
+// The home page gets the full footer and no "Was this page helpful?".
+const showFeedback = Astro.url.pathname.replace(/\/$/, '') !== '';
 ---
 
 {

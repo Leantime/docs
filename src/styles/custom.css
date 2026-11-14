@@ -25,6 +25,11 @@
 	--sl-content-width: 40rem;
 }
 
+/* The home page is a grid of links, not reading text: give it more room next to the sidebar. */
+:root:has(.lt-home) {
+	--sl-content-width: 56rem;
+}
+
 :root[data-theme='light'] {
 	--sl-color-accent-low: #cdeaf7;
 	--sl-color-accent: #006c9e;
