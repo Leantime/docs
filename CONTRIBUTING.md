@@ -30,6 +30,26 @@ Every how-to page has the same shape:
 - Use **short task names** for steps you follow in order: "Install Leantime", "Create the client in Keycloak".
 - Write headings in sentence case: "Set up email", not "Set Up Email".
 
+### The labels under the title
+
+Every page shows a row of labels under its title, so readers know straight away whether it applies to them:
+
+- **Core feature** or **Plugin: name** (linked to the plugin's marketplace page), on pages about using Leantime;
+- **Cloud and self-hosted**, **Self-hosted only** or **Leantime Cloud only**;
+- **Checked with Leantime x.y**: the version the page was last followed step by step against.
+
+Most pages get these from their folder (`src/lib/availability.ts`): `installation/` pages are self-hosted only, `using-leantime/` pages are core features for Cloud and self-hosted, and so on. Set them on a page when it differs:
+
+```yaml
+edition: cloud            # both, self-hosted or cloud
+plugin:
+  name: Leantime Strategies
+  url: https://marketplace.leantime.io/product/leantime-strategies/
+checked: "3.14"
+```
+
+On Leantime Cloud every plugin is included, so a plugin page is never "Self-hosted only" for that reason. The AI features inside Leantime are Cloud only. Update `checked` whenever you follow a page again on a new version.
+
 ### The "At a glance" box
 
 ```yaml
@@ -76,6 +96,20 @@ Tab `syncKey`s in use, so that a reader's choice carries across pages:
 | syncKey | Tabs |
 |---|---|
 | `docker-method` | Docker Compose (recommended) · docker run |
+| `edition` | Leantime Cloud · Self-hosted |
+
+### Cloud and self-hosted
+
+Most pages apply to both Leantime Cloud and self-hosted Leantime. Write them once. Where only some steps differ (a URL, who installs a plugin, where a setting lives), put just those steps in tabs, so a reader who picks "Leantime Cloud" once sees Cloud steps on every page:
+
+```mdx
+<Tabs syncKey="edition">
+  <TabItem label="Leantime Cloud">…</TabItem>
+  <TabItem label="Self-hosted">…</TabItem>
+</Tabs>
+```
+
+Don't make a separate page for each edition unless the whole task only exists in one (installing, upgrading and backups are self-hosted only; billing and your Cloud account are Cloud only).
 
 ## Words we use
 
@@ -102,7 +136,7 @@ Plugins are how Leantime is funded, and they solve real problems. Write about th
 - Lead with **what it helps you do**, in one sentence, before any setup.
 - Say **who needs it** and who doesn't. "If your team signs in with Google Workspace…" is helpful. "Supercharge your workflow" is not.
 - Link to the plugin's marketplace page once, near the top: `[Get the plugin](https://marketplace.leantime.io/product/<plugin>/)`.
-- Say plainly that it's a paid plugin, and whether it's included in Leantime Cloud.
+- Say plainly that it's a paid plugin when you self-host, and that it's included in Leantime Cloud (every plugin is). Set `plugin:` in the front matter so the label row says so.
 - No superlatives, urgency or pricing claims; the marketplace page owns pricing.
 
 ## AI-friendly pages
