@@ -20,7 +20,7 @@ Not sure yet? Install the open source edition with [Docker](installation/docker.
 
 "Core" means it's included in the free open source edition. "Plugin" means you add it from the marketplace on a self-hosted instance.
 
-Trying Leantime Cloud? Every plugin is switched on there, so a Cloud workspace shows more than the open source edition has on its own. The **Open source** column below tells you which features are core and which come from a plugin.
+Trying Leantime Cloud? The marketplace plugins are switched on there (except Advanced Authentication, which is for self-hosted servers), so a Cloud workspace shows more than the open source edition has on its own. The **Open source** column below tells you which features are core and which come from a plugin.
 
 ### Plan and do the work
 
