@@ -1,6 +1,41 @@
 {
   "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'searchTitle' (optional) is the browser-tab and search-result title when it should say more than the heading, 'edition' (both, self-hosted or cloud), 'plugin' ({name, url}) and 'checked' (the Leantime version last checked, e.g. \"3.14\") set the label row under the title (defaults per folder in src/lib/availability.ts), 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build, 'glance' is the At a glance box of a task page (minutes, maxMinutes, level, needs, where, result; see CONTRIBUTING.md) and replaces the page's '**At a glance**' Markdown block. New pages and override pages set these in their own front matter instead.",
 
+  "getting-started/get-started.md": {
+    "title": "Get started with Leantime",
+    "searchTitle": "Get started with Leantime: Cloud trial or your own server",
+    "description": "Start a two-week Leantime Cloud trial or install Leantime on your own server, invite your team, and decide how to organize your work."
+  },
+  "getting-started/organize-your-work.md": {
+    "title": "How should I organize my work in Leantime?",
+    "searchTitle": "How to organize your work in Leantime: projects, clients, goals",
+    "description": "Set up Leantime for how your team works: projects, milestones, outcomes, goals, clients, programs and strategies, sized to your team and kept calm."
+  },
+  "getting-started/client-work.md": {
+    "title": "Organize client work in Leantime",
+    "searchTitle": "Leantime for MSPs, agencies, consultancies and dev firms",
+    "description": "Organize customer work in Leantime: a client per customer, projects that only their people see, internal projects and shared infrastructure."
+  },
+  "getting-started/product-and-game-development.md": {
+    "title": "Organize product and game development in Leantime",
+    "searchTitle": "Leantime for game studios, product teams and startups",
+    "description": "Plan releases as milestones, collect ideas and playtest feedback, and measure each release with goals in Leantime, for studios and product teams."
+  },
+  "getting-started/nonprofits.md": {
+    "title": "Organize a non-profit or NGO in Leantime",
+    "searchTitle": "Leantime for non-profits and NGOs: programs, logic models, goals",
+    "description": "Connect a mission to the work in Leantime: strategies, funded programs and projects, a Logic Model for your theory of change, and goals funders see."
+  },
+  "getting-started/research.md": {
+    "title": "Organize research and academic work in Leantime",
+    "searchTitle": "Leantime for research labs, theses and grant-funded studies",
+    "description": "Break long research work into outcomes you can finish, keep notes and sources with the project, and track deadlines and grants in Leantime."
+  },
+  "getting-started/your-own-work.md": {
+    "title": "Organize your own work and career in Leantime",
+    "searchTitle": "Leantime for your own work, a job search or a career change",
+    "description": "Use Leantime on your own: a project or two, small outcomes that show progress, a planned day in My Work, and a calm setup with less to look at."
+  },
   "api/index.md": {
     "title": "JSON-RPC API reference",
     "description": "Every Leantime JSON-RPC 2.0 namespace and service, with links to the method reference for tasks, projects, timesheets, users, calendars and more."

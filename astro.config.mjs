@@ -28,6 +28,24 @@ const unplacedPages = readdirSync(new URL('using-leantime/', DOCS_DIR))
 if (unplacedPages.length) {
 	throw new Error(`Add ${unplacedPages.map((p) => `using-leantime/${p}`).join(', ')} to a group in USE_LEANTIME_GROUPS (astro.config.mjs).`);
 }
+// "Start here" in reading order: how to begin, what Leantime does, how to organize, the examples.
+// Pages appear once their file exists (some come from open content PRs).
+const START_HERE = [
+	'getting-started/get-started',
+	'getting-started/features',
+	'getting-started/organize-your-work',
+	'getting-started/client-work|Example: client work',
+	'getting-started/product-and-game-development|Example: product and game development',
+	'getting-started/nonprofits|Example: non-profits and NGOs',
+	'getting-started/research|Example: research and academic work',
+	'getting-started/your-own-work|Example: your own work',
+	'getting-started/new-project',
+	'installation/frequently-asked-questions|FAQ',
+];
+const startHereItems = START_HERE.map((entry) => entry.split('|'))
+	.filter(([slug]) => pageExists(slug))
+	.map(([slug, menuLabel]) => (menuLabel ? { slug, label: menuLabel } : { slug }));
+
 const useLeantimeGroups = USE_LEANTIME_GROUPS.map(([label, pages]) => ({
 	label,
 	items: pages
@@ -197,10 +215,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Start here',
-					items: [
-						{ autogenerate: { directory: 'getting-started' } },
-						{ label: 'FAQ', slug: 'installation/frequently-asked-questions' },
-					],
+					items: startHereItems,
 				},
 				{
 					label: 'Use Leantime',
