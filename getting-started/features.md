@@ -60,7 +60,7 @@ Trying Leantime Cloud? Every plugin is switched on there, so a Cloud workspace s
 | Two-factor authentication (authenticator apps) | Core | Yes |
 | Single sign-on with OpenID Connect (Keycloak, Authentik, Entra ID and others) | Core | No |
 | LDAP and Active Directory | Core | No |
-| [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/): SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more | Plugin | No |
+| [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/): SAML, ready-made sign-in with Google, Microsoft, GitHub, Okta and more, and signing in from the Leantime Mobile app | Plugin | No |
 
 ### Connect other tools
 
@@ -74,18 +74,18 @@ Trying Leantime Cloud? Every plugin is switched on there, so a Cloud workspace s
 
 ### On your phone
 
-[Leantime Mobile](#is-there-a-leantime-mobile-app) for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile) is the personal side of your workspace: what to focus on today, a timer, your to-dos and notes.
-
 | Feature | Open source | Cloud |
 |---|---|---|
-| Sign in to your workspace from the app | Core API; signing in needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin | Yes |
-| **Today:** what's due, what's on your radar and a few quick wins, so you can pick your one thing | Core | Yes |
-| **Plan tomorrow:** a short list for the next day, so the morning starts with a decision already made | Core | Yes |
-| **Now:** a focus timer that logs the time to your timesheet | Core | Yes |
-| **Tasks:** browse, add, update and check off to-dos | Core | Yes |
-| Calendar, timesheet and progress | Core | Yes |
-| Notifications and mentions | Core | Yes |
-| **Notes:** capture a thought and keep it with your projects | Plugin ([Notes](https://marketplace.leantime.io/product/leantime-notes/)) | Yes |
+| [Leantime Mobile](#is-there-a-leantime-mobile-app) for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile) | Needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin: without it, you can't sign in from the app | Yes |
+
+The app is the personal side of your workspace:
+
+- **Today:** what's due, what's on your radar and a few quick wins, so you can pick your one thing.
+- **Plan tomorrow:** a short list for the next day, so the morning starts with a decision already made.
+- **Now:** a focus timer that logs the time to your timesheet.
+- **Tasks:** browse, add, update and check off to-dos.
+- **Notes:** capture a thought and keep it with your projects. On a self-hosted server, this also needs the [Notes](https://marketplace.leantime.io/product/leantime-notes/) plugin.
+- Your calendar, timesheet, progress and notifications.
 
 ### AI
 
@@ -257,14 +257,14 @@ Yes, in Leantime Cloud: to-do prioritisation, task breakdown, status updates and
 
 #### Is there a Leantime mobile app?
 
-Yes. Leantime Mobile is available for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile). It's the personal side of your workspace: **Today** shows what's worth your attention, **Plan tomorrow** sets a short list for the next day, **Now** is a focus timer that logs your time, and **Tasks** and **Notes** keep your to-dos and thoughts with your projects. You also get your calendar, timesheet, progress and notifications.
+Yes. Leantime Mobile is available for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile). It signs in to a workspace you already have:
 
-The app signs in to a workspace you already have:
+- **Leantime Cloud:** enter your workspace name (as in yourteam.leantime.io). Everything in the app works.
+- **Self-hosted:** your server needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin. Without it, you can't sign in from the app at all. Notes in the app also needs the [Notes](https://marketplace.leantime.io/product/leantime-notes/) plugin.
 
-- **Leantime Cloud:** enter your workspace name (as in yourteam.leantime.io).
-- **Self-hosted:** enter your server's address. To sign in from the app, with a password or with single sign-on, your server needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin, and **Notes** needs the [Notes](https://marketplace.leantime.io/product/leantime-notes/) plugin.
+It's the personal side of your workspace: **Today** shows what's worth your attention, **Plan tomorrow** sets a short list for the next day, **Now** is a focus timer that logs your time, and **Tasks** and **Notes** keep your to-dos and thoughts with your projects. You also get your calendar, timesheet, progress and notifications.
 
-To look around first, tap **Demo Mode** on the app's first screen: it opens a sample workspace, with no account or server needed.
+To look around before you connect, tap **Demo Mode** on the app's first screen: it opens a sample workspace, with no account or server needed.
 
 ### Accessibility
 
