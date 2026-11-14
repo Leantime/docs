@@ -11,7 +11,7 @@ My Work is your personal start page: your to-dos from every project, your calend
 - **Total tasks left:** your open to-dos across all projects.
 - **Goals you are contributing to:** goals that your to-dos help reach.
 
-## How do I use the My ToDos widget?
+## Where do I see all my to-dos in Leantime?
 
 My ToDos lists the to-dos assigned to you, from every project.
 

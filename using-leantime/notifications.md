@@ -10,7 +10,7 @@ Click the bell at the top right. **Notifications** lists recent changes in your 
 
 Click a notification to open what it's about.
 
-## How do I choose which notifications I get?
+## How do I choose which notifications I get in Leantime?
 
 1. **Click your profile picture** at the top right, then **My Profile**.
 2. **Open the Notifications tab.**
@@ -49,7 +49,7 @@ Administrators set these in **Company → Company Settings**:
 - **Email frequency:** the shortest wait for everyone. People can choose a longer wait in their own settings, not a shorter one.
 - **Default notification types for new users** and **Default notification level:** what people get until they change their own settings.
 
-## What if something goes wrong?
+## Why aren't Leantime notification emails arriving?
 
 - **I don't get any emails.** Check that **Receive email notifications** is on and the project isn't **Muted**. If nobody gets emails, an administrator needs to check the [email settings](installation/email-configuration.md).
 - **Emails arrive late.** **Email frequency** sets the shortest wait between emails, and the company setting can make it longer. Self-hosted Leantime also sends emails from its scheduled jobs, so they need a [cron job](installation/configuration.md#cron-jobs) or someone signed in.

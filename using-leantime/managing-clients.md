@@ -2,7 +2,7 @@
 
 A client groups projects and the people who work on them. Agencies and consultants use clients for their customers. Product teams use them for products or departments, such as marketing or operations, which is why Leantime calls the field **Client / Product**. Administrators and Owners manage clients.
 
-## How do I add a client?
+## How do I add a client in Leantime?
 
 1. **Open Company** in the top menu, then **All Clients** under **Management** in the left menu.
 
@@ -14,11 +14,11 @@ A client groups projects and the people who work on them. Agencies and consultan
 
 ## How do I connect a project to a client?
 
-Open the project's **Project Settings**, choose the client under **Client / Product** on the **Project Details** tab, and click **Save**. You can also choose the client when you [create the project](using-leantime/managing-projects.md#how-do-i-create-a-project).
+Open the project's **Project Settings**, choose the client under **Client / Product** on the **Project Details** tab, and click **Save**. You can also choose the client when you [create the project](using-leantime/managing-projects.md#how-do-i-create-a-project-in-leantime).
 
 Each project belongs to one client. **All Clients** shows how many projects each client has.
 
-## How do I give a client's people access to their projects?
+## How do I let a client see only their own projects in Leantime?
 
 People who belong to a client can see that client's projects when a project's **Who can access this project?** setting is **Everyone assigned to this client**. This is a good way to let a customer follow their own projects without seeing anyone else's.
 

@@ -2,7 +2,7 @@
 
 A project holds your to-dos, milestones, goals and docs, and the people who work on them. Managers, Administrators and Owners can create projects and change their settings. Everyone else works in the projects they're part of.
 
-## How do I create a project?
+## How do I create a project in Leantime?
 
 1. **Open the Projects menu** at the top of the screen and click **Start something new**.
 
@@ -11,14 +11,14 @@ A project holds your to-dos, milestones, goals and docs, and the people who work
 2. **Type the project's name** in the title field.
 3. **Describe what the project is for** in the box below it. Everyone on the project sees this on the Project Overview, so a sentence or two about the goal helps.
 4. **Optional: set the dates and client.** Fill in **Start Date** and **Due Date**, and choose the **Client / Product** the project belongs to (see [Clients](using-leantime/managing-clients.md)).
-5. **Choose who can access the project** (see [Who can see a project?](#who-can-see-a-project)).
+5. **Choose who can access the project** (see [Who can see a project?](#who-can-see-a-project-in-leantime)).
 6. **Click Save.**
 
    ![The New Project form, with the project name "Customer Portal" outlined](../_images/using-leantime/projects-new.webp)
 
 Leantime opens the project's settings next, so you can add your team.
 
-## Who can see a project?
+## Who can see a project in Leantime?
 
 You choose this under **Who can access this project?** when you create the project, and on the **Project Details** tab of its settings:
 
@@ -108,7 +108,7 @@ The Project Overview is each project's start page. You get there by picking the 
 - **Project Updates:** short status notes for the team. Click **Update Status** to post one.
 - **Project Progress** and **Milestones:** how much is done.
 
-## How do I copy a project?
+## How do I copy or duplicate a project in Leantime?
 
 Copying is useful when you run the same kind of project again, like a yearly event or a client onboarding.
 
