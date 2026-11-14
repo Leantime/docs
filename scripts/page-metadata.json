@@ -339,6 +339,26 @@
     "searchTitle": "Leantime notifications: email, in-app and per-project settings",
     "description": "Choose which Leantime notifications you get by email and in the app, mute busy projects, and fix notification emails that arrive late or not at all."
   },
+  "using-leantime/goals.md": {
+    "title": "Goals",
+    "searchTitle": "Goals in Leantime: measurable targets linked to milestones",
+    "description": "Set measurable goals in Leantime, track their progress and link each goal to the milestones that move it. One milestone can count toward several goals."
+  },
+  "using-leantime/docs.md": {
+    "title": "Docs",
+    "searchTitle": "Docs in Leantime: project wiki, checklists and templates",
+    "description": "Write project docs in Leantime: checklists, meeting notes and decisions next to the work, with templates, nested pages, drafts and links to milestones."
+  },
+  "using-leantime/blueprints.md": {
+    "title": "Blueprints",
+    "searchTitle": "Blueprints in Leantime: SWOT, Lean Canvas, Logic Model and more",
+    "description": "Think a project through with Leantime Blueprints: Project Value Canvas, SWOT, Lean Canvas, Business Model Canvas, Risk Analysis, Logic Model and more."
+  },
+  "using-leantime/reports.md": {
+    "title": "Reports",
+    "searchTitle": "Project reports in Leantime: status report and delivery metrics",
+    "description": "See how a Leantime project is going: milestones done and in flight, goals, status updates, hours and cumulative flow per quarter. Print or save as PDF."
+  },
   "using-leantime/research-boards.md": {
     "title": "Research boards",
     "description": "Test an idea before you build it with Leantime's research board: define the customer, the problem, the solution and the details."
