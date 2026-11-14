@@ -109,8 +109,6 @@ Most pages apply to both Leantime Cloud and self-hosted Leantime. Write them onc
 </Tabs>
 ```
 
-Readers can also set this once under **Display → Steps for** (in the menu on phones). It's the same choice as the tabs, and it shows a short note on pages that only apply to the other edition.
-
 Don't make a separate page for each edition unless the whole task only exists in one (installing, upgrading and backups are self-hosted only; billing and your Cloud account are Cloud only).
 
 ## Words we use

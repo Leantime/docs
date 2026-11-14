@@ -140,7 +140,6 @@ var l=document.createElement('link');l.id='lt-reading-font';l.rel='stylesheet';
 l.href='https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap';
 document.head.appendChild(l);};
 try{if(localStorage.getItem('lt-reading')==='easy'){document.documentElement.dataset.reading='easy';window.ltLoadReadingFont();}}catch(e){}
-try{var e=localStorage.getItem('starlight-synced-tabs__edition');if(e==='Leantime Cloud')document.documentElement.dataset.edition='cloud';else if(e==='Self-hosted')document.documentElement.dataset.edition='self-hosted';}catch(e){}
 })();`;
 
 const crisp = `window.$crisp=[];window.CRISP_WEBSITE_ID="-K4sjRan9gm59MvONQG-";(function(){var d=document,s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`;

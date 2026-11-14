@@ -4,12 +4,6 @@
  * (Atkinson Hyperlegible, the accessibility font the Leantime app ships, with more line and
  * paragraph spacing and a shorter line length). The choice is kept in this browser only.
  * An inline script in the page head (astro.config.mjs) applies it before the page paints.
- *
- * Plus "Steps for": Cloud or self-hosted (no choice), Leantime Cloud, or Self-hosted. It is the same choice as the
- * <Tabs syncKey="edition"> tabs on pages (stored under Starlight's own key), so picking it here
- * switches those tabs, and picking a tab changes it here. It also shows a short note on pages
- * that only apply to the other edition. This component sits in the Display panel on desktop
- * and in the menu on phones.
  */
 import Default from '@astrojs/starlight/components/ThemeSelect.astro';
 import Select from '@astrojs/starlight/components/Select.astro';
@@ -28,70 +22,7 @@ import Select from '@astrojs/starlight/components/Select.astro';
 	/>
 </lt-reading-select>
 
-<lt-edition-select>
-	<Select
-		icon="setting"
-		label="Steps for"
-		options={[
-			{ label: 'Cloud or self-hosted', selected: true, value: '' },
-			{ label: 'Leantime Cloud', selected: false, value: 'cloud' },
-			{ label: 'Self-hosted', selected: false, value: 'self-hosted' },
-		]}
-		width="14em"
-	/>
-</lt-edition-select>
-
 <script>
-	/** Starlight's storage key for <Tabs syncKey="edition">, and the tab labels it stores. */
-	const EDITION_KEY = 'starlight-synced-tabs__edition';
-	const TAB_LABELS: Record<string, string> = { cloud: 'Leantime Cloud', 'self-hosted': 'Self-hosted' };
-
-	function currentEdition(): string {
-		return document.documentElement.dataset.edition ?? '';
-	}
-
-	function applyEdition(edition: string, fromTab = false): void {
-		if (edition) document.documentElement.dataset.edition = edition;
-		else delete document.documentElement.dataset.edition;
-		try {
-			if (edition) localStorage.setItem(EDITION_KEY, TAB_LABELS[edition]);
-			else localStorage.removeItem(EDITION_KEY);
-		} catch {
-			// storage blocked: the choice lasts for this page only
-		}
-		document.querySelectorAll<HTMLSelectElement>('lt-edition-select select').forEach((select) => {
-			select.value = edition;
-		});
-		if (!fromTab && edition) {
-			// Switch the edition tabs already on this page.
-			document.querySelectorAll('starlight-tabs[data-sync-key="edition"] [role="tab"]').forEach((tab) => {
-				if (tab.textContent?.trim() === TAB_LABELS[edition] && tab.getAttribute('aria-selected') !== 'true') {
-					(tab as HTMLElement).click();
-				}
-			});
-		}
-	}
-
-	class EditionSelect extends HTMLElement {
-		constructor() {
-			super();
-			const select = this.querySelector('select');
-			if (!select) return;
-			select.value = currentEdition();
-			select.addEventListener('change', () => applyEdition(select.value));
-		}
-	}
-	customElements.define('lt-edition-select', EditionSelect);
-
-	// Picking a tab on a page changes the choice here too.
-	document.addEventListener('click', (event) => {
-		const tab = (event.target as HTMLElement | null)?.closest?.('starlight-tabs[data-sync-key="edition"] [role="tab"]');
-		if (!tab) return;
-		const label = tab.textContent?.trim();
-		const edition = Object.keys(TAB_LABELS).find((key) => TAB_LABELS[key] === label) ?? '';
-		if (edition && edition !== currentEdition()) applyEdition(edition, true);
-	});
-
 	const KEY = 'lt-reading';
 
 	function apply(mode: string): void {
@@ -123,8 +54,7 @@ import Select from '@astrojs/starlight/components/Select.astro';
 </script>
 
 <style>
-	lt-reading-select,
-	lt-edition-select {
+	lt-reading-select {
 		display: contents;
 	}
 </style>
