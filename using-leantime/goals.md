@@ -52,6 +52,8 @@ The goal now lists each linked milestone with its due date and progress, and a c
 
 To unlink a milestone, click the **×** at the end of its row. The milestone and its to-dos stay as they are.
 
+On a goal, a milestone's progress counts each of its to-dos by effort. Reports also weigh in priority, so the same milestone can show a slightly different percentage there (see [How does Leantime calculate progress?](using-leantime/reports.md#how-does-leantime-calculate-progress)).
+
 ### Why doesn't finishing a milestone change the goal's number?
 
 Because they measure different things. A milestone's progress is the work: how many of its to-dos are done. The goal's number is the result: orders, sign-ups, people reached. Seeing both side by side tells you whether finished work is actually moving the result. If milestones are done and the number hasn't moved, that's worth talking about.
