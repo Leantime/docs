@@ -49,7 +49,7 @@ Trying Leantime Cloud? Every plugin is switched on there, so a Cloud workspace s
 | Timers, timesheets, billable work types, invoiced and paid flags, CSV export | Core | Yes |
 | Calendar feed (iCal) to subscribe from Google, Outlook or Apple Calendar | Core | Yes |
 | Show an external iCal calendar inside Leantime (read-only) | Core | Yes |
-| [CalDAV Calendar Sync](https://marketplace.leantime.io/product/caldav-calendar-sync/): two-way sync with Nextcloud, ownCloud, Baikal, Radicale, Apple Calendar and Thunderbird | Plugin | Yes |
+| CalDAV Calendar Sync: two-way sync with Nextcloud, ownCloud, Baikal, Radicale, Apple Calendar and Thunderbird | Free plugin, coming soon | Coming soon |
 
 ### Sign-in and security
 
@@ -58,9 +58,9 @@ Trying Leantime Cloud? Every plugin is switched on there, so a Cloud workspace s
 | Six roles: Read Only, Commenter, Editor, Manager, Administrator, Owner | Core | Yes |
 | Clients with access to their own projects | Core | Yes |
 | Two-factor authentication (authenticator apps) | Core | Yes |
-| Single sign-on with OpenID Connect (Keycloak, Authentik, Entra ID and others) | Core | <!-- TODO confirm --> To confirm |
-| LDAP and Active Directory | Core | <!-- TODO confirm --> To confirm |
-| [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/): SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more | Plugin | Yes |
+| Single sign-on with OpenID Connect (Keycloak, Authentik, Entra ID and others) | Core | No |
+| LDAP and Active Directory | Core | No |
+| [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/): SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more | Plugin | <!-- TODO confirm --> To confirm |
 
 ### Connect other tools
 
@@ -184,13 +184,13 @@ Yes. Start a timer from any to-do or log hours in **Timesheets**. Mark time as b
 
 #### Can I see Leantime in Google Calendar, Outlook or Apple Calendar?
 
-Yes. In **My Calendar**, open **Integrate Calendar**, create your iCal URL and subscribe to it in your calendar app. For two-way sync with Nextcloud, Apple Calendar or Thunderbird, use the [CalDAV Calendar Sync](https://marketplace.leantime.io/product/caldav-calendar-sync/) plugin.
+Yes. In **My Calendar**, open **Integrate Calendar**, create your iCal URL and subscribe to it in your calendar app. Two-way sync with Nextcloud, Apple Calendar or Thunderbird is coming soon as a free plugin, CalDAV Calendar Sync.
 
 ### Sign-in and security
 
 #### Does Leantime support single sign-on (SSO)?
 
-Yes. OpenID Connect and LDAP / Active Directory are built in; see [Authentication](installation/authentication-configuration.md). The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin adds SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more; see [Advanced Auth](installation/plugin-installation.md?id=advanced-auth-plugin).
+Yes, on self-hosted Leantime: OpenID Connect and LDAP / Active Directory are built in; see [Authentication](installation/authentication-configuration.md). They aren't available on Leantime Cloud. The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin adds SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more; see [Advanced Auth](installation/plugin-installation.md?id=advanced-auth-plugin).
 
 #### Does Leantime have two-factor authentication?
 
