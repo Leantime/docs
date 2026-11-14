@@ -5,7 +5,7 @@
  *   version the docs describe (src/lib/version.ts), linking to its release notes;
  * - a compact search button on the right instead of a wide search bar. It opens the same
  *   search dialog, with ⌘K / Ctrl+K and "/" as shortcuts;
- * - theme and text style together behind one "Display" button;
+ * - theme, text style and "Steps for" (Cloud or self-hosted) together behind one "Display" button;
  * - a "Star" button with the repository's star count (src/lib/stars.ts). GitHub and Discord
  *   are also in the mobile menu.
  */
@@ -38,7 +38,7 @@ import { RELEASE_URL, SHORT_VERSION } from '../lib/version';
 		</div>
 
 		<details class="lt-display sl-hidden md:sl-block">
-			<summary aria-label="Display settings: theme and text style" title="Display settings">
+			<summary aria-label="Display settings: theme, text style, and steps for Cloud or self-hosted" title="Display settings">
 				<Icon name="setting" size="1.1rem" />
 				<span class="lt-display-label">Display</span>
 			</summary>
@@ -195,7 +195,7 @@ import { RELEASE_URL, SHORT_VERSION } from '../lib/version';
 		display: flex;
 		flex-direction: column;
 		gap: 0.25rem;
-		min-width: 12rem;
+		min-width: 15rem;
 		padding: 0.75rem 1rem 1rem;
 		border: 1px solid var(--sl-color-gray-5);
 		border-radius: 0.75rem;

@@ -60,6 +60,22 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	)
 }
 
+{/* Shown only when the reader chose the other edition under Display → Steps for. */}
+{
+	availability?.edition === 'self-hosted' && (
+		<p class="lt-edition-note not-content" data-for="cloud">
+			You chose Leantime Cloud. This page is about running your own Leantime: on Cloud, we take care of it for you.
+		</p>
+	)
+}
+{
+	availability?.edition === 'cloud' && (
+		<p class="lt-edition-note not-content" data-for="self-hosted">
+			You chose self-hosted. This page is about something only Leantime Cloud has.
+		</p>
+	)
+}
+
 {/* The section colour also tints step numbers and other accents further down the page. */}
 {section && <script is:inline define:vars={{ section }}>document.documentElement.dataset.section = section;</script>}
 
@@ -225,6 +241,20 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	}
 	.lt-label-quiet {
 		border-style: dashed;
+	}
+	.lt-edition-note {
+		display: none;
+		margin: 0.75rem 0 0;
+		padding: 0.5rem 0.85rem;
+		border-inline-start: 3px solid var(--sl-color-accent);
+		border-radius: 0.4rem;
+		background-color: var(--sl-color-gray-6);
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-sm);
+	}
+	:global(:root[data-edition='cloud']) .lt-edition-note[data-for='cloud'],
+	:global(:root[data-edition='self-hosted']) .lt-edition-note[data-for='self-hosted'] {
+		display: block;
 	}
 	.lt-page-tools {
 		display: flex;
