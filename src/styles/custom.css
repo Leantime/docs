@@ -20,6 +20,9 @@
 	--lt-section-learn: #f5bd5c;
 	--lt-section-dev: #f79a78;
 	--lt-accent: var(--sl-color-accent-high);
+
+	/* A narrower text column (Starlight's default is 45rem): shorter lines are easier to follow. */
+	--sl-content-width: 40rem;
 }
 
 :root[data-theme='light'] {
@@ -62,14 +65,35 @@
 .sidebar-content .top-level > li > details:has(a[href^='/knowledge-base/']) { border-color: var(--lt-section-learn); }
 .sidebar-content .top-level > li > details:has(a[href^='/api/']) { border-color: var(--lt-section-dev); }
 
-/* Headings: a little more air above sections, so the page reads as chunks. */
+/* Headings: smaller than Starlight's (h2 36px, h3 24px), with more air above each section, so
+   the page reads as calm chunks instead of a wall of big titles. */
 .sl-markdown-content h2 {
-	margin-top: 2.5rem;
+	margin-top: 3.25rem;
 	padding-top: 0.25rem;
+	font-size: 1.75rem;
+	line-height: 1.25;
+}
+.sl-markdown-content h3 {
+	margin-top: 2rem;
+	font-size: 1.25rem;
 }
 .sl-markdown-content h2 + p,
 .sl-markdown-content h3 + p {
+	margin-top: 0.75rem;
+}
+
+/* Space between blocks and between list items, so steps and paragraphs don't run together. */
+.sl-markdown-content :is(p, ul, ol, table, figure, blockquote) + :is(p, ul, ol, table, figure, blockquote) {
+	margin-top: 1.25rem;
+}
+.sl-markdown-content :is(ol, ul):not(.sl-steps) > li + li {
 	margin-top: 0.6rem;
+}
+.sl-markdown-content :is(p, li) > img {
+	margin-block: 0.75rem;
+}
+.sl-markdown-content :is(td, th) {
+	padding-block: 0.7rem;
 }
 
 /* Steps: bigger, coloured step numbers so you can find your place again after switching windows. */
