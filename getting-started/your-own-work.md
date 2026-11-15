@@ -20,6 +20,7 @@ Big goals, like a new job or a finished course, are far away. Smaller outcomes o
 
 - **My Work** shows your to-dos from every project and the numbers for today and the week (see [My Work Dashboard](using-leantime/my-work-dashboard.md)).
 - **Drag a to-do onto the calendar** to give it a time. Plan a few things, not everything.
+- **Set a daily intention** with the Daily Intentions plugin: for a to-do, decide when you'll start it and what the first step is. Doing it the evening before makes the morning easier.
 - **On your phone,** the Leantime Mobile app's **Today** view shows what's worth your attention, and **Plan tomorrow** sets a short list for the next day. On a self-hosted server, the app needs the Advanced Authentication plugin.
 
 ## How do I keep Leantime calm?
