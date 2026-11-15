@@ -1,8 +1,8 @@
-# Organize client work in Leantime
+# Organize client work in Leantime: MSPs, agencies and consultancies
 
 For managed service providers (MSPs), agencies, consultancies and development firms: you do work for customers, and you also run your own business. The setup below keeps each customer's work separate, lets customers follow their own projects if you want them to, and keeps your internal work in the same place.
 
-## A setup that works
+## How should an agency or MSP set up Leantime?
 
 | | What to create |
 |---|---|
@@ -12,7 +12,7 @@ For managed service providers (MSPs), agencies, consultancies and development fi
 
 Starting out with a few customers and a small team? One project per customer is enough. Add more projects for a customer when the work splits into separate pieces with different deadlines.
 
-## How do I keep each customer's work separate?
+## How do I keep each customer's work separate in Leantime?
 
 1. **Add the customer as a client** under **Company → All Clients**.
 2. **Create their projects under that client**, and set **Who can access this project?** to **Only the users I choose under 'Team'** or **Everyone assigned to this client**.
@@ -21,14 +21,14 @@ Starting out with a few customers and a small team? One project per customer is 
 
 Never set a customer project, or your internal projects, to **Everyone in this organization**: that includes your customers' accounts.
 
-## Keep sight of the why
+## How do I show customers how their work is going?
 
 - **Write each project's purpose** in its description, in the customer's words: what will be better for them when it's done.
 - **Use milestones for the stages you agree with the customer**, like "Discovery", "Build" and "Launch", so both sides see where the work is.
 - **Give recurring work a goal**, for a managed-services contract for example "Tickets resolved within a day: 95%".
 - **Post a project update** when something changes; it shows on the Project Hub card as On Track, At Risk or Off Track.
 
-## Tips
+## Tips for client work in Leantime
 
 - **Track time per project** if you bill by the hour (see [Timesheets and time tracking](using-leantime/timesheets.md)).
 - **Copy a project** for work you repeat, like onboarding a new customer (see [How do I copy or duplicate a project in Leantime?](using-leantime/managing-projects.md#how-do-i-copy-or-duplicate-a-project-in-leantime)).
