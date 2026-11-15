@@ -23,7 +23,7 @@ Open the project, open **Data Room** in the left menu and click **Reports**. The
 - **Changed this period:** milestones that were added during the period, or whose due date moved out of it. It keeps the report honest about plans that changed.
 - **In flight:** the milestones being worked on, with their due dates and how far along they are.
 - **Coming up:** milestones planned for the periods after this one.
-- **Goals & KPIs:** each [goal](using-leantime/goals.md) with its number, its progress and the milestones linked to it.
+- **Goals & KPIs:** each [goal](using-leantime/goals.md) with its number, its progress and the milestones linked to it. Goals show where they stand today, whichever period you pick.
 - **Status updates:** the project updates posted in the period.
 
 ## What's in Delivery Metrics?

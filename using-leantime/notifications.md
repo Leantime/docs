@@ -27,7 +27,7 @@ Click a notification to open what it's about.
 | **Notify me about** | Switches for each kind of change: Tasks & Milestones, Comments, Goals, Ideas, Project Updates, and Boards & Whiteboards |
 | **Per-Project Notifications** | How much you hear from each project (see below) |
 
-@Mentions always reach you, whatever you switch off.
+@Mentions always reach you, whatever you switch off, and so do changes to to-dos you're a collaborator on.
 
 ## How do I get fewer notifications from a busy project?
 
@@ -35,7 +35,7 @@ Change the project's level under **Per-Project Notifications**:
 
 - **All Activity:** everything in the project that matches your **Notify me about** switches.
 - **My Work Only:** only changes to things you're assigned to, created or are directly involved in.
-- **Muted:** nothing from this project, except @mentions.
+- **Muted:** nothing from this project, except @mentions and to-dos you're a collaborator on.
 
 ## Can I get notifications in Slack, Teams or another tool?
 

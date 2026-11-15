@@ -1,5 +1,12 @@
 - **Start here**
+  - [Get started with Leantime](getting-started/get-started.md)
   - [What can Leantime do?](getting-started/features.md)
+  - [How should I organize my work?](getting-started/organize-your-work.md)
+    - [Client work](getting-started/client-work.md)
+    - [Product and game development](getting-started/product-and-game-development.md)
+    - [Non-profits and NGOs](getting-started/nonprofits.md)
+    - [Research and academic work](getting-started/research.md)
+    - [Your own work and career](getting-started/your-own-work.md)
 
 - **Installation & Updates**
   - [System Requirements](installation/system-requirements.md)
