@@ -28,6 +28,6 @@ A paper is too big to feel progress on. Split each stage into outcomes small eno
 
 - **Plan your writing time in My Work:** drag a to-do onto the calendar to block the time for it (see [My Work Dashboard](using-leantime/my-work-dashboard.md)).
 - **Supervisors and co-authors** who only read along can have the **Commenter** role.
-- **Deadline moved?** Change the milestone's due date; the Status Report shows what moved in each period, which helps at supervision meetings (see [Reports](using-leantime/reports.md)).
+- **Deadline moved?** Change the milestone's due date. When an unfinished stage is pushed past the end of the period, the Status Report lists it under **Changed this period**, which helps at supervision meetings. Dates moved within the period don't show there (see [Reports](using-leantime/reports.md)).
 
 Back to [How should I organize my work in Leantime?](getting-started/organize-your-work.md)
