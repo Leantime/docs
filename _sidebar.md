@@ -1,3 +1,6 @@
+- **Start here**
+  - [What can Leantime do?](getting-started/features.md)
+
 - **Installation & Updates**
   - [System Requirements](installation/system-requirements.md)
   - [Installation](installation/installation-types.md)
@@ -9,11 +12,22 @@
   - [Configuration](installation/configuration.md)
     - [Email](installation/email-configuration.md)
     - [Plugin](installation/plugin-installation.md)
+        - [Plugin Licenses & Updates](installation/plugin-licenses.md)
     - [Authentication](installation/authentication-configuration.md)
     - [Project Integrations](using-leantime/integrations.md)
    - [Backup & Restore](installation/backup-restore.md)
+   - [Move to a New Server](installation/move-server.md)
+   - [Import from Jira, Trello, Asana or CSV](using-leantime/import-csv.md)
    - [Upgrade Guide](installation/upgrade-guide.md)
    - [Common Issues](installation/common-issues.md)
+
+**AI with Leantime**
+
+- [Overview](ai/README.md)
+- [Working with AI assistants](ai/working-with-ai.md)
+- [Glossary](ai/glossary.md)
+- [Keycloak SSO with an AI assistant](ai/keycloak-sso.md)
+- [MCP server](installation/leantime-mcp.md)
 
 **Development**
 
@@ -27,6 +41,17 @@
 - [API Endpoints](api/README.md)
 - [Event Hooks/Filters](technical/hooks.md)
 - [Source Code](technical/README.md)
+
+**Using Leantime**
+
+- [My Work Dashboard](using-leantime/my-work-dashboard.md)
+- [Projects](using-leantime/managing-projects.md)
+- [Clients](using-leantime/managing-clients.md)
+- [Notifications](using-leantime/notifications.md)
+- [Goals](using-leantime/goals.md)
+- [Docs](using-leantime/docs.md)
+- [Blueprints](using-leantime/blueprints.md)
+- [Reports](using-leantime/reports.md)
 
 **Everything Else**
 
