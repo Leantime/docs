@@ -8,8 +8,10 @@ The app is for your own day, not for setting up projects: see what's due, plan t
 
 ## How do I get the Leantime mobile app?
 
-- **iPhone:** [Leantime Mobile on the App Store](https://apps.apple.com/app/leantime-mobile/id6773767264). In the EU, the app isn't in the App Store yet: join the [TestFlight beta](https://testflight.apple.com/join/nHF3AGwx) instead. Install Apple's free TestFlight app first, then open the link on your iPhone.
+- **iPhone:** [Leantime Mobile on the App Store](https://apps.apple.com/app/leantime-mobile/id6773767264). In the EU, the app isn't in the App Store yet: join the [TestFlight beta](https://testflight.apple.com/join/nHF3AGwx) instead. Install Apple's free TestFlight app first, then open the link on your iPhone. TestFlight builds expire after 90 days and update as new versions come out.
 - **Android:** [Leantime Mobile on Google Play](https://play.google.com/store/apps/details?id=io.leantime.mobile).
+
+The app is for phones; tablet layouts come later. It's free. On Leantime Cloud it works with your plan at no extra cost, trials included. On a self-hosted server it needs the Advanced Authentication plugin, a paid plugin from the marketplace.
 
 **Just looking?** Tap **Try Demo Mode** on the first screen. It opens a sample workspace, with no account or server needed.
 
@@ -58,9 +60,9 @@ Tap the button, sign in on your company's page the way you always do, and you're
 
 - **Today:** what's due, what you worked on last, quick wins and your schedule for the day.
 - **Tasks:** your to-dos from every project. Add, update and finish them, and log time.
-- **Now:** a focus timer for one to-do. Count down a set length, or count up while you work; the time is logged to the to-do.
+- **Now:** a timer for one to-do. Count up while you work, or count down a set length (Pomodoro style). Pause, resume, then stop and log the time to the to-do, even if you only worked for five minutes. It also offers short moments to breathe.
 - **Notes:** your notes, kept with your projects.
-- **You:** your calendar, timesheet, progress, inbox and settings.
+- **You:** your calendar, timesheet, inbox and settings, and **Progress**: a view of where you stand right now and a weekly reflection of what you closed and helped with. Progress is only in the app and is just for you.
 - **Plan tomorrow:** pick a few to-dos for the next day. They move to tomorrow's date.
 
 ![Plan Tomorrow: a short list of suggested to-dos to move to tomorrow](../_images/using-leantime/mobile-plan-tomorrow.webp)
@@ -119,7 +121,7 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 
 ## Still stuck?
 
-Email mobile@leantime.io with:
+On the TestFlight beta, you can send feedback from inside TestFlight: take a screenshot in the app and add a note. Or email mobile@leantime.io with:
 
 - the exact sentence the app showed,
 - your Leantime version, or that you're on Leantime Cloud,
