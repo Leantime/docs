@@ -2,7 +2,7 @@
 
 Report a security issue privately through [GitHub's advisory form](https://github.com/Leantime/leantime/security/advisories/new), with steps that reproduce it on the latest release. A small team of maintainers reviews every report alongside their development work, so the first reply can take about a month. Critical issues are handled first; everything else is fixed in regular releases.
 
-This page covers Leantime itself: the open source edition and Leantime Cloud (`*.leantime.io`). The leantime.io website is out of scope.
+This page covers Leantime itself: the open source edition, and Leantime Cloud, meaning your workspace at `<name>.leantime.io` and the account and billing site at `accounts.leantime.io`. The leantime.io website, the marketplace and the docs are out of scope.
 
 ## How do I report a security issue in Leantime?
 
@@ -70,7 +70,7 @@ We rate every report with this scale ourselves, and our rating is the one that d
 We close these without a fix, with a short reason:
 
 - **Behavior that works as designed,** like an Administrator or Owner doing what those roles are for, or a role doing what [User Management](using-leantime/user-management.md) says it can.
-- **Attacks that need a higher role than the one they gain,** like an Administrator injecting a script into a page only Administrators see.
+- **Attacks that give nothing beyond the attacker's own role,** like an Administrator injecting a script that only runs for them or for other Administrators. If it reaches an Owner, or anyone with more access than the attacker, it is a security issue.
 - **Scripts or content that only you can trigger** in your own browser (self-XSS).
 - **Scanner or AI tool output** without a working proof of concept.
 - **Missing security headers, cookie flags or version numbers** without a way to exploit them.
