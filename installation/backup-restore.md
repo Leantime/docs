@@ -144,7 +144,7 @@ chown -R www-data:www-data /var/www/leantime/app/Plugins
 
 This restores the Docker backup above: the database dump, the three copied folders and `env_backup`. Run each step in the folder with your `docker-compose.yml`.
 
-1. **Put your settings back before you start Leantime.** `env_backup` holds your database password, email, login and other settings:
+1. **Put your settings back.** `env_backup` holds your database password, email, login and other settings:
 
    ```bash
    cp ./env_backup .env
@@ -152,41 +152,47 @@ This restores the Docker backup above: the database dump, the three copied folde
 
    MySQL reads the database name, user and password from `.env` only when it creates a new, empty database volume. On a new server, restoring `.env` first keeps them the same as in your backup. If the new installation has already started with other database settings, keep its `MYSQL_*` and `LEAN_DB_*` lines and copy your other settings over from `env_backup`.
 
-2. **Start the database** and wait until it's ready:
+2. **Stop Leantime** if it's running, so nothing writes to the database while you restore. Leantime stays stopped until step 7:
+
+   ```bash
+   docker compose stop leantime
+   ```
+
+3. **Start the database** and wait until it's ready:
 
    ```bash
    docker compose up -d --wait leantime_db
    ```
 
-3. **Import the database:**
+4. **Import the database:**
 
    ```bash
    docker compose exec -T leantime_db sh -c 'exec mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' < leantime_backup_YYYYMMDD.sql
    ```
 
-4. **Start Leantime.** If Leantime was already running, this also restarts it with the settings from step 1:
+5. **Copy the files back** and give them to the web server user. `docker compose create` makes the Leantime container and its volumes without starting it, if they don't exist yet. Files you copy in are owned by your own user, and Leantime can't change or delete them until the `chown` line runs:
 
    ```bash
-   docker compose up -d
-   ```
-
-5. **Copy the files back** and give them to the web server user. Files you copy in are owned by your own user, and Leantime can't change or delete them until you do this:
-
-   ```bash
+   docker compose create leantime
    docker compose cp ./userfiles_backup/. leantime:/var/www/html/userfiles
    docker compose cp ./public_userfiles_backup/. leantime:/var/www/html/public/userfiles
    docker compose cp ./plugins_backup/. leantime:/var/www/html/app/Plugins
-   docker compose exec -u root leantime chown -R www-data:www-data /var/www/html/userfiles /var/www/html/public/userfiles /var/www/html/app/Plugins
+   docker compose run --rm --no-deps -u root --entrypoint chown leantime -R www-data:www-data /var/www/html/userfiles /var/www/html/public/userfiles /var/www/html/app/Plugins
    ```
 
-6. **Clear the cache and update the database** in case the backup came from an older Leantime version:
+6. **Update the database**, in case the backup came from an older Leantime version. This runs in a temporary container, so Leantime itself stays stopped:
 
    ```bash
-   docker compose exec leantime php bin/leantime cache:clear
-   docker compose exec leantime php bin/leantime db:migrate
+   docker compose run --rm --no-deps --entrypoint php leantime bin/leantime db:migrate
    ```
 
-7. Open Leantime and log in with an existing account.
+7. **Start Leantime** with a fresh container, which also picks up the settings from step 1 and starts with an empty cache:
+
+   ```bash
+   docker compose up -d --force-recreate leantime
+   ```
+
+8. Open Leantime and log in with an existing account.
 
 ### Post-Restore
 

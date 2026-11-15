@@ -54,7 +54,7 @@ make unit-test          # unit tests
 make acceptance-test    # browser tests
 ```
 
-Both start their own containers, with Leantime on port 8002.
+Both use the development containers. They restart `leantime-dev` in test mode: with `.dev/test.env` as its configuration, the `leantime_test` database, and also on port 8002. To go back to development, run `make run-dev` again.
 
 ## Development on your own machine
 

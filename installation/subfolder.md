@@ -48,6 +48,10 @@ You need Apache 2.4 with `mod_rewrite` (`sudo a2enmod rewrite`).
        index index.php;
        try_files $uri $uri/ @leantime;
 
+       location ~ /\.ht {
+           deny all;
+       }
+
        location ~ \.php$ {
            include fastcgi_params;
            fastcgi_param SCRIPT_FILENAME $request_filename;
@@ -60,7 +64,7 @@ You need Apache 2.4 with `mod_rewrite` (`sudo a2enmod rewrite`).
    }
    ```
 
-   - `^~` stops your website's own `location ~ \.php$` block from handling Leantime's PHP files.
+   - `^~` stops your website's own regex blocks, such as `location ~ \.php$`, from handling Leantime's files. That also skips your site's own `.ht` rule, so the block repeats it to keep `.htaccess` private.
    - `SCRIPT_FILENAME $request_filename` gives PHP-FPM the real path of `index.php` under `alias`. With `$fastcgi_script_name`, PHP-FPM gets `/leantime/index.php` and can't find the file.
 
 2. Set `LEAN_APP_URL` in `config/.env` as in the Apache steps.
