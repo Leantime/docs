@@ -2,7 +2,7 @@
 
 Report a security issue privately through [GitHub's advisory form](https://github.com/Leantime/leantime/security/advisories/new), with steps that reproduce it on the latest release. A small team of maintainers reviews every report alongside their development work, so the first reply can take about a month. Critical issues are handled first; everything else is fixed in regular releases.
 
-This page covers Leantime itself: the open source edition, and Leantime Cloud, meaning your workspace at `<name>.leantime.io` and the account and billing site at `accounts.leantime.io`. The leantime.io website, the marketplace and the docs are out of scope.
+This page covers Leantime itself: the open source edition, and Leantime Cloud, meaning your workspace at `<name>.leantime.io` and the account and billing site at `accounts.leantime.io`. The leantime.io website is out of scope.
 
 ## How do I report a security issue in Leantime?
 
