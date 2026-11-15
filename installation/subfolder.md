@@ -44,7 +44,7 @@ You need Apache 2.4 with `mod_rewrite` (`sudo a2enmod rewrite`).
    ```nginx
    # Leantime in /leantime
    location = /leantime {
-       return 301 /leantime/;
+       return 301 /leantime/$is_args$args;
    }
 
    location ^~ /leantime/ {
