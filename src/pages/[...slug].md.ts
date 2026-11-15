@@ -9,7 +9,8 @@ const SITE = 'https://docs.leantime.io';
  * The MDX homepage is skipped because its body is components, not text.
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-	const entries = await getCollection('docs', (entry) => entry.id !== 'index' && !entry.data.draft);
+	// The home page's id is '' (and 'index' in some Starlight versions); skip both.
+	const entries = await getCollection('docs', (entry) => entry.id !== '' && entry.id !== 'index' && !entry.data.draft);
 	return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 };
 
