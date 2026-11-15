@@ -39,12 +39,16 @@ You need Apache 2.4 with `mod_rewrite` (`sudo a2enmod rewrite`).
 
 ## Nginx
 
-1. Add these two blocks inside the `server` block of your existing website. Use the PHP-FPM socket of your PHP version, as in the [Nginx steps](installation/package-installation.md#nginx-installation-process):
+1. Add these three blocks inside the `server` block of your existing website. Use the PHP-FPM socket of your PHP version, as in the [Nginx steps](installation/package-installation.md#nginx-installation-process):
 
    ```nginx
    # Leantime in /leantime
-   location ^~ /leantime {
-       alias /var/www/leantime/public;
+   location = /leantime {
+       return 301 /leantime/;
+   }
+
+   location ^~ /leantime/ {
+       alias /var/www/leantime/public/;
        index index.php;
        try_files $uri $uri/ @leantime;
 
@@ -64,6 +68,7 @@ You need Apache 2.4 with `mod_rewrite` (`sudo a2enmod rewrite`).
    }
    ```
 
+   - The trailing slashes in `/leantime/` and `public/` keep your website's own pages that start with the same letters, like `/leantime.php` or `/leantime-news`, out of Leantime. The first block sends `/leantime` to `/leantime/`.
    - `^~` stops your website's own regex blocks, such as `location ~ \.php$`, from handling Leantime's files. That also skips your site's own `.ht` rule, so the block repeats it to keep `.htaccess` private.
    - `SCRIPT_FILENAME $request_filename` gives PHP-FPM the real path of `index.php` under `alias`. With `$fastcgi_script_name`, PHP-FPM gets `/leantime/index.php` and can't find the file.
 
