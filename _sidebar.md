@@ -1,3 +1,6 @@
+- **Start here**
+  - [What can Leantime do?](getting-started/features.md)
+
 - **Installation & Updates**
   - [System Requirements](installation/system-requirements.md)
   - [Installation](installation/installation-types.md)
