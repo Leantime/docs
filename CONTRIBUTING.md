@@ -141,7 +141,7 @@ Plugins are how Leantime is funded, and they solve real problems. Write about th
 
 ## AI-friendly pages
 
-Every page is also published as plain Markdown (`/path.md`) and in `/llms.txt`. AI assistants read these pages, so:
+Every page except the home page and drafts is also published as plain Markdown (`/path.md`) and listed in `/llms.txt`. AI assistants read these pages, so:
 
 - Use exact names for settings, commands and screens (`LEAN_APP_URL`, **Company Settings → Integrations**), never "the setting above".
 - Put placeholders in angle brackets (`<your domain>`) and say what goes there.

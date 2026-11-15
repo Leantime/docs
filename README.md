@@ -32,7 +32,7 @@ Requires Node.js 22.23.4 or later.
 ```bash
 npm ci
 npm run dev       # live preview at http://localhost:4321
-npm run build     # production build in dist/, fails on broken internal links
+npm run build     # checks headings, then builds dist/; fails on heading problems or broken internal links
 npm run preview   # serve the production build
 ```
 
@@ -42,6 +42,6 @@ Every pull request is built by the **Build docs** workflow, which also checks al
 
 ## Search engines and AI tools
 
-Each page is static HTML with its own title, description, canonical URL and structured data (schema.org `TechArticle` and `BreadcrumbList`, plus site-wide `Organization`, `WebSite` and `SoftwareApplication` in `astro.config.mjs` and `src/routeData.ts`). The build also writes `sitemap-index.xml`, `robots.txt` and `llms.txt` / `llms-full.txt` for AI assistants.
+Each page is static HTML with its own title, description, canonical URL and structured data (schema.org `TechArticle` and `BreadcrumbList` on every page except the home page, plus site-wide `Organization`, `WebSite` and `SoftwareApplication` in `astro.config.mjs` and `src/routeData.ts`). The build also writes `sitemap-index.xml`, `robots.txt` and `llms.txt`, `llms-full.txt` and `llms-small.txt` for AI assistants, and a plain Markdown copy of each page (`/path.md`, not for the home page or drafts).
 
 Old docsify links (`/#/installation/docker`, `?id=section`) are redirected in the browser.
