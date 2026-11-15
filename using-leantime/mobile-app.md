@@ -39,7 +39,7 @@ Then, in the app:
 3. **Sign in** with your Leantime email and password, or with your company login (see the next section).
 4. **Enter your code** if your account uses two-factor authentication.
 
-**Quick test:** open the same address in your phone's browser. If Leantime's login page loads and you can sign in there, the server side is fine.
+**Quick test:** open the same address in your phone's browser. If Leantime's login page loads and you can sign in there, your phone can reach the server. If the app still can't sign in, the server may be missing Advanced Authentication or dropping the app's sign-in token; see [What does the app's error message mean?](#what-does-the-apps-error-message-mean).
 
 The **Notes** tab also needs the [Notes](https://marketplace.leantime.io/product/leantime-notes/) plugin on your server. Without it, the app tells you instead of showing an empty tab.
 
