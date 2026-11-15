@@ -16,7 +16,7 @@ This guide covers how to safely upgrade Leantime across all deployment types, wi
    ```
 3. **Note your current version** (found in Company Settings → Account or `composer.json`)
 4. **Disable all plugins** via Settings → Plugins before major version upgrades
-5. **Check PHP version** — Leantime 3.6+ requires PHP 8.1+, earlier 3.x versions require PHP 8.0+
+5. **Check PHP version** — Leantime 3.2 and later require PHP 8.2+ (3.0 and 3.1 required PHP 8.1). Run `php -v` to check.
 
 ## Upgrade Methods
 
@@ -144,7 +144,7 @@ Known issues in 3.6.0/3.6.1:
 
 All fixed in v3.6.2.
 
-**Requirements:** PHP 8.1+ is required for Leantime 3.6 and later.
+**Requirements:** PHP 8.2+ (required since Leantime 3.2) and MySQL 8.0+, MariaDB 10.6+ or PostgreSQL.
 
 ### Upgrading to 3.2.x
 
