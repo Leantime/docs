@@ -80,17 +80,19 @@ function faqEntries(body: string): Array<{ question: string; answer: string }> {
  * Site-wide Organization / WebSite / SoftwareApplication / SoftwareSourceCode data lives in astro.config.mjs.
  */
 /**
- * Menu groups start collapsed so the menu fits on one screen. Starlight still opens the group that
- * holds the current page. On the home page "Start here" is open, and "By type of work" opens
- * whenever "Start here" does, so the examples show as a sub-list under "How should I organize my work?".
+ * Menu groups: "Start here" and "Use Leantime" are open on every page, the other top-level groups
+ * start collapsed, and groups inside a group start collapsed, so the menu fits on one screen.
+ * Starlight still opens whichever group holds the current page. "By type of work" opens with
+ * "Start here", so the examples show as a sub-list under "How should I organize my work?".
  */
 type SidebarEntry = { type: 'link' } | { type: 'group'; label: string; collapsed: boolean; entries: SidebarEntry[] };
-const ALWAYS_OPEN = new Set(['By type of work']);
-function collapseMenu(entries: SidebarEntry[], isHome: boolean, topLevel = true): void {
+const OPEN_TOP_LEVEL = new Set(['Start here', 'Use Leantime']);
+const OPEN_NESTED = new Set(['By type of work']);
+function collapseMenu(entries: SidebarEntry[], topLevel = true): void {
 	for (const entry of entries) {
 		if (entry.type !== 'group') continue;
-		entry.collapsed = !(ALWAYS_OPEN.has(entry.label) || (isHome && topLevel && entry.label === 'Start here'));
-		collapseMenu(entry.entries, isHome, false);
+		entry.collapsed = !(topLevel ? OPEN_TOP_LEVEL : OPEN_NESTED).has(entry.label);
+		collapseMenu(entry.entries, false);
 	}
 }
 
@@ -103,7 +105,7 @@ export const onRequest = defineRouteMiddleware(async (context) => {
 	// The home page (src/content/docs/index.mdx) has the empty id.
 	const isHome = id === '' || id === 'index';
 
-	collapseMenu(route.sidebar as unknown as SidebarEntry[], isHome);
+	collapseMenu(route.sidebar as unknown as SidebarEntry[]);
 
 	if (isHome) {
 		return;
