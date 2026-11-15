@@ -59,7 +59,7 @@ Then pick the level whose description fits what would really happen to a Leantim
 | --- | --- | --- |
 | **Critical** | Someone could break into Leantime installations right away. | Anyone, without an account, can run code on the server or take over accounts. |
 | **High** | A customer's private data reaches people outside their team. | A signed-in user can read or change data in a project their permissions don't give them access to, take over another account, or plant a script that runs for other people on a page everyone uses. |
-| **Medium** | Someone can see or do a bit more than their role allows, inside their own team. | A project member can reach something their role hides, or a crafted link changes a little of the victim's own data. |
+| **Medium** | Someone can see or do a bit more than their role allows, inside their own team. | A project member gets past their permissions (not just past something the interface hides), or a crafted link changes a little of the victim's own data. |
 | **Low** | An annoyance that needs unlikely conditions. | An attack that only works under rare conditions and exposes very little, like a single field that isn't private. |
 | **Not a security issue** | Leantime is working as designed. | See the list below. |
 
