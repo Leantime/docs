@@ -112,7 +112,7 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 | A full address in the Cloud box, or a workspace name in the Self-Hosted box | Cloud: type only the part before `.leantime.io`. Self-hosted: switch to **Self-Hosted** and type the whole address. |
 | The address redirects (adds `www`, switches to `https`, adds a folder) | Use the address your browser ends up on. |
 | You only sign in with a company login and never set a password | Use **Sign in with SSO** or your provider's button. If there's none, ask your administrator. |
-| The two-factor code is right but fails | The server's clock is off. Ask your administrator to sync the server time (NTP). |
+| The two-factor code is right but fails | A clock is off: check that your phone sets its time automatically, and ask your administrator to sync the server time (NTP). |
 | The app worked, then stopped after a server change | Advanced Authentication was turned off, its license lapsed, or a proxy setting changed. |
 
 ## How do I delete my account or my data?
