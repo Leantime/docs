@@ -51,16 +51,16 @@ Answer these four questions in your report. The answers decide the level, not th
 1. **Who can do it?** Anyone on the internet without an account, any signed-in user, a member of the same project, or only an Administrator or Owner.
 2. **What can they reach?** The whole server or every workspace, other projects or other people's data, their own project, or only their own account.
 3. **What can they do?** Run code on the server or take over accounts, read data they shouldn't see, change or delete it, show misleading content, or nothing beyond what their role already allows.
-4. **Does the victim have to do something?** For example, click a link you send them, open an export in a spreadsheet, or paste something in.
+4. **Does the victim have to do something?** For example, click a link you send them, open an export in a spreadsheet, or paste something in. This makes an attack harder, so it can lower the level, but it doesn't cap it: a link that takes over an Administrator's account is still serious.
 
 Then pick the level whose description fits what would really happen to a Leantime customer:
 
 | Level | What it would mean for a Leantime customer | Typical example |
 | --- | --- | --- |
 | **Critical** | Someone could break into Leantime installations right away. | Anyone, without an account, can run code on the server or take over accounts. |
-| **High** | A customer's private data reaches people outside their team. | A signed-in user can read or change another project's data, or plant a script that runs for other people on a page everyone uses. |
-| **Medium** | Someone can see or do a bit more than their role allows, inside their own team. | A project member can reach something their role hides, or an attack needs the victim to click a crafted link. |
-| **Low** | An annoyance that needs unlikely conditions. | An attack that needs an Administrator to be tricked, or exposes very little. |
+| **High** | A customer's private data reaches people outside their team. | A signed-in user can read or change data in a project their permissions don't give them access to, take over another account, or plant a script that runs for other people on a page everyone uses. |
+| **Medium** | Someone can see or do a bit more than their role allows, inside their own team. | A project member can reach something their role hides, or a crafted link changes a little of the victim's own data. |
+| **Low** | An annoyance that needs unlikely conditions. | An attack that only works under rare conditions and exposes very little, like a single field that isn't private. |
 | **Not a security issue** | Leantime is working as designed. | See the list below. |
 
 We rate every report with this scale ourselves, and our rating is the one that decides the queue. A higher rating on the report doesn't get it looked at sooner; a clear and accurate one does.
@@ -92,7 +92,7 @@ No. Leantime doesn't offer payments for reports. Every published advisory credit
 
 ## How do I keep my own Leantime installation secure?
 
-- **Use HTTPS** and set `LEAN_APP_URL` to your `https://` address (see [Configuration](installation/configuration.md)).
+- **Use HTTPS.** Set `LEAN_APP_URL` to your `https://` address and `LEAN_SESSION_SECURE=true`, so session cookies are only sent over HTTPS. Leantime detects HTTPS by itself, but behind a reverse proxy it may not (see [Configuration](installation/configuration.md)).
 - **Keep Leantime up to date,** along with PHP and your database (see [Upgrade Guide](installation/upgrade-guide.md)).
 - **Turn on two-factor authentication** under **My Profile → Security**, and ask your team to do the same.
 - **Back up regularly** (see [Backup & Restore](installation/backup-restore.md)).
