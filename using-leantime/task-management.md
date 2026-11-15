@@ -81,7 +81,7 @@ Swimlanes split the Kanban board into rows, so a busy board is easier to scan. C
 - **User:** one row per assignee
 - **Sprint**
 - **Due Date:** Overdue, Due This Week, Due Next Week, Due Later and No Due Date
-- **Parent Task:** each to-do with its subtasks
+- **Parent Task:** a row for each to-do's subtasks, named after the parent. Subtasks of subtasks go under the top-level parent. To-dos without a parent, including the parents themselves, stay in **No Parent Task**.
 
 Click a row's name to collapse it. **Add To-Do** inside a row fills in that row's value for you, like the priority, the assignee or the milestone. Two exceptions: in a **Parent Task** row the new to-do isn't a subtask (add subtasks from the parent's **Subtasks** section, or set **Related To**), and in the **Overdue** row it gets today's date, so it moves to **Due This Week**. Grouping is just a view: choose **No Grouping** to go back, and nothing about your to-dos changes. In the Table and List views you can also group by **Status**.
 
