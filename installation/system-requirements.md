@@ -73,7 +73,7 @@ MySQL and MariaDB get the most testing. If something doesn't work on PostgreSQL,
 
 ## Which folders must be writable?
 
-The web server user (usually `www-data` or `apache`) must be able to write to `storage/`, `userfiles/`, `public/userfiles/` and `app/Plugins/`. See [Common issues](installation/common-issues.md) if logins or uploads fail after installation.
+The web server user (usually `www-data` or `apache`) must be able to write to `storage/`, `bootstrap/cache/`, `userfiles/`, `public/userfiles/` and `app/Plugins/`. See [Common issues](installation/common-issues.md) if logins or uploads fail after installation.
 
 ## Can I run Leantime on an older PHP version?
 
