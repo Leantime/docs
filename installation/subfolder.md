@@ -57,6 +57,7 @@ You need Apache 2.4 with `mod_rewrite` (`sudo a2enmod rewrite`).
        }
 
        location ~ \.php$ {
+           try_files $uri @leantime;
            include fastcgi_params;
            fastcgi_param SCRIPT_FILENAME $request_filename;
            fastcgi_pass unix:/var/run/php/php8.3-fpm.sock; # match your PHP version (8.2 or later)
@@ -70,6 +71,7 @@ You need Apache 2.4 with `mod_rewrite` (`sudo a2enmod rewrite`).
 
    - The trailing slashes in `/leantime/` and `public/` keep your website's own pages that start with the same letters, like `/leantime.php` or `/leantime-news`, out of Leantime. The first block sends `/leantime` to `/leantime/`.
    - `^~` stops your website's own regex blocks, such as `location ~ \.php$`, from handling Leantime's files. That also skips your site's own `.ht` rule, so the block repeats it to keep `.htaccess` private.
+   - `try_files $uri @leantime` in the PHP block sends `.php` addresses that don't exist, like old `download.php` attachment links, to Leantime, which still handles them.
    - `SCRIPT_FILENAME $request_filename` gives PHP-FPM the real path of `index.php` under `alias`. With `$fastcgi_script_name`, PHP-FPM gets `/leantime/index.php` and can't find the file.
 
 2. Set `LEAN_APP_URL` in `config/.env` as in the Apache steps.
