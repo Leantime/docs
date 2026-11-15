@@ -36,7 +36,7 @@ const DEFAULTS: Array<[string, Omit<Availability, 'plugin' | 'checked'>]> = [
 	['installation/development', { showFeature: false }],
 	['installation/', { edition: 'self-hosted', showFeature: false }],
 	['using-leantime/', { edition: 'both', showFeature: true }],
-	['ai/', { edition: 'both', showFeature: true }],
+	['ai/', { edition: 'both', showFeature: false }], // guides and the glossary, not features; plugin pages set `plugin`
 	['getting-started/', { edition: 'both', showFeature: false }],
 	['knowledge-base/', { showFeature: false }],
 	['api', { edition: 'both', showFeature: false }],
