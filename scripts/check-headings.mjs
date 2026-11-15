@@ -26,10 +26,13 @@ for (const path of pages(ROOT)) {
 	let fence = null;
 	let previous = 1; // the title
 	body.split('\n').forEach((line, index) => {
-		const marker = line.match(/^\s*(`{3,}|~{3,})/);
+		// CommonMark fences: up to 3 spaces of indent; a closing fence uses the same character, is at
+		// least as long as the opening one and has nothing after it.
+		const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
 		if (marker) {
-			if (!fence) fence = marker[1][0];
-			else if (marker[1][0] === fence) fence = null;
+			const [, run, rest] = marker;
+			if (!fence) fence = { char: run[0], length: run.length };
+			else if (run[0] === fence.char && run.length >= fence.length && rest.trim() === '') fence = null;
 			return;
 		}
 		const heading = !fence && line.match(/^ {0,3}(#{1,6})\s+\S/); // CommonMark allows up to 3 spaces of indent
