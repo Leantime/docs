@@ -69,6 +69,24 @@
 .sidebar-content .top-level > li:nth-child(4) > details { border-color: var(--lt-section-ai); }
 .sidebar-content .top-level > li:nth-child(5) > details { border-color: var(--lt-section-dev); }
 
+/* Groups inside a group ("Your day", "Plan and track", "By type of work") are section labels:
+   smaller, grey and spaced out, so they don't read like the top-level groups above them. */
+.sidebar-content details details > summary .large {
+	font-size: var(--sl-text-xs);
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--sl-color-gray-2);
+}
+.sidebar-content details details > summary {
+	padding-block: 0.15rem;
+}
+.sidebar-content details details > summary .caret {
+	width: 1rem;
+	height: 1rem;
+	color: var(--sl-color-gray-3);
+}
+
 /* Headings: smaller than Starlight's (h2 36px, h3 24px), with more air above each section, so
    the page reads as calm chunks instead of a wall of big titles. */
 .sl-markdown-content h2 {
