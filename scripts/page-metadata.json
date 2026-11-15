@@ -65,9 +65,6 @@
     "title": "Plugin development guide",
     "description": "Build a Leantime plugin from the Hello World example: composer.json, register.php, language files, controllers, Blade views and menu items."
   },
-  "getting-started/agencies.md": { "draft": true },
-  "getting-started/product-managers.md": { "draft": true },
-  "getting-started/startups.md": { "draft": true },
   "getting-started/new-project.md": {
     "title": "Set up your first project",
     "description": "Plan a new project in Leantime from idea to execution: research boards, milestones, to-dos and your first sprint, step by step."
@@ -324,7 +321,8 @@
     "description": "New to Leantime? Start with a project and your team, then see how ideas, research, milestones and to-dos fit together."
   },
   "technical/hooks.md": {
-    "title": "Events and filters (hooks) reference"
+    "title": "Events and filters (hooks) reference",
+    "description": "Events and filters Leantime dispatches, with their names, arguments and source locations, for plugin developers."
   },
   "using-leantime/calendars.md": {
     "title": "Calendar",

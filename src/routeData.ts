@@ -79,11 +79,28 @@ function faqEntries(body: string): Array<{ question: string; answer: string }> {
  * Per-page structured data and the Markdown alternate link.
  * Site-wide Organization / WebSite / SoftwareApplication / SoftwareSourceCode data lives in astro.config.mjs.
  */
+/**
+ * Menu groups start collapsed so the menu fits on one screen. Starlight still opens the group that
+ * holds the current page. On the home page "Start here" is open, and "By type of work" opens
+ * whenever "Start here" does, so the examples show as a sub-list under "How should I organize my work?".
+ */
+type SidebarEntry = { type: 'link' } | { type: 'group'; label: string; collapsed: boolean; entries: SidebarEntry[] };
+const ALWAYS_OPEN = new Set(['By type of work']);
+function collapseMenu(entries: SidebarEntry[], isHome: boolean, topLevel = true): void {
+	for (const entry of entries) {
+		if (entry.type !== 'group') continue;
+		entry.collapsed = !(ALWAYS_OPEN.has(entry.label) || (isHome && topLevel && entry.label === 'Start here'));
+		collapseMenu(entry.entries, isHome, false);
+	}
+}
+
 export const onRequest = defineRouteMiddleware(async (context) => {
 	const route = context.locals.starlightRoute;
 	const { entry } = route;
 	const { title, description } = entry.data;
 	const id = entry.id;
+
+	collapseMenu(route.sidebar as unknown as SidebarEntry[], id === 'index');
 
 	if (id === 'index') {
 		return;
