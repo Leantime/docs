@@ -12,7 +12,7 @@ To keep going after two weeks, add a card. If you don't, your workspace is pause
 
 ## How do I install Leantime on my own server?
 
-1. **Check what your server needs:** PHP 8.2 or later and MySQL 8.0 or MariaDB 10.6 or later (see [System requirements](installation/system-requirements.md)).
+1. **Check what your server needs.** With Docker, you only need Docker with Docker Compose: the image brings PHP, and the example setup starts the database. For a package installation, you need PHP 8.2 or later and MySQL 8.0+, MariaDB 10.6+ or PostgreSQL (see [System requirements](installation/system-requirements.md)).
 2. **Install Leantime.** With [Docker](installation/docker.md) it takes about 10 minutes. You can also install it [on a server with PHP and MySQL](installation/package-installation.md).
 3. **Create the first account.** The first person to finish the installer becomes the Owner.
 4. **Invite your team** from **Company → User Management** (see [User Management](using-leantime/user-management.md)). Sending invitations needs [email set up](installation/email-configuration.md).

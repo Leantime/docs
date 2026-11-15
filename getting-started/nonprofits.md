@@ -36,7 +36,7 @@ A Logic Model shows how your work leads to change: the **Inputs** you invest, th
 
 ## Tips for non-profits
 
-- **Keep grant reports simple:** the Status Report shows what was done, what's in progress and how the goals moved for any quarter, and prints to PDF.
+- **Keep grant reports simple:** for the quarter you pick, the Status Report shows the milestones finished, what's in progress and the project updates, and it prints to PDF. Its goals show where each one stands today, even for a past quarter. To show a funder how a goal moved, post a project update with the goal's number at each reporting date; the report for that period includes it.
 - **Write procedures once in Docs,** like volunteer onboarding or food-safety checks, and link them to the milestone they belong to (see [Docs](using-leantime/docs.md)).
 - **Small team, many hats?** Star the one or two projects you're on this week, and let the rest wait.
 
