@@ -13,6 +13,8 @@
     - [Authentication](installation/authentication-configuration.md)
     - [Project Integrations](using-leantime/integrations.md)
    - [Backup & Restore](installation/backup-restore.md)
+   - [Move to a New Server](installation/move-server.md)
+   - [Import from Jira, Trello, Asana or CSV](using-leantime/import-csv.md)
    - [Upgrade Guide](installation/upgrade-guide.md)
    - [Common Issues](installation/common-issues.md)
 
