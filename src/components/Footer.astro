@@ -25,8 +25,8 @@ const showFeedback = Astro.url.pathname.replace(/\/$/, '') !== '';
 				</div>
 			</div>
 			<div class="lt-feedback-thanks" aria-live="polite">
-				<p class="lt-feedback-done" data-for="yes" hidden>Thanks, glad it helped.</p>
-				<div class="lt-feedback-done" data-for="no" hidden>
+				<p class="lt-feedback-done" data-for="yes" tabindex="-1" hidden>Thanks, glad it helped.</p>
+				<div class="lt-feedback-done" data-for="no" tabindex="-1" hidden>
 					<p>Thanks for telling us. What was missing?</p>
 					<p class="lt-feedback-links">
 						<button type="button" class="lt-feedback-chat" hidden>Tell us in the chat</button>

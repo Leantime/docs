@@ -30,6 +30,7 @@ export const MARKETPLACE_URL = 'https://marketplace.leantime.io/';
 /** Folder defaults. Longest matching prefix wins. */
 const DEFAULTS: Array<[string, Omit<Availability, 'plugin' | 'checked'>]> = [
 	['installation/leantime-mcp', { edition: 'both', showFeature: true }],
+	['ai/keycloak-sso', { edition: 'self-hosted', showFeature: true }],
 	['installation/using-plugins', { edition: 'both', showFeature: false }],
 	['installation/frequently-asked-questions', { showFeature: false }],
 	['installation/development', { showFeature: false }],
