@@ -100,9 +100,12 @@ export const onRequest = defineRouteMiddleware(async (context) => {
 	const { title, description } = entry.data;
 	const id = entry.id;
 
-	collapseMenu(route.sidebar as unknown as SidebarEntry[], id === 'index');
+	// The home page (src/content/docs/index.mdx) has the empty id.
+	const isHome = id === '' || id === 'index';
 
-	if (id === 'index') {
+	collapseMenu(route.sidebar as unknown as SidebarEntry[], isHome);
+
+	if (isHome) {
 		return;
 	}
 
