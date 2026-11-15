@@ -83,7 +83,7 @@ Swimlanes split the Kanban board into rows, so a busy board is easier to scan. C
 - **Due Date:** Overdue, Due This Week, Due Next Week, Due Later and No Due Date
 - **Parent Task:** each to-do with its subtasks
 
-Click a row's name to collapse it. **Add To-Do** inside a row fills in that row's value for you, like the priority, the assignee or the milestone. In a **Parent Task** row it doesn't: the new to-do isn't a subtask. Add subtasks from the parent's **Subtasks** section, or set **Related To**. Grouping is just a view: choose **No Grouping** to go back, and nothing about your to-dos changes. In the Table and List views you can also group by **Status**.
+Click a row's name to collapse it. **Add To-Do** inside a row fills in that row's value for you, like the priority, the assignee or the milestone. Two exceptions: in a **Parent Task** row the new to-do isn't a subtask (add subtasks from the parent's **Subtasks** section, or set **Related To**), and in the **Overdue** row it gets today's date, so it moves to **Due This Week**. Grouping is just a view: choose **No Grouping** to go back, and nothing about your to-dos changes. In the Table and List views you can also group by **Status**.
 
 ## How do I filter or find to-dos?
 
