@@ -53,7 +53,7 @@ RENAMES = {'knowledge-base/System Roles.md': 'knowledge-base/system-roles.md'}
 BROKEN_LINK_FIXES = {
     'installation/quick-start.md': 'installation/installation-types.md',
     'installation/quick-installation.md': 'installation/package-installation.md',
-    'knowledge-base/idea-management.md': 'using-leantime/idea-management.md',
+    'knowledge-base/idea-management.md': 'knowledge-base/idea-development.md',
 }
 SOURCE_PAGES = set()
 PUBLIC = ['_images', 'favicon.ico', 'apple-touch-icon.png']

@@ -445,6 +445,7 @@
     }
   },
   "ai/keycloak-sso.md": {
+    "edition": "self-hosted",
     "glance": {
       "minutes": 30,
       "level": "Some experience",

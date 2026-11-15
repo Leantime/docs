@@ -58,4 +58,4 @@ To move an idea between boxes, simply click it and drag it to the appropriate ca
 
 ![logo](/_images/getting-started/ideainreview.png)
 
-Now it's time to come up with the next great idea.  Click [here](/using-leantime/idea-management/) to read more on Idea Management.
+Now it's time to come up with the next great idea.  Read more in [Design thinking](/knowledge-base/idea-development/).

@@ -32,7 +32,8 @@ export const GET: APIRoute<{ entry: CollectionEntry<'docs'> }> = ({ props }) => 
 	const url = `${SITE}/${entry.id}/`;
 	// Root-relative links and images become absolute, so the file still works when copied elsewhere.
 	const source = entry.body ?? '';
-	const body = (entry.filePath?.endsWith('.mdx') ? plainMarkdown(source) : source).replace(/(\]\(|src=["'])\//g, `$1${SITE}/`);
+	const absolute = (text: string) => text.replace(/(\]\(|src=["'])\//g, `$1${SITE}/`);
+	const body = absolute(entry.filePath?.endsWith('.mdx') ? plainMarkdown(source) : source);
 	const header = [`# ${entry.data.title}`, ''];
 	if (entry.data.description) header.push(`> ${entry.data.description}`, '');
 	header.push(`Source: ${url}`, '');
@@ -47,7 +48,7 @@ export const GET: APIRoute<{ entry: CollectionEntry<'docs'> }> = ({ props }) => 
 		if (glance.result) header.push(`- At the end: ${glance.result}`);
 		header.push('');
 	}
-	return new Response(header.join('\n') + '\n' + body, {
+	return new Response(absolute(header.join('\n')) + '\n' + body, {
 		headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
 	});
 };

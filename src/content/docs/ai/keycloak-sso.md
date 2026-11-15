@@ -13,6 +13,7 @@ glance:
     - "A terminal on the Leantime server, to apply the settings"
     - "Leantime's login page, in a private browser window"
   result: "An **OIDC Login** button on Leantime's login page that signs people in with Keycloak. People who sign in for the first time get a Leantime account automatically, if you allow it."
+edition: self-hosted
 ---
 
 Your team can sign in to Leantime with their Keycloak accounts, using the OpenID Connect (OIDC) support built into Leantime. No plugin is needed for the web app. This guide gives every step for doing it by hand, and the prompts to use if an AI assistant is helping you.
