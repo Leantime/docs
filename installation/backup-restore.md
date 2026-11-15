@@ -126,9 +126,6 @@ mysql -u leantime -p leantime < backup.sql
 
 # From compressed
 gunzip < backup.sql.gz | mysql -u leantime -p leantime
-
-# Docker (in the folder with your docker-compose.yml)
-docker compose exec -T leantime_db sh -c 'exec mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' < backup.sql
 ```
 
 ### Restore Files
@@ -143,14 +140,53 @@ chown -R www-data:www-data /var/www/leantime/public/userfiles
 chown -R www-data:www-data /var/www/leantime/app/Plugins
 ```
 
-With Docker, copy the folders back into the `leantime` service and give them back to the web server user. Files you copy in are owned by your own user, and Leantime can't change or delete them until you do this:
+### Restore a Docker installation
 
-```bash
-docker compose cp ./userfiles_backup/. leantime:/var/www/html/userfiles
-docker compose cp ./public_userfiles_backup/. leantime:/var/www/html/public/userfiles
-docker compose cp ./plugins_backup/. leantime:/var/www/html/app/Plugins
-docker compose exec -u root leantime chown -R www-data:www-data /var/www/html/userfiles /var/www/html/public/userfiles /var/www/html/app/Plugins
-```
+This restores the Docker backup above: the database dump, the three copied folders and `env_backup`. Run each step in the folder with your `docker-compose.yml`.
+
+1. **Put your settings back before you start Leantime.** `env_backup` holds your database password, email, login and other settings:
+
+   ```bash
+   cp ./env_backup .env
+   ```
+
+   MySQL reads the database name, user and password from `.env` only when it creates a new, empty database volume. On a new server, restoring `.env` first keeps them the same as in your backup. If the new installation has already started with other database settings, keep its `MYSQL_*` and `LEAN_DB_*` lines and copy your other settings over from `env_backup`.
+
+2. **Start the database** and wait until it's ready:
+
+   ```bash
+   docker compose up -d --wait leantime_db
+   ```
+
+3. **Import the database:**
+
+   ```bash
+   docker compose exec -T leantime_db sh -c 'exec mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' < leantime_backup_YYYYMMDD.sql
+   ```
+
+4. **Start Leantime.** If Leantime was already running, this also restarts it with the settings from step 1:
+
+   ```bash
+   docker compose up -d
+   ```
+
+5. **Copy the files back** and give them to the web server user. Files you copy in are owned by your own user, and Leantime can't change or delete them until you do this:
+
+   ```bash
+   docker compose cp ./userfiles_backup/. leantime:/var/www/html/userfiles
+   docker compose cp ./public_userfiles_backup/. leantime:/var/www/html/public/userfiles
+   docker compose cp ./plugins_backup/. leantime:/var/www/html/app/Plugins
+   docker compose exec -u root leantime chown -R www-data:www-data /var/www/html/userfiles /var/www/html/public/userfiles /var/www/html/app/Plugins
+   ```
+
+6. **Clear the cache and update the database** in case the backup came from an older Leantime version:
+
+   ```bash
+   docker compose exec leantime php bin/leantime cache:clear
+   docker compose exec leantime php bin/leantime db:migrate
+   ```
+
+7. Open Leantime and log in with an existing account.
 
 ### Post-Restore
 

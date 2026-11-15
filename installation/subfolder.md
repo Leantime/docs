@@ -1,23 +1,28 @@
 # Subfolder Installation
 
-We recommend running Leantime on its own domain or subdomain (for example `leantime.yourcompany.com`). You can also run it in a subfolder (for example `yourcompany.com/leantime`), with these changes to a [package installation](installation/package-installation.md).
+We recommend running Leantime on its own domain or subdomain (for example `leantime.yourcompany.com`). You can also run it in a subfolder of an existing website (for example `yourcompany.com/leantime`).
+
+Install Leantime as in the [package installation](installation/package-installation.md), with one change: put it in a folder **outside** your website's document root. If your website's document root is `/var/www/html`, use `/var/www/leantime`, not `/var/www/html/leantime`. Then only Leantime's `public/` folder can be reached from the web, and `config/` (your `.env` with passwords) and `userfiles/` (uploaded files) stay private.
+
+The examples below use `/var/www/leantime` and the subfolder `/leantime`. Replace both with yours.
 
 ## Apache
 
-1. Add a `RewriteBase` line to `public/.htaccess`, with your subfolder's path:
+You need Apache 2.4 with `mod_rewrite` (`sudo a2enmod rewrite`).
 
+1. In your existing website's virtual host, map `/leantime` to Leantime's `public/` folder:
+
+   ```apache
+   Alias /leantime /var/www/leantime/public
+
+   <Directory /var/www/leantime/public>
+       Options +FollowSymLinks
+       AllowOverride All
+       Require all granted
+   </Directory>
    ```
-   Options +FollowSymLinks
-   RewriteEngine On
 
-   RewriteBase /leantime
-
-   RewriteCond %{REQUEST_FILENAME} !-d
-   RewriteCond %{REQUEST_FILENAME} !-f
-   RewriteRule ^ index.php [L,QSA]
-   ```
-
-   Replace `/leantime` with your subfolder.
+   `AllowOverride All` lets Leantime's own `public/.htaccess` send requests to `index.php`. You don't need to change that file, so Leantime updates don't undo your setup.
 
 2. In `config/.env`, set `LEAN_APP_URL` to the full address, including the subfolder:
 
@@ -25,13 +30,48 @@ We recommend running Leantime on its own domain or subdomain (for example `leant
    LEAN_APP_URL = 'https://yourcompany.com/leantime'
    ```
 
-Leantime updates replace `public/.htaccess`, so add the `RewriteBase` line again after each update.
+3. Check the configuration and reload Apache:
+
+   ```bash
+   sudo apachectl configtest
+   sudo systemctl reload apache2
+   ```
 
 ## Nginx
 
-1. Start from [`nginx-subfolder.example.conf`](https://github.com/Leantime/leantime/blob/master/nginx-subfolder.example.conf) in the Leantime repository. Change the paths and the subfolder name, then enable the site as in the [Nginx steps](installation/package-installation.md#nginx-installation-process).
-2. Set `LEAN_APP_URL` in `config/.env` as above.
+1. Add these two blocks inside the `server` block of your existing website. Use the PHP-FPM socket of your PHP version, as in the [Nginx steps](installation/package-installation.md#nginx-installation-process):
 
-## Keep your files private
+   ```nginx
+   # Leantime in /leantime
+   location ^~ /leantime {
+       alias /var/www/leantime/public;
+       index index.php;
+       try_files $uri $uri/ @leantime;
 
-In a subfolder installation the whole Leantime folder sits inside your web server's document root, not just `public/`. Block web access to everything outside `public/`, especially `userfiles/` (uploaded files) and `config/` (your `.env` with passwords), and turn off directory listings.
+       location ~ \.php$ {
+           include fastcgi_params;
+           fastcgi_param SCRIPT_FILENAME $request_filename;
+           fastcgi_pass unix:/var/run/php/php8.3-fpm.sock; # match your PHP version (8.2 or later)
+       }
+   }
+
+   location @leantime {
+       rewrite ^/leantime/(.*)$ /leantime/index.php last;
+   }
+   ```
+
+   - `^~` stops your website's own `location ~ \.php$` block from handling Leantime's PHP files.
+   - `SCRIPT_FILENAME $request_filename` gives PHP-FPM the real path of `index.php` under `alias`. With `$fastcgi_script_name`, PHP-FPM gets `/leantime/index.php` and can't find the file.
+
+2. Set `LEAN_APP_URL` in `config/.env` as in the Apache steps.
+
+3. Check the configuration and reload Nginx:
+
+   ```bash
+   sudo nginx -t
+   sudo systemctl reload nginx
+   ```
+
+## Leantime is already inside the document root
+
+If Leantime's folder has to stay inside your website's document root, its other folders can be reached from the web too. Block web access to everything outside `public/`, especially `config/` and `userfiles/`, and turn off directory listings. Moving the folder out of the document root is safer.

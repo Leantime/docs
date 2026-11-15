@@ -4,7 +4,7 @@ How to run Leantime from source to work on its code. To run Leantime for your te
 
 ## Development using Docker
 
-You need `git`, `docker` (with `docker compose`), `make`, `composer` and `npm`.
+You need `git`, `docker` (with `docker compose`), `make`, `composer`, `npm`, and PHP 8.2 or later on your computer with the [PHP extensions Leantime needs](installation/system-requirements.md#which-php-extensions-does-leantime-need). `make run-dev` runs `composer install` on your computer before it starts the containers, and Composer checks that PHP and those extensions are there.
 
 1. Clone the repository and open its folder:
 
