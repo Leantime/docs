@@ -30,12 +30,7 @@ Then access Leantime at `http://localhost:8080` and complete the installation wi
 
 ### Why does my Docker container show "unhealthy" status?
 
-This is a known issue with some versions. The container may still work correctly. As a workaround, you can disable the healthcheck in your docker-compose.yml:
-
-```yaml
-healthcheck:
-  disable: true
-```
+Usually because something still expects the old port. Since Leantime 3.4 the container listens on port 8080, so port mappings, reverse proxies and any health check you added yourself must use 8080 (for example `http://localhost:8080/health`). Old volumes owned by root can also stop the container from starting. See [Docker troubleshooting](installation/docker-troubleshooting.md?id=the-container-is-unhealthy-or-nginx-keeps-restarting).
 
 ### What installation methods does Leantime officially support?
 
