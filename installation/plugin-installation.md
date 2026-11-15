@@ -58,38 +58,34 @@ Using File Manager:
 
 The easiest way to install plugins is through the built-in marketplace interface.
 
-### Step 1: Access the Marketplace
+### Step 1: Open Leantime Apps
 
-1. Log in to your Leantime instance as an administrator
-2. Click the Company from the top menu
-3. Select Leantime Apps in the sidebar
-4. Select **Explore Apps** 
-5. Click **Learn More** to see more about the plugin
+1. Sign in to Leantime as an Owner or Administrator.
+2. Open **Company** in the top menu.
+3. In the left menu, under **Administration**, click **Leantime Apps**. The **Explore Apps** tab lists the plugins on the marketplace.
+4. Click **Learn More** on a plugin to see what it does and which Leantime versions it supports (the **Compatibility** tab).
 
-### Step 2: Purchase or Select a Plugin
+### Step 2: Get a License Key
 
-1. Browse or search for the plugin you need
-2. Click on the plugin to view details
-3. Click **Get a License**, complete the purchase on [marketplace.leantime.io](https://marketplace.leantime.io/). 
+1. On the plugin's **Learn More** screen, click **Get a license**. The plugin's page on [marketplace.leantime.io](https://marketplace.leantime.io/) opens.
+2. Choose the number of users and complete the purchase.
+3. Your license key arrives by email with your order receipt. Lost it? The [Lost License](https://marketplace.leantime.io/lost-license/) page sends it again.
 
-### Step 3: Enter License Key (Paid Plugins)
+Each plugin has its own license key, also when you buy a bundle. You install each plugin separately with its own key.
 
-If you purchased a plugin or bundle:
+### Step 3: Enter the Key and Install
 
-You will get a license key for each plugin individually and will need to install them separately. 
+1. Back in **Leantime Apps → Explore Apps**, click **Learn More** on the plugin you bought.
+2. Choose a version that supports your Leantime version (see the **Compatibility** tab), paste the key into **License Key** and click **Install**.
+3. Wait for "Plugin installed successfully!". If you see an error instead, see [License Key Not Recognized](#license-key-not-recognized).
 
-1. Return to the Leantime Apps under the Company menu point
-2. Click "Learn More" from the Plugin you purchased
-3. Copy and paste the license key from the marketplace (the individual license key) and click **Install**
-4. Your purchased plugins will appear and be available for installation
-5. You can then go to My Apps to complete the installation and enabling of the plugin. 
+### Step 4: Enable the Plugin
 
-### Step 4: Install and Enable
+1. Open the **My Apps** tab. The plugin is listed under **Installed Plugins**.
+2. Click **Enable**.
+3. Some plugins need more setup, for example variables in your `config/.env` file. If the plugin has a settings screen, a **Settings** link appears next to it. See [Plugin Configuration](#plugin-configuration).
 
-1. Find the plugin in your available plugins list
-2. Click **Activate**
-3. Once installed, toggle the **Enable** switch to activate the plugin
-4. Some plugins may require additional configuration (see Plugin Configuration below)
+Leantime stores the key with the plugin, so updates don't ask for it again. For what happens when you add users, update Leantime or a plugin fails, see [Plugin Licenses, Updates and Problems](installation/plugin-licenses.md).
 
 ---
 
@@ -142,16 +138,15 @@ A properly structured plugin folder should look like:
 ```
 app/Plugins/
 └── PluginName/
-    ├── composer.json      # Required: Plugin metadata
-    ├── register.php       # Required: Event/feature registration
-    ├── bootstrap.php      # Plugin initialization
-    ├── Controllers/       # Plugin controllers
-    ├── Views/             # Blade templates
+    ├── composer.json      # Required: plugin name, version and supported Leantime versions
+    ├── register.php       # Registers menus, events and settings
+    ├── Controllers/       # Pages
+    ├── Templates/         # Blade templates
     ├── Language/          # Translation files
     └── Services/          # Business logic
 ```
 
-The `composer.json` must include:
+The `composer.json` needs at least:
 
 ```json
 {
@@ -159,33 +154,27 @@ The `composer.json` must include:
   "description": "Plugin description",
   "version": "1.0.0",
   "type": "leantime-plugin",
-  "autoload": {
-    "psr-4": {
-      "Leantime\\Plugins\\PluginName\\": "/"
+  "extra": {
+    "leantime": {
+      "requires": ">=3.6 <4.0"
     }
   }
 }
 ```
 
-### Step 4: Enable in Admin Panel
+`extra.leantime.requires` lists the Leantime versions the plugin supports. Leantime doesn't load a plugin on other versions. A plugin that leaves it out is treated as supporting Leantime 3.x. See [Plugin Development](development/plugin-development.md).
 
-1. Go to **Settings → Plugins**
-2. Your manually installed plugin should appear in the list
-3. Toggle **Enable** to activate it
+### Step 4: Activate and Enable
+
+1. Go to **Company → Leantime Apps → My Apps**.
+2. Your plugin is listed under **Downloaded Plugins**. Click **Activate**.
+3. It moves to **Installed Plugins**. Click **Enable**.
 
 ---
 
 ## Plugin Bundles
 
-Leantime offers plugin bundles for different use cases:
-
-| Bundle | Description |
-|--------|-------------|
-| **Starter** | Essential plugins for micro-teams and side projects |
-| **Team** | Productivity toolkit for small teams |
-| **Business** | Comprehensive solution for larger teams |
-
-Bundles include a single license key that unlocks all included plugins. Enter the bundle license key in **Settings → Plugins → Enter License Key**.
+[Bundles](https://marketplace.leantime.io/product-category/plugins/bundles/) get you several plugins for one team size in one purchase. You still receive a separate license key for each plugin, and you [install each plugin](#step-3-enter-the-key-and-install) with its own key.
 
 ---
 
@@ -193,18 +182,20 @@ Bundles include a single license key that unlocks all included plugins. Enter th
 
 ### Marketplace Plugins
 
-1. Go to **Settings → Plugins**
-2. Plugins with available updates show an **Update** button
-3. Click **Update** to install the latest version
-4. Re-enable if the plugin was disabled during update
+1. Go to **Company → Leantime Apps → My Apps**. Leantime checks for updates once a day; click **Check for updates** to check now.
+2. A plugin with an update shows the new version, for example "v1.4.0 available". Click **Update**.
+
+Leantime uses the license key the plugin was installed with, and puts the previous version back if the new one doesn't load. To install minor and patch updates without clicking, turn on **Update plugins automatically**. See [How do plugin updates work?](installation/plugin-licenses.md#how-do-plugin-updates-work)
 
 ### Manual Updates
 
-1. Disable the plugin in **Settings → Plugins**
-2. Back up the existing plugin folder
-3. Replace with the new version files
+For plugins you installed from a folder:
+
+1. Disable the plugin in **My Apps**.
+2. Back up the existing plugin folder.
+3. Replace it with the new version's files.
 4. Clear the cache: `php ./bin/leantime cache:clear`
-5. Re-enable the plugin
+5. Enable the plugin again.
 
 ---
 
@@ -212,19 +203,18 @@ Bundles include a single license key that unlocks all included plugins. Enter th
 
 ### Disable First
 
-1. Go to **Settings → Plugins**
-2. Toggle the plugin to **Disabled**
-3. This preserves plugin data in the database
+1. Go to **Company → Leantime Apps → My Apps**.
+2. Click **Disable** next to the plugin.
+
+Disabling keeps the plugin's data. Click **Enable** to get it back.
 
 ### Complete Removal
 
-To fully remove a plugin:
+1. Back up your database.
+2. Disable the plugin, then click **Remove**.
+3. (Optional) Delete the plugin's folder from `app/Plugins/`.
 
-1. Disable the plugin
-2. Delete the plugin folder from `app/Plugins/`
-3. (Optional) Remove plugin tables from the database if you don't need the data
-
-**Note:** Some plugins create database tables. Removing the folder doesn't delete this data, which allows reinstallation without data loss.
+> **Note:** **Remove** runs the plugin's uninstall step, and some plugins delete their data there. Custom Fields, for example, deletes all your fields and their values. If you might want the data back, disable the plugin instead of removing it.
 
 ---
 
@@ -247,6 +237,16 @@ Check the plugin's documentation or marketplace page for specific configuration 
 ## Advanced Auth Plugin
 
 The Advanced Auth plugin enables Single Sign-On (SSO) through various OAuth/SAML providers. After installing the plugin, add provider credentials to your environment file.
+
+### What does the plugin give you?
+
+Advanced Authentication is a plugin for self-hosted Leantime; it isn't available on Leantime Cloud. [Get the plugin](https://marketplace.leantime.io/product/advanced-auth/).
+
+- **The Leantime Mobile app.** On a self-hosted server, the app for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile) can't sign in without this plugin, with a password or with a sign-in provider. With it, your team signs in on their phones, and two-factor authentication works there too (see [Mobile App Sign-In](#mobile-app-sign-in)).
+- **Sign-in buttons for the accounts people already have:** Google, Microsoft, GitHub, GitLab, Gitea, Okta, Keycloak, Authentik, Auth0, PropelAuth and eduID.
+- **SAML 2.0 single sign-on**, for identity providers that use SAML. In the browser only for now: SAML isn't available in the mobile app yet.
+
+If you only need single sign-on in the browser through an OpenID Connect provider (Keycloak, Authentik, Entra ID and others) or LDAP, that's built into Leantime; see [Authentication](installation/authentication-configuration.md). You need this plugin for the mobile app, the ready-made sign-in buttons and SAML.
 
 ### General Setup
 
@@ -271,18 +271,87 @@ https://yourdomain.com/advancedAuth/callback/{provider}
 
 `{provider}` is the provider's key in lowercase, for example `https://yourdomain.com/advancedAuth/callback/google`. Leantime builds this URL from `LEAN_APP_URL` and sends it to the provider, and most providers require an exact match.
 
-Once provider configuration is added to the environment file, the UI will show a toggle to enable/disable the provider.
+Once provider configuration is added to the environment file, the UI will show a toggle that adds or removes the provider's button on the login page.
+
+> **Note:** In AdvancedAuth 1.4.1 and earlier, switching a provider off only hides its button. Anyone who knows the sign-in URL can still use a configured provider. To fully disable a provider, remove its credentials from the environment file.
+
+### Enabling a Provider
+
+1. Add the provider's variables to `config/.env` (or your container's environment variables) and restart PHP-FPM or the container.
+2. Sign in as an Owner or Admin and go to **Company Settings → Authentication Settings**.
+3. The provider's tile now shows a toggle instead of **(Not configured)**. Switch it on and click **Save Settings**.
+4. Open the login page in a private window. A button for the provider appears below the login form.
+
+### How Users Are Matched
+
+Leantime signs a user in by matching the email address the provider returns to the email of an existing Leantime user.
+
+If no user has that email, the login is refused unless automatic account creation is turned on in the environment file:
+
+```ini
+# Create a Leantime account on a user's first provider login
+AUTH_CREATE_USER=true
+```
+
+New accounts get the **Manager** role and use the provider's display name as their first name. You can change both afterwards in user management.
+
+> **Note:** The **Automatically create user accounts** toggle in Authentication Settings does not control this in AdvancedAuth 1.4.1 and earlier. Set `AUTH_CREATE_USER=true` instead.
+
+Leantime refuses a login when the provider reports the email as unverified. If your provider marks real users as unverified, you can turn this check off with `AUTH_REQUIRE_VERIFIED_EMAIL=false`.
+
+If a user's email changes at the provider, Leantime no longer recognizes them: they get a new account (or are refused). Update their email in Leantime first.
+
+Leantime's own two-factor authentication still applies after a provider login.
+
+### Authentication Settings
+
+These options are under **Company Settings → Authentication Settings**:
+
+| Setting | What it does |
+|---------|--------------|
+| **Restrict to specific domain** | Only emails at the domain you enter (for example `example.com`) can sign in, with a provider or with a password. The domain must match exactly: subdomains don't count, and the check is case-sensitive, so enter it in lowercase. |
+| **Hide Login Form** | Removes the email and password form from the login page. Only turn this on after you have confirmed a provider login works. |
+| **Auto-redirect to provider** | When exactly one provider is enabled, the login page sends users straight to it. After a failed provider login, the redirect is skipped for the rest of that browser session so users don't get stuck in a loop. |
+
+If you hide the login form and then can't sign in, turn it back on from the server:
+
+```bash
+php ./bin/leantime setting:save --key=auth.hideDefaultLogin --value=off
+```
+
+If `LEAN_APP_URL` isn't set, the website and the command line use separate setting caches, and the website can keep serving the old value for up to an hour. To apply the change immediately, delete the contents of `storage/framework/cache/` (with the default file cache).
+
+### Mobile App Sign-In
+
+With AdvancedAuth 1.4.0 or later on Leantime 3.10.2 or later, the Leantime mobile app shows a button for each enabled provider on its login screen. You don't need to configure anything else: the app uses the same callback URL as the browser. Leantime's two-factor authentication applies in the app too. SAML 2.0 isn't available in the mobile app yet.
 
 ### Supported Providers
 
 #### Authentik (Key: `AUTHENTIK`)
 [Documentation](https://github.com/SocialiteProviders/Authentik)
 
+1. In the Authentik admin interface, go to **Applications → Applications** and click **Create with provider**. (In older versions, create an **OAuth2/OpenID Provider** under **Applications → Providers** first, then an application that uses it.)
+2. Enter a name and slug for the application, then choose **OAuth2/OpenID Provider** as the provider type.
+3. In the provider settings:
+   - **Client type:** Confidential
+   - **Redirect URIs:** `https://yourdomain.com/advancedAuth/callback/authentik` (matching mode **Strict**)
+   - **Signing key:** select an RSA certificate, for example the built-in self-signed one
+   - Keep the default scope mappings (`openid`, `email`, `profile`)
+4. Copy the **Client ID** and **Client Secret** from the provider.
+5. Under the application's **Policy / Group / User Bindings**, bind the groups or users who may sign in to Leantime. Without bindings, every Authentik user can.
+6. Add the values to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
-AUTHENTIK_BASE_URL=https://your-authentik-instance.com
+LEAN_APP_URL=https://yourdomain.com
+# The Authentik server's root URL, not the application's URL
+AUTHENTIK_BASE_URL=https://auth.example.com
 AUTHENTIK_CLIENT_ID=your-client-id
 AUTHENTIK_CLIENT_SECRET=your-client-secret
 ```
+
+> **Authentik 2025.10 and later:** The default `email` scope mapping reports every email as **unverified**, and Leantime refuses unverified emails. Either replace the default `email` mapping on the provider with a custom scope mapping that returns `email_verified` (see Authentik's [verify email address](https://docs.goauthentik.io/add-secure-apps/providers/oauth2/verify-email-address/) guide), or set `AUTH_REQUIRE_VERIFIED_EMAIL=false` if every Authentik address is trusted.
+
+Leantime also requests the `goauthentik.io/api` scope. If Authentik rejects the request with a scope error, add the **authentik default OAuth Mapping: authentik API access** mapping to the provider.
 
 #### Auth0 (Key: `AUTH0`)
 [Documentation](https://github.com/SocialiteProviders/Auth0)
@@ -305,10 +374,20 @@ GITEA_CLIENT_SECRET=your-client-secret
 #### GitHub (Key: `GITHUB`)
 [Documentation](https://github.com/SocialiteProviders/GitHub)
 
+1. In GitHub, go to **Settings → Developer settings → OAuth Apps → New OAuth App**. For an organization, use **Organization settings → Developer settings → OAuth Apps**. Create an OAuth App, not a GitHub App.
+2. Fill in:
+   - **Homepage URL:** `https://yourdomain.com`
+   - **Authorization callback URL:** `https://yourdomain.com/advancedAuth/callback/github`
+3. Click **Register application**, copy the **Client ID**, then click **Generate a new client secret** and copy the secret.
+4. Add them to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
+LEAN_APP_URL=https://yourdomain.com
 GITHUB_CLIENT_ID=your-client-id
 GITHUB_CLIENT_SECRET=your-client-secret
 ```
+
+Leantime uses the **primary, verified** email of the GitHub account to [match the user](#how-users-are-matched). That email must be the user's Leantime email. If users' primary GitHub email is a personal address, **Restrict to specific domain** will block them.
 
 #### GitLab (Key: `GITLAB`)
 [Documentation](https://github.com/SocialiteProviders/GitLab)
@@ -318,23 +397,53 @@ GITLAB_CLIENT_ID=your-client-id
 GITLAB_CLIENT_SECRET=your-client-secret
 ```
 
+This provider only works with GitLab.com. For a self-managed GitLab instance, use [OpenID Connect](installation/authentication-configuration.md#openid-connect-oidc) instead.
+
 #### Google (Key: `GOOGLE`)
 [Documentation](https://github.com/SocialiteProviders/Google-Plus)
 
+1. Open the [Google Cloud Console](https://console.cloud.google.com/) and select or create a project.
+2. Go to **Google Auth Platform → Branding** (shown as **OAuth consent screen** in some accounts) and fill in the app name and support email.
+3. Under **Audience**, choose who can sign in:
+   - **Internal:** only users in your Google Workspace organization. This is the simplest way to keep other Google accounts out.
+   - **External:** any Google account. Leantime only asks for the basic `openid`, `email` and `profile` scopes, so Google's test-user list does **not** limit who can sign in, even while the app's status is **Testing**. Don't rely on it for access control. Publishing doesn't normally need a Google review.
+4. Go to **Clients → Create client** and choose **Web application**.
+5. Under **Authorized redirect URIs**, add `https://yourdomain.com/advancedAuth/callback/google`. You don't need to add any JavaScript origins.
+6. Click **Create** and copy the **Client ID** and **Client secret**. Copy the secret right away, because Google may not show it again.
+7. Add them to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
-GOOGLE_CLIENT_ID=your-client-id
+LEAN_APP_URL=https://yourdomain.com
+GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=your-client-secret
 ```
+
+Leantime matches the Google account's email to the user's Leantime email, and it refuses Google accounts whose email isn't verified. With an **External** audience, anyone with a Google account can reach the login step. If `AUTH_CREATE_USER=true`, also turn on **Restrict to specific domain** so only your organization's emails get accounts.
 
 #### Keycloak (Key: `KEYCLOAK`)
 [Documentation](https://github.com/SocialiteProviders/Keycloak)
 
+1. In the Keycloak admin console, select your realm and go to **Clients → Create client**.
+2. Choose **OpenID Connect** as the client type, enter a **Client ID** (for example `leantime`), and click **Next**.
+3. Turn on **Client authentication** and keep **Standard flow** checked. Click **Next**.
+4. Under **Valid redirect URIs**, enter `https://yourdomain.com/advancedAuth/callback/keycloak`. Click **Save**.
+5. Open the client's **Credentials** tab and copy the **Client secret**.
+6. Open the client's **Client scopes** tab and check that `email` and `profile` are assigned as **Default**. Leantime only requests the `openid` scope, so the email reaches Leantime only through these default scopes.
+7. Add the values to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
-KEYCLOAK_CLIENT_ID=your-client-id
-KEYCLOAK_CLIENT_SECRET=your-client-secret
-KEYCLOAK_BASE_URL=https://your-keycloak-instance.com
+LEAN_APP_URL=https://yourdomain.com
+# The Keycloak server's root URL, without /realms/...
+KEYCLOAK_BASE_URL=https://keycloak.example.com
+# Defaults to "master" if not set
 KEYCLOAK_REALM=your-realm
+KEYCLOAK_CLIENT_ID=leantime
+KEYCLOAK_CLIENT_SECRET=your-client-secret
 ```
+
+Leantime builds the endpoints as `{KEYCLOAK_BASE_URL}/realms/{KEYCLOAK_REALM}/protocol/openid-connect/...`. Keycloak 16 and earlier serve these under `/auth`, so include it there: `KEYCLOAK_BASE_URL=https://keycloak.example.com/auth`.
+
+Keycloak sends `email_verified` for each user, and Leantime refuses unverified emails. For users created by an administrator, switch on **Email verified** in the user's details, or set `AUTH_REQUIRE_VERIFIED_EMAIL=false`.
 
 #### Laravel Passport (Key: `LARAVELPASSPORT`)
 [Documentation](https://github.com/SocialiteProviders/Laravel-Passport)
@@ -348,18 +457,44 @@ LARAVELPASSPORT_HOST=https://your-passport-server.com
 #### Microsoft (Key: `MICROSOFT`)
 [Documentation](https://github.com/SocialiteProviders/Microsoft)
 
+Use this provider for Microsoft 365 / Entra ID work and school accounts, and for personal Microsoft accounts.
+
+1. Open the [Microsoft Entra admin center](https://entra.microsoft.com/) (or **Microsoft Entra ID** in the Azure portal) and go to **App registrations → New registration**.
+2. Enter a name and choose **Supported account types**. For most organizations, pick **Accounts in this organizational directory only (Single tenant)**.
+3. Under **Redirect URI**, choose the **Web** platform and enter `https://yourdomain.com/advancedAuth/callback/microsoft`.
+4. Click **Register**. On the **Overview** page, copy the **Application (client) ID** and the **Directory (tenant) ID**.
+5. Go to **Certificates & secrets → Client secrets → New client secret**. Copy the secret's **Value** (not the Secret ID). Note the expiry date: when the secret expires, Microsoft sign-in stops working until you create a new one and update `MICROSOFT_CLIENT_SECRET`.
+6. Under **API permissions**, keep the default **Microsoft Graph → User.Read** (delegated) permission. If your organization blocks user consent, click **Grant admin consent**.
+7. Add the values to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
-MICROSOFT_CLIENT_ID=your-client-id
-MICROSOFT_CLIENT_SECRET=your-client-secret
-MICROSOFT_TENANT_ID=common
-# Optional settings
+LEAN_APP_URL=https://yourdomain.com
+MICROSOFT_CLIENT_ID=your-application-client-id
+MICROSOFT_CLIENT_SECRET=your-client-secret-value
+MICROSOFT_TENANT_ID=your-directory-tenant-id
+# Optional: send Microsoft requests through a proxy
 MICROSOFT_PROXY=
-MICROSOFT_TENANT_FIELDS=[]
-MICROSOFT_INCLUDE_AVATAR=true
 ```
+
+`MICROSOFT_TENANT_ID` controls which accounts can sign in. It must match the **Supported account types** of the app registration, or Microsoft shows an `AADSTS` error.
+
+| Value | Who can sign in |
+|-------|-----------------|
+| Your directory (tenant) ID | Only accounts in your organization (recommended) |
+| `organizations` | Any work or school account, from any organization |
+| `consumers` | Personal Microsoft accounts only |
+| `common` (default if unset) | Any Microsoft account, work, school or personal |
+
+> **Warning:** With `common` or `organizations` and `AUTH_CREATE_USER=true`, anyone with a matching Microsoft account can create a Leantime account. Use your tenant ID, or turn on **Restrict to specific domain**.
+
+Leantime matches users by the account's **user principal name (UPN)**, not its `mail` attribute. They are usually the same. When they differ (for example `jane@contoso.onmicrosoft.com` vs `jane@contoso.com`), the user's Leantime email must be the UPN.
+
+> **Note:** Leave `MICROSOFT_TENANT_FIELDS` unset. Setting it to `[]` in the environment file breaks sign-in for work and school accounts.
 
 #### Microsoft Azure (Key: `AZURE`)
 [Documentation](https://github.com/SocialiteProviders/Microsoft-Azure)
+
+An older provider for Entra ID work and school accounts. For new setups, use the Microsoft provider above instead. Configuration is the same except for the variable names and the callback URL, `https://yourdomain.com/advancedAuth/callback/azure`. It also matches users by UPN.
 
 ```ini
 AZURE_CLIENT_ID=your-client-id
@@ -372,11 +507,24 @@ AZURE_PROXY=
 #### Okta (Key: `OKTA`)
 [Documentation](https://github.com/SocialiteProviders/Okta)
 
+1. In the Okta Admin Console, go to **Applications → Applications → Create App Integration**.
+2. Choose **OIDC - OpenID Connect** as the sign-in method and **Web Application** as the application type. Click **Next**.
+3. Enter a name, keep **Authorization Code** as the grant type, and set **Sign-in redirect URIs** to `https://yourdomain.com/advancedAuth/callback/okta`.
+4. Under **Assignments**, choose who may use the app (everyone, or selected groups). Click **Save**.
+5. On the app's **General** tab, copy the **Client ID** and **Client secret**.
+6. Add the values to your environment file and [enable the provider](#enabling-a-provider):
+
 ```ini
+LEAN_APP_URL=https://yourdomain.com
+# Your Okta org URL only: no trailing slash, no /oauth2/default
 OKTA_BASE_URL=https://your-org.okta.com
 OKTA_CLIENT_ID=your-client-id
 OKTA_CLIENT_SECRET=your-client-secret
 ```
+
+Leantime uses Okta's org authorization server (`{OKTA_BASE_URL}/oauth2/v1/...`), which every Okta org has. Custom authorization servers such as `default` aren't supported.
+
+Users who aren't assigned to the app see an Okta error ("User is not assigned to the client application"). Assign them, or their group, under the app's **Assignments** tab.
 
 #### PropelAuth (Key: `PROPELAUTH`)
 [Documentation](https://github.com/SocialiteProviders/PropelAuth)
@@ -396,18 +544,10 @@ EDUID_CLIENT_SECRET=your-client-secret
 EDUID_USE_TEST_IDP=false
 ```
 
-#### App.net (Key: `APP.NET`)
-[Documentation](https://github.com/SocialiteProviders/App.net)
-
-```ini
-APP.NET_KEY=your-key
-APP.NET_SECRET=your-secret
-```
-
 #### SAML 2.0 (Key: `SAML2`)
 [Documentation](https://github.com/SocialiteProviders/Saml2)
 
-All file paths are relative to the Leantime root directory.
+Use absolute paths for any file paths below.
 
 In your identity provider, register Leantime as a service provider:
 
@@ -428,8 +568,10 @@ SAML2_ACS=https://idp.example.com/sso
 SAML2_ENTITY_ID=https://idp.example.com/entity-id
 SAML2_CERTIFICATE=/path/to/idp-signing-certificate.pem
 
-# Both options: map your identity provider's attribute names to Leantime's
-SAML2_ATTRIBUTE_MAP={"email": "email", "name": "displayName"}
+# Both options: map your identity provider's attribute names to Leantime's.
+# Do not set this in AdvancedAuth 1.4.1 and earlier: any value breaks SAML sign-in.
+# The defaults already read the standard email and name claims.
+# SAML2_ATTRIBUTE_MAP={"email": "email", "name": "displayName"}
 
 # Optional validation settings
 SAML2_VALIDATION_CLOCK_SKEW=120
@@ -509,14 +651,21 @@ This indicates the Plugins folder is not properly mounted as a volume. Without a
 
 ### License Key Not Recognized
 
-- Ensure you're entering the key exactly as received (no extra spaces)
-- Check your Leantime version is compatible with the plugin
-- Verify your instance can reach `marketplace.leantime.io` (check firewall/proxy settings)
-- Contact support if the issue persists
+- Enter the key exactly as received, with no spaces before or after it.
+- Use the key for this plugin. A bundle gives you a separate key for each plugin, and each one only installs its own plugin.
+- Count your active users. If you have more than your license allows, the marketplace refuses the install. See [What counts as a user?](installation/plugin-licenses.md#what-counts-as-a-user-for-a-plugin-license)
+- Check the plugin's **Compatibility** tab supports your Leantime version.
+- Make sure your server can reach `https://marketplace.leantime.io` (check firewall and proxy settings).
+- Lost the key? The [Lost License](https://marketplace.leantime.io/lost-license/) page sends it again.
+- Still stuck? [Contact the marketplace](https://marketplace.leantime.io/contact/).
+
+### Plugin Was Disabled On Its Own
+
+Leantime switches a plugin off when it keeps failing or when your active users go over its license. It stops loading a plugin that doesn't support your Leantime version. In each case, Owners and Administrators get a notification that says why. See [Plugin Licenses, Updates and Problems](installation/plugin-licenses.md).
 
 ### Plugin Causes Errors After Enabling
 
-1. Disable the plugin immediately via **Settings → Plugins**
+1. Disable the plugin in **Company → Leantime Apps → My Apps**, or from the server with `php ./bin/leantime plugin:disable "<plugin name>"`
 2. If you can't access Settings, disable via database:
 
 ```sql
@@ -525,7 +674,7 @@ UPDATE zp_plugins SET enabled = 0 WHERE foldername = 'PluginName';
 
 3. Clear cache: `php ./bin/leantime cache:clear`
 4. Check `storage/logs/leantime-*.log` for error details
-5. Verify PHP version compatibility (most plugins require PHP 8.0+)
+5. Verify PHP version compatibility (Leantime and its plugins need PHP 8.2 or later)
 
 ### Database Schema Mismatch After Upgrade
 
@@ -549,12 +698,21 @@ ALTER TABLE zp_plugins ADD COLUMN format VARCHAR(45);
 3. Ensure `LEAN_SESSION_SECURE=true` only if using HTTPS
 4. For SAML: verify certificate paths are correct and files are readable by the web server
 
+A GitHub error that says *"The redirect_uri is not associated with this application"* (Microsoft shows this as error `AADSTS50011`) means the callback URL Leantime sent doesn't match the one registered with the provider. Compare them for http vs https, a subfolder, or a trailing slash. If `LEAN_APP_URL` is empty, Leantime builds the callback from the incoming request, which behind a reverse proxy can come out as `http://` or an internal hostname. Set `LEAN_APP_URL` to your public URL.
+
 ### Auth Plugin: Provider Not Showing in UI
 
 1. Verify environment variables are set correctly (check for typos)
 2. Restart your web server or PHP-FPM after changing `.env`
 3. Clear cache: `php ./bin/leantime cache:clear`
 4. Check that both `CLIENT_ID` and `CLIENT_SECRET` are set for the provider
+5. If the tile shows a toggle but there's no button on the login page, switch the toggle on and click **Save Settings**
+
+### Auth Plugin: Returned to the Login Page After Signing In
+
+- **"Invalid user":** no Leantime user has the email the provider returned, and `AUTH_CREATE_USER` isn't `true`. Create the user with that email, or [turn on automatic account creation](#how-users-are-matched).
+- **"Invalid domain":** **Restrict to specific domain** is on and the email is at a different domain.
+- **Email not verified:** the provider reported the email as unverified. Verify it with the provider, or see `AUTH_REQUIRE_VERIFIED_EMAIL` under [How Users Are Matched](#how-users-are-matched).
 
 ---
 
