@@ -8,13 +8,13 @@ This FAQ document addresses common questions and issues gathered from GitHub iss
 
 ### What are the system requirements for Leantime?
 
-Leantime requires:
-- PHP 8.1 or higher
-- MySQL 5.7+ or MariaDB 10.2+
+Leantime 3.2 and later require:
+- PHP 8.2 or higher
+- MySQL 8.0+, MariaDB 10.6+, or PostgreSQL (since Leantime 3.6)
 - Web server (Apache, Nginx, or IIS)
 - Minimum 512MB RAM (1GB recommended)
 
-For Docker installations, you need Docker and Docker Compose installed.
+For Docker installations, you need Docker and Docker Compose installed. See [System Requirements](installation/system-requirements.md) for the PHP extensions and database settings.
 
 ### How do I install Leantime with Docker?
 
