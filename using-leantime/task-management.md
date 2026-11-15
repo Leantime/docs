@@ -83,7 +83,7 @@ Swimlanes split the Kanban board into rows, so a busy board is easier to scan. C
 - **Due Date:** Overdue, Due This Week, Due Next Week, Due Later and No Due Date
 - **Parent Task:** each to-do with its subtasks
 
-Click a row's name to collapse it. **Add To-Do** inside a row fills in that row's value for you, like the priority or the assignee. Grouping is just a view: choose **No Grouping** to go back, and nothing about your to-dos changes. In the Table and List views you can also group by **Status**.
+Click a row's name to collapse it. **Add To-Do** inside a row fills in that row's value for you, like the priority, the assignee or the milestone. In a **Parent Task** row it doesn't: the new to-do isn't a subtask. Add subtasks from the parent's **Subtasks** section, or set **Related To**. Grouping is just a view: choose **No Grouping** to go back, and nothing about your to-dos changes. In the Table and List views you can also group by **Status**.
 
 ## How do I filter or find to-dos?
 
@@ -97,7 +97,7 @@ To find a to-do in any project, use the search box at the top of every page.
 
 Every project starts with **New**, **Blocked**, **In Progress**, **Waiting for Approval** and **Done**, plus **Archived**, which is hidden from the board.
 
-To rename, add, reorder or hide statuses, open **Project Settings → To-Do Status Settings**. For each status you set its label, color, whether it shows on the Kanban board, and how Reports count it (**Report As**: New, In Progress, Done, or not at all). A to-do in a status reported as Done counts as finished in Reports and milestone progress, and its running timer stops. **Archived** can't be renamed or removed. You need the Manager role or higher.
+To rename, add, reorder or hide statuses, open **Project Settings → To-Do Status Settings**. For each status you set its label, color, whether it shows on the Kanban board, and how Reports count it (**Report As**: New, In Progress, Done, or not at all). A to-do in a status reported as Done counts as finished in Reports and milestone progress. If you move it there while your timer runs on it, your timer stops; other people's timers keep running. **Archived** can't be renamed or removed. You need the Manager role or higher.
 
 ![Project Settings, To-Do Status Settings (outlined): each status with its sort position, label, color, Report As and Show on Kanban Board](../_images/using-leantime/todos-statuses.webp)
 
