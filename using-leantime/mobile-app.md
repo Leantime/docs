@@ -50,7 +50,9 @@ Yes, on a self-hosted server with Leantime 3.10.2 or later and Advanced Authenti
 - **Sign in with SSO** when your server uses Leantime's built-in OpenID Connect login (see [Authentication](installation/authentication-configuration.md)), for example with Keycloak, Okta, Microsoft Entra ID or Authentik.
 - **A button per provider** set up in Advanced Authentication 1.4.0 or later, such as Google, Microsoft or GitHub.
 
-Tap the button, sign in on your company's page the way you always do, and you're sent back to the app. SAML 2.0 logins don't work in the app yet. If your account also uses Leantime's two-factor codes, the app asks for the code after the company login; this needs Leantime 3.13.0 and app version 1.1.0 or later.
+Tap the button, sign in on your company's page the way you always do, and you're sent back to the app. SAML 2.0 logins don't work in the app yet.
+
+**Leantime in a folder?** If your Leantime runs in a folder, like `https://example.com/leantime`, the **Sign in with SSO** button opens the address without the folder and fails. Run Leantime on its own domain or subdomain for built-in SSO in the app, or use an Advanced Authentication provider button, which includes the folder. If your account also uses Leantime's two-factor codes, the app asks for the code after the company login; this needs Leantime 3.13.0 and app version 1.1.0 or later.
 
 **For administrators:** there's nothing extra to register with your login provider, because the app uses the same callback address as the browser. If a sign-in wall sits in front of Leantime, see [What does the app's error message mean?](#what-does-the-apps-error-message-mean).
 
@@ -96,7 +98,7 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 | --- | --- | --- |
 | Mobile access isn't available on this Leantime instance yet. | The server is Leantime, but mobile sign-in isn't turned on. | Install and enable Advanced Authentication. If it was on before, check it's still enabled and its license is current. |
 | This Leantime instance is older than the app supports. | The server runs a version older than 3.9.5. | [Update Leantime](installation/upgrade-guide.md). |
-| That URL responded, but it doesn't look like Leantime. | Something else answered: another site, a holding page, or a sign-in wall in front of Leantime. | If a sign-in wall is in front, let `/advancedAuth`, `/api`, `/oidc` and `/status` through to Leantime. |
+| That URL responded, but it doesn't look like Leantime. | Something else answered: another site, a holding page, or a sign-in wall in front of Leantime. | If a sign-in wall is in front, let everything under `/advancedAuth/`, `/api/`, `/oidc/` and `/status` through to Leantime. If Leantime is in a folder, put the folder in front, for example `/leantime/api/`. |
 | Something in front of your server is asking for a sign-in the app can't complete. | A gatekeeper such as Cloudflare Access, Authelia, basic auth or a bot check answers before Leantime. | Exempt the paths above, or give phones a direct route to Leantime. |
 | Your phone doesn't trust this server's certificate. | The certificate is self-signed or from a private authority. | Use a certificate from a public authority such as Let's Encrypt. |
 | We couldn't reach that address. | The name didn't resolve, the connection was refused, or it timed out. | Check the address, port and firewall. If Leantime is only on the office network, the app works only there (or over the VPN). |
