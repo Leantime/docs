@@ -52,6 +52,7 @@
 **Using Leantime**
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
+- [Leantime on your phone](using-leantime/mobile-app.md)
 - [Projects](using-leantime/managing-projects.md)
 - [Clients](using-leantime/managing-clients.md)
 - [Notifications](using-leantime/notifications.md)
