@@ -63,6 +63,25 @@ A project role can go up or down: a Commenter can be an Editor on one project, a
 
 Open **Company → User Management** and click their name. Change their details, **Role**, **Client** or **Project Assignment**, and click **Save**.
 
+## How do I set how many hours someone works?
+
+Weekly hours tell Leantime how much time someone has to plan with. You set them once, on their user, and resource planning uses them everywhere.
+
+1. **Open Company → User Management** and click their name.
+2. **Under Capacity, enter their Weekly hours**, like 40. Use whole hours: 37.5 is saved as 38.
+3. **Choose their Employment type.** It says what the hours mean:
+   - **Full-time:** the hours they're expected to work.
+   - **Part-time:** the most hours they've agreed to work.
+   - **Contractor:** the most hours you can bill for.
+   - **Volunteer:** the hours they can give, as best they can.
+4. **Click Save.**
+
+![Chloe's user page under Company → User Management, with the Capacity section outlined: Weekly hours 24 and Employment type Part-time](../_images/using-leantime/users-capacity.webp)
+
+Both fields are optional and start empty. Only people who can edit users see them: the Administrator role or higher.
+
+**Where are the hours used?** In the **Resources** page of the Programs plugin, where you plan people across a program's projects. It shows each person's weekly hours and employment type, adds up the hours they're booked for on every project, in this program and others, and flags anyone booked for more than their hours. Without weekly hours on their user, a planner types each person's hours on the Resources page instead. On the Leantime Marketplace the plugin is called [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/); it's already on in Leantime Cloud.
+
 ## How do I deactivate or delete someone?
 
 - **Deactivate:** open their profile, set **Status** to **Deactivated** and click **Save**. They can't sign in anymore, and their to-dos, comments and time entries stay as they were. Set them back to **Active** any time.
