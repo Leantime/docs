@@ -62,6 +62,6 @@ L.E.O. uses AI credits from your Leantime Cloud plan. Chatting, sorting, breakin
 ## Related
 
 - [MCP server: connect your own AI assistant](installation/leantime-mcp.md)
-- [Less busywork with AI](ai/less-busywork.md)
+- [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md)
 - [AI with Leantime](ai/README.md)
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)

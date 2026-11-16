@@ -1,10 +1,22 @@
-# Less busywork with AI
+# Use Leantime from your AI assistant
 
-Keeping a project up to date is the part everyone skips: moving to-dos along, assigning work, typing up the notes from a meeting, setting up the next project. With your AI assistant connected to Leantime, you don't have to do that by hand. You say what happened in your own words, and the assistant updates Leantime for you.
+If you already work with an AI assistant like Claude or ChatGPT, Leantime can be part of that conversation. Connect it once, and you can tell the assistant what happened in your own words: it creates the to-dos, assigns them, moves them along or sets up a new project, right there in the chat. You don't have to switch over to Leantime just to keep it up to date.
 
-You still use Leantime to see where things stand and to decide what's next. The typing and clicking go to the assistant.
+You still use Leantime to see where things stand and to decide what's next.
 
-**Before you start:** connect your assistant with the [MCP server](installation/leantime-mcp.md). On Leantime Cloud it's already on, and you can also ask [L.E.O.](ai/leantime-cloud-ai.md), the built-in assistant, for many of the same things.
+## Which assistants can I connect?
+
+Assistants connect through Leantime's [MCP server](installation/leantime-mcp.md). On Leantime Cloud it's already on. If you host Leantime yourself, you install the MCP Server plugin first.
+
+| Assistant | Can it connect? |
+| --- | --- |
+| Claude Desktop, Claude Code | Yes |
+| Cursor, VS Code with GitHub Copilot, Windsurf, OpenAI Codex | Yes |
+| ChatGPT and Claude.ai, in the browser or the phone apps | Not yet. It's planned. |
+
+Today you connect with a token: you create it in Leantime and add it to your assistant's settings. ChatGPT and Claude.ai in the browser and on phones need a different way to connect, where you only enter your Leantime address and sign in. Leantime doesn't support that yet. Until it does, use Claude Desktop on your computer: it works with the same Claude account.
+
+In Leantime Cloud, you can also ask [L.E.O.](ai/leantime-cloud-ai.md), the assistant built into Leantime, for many of the same things.
 
 ## Stop updating to-dos by hand
 

@@ -9,7 +9,7 @@ The MCP Server lets AI assistants such as Claude, Cursor, VS Code Copilot, Winds
 
 The assistant only sees and changes what **your** Leantime account can see and change. It works the same way the Leantime app does, with the same project access and role.
 
-This page is the setup. For what to ask once you're connected, see [Less busywork with AI](ai/less-busywork.md).
+This page is the setup. For what to ask once you're connected, see [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md).
 
 **On this page**
 
@@ -59,7 +59,7 @@ And an AI assistant that can connect to a **remote MCP server with a custom head
 | Windsurf | Yes | Built in |
 | OpenAI Codex CLI | Yes | Built in |
 | Claude Desktop | Yes | Through the free `mcp-remote` helper (needs Node.js 18+) |
-| Claude.ai (web), ChatGPT (web) connectors | Not yet | These only connect to servers that sign in with OAuth. Leantime's MCP server uses tokens. |
+| Claude.ai and ChatGPT, in the browser or the phone apps | Not yet (planned) | These only connect to servers that sign in with OAuth. Leantime's MCP server uses tokens for now. |
 
 > Your Leantime data goes to the AI provider you use (Anthropic, OpenAI, Cursor, …) as part of the conversation. Check that this is allowed for your organisation before connecting.
 
@@ -223,7 +223,7 @@ Ask your assistant:
 
 > Which Leantime projects can you see?
 
-It should call `getAllProjects` and list your projects. If it does, you're done: see [Less busywork with AI](ai/less-busywork.md) for what to ask next.
+It should call `getAllProjects` and list your projects. If it does, you're done: see [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md) for what to ask next.
 
 If it doesn't, test the server directly from a terminal:
 
@@ -366,7 +366,7 @@ The assistant works best when you are specific about **which project** and **wha
 
 ### What to ask
 
-For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Less busywork with AI](ai/less-busywork.md).
+For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md).
 
 ## Running an AI agent as a team member
 
@@ -458,8 +458,8 @@ Also make sure the proxy doesn't buffer or time out short requests to `/mcp`, an
 **Is it available on Leantime Cloud?**
 Yes. Use the address you open Leantime Cloud with, plus `/mcp`, and a Personal Access Token.
 
-**Can I use it with ChatGPT or Claude.ai in the browser?**
-Not yet. Their connectors only work with servers that sign in through OAuth. Use Claude Desktop, Claude Code, Cursor, VS Code, Windsurf or Codex.
+**Can I use it with ChatGPT or Claude.ai in the browser, or on my phone?**
+Not yet, but it's planned. Their connectors, in the browser and in the phone apps, only work with servers that sign in through OAuth, and Leantime's MCP server uses tokens for now. Until then, use Claude Desktop, Claude Code, Cursor, VS Code, Windsurf or Codex.
 
 **Can I give the assistant read-only access?**
 Not with a token setting yet. Use your assistant's tool approval settings to allow only the read tools, or connect with a separate user that has the **Read Only** role. (In the current version, a Read Only user can still add, edit and delete events on their own calendar through MCP.)
