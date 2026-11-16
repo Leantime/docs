@@ -2,6 +2,8 @@
 
 You can run Leantime on most shared hosting plans that come with cPanel, like those from Hostinger, GoDaddy or Bluehost. You don't need a command line: everything below happens in cPanel and its File Manager.
 
+This page is for hosting Leantime yourself. With [Leantime Cloud](https://leantime.io/pricing/), there's nothing to install.
+
 Before you start, check with your host that the plan has:
 
 - **PHP 8.2 or later**, with the extensions on [System requirements](installation/system-requirements.md)
@@ -35,10 +37,10 @@ Leantime's folder has a `public` folder inside it. Only `public` should be reach
 
 ## Step 4: Point a domain at Leantime
 
-1. Open **Domains** (or **Subdomains** on older cPanel versions) and create a subdomain, for example `projects.example.com`.
+1. Open **Domains** (or **Subdomains** on older cPanel versions) and create a subdomain of your own website, for example `projects.example.com`.
 2. Set its **document root** to `leantime/public`.
 
-If your host won't let you choose the document root, ask their support to point the subdomain at `leantime/public` for you. A [subfolder install](installation/subfolder.md) is the other option, but it needs changes to the web server's settings that only your host can make. Don't move the whole `leantime` folder into `public_html` to get around this: your settings and uploaded files would be reachable from the web.
+If your host won't let you choose the document root, ask their support to point your new subdomain at the `leantime/public` folder in your hosting account. A [subfolder install](installation/subfolder.md) is the other option, but it needs changes to the web server's settings that only your host can make. Don't move the whole `leantime` folder into `public_html` to get around this: your settings and uploaded files would be reachable from the web.
 
 ## Step 5: Add your settings
 
