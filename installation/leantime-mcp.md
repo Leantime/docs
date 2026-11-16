@@ -58,6 +58,7 @@ And an AI assistant that can connect to a **remote MCP server with a custom head
 | VS Code (GitHub Copilot agent mode) | Yes | Built in |
 | Windsurf | Yes | Built in |
 | OpenAI Codex CLI | Yes | Built in |
+| CoChat | Yes | Built in, as a custom server |
 | Claude Desktop | Yes | Through the free `mcp-remote` helper (needs Node.js 18+) |
 | Claude.ai and ChatGPT, in the browser or the phone apps | Not yet (planned) | These only connect to servers that sign in with OAuth. Leantime's MCP server uses tokens for now. |
 
