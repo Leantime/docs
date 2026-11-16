@@ -1,50 +1,40 @@
-# Design Thinking
+# Design thinking
 
-## Synopsis
+Design thinking is a way of solving problems that starts with people rather than with solutions. Before deciding what to build, you find out what the people you're building for actually need, and then you try ideas out with them quickly and cheaply.
 
-Design thinking is a human-centric methodology for the development of solutions for complex, open ended problems.  It is an iterative process that focuses on the human element of problem solving.  It starts by re-framing problems through the view of human needs.  
+It's most useful for open-ended problems, where it isn't yet clear what the right answer looks like: a new service, a process that frustrates people, a product nobody's using.
 
-It's 5 stages include:
+## Where does design thinking come from?
 
-### Empathize
+Designers have long worked this way. The design firm IDEO and Stanford's Hasso Plattner Institute of Design (the [d.school](https://dschool.stanford.edu/)), both co-founded by David Kelley, made it into a method that non-designers could learn, from the 1990s and 2000s onward. The five stages below follow the d.school's model.
 
-This is the understanding part of design thinking.  In business, we're often solving a problem -- creating solutions that our customers need to do, be, or work better.  The Empathize phase helps us to understand the area around the problem.  It may be required at any point during the iterative process and could include consulting with experts and interviewing users to help identify their motivations and experiences. 
+## What are the five stages of design thinking?
 
-For Leantime, this process is included in our use of the Lean Canvas / Research Boards.  The goal here is to collect data from users as part of the research component.  Users have a foundational role in the success of projects/products and it is important that they are never forgotten in the development process.    
+1. **Empathize:** understand the people involved: what they do, what they struggle with and why. Watch, listen and ask. Interviews and spending time where the problem happens tell you more than assumptions do.
+2. **Define:** turn what you learned into a clear problem statement, framed around the people, not the solution. For example: "Families who work shifts can't reach the pantry during its opening hours", not "We need a delivery app".
+3. **Ideate:** come up with many possible solutions before choosing. Quantity first; judging comes later.
+4. **Prototype:** make a rough, cheap version of the most promising ideas: a sketch, a mock-up, a role-play, a one-day trial. Something people can react to.
+5. **Test:** put the prototype in front of the people it's for, and learn what works and what doesn't. Then refine, or go back to an earlier stage.
 
-### Define
+## Do the stages happen in order?
 
-The goal here is to use the information collected from the empathize stage to develop a human-centric problem statement of the identified problem.  This is where the team will begin to identify features, functions, and ideas about the solution.  This step is also found as part of Leantime's Research Board / Lean Canvas.  As information is collected and gathered, a solution can be developed.    
+Not strictly. Testing often shows you misunderstood the problem, so you go back to empathizing. Sometimes you start with an idea and work back to check it against real needs. The stages are modes you move between, not a one-way checklist.
 
-### Ideate
+## How does design thinking relate to Lean and Agile?
 
-In the define stage, we were using our collected data to outline the problem and the conclusion towards the possible solution. The Ideate stage is the brainstorming that sets the wheels in motion for an actualized solution.  Determining what will be done to get to the solution, how to create it, what features it needs to be successful and putting into play the needs identified in previous steps.  
+They work well together, at different moments:
 
-Tracking and monitoring the outcomes of a brainstorming session, or future ideas, can be difficult.  Leantime's Idea Boards were created to simplify this process and make it an interactive step among team members.  Conversation around ideas can be tracked and continued.  Photos or examples can be uploaded for review.  With the interactive function of an Idea Board, there's no reason for good ideas to get lost.
+- **Design thinking** helps you find the right problem and a promising solution.
+- **[Lean](knowledge-base/whatislean.md)** (and the Lean Startup) helps you test whether that solution works, with as little waste as possible.
+- **[Agile](knowledge-base/agile.md)** helps you build and deliver it in small, adaptable steps.
 
-### Prototype
+## Doing it in Leantime
 
-Design thinking has elements that complement to Agile and Lean processes.  Iterative steps that create scale down versions of the solution help solidify a design and a product.  This step allows visibility of product, team member use / assessment, and user testing.  It's the initial product foundation that can continue to be build upon in the Test step. 
+- **Empathize and define:** the **Simple Empathy Map**, **Observe / Learn – Insights** and **Project Value Canvas** [blueprints](using-leantime/blueprints.md) give your research and problem statement a shared home.
+- **Ideate:** collect ideas on the [Ideas](using-leantime/idea-management.md) board, where the team can comment and build on them.
+- **Prototype and test:** turn the ideas worth trying into [to-dos](using-leantime/task-management.md) and a [milestone](using-leantime/roadmap-planning.md), and capture what you learned back on the boards.
 
-In most cases, this is done as the To Do component of Leantime and has some overlap with other features such as Idea Boards & Research Boards with testing, researching and developing new ideas around the product.  
- 
-### Test
+## Sources and further reading
 
-Testing may sound like a redundancy when we've said that we'll also be testing as part of the prototype phase.  Testing, though, is part of the iterative process.  It is the refining of a product, new developments, testing and correcting issues as they come up.  
-
-## Linear and Non-Linear Design Thinking
-
-When we think of steps, we often think they come in a linear pattern -- executing step 1 through 5.  For Design thinking, this may be true... sometimes.  There will be times when we start with a product that needs pivoting, or the idea comes to us first and we have to go back to validate it before we move to building it.  Design thinking is not just focused on human need but also relates to our solution process as humans.  
-
-Leantime was set up with this flow in mind.
-
-### Using Leantime for Design Thinking
-
-The screens / boards you might use to manage your Design Thinking process include: 
-
-1. Research Boards for data collection, definition and solution validation.  
--- Research Boards are also where you can track your user testing and feedback from Prototype & Test phases.  
-
-2. Idea Boards can be used for capturing ideas and transforming them to actionable steps.
-
-3. To Do Boards are for prototype building and iterative steps to attain a prototype.
+- Hasso Plattner Institute of Design at Stanford, [Design Thinking Bootleg](https://dschool.stanford.edu/resources/design-thinking-bootleg)
+- Tim Brown, *Change by Design* (2009)
