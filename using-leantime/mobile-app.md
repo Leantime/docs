@@ -52,7 +52,9 @@ Yes, on a self-hosted server with Leantime 3.10.2 or later and Advanced Authenti
 
 Tap the button, sign in on your company's page the way you always do, and you're sent back to the app. SAML 2.0 logins don't work in the app yet.
 
-**Leantime in a folder?** If your Leantime runs in a folder, like `https://example.com/leantime`, the **Sign in with SSO** button opens the address without the folder and fails. Run Leantime on its own domain or subdomain for built-in SSO in the app, or use an Advanced Authentication provider button, which includes the folder. If your account also uses Leantime's two-factor codes, the app asks for the code after the company login; this needs Leantime 3.13.0 and app version 1.1.0 or later.
+**Leantime in a folder?** If your Leantime runs in a folder, like `https://example.com/leantime`, **Sign in with SSO** needs Leantime 3.15.1 or later, and `LEAN_APP_URL` must include the folder (see [Subfolder installation](installation/subfolder.md)). On older versions the button opens the address without the folder and fails; use an Advanced Authentication provider button instead, which includes the folder.
+
+**Two-factor codes:** if your account also uses Leantime's two-factor codes, the app asks for the code after the company login. This needs Leantime 3.13.0 and app version 1.1.0 or later.
 
 **For administrators:** there's nothing extra to register with your login provider, because the app uses the same callback address as the browser. If a sign-in wall sits in front of Leantime, see [What does the app's error message mean?](#what-does-the-apps-error-message-mean).
 
