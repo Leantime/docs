@@ -58,6 +58,14 @@
 - [Goals](using-leantime/goals.md)
 - [Docs](using-leantime/docs.md)
 - [Blueprints](using-leantime/blueprints.md)
+  - [Project Value Canvas](blueprints/project-value-canvas.md)
+  - [Project Brief](blueprints/project-brief.md)
+  - [SWOT Analysis](blueprints/swot-analysis.md)
+  - [Lean Canvas](blueprints/lean-canvas.md)
+  - [Business Model Canvas](blueprints/business-model-canvas.md)
+  - [Risk Analysis](blueprints/risk-analysis.md)
+  - [Environment Analysis](blueprints/environment-analysis.md)
+  - [Observe / Learn - Insights](blueprints/insights.md)
 - [Reports](using-leantime/reports.md)
 
 **Everything Else**
