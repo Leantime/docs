@@ -67,5 +67,5 @@ Starting work will start a task timer that allows you to track the time spent on
 # Related
  
 - [Agile](/knowledge-base/agile.md)
-- [Timesheets](/using-leantime/timesheets.md)
+- [Time tracking](using-leantime/timesheets.md)
    

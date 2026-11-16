@@ -53,6 +53,8 @@
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
 - [Projects](using-leantime/managing-projects.md)
+- [Milestones](using-leantime/roadmap-planning.md)
+- [Time tracking](using-leantime/timesheets.md)
 - [Clients](using-leantime/managing-clients.md)
 - [Notifications](using-leantime/notifications.md)
 - [Goals](using-leantime/goals.md)

@@ -33,7 +33,7 @@ The bar shows how far you've come from **Start** toward **Goal**, and how much i
 
 ## How do I link a goal to milestones?
 
-A milestone is a group of to-dos with a due date: a step on the way to a goal (see [Roadmap and milestones](using-leantime/roadmap-planning.md)). Linking milestones to a goal shows which work is meant to move its number.
+A milestone is a group of to-dos with a due date: a step on the way to a goal (see [Milestones](using-leantime/roadmap-planning.md)). Linking milestones to a goal shows which work is meant to move its number.
 
 A goal can link to as many milestones as it needs, and one milestone can count toward several goals. Rebuilding the checkout, for example, can serve both "More orders from the new website" and "Faster checkout on phones".
 
