@@ -25,6 +25,36 @@
 	--sl-content-width: 40rem;
 }
 
+/*
+ * "On this page" on wide screens: a fixed, narrow column instead of Starlight's, which grows with
+ * the window. Hidden (src/components/TableOfContents.astro), it shrinks to a strip with the
+ * button, and the text column is centred in the room that frees up.
+ */
+:root {
+	--lt-toc-width: 14rem;
+}
+:root[data-lt-toc='collapsed'] {
+	--lt-toc-width: 3.5rem;
+}
+@media (min-width: 72rem) {
+	/* The panel inside is position: fixed, so it needs the width too (100% would be the window). */
+	.right-sidebar-container,
+	.right-sidebar {
+		width: var(--lt-toc-width);
+	}
+	[data-has-sidebar][data-has-toc] .main-pane {
+		--sl-content-margin-inline: auto;
+		width: calc(100% - var(--lt-toc-width));
+	}
+	.right-sidebar-panel .sl-container {
+		width: auto;
+		max-width: none;
+	}
+	:root[data-lt-toc='collapsed'] .right-sidebar-panel {
+		padding-inline: 0.75rem;
+	}
+}
+
 /* The home page is a grid of links, not reading text: give it more room next to the sidebar. */
 :root:has(.lt-home) {
 	--sl-content-width: 56rem;

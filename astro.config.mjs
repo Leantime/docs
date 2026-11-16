@@ -172,6 +172,12 @@ document.head.appendChild(l);};
 try{if(localStorage.getItem('lt-reading')==='easy'){document.documentElement.dataset.reading='easy';window.ltLoadReadingFont();}}catch(e){}
 })();`;
 
+/**
+ * "On this page" hidden (src/components/TableOfContents.astro): apply the saved choice before
+ * the page paints, so the text column doesn't jump.
+ */
+const tocState = `try{if(localStorage.getItem('lt-toc')==='collapsed')document.documentElement.dataset.ltToc='collapsed';}catch(e){}`;
+
 const crisp = `window.$crisp=[];window.CRISP_WEBSITE_ID="-K4sjRan9gm59MvONQG-";(function(){var d=document,s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`;
 
 const gtag = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FKZP7LPS4X');`;
@@ -201,6 +207,7 @@ export default defineConfig({
 				Footer: './src/components/Footer.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
+				TableOfContents: './src/components/TableOfContents.astro',
 			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/Leantime/leantime' },
@@ -209,6 +216,7 @@ export default defineConfig({
 			head: [
 				{ tag: 'script', content: legacyRedirect },
 				{ tag: 'script', content: readingMode },
+				{ tag: 'script', content: tocState },
 				{ tag: 'script', attrs: { type: 'application/ld+json' }, content: JSON.stringify(siteSchema) },
 				{ tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
 				{ tag: 'meta', attrs: { property: 'og:image', content: `${SITE}/og-image.png` } },
