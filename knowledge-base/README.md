@@ -15,7 +15,7 @@ You don't need a method to start. Most teams borrow a few practices that fit, li
 
 ## How do these methods fit together?
 
-They overlap more than their names suggest. Lean is the oldest of them: it came from manufacturing, and Kanban grew out of it. Agile came from software teams and shares Lean's focus on small batches and fast feedback. Scrum is one way to work in an agile way. Design thinking comes before all of them: it helps you decide what's worth building in the first place.
+They overlap more than their names suggest. Lean is the oldest of them: it came from manufacturing, and Kanban grew out of it. Agile came from software teams and shares Lean's focus on small batches and fast feedback. Scrum is one way to work in an agile way. Design thinking works alongside all of them: it helps you decide what's worth building, and you come back to it whenever what you learn sends you back to the problem.
 
 | If you want to… | Look at |
 | --- | --- |
