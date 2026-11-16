@@ -6,7 +6,7 @@ The drawing tools come from [Excalidraw](https://excalidraw.com), so if you've u
 
 ![The Eastside pantry floor plan whiteboard: Intake desk, then Dry goods and Fresh produce, then Checkout, drawn with arrows. The Library button is outlined.](../_images/plugins/whiteboards-editor.webp)
 
-**Get it:** on the Leantime Marketplace it's called [White Board](https://marketplace.leantime.io/product/leantime-whiteboards/). It's already on in Leantime Cloud.
+**Get it:** [Whiteboards on the Leantime Marketplace](https://marketplace.leantime.io/product/leantime-whiteboards/). It's already on in Leantime Cloud.
 
 ## How do I create a whiteboard?
 
