@@ -40,11 +40,14 @@ for (const path of pages(ROOT)) {
 		if (fence) return;
 		// Setext headings: a line of = (H1) or - (H2) directly under paragraph text.
 		const setext = paragraphLine && line.match(/^ {0,3}(=+|-+)\s*$/);
-		const atx = line.match(/^ {0,3}(#{1,6})\s+\S/); // CommonMark allows up to 3 spaces of indent
+		// ATX headings: up to 3 spaces of indent; "##" on its own is an empty H2, and a closing run of
+		// #s isn't part of the text.
+		const atx = line.match(/^ {0,3}(#{1,6})(?:[ \t]+(.*?))?[ \t]*$/);
 		paragraphLine = !setext && !atx && line.trim() !== '' && !/^ {0,3}([-*+]\s|\d+[.)]\s|>|\||<|#{1,6}(\s|$))/.test(line);
 		if (!setext && !atx) return;
 		const level = setext ? (setext[1][0] === '=' ? 1 : 2) : atx[1].length;
 		const where = `${relative('.', path)}:${index + offset + 1}`;
+		if (atx && (atx[2] ?? '').replace(/(^|[ \t]+)#+$/, '').trim() === '') problems.push(`${where}  empty heading; give it text or remove it`);
 		if (level === 1) problems.push(`${where}  H1 in the page body; the title is the H1, start sections at ##`);
 		else if (level > previous + 1) problems.push(`${where}  H${level} after H${previous}; don't skip heading levels`);
 		previous = level;
