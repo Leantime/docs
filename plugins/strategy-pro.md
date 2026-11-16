@@ -66,10 +66,10 @@ The list offers the goals of the strategy the project belongs to, directly or th
 ## How do I connect a project or program to my strategy?
 
 1. **Open the project** and click **Project Settings** at the bottom of the menu.
-2. **Under Part of Program or Strategy, choose the strategy.**
+2. **Under Part of Program or Strategy (or Part of Plan or Strategy), choose the strategy.**
 3. **Click Save.**
 
-A program goes under a strategy the same way, in its **Program Settings**, and its projects then sit under both. The Strategy Overview shows the programs and projects directly under the strategy, each with its progress.
+A program goes under a strategy the same way, in its **Program Settings** (or **Plan Settings**), and its projects then sit under both. The Strategy Overview shows the programs and projects directly under the strategy in **Programs & Projects** (or **Plans & Projects**), each with its progress.
 
 ## What are the Logic Model and Planning Boards?
 
