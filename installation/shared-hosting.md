@@ -38,7 +38,7 @@ Leantime's folder has a `public` folder inside it. Only `public` should be reach
 1. Open **Domains** (or **Subdomains** on older cPanel versions) and create a subdomain, for example `projects.example.com`.
 2. Set its **document root** to `leantime/public`.
 
-If your host won't let you choose the document root, you can [run Leantime in a subfolder](installation/subfolder.md) instead.
+If your host won't let you choose the document root, ask their support to point the subdomain at `leantime/public` for you. A [subfolder install](installation/subfolder.md) is the other option, but it needs changes to the web server's settings that only your host can make. Don't move the whole `leantime` folder into `public_html` to get around this: your settings and uploaded files would be reachable from the web.
 
 ## Step 5: Add your settings
 
