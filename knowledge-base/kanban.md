@@ -8,7 +8,7 @@ The board is the easy part. What makes it Kanban is limiting how much is in prog
 
 *Kanban* is Japanese for "signboard". At Toyota, as part of the production system that became [Lean](knowledge-base/whatislean.md), cards signalled when a step needed more parts, so nothing was made before it was needed. In the 2000s, software teams adapted the idea to knowledge work, and the board became its best-known form.
 
-Kanban is often grouped with [agile](knowledge-base/agile.md) methods, but it comes from Lean. Unlike [Scrum](knowledge-base/scrum.md), it has no sprints and no required roles: work flows continuously, and a team can start with the process it already has.
+Kanban is often grouped with [agile](knowledge-base/agile.md) methods, but it comes from Lean. It doesn't need sprints or set roles: work can flow continuously, and a team can start with the process it already has. It also works alongside [Scrum](knowledge-base/scrum.md): many Scrum teams use a Kanban board, and its limits on work in progress, inside their sprints.
 
 ## What are the Kanban practices?
 

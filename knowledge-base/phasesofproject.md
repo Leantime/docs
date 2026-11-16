@@ -2,9 +2,11 @@
 
 Most projects, whatever their size, go through the same broad stages: deciding to do it, planning it, doing it while keeping an eye on it, and wrapping it up. Naming these phases helps a team see where it is, and what's easy to skip.
 
+Two things often get called "phases": the management activities that run through every project (below), and the stages of the work itself, like design, build and launch (see [Do the phases have to happen in order?](#do-the-phases-have-to-happen-in-order)).
+
 ## What are the phases of a project?
 
-A common way to describe them, close to the process groups in the Project Management Institute's *PMBOK Guide*:
+A common way to describe them, close to the process groups in the Project Management Institute's *PMBOK Guide*. They overlap more than a numbered list suggests: you keep planning as you learn, and monitoring runs the whole time.
 
 1. **Initiating:** decide why the project is worth doing, what success looks like, and who's involved. The output is often a short brief.
 2. **Planning:** work out what needs to happen, in what order, by when, and by whom. Break the work into pieces and spot the risks.
@@ -16,12 +18,12 @@ Teams under pressure tend to jump straight to executing. The cost shows up later
 
 ## Do the phases have to happen in order?
 
-No. There are two broad approaches:
+The management activities above always overlap. The question is how the work itself is staged. There are two broad approaches:
 
-- **Plan-driven (often called waterfall):** each phase finishes before the next starts, and the plan is set early. It suits work where the steps depend on each other and change is expensive: building work, events, regulated processes, fixed-price contracts.
-- **Iterative:** the team goes through the cycle many times in small loops, planning a little, doing a little and learning as it goes. This is how [agile](knowledge-base/agile.md) methods like [Scrum](knowledge-base/scrum.md) work. It suits work where you'll learn what's needed along the way.
+- **Plan-driven (often called waterfall):** the work moves through stages in sequence, for example design, then build, then test, then launch. Each stage finishes before the next starts, and the plan is set early, while planning and monitoring carry on throughout. It suits work where the steps depend on each other and change is expensive: building work, events, regulated processes, fixed-price contracts.
+- **Iterative:** the team works in small loops, planning a little, delivering a little and learning as it goes, many times over. This is how [agile](knowledge-base/agile.md) methods like [Scrum](knowledge-base/scrum.md) work. It suits work where you'll learn what's needed along the way.
 
-Many projects mix them: a fixed overall plan with milestones, and iterative work inside each stage.
+Many projects mix them: a fixed overall plan with a milestone for each stage, and iterative work inside each stage.
 
 ## Where do milestones and timelines fit?
 
