@@ -69,7 +69,7 @@ The timer always logs **General, billable**. Change the type afterwards in **Lis
 
 ### How do I mark time as invoiced, approved or paid?
 
-Further along each row are three columns: **Invoiced**, **MGR Approval** and **Paid**. Tick the entries you've dealt with, or use **Select all** at the top of a column, then click **Save**. Leantime records the date for each one. Entries that aren't ticked show **Pending**.
+Further along each row are three columns: **Invoiced**, **MGR Approval** and **Paid**. Tick the checkbox of each entry you've dealt with, or use **Select all** under the column at the bottom of the table, then click **Save**. Once saved, the checkbox is replaced by the date it was marked.
 
 ## Who can log and see time?
 
