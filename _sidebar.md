@@ -31,6 +31,7 @@
 **AI with Leantime**
 
 - [Overview](ai/README.md)
+- [Less busywork with AI](ai/less-busywork.md)
 - [AI in Leantime Cloud (L.E.O.)](ai/leantime-cloud-ai.md)
 - [MCP server: connect your own assistant](installation/leantime-mcp.md)
 - [Working with AI assistants](ai/working-with-ai.md)

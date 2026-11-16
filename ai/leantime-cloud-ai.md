@@ -9,7 +9,7 @@ L.E.O. is only in Leantime Cloud. If you host Leantime yourself, or you'd rather
 | If you… | Use |
 | --- | --- |
 | Want help right where you work, with nothing to set up | **L.E.O.** (Leantime Cloud) |
-| Already use Claude, ChatGPT, Cursor or GitHub Copilot every day, and want it to see and update your Leantime work | **Your own assistant**, through the [MCP server](installation/leantime-mcp.md) |
+| Already use Claude Desktop, Claude Code, Cursor or GitHub Copilot every day, and want it to see and update your Leantime work | **Your own assistant**, through the [MCP server](installation/leantime-mcp.md) |
 | Host Leantime yourself | **Your own assistant**, through the [MCP server](installation/leantime-mcp.md) |
 
 You can use both. They do similar things: both can find your to-dos, create and change them, log time and write updates, and both act with your permissions only.
@@ -62,5 +62,6 @@ L.E.O. uses AI credits from your Leantime Cloud plan. Chatting, sorting, breakin
 ## Related
 
 - [MCP server: connect your own AI assistant](installation/leantime-mcp.md)
+- [Less busywork with AI](ai/less-busywork.md)
 - [AI with Leantime](ai/README.md)
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)

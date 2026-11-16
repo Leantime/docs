@@ -9,6 +9,8 @@ The MCP Server lets AI assistants such as Claude, Cursor, VS Code Copilot, Winds
 
 The assistant only sees and changes what **your** Leantime account can see and change. It works the same way the Leantime app does, with the same project access and role.
 
+This page is the setup. For what to ask once you're connected, see [Less busywork with AI](ai/less-busywork.md).
+
 **On this page**
 
 1. [How it works](?id=how-it-works)
@@ -221,7 +223,7 @@ Ask your assistant:
 
 > Which Leantime projects can you see?
 
-It should call `getAllProjects` and list your projects. If it does, you're done.
+It should call `getAllProjects` and list your projects. If it does, you're done: see [Less busywork with AI](ai/less-busywork.md) for what to ask next.
 
 If it doesn't, test the server directly from a terminal:
 
@@ -362,82 +364,9 @@ The assistant works best when you are specific about **which project** and **wha
 
 **Status names are per project.** Each project can have its own statuses. If "move to In Review" doesn't work, ask "what statuses does this project have?" first.
 
-### Example prompts
+### What to ask
 
-**Your day**
-- "What's assigned to me that's due this week or overdue? Group it by project."
-- "Plan my day tomorrow from 9 to 5 around my calendar, with my two most urgent tasks in the morning."
-- "Start a timer on #234." … "Stop my timer."
-
-**Tasks and milestones**
-- "Create these tasks in the Website Redesign project, all in the Launch milestone: design homepage mockup (due Friday), review competitor sites (Wednesday), gather stakeholder feedback (next Monday)."
-- "Break #789 into subtasks of about two hours each."
-- "Move #234, #235 and #241 to the March Sprint milestone and set them to In Progress."
-- "Which milestones in Project Atlas are due this month, and how many tasks are still open in each?"
-
-**Time**
-- "Log 2 hours to #456 for yesterday: 'Fixed checkout bug'."
-- "How many hours did I log last week, by project?"
-- "Compare my calendar and completed tasks this week with my logged time. Which tasks have no time entries?"
-
-**Reporting**
-- "Write a status report for the Acme Website project: completed this week, in progress, upcoming milestones, risks."
-- "Post a project status update on Acme Website: status green, 'Design approved, development starts Monday.'"
-- "Show the goals for the Q1 Initiative project and which ones are behind."
-
-**Finding things**
-- "Search Leantime for anything about 'invoice export'."
-- "What did people comment on in the Mobile App project since Monday?"
-
-### Workflows
-
-A few routines that work well once the assistant is connected. Adjust the project names and dates to yours.
-
-**Morning briefing.** Start the day with one question instead of five open tabs:
-
-```
-Give me my standup: what I finished yesterday, what's due today,
-and anything overdue or blocked.
-```
-
-**Capture work from an email or a meeting.** Paste the notes and ask for to-dos:
-
-```
-Create to-dos in the Product Roadmap project from these meeting notes.
-Assign them to me, set the due dates mentioned, and add a comment to each:
-"Action item from the March 3 product meeting".
-```
-
-**Plan your week.**
-
-```
-Look at my open to-dos across all projects. Schedule them across this week
-by due date and effort: longer tasks in the mornings, small ones in the
-afternoons. Keep Friday afternoon free.
-```
-
-**Catch up on your timesheet.**
-
-```
-Compare my calendar and the to-dos I finished this week with the time I logged.
-Which to-dos have no time? Then log what I tell you, as Development.
-```
-
-**Write a client update.**
-
-```
-Write a status report for the Acme Website project: overall health
-(green, yellow or red), what was finished this week, what's in progress,
-upcoming milestones, risks, and hours logged this month.
-```
-
-**Set up a new project.**
-
-```
-Create milestones in the Mobile App v2 project: Discovery (Jan 15 to Jan 31),
-Design (Feb 1 to Feb 28), Build (Mar 1 to Mar 31) and Testing (Apr 1 to Apr 15).
-Then suggest the first to-dos for Discovery, and wait for my OK before creating them.
-```
+For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Less busywork with AI](ai/less-busywork.md).
 
 ## Running an AI agent as a team member
 
