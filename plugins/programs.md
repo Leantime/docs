@@ -2,7 +2,7 @@
 
 A program groups projects that work toward the same result, like "Community Pantries" with a project for each new pantry. The Programs plugin gives the group a place of its own: every project's to-dos on one board, every milestone on one timeline, and shared goals and sprints.
 
-Use it when you run several related projects and keep switching between them to see where things stand. Leantime's screens call a program a "plan" in a few places, like **Plan Settings**.
+Use it when you run several related projects and keep switching between them to see where things stand.
 
 ![A program's Projects page: Open the Eastside pantry and Start the Northside mobile pantry in the New column, with Add Project outlined](../_images/plugins/program-projects.webp)
 
@@ -18,18 +18,18 @@ Use it when you run several related projects and keep switching between them to 
 6. **Choose who can see it** under **Who can access this program?**: only the people you choose under **Team**, everyone assigned to the client, or everyone in your organization.
 7. **Click Save.**
 
-Creating a program needs the Editor role or higher. Changing its **Plan Settings** needs Manager or higher.
+Creating a program needs the Editor role or higher. Changing its **Program Settings** needs Manager or higher.
 
-A program has its own menu: **Dashboard**, **Projects**, **Tasks**, **Timeline**, **Resources** (in beta), **Ideas**, **Goals**, **Docs**, **Files**, **Retrospectives**, **Blueprints**, **Report** and, at the bottom, **Plan Settings**.
+A program has its own menu: **Dashboard**, **Projects**, **Tasks**, **Timeline**, **Resources** (in beta), **Ideas**, **Goals**, **Docs**, **Files**, **Retrospectives**, **Blueprints**, **Report** and, at the bottom, **Program Settings**.
 
 ## How do I add projects to a program?
 
 - **A new project:** open **Projects** in the program's menu and click **Add Project**. The new project starts out in the program.
-- **A project you already have:** open the project, click **Project Settings**, choose the program under **Part of Plan or Strategy**, and click **Save**.
+- **A project you already have:** open the project, click **Project Settings**, choose the program under **Part of Program or Strategy**, and click **Save**.
 
-![Project Settings of Start the Northside mobile pantry, with Part of Plan or Strategy outlined and set to "Plan // Community Pantries"](../_images/plugins/program-part-of.webp)
+![Project Settings of Start the Northside mobile pantry, with Part of Program or Strategy outlined and set to the Community Pantries program](../_images/plugins/program-part-of.webp)
 
-A project belongs to one program at a time. A program can itself sit under a [strategy](plugins/strategy-pro.md): choose the strategy under **Part of Plan or Strategy** in **Plan Settings**.
+A project belongs to one program at a time. A program can itself sit under a [strategy](plugins/strategy-pro.md): choose the strategy under **Part of Program or Strategy** in **Program Settings**.
 
 ## How do I see all of the program's work?
 

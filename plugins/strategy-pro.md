@@ -4,7 +4,7 @@ A strategy is what your organization is working toward over the next year or mor
 
 Use it when several projects serve the same bigger aim, and you want to see whether that aim is moving. For one project on its own, [project goals](using-leantime/goals.md) are enough.
 
-![The Strategy Overview of "Feed more families in Riverside": a card for each focus area (Customer, Financial, Internal Processes, Learning & Growth) with its goals, and the Community Pantries program under Plans & Projects. The goal "Serve more families every week" is outlined.](../_images/plugins/strategy-overview.webp)
+![The Strategy Overview of "Feed more families in Riverside": a card for each focus area (Customer, Financial, Internal Processes, Learning & Growth) with its goals, and the Community Pantries program under the strategy's programs and projects. The goal "Serve more families every week" is outlined.](../_images/plugins/strategy-overview.webp)
 
 **Get it:** on the Leantime Marketplace it's called [Leantime Strategies](https://marketplace.leantime.io/product/leantime-strategies/). It's already on in Leantime Cloud.
 
@@ -66,10 +66,10 @@ The list offers the goals of the strategy the project belongs to, directly or th
 ## How do I connect a project or program to my strategy?
 
 1. **Open the project** and click **Project Settings** at the bottom of the menu.
-2. **Under Part of Plan or Strategy, choose the strategy.**
+2. **Under Part of Program or Strategy, choose the strategy.**
 3. **Click Save.**
 
-A program goes under a strategy the same way, in its **Plan Settings**, and its projects then sit under both. Leantime's screens call a program a "plan" in a few places, like this one. The Strategy Overview shows the programs and projects directly under the strategy in **Plans & Projects**, each with its progress.
+A program goes under a strategy the same way, in its **Program Settings**, and its projects then sit under both. The Strategy Overview shows the programs and projects directly under the strategy, each with its progress.
 
 ## What are the Logic Model and Planning Boards?
 
