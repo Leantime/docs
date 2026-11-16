@@ -179,11 +179,11 @@ Yes. Every project has **Docs** for project knowledge.
 
 #### Does Leantime have whiteboards?
 
-Yes, with the [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/) plugin. See [Using plugins](installation/using-plugins.md?id=whiteboards).
+Yes, with the [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/) plugin. See [Whiteboards](plugins/whiteboards.md).
 
 #### Can I manage several projects together?
 
-Yes. **My Work** shows your to-dos across all projects. To plan several projects as one program, with shared milestones and risks, use the [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/) plugin. See [Using plugins](installation/using-plugins.md?id=program-management).
+Yes. **My Work** shows your to-dos across all projects. To run several projects as one program, with their to-dos on one board and their milestones on one timeline, use the [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/) plugin. See [Programs](plugins/programs.md).
 
 ### Time and calendars
 

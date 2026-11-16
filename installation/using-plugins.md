@@ -1,19 +1,45 @@
-# Using Leantime Plugins
+# Plugins
 
-This guide covers how to use Leantime's marketplace plugins after installation. For installation instructions, see [Plugin Installation & Configuration](plugin-installation.md).
+Plugins add features to Leantime. Each one does one job, like planning a strategy above your projects, sketching on a whiteboard, or repeating a to-do every week. Pick the ones your team needs.
 
-## Before You Start
+- **In Leantime Cloud,** the marketplace plugins are already switched on, except Advanced Authentication, which is for self-hosted servers.
+- **On your own server,** get a plugin from the [Leantime Marketplace](https://marketplace.leantime.io/) and install it with its license key: see [Installing plugins](installation/plugin-installation.md) and [Plugin licenses and updates](installation/plugin-licenses.md).
 
-**Plugins must be enabled before use.** After installing a plugin:
+## Which plugin do I need?
 
-1. Go to **Settings → Plugins**
-2. Find your plugin in the list
-3. Toggle the **Enable** switch to activate it
-4. The plugin's features and menu items will now appear
+### Plan above your projects
 
-Some plugins add sidebar menu items, others add options within existing features. Each section below describes where to find each plugin's interface.
+- **[Strategy Pro](plugins/strategy-pro.md):** set out what your organization is working toward, with focus areas and measurable goals, and see which programs and projects serve them.
+- **[Programs](plugins/programs.md):** group related projects into a program, and see their to-dos, milestones and people in one place.
+
+### Think it through and take notes
+
+- **[Whiteboards](plugins/whiteboards.md):** sketch floor plans, flows and diagrams on a shared whiteboard inside a project.
+- **[Notes](#notes):** jot down quick notes and ideas that don't belong in a project's docs yet.
+
+### Add to your to-dos
+
+- **[Custom fields](#custom-fields):** add your own fields to to-dos, for the details your team tracks that Leantime doesn't have a field for.
+- **[Recurring to-dos](#recurring-tasks):** create a to-do again on a schedule, like every week or every month.
+
+### Stay focused
+
+- **[Pomodoro timer](#pomodoro-timer):** work in focused blocks with short breaks in between.
+
+### Sign in and connect other tools
+
+- **[Advanced Authentication](installation/plugin-installation.md?id=advanced-auth-plugin):** sign in with Google, Microsoft, GitHub, Okta and more, and from the [Leantime Mobile](https://leantime.io/mobile) app. Self-hosted only.
+- **[MCP Server](installation/leantime-mcp.md):** let AI assistants like Claude work with your Leantime projects.
+
+## How do I switch a plugin on?
+
+On your own server, go to **Company → Leantime Apps → My Apps** and switch the plugin on. Its menu items and options appear right away. See [Installing plugins](installation/plugin-installation.md) for the license key and the first install.
+
+Some plugins add their own items to the menu, like **Whiteboards** in a project. Others add options to screens you already know, like an extra field in a to-do.
 
 ---
+
+The sections below will move to pages of their own.
 
 ## Custom Fields
 
@@ -77,83 +103,6 @@ Custom field values appear:
 - In the task table view (if column is enabled)
 - In exports and reports
 
----
-
-## Strategy Pro
-
-Strategy Pro connects your daily work to organizational goals through strategic planning tools.
-
-### Creating a Strategy
-
-1. Click the **project dropdown** in the sidebar
-2. Select **Start Something New**
-3. Choose **Create a Strategy**
-4. Fill in the strategy details:
-   - **Title:** Name your strategy
-   - **Visibility:** Who can view this strategy
-   - **Executive Summary:** High-level overview
-   - **Company Purpose:** Why your organization exists
-   - **Strategic Vision:** Where you want to be in 1-5 years
-
-### Strategy Navigation
-
-Once created, the strategy view includes:
-
-| Section | Purpose |
-|---------|---------|
-| **Strategy Overview** | Visual summary of goals and progress |
-| **Focus Areas** | Strategic anchors that drive your strategy |
-| **Docs** | Strategy-specific documentation |
-| **Strategy Boards** | Templates for strategic planning |
-
-### Setting Focus Areas
-
-Focus Areas are the key themes that drive your strategy. Leantime suggests four strategic anchors:
-
-- **Customer:** Goals related to customer satisfaction and experience
-- **Financial:** Revenue, cost, and financial health goals
-- **Internal Processing:** Operational efficiency and process improvement
-- **Learning and Growth:** Team development and organizational capability
-
-To switch between focus areas, click the dropdown arrow next to the focus area name.
-
-### Creating Strategic Goals
-
-1. Navigate to a Focus Area
-2. Click **Create Goal**
-3. Define the goal:
-   - **Title:** Clear, specific goal statement
-   - **Metric:** How you'll measure success (percent, currency, number)
-   - **Start Value:** Current baseline
-   - **End Value:** Target to achieve
-   - **Start/End Dates:** Timeframe
-   - **Status:** On Track, At Risk, or Miss
-
-### Linking Goals to Milestones
-
-Goals become actionable when linked to project milestones:
-
-1. In the goal details, click **Link Milestone**
-2. Select an existing milestone or create a new one
-3. As milestone tasks complete, goal progress updates automatically
-
-This dual tracking helps you:
-- **Identify warning signs:** Milestone progress on track but metrics not improving? Adjust your approach.
-- **Validate strategy:** When milestones correlate with metric improvements, your activities are working.
-- **Make decisions:** Data-driven resource allocation based on both execution and impact.
-
-### Linking Projects to Strategy
-
-To connect a project to your strategy:
-
-1. Open the project
-2. Click **Project Settings** (bottom left)
-3. Under **Part of Program or Strategy**, select your strategy
-
-Or create a new linked project directly from the Strategy Overview by clicking **New Project**.
-
----
-
 ## Recurring Tasks
 
 The Recurring Tasks plugin automatically creates tasks on a schedule, eliminating repetitive manual task creation.
@@ -203,111 +152,6 @@ The Recurring Tasks plugin automatically creates tasks on a schedule, eliminatin
 - **Weekly status reports:** Due every Friday
 - **Monthly invoicing:** Create on the 25th for month-end processing
 - **Quarterly reviews:** Appear 2 weeks before quarter end
-
----
-
-## Whiteboards
-
-The Whiteboards plugin provides a digital canvas for visual brainstorming and strategic planning.
-
-### Creating a Whiteboard
-
-1. In your project, click **Whiteboards** in the navigation
-2. Click **New Whiteboard**
-3. Name your whiteboard
-4. Start creating
-
-### Canvas Tools
-
-The whiteboard toolbar includes:
-
-| Tool | Function |
-|------|----------|
-| **Select** | Move and resize elements |
-| **Draw** | Freehand drawing |
-| **Shapes** | Rectangles, circles, arrows, lines |
-| **Text** | Add text boxes |
-| **Sticky Notes** | Color-coded notes |
-| **Connector** | Link elements with lines |
-
-### Working with Elements
-
-**Move:** Click and drag any element.
-
-**Resize:** Select an element and drag the corner handles.
-
-**Color:** Select an element and use the color picker.
-
-**Layer:** Right-click for bring to front/send to back options.
-
-**Delete:** Select and press Delete or use the trash icon.
-
-### Templates
-
-Whiteboards include pre-built templates:
-
-- **Mind Map:** Central idea with branching thoughts
-- **Flowchart:** Process visualization
-- **SWOT Analysis:** Strengths, Weaknesses, Opportunities, Threats grid
-- **Kanban Layout:** Visual task board structure
-- **Blank Canvas:** Start from scratch
-
-### Connecting to Projects
-
-Whiteboard elements can link to Leantime items:
-
-1. Select a shape or sticky note
-2. Click the link icon
-3. Search for a task, milestone, or goal
-4. The element now links to that item
-
-This connects visual planning to actual work execution.
-
----
-
-## Program Management
-
-The Program Management plugin coordinates multiple related projects under a unified view.
-
-### Creating a Program
-
-1. Click the **project dropdown**
-2. Select **Start Something New**
-3. Choose **Create a Plan** (Program)
-4. Configure:
-   - **Program Name**
-   - **Description**
-   - **Start/End Dates**
-   - **Program Manager**
-
-### Adding Projects to a Program
-
-1. Open an existing project
-2. Go to **Project Settings**
-3. Under **Part of Program or Strategy**, select your program
-
-Or create new projects directly within the program view.
-
-### Program Overview
-
-The program dashboard shows:
-
-- **Project Status:** Health indicators for each project
-- **Timeline:** Gantt view of all project milestones
-- **Resource Allocation:** Team capacity across projects
-- **Risk Register:** Aggregated risks from all projects
-- **Documentation:** Program-level documents and decisions
-
-### Cross-Project Visibility
-
-Program Management enables:
-
-- **Dependency tracking** between projects
-- **Resource conflicts** identification
-- **Milestone alignment** across the portfolio
-- **Consolidated reporting** for stakeholders
-
----
 
 ## Notes
 
@@ -394,37 +238,7 @@ The Pomodoro technique is particularly helpful for:
 - **Taking breaks:** Built-in rest prevents burnout
 - **Tracking time:** Visual progress creates momentum
 
----
+## Getting help
 
-## Tips for Plugin Success
-
-### Start Simple
-
-Enable one or two plugins initially. Master them before adding more. Too many features at once can overwhelm rather than help.
-
-### Custom Fields Strategy
-
-- Don't create fields "just in case"—add them when you have a clear use
-- Use conditions to keep tasks clean for projects that don't need certain fields
-- Review periodically and remove unused fields
-
-### Goal-Setting Best Practices
-
-- Make goals specific and measurable
-- Link to milestones for automatic progress tracking
-- Use status indicators honestly—"At Risk" early is better than "Miss" late
-
-### Recurring Tasks
-
-- Start with truly repetitive tasks (reports, meetings, reviews)
-- Set appropriate lead times so tasks appear with enough notice
-- Review recurring patterns quarterly to remove obsolete ones
-
----
-
-## Getting Help
-
-- **Documentation:** [docs.leantime.io](https://docs.leantime.io)
-- **Support Articles:** [support.leantime.io](https://support.leantime.io)
-- **Community Forum:** [community.leantime.io](https://community.leantime.io)
-- **Discord:** [Leantime Discord](https://discord.gg/4zMzJtAq9z)
+- **Something not working?** See [Plugin licenses, updates and problems](installation/plugin-licenses.md).
+- **Questions:** ask in the [Leantime Discord](https://discord.gg/4zMzJtAq9z) or the [community forum](https://community.leantime.io).
