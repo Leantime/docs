@@ -32,10 +32,10 @@ Changing a project's team needs the Company Manager role or higher.
 
 ## Who can see a project?
 
-**Who can access this project?**, in the project's **Project Details**, decides who can open it:
+**Who can access this project?**, in the project's **Project Details**, decides who can open it. The project's team members can always open it; the other two options let more people in:
 
 - **Only the users I choose under 'Team'** (the default): only the team members.
-- **Everyone assigned to this client:** everyone whose user account has the project's client.
+- **Everyone assigned to this client:** the team members, plus everyone whose user account has the project's client.
 - **Everyone in this organization:** everyone with a Leantime account.
 
 Administrators and Owners can open every project, whatever this is set to.
