@@ -31,10 +31,11 @@
 **AI with Leantime**
 
 - [Overview](ai/README.md)
+- [AI in Leantime Cloud (L.E.O.)](ai/leantime-cloud-ai.md)
+- [MCP server: connect your own assistant](installation/leantime-mcp.md)
 - [Working with AI assistants](ai/working-with-ai.md)
 - [Glossary](ai/glossary.md)
 - [Keycloak SSO with an AI assistant](ai/keycloak-sso.md)
-- [MCP server](installation/leantime-mcp.md)
 
 **Development**
 

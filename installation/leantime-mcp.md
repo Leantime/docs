@@ -389,6 +389,56 @@ The assistant works best when you are specific about **which project** and **wha
 - "Search Leantime for anything about 'invoice export'."
 - "What did people comment on in the Mobile App project since Monday?"
 
+### Workflows
+
+A few routines that work well once the assistant is connected. Adjust the project names and dates to yours.
+
+**Morning briefing.** Start the day with one question instead of five open tabs:
+
+```
+Give me my standup: what I finished yesterday, what's due today,
+and anything overdue or blocked.
+```
+
+**Capture work from an email or a meeting.** Paste the notes and ask for to-dos:
+
+```
+Create to-dos in the Product Roadmap project from these meeting notes.
+Assign them to me, set the due dates mentioned, and add a comment to each:
+"Action item from the March 3 product meeting".
+```
+
+**Plan your week.**
+
+```
+Look at my open to-dos across all projects. Schedule them across this week
+by due date and effort: longer tasks in the mornings, small ones in the
+afternoons. Keep Friday afternoon free.
+```
+
+**Catch up on your timesheet.**
+
+```
+Compare my calendar and the to-dos I finished this week with the time I logged.
+Which to-dos have no time? Then log what I tell you, as Development.
+```
+
+**Write a client update.**
+
+```
+Write a status report for the Acme Website project: overall health
+(green, yellow or red), what was finished this week, what's in progress,
+upcoming milestones, risks, and hours logged this month.
+```
+
+**Set up a new project.**
+
+```
+Create milestones in the Mobile App v2 project: Discovery (Jan 15 to Jan 31),
+Design (Feb 1 to Feb 28), Build (Mar 1 to Mar 31) and Testing (Apr 1 to Apr 15).
+Then suggest the first to-dos for Discovery, and wait for my OK before creating them.
+```
+
 ## Running an AI agent as a team member
 
 You can have an AI agent pick up and work on tasks next to your team. Set it up so its work is visible and easy to undo:
@@ -489,7 +539,7 @@ Not with a token setting yet. Use your assistant's tool approval settings to all
 No. The only tool that deletes anything is `deleteEvent`, for calendar events. The assistant can still change tasks (status, assignee, dates), so keep approvals on for changes.
 
 **I used the `leantime-mcp` npm package before. Do I need to change anything?**
-Yes. The npm bridge is deprecated. Replace it with one of the configurations in Step 3. Your existing token keeps working.
+Yes. The npm bridge is deprecated. Replace it with one of the configurations in Step 3. Your existing token keeps working. Then remove the old package with `npm uninstall -g leantime-mcp`.
 
 **Is there an MCP server that works without the plugin?**
 There is a community project, [daniel-eder/leantime-mcp](https://github.com/daniel-eder/leantime-mcp), that uses Leantime's [JSON-RPC API](api/usage.md) with an API key. It isn't maintained by the Leantime team.
