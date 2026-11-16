@@ -16,7 +16,7 @@ The timer shows at the top of the page, next to the menu, while it runs. When yo
 Good to know:
 
 - **One timer at a time.** While a timer runs, other to-dos show **Timer set on another To-Do**.
-- **Less than a minute isn't logged.** If you stop the timer within a minute, nothing is saved.
+- **Very short sessions aren't logged.** Leantime rounds the time to hundredths of an hour. If you stop the timer in under 54 seconds, nothing is saved; from 54 seconds on, it saves at least 0.02 hours.
 - **Moving the to-do to a Done status stops its timer** and logs the time.
 - **On My Work,** the play button on a to-do in **My ToDos** starts and stops the same timer.
 
