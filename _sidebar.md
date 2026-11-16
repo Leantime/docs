@@ -54,10 +54,13 @@
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
 - [Projects](using-leantime/managing-projects.md)
 - [Clients](using-leantime/managing-clients.md)
+- [User Management](using-leantime/user-management.md)
 - [Notifications](using-leantime/notifications.md)
 - [Goals](using-leantime/goals.md)
+- [Ideas](using-leantime/idea-management.md)
 - [Docs](using-leantime/docs.md)
 - [Blueprints](using-leantime/blueprints.md)
+- [Retrospectives](using-leantime/retrospectives.md)
 - [Reports](using-leantime/reports.md)
 
 **Everything Else**

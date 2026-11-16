@@ -1,58 +1,54 @@
-# Idea Management
+# Ideas
 
-Project life is dynamic.  While you're building one thing, you are likely working on another piece of it.  The Idea Wall & Idea Kanban in Leantime is set up in order
-for the team to share, track, and implement ideas in the full product lifecycle.  
+Good ideas turn up in the middle of other work and get lost. The Ideas board in each project gives them a place: write them down, talk them over, and move the promising ones forward until they become real work.
 
-When you first open up the board, your screen should look like this:
+![The Ideas board of Open the Eastside pantry in Kanban view: ideas in New Idea, Discovery, Delivering and Accepted, with Add Idea outlined](../_images/using-leantime/ideas-kanban.webp)
 
-![logo](../_images/getting-started/ideasthebeginning.png)
+## How do I add an idea?
 
-Here you'll see 7 button options.
+1. **Open the project** and click **Ideas** in the left menu, under **Think**.
+2. **Click Add Idea.**
+3. **Give it a short name,** and describe it below. Add tags if they help you find it later.
+4. **Click Save & Close,** or **Save** to keep it open.
 
-**Add Idea** <br>
-**Board Title**:  This drop down menu allows you to select which board you are working on. <br>
-**Create New Board**: As stated, start a new one.<br>
-**Edit Board**: This lets you modify the title of the board.<br>
-**Idea Wall**: is the primary view that simply shows ideas. <br>
-**Idea Kanban**: is the workable idea board view; quickly see the status of your ideas<br>
-**Delete Board**
+New ideas start as **New Idea**. Adding and changing ideas needs the Editor role or higher; Commenters can join the discussion.
 
-Click *Add Idea* to get started:
+## How do I move an idea forward?
 
-![logo](../_images/getting-started/ideasaddidea.png)
+Each idea has a status, shown as a column in the **Kanban** view:
 
-On a new Idea screen, you'll find a place to name the idea, a description area and a Save and a Save & Close button.
+| Status | Use it for |
+| --- | --- |
+| **New Idea** | Just written down |
+| **Discovery** | Finding out more: is it needed, would it work? |
+| **Delivering** | Being worked on |
+| **In Review** | Done, and being checked |
+| **Accepted** | It worked, and it's part of how you do things now |
+| **Deferred** | Not now, maybe later |
 
-When you click *Save*, you'll move to this screen:
+Drag a card to another column, or change the status from the chip on the card. A Company Manager can rename the columns with the pencil next to each name.
 
-![logo](../_images/getting-started/ideassaved.png)
+## How do I turn an idea into work?
 
-#### Milestones
-Remember all the milestones you plugged in already?  This is where you can add your ideas to them.  Not all ideas will need to be attached to a milestone
-but as they relate to your projects, may cause changes, or simply as you have ideas about project planning -- this will be the place to plug in.
-If you don't have any milestones set up, you can create a new one from this screen in the same way you would have from the research board.
+Open the idea. Once it's saved, **Linked Milestone** lets you **create and link a new milestone** or **link an existing milestone**. Add the to-dos to that milestone, and the idea stays connected to the work that delivers it.
 
-![logo](../_images/getting-started/ideasmilestone.png)
+Use the **Discussion** at the bottom of the idea to talk it over with the team.
 
-To add an existing milestone, click on the *Attach an Existing Milestone* button and the above screen will come up.  You might also notice that there
-is text on the bottom of the screen that reads, "Nothing so far".  This is just to let you know that there is no discussion on this idea currently.
+## Wall or Kanban?
 
-#### Idea Wall
+Switch views at the top of the page:
 
-Once you've saved all the relevant pieces to that initial idea and *Close* the tab, your Idea board will default to the Idea Wall view.  It looks like this: 
+- **Wall:** all ideas as cards, for browsing and collecting.
+- **Kanban:** the ideas sorted into columns by status, for moving them forward.
 
-![logo](../_images/getting-started/ideawall.png)
+Leantime opens the view you used last.
 
-#### Idea Kanban
+## Can I have more than one idea board?
 
-This is the location for your working ideas (or the resting place for the ones on hold).  Similar to the the traditional kanban for task management, you will 
-see that you have 6 boxes that your ideas can sit under.
+Yes. A board called **Board** is made for you the first time you open Ideas. To start another one, for a different theme or season, click the board name at the top and choose **Create New Board**. Use the **⋮** menu at the top right to rename or delete a board; deleting a board deletes its ideas.
 
-To move an idea between boxes, simply click it and drag it to the appropriate category.
+## Related
 
-
-![logo](../_images/getting-started/ideakanban.png)
-
-![logo](../_images/getting-started/ideainreview.png)
-
-Now it's time to come up with the next great idea.  Click [here](knowledge-base/idea-management.md) to read more on Idea Management.
+- [Design thinking](knowledge-base/idea-development.md): generating and testing ideas
+- [Milestones](using-leantime/roadmap-planning.md)
+- [Blueprints](using-leantime/blueprints.md): boards for thinking through a problem
