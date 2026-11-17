@@ -39,6 +39,7 @@ Trying Leantime Cloud? The marketplace plugins are switched on there (except Adv
 | [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/): mind maps, sketches and wireframes | Plugin | Yes |
 | [Notes](https://marketplace.leantime.io/product/leantime-notes/): private notes on your dashboard | Plugin | Yes |
 | [Pomodoro Timer](https://marketplace.leantime.io/product/leantime-pomodoro/): focus sessions with breaks | Plugin | Yes |
+| [Daily Intentions](plugins/daily-intentions.md): plan when you'll start a to-do and what the first step is | No, Leantime Cloud only | Yes |
 | [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/): coordinate several projects as one program | Plugin | Yes |
 | [Leantime Strategies](https://marketplace.leantime.io/product/leantime-strategies/): connect projects to long-term strategy | Plugin | Yes |
 
