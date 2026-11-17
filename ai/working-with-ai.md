@@ -6,7 +6,7 @@ AI assistants like Claude, ChatGPT, Copilot and Cursor can help you install, con
 
 - **Explaining** a guide step or an error message in plain words.
 - **Writing** configuration for your situation: an `.env` file, a `docker-compose.yml`, an Nginx site.
-- **Doing the steps** for you, if it's a coding agent that can run commands (Claude Code, Cursor, Codex). See the [Keycloak single sign-on walkthrough](ai/keycloak-sso.md), which an AI assistant carried out.
+- **Doing the steps** for you, if it's a coding agent that can run commands (Claude Code, Cursor, Codex). See the [Keycloak single sign-on walkthrough](installation/keycloak-sso.md), which an AI assistant carried out.
 - **Working inside Leantime:** finding to-dos, logging time and updating projects for you, with the [MCP server](installation/leantime-mcp.md).
 
 ## How do I give the assistant the right information?

@@ -76,5 +76,5 @@ Turn off **Send push notifications through Leantime's relay** in Company Setting
 
 - [Leantime on your phone](using-leantime/mobile-app.md)
 - [Notifications](using-leantime/notifications.md)
-- [Advanced Authentication plugin](installation/plugin-installation.md#advanced-auth-plugin)
+- [Advanced Authentication plugin](plugins/advanced-authentication.md)
 - [Authentication](installation/authentication-configuration.md)

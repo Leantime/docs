@@ -22,6 +22,7 @@
     - [Plugin](installation/plugin-installation.md)
         - [Plugin Licenses & Updates](installation/plugin-licenses.md)
     - [Authentication](installation/authentication-configuration.md)
+        - [Keycloak SSO](installation/keycloak-sso.md)
     - [Mobile app](installation/mobile-app-setup.md)
     - [Project Integrations](using-leantime/integrations.md)
    - [Backup & Restore](installation/backup-restore.md)
@@ -38,7 +39,6 @@
 - [MCP server: connect your own assistant](installation/leantime-mcp.md)
 - [Working with AI assistants](ai/working-with-ai.md)
 - [Glossary](ai/glossary.md)
-- [Keycloak SSO with an AI assistant](ai/keycloak-sso.md)
 
 **Development**
 
@@ -96,6 +96,7 @@
     - [Strategy Pro](plugins/strategy-pro.md)
     - [Programs](plugins/programs.md)
     - [Whiteboards](plugins/whiteboards.md)
+    - [Advanced Authentication](plugins/advanced-authentication.md)
  - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md)
 
 **External Links**
