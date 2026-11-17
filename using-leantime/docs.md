@@ -47,6 +47,8 @@ The toolbar above the text has the everyday formatting: bold, italic, lists, lin
 - **Drafts** only show in the **Contents** list for the person who wrote them, so the team doesn't come across unfinished pages. A draft isn't private, though: anyone who can see the project can still open it with its link. Don't put anything in a draft that the project team shouldn't read.
 - Writing and changing docs needs the **Editor** role or higher in the project.
 
+For notes only you can see, use the [Notes](plugins/notes.md) plugin instead.
+
 Each doc also keeps an **Activity** list under **Details** (who created it, renamed it or changed the text) and has a **Discussion** at the bottom for comments.
 
 ## What if something goes wrong?

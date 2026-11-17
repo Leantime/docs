@@ -32,6 +32,8 @@ Click a to-do's title to open it. The **Details** tab holds everything about it:
 
 Below the form are the to-do's **Subtasks** and the **Discussion**, where your team comments and @mentions each other. The other tabs hold the to-do's **Files**, its **Time Tracking** and its **History**.
 
+Need a field Leantime doesn't have, like a budget code? The [Custom Fields](plugins/custom-fields.md) plugin adds your own. To-dos that come back every week or month can repeat on their own with [Recurring to-dos](plugins/recurring-todos.md).
+
 ## Can a to-do have more than one person?
 
 A to-do has one **assignee**, who owns it, so it's always clear who moves it forward. Anyone else who works on it or needs to follow it goes in **Collaborators**.

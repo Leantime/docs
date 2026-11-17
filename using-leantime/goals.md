@@ -66,6 +66,8 @@ The **Goal Dashboard** (click **Goals** in the left menu) shows every goal in th
 
 Yes. Goals sit on boards, and Leantime calls each board a **Big Rock**: a big priority with its own goals, like "Grow online sales" or "Q1". To add one, open a board by clicking its name on the Goal Dashboard, open the menu next to **Goals** at the top, and click **Create a new Big Rock**. On the Goal Dashboard, **All Goal Groups** lets you show one board at a time.
 
+With the [Strategy Pro](plugins/strategy-pro.md) plugin, a project goal can also count toward a bigger goal of your organization, so the strategy's number moves as your projects make progress (see [How do my projects' goals count toward the strategy?](plugins/strategy-pro.md#how-do-my-projects-goals-count-toward-the-strategy)).
+
 ## What if something goes wrong?
 
 - **I don't see Goals in the left menu.** Goals may be switched off for this project on the **Modules** tab of **Project Settings**.

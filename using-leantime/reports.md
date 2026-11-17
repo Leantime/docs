@@ -59,6 +59,13 @@ Both are right: the report gives more weight to the urgent to-do that's already 
 
 **The estimated finish date.** Once 10 or more to-dos in the project are done, Leantime estimates when the project will be finished from how fast work has been getting done since the first to-do. Until then, the top of the Status Report says "Complete more To-Dos to see that!".
 
+## Can I see one report for several projects?
+
+The reports here cover one project. With plugins you can report on more:
+
+- **[Programs](plugins/programs.md):** a program's **Report** covers all its projects, including how much of each person's time is booked and where the program is short of people.
+- **[Strategy Pro](plugins/strategy-pro.md):** a strategy's **Report** (in beta) adds up its programs and shows how the work connects to the change you're working toward, for your board or funders.
+
 ## How do I share a report?
 
 Click **Print** at the top of the Status Report. Your browser's print window opens, where you can print it or save it as a PDF to send.

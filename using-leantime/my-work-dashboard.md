@@ -33,7 +33,7 @@ For more on calendars, see [Calendars](using-leantime/calendars.md).
 ## How do I add, remove or move widgets?
 
 1. **Click Update Dashboard**, the gear button at the top right of My Work.
-2. **Switch widgets on or off** in the Widget Manager: **My ToDos**, **Calendar** and **My Projects** (your projects, favorites first). Some plugins add more widgets.
+2. **Switch widgets on or off** in the Widget Manager: **My ToDos**, **Calendar** and **My Projects** (your projects, favorites first). Some plugins add more widgets, like the [Pomodoro timer](plugins/pomodoro.md), [Notes](plugins/notes.md) and, on Leantime Cloud, [Daily Intentions](plugins/daily-intentions.md).
 3. **Close the Widget Manager.**
 
 ![The Widget Manager with switches for My ToDos, Calendar and My Projects, and a Reset Dashboard button](../_images/using-leantime/mywork-widget-manager.webp)
