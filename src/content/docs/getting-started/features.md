@@ -45,6 +45,7 @@ Trying Leantime Cloud? The marketplace plugins are switched on there (except Adv
 | [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/): mind maps, sketches and wireframes | Plugin | Yes |
 | [Notes](https://marketplace.leantime.io/product/leantime-notes/): private notes on your dashboard | Plugin | Yes |
 | [Pomodoro Timer](https://marketplace.leantime.io/product/leantime-pomodoro/): focus sessions with breaks | Plugin | Yes |
+| [Daily Intentions](/plugins/daily-intentions/): plan when you'll start a to-do and what the first step is | No, Leantime Cloud only | Yes |
 | [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/): coordinate several projects as one program | Plugin | Yes |
 | [Leantime Strategies](https://marketplace.leantime.io/product/leantime-strategies/): connect projects to long-term strategy | Plugin | Yes |
 
@@ -92,6 +93,7 @@ The app is the personal side of your workspace:
 - **Tasks:** browse, add, update and check off to-dos.
 - **Notes:** capture a thought and keep it with your projects. On a self-hosted server, this also needs the [Notes](https://marketplace.leantime.io/product/leantime-notes/) plugin.
 - Your calendar, timesheet, progress and notifications.
+- **Phone notifications** when someone assigns you a to-do, mentions you or comments on your work. On a self-hosted server, an administrator [turns them on](/installation/mobile-app-setup/#how-do-i-turn-on-phone-notifications) first.
 
 ### AI
 
@@ -173,11 +175,11 @@ Yes. **Milestones** shows your milestones on a timeline, and you can show their 
 
 #### Can I create recurring to-dos?
 
-Yes, with the [Recurring Tasks](https://marketplace.leantime.io/product/recurring-tasks/) plugin. It creates to-dos daily, weekly, monthly or yearly, for example for stand-ups or monthly reviews. See [Using plugins](/installation/using-plugins/#recurring-tasks).
+Yes, with the [Recurring Tasks](https://marketplace.leantime.io/product/recurring-tasks/) plugin. It creates to-dos daily, weekly, monthly or yearly, for example for stand-ups or monthly reviews. See [Recurring to-dos](/plugins/recurring-todos/).
 
 #### Can I add custom fields to to-dos?
 
-Yes, with the [Custom Fields](https://marketplace.leantime.io/product/leantime-customfields/) plugin: text, number, dropdown, checkbox and more. See [Using plugins](/installation/using-plugins/#custom-fields).
+Yes, with the [Custom Fields](https://marketplace.leantime.io/product/leantime-customfields/) plugin: text, number, dropdown, checkbox and more. See [Custom fields](/plugins/custom-fields/).
 
 #### Does Leantime have a wiki?
 
@@ -205,7 +207,7 @@ Yes. In **My Calendar**, open **Integrate Calendar**, create your iCal URL and s
 
 #### Does Leantime support single sign-on (SSO)?
 
-Yes, on self-hosted Leantime: OpenID Connect and LDAP / Active Directory are built in; see [Authentication](/installation/authentication-configuration/). They aren't available on Leantime Cloud. The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin adds SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more; see [Advanced Auth](/installation/plugin-installation/#advanced-auth-plugin).
+Yes, on self-hosted Leantime: OpenID Connect and LDAP / Active Directory are built in; see [Authentication](/installation/authentication-configuration/). They aren't available on Leantime Cloud. The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin adds SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more; see [Advanced Auth](/plugins/advanced-authentication/).
 
 #### Does Leantime have two-factor authentication?
 

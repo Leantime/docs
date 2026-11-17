@@ -70,6 +70,7 @@ const CHILD_PAGES = {
 		'blueprints/risk-analysis',
 		'blueprints/environment-analysis',
 		'blueprints/insights|Observe / Learn: Insights',
+		'blueprints/logic-model|Logic Model',
 	],
 };
 const useLeantimeEntry = ([page, menuLabel]) => {
@@ -94,7 +95,6 @@ const AI_PAGES = [
 	'installation/leantime-mcp|MCP server: connect your assistant',
 	'ai/working-with-ai',
 	'ai/glossary|Glossary',
-	'ai/keycloak-sso|Keycloak SSO with an AI assistant',
 ];
 const PLUGIN_PAGES = [
 	'installation/using-plugins|Overview',
@@ -105,6 +105,8 @@ const PLUGIN_PAGES = [
 	'plugins/recurring-todos',
 	'plugins/notes',
 	'plugins/pomodoro',
+	'plugins/daily-intentions',
+	'plugins/advanced-authentication',
 ];
 const CONCEPT_PAGES = [
 	'knowledge-base|Overview',
@@ -114,6 +116,7 @@ const CONCEPT_PAGES = [
 	'knowledge-base/kanban',
 	'knowledge-base/phasesofproject',
 	'knowledge-base/idea-development',
+	'knowledge-base/logic-model|Logic models',
 ];
 
 /**
@@ -234,6 +237,11 @@ const gtag = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.pu
 
 export default defineConfig({
 	site: SITE,
+	// Pages that moved after the first docsify-to-Starlight conversion. Old docsify hash links
+	// (/#/ai/keycloak-sso) reach these paths through legacyRedirect first.
+	redirects: {
+		'/ai/keycloak-sso': '/installation/keycloak-sso/',
+	},
 	integrations: [
 		starlight({
 			title: 'Leantime Documentation',
@@ -326,6 +334,7 @@ export default defineConfig({
 								{ label: 'Installing plugins', slug: 'installation/plugin-installation' },
 								{ label: 'Plugin licenses & updates', slug: 'installation/plugin-licenses' },
 								{ label: 'Authentication', slug: 'installation/authentication-configuration' },
+								{ label: 'Keycloak SSO', slug: 'installation/keycloak-sso' },
 								{ label: 'Mobile app', slug: 'installation/mobile-app-setup' },
 							],
 						},

@@ -25,7 +25,7 @@ Leantime supports multiple authentication methods to integrate with your organiz
 | **Built-in** | Small teams, simple setup | None (default) |
 | **OIDC** | SSO with modern identity providers | OIDC-compliant provider |
 | **LDAP** | Enterprise Active Directory / OpenLDAP | LDAP server access |
-| **AdvancedAuth plugin** | Sign-in buttons for Google, Microsoft, GitHub and other providers, or SAML 2.0 | [AdvancedAuth plugin](/installation/plugin-installation/#advanced-auth-plugin) |
+| **AdvancedAuth plugin** | Sign-in buttons for Google, Microsoft, GitHub and other providers, or SAML 2.0 | [AdvancedAuth plugin](/plugins/advanced-authentication/) |
 
 ---
 
@@ -83,6 +83,8 @@ LEAN_OIDC_CLIENT_SECRET=your-client-secret
 
 Keycloak users whose email isn't marked as verified are refused (see **Verified emails** above).
 
+For every step, and the errors you might hit, see [Set up Keycloak single sign-on](/installation/keycloak-sso/).
+
 #### Authentik
 
 ```env
@@ -129,7 +131,7 @@ LEAN_OIDC_CLIENT_ID=your-github-client-id
 LEAN_OIDC_CLIENT_SECRET=your-github-client-secret
 ```
 
-> **Warning: don't use this for sign-in in production.** `0.email` is simply the first address GitHub lists for the user. It can be an address they added but never verified, and core OIDC only checks a top-level `email_verified` claim, which GitHub doesn't send. Because users are matched by email, someone could add an existing colleague's address to their GitHub account and sign in as that colleague. Use the [AdvancedAuth plugin's GitHub provider](/installation/plugin-installation/#advanced-auth-plugin) instead: it only uses the primary, verified address.
+> **Warning: don't use this for sign-in in production.** `0.email` is simply the first address GitHub lists for the user. It can be an address they added but never verified, and core OIDC only checks a top-level `email_verified` claim, which GitHub doesn't send. Because users are matched by email, someone could add an existing colleague's address to their GitHub account and sign in as that colleague. Use the [AdvancedAuth plugin's GitHub provider](/plugins/advanced-authentication/) instead: it only uses the primary, verified address.
 
 #### Azure AD / Entra ID
 
@@ -362,7 +364,7 @@ The session cookie isn't being kept:
 
 ### There's No Password Field on the Login Page
 
-Either `LEAN_DISABLE_LOGIN_FORM=true` is set, or the AdvancedAuth plugin's **Hide Login Form** setting is on. See the [AdvancedAuth plugin docs](/installation/plugin-installation/#advanced-auth-plugin) for how to turn it back on from the server.
+Either `LEAN_DISABLE_LOGIN_FORM=true` is set, or the AdvancedAuth plugin's **Hide Login Form** setting is on. See the [AdvancedAuth plugin docs](/plugins/advanced-authentication/) for how to turn it back on from the server.
 
 ---
 

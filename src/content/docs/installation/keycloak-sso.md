@@ -1,5 +1,5 @@
 ---
-title: "Set up Keycloak single sign-on (with an AI assistant)"
+title: "Set up Keycloak single sign-on (SSO)"
 description: "Connect self-hosted Leantime to Keycloak with OpenID Connect, no plugin needed: create the realm and client, set the LEAN_OIDC variables and fix common errors."
 head:
   - tag: title
@@ -22,7 +22,7 @@ glance:
 Your team can sign in to Leantime with their Keycloak accounts, using the OpenID Connect (OIDC) support built into Leantime. No plugin is needed for the web app. This guide gives every step for doing it by hand, and the prompts to use if an AI assistant is helping you.
 
 :::note
-**How this guide was made.** An AI assistant (Claude Code) set this up from scratch on 12 November 2026, with Leantime 3.14.0 and Keycloak 26.8.2 in Docker, and a person checked the result. It hit two errors along the way. They're in [What can go wrong?](/ai/keycloak-sso/#what-can-go-wrong) with their fixes, because you might hit them too.
+**How this guide was made.** An AI assistant (Claude Code) set this up from scratch on 12 November 2026, with Leantime 3.14.0 and Keycloak 26.8.2 in Docker, and a person checked the result. It hit two errors along the way. They're in [What can go wrong?](/installation/keycloak-sso/#what-can-go-wrong) with their fixes, because you might hit them too.
 :::
 
 ## How does Keycloak sign-in work?
@@ -103,7 +103,7 @@ Then apply the settings. In Docker, run `docker compose up -d`; a restart alone 
 
 `LEAN_OIDC_PROVIDER_URL` isn't exactly the issuer in Keycloak's token. Copy the `issuer` value from `https://auth.example.com/realms/leantime/.well-known/openid-configuration` and paste it as the setting.
 
-This happened in our test because Leantime and Keycloak ran on the same computer. See [Testing on one machine](/ai/keycloak-sso/#testing-on-one-machine).
+This happened in our test because Leantime and Keycloak ran on the same computer. See [Testing on one machine](/installation/keycloak-sso/#testing-on-one-machine).
 
 ### "Your identity provider reports that the email address of your account is not verified."
 
@@ -138,7 +138,7 @@ Yes, with the same Keycloak client; there's nothing extra to set up in Keycloak.
 
 An AI assistant that can run commands (Claude Code, Cursor, Codex or similar) can do most of this setup. A chat assistant (Claude, ChatGPT) can guide you step by step. Either way, give it the facts first, so it doesn't guess setting names.
 
-**1. Give it this guide.** Give it the Markdown address `https://docs.leantime.io/ai/keycloak-sso.md`, or open that address and paste the text into the chat.
+**1. Give it this guide.** Give it the Markdown address `https://docs.leantime.io/installation/keycloak-sso.md`, or open that address and paste the text into the chat.
 
 **2. Tell it your setup.** For example:
 
@@ -162,5 +162,5 @@ I'll put it into .env myself.
 ## Related
 
 - [Authentication: OIDC, LDAP and single sign-on](/installation/authentication-configuration/): every OIDC setting
-- [Advanced Authentication plugin](/installation/plugin-installation/#advanced-auth-plugin): ready-made Keycloak, Google, Microsoft and GitHub sign-in, SAML, and mobile app sign-in
+- [Advanced Authentication plugin](/plugins/advanced-authentication/): ready-made Keycloak, Google, Microsoft and GitHub sign-in, SAML, and mobile app sign-in
 - [Working with AI assistants](/ai/working-with-ai/)

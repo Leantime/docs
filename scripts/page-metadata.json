@@ -467,26 +467,6 @@
     "searchTitle": "Move Leantime to a new server (Docker or package)",
     "description": "Move a self-hosted Leantime to a new server: copy the database, uploaded files, plugins and settings for Docker or a package install, then check it all works."
   },
-  "ai/keycloak-sso.md": {
-    "edition": "self-hosted",
-    "glance": {
-      "minutes": 30,
-      "level": "Some experience",
-      "needs": [
-        "Leantime 3.13.2 or later (older versions don't send PKCE; leave **Require PKCE** off on those)",
-        "A Keycloak server, with an administrator account"
-      ],
-      "where": [
-        "The Keycloak admin console",
-        "Leantime's `.env` file, or the Leantime container's environment",
-        "A terminal on the Leantime server, to apply the settings",
-        "Leantime's login page, in a private browser window"
-      ],
-      "result": "An **OIDC Login** button on Leantime's login page that signs people in with Keycloak. People who sign in for the first time get a Leantime account automatically, if you allow it."
-    },
-    "searchTitle": "Set up Keycloak single sign-on (SSO) for Leantime",
-    "description": "Connect self-hosted Leantime to Keycloak with OpenID Connect, no plugin needed: create the realm and client, set the LEAN_OIDC variables and fix common errors."
-  },
   "using-leantime/import-csv.md": {
     "glance": {
       "minutes": 10,
@@ -600,7 +580,23 @@
   },
   "installation/keycloak-sso.md": {
     "searchTitle": "Set up Keycloak single sign-on (SSO) for Leantime",
-    "description": "Connect self-hosted Leantime to Keycloak with OpenID Connect, no plugin needed: create the realm and client, set the LEAN_OIDC variables and fix common errors."
+    "description": "Connect self-hosted Leantime to Keycloak with OpenID Connect, no plugin needed: create the realm and client, set the LEAN_OIDC variables and fix common errors.",
+    "edition": "self-hosted",
+    "glance": {
+      "minutes": 30,
+      "level": "Some experience",
+      "needs": [
+        "Leantime 3.13.2 or later (older versions don't send PKCE; leave **Require PKCE** off on those)",
+        "A Keycloak server, with an administrator account"
+      ],
+      "where": [
+        "The Keycloak admin console",
+        "Leantime's `.env` file, or the Leantime container's environment",
+        "A terminal on the Leantime server, to apply the settings",
+        "Leantime's login page, in a private browser window"
+      ],
+      "result": "An **OIDC Login** button on Leantime's login page that signs people in with Keycloak. People who sign in for the first time get a Leantime account automatically, if you allow it."
+    }
   },
   "getting-started/features.md": {
     "searchTitle": "Leantime features: what it can and can't do",
@@ -678,14 +674,31 @@
   },
   "plugins/daily-intentions.md": {
     "searchTitle": "Daily Intentions: plan when you'll start a to-do",
-    "description": "Plan when you'll start a to-do and what the first step is, on your Leantime Cloud dashboard: set a daily intention, write one that works, and the research."
+    "description": "Plan when you'll start a to-do and what the first step is, on your Leantime Cloud dashboard: set a daily intention, write one that works, and the research.",
+    "edition": "cloud",
+    "plugin": {
+      "name": "Daily Intentions"
+    }
   },
   "plugins/advanced-authentication.md": {
     "searchTitle": "Advanced Authentication plugin: SSO, SAML and mobile sign-in",
-    "description": "Sign in to self-hosted Leantime with Google, Microsoft, GitHub, Okta, SAML 2.0 and more, and from the mobile app: set up providers, accounts and settings."
+    "description": "Sign in to self-hosted Leantime with Google, Microsoft, GitHub, Okta, SAML 2.0 and more, and from the mobile app: set up providers, accounts and settings.",
+    "edition": "self-hosted",
+    "plugin": {
+      "name": "Advanced Authentication",
+      "url": "https://marketplace.leantime.io/product/advanced-auth/"
+    }
   },
   "using-leantime/mobile-app.md": {
     "searchTitle": "Leantime mobile app for iPhone and Android",
     "description": "Use Leantime on your phone: get the app, connect it to Leantime Cloud or your own server, sign in with SSO, turn on notifications, and fix sign-in errors."
+  },
+  "blueprints/logic-model.md": {
+    "searchTitle": "Logic model template: how to fill one out in Leantime",
+    "description": "Fill out a logic model in Leantime: inputs, activities, outputs, outcomes and impact, with examples, then connect it to programs, milestones and goals."
+  },
+  "knowledge-base/logic-model.md": {
+    "searchTitle": "What is a logic model? Logic model vs theory of change",
+    "description": "What a logic model is, its five parts, the difference between outputs and outcomes, how to read it as if-then, and how it differs from a theory of change."
   }
 }

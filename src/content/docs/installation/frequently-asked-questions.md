@@ -409,15 +409,37 @@ Ensure:
 2. Set `LEAN_APP_URL` to your public URL
 3. Configure SSL termination correctly
 
-### How do I reset the admin password?
+### I'm locked out. How do I reset the admin password?
 
-If email is working, use the "Forgot Password" link. Otherwise, you'll need database access:
+**If email works,** click **Forgot password** on the sign-in page. Leantime emails a link to set a new password.
 
-```sql
-UPDATE zp_user SET password = '$2y$10$...' WHERE username = 'admin';
+**If email doesn't work,** you have two ways back in, both from the server. Run the commands in the Leantime folder; on Docker, put `docker compose exec leantime` in front of each `php` command.
+
+**Option 1: create a new Owner account.** Sign in with it, and you're back in charge of the workspace:
+
+```bash
+php bin/leantime user:add --email=you@example.com --password='a-long-new-password' --role=owner
 ```
 
-Generate a bcrypt hash for your new password using PHP or an online tool.
+The roles are `readonly`, `commenter`, `editor`, `manager`, `admin` and `owner`. Administrators can't set another person's password, so this doesn't unlock the old account; use option 2 for that, or [set up email](/installation/email-configuration/) and use **Forgot password**.
+
+**Option 2: set a new password in the database.**
+
+1. **Make a password hash** with Leantime's own PHP:
+
+   ```bash
+   php -r 'echo password_hash("a-long-new-password", PASSWORD_DEFAULT), PHP_EOL;'
+   ```
+
+   It prints a line that starts with `$2y$`. Don't use a website to make the hash: it would see your new password.
+2. **Open the database** (on Docker: `docker compose exec leantime_db sh -c 'exec mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"'`) and run this, with your hash and your sign-in email:
+
+   ```sql
+   UPDATE zp_user SET password = 'PASTE-THE-HASH-HERE' WHERE username = 'you@example.com';
+   ```
+
+   The `username` column holds the email address you sign in with.
+3. **Sign in** with the new password.
 
 ---
 

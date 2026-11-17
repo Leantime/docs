@@ -26,8 +26,10 @@ Strategies and programs come from the Leantime Strategies and Program Plans plug
 
 A Logic Model shows how your work leads to change: the **Inputs** you invest, the **Activities** you do, the **Outputs** they produce, the **Outcomes** you expect and the **Impact** you're working toward. Funders often ask for one.
 
-- **In core Leantime,** the Logic Model is a [Blueprint](/using-leantime/blueprints/#what-about-the-logic-model): a board you fill with cards, one per input, activity, output, outcome and impact.
-- **With the Leantime Strategies plugin,** the Logic Model sits inside your strategy and adds tracking and views, so you can follow your outcomes over time.
+- **In core Leantime,** the Logic Model is a [Blueprint](/blueprints/logic-model/): a board you fill with cards, one per input, activity, output, outcome and impact.
+- **With the [Strategy Pro](/plugins/strategy-pro/) plugin,** the Logic Model sits inside your strategy and connects to the work: build it from your programs, milestones and goals, rate how strong each link is, and turn it into milestones, to-dos and goals.
+
+How to fill one out, step by step: [Logic Model](/blueprints/logic-model/). New to logic models? See [What is a logic model?](/knowledge-base/logic-model/)
 
 ## How do I track outcomes for funders?
 

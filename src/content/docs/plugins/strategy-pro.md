@@ -82,7 +82,7 @@ A program goes under a strategy the same way, in its **Program Settings** (or **
 
 ## What are the Logic Model and Planning Boards?
 
-- **Logic Model** lays out how your work leads to results: what you put in, what you do, what that produces, and the change it makes. It's useful for funders and boards. See [Blueprints](/using-leantime/blueprints/).
+- **Logic Model** lays out how your work leads to results: what you put in, what you do, what that produces, and the change it makes. In a strategy it connects to the work: build it from your programs, milestones and goals, rate how strong each link is, and turn it into milestones, to-dos and goals. See [Logic Model](/blueprints/logic-model/).
 - **Planning Boards** are the [Blueprints](/using-leantime/blueprints/) boards, like a SWOT analysis or a Lean Canvas, for this strategy.
 
 ## Who can see and change a strategy?

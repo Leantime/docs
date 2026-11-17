@@ -30,7 +30,7 @@ On Leantime Cloud there's nothing to set up: the app and its notifications work 
 | **Leantime 3.10.2 or later** | Signing in with a company login (SSO) | |
 | **Leantime 3.15.4 or later** (pending release) | Phone notifications | Earlier versions push every change in a project to everyone on it. |
 | **The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin, enabled, with a valid license** | Everything in the app | It signs the app in with its own token, so the app never stores anyone's password, and access can be revoked without changing it. The relay for phone notifications checks the same license. See [installing a plugin](/installation/plugin-installation/). |
-| **HTTPS with a certificate from a public authority,** such as Let's Encrypt, at an address phones can reach | Signing in | Phones don't accept self-signed certificates. |
+| **HTTPS with a certificate from a public authority,** such as Let's Encrypt, at an address phones can reach | Signing in | Phones don't accept self-signed certificates. A certificate from your own authority works only once it's installed and trusted on each phone. |
 | **Outgoing HTTPS to `accounts.leantime.io`** | Phone notifications | Your server sends notifications through Leantime's relay (see below). |
 
 To check your version, click the **?** (help) icon at the top right of Leantime; the version is at the bottom, under **System**.
@@ -94,5 +94,5 @@ Turn off **Send push notifications through Leantime's relay** in Company Setting
 
 - [Leantime on your phone](/using-leantime/mobile-app/)
 - [Notifications](/using-leantime/notifications/)
-- [Advanced Authentication plugin](/installation/plugin-installation/#advanced-auth-plugin)
+- [Advanced Authentication plugin](/plugins/advanced-authentication/)
 - [Authentication](/installation/authentication-configuration/)

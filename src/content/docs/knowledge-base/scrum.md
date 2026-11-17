@@ -57,6 +57,7 @@ These aren't part of Scrum itself, but many Scrum teams use them.
 - **Estimating:** each to-do's **Effort** is a size, from "< 2min" and XS to XXL.
 - **Daily Scrum:** the To-Dos [Kanban board](/using-leantime/task-management/), showing the sprint.
 - **Burndown:** with sprints in use, **Delivery Metrics** in [Reports](/using-leantime/reports/) shows a Sprint Burndown.
+- **Velocity:** Leantime doesn't calculate it. To plan the next sprint, look at the **Effort** of the to-dos finished in recent ones, for example "3 XL, 2 M and 1 S".
 - **Retrospective:** the **Retrospectives** blueprint has Continue, Stop and Start columns. See [Retrospectives](/using-leantime/retrospectives/).
 - **Roles:** Leantime's user roles are about permissions, not Scrum accountabilities. A Product Owner or Scrum Master can have any role that lets them do their part.
 
