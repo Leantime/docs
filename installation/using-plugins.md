@@ -28,7 +28,7 @@ Plugins add features to Leantime. Each one does one job, like planning a strateg
 
 ### Sign in and connect other tools
 
-- **[Advanced Authentication](installation/plugin-installation.md?id=advanced-auth-plugin):** sign in with Google, Microsoft, GitHub, Okta and more, and from the [Leantime Mobile](https://leantime.io/mobile) app. Self-hosted only.
+- **[Advanced Authentication](installation/plugin-installation.md?id=advanced-auth-plugin):** sign in with Google, Microsoft, GitHub, Okta and more, and use the [Leantime Mobile](https://leantime.io/mobile) app, including phone notifications (see [Set up the mobile app](installation/mobile-app-setup.md)). Self-hosted only.
 - **[MCP Server](installation/leantime-mcp.md):** let AI assistants like Claude work with your Leantime projects.
 
 ## How do I switch a plugin on?

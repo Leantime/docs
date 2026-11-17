@@ -22,7 +22,7 @@ Click a notification to open what it's about.
 | Setting | What it does |
 |---|---|
 | **Receive email notifications** | Sends your notifications by email as well |
-| **Receive push notifications on your phone** | Sends them to the Leantime mobile app, on every phone you're signed in on |
+| **Receive push notifications on your phone** | Sends them to the [Leantime mobile app](using-leantime/mobile-app.md#can-i-get-notifications-on-my-phone), on every phone you're signed in on. On a self-hosted server, an administrator [turns them on](installation/mobile-app-setup.md#how-do-i-turn-on-phone-notifications) first |
 | **Email frequency** | The shortest wait between two update emails. Leantime collects what happens in between into one email, and doesn't send it if you've already read everything in Leantime |
 | **Notify me about** | Switches for each kind of change: Tasks & Milestones, Comments, Goals, Ideas, Project Updates, and Boards & Whiteboards |
 | **Per-Project Notifications** | How much you hear from each project (see below) |

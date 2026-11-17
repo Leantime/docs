@@ -22,6 +22,7 @@
     - [Plugin](installation/plugin-installation.md)
         - [Plugin Licenses & Updates](installation/plugin-licenses.md)
     - [Authentication](installation/authentication-configuration.md)
+    - [Mobile app](installation/mobile-app-setup.md)
     - [Project Integrations](using-leantime/integrations.md)
    - [Backup & Restore](installation/backup-restore.md)
    - [Move to a New Server](installation/move-server.md)
