@@ -24,7 +24,7 @@ User Management needs the Administrator role or higher. A Company Manager can in
 3. **Optional:** pick a different role for this project from the dropdown on their card (see the next section).
 4. **Click Save.**
 
-Someone who isn't in Leantime yet? Click **Create new user** on the same tab to invite them.
+Someone who isn't in Leantime yet? Click **Create new user** on the same tab to invite them, or **Invite User** in the **Team** box on the project's dashboard.
 
 ![The Team tab of the Open the Eastside pantry project: Ada, Ben, Chloe and Dev under Current Team Members, with Ben's project role (Editor) outlined, and Create new user](../_images/using-leantime/users-team.webp)
 

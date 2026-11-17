@@ -87,6 +87,7 @@ The app is the personal side of your workspace:
 - **Tasks:** browse, add, update and check off to-dos.
 - **Notes:** capture a thought and keep it with your projects. On a self-hosted server, this also needs the [Notes](https://marketplace.leantime.io/product/leantime-notes/) plugin.
 - Your calendar, timesheet, progress and notifications.
+- **Phone notifications** when someone assigns you a to-do, mentions you or comments on your work. On a self-hosted server, an administrator [turns them on](installation/mobile-app-setup.md#how-do-i-turn-on-phone-notifications) first.
 
 ### AI
 
