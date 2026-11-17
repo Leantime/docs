@@ -95,7 +95,7 @@ A program goes under a strategy the same way, in its **Program Settings** (or **
 
 ![The Resources & Coverage tab: 7 people assigned at 45% of capacity, no budget yet, a row for each program with its people and weekly hours, capacity against demand, and resource gaps to discuss](../_images/plugins/strategy-report-resources.webp)
 
-At the top right, the report says whether the strategy is **On track**, **At risk** or **Off track**. It comes from the strategy's latest status update, or, without one, from its goals; the line under it says which. To decide it yourself, open the menu (⋮) and choose under **Set verdict**. **Print** in the same menu prints the report, or saves it as a PDF.
+At the top right, the report says whether the strategy is **On track**, **At risk** or **Off track**. It comes from the strategy's latest status update, or, without one, from its goals; the line under it says which. To decide it yourself, open the menu (⋮) and choose under **Set verdict**; **Revert to metrics** goes back to the calculated one. **Print** in the same menu prints the report, or saves it as a PDF.
 
 **To get the most out of it:**
 
