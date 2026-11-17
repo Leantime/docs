@@ -30,7 +30,7 @@ Never set a customer project, or your internal projects, to **Everyone in this o
 
 ## Tips for client work in Leantime
 
-- **Track time per project** if you bill by the hour (see [Timesheets and time tracking](using-leantime/timesheets.md)).
+- **Track time per project** if you bill by the hour (see [Time tracking](using-leantime/timesheets.md)).
 - **Copy a project** for work you repeat, like onboarding a new customer (see [How do I copy or duplicate a project in Leantime?](using-leantime/managing-projects.md#how-do-i-copy-or-duplicate-a-project-in-leantime)).
 - **Star the projects you're busy with this week** so they sit at the top of your Project Hub. To see only one customer's projects, choose the customer under **All Clients**.
 - **Several projects for one big customer?** The Program Plans plugin groups them, so you can see the whole account in one place.

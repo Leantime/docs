@@ -242,7 +242,7 @@ The Advanced Auth plugin enables Single Sign-On (SSO) through various OAuth/SAML
 
 Advanced Authentication is a plugin for self-hosted Leantime; it isn't available on Leantime Cloud. [Get the plugin](https://marketplace.leantime.io/product/advanced-auth/).
 
-- **The Leantime Mobile app.** On a self-hosted server, the app for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile) can't sign in without this plugin, with a password or with a sign-in provider. With it, your team signs in on their phones, and two-factor authentication works there too (see [Mobile App Sign-In](#mobile-app-sign-in)).
+- **The Leantime Mobile app.** On a self-hosted server, the app for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile) can't sign in without this plugin, with a password or with a sign-in provider. With it, your team signs in on their phones, and two-factor authentication works there too (see [Mobile App Sign-In](#mobile-app-sign-in) and [Leantime on your phone](using-leantime/mobile-app.md)).
 - **Sign-in buttons for the accounts people already have:** Google, Microsoft, GitHub, GitLab, Gitea, Okta, Keycloak, Authentik, Auth0, PropelAuth and eduID.
 - **SAML 2.0 single sign-on**, for identity providers that use SAML. In the browser only for now: SAML isn't available in the mobile app yet.
 

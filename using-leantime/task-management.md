@@ -109,7 +109,7 @@ Open the to-do's **⋮** menu and choose **Move To-Do**, then pick the project. 
 
 ## How do I track time on a to-do?
 
-Open the to-do's **⋮** menu and choose **Track Time → Start Work**; choose **Stop Work** when you're done. To log time afterwards, open the to-do's **Time Tracking** tab. Both need time tracking to be on for the project (see [Timesheets and time tracking](using-leantime/timesheets.md)).
+Open the to-do's **⋮** menu and choose **Track Time → Start Work**; choose **Stop Work** when you're done. To log time afterwards, open the to-do's **Time Tracking** tab. Both need time tracking to be on for the project (see [Time tracking](using-leantime/timesheets.md)).
 
 ## What about sprints?
 

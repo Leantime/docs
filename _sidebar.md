@@ -15,6 +15,7 @@
     - [Docker based Installation](installation/docker.md)
         - [Docker Troubleshooting](installation/docker-troubleshooting.md)
         - [Synology NAS](installation/synology.md)
+    - [Shared hosting (cPanel)](installation/shared-hosting.md)
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
     - [Email](installation/email-configuration.md)
@@ -31,14 +32,17 @@
 **AI with Leantime**
 
 - [Overview](ai/README.md)
+- [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md)
+- [AI in Leantime Cloud (L.E.O.)](ai/leantime-cloud-ai.md)
+- [MCP server: connect your own assistant](installation/leantime-mcp.md)
 - [Working with AI assistants](ai/working-with-ai.md)
 - [Glossary](ai/glossary.md)
 - [Keycloak SSO with an AI assistant](ai/keycloak-sso.md)
-- [MCP server](installation/leantime-mcp.md)
 
 **Development**
 
 - [Development/Local](installation/development.md)
+- [Contributing](development/contributing.md)
 - [Connect to API](api/usage.md)
 - [Using the Leantime CLI](development/commandline.md)
 - [Plugin Development](development/plugin-development.md)
@@ -52,18 +56,45 @@
 **Using Leantime**
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
+- [Leantime on your phone](using-leantime/mobile-app.md)
 - [Projects](using-leantime/managing-projects.md)
+- [Milestones](using-leantime/roadmap-planning.md)
+- [Time tracking](using-leantime/timesheets.md)
 - [Clients](using-leantime/managing-clients.md)
+- [User Management](using-leantime/user-management.md)
 - [Notifications](using-leantime/notifications.md)
 - [Goals](using-leantime/goals.md)
+- [Ideas](using-leantime/idea-management.md)
 - [Docs](using-leantime/docs.md)
 - [Blueprints](using-leantime/blueprints.md)
+  - [Project Value Canvas](blueprints/project-value-canvas.md)
+  - [Project Brief](blueprints/project-brief.md)
+  - [SWOT Analysis](blueprints/swot-analysis.md)
+  - [Lean Canvas](blueprints/lean-canvas.md)
+  - [Business Model Canvas](blueprints/business-model-canvas.md)
+  - [Risk Analysis](blueprints/risk-analysis.md)
+  - [Environment Analysis](blueprints/environment-analysis.md)
+  - [Observe / Learn - Insights](blueprints/insights.md)
+- [Retrospectives](using-leantime/retrospectives.md)
 - [Reports](using-leantime/reports.md)
+
+**Project management concepts**
+
+- [Overview](knowledge-base/README.md)
+- [Lean](knowledge-base/whatislean.md)
+- [Agile](knowledge-base/agile.md)
+- [Scrum](knowledge-base/scrum.md)
+- [Kanban](knowledge-base/kanban.md)
+- [Phases of a project](knowledge-base/phasesofproject.md)
+- [Design thinking](knowledge-base/idea-development.md)
 
 **Everything Else**
 
  - [Leantime's MCP Server](installation/leantime-mcp.md)
- - [Using Plugins](installation/using-plugins.md)
+ - [Plugins](installation/using-plugins.md)
+    - [Strategy Pro](plugins/strategy-pro.md)
+    - [Programs](plugins/programs.md)
+    - [Whiteboards](plugins/whiteboards.md)
  - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md)
 
 **External Links**
