@@ -15,6 +15,7 @@
     - [Docker based Installation](installation/docker.md)
         - [Docker Troubleshooting](installation/docker-troubleshooting.md)
         - [Synology NAS](installation/synology.md)
+    - [Shared hosting (cPanel)](installation/shared-hosting.md)
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
     - [Email](installation/email-configuration.md)
@@ -39,6 +40,7 @@
 **Development**
 
 - [Development/Local](installation/development.md)
+- [Contributing](development/contributing.md)
 - [Connect to API](api/usage.md)
 - [Using the Leantime CLI](development/commandline.md)
 - [Plugin Development](development/plugin-development.md)
