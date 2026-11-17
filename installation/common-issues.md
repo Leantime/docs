@@ -106,6 +106,10 @@ An old version removed cache folders, and running the update as root left the ne
 
 The server runs PHP 7. Leantime needs PHP 8.2 or later. See [System requirements](installation/system-requirements.md).
 
+## I forgot the admin password and email doesn't work
+
+You can create a new Owner account from the command line, or set a new password in the database. Both are in [I'm locked out. How do I reset the admin password?](installation/frequently-asked-questions.md#im-locked-out-how-do-i-reset-the-admin-password)
+
 ## Still stuck?
 
 - Search [GitHub issues](https://github.com/Leantime/leantime/issues?q=is%3Aissue) for your error message.
