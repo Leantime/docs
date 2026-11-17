@@ -10,7 +10,7 @@ On Leantime Cloud there's nothing to set up: the app and its notifications work 
 | --- | --- | --- |
 | **Leantime 3.9.5 or later** | Signing in | Older versions can't answer the app. |
 | **Leantime 3.10.2 or later** | Signing in with a company login (SSO) | |
-| **Leantime 3.15.4 or later** | Phone notifications | Earlier versions push every change in a project to everyone on it. |
+| **Leantime 3.15.4 or later** (pending release) | Phone notifications | Earlier versions push every change in a project to everyone on it. |
 | **The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin, enabled, with a valid license** | Everything in the app | It signs the app in with its own token, so the app never stores anyone's password, and access can be revoked without changing it. The relay for phone notifications checks the same license. See [installing a plugin](installation/plugin-installation.md). |
 | **HTTPS with a certificate from a public authority,** such as Let's Encrypt, at an address phones can reach | Signing in | Phones don't accept self-signed certificates. |
 | **Outgoing HTTPS to `accounts.leantime.io`** | Phone notifications | Your server sends notifications through Leantime's relay (see below). |
@@ -36,15 +36,17 @@ There's nothing extra to register with your login provider: the app uses the sam
 
 The app can tell people on their phones when someone assigns them a to-do, mentions them, or comments on their work. On a self-hosted server it's off until you turn it on.
 
+> **Pending release of Leantime 3.15.4.** The switch below is already in 3.15.3, but 3.15.3 sends every change in a project to everyone on it, not only what involves them. Wait for 3.15.4 before turning it on.
+
 1. **Sign in as an administrator.**
 2. **Open Company → Company Settings.** The **Mobile push notifications** section is on the **Details** tab.
 3. **Turn on Send push notifications through Leantime's relay.**
 4. **Under What the relay receives,** choose **Full message** or **Content-free** (see the next section).
 5. **Click Save.**
 
-If the section is grayed out, Advanced Authentication isn't enabled. Enable it first; the section links to the plugin in the marketplace.
+If the section is grayed out, Advanced Authentication isn't enabled. Enable it first; the section links to the plugin in the marketplace. (Pending release: until then, the section isn't grayed out, and without Advanced Authentication you can turn the switch on but nothing is sent.)
 
-Then each person turns notifications on for their phone, in the app: **You → Settings → Notification settings → Phone notifications**. What they get follows their [notification settings](using-leantime/notifications.md): projects they've muted and kinds of changes they've switched off stay quiet on the phone too.
+Then each person turns notifications on for their phone, in the app: **You → Settings → Notification settings → Phone notifications**. It needs the latest version of the app. What they get follows their [notification settings](using-leantime/notifications.md): projects they've muted and kinds of changes they've switched off stay quiet on the phone too.
 
 ## What leaves my server?
 

@@ -82,6 +82,8 @@ Yes. The app can tell you when someone assigns you a to-do, mentions you, or com
 
 What you get follows your [notification settings](using-leantime/notifications.md), the same ones as in the browser: muted projects and kinds of changes you've switched off stay quiet on your phone too. Turning **Phone notifications** off only affects that phone.
 
+Don't see **Phone notifications**? Update the app to the latest version.
+
 On Leantime Cloud, that's all. On a self-hosted server, your administrator turns phone notifications on for the server first (see [Set up the mobile app on a self-hosted server](installation/mobile-app-setup.md#how-do-i-turn-on-phone-notifications)). If you've turned them on and nothing arrives, ask them.
 
 ## How do reminders work?
