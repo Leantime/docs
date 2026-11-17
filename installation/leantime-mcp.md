@@ -1,6 +1,6 @@
 # Leantime MCP Server
 
-The MCP Server lets AI assistants such as Claude, Cursor, VS Code Copilot, Windsurf and Codex work directly in your Leantime. Instead of copying task lists into a chat, you ask the assistant, and it reads and updates Leantime for you:
+The MCP Server lets AI assistants such as Claude, ChatGPT, Cursor, VS Code Copilot, Windsurf and Codex work directly in your Leantime. Instead of copying task lists into a chat, you ask the assistant, and it reads and updates Leantime for you:
 
 - "What's due for me this week, and what's overdue?"
 - "Create these five tasks in the Website project and put them in the Launch milestone."
@@ -35,7 +35,12 @@ This page is the setup. For what to ask once you're connected, see [Use Leantime
 https://your-leantime-url/mcp
 ```
 
-Your AI assistant connects to that address and sends a token with every request. Leantime checks the token, works out which user it belongs to, and runs each request as that user. Nothing is installed on your computer apart from the assistant itself (and a small helper for Claude Desktop, see below).
+Your AI assistant connects to that address in one of two ways:
+
+- **Sign in (Claude and ChatGPT):** you add the address in the assistant, sign in to Leantime and click **Allow access**. Nothing to copy.
+- **Token (Cursor, VS Code, Windsurf, Codex and others):** you create a token in Leantime and add it to the assistant's settings. The assistant sends it with every request.
+
+Either way, Leantime works out which user is connecting and runs each request as that user. Nothing is installed on your computer apart from the assistant itself.
 
 When you ask a question, the assistant decides which Leantime tools to call (for example `findTasks`, then `editTask`), shows you what it is doing, and answers from the results.
 
@@ -45,22 +50,23 @@ You need:
 
 | | Leantime Cloud | Self-hosted |
 |---|---|---|
-| Leantime version | Always current | **3.13 or later** (MCP Server plugin 2.x) |
+| Leantime version | Always current | **3.13 or later** (MCP Server plugin 2.x). Signing in from Claude and ChatGPT needs **3.16 or later**. |
 | MCP Server plugin | Included, nothing to install | Install from the [Marketplace](https://marketplace.leantime.io/product/mcp-server/) |
-| HTTPS | Included | Strongly recommended. Tokens are sent with every request. |
+| HTTPS | Included | Required for Claude and ChatGPT, and strongly recommended for everything else. |
+| Reachable from the internet | Included | Needed for Claude and ChatGPT: they connect from their own servers, not from your computer. |
 
-And an AI assistant that can connect to a **remote MCP server with a custom header**:
+And an AI assistant that can connect to a remote MCP server:
 
-| Assistant | Works? | Notes |
+| Assistant | How it connects | Notes |
 |---|---|---|
-| Claude Code | Yes | Built in |
-| Cursor | Yes | Built in |
-| VS Code (GitHub Copilot agent mode) | Yes | Built in |
-| Windsurf | Yes | Built in |
-| OpenAI Codex CLI | Yes | Built in |
-| CoChat | Yes | Built in, as a custom server |
-| Claude Desktop | Yes | Through the free `mcp-remote` helper (needs Node.js 18+) |
-| Claude.ai and ChatGPT, in the browser or the phone apps | Not yet (planned) | These only connect to servers that sign in with OAuth. Leantime's MCP server uses tokens for now. |
+| Claude (claude.ai, Claude Desktop, phone apps) | Sign in | Add it once on the web or in Claude Desktop, and it works in the phone apps too |
+| ChatGPT | Sign in | Depends on your ChatGPT plan; on work plans, an admin may have to allow it |
+| Claude Code | Sign in or token | Built in |
+| Cursor | Token | Built in |
+| VS Code (GitHub Copilot agent mode) | Token | Built in |
+| Windsurf | Token | Built in |
+| OpenAI Codex CLI | Token | Built in |
+| CoChat | Token | Built in, as a custom server |
 
 > Your Leantime data goes to the AI provider you use (Anthropic, OpenAI, Cursor, …) as part of the conversation. Check that this is allowed for your organisation before connecting.
 
@@ -76,6 +82,8 @@ Skip this step on Leantime Cloud.
 The server is now live at `https://your-leantime-url/mcp`. If Leantime is installed in a subfolder, include it: `https://example.com/leantime/mcp`.
 
 ## Step 2: Create a token
+
+Connecting Claude or ChatGPT by signing in? Skip this step and go to [Step 3](?id=step-3-connect-your-ai-assistant).
 
 The MCP server accepts two kinds of credentials. Use a **Personal Access Token** unless you are setting up a shared automation.
 
@@ -113,20 +121,40 @@ x-api-key: lt_yourkeyname_yoursecret
 
 In every example, replace `https://your-leantime-url` with your Leantime address and `YOUR_TOKEN` with the token from Step 2. To use an API key, replace the `Authorization` header with `"x-api-key": "lt_..."`.
 
+### Claude (claude.ai, Claude Desktop and the phone apps)
+
+1. In Claude, open **Settings → Connectors** and click **Add custom connector**.
+2. Name it "Leantime" and paste `https://your-leantime-url/mcp`. Leave the OAuth client ID and secret fields empty.
+3. Click **Connect**. Leantime opens: sign in as usual (with two-factor or single sign-on if you use them).
+4. Check what Leantime asks, and click **Allow access**.
+
+You're back in Claude, and Leantime is connected. A connector you add on claude.ai or in Claude Desktop also shows up in the Claude phone apps.
+
+### ChatGPT
+
+1. In ChatGPT, add a custom MCP server or connector. Where to find this depends on your plan, and OpenAI changes the menus often: see [Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt). On some plans you first switch on **Developer mode**; on work plans, an admin may have to allow it.
+2. Paste `https://your-leantime-url/mcp` as the address, and choose **OAuth** for authentication.
+3. Sign in to Leantime and click **Allow access**.
+
+### Which apps are connected?
+
+Apps you connected by signing in are listed under **My Profile → Personal Access Tokens → Connected apps**, with when each was last active. Click **Disconnect** to remove one: it loses access right away. Changing your password also disconnects all of them.
+
 ### Claude Code
 
 Run once in a terminal:
 
 ```bash
-claude mcp add --transport http leantime https://your-leantime-url/mcp \
-  --header "Authorization: Bearer YOUR_TOKEN"
+claude mcp add --transport http leantime https://your-leantime-url/mcp
 ```
 
-Add `--scope user` to use Leantime in every project, not just the current folder. Check it with `claude mcp list`, or type `/mcp` inside Claude Code.
+Then type `/mcp` inside Claude Code, choose **leantime** and **Authenticate**, and sign in to Leantime in the browser. To use a token instead, add `--header "Authorization: Bearer YOUR_TOKEN"` to the command.
 
-### Claude Desktop
+Add `--scope user` to use Leantime in every project, not just the current folder. Check it with `claude mcp list`.
 
-Claude Desktop's built-in connectors can't send a token header yet, so use the free [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) helper. It needs [Node.js](https://nodejs.org/) 18 or later.
+### Claude Desktop with a token (older self-hosted versions)
+
+On Leantime 3.16 or later and on Leantime Cloud, connect Claude Desktop by signing in, as shown above. On older self-hosted versions, use the free [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) helper with a token. It needs [Node.js](https://nodejs.org/) 18 or later.
 
 1. In Claude Desktop, open **Settings → Developer → Edit Config**. This opens `claude_desktop_config.json`:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
@@ -392,13 +420,14 @@ Leantime doesn't run the agent on a schedule. The agent runs when you (or your a
 
 ## Security and privacy
 
-- **Same permissions as the app.** Every request runs as the token's user, with that user's role and project access. Tools are built to return only the projects, tasks and entries that user can access. If you find a tool returning something the user can't open in Leantime, please [report it](https://github.com/Leantime/leantime/security/policy) privately.
+- **Same permissions as the app.** Every request runs as the user who signed in or owns the token, with that user's role and project access. Tools are built to return only the projects, tasks and entries that user can access. If you find a tool returning something the user can't open in Leantime, please [report it](https://github.com/Leantime/leantime/security/policy) privately.
 - **Tokens are full-access keys.** A token can do everything its user can. There are no read-only tokens yet. Treat tokens like passwords, never paste them into a chat or commit them to a repository, and use a separate, limited user (see above) for agents.
+- **Apps you sign in to act as you.** When Claude or ChatGPT connects, Leantime shows the app's name and asks you to allow access. Only allow it if you just started connecting from that app. Its access renews itself every hour, and ends when you click **Disconnect**, change your password, or your account is deactivated.
 - **Keep approvals on.** Most assistants ask before running a tool that changes data. Leantime marks its tools as read-only, adding data, or changing data, so your assistant can tell them apart. `deleteEvent` is the only tool that deletes.
 - **Data goes to your AI provider.** The results of every tool call (task titles, descriptions, comments, time entries) become part of the conversation with the AI provider you use.
 - **Use HTTPS.** The token is sent with every request.
 - **Rate limits.** Each user and IP can make 300 MCP requests per minute by default.
-- **Revoke what you don't use** under **My Profile → Personal Access Tokens**. Delete API keys under **Company Settings → API Keys**.
+- **Remove what you don't use** under **My Profile → Personal Access Tokens**: tokens at the top, apps under **Connected apps**. Delete API keys under **Company Settings → API Keys**.
 
 ## Settings for administrators
 
@@ -407,6 +436,11 @@ Self-hosted only. Set these in `config/.env`:
 | Variable | Default | What it does |
 |---|---|---|
 | `LEAN_RATELIMIT_MCP` | `300` | MCP requests per minute, per user and IP. |
+| `LEAN_OAUTH_ENABLED` | `true` | Lets Claude, ChatGPT and other apps connect by signing in. Set to `false` to switch sign-in off; tokens keep working. |
+| `LEAN_OAUTH_REDIRECT_DOMAINS` | empty | Extra web addresses that apps may return to after sign-in, comma separated. Claude, ChatGPT and your own computer (`localhost`) are always allowed. |
+| `LEAN_OAUTH_CUSTOM_SCHEMES` | empty | App addresses like `cursor` or `vscode` to allow for sign-in, comma separated. |
+| `LEAN_RATELIMIT_OAUTH_REGISTER` | `10` | How many new apps one IP address can register per hour. |
+| `LEAN_OAUTH_PRIVATE_KEY`, `LEAN_OAUTH_PUBLIC_KEY` | empty | The key pair that signs sign-in tokens. Leave empty: Leantime creates one and stores it encrypted in the database. |
 | `LEAN_JINA_KEY` | empty | API key for [Jina](https://jina.ai/) search. Needed by the `searchLeantimeDocumentation` tool, which searches Leantime's online documentation. Without it, that tool returns an error. The search queries are sent to Jina. |
 
 **Reverse proxies.** If Leantime runs behind nginx, Apache, Traefik, Cloudflare or a load balancer, make sure the `Authorization` header is passed through. Apache with PHP-FPM or FastCGI often drops it. Add this to your virtual host or `.htaccess`:
@@ -415,11 +449,20 @@ Self-hosted only. Set these in `config/.env`:
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 ```
 
-Also make sure the proxy doesn't buffer or time out short requests to `/mcp`, and that `LEAN_APP_URL` is set to the public address.
+Also make sure the proxy doesn't buffer or time out short requests to `/mcp`, that requests to `/.well-known/oauth-…` and `/oauth/…` reach Leantime, and that `LEAN_APP_URL` is set to the public address.
+
+**Sign-in keys.** `php bin/leantime oauth:keys` shows the key Leantime signs sign-in tokens with. `--rotate` replaces it, which disconnects every connected app. `--export` prints the key as `LEAN_OAUTH_*` lines, for example to use the same key on several servers.
 
 **Updates.** After updating Leantime, finish the database update in the browser before using MCP again.
 
 ## Troubleshooting
+
+**Claude or ChatGPT can't connect, or the sign-in fails**
+- Self-hosted: sign-in needs Leantime 3.16 or later, with `LEAN_OAUTH_ENABLED` not set to `false`.
+- Leantime has to be reachable from the internet over HTTPS. Claude and ChatGPT connect from their own servers, so an address that only works in your office or over VPN won't do.
+- Sign-in doesn't work when Leantime is installed in a subfolder (`https://example.com/leantime`): the apps look for sign-in details at the root of the domain. Use a subdomain instead, or connect with a token.
+- Check `LEAN_APP_URL` and your proxy (see [Settings for administrators](?id=settings-for-administrators)).
+- "This sign-in link has expired": start connecting again from the app.
 
 **`401 Unauthorized`**
 - Check the header format: `Authorization: Bearer <token>` (with a space after `Bearer`) or `x-api-key: lt_...`.
@@ -457,10 +500,10 @@ Also make sure the proxy doesn't buffer or time out short requests to `/mcp`, an
 ## FAQ
 
 **Is it available on Leantime Cloud?**
-Yes. Use the address you open Leantime Cloud with, plus `/mcp`, and a Personal Access Token.
+Yes. Use the address you open Leantime Cloud with, plus `/mcp`. Connect Claude or ChatGPT by signing in, and other assistants with a Personal Access Token.
 
 **Can I use it with ChatGPT or Claude.ai in the browser, or on my phone?**
-Not yet, but it's planned. Their connectors, in the browser and in the phone apps, only work with servers that sign in through OAuth, and Leantime's MCP server uses tokens for now. Until then, use Claude Desktop, Claude Code, Cursor, VS Code, Windsurf or Codex.
+Yes, on Leantime Cloud and on self-hosted Leantime 3.16 or later: add it as a connector and sign in (see [Step 3](?id=step-3-connect-your-ai-assistant)). A Claude connector you add on the web also works in the Claude phone apps. Your Leantime has to be reachable from the internet over HTTPS, and not installed in a subfolder.
 
 **Can I give the assistant read-only access?**
 Not with a token setting yet. Use your assistant's tool approval settings to allow only the read tools, or connect with a separate user that has the **Read Only** role. (In the current version, a Read Only user can still add, edit and delete events on their own calendar through MCP.)

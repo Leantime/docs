@@ -10,12 +10,14 @@ Assistants connect through Leantime's [MCP server](installation/leantime-mcp.md)
 
 | Assistant | Can it connect? |
 | --- | --- |
-| Claude Desktop, Claude Code | Yes |
-| Cursor, VS Code with GitHub Copilot, Windsurf, OpenAI Codex | Yes |
+| Claude (claude.ai, Claude Desktop and the phone apps), ChatGPT | Yes: add your Leantime address and sign in |
+| Claude Code | Yes: sign in, or use a token |
+| Cursor, VS Code with GitHub Copilot, Windsurf, OpenAI Codex | Yes, with a token |
 | [CoChat](https://cochat.ai/), a shared AI workspace for teams | Yes |
-| ChatGPT and Claude.ai, in the browser or the phone apps | Not yet. It's planned. |
 
-Today you connect with a token: you create it in Leantime and add it to your assistant's settings. ChatGPT and Claude.ai in the browser and on phones need a different way to connect, where you only enter your Leantime address and sign in. Leantime doesn't support that yet. Until it does, use Claude Desktop on your computer, which works with the same Claude account, or CoChat in the browser.
+With Claude and ChatGPT, there's nothing to copy: you paste your Leantime address, sign in to Leantime and click **Allow access**. A Claude connector you add once also works in the Claude phone apps. For the other assistants, you create a token in Leantime and add it to the assistant's settings. The [MCP server page](installation/leantime-mcp.md#step-3-connect-your-ai-assistant) has the steps for each.
+
+If you host Leantime yourself, signing in from Claude and ChatGPT needs Leantime 3.16 or later, reachable from the internet.
 
 In Leantime Cloud, you can also ask [L.E.O.](ai/leantime-cloud-ai.md), the assistant built into Leantime, for many of the same things.
 
