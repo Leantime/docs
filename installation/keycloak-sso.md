@@ -124,7 +124,7 @@ Yes, with the same Keycloak client; there's nothing extra to set up in Keycloak.
 
 An AI assistant that can run commands (Claude Code, Cursor, Codex or similar) can do most of this setup. A chat assistant (Claude, ChatGPT) can guide you step by step. Either way, give it the facts first, so it doesn't guess setting names.
 
-**1. Give it this guide.** Give it the Markdown address `https://docs.leantime.io/ai/keycloak-sso.md`, or open that address and paste the text into the chat.
+**1. Give it this guide.** Give it the Markdown address `https://docs.leantime.io/installation/keycloak-sso.md`, or open that address and paste the text into the chat.
 
 **2. Tell it your setup.** For example:
 
