@@ -58,8 +58,10 @@
 - [Milestones](using-leantime/roadmap-planning.md)
 - [Time tracking](using-leantime/timesheets.md)
 - [Clients](using-leantime/managing-clients.md)
+- [User Management](using-leantime/user-management.md)
 - [Notifications](using-leantime/notifications.md)
 - [Goals](using-leantime/goals.md)
+- [Ideas](using-leantime/idea-management.md)
 - [Docs](using-leantime/docs.md)
 - [Blueprints](using-leantime/blueprints.md)
   - [Project Value Canvas](blueprints/project-value-canvas.md)
@@ -70,6 +72,7 @@
   - [Risk Analysis](blueprints/risk-analysis.md)
   - [Environment Analysis](blueprints/environment-analysis.md)
   - [Observe / Learn - Insights](blueprints/insights.md)
+- [Retrospectives](using-leantime/retrospectives.md)
 - [Reports](using-leantime/reports.md)
 
 **Project management concepts**
