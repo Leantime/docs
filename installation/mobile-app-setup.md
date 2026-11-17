@@ -50,14 +50,14 @@ Then each person turns notifications on for their phone, in the app: **You → S
 
 ## What leaves my server?
 
-Your server can't send to phones directly, because a phone's notification address belongs to the Leantime app. So your server sends each notification to Leantime's relay at `accounts.leantime.io`, which passes it to Google (Android) or Apple (iPhone). The relay stores nothing: no users, no devices, no content.
+Your server can't send to phones directly, because a phone's notification address belongs to the Leantime app. So your server sends each notification to Leantime's relay at `accounts.leantime.io`, which passes it to Google's Firebase Cloud Messaging. Firebase delivers it to Android phones, and hands it to Apple to deliver to iPhones. The relay stores nothing: no users, no devices, no content.
 
 You choose how much each notification carries:
 
 - **Full message** (the default): the phone shows who did what and on which to-do, for example the to-do's name and "Ben assigned this to you".
 - **Content-free:** the phone shows "New activity in Leantime. Open the app to see it." To-do names, comment text and people's names stay on your server. Tapping the notification opens the right place in the app, which loads the details from your server.
 
-If your team works with health, legal or other sensitive information, choose **Content-free**. A full message passes through Leantime, Google and Apple, and can show on the phone's lock screen.
+If your team works with health, legal or other sensitive information, choose **Content-free**. A full message passes through Leantime and Google, and through Apple for iPhones, and can show on the phone's lock screen.
 
 ## How do I turn phone notifications off?
 
