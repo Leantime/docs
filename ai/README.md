@@ -1,6 +1,20 @@
 # AI with Leantime
 
-There are two ways to use AI with Leantime: let an AI assistant help you set up and run Leantime, or connect an assistant to Leantime so it can work with your projects.
+There are three ways to use AI with Leantime:
+
+- **Connect the AI assistant you already use**, like Claude, ChatGPT, Cursor or GitHub Copilot, so it can see and update your projects.
+- **Use L.E.O.**, the assistant built into Leantime Cloud.
+- **Get help from AI to set up and run Leantime** yourself.
+
+## Let AI work with your projects
+
+If you already use an AI assistant at work, connect it to Leantime. Then you can ask it "what's due this week?", "turn these meeting notes into to-dos" or "log 2 hours on #456" without leaving it, and it answers from your real projects. It works on Leantime Cloud and self-hosted, and it only sees what you can see.
+
+- [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md): connect the assistant you already use, which assistants work today, and what to ask it.
+- [MCP server: connect your own AI assistant](installation/leantime-mcp.md): how to connect Claude, ChatGPT, Cursor, VS Code, Windsurf or Codex, and everything the assistant can do. Uses the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin, which is already on in Leantime Cloud.
+- [AI in Leantime Cloud (L.E.O.)](ai/leantime-cloud-ai.md): the built-in assistant. Ask it questions, let it sort your to-dos, break a to-do into steps, or help you write.
+
+Not sure which? See [Which should I use: L.E.O. or my own assistant?](ai/leantime-cloud-ai.md#which-should-i-use-leo-or-my-own-assistant)
 
 ## Get help from AI to set up and run Leantime
 
@@ -9,8 +23,3 @@ There are two ways to use AI with Leantime: let an AI assistant help you set up 
 - [Set up Keycloak single sign-on (with an AI assistant)](ai/keycloak-sso.md): a complete walkthrough an AI assistant carried out, including the errors it hit.
 
 Every page of these docs has a plain Markdown version for AI assistants: add `.md` to the page address.
-
-## Let AI assistants work in Leantime
-
-- [MCP server: connect AI assistants](installation/leantime-mcp.md): connect Claude, Cursor, VS Code, Windsurf or Codex to Leantime with the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin. Your assistant can then find and update to-dos, log time and more, with your permissions.
-- Leantime Cloud also has built-in AI features for prioritising to-dos, breaking down tasks and writing status reports. See [Leantime Cloud](https://leantime.io/pricing/).
