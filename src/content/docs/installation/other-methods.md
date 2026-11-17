@@ -3,6 +3,10 @@ title: "Other installation methods"
 description: "More ways to run Leantime: in a subfolder of your domain, on a Raspberry Pi, or on Kubernetes with a community Helm chart."
 ---
 
+## Shared hosting (cPanel)
+
+To install Leantime on a shared hosting plan with cPanel, see [Shared hosting (cPanel)](/installation/shared-hosting/).
+
 ## Subfolder installation
 
 To run Leantime in a subfolder (for example `yourcompany.com/leantime`), see [Subfolder Installation](/installation/subfolder/).

@@ -12,9 +12,10 @@ const SITE = 'https://docs.leantime.io';
 // using-leantime/ must be in one of these groups: the build stops and names any page that isn't.
 // "page|Label" sets a shorter menu label in the app's words; otherwise the page title is used.
 const DOCS_DIR = new URL('./src/content/docs/', import.meta.url);
-const pageExists = (slug) => ['.md', '.mdx'].some((ext) => existsSync(new URL(slug + ext, DOCS_DIR)));
+const pageExists = (slug) =>
+	['.md', '.mdx', '/index.md', '/index.mdx'].some((ext) => existsSync(new URL(slug + ext, DOCS_DIR)));
 const USE_LEANTIME_GROUPS = [
-	['Your day', ['my-work-dashboard', 'calendars', 'timesheets|Time tracking', 'notifications']],
+	['Your day', ['my-work-dashboard', 'calendars', 'timesheets|Time tracking', 'notifications', 'mobile-app|On your phone']],
 	['Plan and track', ['managing-projects', 'task-management|To-Dos', 'roadmap-planning|Milestones', 'goals']],
 	['Think', ['idea-management|Ideas', 'blueprints', 'research-boards', 'retrospectives']],
 	['Write and share', ['docs', 'reports']],
@@ -58,13 +59,62 @@ const startHereItems = START_HERE.flatMap((entry) => {
 	return workTypeItems.length ? [{ label: WORK_TYPES_LABEL, items: workTypeItems }] : [];
 });
 
+// Pages nested under a Use Leantime page in the menu, like the Blueprint templates under Blueprints.
+const CHILD_PAGES = {
+	blueprints: [
+		'blueprints/project-value-canvas',
+		'blueprints/project-brief',
+		'blueprints/swot-analysis',
+		'blueprints/lean-canvas',
+		'blueprints/business-model-canvas',
+		'blueprints/risk-analysis',
+		'blueprints/environment-analysis',
+		'blueprints/insights|Observe / Learn: Insights',
+	],
+};
+const useLeantimeEntry = ([page, menuLabel]) => {
+	const entry = menuLabel ? { slug: `using-leantime/${page}`, label: menuLabel } : { slug: `using-leantime/${page}` };
+	const children = menuEntries(CHILD_PAGES[page] ?? []);
+	if (!children.length) return entry;
+	return { label: menuLabel ?? page.charAt(0).toUpperCase() + page.slice(1), collapsed: true, items: [{ ...entry, label: 'Overview' }, ...children] };
+};
 const useLeantimeGroups = USE_LEANTIME_GROUPS.map(([label, pages]) => ({
 	label,
 	items: pages
 		.map((entry) => entry.split('|'))
 		.filter(([page]) => pageExists(`using-leantime/${page}`))
-		.map(([page, menuLabel]) => (menuLabel ? { slug: `using-leantime/${page}`, label: menuLabel } : { slug: `using-leantime/${page}` })),
+		.map(useLeantimeEntry),
 })).filter((group) => group.items.length > 0);
+
+// AI, plugins and project management concepts, in reading order. Pages appear once their file exists.
+const AI_PAGES = [
+	'ai|Overview',
+	'ai/use-leantime-from-your-ai-assistant',
+	'ai/leantime-cloud-ai|L.E.O. in Leantime Cloud',
+	'installation/leantime-mcp|MCP server: connect your assistant',
+	'ai/working-with-ai',
+	'ai/glossary|Glossary',
+	'ai/keycloak-sso|Keycloak SSO with an AI assistant',
+];
+const PLUGIN_PAGES = [
+	'installation/using-plugins|Overview',
+	'plugins/strategy-pro',
+	'plugins/programs',
+	'plugins/whiteboards',
+	'plugins/custom-fields',
+	'plugins/recurring-todos',
+	'plugins/notes',
+	'plugins/pomodoro',
+];
+const CONCEPT_PAGES = [
+	'knowledge-base|Overview',
+	'knowledge-base/whatislean|Lean',
+	'knowledge-base/agile|Agile',
+	'knowledge-base/scrum',
+	'knowledge-base/kanban',
+	'knowledge-base/phasesofproject',
+	'knowledge-base/idea-development',
+];
 
 /**
  * Site-wide structured data: who publishes the docs, the product they describe and its source code.
@@ -241,17 +291,14 @@ export default defineConfig({
 					label: 'Use Leantime',
 					items: [
 						...useLeantimeGroups,
-						{
-							label: 'AI with Leantime',
-							items: [
-								// ai/ pages (overview, working with AI, glossary, walkthroughs) once #66 merges
-								{ autogenerate: { directory: 'ai' } },
-								{ label: 'MCP server: connect AI assistants', slug: 'installation/leantime-mcp' },
-							],
-						},
-						{ label: 'Plugins', items: [{ label: 'Using plugins', slug: 'installation/using-plugins' }] },
-						{ label: 'Methods and ideas', collapsed: true, items: [{ autogenerate: { directory: 'knowledge-base' } }] },
+						{ label: 'AI with Leantime', items: menuEntries(AI_PAGES) },
+						{ label: 'Plugins', items: menuEntries(PLUGIN_PAGES) },
 					],
+				},
+				{
+					label: 'Project management concepts',
+					collapsed: true,
+					items: menuEntries(CONCEPT_PAGES),
 				},
 				{
 					label: 'Self-host Leantime',
@@ -262,6 +309,7 @@ export default defineConfig({
 							items: [
 								{ label: 'Overview', slug: 'installation/installation-types' },
 								{ label: 'Package based', slug: 'installation/package-installation' },
+								{ label: 'Shared hosting (cPanel)', slug: 'installation/shared-hosting' },
 								{ label: 'Docker', slug: 'installation/docker' },
 								{ label: 'Docker Troubleshooting', slug: 'installation/docker-troubleshooting' },
 								{ label: 'Synology NAS', slug: 'installation/synology' },
@@ -301,6 +349,7 @@ export default defineConfig({
 						{ label: 'Connect to the API', slug: 'api/usage' },
 						{ label: 'Using the Leantime CLI', slug: 'development/commandline' },
 						{ label: 'Plugin Development', slug: 'development/plugin-development' },
+						{ label: 'Contributing', slug: 'development/contributing' },
 						{
 							label: 'References',
 							collapsed: true,
@@ -333,7 +382,7 @@ export default defineConfig({
 					].join('\n'),
 					customSets: [
 						{ label: 'Self-hosting', description: 'install, configure, upgrade, back up and troubleshoot self-hosted Leantime', paths: ['installation/**'] },
-						{ label: 'Using Leantime', description: 'user guides, AI and MCP, plugins and project management concepts', paths: ['using-leantime/**', 'getting-started/**', 'knowledge-base/**', 'ai/**', 'installation/leantime-mcp', 'installation/using-plugins'] },
+						{ label: 'Using Leantime', description: 'user guides, AI and MCP, plugins and project management concepts', paths: ['using-leantime/**', 'getting-started/**', 'knowledge-base/**', 'ai/**', 'plugins/**', 'blueprints/**', 'installation/leantime-mcp', 'installation/using-plugins'] },
 						{ label: 'Developers', description: 'JSON-RPC API, CLI, plugin development and event hooks', paths: ['api', 'api/usage', 'development/**', 'technical/**', 'installation/development'] },
 					],
 					demote: ['api/classes/**', 'technical/hooks'],

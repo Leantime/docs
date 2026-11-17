@@ -18,21 +18,23 @@ Blueprints are boards for thinking a project through before and while you work o
 
 Blueprints you've already started move up to **Jump right back in**, so you can get back to them in one click.
 
+Some boards are wider than a laptop screen. Scroll them sideways to see the last columns.
+
 If you don't know where to start, try the **Project Value Canvas**: it asks who your customer is, what problem you're solving, what your solution is and what benefit it brings.
 
 ## Which blueprints are there?
 
 | Blueprint | What it helps you think through |
 |---|---|
-| **Project Value Canvas** | Your customer, their problem, your solution and its benefit ([how to use it](https://support.leantime.io/en/article/starting-project-definition-using-the-project-value-canvas-1rvdi39/)) |
-| **Project Brief** | The short summary everyone can agree on before work starts ([how to use it](https://support.leantime.io/en/article/creating-an-effective-project-brief-with-leantime-13ad5ye/)) |
-| **SWOT Analysis** | Strengths, weaknesses, opportunities and threats ([how to use it](https://support.leantime.io/en/article/understanding-swot-analysis-with-leantimes-template-ge81b4/)) |
-| **Lean Canvas** | Whether the customer, problem and solution fit together ([how to use it](https://support.leantime.io/en/article/maximizing-project-value-with-leantimes-lean-canvas-template-1l2ke94/)) |
-| **Business Model Canvas** | How a product or service creates and earns value ([how to use it](https://support.leantime.io/en/article/the-power-of-the-business-model-canvas-in-leantime-g8js9i/)) |
-| **Risk Analysis** | What could go wrong and what you'll do about it ([how to use it](https://support.leantime.io/en/article/conducting-a-risk-analysis-with-leantimes-template-1ffrfj2/)) |
-| **Environment Analysis** | The world around your customers ([how to use it](https://support.leantime.io/en/article/understanding-environmental-analysis-with-leantime-18h6w8u/)) |
+| **Project Value Canvas** | Your customer, their problem, your solution and its benefit ([how to use it](/blueprints/project-value-canvas/)) |
+| **Project Brief** | The short summary everyone can agree on before work starts ([how to use it](/blueprints/project-brief/)) |
+| **SWOT Analysis** | Strengths, weaknesses, opportunities and threats ([how to use it](/blueprints/swot-analysis/)) |
+| **Lean Canvas** | Whether the customer, problem and solution fit together ([how to use it](/blueprints/lean-canvas/)) |
+| **Business Model Canvas** | How a product or service creates and earns value. **Detailed Business Model** is a longer version ([how to use it](/blueprints/business-model-canvas/)) |
+| **Risk Analysis** | What could go wrong and what you'll do about it ([how to use it](/blueprints/risk-analysis/)) |
+| **Environment Analysis** | The world around your customers ([how to use it](/blueprints/environment-analysis/)) |
 | **Simple Empathy Map** | How your users feel about the problem and the solution |
-| **Observe / Learn – Insights** | What you saw, what you learned and what it means ([how to use it](https://support.leantime.io/en/article/developing-project-insights-with-leantimes-template-1wwystk/)) |
+| **Observe / Learn - Insights** | What you saw, what you learned and what it means ([how to use it](/blueprints/insights/)) |
 | **Logic Model** | How inputs and activities lead to outputs, outcomes and impact (see [below](#what-about-the-logic-model)) |
 | **Retrospectives** | What went well and what to change, after a sprint or milestone (see [Retrospectives](/using-leantime/retrospectives/)) |
 

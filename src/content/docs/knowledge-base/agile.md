@@ -3,34 +3,61 @@ title: "Agile project management in Leantime"
 description: "Agile basics and how Leantime supports them: kanban, Scrum, sprints, retrospectives, and estimating effort and velocity."
 ---
 
-## Synopsis of Agile
+Agile is a set of values and principles for work where you can't know everything up front. Instead of planning the whole project and delivering it at the end, an agile team delivers in small pieces, checks each one with the people it's for, and adjusts the plan as it learns.
 
-Agile is a software development methodology designed to create value in incremental chunks of development.  Rather than obtaining value when development is "done," agile is intended to utilize the fast paced iterative processes of Scrum & Kanban so that when development occurs, it does so in bite-able pieces that can be quickly adapted to changing requirements, functionality concerns or any other changes that may happen in the product life cycle.  In obtaining value, it allows for these bite-ablen pieces to be released and in use immediately.
+Agile isn't a single method. [Scrum](/knowledge-base/scrum/) and [Kanban](/knowledge-base/kanban/) are two common ways of putting it into practice.
 
-## Kanban
+## Where does Agile come from?
 
-Kanban, in agile, is the visualization of the activities / tasks needed to complete the development of the product/project. In Leantime, they are visualized in columns as: New, Blocked, In Progress, In Review, Done.  Within these columns, the tasks will be defined, assigned and will travel throughout the columns until they reach the Done category.  In Leantime, you'll also have an archived category that is not visualized on the board itself.
+In 2001, seventeen software developers met in Utah and wrote the [Manifesto for Agile Software Development](https://agilemanifesto.org/). They had each been working in lighter-weight ways than the heavy, document-driven processes common at the time, and wanted to name what those ways had in common.
 
-In Leantime, the Kanban view has been combined with some of the second component of agile: Scrum. 
+The idea behind it is older: delivering in small, frequent batches is also at the heart of [Lean](/knowledge-base/whatislean/). Agile started in software, but the same thinking now runs marketing teams, nonprofits, agencies and research labs.
 
-## Scrum
+## What are the agile values?
 
-Scrum is a process framework within agile that helps to guide the iterative process. The goal of which is to increase the the quality of deliverables, improve change management (changing requirements, provide more realistic time estimates, and offer more control over project/product dates and timelines.  While Scrum has quite a few working components, for our purposes, we'll discuss the ones specific to Leantime.
+The Manifesto names four. It values:
 
-## The Iterative Process: Sprints
+- **Individuals and interactions** over processes and tools
+- **Working software** over comprehensive documentation
+- **Customer collaboration** over contract negotiation
+- **Responding to change** over following a plan
 
-A Scrum Sprint is a month long, or less, actionable push that is intended to finish with a quality deliverable, or releaseable product increment is created.  As part of the building process, one would create a actionable tasks, assign and incorporate into this release.  There are then tasks that remain as part of the product but are held for later Sprints. In Leantime, on the Kanban (To Do) view, you are able to create timed Sprints, associating specific tasks within it.  On the List view, you can see both the tasks in this Sprint and in Backlog (the tasks held for later Sprints).
+The Manifesto adds: "while there is value in the items on the right, we value the items on the left more." Plans and documents still matter; they just come second.
 
-## Retrospectives
+Outside software, read "working software" as "a finished result someone can use": a published page, a delivered workshop, a tested prototype.
 
-Maintaining iteration must also include retrospection.  Improvements must be made in sequence with development otherwise any missteps, inefficiencies or problems may be missed or simply repeated.  At the end of a Sprint, a brief Retrospective period should be done.  In Leantime, there are boards that can be associated with Sprints.  It includes member feedback of what went well, what needs improvement, and what should be continued for the next sprint.  In Leantime, this is visualized in a similar Kanban format.
+## What are the agile principles?
 
-## Effort & Velocity
+The Manifesto has [twelve principles](https://agilemanifesto.org/principles.html). In short:
 
-### Effort
-For Scrum, and product development in general, an estimation of effort required is useful in determining how much work and time is required to get to "Done".  As a general rule, there is often some difficulty in the accuracy of identifying how much time is required for a specific task or project.  Scrum then uses effort to describe the complexity of the project. Scrum calls this "Story Points."  In Leantime, these are "T-shirt Sizes."  T-shirt size is defined by the team as estimations within a task.  The team averages that a certain task is a "small" task and this second task is an "XL" task and so forth.
+- Deliver value early and often, in short cycles of a few weeks.
+- Welcome changing requirements, even late.
+- Business people and the team work together every day.
+- Build around motivated people, and trust them to get the job done.
+- Talk face to face where you can.
+- Measure progress by finished, working results.
+- Keep a pace the team can sustain indefinitely.
+- Pay attention to quality and good design.
+- Keep things simple: maximize the work not done.
+- Let self-organizing teams decide how to do the work.
+- Regularly reflect on how to become more effective, and adjust.
 
-### Velocity
+## When does Agile fit, and when doesn't it?
 
-Velocity is another important concept within Scrum.  It is the amount of work your team can accomplish in a single Sprint. To calculate Velocity, the amount of effort completed at the end of the Sprint is used.  This can then be used to measure and plan for outcome improvements and task/Sprint estimations.  In Leantime, velocity can be visualized under the Reporting Menu.  
-  
+**Agile fits** when the goal is clear but the path isn't: new products, campaigns, services you're still shaping, anything where feedback will change what you build next.
+
+**It fits less well** when the scope and deadline are fixed by contract, when each step depends on finishing the last (building work, regulated processes), or when there's no one to give feedback between cycles. There, planning the [phases](/knowledge-base/phasesofproject/) up front works better. Many teams mix the two: a fixed plan for the stages, agile ways of working inside each one.
+
+A common trap is staying busy without moving toward the bigger goal. Short cycles need a clear purpose behind them, so each one adds up to something.
+
+## Doing it in Leantime
+
+- **Small pieces:** break work into [to-dos and subtasks](/using-leantime/task-management/), and group them into [milestones](/using-leantime/roadmap-planning/).
+- **Short cycles:** use sprints if you work in fixed cycles (see [Scrum](/knowledge-base/scrum/)), or a continuous board if you don't (see [Kanban](/knowledge-base/kanban/)).
+- **Keep the purpose in view:** link milestones to [goals](/using-leantime/goals/), so you can see whether the work moves the result.
+- **Reflect and adjust:** hold a [retrospective](/using-leantime/retrospectives/) at the end of each cycle.
+
+## Sources and further reading
+
+- [Manifesto for Agile Software Development](https://agilemanifesto.org/) (2001)
+- [Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html)

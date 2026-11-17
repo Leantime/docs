@@ -46,7 +46,7 @@ import subprocess
 import sys
 
 DEST = 'src/content/docs'
-SECTIONS = ['ai', 'api', 'development', 'getting-started', 'installation', 'knowledge-base', 'technical', 'using-leantime']
+SECTIONS = ['ai', 'api', 'blueprints', 'development', 'getting-started', 'installation', 'knowledge-base', 'plugins', 'technical', 'using-leantime']
 EXCLUDE_PREFIXES = ['technical/classes/', 'technical/README.md']  # generated Feb 2025, not migrated
 RENAMES = {'knowledge-base/System Roles.md': 'knowledge-base/system-roles.md'}
 # Links that were already broken on the docsify site, pointed at the page they meant.

@@ -166,7 +166,7 @@ Yes. On the Kanban board, group to-dos by assignee, milestone, sprint, priority,
 
 #### Does Leantime have a Gantt chart?
 
-Yes. **Milestones** shows your milestones on a timeline, and you can show their to-dos too. See [Roadmap and milestones](/using-leantime/roadmap-planning/).
+Yes. **Milestones** shows your milestones on a timeline, and you can show their to-dos too. See [Milestones](/using-leantime/roadmap-planning/).
 
 #### Can I create recurring to-dos?
 
@@ -182,17 +182,17 @@ Yes. Every project has **Docs** for project knowledge.
 
 #### Does Leantime have whiteboards?
 
-Yes, with the [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/) plugin. See [Using plugins](/installation/using-plugins/#whiteboards).
+Yes, with the [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/) plugin. See [Whiteboards](/plugins/whiteboards/).
 
 #### Can I manage several projects together?
 
-Yes. **My Work** shows your to-dos across all projects. To plan several projects as one program, with shared milestones and risks, use the [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/) plugin. See [Using plugins](/installation/using-plugins/#program-management).
+Yes. **My Work** shows your to-dos across all projects. To run several projects as one program, with their to-dos on one board and their milestones on one timeline, use the [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/) plugin. See [Programs](/plugins/programs/).
 
 ### Time and calendars
 
 #### Does Leantime have time tracking?
 
-Yes. Start a timer from any to-do or log hours in **Timesheets**. Mark time as billable, invoiced and paid, and export it to CSV. See [Timesheets](/using-leantime/timesheets/).
+Yes. Start a timer from any to-do or log hours in **Timesheets**. Mark time as billable, invoiced and paid, and export it to CSV. See [Time tracking](/using-leantime/timesheets/).
 
 #### Can I see Leantime in Google Calendar, Outlook or Apple Calendar?
 
@@ -267,7 +267,7 @@ Yes. Leantime Mobile is available for [iPhone](https://apps.apple.com/app/leanti
 
 It's the personal side of your workspace: **Today** shows what's worth your attention, **Plan tomorrow** sets a short list for the next day, **Now** is a focus timer that logs your time, and **Tasks** and **Notes** keep your to-dos and thoughts with your projects. You also get your calendar, timesheet, progress and notifications.
 
-To look around before you connect, tap **Demo Mode** on the app's first screen: it opens a sample workspace, with no account or server needed.
+To look around before you connect, tap **Try Demo Mode** on the app's first screen: it opens a sample workspace, with no account or server needed. In the EU, the iPhone app is in the [TestFlight beta](https://testflight.apple.com/join/nHF3AGwx) until it reaches the App Store there. See [Leantime on your phone](/using-leantime/mobile-app/) for setup, sign-in and troubleshooting.
 
 ### Accessibility
 

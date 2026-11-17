@@ -1,6 +1,5 @@
 {
   "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'searchTitle' (optional) is the browser-tab and search-result title when it should say more than the heading, 'edition' (both, self-hosted or cloud), 'plugin' ({name, url}) and 'checked' (the Leantime version last checked, e.g. \"3.14\") set the label row under the title (defaults per folder in src/lib/availability.ts), 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build, 'glance' is the At a glance box of a task page (minutes, maxMinutes, level, needs, where, result; see CONTRIBUTING.md) and replaces the page's '**At a glance**' Markdown block. New pages and override pages set these in their own front matter instead.",
-
   "getting-started/get-started.md": {
     "title": "Get started with Leantime",
     "searchTitle": "Get started with Leantime: Cloud trial or your own server",
@@ -179,22 +178,25 @@
   },
   "installation/leantime-mcp.md": {
     "title": "MCP server: connect AI assistants to Leantime",
-    "description": "Connect Claude, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server plugin: tokens, client setup, every tool, and security.",
+    "description": "Connect Claude, ChatGPT, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server: sign-in or tokens, client setup, every tool, and security.",
     "glance": {
-      "minutes": 15,
+      "minutes": 10,
       "level": "Some experience",
       "needs": [
-        "Leantime Cloud, or self-hosted Leantime 3.13 or later with a license for the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin",
-        "An AI assistant that connects to remote MCP servers with a custom header: Claude Code, Cursor, VS Code, Windsurf, Codex, or Claude Desktop with Node.js 18+"
+        "Leantime Cloud, or self-hosted Leantime 3.13 or later with a license for the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin (3.16 or later to connect Claude and ChatGPT by signing in)",
+        "An AI assistant that connects to remote MCP servers: Claude, ChatGPT, Claude Code, Cursor, VS Code, Windsurf or Codex"
       ],
       "where": [
         "Leantime, under **Leantime Apps** (self-hosted only), to install the plugin",
-        "Leantime, under **My Profile → Personal Access Tokens**",
-        "Your AI assistant's MCP settings (for Claude Code, a terminal)"
+        "Your AI assistant's connector or MCP settings",
+        "Leantime, under **My Profile → Personal Access Tokens**, for assistants that use a token"
       ],
       "result": "An AI assistant that lists your Leantime projects and can find and update to-dos, log time and more, with your permissions."
     },
-    "plugin": { "name": "MCP Server", "url": "https://marketplace.leantime.io/product/mcp-server/" }
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    }
   },
   "installation/other-methods.md": {
     "title": "Other installation methods",
@@ -298,7 +300,6 @@
     "title": "Design thinking",
     "description": "The five stages of design thinking (empathize, define, ideate, prototype, test) and how to use Leantime's boards for each one."
   },
-  "knowledge-base/phasesofproject.md": { "draft": true },
   "knowledge-base/product-validation.md": {
     "title": "Lean product validation",
     "description": "Validate a product idea with lean methods before you build it: the Lean Canvas, research boards and problem-solution fit in Leantime."
@@ -311,7 +312,9 @@
     "title": "Team happiness and productivity",
     "description": "Why small, happy teams get more done, and the Leantime features that help teams stay focused and productive."
   },
-  "knowledge-base/time-management.md": { "draft": true },
+  "knowledge-base/time-management.md": {
+    "draft": true
+  },
   "knowledge-base/whatislean.md": {
     "title": "Lean methodology",
     "description": "How Leantime uses lean methods: kanban from lean manufacturing, and lean startup practices for business models and research."
@@ -478,6 +481,57 @@
         "Leantime, under **Integrations → CSV Import** in the company menu"
       ],
       "result": "Your to-dos in Leantime, with their titles, descriptions, assignees, statuses and due dates."
+    }
+  },
+  "plugins/strategy-pro.md": {
+    "plugin": {
+      "name": "Strategy Pro",
+      "url": "https://marketplace.leantime.io/product/leantime-strategies/"
+    }
+  },
+  "plugins/programs.md": {
+    "plugin": {
+      "name": "Programs",
+      "url": "https://marketplace.leantime.io/product/leantime-program-plans/"
+    }
+  },
+  "plugins/whiteboards.md": {
+    "plugin": {
+      "name": "Whiteboards",
+      "url": "https://marketplace.leantime.io/product/leantime-whiteboards/"
+    }
+  },
+  "plugins/custom-fields.md": {
+    "plugin": {
+      "name": "Custom Fields",
+      "url": "https://marketplace.leantime.io/product/leantime-customfields/"
+    }
+  },
+  "plugins/recurring-todos.md": {
+    "plugin": {
+      "name": "Recurring to-dos",
+      "url": "https://marketplace.leantime.io/product/recurring-tasks/"
+    }
+  },
+  "plugins/notes.md": {
+    "plugin": {
+      "name": "Notes",
+      "url": "https://marketplace.leantime.io/product/leantime-notes/"
+    }
+  },
+  "plugins/pomodoro.md": {
+    "plugin": {
+      "name": "Pomodoro timer",
+      "url": "https://marketplace.leantime.io/product/leantime-pomodoro/"
+    }
+  },
+  "ai/leantime-cloud-ai.md": {
+    "edition": "cloud"
+  },
+  "ai/use-leantime-from-your-ai-assistant.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
     }
   }
 }

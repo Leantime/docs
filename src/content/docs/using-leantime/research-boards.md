@@ -65,7 +65,7 @@ The pattern continues from The Customer & The Problem sections.  In these window
 
 ![logo](/_images/getting-started/HelperContent-GettingStarted-ResearchBoard-TheSolution.png)
 
-For more information on Milestones: [Roadmap Planning](/using-leantime/roadmap-planning/)
+For more information on Milestones: [Milestones](/using-leantime/roadmap-planning/)
 
 ## The Little Details
 

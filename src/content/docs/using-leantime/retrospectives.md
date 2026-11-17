@@ -3,42 +3,39 @@ title: "Retrospectives"
 description: "Run a retrospective in Leantime at the end of a sprint, milestone or project: what went well, what didn't, and what to change."
 ---
 
-Retrospectives are that important end piece to every Sprint and even great for the end of a milestone or project completion.  This is that final meeting
-to talk about what went well, what didn't go so well, and what to change.  You can focus on all dimensions of a project 
-and can include things such as: communication, delivery, planning, and workflow.
+A retrospective is a short look back with the team, after a sprint, a milestone or an event: what worked, what didn't, and what to try next time. Leantime gives each project a Retrospective board to collect the answers and keep them for later.
 
-![logo](/_images/getting-started/retrospectivesstart.png)
+![The Retrospective board "After the soft opening": two cards each under Continue, Stop and Start, with Add New in the Start column outlined](/_images/using-leantime/retrospectives-board.webp)
 
-The screen above is the first screen you will see the first time you go to start a retrospective in every project.  Click *Start a Retrospective*.
- 
-![logo](/_images/getting-started/retrospectivetitle.png)
+## How do I hold a retrospective in Leantime?
 
-From there, another pop up box will appear and ask you for the title of your Retrospective.  In this case, we continued the title from this sample project, 
-"The Next Great Idea" but in reality, you could use a Sprint name, Dates, Milestones, or as this, a project name.   Click *Start*.
- 
-![logo](/_images/getting-started/retrospectiveboard.png)
+1. **Open the project** and click **Retrospectives** in the left menu, under **Think**.
+2. **Start a board for this retrospective:** click the board name at the top, choose **Create New Board**, enter a title like "After the soft opening" and click **Create Board**. Each board needs its own title.
+3. **Add cards to the three columns** with **Add New**:
+   - **Continue - What went well?**
+   - **Stop - What should we stop doing?**
+   - **Start - What should we start doing to improve?**
+4. **Give each card a title**, and a description if it needs one. Click **Save & Close**.
+5. **Talk it through.** Each card has its own **Discussion** for comments.
 
-Here you'll see 5 button options.
+A board called **Board** is made for you the first time you open Retrospectives; rename it or use it for your first one.
 
-**Add More** <br>
-**Board Title**:  This drop down menu allows you to select which board you are working on. <br>
-**Create New Board**: As stated, start a new one.<br>
-**Edit Board**: This lets you modify the title of the board.<br>
-**Delete Board**
+Adding cards needs the Editor role or higher. Commenters can join the discussion.
 
-Click *Add More*.
- 
-![logo](/_images/getting-started/retrospectivewentwell.png)
+## How do I make sure the changes happen?
 
-Adding More allows you to edit the title and place examples of what went well.  From this screen, you can also create a new milestone or attach to an existing 
-one.  In this case, we've added an existing milestone.  Click *Save & Close*
+A retrospective only helps if something changes. For each card under **Start**:
 
-![logo](/_images/getting-started/retrospectivewentwellsaved.png)
+- **Open the card** and use **Linked Milestone** to create a milestone for the change, or link it to one you already have.
+- **Add to-dos** to that milestone for the work.
+- **Look back** at the last board at the start of your next retrospective: did it happen?
 
-Clicking *Save & Close* on the previous screen will take you back to the main board view.  Complete the remaining sections and you'll be ready
-to review how things went. 
+## Where else do I find retrospectives?
 
-![logo](/_images/getting-started/retrospectivessave.png)
- 
- Retrospectives can be a quick and effective way to boost team morale, work together, and find ways to always improve.  Click [here](/knowledge-base/team-happiness/) 
- to read more on Team Happiness.
+Retrospectives is one of the [Blueprints](/using-leantime/blueprints/). From a board's **⋮** menu at the top right, you can **Edit** its title, **Export** or **Print** it, or **Delete** it.
+
+## Related
+
+- [Agile](/knowledge-base/agile/): reflecting and adjusting after each cycle
+- [Lean](/knowledge-base/whatislean/): continuous improvement
+- [Milestones](/using-leantime/roadmap-planning/)

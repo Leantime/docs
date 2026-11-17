@@ -26,6 +26,7 @@ My ToDos lists the to-dos assigned to you, from every project.
 - **Show one project** with the filter button next to it.
 - **Change a to-do's status** with the colored status button on the to-do.
 - **Edit, move, add a subtask, log time or delete** from the **⋮** menu on the to-do.
+- **Start a timer** with the play button on the to-do, and stop it the same way (see [Time tracking](/using-leantime/timesheets/)).
 - **Add a to-do** with the **+** button next to a group.
 
 ![The My ToDos widget with its Group By menu open: Due Dates, Project and Priority](/_images/using-leantime/mywork-groupby.webp)
@@ -53,5 +54,5 @@ The palette button next to Update Dashboard changes your theme and colors.
 The left menu has your other personal pages:
 
 - **Project Hub:** your projects as cards, with progress and status, and your favorites at the top (see [What's on the Project Hub?](/using-leantime/managing-projects/#whats-on-the-project-hub)).
-- **Timesheets:** the time you've logged (see [Timesheets](/using-leantime/timesheets/)).
+- **Timesheets:** the time you've logged, a week at a time (see [Time tracking](/using-leantime/timesheets/)).
 - **Calendar:** your full calendar.
