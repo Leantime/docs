@@ -110,7 +110,7 @@ These help everyone, and especially people with ADHD or anyone who gets overwhel
 - **Switch off the features you don't use** on each project's **Modules** tab, so the menu stays short (see [Projects](using-leantime/managing-projects.md#how-do-i-switch-features-on-or-off-for-a-project)).
 - **Star the projects you're working on now.** They move to the top of the [Project Hub](using-leantime/managing-projects.md#whats-on-the-project-hub), so the rest doesn't compete for your attention.
 - **Plan your day in My Work.** Drag to-dos onto the calendar to give them a time (see [My Work Dashboard](using-leantime/my-work-dashboard.md)).
-- **Decide when and how you'll start.** On Leantime Cloud, the Daily Intentions plugin lets you pick a to-do, choose when you'll work on it (before lunch, after a meeting) and write down the first step. These if-then plans, also called implementation intentions, are a research-backed way to follow through, and planning them the evening before works best.
+- **Decide when and how you'll start.** On Leantime Cloud, the [Daily Intentions](plugins/daily-intentions.md) plugin lets you pick a to-do, choose when you'll work on it (before lunch, or at the end of your work day) and write down the first step. These if-then plans, also called implementation intentions, are a research-backed way to follow through, and planning them the evening before works best.
 - **Make outcomes small enough to finish often.** A win every day or two keeps momentum better than one big one at the end.
 
 ## Examples: how teams like yours set up Leantime

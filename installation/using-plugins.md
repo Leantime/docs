@@ -25,6 +25,7 @@ Plugins add features to Leantime. Each one does one job, like planning a strateg
 ### Stay focused
 
 - **[Pomodoro timer](#pomodoro-timer):** work in focused blocks with short breaks in between.
+- **[Daily Intentions](plugins/daily-intentions.md):** decide when you'll start a to-do and what the first step is. Leantime Cloud only.
 
 ### Sign in and connect other tools
 

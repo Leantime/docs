@@ -96,6 +96,7 @@
     - [Strategy Pro](plugins/strategy-pro.md)
     - [Programs](plugins/programs.md)
     - [Whiteboards](plugins/whiteboards.md)
+    - [Daily Intentions](plugins/daily-intentions.md)
  - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md)
 
 **External Links**
