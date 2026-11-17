@@ -201,7 +201,7 @@ Yes. In **My Calendar**, open **Integrate Calendar**, create your iCal URL and s
 
 #### Does Leantime support single sign-on (SSO)?
 
-Yes, on self-hosted Leantime: OpenID Connect and LDAP / Active Directory are built in; see [Authentication](installation/authentication-configuration.md). They aren't available on Leantime Cloud. The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin adds SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more; see [Advanced Auth](installation/plugin-installation.md?id=advanced-auth-plugin).
+Yes, on self-hosted Leantime: OpenID Connect and LDAP / Active Directory are built in; see [Authentication](installation/authentication-configuration.md). They aren't available on Leantime Cloud. The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin adds SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more; see [Advanced Auth](plugins/advanced-authentication.md).
 
 #### Does Leantime have two-factor authentication?
 

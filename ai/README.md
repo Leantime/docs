@@ -20,6 +20,6 @@ Not sure which? See [Which should I use: L.E.O. or my own assistant?](ai/leantim
 
 - [Working with AI assistants](ai/working-with-ai.md): how to give an assistant the right documentation, what never to paste, and how to check its answers.
 - [Glossary](ai/glossary.md): the words for servers, Docker, configuration and sign-in, in plain language.
-- [Set up Keycloak single sign-on (with an AI assistant)](ai/keycloak-sso.md): a complete walkthrough an AI assistant carried out, including the errors it hit.
+- [Set up Keycloak single sign-on (with an AI assistant)](installation/keycloak-sso.md): a complete walkthrough an AI assistant carried out, including the errors it hit.
 
 Every page of these docs has a plain Markdown version for AI assistants: add `.md` to the page address.
