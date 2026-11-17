@@ -76,6 +76,33 @@ A program goes under a strategy the same way, in its **Program Settings** (or **
 - **Logic Model** lays out how your work leads to results: what you put in, what you do, what that produces, and the change it makes. In a strategy it connects to the work: build it from your programs, milestones and goals, rate how strong each link is, and turn it into milestones, to-dos and goals. See [Logic Model](blueprints/logic-model.md).
 - **Planning Boards** are the [Blueprints](using-leantime/blueprints.md) boards, like a SWOT analysis or a Lean Canvas, for this strategy.
 
+## What's in the strategy Report?
+
+**Report** (in beta) is a read-out of the strategy for your board, funders or leadership. It's put together from the work under the strategy, so there's nothing extra to fill in.
+
+1. **Click Report** at the bottom of the strategy menu.
+2. **Pick the period** at the top right: **Last quarter** (the default), **This quarter** or **Next quarter**. The arrows step back and forward.
+3. **Switch between the four tabs:** **Overview**, **Logic Model**, **Resources & Coverage** and **Impact Journey**.
+
+![The Overview tab of the Feed more families in Riverside report for this quarter: 3 of 5 milestones completed, 1 of 1 goals on track, 0 overdue, 24.5 hours logged, the milestone Site agreed as the peak of the period, three projects that need an update, the team's latest update, and the theory health line from Inputs to Impact](../_images/plugins/strategy-report-overview.webp)
+
+| Tab | What it shows |
+| --- | --- |
+| **Overview** | Milestones completed, goals on track, overdue milestones and hours logged in the period, each with **See list**. **Peak this period** picks a completed milestone worth showing. **Needs attention** lists, for example, projects with no update in 30 days. **What the team is saying** shows the latest status update from the strategy and each program. **Theory health** shows how strong each link in your [Logic Model](blueprints/logic-model.md) is, and the weakest one. |
+| **Logic Model** | What you believe will happen, what the outputs are producing, how each outcome is doing and which programs move it, what it's all for, and where it's most at risk. |
+| **Resources & Coverage** | People, capacity, budget and dependencies across the strategy, per program, with capacity against demand and any gaps worth discussing. The numbers come from each program's **Resources** page (see [Programs](plugins/programs.md#how-do-i-plan-peoples-time-with-resources)). **Show in** switches between hours and days. |
+| **Impact Journey** | Where things stood before the work, how far each outcome has come against its target, and the change you're working toward. |
+
+![The Resources & Coverage tab: 7 people assigned at 45% of capacity, no budget yet, a row for each program with its people and weekly hours, capacity against demand, and resource gaps to discuss](../_images/plugins/strategy-report-resources.webp)
+
+At the top right, the report says whether the strategy is **On track**, **At risk** or **Off track**. It comes from the strategy's latest status update, or, without one, from its goals; the line under it says which. To decide it yourself, open the menu (⋮) and choose under **Set verdict**. **Print** in the same menu prints the report, or saves it as a PDF.
+
+**To get the most out of it:**
+
+- **Post status updates** on the strategy and its programs, so **What the team is saying** has something to show.
+- **Give your goals a target,** and link them to the outcomes in the Logic Model, so the report can show how far each has come.
+- **Fill in The world today, before this work** on the Logic Model's Impact card. It's the starting point of the Impact Journey.
+
 ## Who can see and change a strategy?
 
 - **Who can access this project?** in the strategy's settings decides who can see it.
