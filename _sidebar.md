@@ -76,6 +76,7 @@
   - [Risk Analysis](blueprints/risk-analysis.md)
   - [Environment Analysis](blueprints/environment-analysis.md)
   - [Observe / Learn - Insights](blueprints/insights.md)
+  - [Logic Model](blueprints/logic-model.md)
 - [Retrospectives](using-leantime/retrospectives.md)
 - [Reports](using-leantime/reports.md)
 
@@ -88,6 +89,7 @@
 - [Kanban](knowledge-base/kanban.md)
 - [Phases of a project](knowledge-base/phasesofproject.md)
 - [Design thinking](knowledge-base/idea-development.md)
+- [Logic models](knowledge-base/logic-model.md)
 
 **Everything Else**
 

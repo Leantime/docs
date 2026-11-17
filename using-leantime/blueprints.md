@@ -28,7 +28,7 @@ If you don't know where to start, try the **Project Value Canvas**: it asks who 
 | **Environment Analysis** | The world around your customers ([how to use it](blueprints/environment-analysis.md)) |
 | **Simple Empathy Map** | How your users feel about the problem and the solution |
 | **Observe / Learn - Insights** | What you saw, what you learned and what it means ([how to use it](blueprints/insights.md)) |
-| **Logic Model** | How inputs and activities lead to outputs, outcomes and impact (see [below](#what-about-the-logic-model)) |
+| **Logic Model** | How inputs and activities lead to outputs, outcomes and impact ([how to use it](blueprints/logic-model.md)) |
 | **Retrospectives** | What went well and what to change, after a sprint or milestone (see [Retrospectives](using-leantime/retrospectives.md)) |
 
 ## How do I add a card?
@@ -59,7 +59,7 @@ The Logic Model maps how your work leads to change: the **Inputs** you invest, t
 
 ![The Logic Model board with five columns: Inputs, Activities, Outputs, Outcomes and Impact](../_images/using-leantime/blueprints-logic-model.webp)
 
-In core Leantime, the Logic Model is a board like the others: you fill each column with cards. The [Leantime Strategies plugin](https://marketplace.leantime.io/product/leantime-strategies/) builds on it with tracking and views, so you can follow your outcomes over time and keep the reason behind your projects in sight.
+In core Leantime, the Logic Model is a board like the others: you fill each column with cards. With the [Strategy Pro](plugins/strategy-pro.md) plugin, a strategy's Logic Model connects to the work: it can be built from your programs, milestones and goals, shows how strong each link between columns is, and can turn into milestones, to-dos and goals. See [Logic Model](blueprints/logic-model.md) for both.
 
 ## What if something goes wrong?
 
