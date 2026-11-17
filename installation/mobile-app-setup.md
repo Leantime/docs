@@ -41,7 +41,7 @@ The app can tell people on their phones when someone assigns them a to-do, menti
 1. **Sign in as an administrator.**
 2. **Open Company → Company Settings.** The **Mobile push notifications** section is on the **Details** tab.
 3. **Turn on Send push notifications through Leantime's relay.**
-4. **Under What the relay receives,** choose **Full message** or **Content-free** (see the next section).
+4. **Under What phone notifications show,** choose **Everything**, **Names only** or **Nothing** (see the next section).
 5. **Click Save.**
 
 If the section is grayed out, Advanced Authentication isn't enabled. Enable it first; the section links to the plugin in the marketplace. (Pending release: until then, the section isn't grayed out, and without Advanced Authentication you can turn the switch on but nothing is sent.)
@@ -54,10 +54,17 @@ Your server can't send to phones directly, because a phone's notification addres
 
 You choose how much each notification carries:
 
-- **Full message** (the default): the phone shows who did what and on which to-do, for example the to-do's name and "Ben assigned this to you".
-- **Content-free:** the phone shows "New activity in Leantime. Open the app to see it." To-do names, comment text and people's names stay on your server. Tapping the notification opens the right place in the app, which loads the details from your server.
+| Setting | What the phone shows | Example |
+| --- | --- | --- |
+| **Everything** (the default) | Who did what, the to-do's name and comment text | **Pantry open** · Ben: Can we open at 9 on Saturday? |
+| **Names only** | Who did what and the to-do's name, but no comment text | **Pantry open** · Ben commented · Open the Eastside pantry |
+| **Nothing** | Only "New activity in Leantime. Open the app to see it." | **Leantime** · New activity in Leantime. Open the app to see it. |
 
-If your team works with health, legal or other sensitive information, choose **Content-free**. A full message passes through Leantime and Google, and through Apple for iPhones, and can show on the phone's lock screen.
+With **Nothing**, to-do names, comments and people's names stay on your server. Tapping the notification still opens the right place in the app, which loads the details from your server.
+
+> **Pending release.** In Leantime 3.15.3 this setting is called **What the relay receives**, with two choices: **Full message** (like Everything) and **Content-free** (like Nothing). **Names only** comes with the next release.
+
+If your team works with health, legal or other sensitive information, choose **Nothing**. Everything else passes through Leantime and Google, and through Apple for iPhones, and can show on the phone's lock screen. **Names only** isn't enough there: the to-do's name is often the sensitive part.
 
 ## How do I turn phone notifications off?
 
