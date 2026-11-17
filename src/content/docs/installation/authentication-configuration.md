@@ -1,6 +1,9 @@
 ---
 title: "Authentication: OIDC, LDAP and single sign-on"
-description: "Set up single sign-on for self-hosted Leantime with OpenID Connect or LDAP and Active Directory: environment variables, roles and troubleshooting."
+description: "Single sign-on for self-hosted Leantime: OpenID Connect (Keycloak, Authentik, Entra ID, Google) or LDAP and Active Directory, with role mapping and fixes."
+head:
+  - tag: title
+    content: "Leantime SSO: OIDC, LDAP and Active Directory login"
 glance:
   minutes: 30
   level: "Advanced"

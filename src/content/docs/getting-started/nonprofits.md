@@ -1,9 +1,9 @@
 ---
 title: "Organize a non-profit or NGO in Leantime"
-description: "Connect a mission to the work in Leantime: strategies, funded programs and projects, a Logic Model for your theory of change, and goals funders see."
+description: "Run a non-profit or NGO in Leantime: link your mission to programs and projects, build a logic model for your theory of change, and track outcomes for funders."
 head:
   - tag: title
-    content: "Leantime for non-profits and NGOs: programs, logic models, goals"
+    content: "Non-profit project management: programs and logic models"
 ---
 
 For non-profits, NGOs, charities and other mission-driven teams: the work is there to change something, funders want to see that it does, and small teams often juggle programs, volunteers and reports at once. The setup below keeps the mission at the top and the day-to-day work connected to it.

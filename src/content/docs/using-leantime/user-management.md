@@ -1,6 +1,9 @@
 ---
 title: "User management"
-description: "Add and invite people to Leantime, choose their role, and give team members and clients access to the right projects."
+description: "Invite people to Leantime, choose a role from Read Only to Owner, give clients access to only their projects, set work hours and turn on two-factor login."
+head:
+  - tag: title
+    content: "Leantime users and roles: invite people, set permissions"
 ---
 
 Everyone who works in Leantime has a user account with a role. The role decides what they can do: look, comment, change things, or run the projects and the company. On each project you choose who's on the team, and you can give someone a different role there.

@@ -1,6 +1,9 @@
 ---
 title: "Glossary: words for running Leantime"
-description: "The words that come up when you install and run Leantime, in plain language. Knowing them helps you follow the guides, and using them gets you precise…"
+description: "Plain-language definitions of the words you meet when you install and run Leantime: servers and hosting, Docker, configuration, sign-in and security."
+head:
+  - tag: title
+    content: "Glossary: self-hosting and Leantime terms in plain language"
 ---
 
 The words that come up when you install and run Leantime, in plain language. Knowing them helps you follow the guides, and using them gets you precise answers from people and AI assistants.

@@ -1,6 +1,9 @@
 ---
 title: "Programs"
-description: "A program groups projects that work toward the same result, like \"Community Pantries\" with a project for each new pantry. The Programs plugin gives the…"
+description: "Group related projects with the Programs plugin for Leantime: program goals, all of the program's work in one view, and Resources to plan people's time."
+head:
+  - tag: title
+    content: "Programs plugin: manage several projects together"
 plugin:
   name: "Programs"
   url: "https://marketplace.leantime.io/product/leantime-program-plans/"

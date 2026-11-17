@@ -1,6 +1,9 @@
 ---
 title: "Project integrations: Slack, Discord, Mattermost, Telegram and Zulip"
-description: "Send Leantime project updates to Slack, Discord, Mattermost, Telegram or Zulip: which events trigger messages and how to set up each one."
+description: "Send Leantime project updates to Slack, Discord, Mattermost, Telegram or Zulip: what gets posted, how to connect each one, and what to do if nothing arrives."
+head:
+  - tag: title
+    content: "Leantime Slack, Discord, Mattermost and Telegram alerts"
 glance:
   minutes: 10
   level: "Beginner"

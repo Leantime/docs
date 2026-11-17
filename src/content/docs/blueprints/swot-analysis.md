@@ -1,6 +1,9 @@
 ---
 title: "SWOT Analysis"
-description: "A SWOT analysis looks at where a project stands: its Strengths and Weaknesses, which are inside your team or organization, and the Opportunities and…"
+description: "Run a SWOT analysis for a project in Leantime: what goes in Strengths, Weaknesses, Opportunities and Threats, and how to use it to decide what comes next."
+head:
+  - tag: title
+    content: "SWOT analysis for projects: template and how to use it"
 ---
 
 A SWOT analysis looks at where a project stands: its **Strengths** and **Weaknesses**, which are inside your team or organization, and the **Opportunities** and **Threats** around it. It helps you decide what to build on and what to protect against.

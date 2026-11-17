@@ -1,6 +1,9 @@
 ---
 title: "Leantime on your phone"
-description: "Leantime Mobile is the free app for iPhone and Android that connects to the Leantime workspace you already have. On Leantime Cloud you sign in with…"
+description: "Use Leantime on your phone: get the app, connect it to Leantime Cloud or your own server, sign in with SSO, turn on notifications, and fix sign-in errors."
+head:
+  - tag: title
+    content: "Leantime mobile app for iPhone and Android"
 ---
 
 Leantime Mobile is the free app for iPhone and Android that connects to the Leantime workspace you already have. On Leantime Cloud you sign in with your workspace name. On a self-hosted server, the server needs the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin: without it, the app can't sign in.

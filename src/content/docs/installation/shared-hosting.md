@@ -1,6 +1,9 @@
 ---
 title: "Shared hosting (cPanel)"
-description: "You can run Leantime on most shared hosting plans that come with cPanel, like those from Hostinger, GoDaddy or Bluehost. You don't need a command line…"
+description: "Install Leantime on cPanel shared hosting without a command line: check PHP, create the database, upload, point a subdomain, run the installer, set up cron."
+head:
+  - tag: title
+    content: "Install Leantime on shared hosting with cPanel"
 ---
 
 You can run Leantime on most shared hosting plans that come with cPanel, like those from Hostinger, GoDaddy or Bluehost. You don't need a command line: everything below happens in cPanel and its File Manager.

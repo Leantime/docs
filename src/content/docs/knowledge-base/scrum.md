@@ -1,6 +1,9 @@
 ---
 title: "Scrum"
-description: "Scrum is a framework for doing agile work in fixed-length cycles called sprints. The Scrum Guide calls it \"a lightweight framework that helps people…"
+description: "Scrum in plain language: sprints, the Scrum team, the events and artifacts, and what story points and velocity are for, based on the Scrum Guide."
+head:
+  - tag: title
+    content: "What is Scrum? Sprints, roles, events and artifacts"
 ---
 
 Scrum is a framework for doing [agile](/knowledge-base/agile/) work in fixed-length cycles called sprints. The [Scrum Guide](https://scrumguides.org/scrum-guide.html) calls it "a lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems." It's deliberately small: a few roles, a few meetings and a few lists, and the team fills in the rest.

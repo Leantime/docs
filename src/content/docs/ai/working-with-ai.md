@@ -1,6 +1,6 @@
 ---
 title: "Working with AI assistants"
-description: "AI assistants like Claude, ChatGPT, Copilot and Cursor can help you install, configure and fix Leantime, even if you've never run a server before. They…"
+description: "Get useful help from an AI assistant when you run Leantime: what it can help with, what to give it, what never to paste, and how to check its answers."
 ---
 
 AI assistants like Claude, ChatGPT, Copilot and Cursor can help you install, configure and fix Leantime, even if you've never run a server before. They work best when you give them the right facts and check what they suggest. This page shows how.

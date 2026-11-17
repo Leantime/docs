@@ -1,6 +1,9 @@
 ---
 title: "Install from the release package (Apache or Nginx)"
-description: "Install Leantime from the release package on your own server with PHP and MySQL or MariaDB, configured for Apache or Nginx."
+description: "Install self-hosted Leantime from the release package on a Linux server with PHP 8.2 and MySQL or MariaDB, with Apache or Nginx config and the web installer."
+head:
+  - tag: title
+    content: "Install Leantime on Linux with Apache or Nginx"
 glance:
   minutes: 30
   maxMinutes: 60

@@ -1,6 +1,9 @@
 ---
 title: "Recurring to-dos"
-description: "Some work comes back on a schedule: restocking every Monday, a report at the end of every month, a check-in every two weeks. The Recurring Tasks plugin…"
+description: "Make a Leantime to-do repeat daily, weekly, monthly or yearly with the Recurring Tasks plugin: set it up, see when the next one is created, and stop it."
+head:
+  - tag: title
+    content: "Recurring to-dos plugin: repeat a to-do on a schedule"
 plugin:
   name: "Recurring to-dos"
   url: "https://marketplace.leantime.io/product/recurring-tasks/"

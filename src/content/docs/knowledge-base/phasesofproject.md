@@ -1,6 +1,9 @@
 ---
 title: "Phases of a project"
-description: "Most projects, whatever their size, go through the same broad stages: deciding to do it, planning it, doing it while keeping an eye on it, and wrapping…"
+description: "The phases of a project, from starting it to closing it: what happens in each, whether they have to happen in order, and where milestones and timelines fit."
+head:
+  - tag: title
+    content: "What are the phases of a project? A plain-language guide"
 ---
 
 Most projects, whatever their size, go through the same broad stages: deciding to do it, planning it, doing it while keeping an eye on it, and wrapping it up. Naming these phases helps a team see where it is, and what's easy to skip.

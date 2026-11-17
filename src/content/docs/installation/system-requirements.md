@@ -1,6 +1,9 @@
 ---
 title: "System requirements"
-description: "What a server needs to run self-hosted Leantime: PHP and its extensions, Apache or Nginx, and MySQL or MariaDB, or a Docker host."
+description: "What self-hosted Leantime needs: PHP 8.2+ and its extensions, MySQL 8 or MariaDB 10.6+, Apache or Nginx and writable folders, or just a Docker host."
+head:
+  - tag: title
+    content: "Leantime system requirements: PHP, MySQL and Docker"
 ---
 
 Leantime needs **PHP 8.2 or later** and a database (**MySQL 8.0+**, **MariaDB 10.6+** or **PostgreSQL**), or a machine that runs **Docker**. These requirements apply to Leantime 3.2 and later; PostgreSQL works from Leantime 3.6.

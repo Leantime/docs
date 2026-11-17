@@ -1,6 +1,9 @@
 ---
 title: "Observe / Learn - Insights"
-description: "The Observe / Learn - Insights board collects what you learn from the people you're working for: what you saw, what they told you, and what you've…"
+description: "Collect what you learn from the people you work for on the Insights board: what you saw, what they said, what you read, and what it all means for the project."
+head:
+  - tag: title
+    content: "Research insights board: observe, listen and learn"
 ---
 
 The Observe / Learn - Insights board collects what you learn from the people you're working for: what you saw, what they told you, and what you've read. Its last column turns all of that into what you now know.

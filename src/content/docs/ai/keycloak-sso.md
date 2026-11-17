@@ -1,6 +1,9 @@
 ---
 title: "Set up Keycloak single sign-on (with an AI assistant)"
-description: "Your team can sign in to Leantime with their Keycloak accounts, using the OpenID Connect (OIDC) support built into Leantime. No plugin is needed for…"
+description: "Connect self-hosted Leantime to Keycloak with OpenID Connect, no plugin needed: create the realm and client, set the LEAN_OIDC variables and fix common errors."
+head:
+  - tag: title
+    content: "Set up Keycloak single sign-on (SSO) for Leantime"
 edition: self-hosted
 glance:
   minutes: 30

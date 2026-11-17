@@ -1,6 +1,9 @@
 ---
 title: "Kanban"
-description: "Kanban is a way to manage work by making it visible and keeping it moving. The Kanban Guide defines it as \"a strategy for optimizing the flow of value…"
+description: "Kanban in plain language: where it comes from, its core practices, why to limit work in progress, how to see if work flows, and kanban boards outside software."
+head:
+  - tag: title
+    content: "What is Kanban? Practices, WIP limits and swimlanes"
 ---
 
 Kanban is a way to manage work by making it visible and keeping it moving. The [Kanban Guide](https://kanbanguides.org/english/) defines it as "a strategy for optimizing the flow of value through a process." In practice, that usually starts with a board: a column for each stage of the work, and a card for each piece of work that moves across it.

@@ -1,6 +1,9 @@
 ---
 title: "Email and SMTP configuration"
-description: "Configure email in self-hosted Leantime: SMTP settings for Gmail, Microsoft 365, SendGrid, Mailgun and Amazon SES, sending a test email, and fixing delivery errors."
+description: "Set up email in self-hosted Leantime: SMTP settings for Gmail, Microsoft 365, SendGrid, Mailgun and Amazon SES, a test email, and why emails aren't sent."
+head:
+  - tag: title
+    content: "Leantime email setup: SMTP for Gmail, Microsoft 365 and more"
 glance:
   minutes: 15
   level: "Some experience"

@@ -1,6 +1,9 @@
 ---
 title: "Task management"
-description: "Manage to-dos in Leantime with the kanban board and backlog: statuses, sprints, filters and time tracking."
+description: "Manage to-dos (tasks) in Leantime: add them, break them into subtasks, set dependencies, switch between kanban, table and list views, and use swimlanes."
+head:
+  - tag: title
+    content: "To-dos (tasks) in Leantime: kanban, subtasks and sprints"
 ---
 
 To-Dos are the work in a project: each one has an owner, a status, a priority and a size, and can belong to a milestone. Open **To-Dos** in a project's menu to see them as a Kanban board, a table or a list. Break bigger to-dos into subtasks, add collaborators who need to follow along, and group the board into swimlanes when it gets busy.

@@ -1,6 +1,9 @@
 ---
 title: "MCP server: connect AI assistants to Leantime"
 description: "Connect Claude, ChatGPT, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server: sign-in or tokens, client setup, every tool, and security."
+head:
+  - tag: title
+    content: "Leantime MCP server: connect Claude, ChatGPT and Cursor"
 plugin:
   name: "MCP Server"
   url: "https://marketplace.leantime.io/product/mcp-server/"

@@ -1,6 +1,9 @@
 ---
 title: "Frequently asked questions"
-description: "Answers to common questions about self-hosted Leantime: installation, email, users and roles, SSO, tasks, timesheets, plugins, upgrades, the API and troubleshooting."
+description: "Short answers for people who run their own Leantime: requirements, Docker, SMTP, roles, LDAP and OIDC, updates, logs and resetting the admin password."
+head:
+  - tag: title
+    content: "Self-hosted Leantime FAQ: install, email, SSO and upgrades"
 ---
 
 This FAQ document addresses common questions and issues gathered from GitHub issues, discussions, and community feedback.

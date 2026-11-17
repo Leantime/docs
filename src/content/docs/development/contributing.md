@@ -1,6 +1,9 @@
 ---
 title: "Contributing to Leantime"
-description: "Leantime is open source, and contributions of every kind help: reporting a bug, translating, improving these docs, answering someone's question, or…"
+description: "Help build Leantime, the open source project management system: ways to help without code, how to send a pull request, and where to start in the code."
+head:
+  - tag: title
+    content: "Contribute to Leantime: code, translations and more"
 ---
 
 Leantime is open source, and contributions of every kind help: reporting a bug, translating, improving these docs, answering someone's question, or writing code.

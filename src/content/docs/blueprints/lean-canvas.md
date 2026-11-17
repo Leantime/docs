@@ -1,6 +1,9 @@
 ---
 title: "Lean Canvas"
-description: "The Lean Canvas fits a whole business idea on one page, so you can see quickly whether it holds together and what you still need to test. It's meant…"
+description: "Test a business or product idea on one page with the Lean Canvas: what goes in each of the nine boxes, and how to turn risky assumptions into experiments."
+head:
+  - tag: title
+    content: "Lean Canvas template: what goes in each box"
 ---
 
 The Lean Canvas fits a whole business idea on one page, so you can see quickly whether it holds together and what you still need to test. It's meant for early ideas: new products, services and programs, where you know less than you'd like.

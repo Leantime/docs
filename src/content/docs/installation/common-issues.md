@@ -1,6 +1,9 @@
 ---
 title: "Common issues"
-description: "Fixes for common self-hosted Leantime problems: login that only refreshes, 404 on /install, upload errors, missing vendor folder, broken styles and PHP errors."
+description: "Fix common self-hosted Leantime problems: the login page reloads, /install shows 404 or loops, 500 errors, missing styles, failed uploads and unsent emails."
+head:
+  - tag: title
+    content: "Leantime troubleshooting: login loops, 500 errors, no styles"
 ---
 
 Fixes for the problems people most often hit when they install, update or run Leantime themselves. Find your symptom or error message below. If you run Leantime in Docker, also see [Docker troubleshooting](/installation/docker-troubleshooting/).

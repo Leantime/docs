@@ -1,6 +1,9 @@
 ---
 title: "Move Leantime to a new server"
-description: "Moving Leantime means copying three things to the new server: the database, the uploaded files and plugins, and your settings. Then you start the same…"
+description: "Move a self-hosted Leantime to a new server: copy the database, uploaded files, plugins and settings for Docker or a package install, then check it all works."
+head:
+  - tag: title
+    content: "Move Leantime to a new server (Docker or package)"
 glance:
   minutes: 30
   maxMinutes: 60

@@ -1,6 +1,9 @@
 ---
 title: "What can Leantime do?"
-description: "Leantime is a free, open source project management system you can host yourself. It covers to-dos, milestones, goals, docs, ideas, time tracking and…"
+description: "What Leantime does on Cloud and self-hosted: to-dos, milestones, goals, docs, time tracking, SSO, API and plugins, with yes-or-no answers to common questions."
+head:
+  - tag: title
+    content: "Leantime features: what it can and can't do"
 ---
 
 Leantime is a free, open source project management system you can host yourself. It covers to-dos, milestones, goals, docs, ideas, time tracking and reports. Plugins from the [Leantime Marketplace](https://marketplace.leantime.io/) add more, and [Leantime Cloud](https://leantime.io/pricing/) runs everything for you.

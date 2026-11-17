@@ -1,6 +1,9 @@
 ---
 title: "Backup and restore"
-description: "Back up and restore a self-hosted Leantime instance: what to save (database, uploaded files, configuration), how to back up Docker and package installs, and how to restore."
+description: "Back up self-hosted Leantime: the MySQL or MariaDB database, uploaded files and config/.env, for Docker and server installs, with a script and restore steps."
+head:
+  - tag: title
+    content: "Back up and restore Leantime (database and files)"
 glance:
   minutes: 15
   level: "Some experience"

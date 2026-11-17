@@ -1,6 +1,9 @@
 ---
 title: "Roadmap and milestones"
-description: "Plan your roadmap in Leantime with milestones, and see where your to-dos sit on the timeline in the milestone view."
+description: "Plan a roadmap with milestones in Leantime: add to-dos to them, see and change the timeline (Gantt view), set dependencies, track progress and link goals."
+head:
+  - tag: title
+    content: "Milestones and the project timeline in Leantime"
 ---
 
 A milestone is a stretch of work with a clear result: something you can point to when it's done, like "Site agreed", "Volunteers trained" or "Pantry open". It has a start date, an end date and an owner, and the to-dos that get it done. Milestones turn a long project into steps, and show everyone where the project stands.

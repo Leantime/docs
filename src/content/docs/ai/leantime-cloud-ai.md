@@ -1,6 +1,6 @@
 ---
 title: "AI in Leantime Cloud (L.E.O.)"
-description: "Leantime Cloud has an AI assistant built in, called L.E.O. It works inside Leantime, with your projects and your permissions: you can ask it questions…"
+description: "L.E.O., the AI assistant in Leantime Cloud: ask it about your work, let it sort your to-dos, break a to-do into steps, get help writing, and what it costs."
 edition: cloud
 ---
 

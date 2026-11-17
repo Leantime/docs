@@ -1,6 +1,9 @@
 ---
 title: "Strategy Pro"
-description: "A strategy is what your organization is working toward over the next year or more, like \"Feed more families in Riverside\". Strategy Pro gives it a…"
+description: "Plan strategy above your projects with the Strategy Pro plugin: focus areas, goals that roll up from your projects, the Logic Model and planning boards."
+head:
+  - tag: title
+    content: "Strategy Pro plugin: link strategy, goals and projects"
 plugin:
   name: "Strategy Pro"
   url: "https://marketplace.leantime.io/product/leantime-strategies/"

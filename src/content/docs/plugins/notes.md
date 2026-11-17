@@ -1,6 +1,9 @@
 ---
 title: "Notes"
-description: "Not everything belongs in a project yet: a question for the city, ideas for an opening day, a list of people to thank. The Notes plugin gives you a…"
+description: "Keep quick notes and ideas in Leantime with the Notes plugin: write a note, see who can read it, and organize notes before they belong in a project."
+head:
+  - tag: title
+    content: "Notes plugin: private notes next to your work"
 plugin:
   name: "Notes"
   url: "https://marketplace.leantime.io/product/leantime-notes/"

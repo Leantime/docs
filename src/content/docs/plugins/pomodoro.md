@@ -1,6 +1,9 @@
 ---
 title: "Pomodoro timer"
-description: "The Pomodoro technique is simple: work on one thing for 25 minutes, then take a short break. The Pomodoro plugin puts the timer on your My Work…"
+description: "Work in focused blocks with the Pomodoro plugin on your Leantime dashboard: 25-minute sessions, short and long breaks, and time logged to the to-do you drop in."
+head:
+  - tag: title
+    content: "Pomodoro timer plugin: focus sessions on My Work"
 plugin:
   name: "Pomodoro timer"
   url: "https://marketplace.leantime.io/product/leantime-pomodoro/"

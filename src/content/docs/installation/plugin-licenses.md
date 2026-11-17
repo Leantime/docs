@@ -1,6 +1,9 @@
 ---
 title: "Plugin Licenses, Updates and Problems"
-description: "Answers for administrators running marketplace plugins on a self-hosted Leantime: where your license key is, what counts as a user, and what Leantime…"
+description: "Find and enter a Leantime plugin license key, see what counts as a user, update plugins, and fix a plugin that was disabled or doesn't load."
+head:
+  - tag: title
+    content: "Leantime plugin licenses, updates and problems"
 ---
 
 Answers for administrators running marketplace plugins on a self-hosted Leantime: where your license key is, what counts as a user, and what Leantime does when a plugin stops working. To install a plugin for the first time, follow [Plugin Installation](/installation/plugin-installation/).

@@ -1,6 +1,9 @@
 ---
 title: "Use Leantime from your AI assistant"
-description: "If you already work with an AI assistant like Claude or ChatGPT, Leantime can be part of that conversation. Connect it once, and you can tell the…"
+description: "Update to-dos, assign work and start projects from Claude, ChatGPT or Cursor in plain language, with example prompts, routines and tips for good results."
+head:
+  - tag: title
+    content: "Use Leantime from Claude or ChatGPT: what to ask"
 plugin:
   name: "MCP Server"
   url: "https://marketplace.leantime.io/product/mcp-server/"

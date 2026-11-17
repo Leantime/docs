@@ -1,6 +1,9 @@
 ---
 title: "Business Model Canvas"
-description: "The Business Model Canvas shows how an organization creates value, delivers it and pays for it, on one page. Use it when a project changes how your…"
+description: "See how an organization creates, delivers and earns from its value with the Business Model Canvas: what goes in each of the nine boxes, and how to use it."
+head:
+  - tag: title
+    content: "Business Model Canvas template: the nine building blocks"
 ---
 
 The Business Model Canvas shows how an organization creates value, delivers it and pays for it, on one page. Use it when a project changes how your organization works: a new service, a new partner, a new way of funding the work.

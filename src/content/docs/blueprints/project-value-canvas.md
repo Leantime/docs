@@ -1,6 +1,9 @@
 ---
 title: "Project Value Canvas"
-description: "The Project Value Canvas checks that a project is worth doing before you plan the work: who it's for, what problem they have, how you'll solve it, and…"
+description: "Check a project is worth doing before you plan it: who it's for, their problem, your solution and what they gain, on Leantime's Project Value Canvas."
+head:
+  - tag: title
+    content: "Project Value Canvas: is this project worth doing?"
 ---
 
 The Project Value Canvas checks that a project is worth doing before you plan the work: who it's for, what problem they have, how you'll solve it, and what they gain. It's a good first blueprint for any new project.

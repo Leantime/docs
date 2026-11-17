@@ -1,6 +1,9 @@
 ---
 title: "Risk Analysis"
-description: "A risk analysis lists what could go wrong, how likely it is, how much it would hurt, and what you'll do about it. Leantime's board sorts risks into a…"
+description: "List what could go wrong on a project, rate impact and probability on Leantime's risk grid, decide what to do about each risk, and keep them under control."
+head:
+  - tag: title
+    content: "Risk analysis template: impact and probability matrix"
 ---
 
 A risk analysis lists what could go wrong, how likely it is, how much it would hurt, and what you'll do about it. Leantime's board sorts risks into a grid by impact and probability, so the ones that need attention first stand out.

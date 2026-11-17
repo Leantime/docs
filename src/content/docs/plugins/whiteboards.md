@@ -1,6 +1,9 @@
 ---
 title: "Whiteboards"
-description: "A whiteboard is a blank canvas inside a project, for anything that's easier to draw than to write: a floor plan, a process, an org chart, a rough…"
+description: "Sketch floor plans, processes, org charts and screen layouts on a whiteboard inside a Leantime project, with Excalidraw tools, a shape library and export."
+head:
+  - tag: title
+    content: "Whiteboards plugin: draw diagrams inside a project"
 plugin:
   name: "Whiteboards"
   url: "https://marketplace.leantime.io/product/leantime-whiteboards/"

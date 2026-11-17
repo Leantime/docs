@@ -1,6 +1,9 @@
 ---
 title: "Connect to the JSON-RPC API"
-description: "Call the Leantime JSON-RPC 2.0 API: create an API key, send authenticated POST and GET requests to the single endpoint, and read the results."
+description: "Use the Leantime JSON-RPC 2.0 API: create an API key, send authenticated requests with curl, and find the method you need in the API reference."
+head:
+  - tag: title
+    content: "Leantime API: create an API key and make JSON-RPC calls"
 glance:
   minutes: 10
   level: "Some experience"

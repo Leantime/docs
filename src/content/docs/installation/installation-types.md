@@ -1,6 +1,9 @@
 ---
 title: "Installation options"
-description: "Ways to self-host Leantime, the free open source project management system: the release package on Apache or Nginx, Docker, Synology NAS and other setups."
+description: "Choose how to self-host Leantime: Docker, a Linux server with Apache or Nginx, cPanel shared hosting, a Synology NAS or Kubernetes, and what each one needs."
+head:
+  - tag: title
+    content: "How to install Leantime: Docker, server or shared hosting"
 ---
 
 Leantime can be installed in different ways. The following are few options of installation:

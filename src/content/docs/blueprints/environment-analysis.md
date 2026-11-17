@@ -1,6 +1,9 @@
 ---
 title: "Environment Analysis"
-description: "An environment analysis looks at the world around your project: the trends and changes you don't control, but that can help or hurt it. Leantime's…"
+description: "Look at the world around your project with a PESTLE analysis in Leantime: what goes in each of the six areas, how to sort what you find, and how to use it."
+head:
+  - tag: title
+    content: "Environment analysis (PESTLE) template for projects"
 ---
 
 An environment analysis looks at the world around your project: the trends and changes you don't control, but that can help or hurt it. Leantime's board uses the six areas of a PESTLE analysis.

@@ -1,6 +1,6 @@
 ---
 title: "Project management concepts"
-description: "These pages explain the ideas behind managing projects: where they come from, what they ask of a team, and when they help. They're about the methods…"
+description: "Plain-language guides to the project management ideas behind Leantime: Lean, Agile, Scrum, Kanban, design thinking and project phases, with sources."
 ---
 
 These pages explain the ideas behind managing projects: where they come from, what they ask of a team, and when they help. They're about the methods, not about Leantime's buttons. Each one ends with a short section on doing it in Leantime, with links to the how-to pages.

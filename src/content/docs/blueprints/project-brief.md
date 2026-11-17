@@ -1,6 +1,9 @@
 ---
 title: "Project Brief"
-description: "A project brief is the one page everyone can agree on before work starts: what the project is, why it matters, who decides, and what it can spend. In…"
+description: "Write a one-page project brief in Leantime: what the project is, why it matters, who decides and what it can spend, and how to get each part agreed."
+head:
+  - tag: title
+    content: "Project brief template: agree on a project before it starts"
 ---
 
 A project brief is the one page everyone can agree on before work starts: what the project is, why it matters, who decides, and what it can spend. In Leantime it's a board, so each part can be discussed and accepted on its own.

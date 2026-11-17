@@ -1,6 +1,9 @@
 ---
 title: "Timesheets and time tracking"
-description: "Track time in Leantime: start a timer from a to-do, log hours in My Timesheets, and review billable time for the team."
+description: "Track time in Leantime: start a timer on a to-do, log hours afterwards or a week at once, review the team's hours, and mark time as invoiced, approved or paid."
+head:
+  - tag: title
+    content: "Time tracking in Leantime: timers and timesheets"
 ---
 
 Leantime records the time people spend on to-dos. You can run a timer while you work, log hours on the to-do afterwards, or fill in a week at a time. The hours add up per to-do, per person and per project, so you can compare them with what you planned, and bill for them if you work for clients.

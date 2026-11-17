@@ -1,6 +1,9 @@
 ---
 title: "AI with Leantime"
-description: "There are three ways to use AI with Leantime:"
+description: "Three ways to use AI with Leantime: connect Claude, ChatGPT or Cursor through the MCP server, use L.E.O. in Leantime Cloud, or get AI help to set it up."
+head:
+  - tag: title
+    content: "AI with Leantime: MCP, L.E.O. and AI-assisted setup"
 ---
 
 There are three ways to use AI with Leantime:

@@ -1,6 +1,9 @@
 ---
 title: "Upgrade guide"
-description: "Upgrade self-hosted Leantime safely on Docker, package and shared-hosting installs: a pre-upgrade checklist, the CLI update command and version-specific notes."
+description: "Update self-hosted Leantime safely: back up first, then update the Docker image, the release package or your shared-hosting files, and run the database update."
+head:
+  - tag: title
+    content: "How to update Leantime to a new version"
 glance:
   minutes: 15
   maxMinutes: 45

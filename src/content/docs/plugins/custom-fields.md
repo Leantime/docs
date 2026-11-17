@@ -1,6 +1,9 @@
 ---
 title: "Custom Fields"
-description: "Every team tracks something Leantime doesn't have a field for: a budget code, a cost estimate, which client contact asked for it. The Custom Fields…"
+description: "Add your own fields to Leantime to-dos with the Custom Fields plugin: text, number, dropdown, checkbox and date fields, shown on every project or only some."
+head:
+  - tag: title
+    content: "Custom Fields plugin: add your own fields to to-dos"
 plugin:
   name: "Custom Fields"
   url: "https://marketplace.leantime.io/product/leantime-customfields/"
