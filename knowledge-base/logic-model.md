@@ -41,7 +41,7 @@ Many organizations write a theory of change first, then a logic model for each p
 
 - **Start from the impact and work backwards.** Decide the change you want, then the outcomes that would show you're getting there, then what you'd need to do.
 - **Keep it to one page.** A handful of items in each column. Detail belongs in your project plan.
-- **Make outcomes measurable.** "Families eat better" is hard to check; "families get food every week" is not.
+- **Make outcomes measurable.** "Families eat better" is hard to check; "fewer families say they skipped meals last month" is not. Check that it's still a change for the people you serve, not a count of what you delivered.
 - **Write down your assumptions,** especially the weak links between columns.
 - **Build it with the people involved:** staff, volunteers, and the people you serve. CDC's evaluation guidance recommends involving them from the start.
 - **Update it.** A logic model is a working document. When you learn that a step doesn't work, change it.
