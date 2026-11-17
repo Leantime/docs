@@ -80,9 +80,25 @@ When the total goes past their weekly hours, the People tab shows how far over t
 
 Only hours booked on Resources count. Time estimates on to-dos, and projects that aren't in a program, don't.
 
-## What is Report?
+## What's in the program Report?
 
-**Report** sums up a period across all the projects: milestones done, in flight and coming up, hours logged, the program's goals, each project at a glance, and the latest status updates from the projects.
+**Report** is a read-out of the whole program for a period, for your leadership, board or funders. It's put together from the program's projects, goals and **Resources** plan, so there's nothing extra to fill in.
+
+1. **Click Report** in the program menu.
+2. **Pick the period** at the top right: **Last quarter** (the default), **This quarter** or **Next quarter**. The arrows step back and forward.
+3. **Switch between the four tabs:**
+
+| Tab | What it shows |
+| --- | --- |
+| **Overview** | Milestones completed, goals on track, overdue milestones and hours logged across the program's projects, each with **See list**; the milestone worth highlighting; projects that need attention, like those with no update in 30 days; and the latest status updates. |
+| **Resources & Coverage** | What the program costs in people and time: how much of everyone's capacity is booked, a row per project, how the work still to do compares with the time available, and gaps to discuss, like someone booked for more hours than they have. **Show in** switches between hours and days. |
+| **Logic Model** and **Impact Journey** | How the program's work leads to change, and how far each outcome has come. They read the program's own Logic Model, under **Blueprints** (see [Logic Model](blueprints/logic-model.md)). Until it has cards, these tabs show how to start one. |
+
+![The Resources & Coverage tab of the Community Pantries report: 4 people at 71% of capacity, a row for each of the two projects with its weekly hours, capacity against demand, and a gap to discuss: Dev Example is booked for 10 hours a week against 8](../_images/plugins/program-report-resources.webp)
+
+At the top right, the report says whether the program is **On track**, **At risk** or **Off track**, from its latest status update or, without one, from its goals. Open the menu (⋮) to set it yourself under **Set verdict**, to go back to the calculated one with **Revert to metrics**, or to **Print** the report or save it as a PDF.
+
+**Resources & Coverage** is only as good as the **Resources** plan behind it: book people on the projects and keep their weekly hours up to date (see [How do I plan people's time with Resources?](#how-do-i-plan-peoples-time-with-resources)). If the program is part of a [strategy](plugins/strategy-pro.md), the strategy's report adds up all its programs the same way.
 
 ## Related
 
