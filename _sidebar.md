@@ -62,6 +62,16 @@
 - [Blueprints](using-leantime/blueprints.md)
 - [Reports](using-leantime/reports.md)
 
+**Project management concepts**
+
+- [Overview](knowledge-base/README.md)
+- [Lean](knowledge-base/whatislean.md)
+- [Agile](knowledge-base/agile.md)
+- [Scrum](knowledge-base/scrum.md)
+- [Kanban](knowledge-base/kanban.md)
+- [Phases of a project](knowledge-base/phasesofproject.md)
+- [Design thinking](knowledge-base/idea-development.md)
+
 **Everything Else**
 
  - [Leantime's MCP Server](installation/leantime-mcp.md)
