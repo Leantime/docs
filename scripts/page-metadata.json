@@ -305,8 +305,8 @@
     "description": "Validate a product idea with lean methods before you build it: the Lean Canvas, research boards and problem-solution fit in Leantime."
   },
   "knowledge-base/system-roles.md": {
-    "title": "Agile roles in Leantime",
-    "description": "How Leantime roles map to Scrum: the manager as Scrum Master, the client as Product Owner and team members as developers."
+    "title": "Roles in Leantime",
+    "description": "Where to find Leantime's user roles, from Read Only to Owner, and what each one can do."
   },
   "knowledge-base/team-happiness.md": {
     "title": "Team happiness and productivity",
@@ -532,6 +532,29 @@
     "plugin": {
       "name": "MCP Server",
       "url": "https://marketplace.leantime.io/product/mcp-server/"
+    }
+  },
+  "installation/mobile-app-setup.md": {
+    "title": "Set up the mobile app on a self-hosted server",
+    "description": "Get a self-hosted Leantime ready for the mobile app: Advanced Authentication, sign-in with SSO, and phone notifications through Leantime's relay.",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "An administrator account on a self-hosted Leantime, 3.9.5 or later (3.15.4 or later for phone notifications)",
+        "A license for the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin",
+        "HTTPS with a certificate from a public authority"
+      ],
+      "where": [
+        "Leantime, under **Company → Leantime Apps**, to install the plugin",
+        "Leantime, under **Company → Company Settings**, to turn on phone notifications",
+        "The app, under **You → Settings → Notification settings**"
+      ],
+      "result": "Your team signs in to Leantime on their phones and gets notifications there."
+    },
+    "plugin": {
+      "name": "Advanced Authentication",
+      "url": "https://marketplace.leantime.io/product/advanced-auth/"
     }
   }
 }

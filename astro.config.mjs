@@ -326,6 +326,7 @@ export default defineConfig({
 								{ label: 'Installing plugins', slug: 'installation/plugin-installation' },
 								{ label: 'Plugin licenses & updates', slug: 'installation/plugin-licenses' },
 								{ label: 'Authentication', slug: 'installation/authentication-configuration' },
+								{ label: 'Mobile app', slug: 'installation/mobile-app-setup' },
 							],
 						},
 						{ label: 'Backup & Restore', slug: 'installation/backup-restore' },

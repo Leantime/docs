@@ -29,11 +29,7 @@ Everything in the app works on Leantime Cloud, with no plugins or setup.
 
 ## How do I connect the app to my self-hosted Leantime?
 
-Your server needs three things first:
-
-- **Leantime 3.9.5 or later.** To check, click the **?** (help) icon in the top right of Leantime; the version is at the bottom, under **System**.
-- **The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin, installed and enabled.** It signs the app in with its own token, so the app never stores your password, and access can be revoked without changing it. Your Leantime administrator can [install it](/installation/plugin-installation/).
-- **HTTPS with a certificate from a public authority,** such as Let's Encrypt, at an address your phone can reach. Self-signed certificates don't work.
+Your Leantime administrator sets up the server first: it needs Leantime 3.9.5 or later, the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin and an HTTPS certificate from a public authority. The details for administrators are in [Set up the mobile app on a self-hosted server](/installation/mobile-app-setup/).
 
 Then, in the app:
 
@@ -48,18 +44,11 @@ The **Notes** tab also needs the [Notes](https://marketplace.leantime.io/product
 
 ## Can I sign in with my company login (SSO)?
 
-Yes, on a self-hosted server with Leantime 3.10.2 or later and Advanced Authentication. The app's sign-in screen shows a button for each login your server offers:
+Yes, on a self-hosted server that offers one. The app's sign-in screen shows **Sign in with SSO**, or a button for your provider, such as Google, Microsoft or GitHub. Tap it, sign in on your company's page the way you always do, and you're sent back to the app.
 
-- **Sign in with SSO** when your server uses Leantime's built-in OpenID Connect login (see [Authentication](/installation/authentication-configuration/)), for example with Keycloak, Okta, Microsoft Entra ID or Authentik.
-- **A button per provider** set up in Advanced Authentication 1.4.0 or later, such as Google, Microsoft or GitHub.
+If your account also uses Leantime's two-factor codes, the app asks for the code after the company login. SAML 2.0 logins don't work in the app yet.
 
-Tap the button, sign in on your company's page the way you always do, and you're sent back to the app. SAML 2.0 logins don't work in the app yet.
-
-**Leantime in a folder?** If your Leantime runs in a folder, like `https://example.com/leantime`, **Sign in with SSO** needs Leantime 3.15.1 or later, and `LEAN_APP_URL` must include the folder (see [Subfolder installation](/installation/subfolder/)). On older versions the button opens the address without the folder and fails; use an Advanced Authentication provider button instead, which includes the folder.
-
-**Two-factor codes:** if your account also uses Leantime's two-factor codes, the app asks for the code after the company login. This needs Leantime 3.13.0 and app version 1.1.0 or later.
-
-**For administrators:** there's nothing extra to register with your login provider, because the app uses the same callback address as the browser. If a sign-in wall sits in front of Leantime, see [What does the app's error message mean?](#what-does-the-apps-error-message-mean).
+No button for your company login? Ask your administrator: what the server needs is in [Set up the mobile app on a self-hosted server](/installation/mobile-app-setup/#how-does-my-team-sign-in).
 
 ## What can I do in the app?
 
@@ -86,9 +75,23 @@ If the app says your role can't do something, ask your workspace administrator.
 
 ![The Now tab: a focus timer counting down on one to-do](/_images/using-leantime/mobile-now-timer.webp)
 
+## Can I get notifications on my phone?
+
+Yes. The app can tell you when someone assigns you a to-do, mentions you, or comments on your work.
+
+1. **Open You → Settings → Notification settings.**
+2. **Turn on Phone notifications.** If your phone asks whether Leantime may send notifications, allow it.
+3. **Optional:** under **How they arrive**, choose whether they show as a banner or arrive quietly.
+
+What you get follows your [notification settings](/using-leantime/notifications/), the same ones as in the browser: muted projects and kinds of changes you've switched off stay quiet on your phone too. @Mentions and changes to to-dos you're a collaborator on still reach you. Turning **Phone notifications** off only affects that phone.
+
+Don't see **Phone notifications**? Update the app to the latest version.
+
+On Leantime Cloud, that's all. On a self-hosted server, your administrator turns phone notifications on for the server first (see [Set up the mobile app on a self-hosted server](/installation/mobile-app-setup/#how-do-i-turn-on-phone-notifications)). If you've turned them on and nothing arrives, ask them.
+
 ## How do reminders work?
 
-Turn them on under **Settings → Reminders**:
+Turn them on under **You → Settings → Reminders**:
 
 - **Morning cue:** a gentle start to the day, at the time you choose.
 - **Plan tomorrow:** an evening nudge to pick tomorrow's to-dos.

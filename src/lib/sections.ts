@@ -21,14 +21,19 @@ const BY_PREFIX: Array<[string, SectionKey]> = [
 	['ai/', 'ai'],
 	['using-leantime/', 'use'],
 	['getting-started/', 'use'],
+	['plugins/', 'use'],
+	['blueprints/', 'use'],
 	['knowledge-base/', 'learn'],
 	['api', 'dev'],
 	['development/', 'dev'],
 	['technical/', 'dev'],
 ];
 
-/** The section of a page: its `section` front matter, else its folder. */
+/**
+ * The section of a page: its `section` front matter, else its folder. A folder's overview
+ * page has the folder name without the slash as its id (`ai`, `knowledge-base`).
+ */
 export function sectionOf(id: string, frontmatter?: SectionKey): SectionKey | undefined {
 	if (frontmatter) return frontmatter;
-	return BY_PREFIX.find(([prefix]) => id.startsWith(prefix))?.[1];
+	return BY_PREFIX.find(([prefix]) => id.startsWith(prefix) || (prefix.endsWith('/') && id === prefix.slice(0, -1)))?.[1];
 }

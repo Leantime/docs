@@ -259,7 +259,7 @@ The Advanced Auth plugin enables Single Sign-On (SSO) through various OAuth/SAML
 
 Advanced Authentication is a plugin for self-hosted Leantime; it isn't available on Leantime Cloud. [Get the plugin](https://marketplace.leantime.io/product/advanced-auth/).
 
-- **The Leantime Mobile app.** On a self-hosted server, the app for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile) can't sign in without this plugin, with a password or with a sign-in provider. With it, your team signs in on their phones, and two-factor authentication works there too (see [Mobile App Sign-In](#mobile-app-sign-in) and [Leantime on your phone](/using-leantime/mobile-app/)).
+- **The Leantime Mobile app.** On a self-hosted server, the app for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile) can't sign in without this plugin, with a password or with a sign-in provider. With it, your team signs in on their phones, two-factor authentication works there too, and you can turn on phone notifications (see [Set up the mobile app on a self-hosted server](/installation/mobile-app-setup/)).
 - **Sign-in buttons for the accounts people already have:** Google, Microsoft, GitHub, GitLab, Gitea, Okta, Keycloak, Authentik, Auth0, PropelAuth and eduID.
 - **SAML 2.0 single sign-on**, for identity providers that use SAML. In the browser only for now: SAML isn't available in the mobile app yet.
 
@@ -344,7 +344,7 @@ If `LEAN_APP_URL` isn't set, the website and the command line use separate setti
 
 ### Mobile App Sign-In
 
-With AdvancedAuth 1.4.0 or later on Leantime 3.10.2 or later, the Leantime mobile app shows a button for each enabled provider on its login screen. You don't need to configure anything else: the app uses the same callback URL as the browser. Leantime's two-factor authentication applies in the app too. SAML 2.0 isn't available in the mobile app yet.
+With AdvancedAuth 1.4.0 or later on Leantime 3.10.2 or later, the Leantime mobile app shows a button for each enabled provider on its login screen. You don't need to configure anything else: the app uses the same callback URL as the browser. Leantime's two-factor authentication applies in the app too. SAML 2.0 isn't available in the mobile app yet. Everything else the server needs for the app is in [Set up the mobile app on a self-hosted server](/installation/mobile-app-setup/).
 
 ### Supported Providers
 
