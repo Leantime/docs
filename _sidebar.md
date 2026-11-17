@@ -91,7 +91,10 @@
 **Everything Else**
 
  - [Leantime's MCP Server](installation/leantime-mcp.md)
- - [Using Plugins](installation/using-plugins.md)
+ - [Plugins](installation/using-plugins.md)
+    - [Strategy Pro](plugins/strategy-pro.md)
+    - [Programs](plugins/programs.md)
+    - [Whiteboards](plugins/whiteboards.md)
  - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md)
 
 **External Links**
