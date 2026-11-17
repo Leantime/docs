@@ -168,11 +168,11 @@ Yes. **Milestones** shows your milestones on a timeline, and you can show their 
 
 #### Can I create recurring to-dos?
 
-Yes, with the [Recurring Tasks](https://marketplace.leantime.io/product/recurring-tasks/) plugin. It creates to-dos daily, weekly, monthly or yearly, for example for stand-ups or monthly reviews. See [Using plugins](installation/using-plugins.md?id=recurring-tasks).
+Yes, with the [Recurring Tasks](https://marketplace.leantime.io/product/recurring-tasks/) plugin. It creates to-dos daily, weekly, monthly or yearly, for example for stand-ups or monthly reviews. See [Recurring to-dos](plugins/recurring-todos.md).
 
 #### Can I add custom fields to to-dos?
 
-Yes, with the [Custom Fields](https://marketplace.leantime.io/product/leantime-customfields/) plugin: text, number, dropdown, checkbox and more. See [Using plugins](installation/using-plugins.md?id=custom-fields).
+Yes, with the [Custom Fields](https://marketplace.leantime.io/product/leantime-customfields/) plugin: text, number, dropdown, checkbox and more. See [Custom fields](plugins/custom-fields.md).
 
 #### Does Leantime have a wiki?
 
