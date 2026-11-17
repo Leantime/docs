@@ -48,6 +48,7 @@ Administrators set these in **Company → Company Settings**:
 
 - **Email frequency:** the shortest wait for everyone. People can choose a longer wait in their own settings, not a shorter one.
 - **Default notification types for new users** and **Default notification level:** what people get until they change their own settings.
+- **What phone notifications show,** under **Mobile push notifications:** **Everything**, **Names only** (no comment text) or **Nothing** ("New activity in Leantime" only), for teams whose to-do names or comments shouldn't show on a lock screen. On Leantime Cloud this is pending release; on a self-hosted server, see [Set up the mobile app](installation/mobile-app-setup.md#what-leaves-my-server).
 
 ## Why aren't Leantime notification emails arriving?
 

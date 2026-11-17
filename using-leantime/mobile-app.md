@@ -84,6 +84,8 @@ What you get follows your [notification settings](using-leantime/notifications.m
 
 Don't see **Phone notifications**? Update the app to the latest version.
 
+How much a notification shows on your lock screen (everything, names only, or nothing but "New activity in Leantime") is set by your workspace's administrator.
+
 On Leantime Cloud, that's all. On a self-hosted server, your administrator turns phone notifications on for the server first (see [Set up the mobile app on a self-hosted server](installation/mobile-app-setup.md#how-do-i-turn-on-phone-notifications)). If you've turned them on and nothing arrives, ask them.
 
 ## How do reminders work?
