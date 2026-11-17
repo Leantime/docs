@@ -80,7 +80,7 @@ Yes. The app can tell you when someone assigns you a to-do, mentions you, or com
 2. **Turn on Phone notifications.** If your phone asks whether Leantime may send notifications, allow it.
 3. **Optional:** under **How they arrive**, choose whether they show as a banner or arrive quietly.
 
-What you get follows your [notification settings](using-leantime/notifications.md), the same ones as in the browser: muted projects and kinds of changes you've switched off stay quiet on your phone too. Turning **Phone notifications** off only affects that phone.
+What you get follows your [notification settings](using-leantime/notifications.md), the same ones as in the browser: muted projects and kinds of changes you've switched off stay quiet on your phone too. @Mentions and changes to to-dos you're a collaborator on still reach you. Turning **Phone notifications** off only affects that phone.
 
 Don't see **Phone notifications**? Update the app to the latest version.
 

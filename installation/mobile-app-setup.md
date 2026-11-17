@@ -46,7 +46,7 @@ The app can tell people on their phones when someone assigns them a to-do, menti
 
 If the section is grayed out, Advanced Authentication isn't enabled. Enable it first; the section links to the plugin in the marketplace. (Pending release: until then, the section isn't grayed out, and without Advanced Authentication you can turn the switch on but nothing is sent.)
 
-Then each person turns notifications on for their phone, in the app: **You → Settings → Notification settings → Phone notifications**. It needs the latest version of the app. What they get follows their [notification settings](using-leantime/notifications.md): projects they've muted and kinds of changes they've switched off stay quiet on the phone too.
+Then each person turns notifications on for their phone, in the app: **You → Settings → Notification settings → Phone notifications**. It needs the latest version of the app. What they get follows their [notification settings](using-leantime/notifications.md): projects they've muted and kinds of changes they've switched off stay quiet on the phone too, except @mentions and changes to to-dos they're a collaborator on.
 
 ## What leaves my server?
 
