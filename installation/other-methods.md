@@ -1,3 +1,7 @@
+## Shared hosting (cPanel)
+
+To install Leantime on a shared hosting plan with cPanel, see [Shared hosting (cPanel)](installation/shared-hosting.md).
+
 ## Subfolder installation
 
 To run Leantime in a subfolder (for example `yourcompany.com/leantime`), see [Subfolder Installation](installation/subfolder.md).

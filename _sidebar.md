@@ -15,6 +15,7 @@
     - [Docker based Installation](installation/docker.md)
         - [Docker Troubleshooting](installation/docker-troubleshooting.md)
         - [Synology NAS](installation/synology.md)
+    - [Shared hosting (cPanel)](installation/shared-hosting.md)
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
     - [Email](installation/email-configuration.md)
@@ -39,6 +40,7 @@
 **Development**
 
 - [Development/Local](installation/development.md)
+- [Contributing](development/contributing.md)
 - [Connect to API](api/usage.md)
 - [Using the Leantime CLI](development/commandline.md)
 - [Plugin Development](development/plugin-development.md)
@@ -53,6 +55,8 @@
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
 - [Projects](using-leantime/managing-projects.md)
+- [Milestones](using-leantime/roadmap-planning.md)
+- [Time tracking](using-leantime/timesheets.md)
 - [Clients](using-leantime/managing-clients.md)
 - [User Management](using-leantime/user-management.md)
 - [Notifications](using-leantime/notifications.md)
@@ -60,8 +64,26 @@
 - [Ideas](using-leantime/idea-management.md)
 - [Docs](using-leantime/docs.md)
 - [Blueprints](using-leantime/blueprints.md)
+  - [Project Value Canvas](blueprints/project-value-canvas.md)
+  - [Project Brief](blueprints/project-brief.md)
+  - [SWOT Analysis](blueprints/swot-analysis.md)
+  - [Lean Canvas](blueprints/lean-canvas.md)
+  - [Business Model Canvas](blueprints/business-model-canvas.md)
+  - [Risk Analysis](blueprints/risk-analysis.md)
+  - [Environment Analysis](blueprints/environment-analysis.md)
+  - [Observe / Learn - Insights](blueprints/insights.md)
 - [Retrospectives](using-leantime/retrospectives.md)
 - [Reports](using-leantime/reports.md)
+
+**Project management concepts**
+
+- [Overview](knowledge-base/README.md)
+- [Lean](knowledge-base/whatislean.md)
+- [Agile](knowledge-base/agile.md)
+- [Scrum](knowledge-base/scrum.md)
+- [Kanban](knowledge-base/kanban.md)
+- [Phases of a project](knowledge-base/phasesofproject.md)
+- [Design thinking](knowledge-base/idea-development.md)
 
 **Everything Else**
 
