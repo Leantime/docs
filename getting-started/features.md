@@ -163,7 +163,7 @@ Yes. On the Kanban board, group to-dos by assignee, milestone, sprint, priority,
 
 #### Does Leantime have a Gantt chart?
 
-Yes. **Milestones** shows your milestones on a timeline, and you can show their to-dos too. See [Roadmap and milestones](using-leantime/roadmap-planning.md).
+Yes. **Milestones** shows your milestones on a timeline, and you can show their to-dos too. See [Milestones](using-leantime/roadmap-planning.md).
 
 #### Can I create recurring to-dos?
 
@@ -189,7 +189,7 @@ Yes. **My Work** shows your to-dos across all projects. To plan several projects
 
 #### Does Leantime have time tracking?
 
-Yes. Start a timer from any to-do or log hours in **Timesheets**. Mark time as billable, invoiced and paid, and export it to CSV. See [Timesheets](using-leantime/timesheets.md).
+Yes. Start a timer from any to-do or log hours in **Timesheets**. Mark time as billable, invoiced and paid, and export it to CSV. See [Time tracking](using-leantime/timesheets.md).
 
 #### Can I see Leantime in Google Calendar, Outlook or Apple Calendar?
 
