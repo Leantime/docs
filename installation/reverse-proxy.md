@@ -95,7 +95,7 @@ Apache adds `X-Forwarded-For` and `X-Forwarded-Host` by itself. Reload it with `
 
 Caddy gets and renews the certificate by itself, and passes all the headers Leantime needs. The whole `Caddyfile`:
 
-```caddyfile
+```text
 projects.example.com {
 	reverse_proxy 127.0.0.1:8080
 }
