@@ -314,28 +314,12 @@
     "title": "Design thinking",
     "description": "The five stages of design thinking (empathize, define, ideate, prototype, test) and how to use Leantime's boards for each one."
   },
-  "knowledge-base/product-validation.md": {
-    "title": "Lean product validation",
-    "description": "Validate a product idea with lean methods before you build it: the Lean Canvas, research boards and problem-solution fit in Leantime."
-  },
-  "knowledge-base/system-roles.md": {
-    "title": "Roles in Leantime",
-    "description": "Where to find Leantime's user roles, from Read Only to Owner, and what each one can do."
-  },
-  "knowledge-base/team-happiness.md": {
-    "title": "Team happiness and productivity",
-    "description": "Why small, happy teams get more done, and the Leantime features that help teams stay focused and productive."
-  },
   "knowledge-base/time-management.md": {
     "draft": true
   },
   "knowledge-base/whatislean.md": {
     "title": "Lean methodology",
     "description": "How Leantime uses lean methods: kanban from lean manufacturing, and lean startup practices for business models and research."
-  },
-  "knowledge-base/wheretostart.md": {
-    "title": "Where do I start?",
-    "description": "New to Leantime? Start with a project and your team, then see how ideas, research, milestones and to-dos fit together."
   },
   "technical/hooks.md": {
     "title": "Events and filters (hooks) reference",

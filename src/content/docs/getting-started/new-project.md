@@ -231,5 +231,5 @@ Clicking *Save & Close* on the previous screen will take you back to the main bo
 
 ![logo](/_images/getting-started/retrospectivessave.png)
  
- Retrospectives can be a quick and effective way to boost team morale, work together, and find ways to always improve. Click [here](/knowledge-base/team-happiness/) to read more on Team Happiness.
+ Retrospectives can be a quick and effective way to boost team morale, work together, and find ways to always improve. See [Retrospectives](/using-leantime/retrospectives/) for how to run one.
 

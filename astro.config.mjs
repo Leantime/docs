@@ -242,6 +242,11 @@ export default defineConfig({
 	// (/#/ai/keycloak-sso) reach these paths through legacyRedirect first.
 	redirects: {
 		'/ai/keycloak-sso': '/installation/keycloak-sso/',
+		// Old concept pages retired in docs#99; their topics live on these pages now.
+		'/knowledge-base/system-roles': '/using-leantime/user-management/',
+		'/knowledge-base/wheretostart': '/getting-started/get-started/',
+		'/knowledge-base/product-validation': '/using-leantime/research-boards/',
+		'/knowledge-base/team-happiness': '/using-leantime/retrospectives/',
 	},
 	integrations: [
 		starlight({
