@@ -8,11 +8,11 @@ Take a food network that wants to feed more families:
 
 | Level | Example | What it holds |
 |---|---|---|
-| **Strategy** | Feed more families in Riverside | The mission, the vision, and the goals that show whether it's working |
-| **Program** | Community Pantries | One funded area of work, with its own dates and team |
+| **[Strategy](using-leantime/strategies.md)** | Feed more families in Riverside | The mission, the vision, and the goals that show whether it's working |
+| **[Program](using-leantime/programs.md)** | Community Pantries | One funded area of work, with its own dates and team |
 | **Project** | Open the Eastside pantry | The work itself: milestones, to-dos and docs |
 
-Strategies and programs come from the Leantime Strategies and Program Plans plugins when you self-host, and are included in Leantime Cloud. A small team without them can start with one project per program and add the levels above later.
+Strategies and programs come from the [Strategy Pro](plugins/strategy-pro.md) and [Programs](plugins/programs.md) plugins (Leantime Strategies and Program Plans on the marketplace) when you self-host, and are included in Leantime Cloud. A small team without them can start with one project per program and add the levels above later.
 
 ![The Projects menu, My Projects tab: the strategy "Feed more families in Riverside", the program "Community Pantries" under it, and the project "Open the Eastside pantry" under that](../_images/getting-started/organize-structure.webp)
 

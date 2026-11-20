@@ -13,10 +13,10 @@ For a ready-made starting point, see the examples at the end.
 | **To-do** | One piece of work, with subtasks if it has steps | Always |
 | **Goal** | A number you want to reach, like orders a week or families reached | You want to know whether the work is paying off |
 | **Client** | Who the work is for: a customer, a product or a department | Your work is for different customers, or outsiders need to see their own projects |
-| **Program** | A group of projects that serve the same area or focus (Program Plans plugin; the app may call it a "Plan") | Several projects belong together and you want to see them side by side |
-| **Strategy** | Your mission, vision and the goals above everything else (Leantime Strategies plugin) | You want every program and project to show the bigger why it serves |
+| **[Program](using-leantime/programs.md)** | A group of projects that serve the same area or focus (Program Plans plugin; the app may call it a "Plan") | Several projects belong together and you want to see them side by side |
+| **[Strategy](using-leantime/strategies.md)** | Your mission, vision and the goals above everything else (Leantime Strategies plugin) | You want every program and project to show the bigger why it serves |
 
-Programs and Strategies come from plugins when you self-host, and are included in Leantime Cloud. Everything else is core.
+Programs and Strategies come from the [Programs](plugins/programs.md) and [Strategy Pro](plugins/strategy-pro.md) plugins when you self-host, and are included in Leantime Cloud. Everything else is core.
 
 ## Can a to-do have more than one person in Leantime?
 
