@@ -79,7 +79,7 @@ If your team works with health, legal or other sensitive information, choose **C
 
 ## How do I turn phone notifications off?
 
-Turn off **Send push notifications through Leantime's relay** in Company Settings and click **Save**. Phones stop getting notifications from your server right away. People still get their notifications in Leantime and by email.
+Turn off **Send push notifications through Leantime's relay** in [Company Settings](/using-leantime/company-settings/) and click **Save**. Phones stop getting notifications from your server right away. People still get their notifications in Leantime and by email.
 
 ## What if phone notifications don't arrive?
 

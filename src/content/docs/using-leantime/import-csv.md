@@ -19,7 +19,7 @@ glance:
   result: "Your to-dos in Leantime, with their titles, descriptions, assignees, statuses and due dates."
 ---
 
-You can bring your to-dos, projects, users, ideas, goals and milestones into Leantime from a CSV file. Any tool that exports CSV works: Jira, Trello, Asana, Monday, ClickUp, Excel or Google Sheets.
+You can bring your to-dos, projects, users, ideas, [goals](/using-leantime/goals/) and [milestones](/using-leantime/roadmap-planning/) into Leantime from a CSV file. Any tool that exports CSV works: Jira, Trello, Asana, Monday, ClickUp, Excel or Google Sheets.
 
 ## How does the import work?
 

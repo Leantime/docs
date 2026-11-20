@@ -17,7 +17,7 @@ The app is for your own day, not for setting up projects: see what's due, plan t
 - **iPhone:** [Leantime Mobile on the App Store](https://apps.apple.com/app/leantime-mobile/id6773767264). In the EU, the app isn't in the App Store yet: join the [TestFlight beta](https://testflight.apple.com/join/nHF3AGwx) instead. Install Apple's free TestFlight app first, then open the link on your iPhone. TestFlight builds expire after 90 days and update as new versions come out.
 - **Android:** [Leantime Mobile on Google Play](https://play.google.com/store/apps/details?id=io.leantime.mobile).
 
-The app is for phones; tablet layouts come later. It's free. On Leantime Cloud it works with your plan at no extra cost, trials included. On a self-hosted server it needs the Advanced Authentication plugin, a paid plugin from the marketplace.
+The app is for phones; tablet layouts come later. It's free. On Leantime Cloud it works with your plan at no extra cost, trials included. On a self-hosted server it needs the [Advanced Authentication](/plugins/advanced-authentication/) plugin, a paid plugin from the marketplace.
 
 **Just looking?** Tap **Try Demo Mode** on the first screen. It opens a sample workspace, with no account or server needed.
 

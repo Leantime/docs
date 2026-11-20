@@ -73,7 +73,7 @@ Once you’ve saved your Customer, Problem, and Solution, you’re going to have
 
 When we have our solution, often times our natural inclination is to run straight to the To Do’s portion of our planning.  Don’t do it.  Now that you know what the end should look like, you need to know what on the way looks like.  Progress can get blurred and buried when we can’t track where we are
 
-Since we don’t have any Milestones just yet, let’s click Create & Attach a New Milestone. This will open a blank text box.  Add a milestone.  Click Save.  (Not sure what a milestone should look like?  Click here).
+Since we don’t have any Milestones just yet, let’s click Create & Attach a New Milestone. This will open a blank text box.  Add a [milestone](/using-leantime/roadmap-planning/).  Click Save.  (Not sure what a milestone should look like?  Click here).
 
 ![logo](/_images/getting-started/image19.png)
 
@@ -112,7 +112,7 @@ To move an idea between boxes, simply click it and drag it to the appropriate ca
 
 ![logo](/_images/getting-started/ideainreview.png)
 
-Now it's time to come up with the next great idea.  Read more in [Design thinking](/knowledge-base/idea-development/).
+Now it's time to come up with the next great idea.  See [Ideas](/using-leantime/idea-management/) for how the Ideas board works.
 
 ## Milestones
 
@@ -134,7 +134,7 @@ Needing to make a change to your milestones?  Click on the text of that mileston
 
 ![logo](/_images/getting-started/image5.png)
 
-In this view, you can then edit the milestone or click over to the To Do / Kanban view of your project.  Editing milestones will look just like the Add New screen.
+In this view, you can then edit the milestone or click over to the To Do / [Kanban](/knowledge-base/kanban/) view of your project.  Editing milestones will look just like the Add New screen.
 
 If your new milestone depends on another milestone finishing before you can press on, you can add that on in the Add New or Edit Milestone screen.  Click the “Dependency” drop down and select the milestone it depends on.  The result will be a line attached to both milestones.  In this case, the green milestone is dependent on the gray one.
 

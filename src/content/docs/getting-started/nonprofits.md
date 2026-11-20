@@ -14,11 +14,11 @@ Take a food network that wants to feed more families:
 
 | Level | Example | What it holds |
 |---|---|---|
-| **Strategy** | Feed more families in Riverside | The mission, the vision, and the goals that show whether it's working |
-| **Program** | Community Pantries | One funded area of work, with its own dates and team |
+| **[Strategy](/using-leantime/strategies/)** | Feed more families in Riverside | The mission, the vision, and the goals that show whether it's working |
+| **[Program](/using-leantime/programs/)** | Community Pantries | One funded area of work, with its own dates and team |
 | **Project** | Open the Eastside pantry | The work itself: milestones, to-dos and docs |
 
-Strategies and programs come from the Leantime Strategies and Program Plans plugins when you self-host, and are included in Leantime Cloud. A small team without them can start with one project per program and add the levels above later.
+Strategies and programs come from the [Strategy Pro](/plugins/strategy-pro/) and [Programs](/plugins/programs/) plugins (Leantime Strategies and Program Plans on the marketplace) when you self-host, and are included in Leantime Cloud. A small team without them can start with one project per program and add the levels above later.
 
 ![The Projects menu, My Projects tab: the strategy "Feed more families in Riverside", the program "Community Pantries" under it, and the project "Open the Eastside pantry" under that](/_images/getting-started/organize-structure.webp)
 
@@ -27,7 +27,7 @@ Strategies and programs come from the Leantime Strategies and Program Plans plug
 A Logic Model shows how your work leads to change: the **Inputs** you invest, the **Activities** you do, the **Outputs** they produce, the **Outcomes** you expect and the **Impact** you're working toward. Funders often ask for one.
 
 - **In core Leantime,** the Logic Model is a [Blueprint](/blueprints/logic-model/): a board you fill with cards, one per input, activity, output, outcome and impact.
-- **With the [Strategy Pro](/plugins/strategy-pro/) plugin,** the Logic Model sits inside your strategy and connects to the work: build it from your programs, milestones and goals, rate how strong each link is, and turn it into milestones, to-dos and goals.
+- **With the [Strategy Pro](/plugins/strategy-pro/) plugin,** the Logic Model sits inside your strategy and connects to the work: build it from your programs, [milestones](/using-leantime/roadmap-planning/) and goals, rate how strong each link is, and turn it into milestones, to-dos and goals.
 
 How to fill one out, step by step: [Logic Model](/blueprints/logic-model/). New to logic models? See [What is a logic model?](/knowledge-base/logic-model/)
 

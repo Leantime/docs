@@ -1,9 +1,9 @@
 ---
 title: "Daily Intentions"
-description: "Plan when you'll start a to-do and what the first step is, on your Leantime Cloud dashboard: set a daily intention, write one that works, and the research."
+description: "Why daily intentions work: the research on implementation intentions (if-then plans) behind the Daily Intentions widget on Leantime Cloud, with sources."
 head:
   - tag: title
-    content: "Daily Intentions: plan when you'll start a to-do"
+    content: "Daily Intentions: implementation intentions in Leantime"
 edition: cloud
 plugin:
   name: "Daily Intentions"
@@ -11,29 +11,14 @@ plugin:
 
 A plan to "work on the report tomorrow" is easy to put off. A plan that says when you'll start and what you'll do first is much easier to follow. The Daily Intentions plugin helps you make that kind of plan for your to-dos, right on your My Work dashboard.
 
-**Get it:** Daily Intentions is part of Leantime Cloud, where it's already on. It isn't available for self-hosted Leantime.
+## What does it add?
 
-## How do I set a daily intention?
+- **A Daily Intention widget** for My Work, with a card for yesterday, today and the next three days. See [How do I set a daily intention?](/using-leantime/my-work-dashboard/#how-do-i-set-a-daily-intention)
+- **A plan in one sentence:** the to-do, the moment you'll start (like after lunch), and the first step. See [How do I write an intention that works?](/using-leantime/my-work-dashboard/#how-do-i-write-an-intention-that-works)
 
-1. **Open your [My Work dashboard](/using-leantime/my-work-dashboard/)** and find the **Daily Intention** box. If it isn't there, switch it on in the Widget Manager (see [How do I add, remove or move widgets?](/using-leantime/my-work-dashboard/#how-do-i-add-remove-or-move-widgets)).
-2. **Find the card for the day.** There's one card each for yesterday, today and the next three days; today's card stands out. Scroll sideways to see the others.
-3. **Fill in the sentence.** Each card reads like a plan, for example "1 day from now, I will work on *pick a task* *before* *when* by *describe what you will be doing*":
-   - **pick a task:** one of your to-dos.
-   - **before:** choose **before**, **after**, **at** or **during**.
-   - **when:** choose **breakfast**, **start of work day**, **lunch**, **end of work day** or **dinner**.
-   - **describe what you will be doing:** type the first step, in your own words.
+## Do I have it on Leantime Cloud?
 
-Your intention saves as you go; there's no Save button. A finished card reads like this: "1 day from now, I will work on *the grant report* *after* *lunch* by *opening last year's report and copying the outline*."
-
-Yesterday's card says "I worked on", so you can look back at what you planned.
-
-## How do I write an intention that works?
-
-- **Make the first step small and concrete.** "Open the budget sheet and fill in March" is easier to start than "work on the budget".
-- **Tie it to something that happens anyway.** Lunch or the start of your work day is a cue you won't miss. The plan becomes: when that moment comes, I start.
-- **Plan the evening before.** Deciding the night before means the morning starts with a decision already made. In one sleep study, people who wrote down their tasks for the next few days fell asleep faster than people who wrote about what they'd already done.
-- **Think about what could get in the way.** If mornings get taken over by email, plan for after lunch instead, or plan what you'll do when the interruption comes.
-- **One or two a day is enough.** Intentions help most for the to-dos you keep putting off.
+Yes. Daily Intentions is already on in every Leantime Cloud workspace. It isn't available for self-hosted Leantime.
 
 ## Why does it help?
 
@@ -55,5 +40,5 @@ For more, read [How to use implementation intentions to reach your goals](https:
 
 - [My Work Dashboard](/using-leantime/my-work-dashboard/)
 - [Your own work](/getting-started/your-own-work/)
-- [Pomodoro timer](/plugins/pomodoro/)
+- [Pomodoro timer](/using-leantime/my-work-dashboard/#how-do-i-use-the-pomodoro-timer)
 - [All plugins](/installation/using-plugins/)

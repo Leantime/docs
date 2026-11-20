@@ -1,62 +1,56 @@
 ---
 title: "Whiteboards"
-description: "Sketch floor plans, processes, org charts and screen layouts on a whiteboard inside a Leantime project, with Excalidraw tools, a shape library and export."
+description: "What the Whiteboards plugin adds to Leantime, and how to install, license and update it on your own server, including the unpkg.com browser requirement."
 head:
   - tag: title
-    content: "Whiteboards plugin: draw diagrams inside a project"
+    content: "Whiteboards plugin: install it on self-hosted Leantime"
 plugin:
   name: "Whiteboards"
   url: "https://marketplace.leantime.io/product/leantime-whiteboards/"
 ---
 
-A whiteboard is a blank canvas inside a project, for anything that's easier to draw than to write: a floor plan, a process, an org chart, a rough screen layout. The Whiteboards plugin adds them to every project, and saves your drawing as you go.
-
-The drawing tools come from [Excalidraw](https://excalidraw.com), so if you've used it before, you already know how they work.
+The Whiteboards plugin adds a blank canvas to every project, for anything that's easier to draw than to write: a floor plan, a process, an org chart, a rough screen layout.
 
 ![The Eastside pantry floor plan whiteboard: Intake desk, then Dry goods and Fresh produce, then Checkout, drawn with arrows. The Library button is outlined.](/_images/plugins/whiteboards-editor.webp)
 
-**Get it:** [Whiteboards on the Leantime Marketplace](https://marketplace.leantime.io/product/leantime-whiteboards/). It's already on in Leantime Cloud.
+## What does it add?
 
-## How do I create a whiteboard?
+- **Whiteboards in every project,** under **Make** in the project menu, in groups you name yourself. See [Whiteboards](/using-leantime/whiteboards/).
+- **Excalidraw's drawing tools:** shapes, arrows that stay attached, freehand drawing, text and images, with the drawing saved as you go. See [How do I draw on a whiteboard?](/using-leantime/whiteboards/#how-do-i-draw-on-a-whiteboard)
+- **A Library of ready-made pieces:** sticky notes, org charts, decision flows, a Gantt chart, a customer journey map and wireframing kits. See [What's in the Library?](/using-leantime/whiteboards/#whats-in-the-library)
+- **Export** a whiteboard as an image or a file. See [Can I export a whiteboard?](/using-leantime/whiteboards/#can-i-export-a-whiteboard)
 
-1. **Open the project** and click **Whiteboards** in the left menu, under **Make**.
-2. **Click Create Whiteboard.**
-3. **Enter a title** and click **Save**. The whiteboard opens, ready to draw on.
+## Do I have it on Leantime Cloud?
 
-![The Whiteboards page of Open the Eastside pantry: the Board group with the Eastside pantry floor plan, and Create Whiteboard outlined](/_images/plugins/whiteboards-list.webp)
+Yes. Whiteboards is already on in every Leantime Cloud workspace. To start, see [How do I create a whiteboard?](/using-leantime/whiteboards/#how-do-i-create-a-whiteboard)
 
-If you don't see **Whiteboards**, check that you have the Editor role or higher, and that whiteboards are switched on for the project (see [How do I switch features on or off for a project?](/using-leantime/managing-projects/#how-do-i-switch-features-on-or-off-for-a-project)).
+## How do I install it on my own server?
 
-## How do I draw on a whiteboard?
+- **Leantime version:** 3.13 or later. To check yours, click the **?** (help) icon at the top right; the version is under **System**.
+- **Get a license:** on the Leantime Marketplace it's called [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/). The license is sized by the number of users in your Leantime (see [What counts as a user?](/installation/plugin-licenses/#what-counts-as-a-user-for-a-plugin-license)).
+- **Install it** from **Company → Leantime Apps** with the license key (see [Installing from the Marketplace](/installation/plugin-installation/#installing-from-the-marketplace)), or upload it by hand (see [Manual plugin installation](/installation/plugin-installation/#manual-plugin-installation)).
+- **Nothing to set up on the server:** Whiteboards has no settings in `.env` and no scheduled jobs.
+- **People's browsers need to reach `unpkg.com`.** The whiteboard loads its drawing tools (Excalidraw) from there when it opens. Leantime's own security headers already allow it; a firewall, proxy or content filter on your network must allow it too. The ready-made Library pieces are part of the plugin.
 
-Pick a tool from the toolbar at the top: shapes, arrows, lines, a pen for freehand drawing, text, images and an eraser. Then click and drag on the canvas.
+After it's on, **Whiteboards** shows in each project's menu, under **Make**. Each project can switch it off under **Project Settings → Modules** (see [How do I switch features on or off for a project?](/using-leantime/managing-projects/#how-do-i-switch-features-on-or-off-for-a-project)).
 
-- **Write inside a shape:** select it and press **Enter**, or double-click it.
-- **Join two shapes:** draw an arrow from one to the other. It stays attached when you move them.
-- **Move around:** hold the space bar (or the mouse wheel) and drag, or use the hand tool. Zoom with the buttons at the bottom left.
-- **Change colors and styles:** select something and use the panel that opens on the left.
+## How do I keep it up to date?
 
-Each tool's number is its keyboard shortcut: **2** for a rectangle, **5** for an arrow, **8** for text, and so on.
+Leantime checks the marketplace for plugin updates every day and tells administrators; turn on **Update plugins automatically** in **My Apps** to have minor updates installed for you (see [How do plugin updates work?](/installation/plugin-licenses/#how-do-plugin-updates-work)). Before you update Leantime itself, check that your Whiteboards version supports the new release (see [What happens to plugins when I update Leantime?](/installation/plugin-licenses/#what-happens-to-plugins-when-i-update-leantime)).
 
-There's no save button. Your changes are saved a moment after you make them.
+## Who can use it?
 
-## What's in the Library?
+Whiteboards are for people with the Editor role or higher in the project.
 
-Click **Library** at the top right for ready-made pieces to drag onto the canvas, like sticky notes, basic shapes, an org chart, decision flows, a Gantt chart, a customer journey map, wireframing kits for screens and forms, and icons for IT and software diagrams.
+## What if something goes wrong?
 
-## How do I organize whiteboards?
-
-Whiteboards live in groups. Each project starts with one, called **Board**.
-
-- **To add a group,** click **All Whiteboard Groups** at the top of the Whiteboards page and choose **Create New Whiteboard Group**.
-- **To rename or delete a whiteboard,** open it and use the **⋮** menu at the top right: **Edit Title** or **Delete**. Deleting needs the Editor role or higher.
-
-## Can I export a whiteboard?
-
-Yes. Open the menu at the top left of the canvas (☰) to save the drawing as an image, export it, or open a saved file. **Clear canvas** in the same menu removes everything from the whiteboard.
+- **There's no Whiteboards in the project menu:** check that the plugin is switched on under **Company → Leantime Apps → My Apps**, that whiteboards are switched on for the project, and that you have the Editor role or higher.
+- **A whiteboard opens blank:** the browser couldn't load the drawing tools from `unpkg.com`. Check that your network allows it, and look in the browser's developer console for blocked requests. If you've added your own `Content-Security-Policy` in a reverse proxy, allow `unpkg.com` for scripts and fonts.
+- **The plugin switched itself off:** your Leantime has more users than the license allows, or the plugin kept causing errors. See [Plugin licenses, updates and problems](/installation/plugin-licenses/#what-happens-when-we-have-more-users-than-the-license-allows).
 
 ## Related
 
-- [Blueprints](/using-leantime/blueprints/): ready-made boards like a SWOT analysis or a Lean Canvas
-- [Docs](/using-leantime/docs/)
+- [Whiteboards](/using-leantime/whiteboards/)
+- [Blueprints](/using-leantime/blueprints/)
+- [Installing plugins](/installation/plugin-installation/)
 - [All plugins](/installation/using-plugins/)

@@ -113,7 +113,7 @@ After the container starts, Leantime will automatically run database migrations 
    sudo chmod -R 775 /var/www/leantime/storage
    ```
 
-5. **Run migrations and clear cache:**
+5. **Run migrations and clear cache** with the [Leantime CLI](/development/commandline/):
    ```bash
    cd /var/www/leantime
    php ./bin/leantime db:migrate

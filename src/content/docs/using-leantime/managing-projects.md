@@ -7,7 +7,7 @@ head:
 checked: "3.14"
 ---
 
-A project holds your to-dos, milestones, goals and docs, and the people who work on them. Managers, Administrators and Owners can create projects and change their settings. Everyone else works in the projects they're part of.
+A project holds your to-dos, [milestones](/using-leantime/roadmap-planning/), [goals](/using-leantime/goals/) and docs, and the people who work on them. Managers, Administrators and Owners can create projects and change their settings. Everyone else works in the projects they're part of.
 
 ## How do I create a project in Leantime?
 
@@ -85,6 +85,8 @@ The **Archived** status can't be renamed or removed.
 - **The Projects menu** at the top lists your projects under **My Projects**, **Favorites**, **Recent** and **All Projects**. You can filter it by client and group it.
 - **My Work → Project Hub** shows your projects as cards, with your favorites at the top (see [What's on the Project Hub?](#whats-on-the-project-hub)).
 - **Company → All Projects** lists every project in a table, closed ones included, for Managers, Administrators and Owners. The **Project Status** column shows which are closed.
+
+**Several projects that belong together?** A [program](/using-leantime/programs/) groups them, with one view of their to-dos, milestones and people. A [strategy](/using-leantime/strategies/) goes a level up, to the goals your programs and projects serve.
 
 ## What's on the Project Hub?
 

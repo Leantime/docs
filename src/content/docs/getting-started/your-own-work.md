@@ -18,7 +18,7 @@ For one person: a freelancer, a job seeker, someone changing careers, or anyone 
 
 Big goals, like a new job or a finished course, are far away. Smaller outcomes on the way show that the effort is adding up:
 
-- **Split a big goal into outcomes you can finish in a few days,** like "CV updated", "Three applications sent", "Two interviews prepared". Track them as to-dos, or as small milestones.
+- **Split a big goal into outcomes you can finish in a few days,** like "CV updated", "Three applications sent", "Two interviews prepared". Track them as to-dos, or as small [milestones](/using-leantime/roadmap-planning/).
 - **Give the big goal a number** if it has one, like applications sent or modules finished, and link it to your milestones (see [Goals](/using-leantime/goals/)).
 - **Look back now and then.** The Status Report shows the milestones you finished in a period, and My Work counts the to-dos you completed in the last seven days. Both are easy to forget on a hard week (see [Reports](/using-leantime/reports/)).
 

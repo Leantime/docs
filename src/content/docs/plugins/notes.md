@@ -1,46 +1,53 @@
 ---
 title: "Notes"
-description: "Keep quick notes and ideas in Leantime with the Notes plugin: write a note, see who can read it, and organize notes before they belong in a project."
+description: "What the Notes plugin adds to Leantime, and how to install, license and update it on your own server. Already on in Leantime Cloud, for private notes."
 head:
   - tag: title
-    content: "Notes plugin: private notes next to your work"
+    content: "Notes plugin: install it on self-hosted Leantime"
 plugin:
   name: "Notes"
   url: "https://marketplace.leantime.io/product/leantime-notes/"
 ---
 
-Not everything belongs in a project yet: a question for the city, ideas for an opening day, a list of people to thank. The Notes plugin gives you a private place for them, next to your work in Leantime, so they don't end up on sticky notes or in another app.
+The Notes plugin gives everyone a private place for notes that don't belong in a project yet: a question for the city, ideas for an opening day, a list of people to thank.
 
 ![The Notes page: three notes in the Quick Notes notebook on the left, "Ideas for the opening day" open on the right, and the notebook switcher (All Notes, 3) outlined](/_images/plugins/notes-page.webp)
 
-**Get it:** [Notes on the Leantime Marketplace](https://marketplace.leantime.io/product/leantime-notes/). It's already on in Leantime Cloud.
+## What does it add?
 
-## How do I write a note?
+- **Private notes** under **My Work → Notes**, with tags, search and pinning. See [Notes](/using-leantime/notes/).
+- **Notebooks** with their own colors, to keep notes apart. See [How do I organize my notes?](/using-leantime/notes/#how-do-i-organize-my-notes)
+- **A Notes widget** for the [My Work dashboard](/using-leantime/my-work-dashboard/), to start a note without leaving it.
 
-1. **Click My Work** at the top of the page, then **Notes** in the left menu.
-2. **Click Create a new note.**
-3. **Give it a title**, add tags if you like, and write.
-4. **Click Save.** "Last Saved On" under the note shows when it was saved.
+## Do I have it on Leantime Cloud?
 
-The **Notes** box on your [My Work dashboard](/using-leantime/my-work-dashboard/) works the same way: click **New Note** there to start one without leaving the dashboard.
+Yes. Notes is already on in every Leantime Cloud workspace. To start, see [How do I write a note?](/using-leantime/notes/#how-do-i-write-a-note)
 
-Notes is there for people with the Editor role or higher.
+## How do I install it on my own server?
 
-## Who can see my notes?
+- **Leantime version:** 3.13 or later. To check yours, click the **?** (help) icon at the top right; the version is under **System**.
+- **Get a license:** on the Leantime Marketplace it's called [Notes](https://marketplace.leantime.io/product/leantime-notes/). The license is sized by the number of users in your Leantime (see [What counts as a user?](/installation/plugin-licenses/#what-counts-as-a-user-for-a-plugin-license)).
+- **Install it** from **Company → Leantime Apps** with the license key (see [Installing from the Marketplace](/installation/plugin-installation/#installing-from-the-marketplace)), or upload it by hand (see [Manual plugin installation](/installation/plugin-installation/#manual-plugin-installation)).
+- **Nothing else to set up:** Notes has no settings in `.env` and no scheduled jobs.
 
-Only you. Notes and notebooks belong to the person who wrote them, and there's no way to share them. For writing your team should see, use the project's [Docs](/using-leantime/docs/).
+After it's on, **Notes** shows in the left menu under **My Work**, and the **Notes** widget in the Widget Manager.
 
-## How do I organize my notes?
+## How do I keep it up to date?
 
-- **Notebooks:** click the notebook name next to **Notes** at the top of the page to switch notebooks, see **All Notes**, or **Create New Notebook** with a title and a color. Your first notebook, **Quick Notes**, is made for you. Deleting a notebook also deletes the notes in it.
-- **Pin to top:** pinned notes stay at the top of the list. Use the pin on a note, or its **⋮** menu.
-- **Sort:** by last change, date created or title.
-- **Search:** use the 🔍 button on the Notes page. The search box at the top of every page finds your notes too.
-- **Grid View** or **List View:** switch at the top right.
+Leantime checks the marketplace for plugin updates every day and tells administrators; turn on **Update plugins automatically** in **My Apps** to have minor updates installed for you (see [How do plugin updates work?](/installation/plugin-licenses/#how-do-plugin-updates-work)). Before you update Leantime itself, check that your Notes version supports the new release (see [What happens to plugins when I update Leantime?](/installation/plugin-licenses/#what-happens-to-plugins-when-i-update-leantime)).
+
+## Who can use it?
+
+Notes is there for people with the Editor role or higher. Each person sees only their own notes, Administrators and Owners included. There's no way to share them.
+
+## What if something goes wrong?
+
+- **There's no Notes under My Work:** check that the plugin is switched on under **Company → Leantime Apps → My Apps**, and that you have the Editor role or higher.
+- **The plugin switched itself off:** your Leantime has more users than the license allows, or the plugin kept causing errors. See [Plugin licenses, updates and problems](/installation/plugin-licenses/#what-happens-when-we-have-more-users-than-the-license-allows).
 
 ## Related
 
+- [Notes](/using-leantime/notes/)
 - [My Work Dashboard](/using-leantime/my-work-dashboard/)
-- [Docs](/using-leantime/docs/)
-- [Pomodoro timer](/plugins/pomodoro/)
+- [Installing plugins](/installation/plugin-installation/)
 - [All plugins](/installation/using-plugins/)

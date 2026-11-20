@@ -280,6 +280,18 @@ sudo chmod -R 755 app/Plugins/
 php ./bin/leantime cache:clear
 ```
 
+### Plugin Doesn't Load on Network Storage (Azure Files, SMB)
+
+Marketplace plugins are a single `.phar` file, and PHP runs the plugin from inside it. On some network file shares, such as Azure Files mounted over SMB, PHP can't read `.phar` files reliably. The plugin then shows as installed and enabled but doesn't appear anywhere in Leantime.
+
+1. **Clear PHP's cache.** Restart PHP-FPM or your web server. On Azure App Service, restart the app. This clears OPcache, which can hold on to a copy of the plugin that didn't load.
+2. **Keep the plugin on the server's own disk.** Unzip the plugin download into `app/Plugins/<PluginName>/` on local storage rather than the network share, so the folder holds `<PluginName>.phar` and `<PluginName>.phar.pubkey`. See [Manual Plugin Installation](/installation/plugin-installation/#manual-plugin-installation).
+3. **Clear Leantime's cache:**
+
+```bash
+php ./bin/leantime cache:clear
+```
+
 ### Plugin Installation Fails (Docker)
 
 **Volume not mounted:**
@@ -326,7 +338,7 @@ Leantime switches a plugin off when it keeps failing or when your active users g
 
 ### Plugin Causes Errors After Enabling
 
-1. Disable the plugin in **Company → Leantime Apps → My Apps**, or from the server with `php ./bin/leantime plugin:disable "<plugin name>"`
+1. Disable the plugin in **Company → Leantime Apps → My Apps**, or from the server with `php ./bin/leantime plugin:disable "<plugin name>"` (see [Using the Leantime CLI](/development/commandline/))
 2. If you can't access Settings, disable via database:
 
 ```sql

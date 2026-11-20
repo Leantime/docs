@@ -28,7 +28,7 @@ Creating and changing milestones needs the Editor role or higher.
 
 ## How do I add to-dos to a milestone?
 
-Open a to-do and choose the milestone in its **Milestone** field. You can also change it from the milestone label on the to-do's card on the Kanban board.
+Open a to-do and choose the milestone in its **Milestone** field. You can also change it from the milestone label on the to-do's card on the [Kanban](/knowledge-base/kanban/) board.
 
 To see the to-dos of one milestone, use **Filter → Milestone** on the To-Dos page. To see them all side by side, use **Group By → Milestone** on the Kanban board.
 
@@ -45,6 +45,8 @@ To see the to-dos of one milestone, use **Filter → Milestone** on the To-Dos p
 On the timeline, drag the ends of a bar to change its dates, or drag the bar to move it. Leantime saves the new dates right away. To show the to-dos on the timeline too, switch on **Show Tasks** under **Filter**.
 
 Leantime opens the view you used last.
+
+A [program](/using-leantime/programs/#how-do-i-see-all-of-the-programs-work)'s **Timeline** shows the milestones of all its projects together.
 
 ## What does "Depends On" do?
 

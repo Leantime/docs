@@ -14,14 +14,14 @@ For research labs, PhD students, thesis writers and grant-funded studies: long p
 |---|---|
 | **One thesis, paper or course** | One project. A milestone per stage with a deadline, like "Literature review", "Data collection", "First draft" and "Submission". |
 | **A lab with several studies** | A project per study, each with its own team. A [client](/using-leantime/managing-clients/) per funder or partner institution if their people need to see their studies. |
-| **Several grants or research lines** | The Program Plans plugin groups the studies under each grant, so you see its milestones and progress together. |
+| **Several grants or research lines** | A [program](/using-leantime/programs/) per grant groups its studies, so you see their milestones and progress together. |
 
 ## How do I break a thesis or paper into steps I can finish?
 
 A paper is too big to feel progress on. Split each stage into outcomes small enough to finish in a few days: for a chapter, "Outline", "Sources gathered", "Draft", "Edits". Each one done is visible progress.
 
 - **For your own work:** make each outcome a to-do and its steps subtasks.
-- **For work you share:** make each outcome a small milestone, so co-authors see it on the timeline.
+- **For work you share:** make each outcome a small [milestone](/using-leantime/roadmap-planning/), so co-authors see it on the timeline.
 - **For outcomes you report on,** like papers submitted or participants recruited, use a goal with a number and link it to the milestones that move it (see [Goals](/using-leantime/goals/)).
 
 ## Where do notes, protocols and sources go?

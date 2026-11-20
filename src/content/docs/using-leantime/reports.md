@@ -26,7 +26,7 @@ Open the project, open **Data Room** in the left menu and click **Reports**. The
 **The sections below them:**
 
 - **Needs attention** appears when something needs a look, like an overdue milestone or a goal at risk.
-- **Accomplished this period:** the milestones finished in the period. This is the part to share when someone asks what got done.
+- **Accomplished this period:** the [milestones](/using-leantime/roadmap-planning/) finished in the period. This is the part to share when someone asks what got done.
 - **Changed this period:** milestones that were added during the period, or whose due date moved out of it. It keeps the report honest about plans that changed.
 - **In flight:** the milestones being worked on, with their due dates and how far along they are.
 - **Coming up:** milestones planned for the periods after this one.
@@ -65,6 +65,29 @@ Progress shows up in several places, and they don't all count the same way, beca
 Both are right: the report gives more weight to the urgent to-do that's already finished.
 
 **The estimated finish date.** Once 10 or more to-dos in the project are done, Leantime estimates when the project will be finished from how fast work has been getting done since the first to-do. Until then, the top of the Status Report says "Complete more To-Dos to see that!".
+
+## What's in a program or strategy report?
+
+The reports above cover one project. A [program](/using-leantime/programs/) and a [strategy](/using-leantime/strategies/) each have a **Report** that covers everything under them, for your leadership, board or funders. They come with the [Programs](/plugins/programs/) and [Strategy Pro](/plugins/strategy-pro/) plugins; the strategy report is in beta. They're put together from the work underneath, so there's nothing extra to fill in.
+
+1. **Click Report** in the program's or strategy's menu.
+2. **Pick the period** at the top right: **Last quarter** (the default), **This quarter** or **Next quarter**. The arrows step back and forward.
+3. **Switch between the four tabs:**
+
+| Tab | What it shows |
+| --- | --- |
+| **Overview** | Milestones completed, goals on track, overdue milestones and hours logged in the period, each with **See list**. **Peak this period** picks a completed milestone worth showing, **Needs attention** lists things like projects with no update in 30 days, and **What the team is saying** shows the latest status updates. In a strategy, **Theory health** shows how strong each link of the [Logic Model](/blueprints/logic-model/) is. |
+| **Logic Model** | What you believe will happen, what the outputs are producing, how each outcome is doing, what it's all for, and where it's most at risk. It reads the program's or strategy's Logic Model; until that has cards, the tab shows how to start one. |
+| **Resources & Coverage** | People and capacity from the programs' [Resources](/using-leantime/programs/#how-do-i-plan-peoples-time-with-resources) plans: how much of everyone's time is booked, a row per project (or per program, in a strategy), the work still to do against the time available, and gaps to discuss, like someone booked past their hours. **Show in** switches between hours and days. |
+| **Impact Journey** | Where things stood before the work, how far each outcome has come against its target, and the change you're working toward. |
+
+![The Overview tab of the Feed more families in Riverside strategy report: 3 of 5 milestones completed, goals on track, 24.5 hours logged, Site agreed as the peak of the period, projects that need an update, the team's latest update, and theory health from Inputs to Impact](/_images/plugins/strategy-report-overview.webp)
+
+![The Resources & Coverage tab of the Community Pantries program report: 4 people at 71% of capacity, a row for each project with its weekly hours, capacity against demand, and a gap: Dev Example is booked for 10 hours a week against 8](/_images/plugins/program-report-resources.webp)
+
+At the top right, the report says **On track**, **At risk** or **Off track**. It comes from the latest status update on the program or strategy, or, without one, from its goals; the line under it says which. Open the menu (⋮) to set it yourself under **Set verdict**, go back to the calculated one with **Revert to metrics**, or **Print** the report or save it as a PDF.
+
+**To get the most out of it:** post status updates on the program or strategy, give goals a target and link them to the Logic Model's outcomes, keep the **Resources** plan current, and fill in **The world today, before this work** on the Logic Model's Impact card.
 
 ## How do I share a report?
 

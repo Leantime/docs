@@ -40,7 +40,7 @@ The toolbar above the text has the everyday formatting: bold, italic, lists, lin
 ## How do I organize docs?
 
 - **Put a page under another one.** Under **Details**, choose the page it belongs to in **Parent**. The **Contents** list on the left shows pages nested under their parent.
-- **Connect a doc to a milestone.** Choose it under **Milestone**. The doc then shows the milestone's due date and progress under its text, so a launch checklist sits right next to how the launch is going.
+- **Connect a doc to a milestone.** Choose it under **Milestone**. The doc then shows the [milestone](/using-leantime/roadmap-planning/)'s due date and progress under its text, so a launch checklist sits right next to how the launch is going.
 - **Add tags** under the title to label docs that belong together.
 - **Make more than one space.** A project starts with one space called **Default**. To add another, for example one per team or for "Processes" and "Meeting notes", click the space name next to **Docs** and choose **Create a new wiki**.
 
@@ -53,6 +53,8 @@ The toolbar above the text has the everyday formatting: bold, italic, lists, lin
 - **Published** docs are visible to everyone who can see the project.
 - **Drafts** only show in the **Contents** list for the person who wrote them, so the team doesn't come across unfinished pages. A draft isn't private, though: anyone who can see the project can still open it with its link. Don't put anything in a draft that the project team shouldn't read.
 - Writing and changing docs needs the **Editor** role or higher in the project.
+
+For notes only you can see, use [Notes](/using-leantime/notes/) instead.
 
 Each doc also keeps an **Activity** list under **Details** (who created it, renamed it or changed the text) and has a **Discussion** at the bottom for comments.
 

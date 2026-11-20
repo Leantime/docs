@@ -19,10 +19,10 @@ For a ready-made starting point, see the examples at the end.
 | **To-do** | One piece of work, with subtasks if it has steps | Always |
 | **Goal** | A number you want to reach, like orders a week or families reached | You want to know whether the work is paying off |
 | **Client** | Who the work is for: a customer, a product or a department | Your work is for different customers, or outsiders need to see their own projects |
-| **Program** | A group of projects that serve the same area or focus (Program Plans plugin; the app may call it a "Plan") | Several projects belong together and you want to see them side by side |
-| **Strategy** | Your mission, vision and the goals above everything else (Leantime Strategies plugin) | You want every program and project to show the bigger why it serves |
+| **[Program](/using-leantime/programs/)** | A group of projects that serve the same area or focus (Program Plans plugin; the app may call it a "Plan") | Several projects belong together and you want to see them side by side |
+| **[Strategy](/using-leantime/strategies/)** | Your mission, vision and the goals above everything else (Leantime Strategies plugin) | You want every program and project to show the bigger why it serves |
 
-Programs and Strategies come from plugins when you self-host, and are included in Leantime Cloud. Everything else is core.
+Programs and Strategies come from the [Programs](/plugins/programs/) and [Strategy Pro](/plugins/strategy-pro/) plugins when you self-host, and are included in Leantime Cloud. Everything else is core.
 
 ## Can a to-do have more than one person in Leantime?
 
@@ -37,7 +37,7 @@ Yes. A to-do has one **assignee**, who owns it, so it's always clear who is movi
 2. **Optional: think it through on a [Blueprint](/using-leantime/blueprints/)**, like the Project Value Canvas, if the problem or the customer isn't clear yet.
 3. **Set a few goals** that show whether it's working: three to five is plenty. Start each one with a verb, like "Increase…" or "Reduce…".
 4. **Plan the milestones**: the stages, each with a clear result.
-5. **Add the to-dos** under each milestone, small enough to finish in a few days.
+5. **Add the to-dos** under each [milestone](/using-leantime/roadmap-planning/), small enough to finish in a few days.
 6. **Look back after each stage** with a [retrospective](/using-leantime/retrospectives/), and adjust.
 
 ## How do I keep sight of why the work matters?
@@ -126,3 +126,5 @@ These help everyone, and especially people with ADHD or anyone who gets overwhel
 - [Non-profits, NGOs and mission-driven teams](/getting-started/nonprofits/)
 - [Research and academic work](/getting-started/research/)
 - [Your own work and career](/getting-started/your-own-work/)
+
+For the methods behind these setups, like Lean, Agile, Scrum and Kanban, see [Project management concepts](/knowledge-base/).
