@@ -139,6 +139,20 @@ Plugins are how Leantime is funded, and they solve real problems. Write about th
 - Say plainly that it's a paid plugin when you self-host, and whether it's included in Leantime Cloud (all are, except Advanced Authentication). Set `plugin:` in the front matter so the label row says so.
 - No superlatives, urgency or pricing claims; the marketplace page owns pricing.
 
+**Where plugin content goes.** How to *use* a feature lives where people use it, under Use Leantime, for everyone including Leantime Cloud: Strategies, Programs, Whiteboards, Notes and Custom Fields have their own pages; repeating to-dos are on To-Dos; the Pomodoro timer and daily intentions are on My Work. The page under Plugins is for running it yourself, in this order: **What does it add?** (each point linking to the how-to), **Do I have it on Leantime Cloud?**, **How do I install it on my own server?** (Leantime version, marketplace name and license, install, any `.env` settings, scheduled jobs or network needs), **How do I keep it up to date?**, **Who can use it?**, **What if something goes wrong?** and **Related**. The how-to page links back to it in one line: "On Leantime Cloud it's already on; on your own server, see …".
+
+## Search and links
+
+Most people arrive from a search or an AI assistant, on the page that answers their question, not the home page. For every new or moved page:
+
+- **Write a description** (110-160 characters) and, when the title alone is vague, a **search title** of 65 characters or fewer that names Leantime and the task, like "Custom fields in Leantime: add your own fields to to-dos". Set them in `scripts/page-metadata.json` or the front matter.
+- **Link to it from at least two pages** that mention it: the overview or task page it belongs to, and a page that comes before or after it in the work. Mention a feature, link it the first time.
+- **Link out from it** to the next step and to the concept behind it (To-Dos ↔ Kanban, Logic Model ↔ What is a logic model?).
+- **Put it in the menu** (`astro.config.mjs`). The build stops on a Use Leantime page that isn't in a group.
+- **Moved a page?** Add the old path to `redirects` in `astro.config.mjs`.
+
+`npm run check:seo` lists pages without a description, descriptions and search titles of the wrong length, and pages nothing links to. The build prints the same list as warnings.
+
 ## AI-friendly pages
 
 Every page except the home page and drafts is also published as plain Markdown (`/path.md`) and listed in `/llms.txt`. AI assistants read these pages, so:
@@ -150,7 +164,8 @@ Every page except the home page and drafts is also published as plain Markdown (
 ## Before you open a pull request
 
 ```bash
-npm run build    # checks headings and links, then builds the site
+npm run build      # checks headings and links, lists search gaps, then builds the site
+npm run check:seo  # just the search gaps, failing on any
 npm run dev      # preview at http://localhost:4321
 ```
 

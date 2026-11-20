@@ -15,9 +15,10 @@ const DOCS_DIR = new URL('./src/content/docs/', import.meta.url);
 const pageExists = (slug) =>
 	['.md', '.mdx', '/index.md', '/index.mdx'].some((ext) => existsSync(new URL(slug + ext, DOCS_DIR)));
 const USE_LEANTIME_GROUPS = [
-	['Your day', ['my-work-dashboard', 'calendars', 'timesheets|Time tracking', 'notifications', 'mobile-app|On your phone']],
-	['Plan and track', ['managing-projects', 'task-management|To-Dos', 'roadmap-planning|Milestones', 'goals']],
-	['Think', ['idea-management|Ideas', 'blueprints', 'research-boards', 'retrospectives']],
+	['Your day', ['my-work-dashboard', 'calendars', 'timesheets|Time tracking', 'notes', 'notifications', 'mobile-app|On your phone']],
+	['Plan and track', ['managing-projects', 'task-management|To-Dos', 'custom-fields|Custom Fields', 'roadmap-planning|Milestones', 'goals']],
+	['Above your projects', ['programs', 'strategies']],
+	['Think', ['idea-management|Ideas', 'blueprints', 'whiteboards', 'research-boards', 'retrospectives']],
 	['Write and share', ['docs', 'reports']],
 	['Your team and company', ['managing-clients', 'user-management', 'company-settings', 'integrations|Integrations', 'import-csv']],
 ];

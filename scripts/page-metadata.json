@@ -302,8 +302,9 @@
     "searchTitle": "How to update Leantime to a new version"
   },
   "installation/using-plugins.md": {
-    "title": "Using plugins",
-    "description": "How to use Leantime plugins after you install them: Custom Fields, Strategy Pro, Recurring Tasks, Whiteboards, Program Management, Notes and the Pomodoro Timer."
+    "title": "Plugins",
+    "description": "The Leantime plugins and what each one adds: strategies, programs, whiteboards, notes, custom fields, recurring to-dos, focus tools and single sign-on.",
+    "searchTitle": "Leantime plugins: which one do you need?"
   },
   "knowledge-base/agile.md": {
     "title": "Agile project management in Leantime",
@@ -384,8 +385,8 @@
   },
   "using-leantime/my-work-dashboard.md": {
     "title": "My Work Dashboard",
-    "searchTitle": "My Work dashboard in Leantime: your to-dos, calendar and projects",
-    "description": "What the Leantime My Work dashboard shows: your to-dos from every project, a calendar for time boxing your day, and widgets you can add or move.",
+    "searchTitle": "My Work dashboard in Leantime: to-dos, calendar, focus timer",
+    "description": "What the Leantime My Work dashboard shows: your to-dos from every project, a calendar for time boxing, the Pomodoro timer, daily intentions and widgets.",
     "checked": "3.14"
   },
   "using-leantime/notifications.md": {
@@ -433,7 +434,7 @@
   },
   "using-leantime/task-management.md": {
     "title": "Task management",
-    "description": "Manage to-dos (tasks) in Leantime: add them, break them into subtasks, set dependencies, switch between kanban, table and list views, and use swimlanes.",
+    "description": "Manage to-dos (tasks) in Leantime: subtasks, repeating to-dos, custom fields, kanban, table and list views, swimlanes, statuses and time tracking.",
     "searchTitle": "To-dos (tasks) in Leantime: kanban, subtasks and sprints"
   },
   "using-leantime/timesheets.md": {
@@ -492,56 +493,56 @@
       "name": "Strategy Pro",
       "url": "https://marketplace.leantime.io/product/leantime-strategies/"
     },
-    "searchTitle": "Strategy Pro plugin: link strategy, goals and projects",
-    "description": "Plan strategy above your projects with the Strategy Pro plugin: focus areas, goals that roll up from your projects, the Logic Model and planning boards."
+    "searchTitle": "Strategy Pro plugin: install it on self-hosted Leantime",
+    "description": "What the Strategy Pro plugin adds to Leantime, and how to install, license and update it on your own server. Already on in Leantime Cloud."
   },
   "plugins/programs.md": {
     "plugin": {
       "name": "Programs",
       "url": "https://marketplace.leantime.io/product/leantime-program-plans/"
     },
-    "searchTitle": "Programs plugin: manage several projects together",
-    "description": "Group related projects with the Programs plugin for Leantime: program goals, all of the program's work in one view, and Resources to plan people's time."
+    "searchTitle": "Programs plugin: install it on self-hosted Leantime",
+    "description": "What the Programs (Program Plans) plugin adds to Leantime, and how to install, license and update it on your own server. Already on in Leantime Cloud."
   },
   "plugins/whiteboards.md": {
     "plugin": {
       "name": "Whiteboards",
       "url": "https://marketplace.leantime.io/product/leantime-whiteboards/"
     },
-    "searchTitle": "Whiteboards plugin: draw diagrams inside a project",
-    "description": "Sketch floor plans, processes, org charts and screen layouts on a whiteboard inside a Leantime project, with Excalidraw tools, a shape library and export."
+    "searchTitle": "Whiteboards plugin: install it on self-hosted Leantime",
+    "description": "What the Whiteboards plugin adds to Leantime, and how to install, license and update it on your own server, including the unpkg.com browser requirement."
   },
   "plugins/custom-fields.md": {
     "plugin": {
       "name": "Custom Fields",
       "url": "https://marketplace.leantime.io/product/leantime-customfields/"
     },
-    "searchTitle": "Custom Fields plugin: add your own fields to to-dos",
-    "description": "Add your own fields to Leantime to-dos with the Custom Fields plugin: text, number, dropdown, checkbox and date fields, shown on every project or only some."
+    "searchTitle": "Custom Fields plugin: install it on self-hosted Leantime",
+    "description": "What the Custom Fields plugin adds to Leantime, its field types, and how to install, license, update or remove it on your own server without losing data."
   },
   "plugins/recurring-todos.md": {
     "plugin": {
       "name": "Recurring to-dos",
       "url": "https://marketplace.leantime.io/product/recurring-tasks/"
     },
-    "searchTitle": "Recurring to-dos plugin: repeat a to-do on a schedule",
-    "description": "Make a Leantime to-do repeat daily, weekly, monthly or yearly with the Recurring Tasks plugin: set it up, see when the next one is created, and stop it."
+    "searchTitle": "Recurring Tasks plugin: install it on self-hosted Leantime",
+    "description": "What the Recurring Tasks plugin adds to Leantime, and how to install it on your own server, including the cron job that creates each repeat on time."
   },
   "plugins/notes.md": {
     "plugin": {
       "name": "Notes",
       "url": "https://marketplace.leantime.io/product/leantime-notes/"
     },
-    "searchTitle": "Notes plugin: private notes next to your work",
-    "description": "Keep quick notes and ideas in Leantime with the Notes plugin: write a note, see who can read it, and organize notes before they belong in a project."
+    "searchTitle": "Notes plugin: install it on self-hosted Leantime",
+    "description": "What the Notes plugin adds to Leantime, and how to install, license and update it on your own server. Already on in Leantime Cloud, for private notes."
   },
   "plugins/pomodoro.md": {
     "plugin": {
       "name": "Pomodoro timer",
       "url": "https://marketplace.leantime.io/product/leantime-pomodoro/"
     },
-    "searchTitle": "Pomodoro timer plugin: focus sessions on My Work",
-    "description": "Work in focused blocks with the Pomodoro plugin on your Leantime dashboard: 25-minute sessions, short and long breaks, and time logged to the to-do you drop in."
+    "searchTitle": "Pomodoro Timer plugin: install it on self-hosted Leantime",
+    "description": "What the Pomodoro Timer plugin adds to the Leantime My Work dashboard, and how to install, license and update it on your own server."
   },
   "ai/leantime-cloud-ai.md": {
     "edition": "cloud",
@@ -673,8 +674,8 @@
     "description": "The phases of a project, from starting it to closing it: what happens in each, whether they have to happen in order, and where milestones and timelines fit."
   },
   "plugins/daily-intentions.md": {
-    "searchTitle": "Daily Intentions: plan when you'll start a to-do",
-    "description": "Plan when you'll start a to-do and what the first step is, on your Leantime Cloud dashboard: set a daily intention, write one that works, and the research.",
+    "searchTitle": "Daily Intentions: implementation intentions in Leantime",
+    "description": "Why daily intentions work: the research on implementation intentions (if-then plans) behind the Daily Intentions widget on Leantime Cloud, with sources.",
     "edition": "cloud",
     "plugin": {
       "name": "Daily Intentions"
@@ -682,7 +683,7 @@
   },
   "plugins/advanced-authentication.md": {
     "searchTitle": "Advanced Authentication plugin: SSO, SAML and mobile sign-in",
-    "description": "Sign in to self-hosted Leantime with Google, Microsoft, GitHub, Okta, SAML 2.0 and more, and from the mobile app: set up providers, accounts and settings.",
+    "description": "Sign in to self-hosted Leantime with Google, Microsoft, GitHub, Okta, SAML 2.0 and more, and from the mobile app: install, set up providers and settings.",
     "edition": "self-hosted",
     "plugin": {
       "name": "Advanced Authentication",
@@ -700,5 +701,45 @@
   "knowledge-base/logic-model.md": {
     "searchTitle": "What is a logic model? Logic model vs theory of change",
     "description": "What a logic model is, its five parts, the difference between outputs and outcomes, how to read it as if-then, and how it differs from a theory of change."
+  },
+  "using-leantime/strategies.md": {
+    "plugin": {
+      "name": "Strategy Pro",
+      "url": "https://marketplace.leantime.io/product/leantime-strategies/"
+    },
+    "searchTitle": "Strategies in Leantime: focus areas, goals and the work",
+    "description": "Set out what your organization is working toward in Leantime: focus areas, measurable goals, a Logic Model, and the programs and projects that move them."
+  },
+  "using-leantime/programs.md": {
+    "plugin": {
+      "name": "Programs",
+      "url": "https://marketplace.leantime.io/product/leantime-program-plans/"
+    },
+    "searchTitle": "Programs in Leantime: manage several related projects together",
+    "description": "Group related projects into a program in Leantime: one view of their to-dos and milestones, shared goals and sprints, and Resources to plan people's time."
+  },
+  "using-leantime/whiteboards.md": {
+    "plugin": {
+      "name": "Whiteboards",
+      "url": "https://marketplace.leantime.io/product/leantime-whiteboards/"
+    },
+    "searchTitle": "Whiteboards in Leantime: draw diagrams inside a project",
+    "description": "Sketch floor plans, processes, org charts and screen layouts on a whiteboard inside a Leantime project, with Excalidraw tools, a shape library and export."
+  },
+  "using-leantime/notes.md": {
+    "plugin": {
+      "name": "Notes",
+      "url": "https://marketplace.leantime.io/product/leantime-notes/"
+    },
+    "searchTitle": "Private notes in Leantime: notebooks, tags and search",
+    "description": "Keep private notes and ideas next to your work in Leantime: write a note, sort notes into notebooks, and pin, tag and search them. Only you can see them."
+  },
+  "using-leantime/custom-fields.md": {
+    "plugin": {
+      "name": "Custom Fields",
+      "url": "https://marketplace.leantime.io/product/leantime-customfields/"
+    },
+    "searchTitle": "Custom fields in Leantime: add your own fields to to-dos",
+    "description": "Add your own fields to Leantime to-dos: text, number, select, checkbox, radio and on/off fields, in every project or only some, filled in on each to-do."
   }
 }

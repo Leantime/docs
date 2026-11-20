@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/check-headings.mjs && astro build",
+    "build": "node scripts/check-headings.mjs && node scripts/check-seo.mjs && astro build",
     "preview": "astro preview",
-    "check:headings": "node scripts/check-headings.mjs"
+    "check:headings": "node scripts/check-headings.mjs",
+    "check:seo": "node scripts/check-seo.mjs --strict"
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.7",
