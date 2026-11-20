@@ -728,5 +728,23 @@
     },
     "searchTitle": "Custom fields in Leantime: add your own fields to to-dos",
     "description": "Add your own fields to Leantime to-dos: text, number, select, checkbox, radio and on/off fields, in every project or only some, filled in on each to-do."
+  },
+  "installation/reverse-proxy.md": {
+    "searchTitle": "Leantime behind a reverse proxy: nginx, Caddy, Traefik",
+    "description": "Put Leantime behind nginx, Apache, Caddy, Traefik or Cloudflare: tested configurations, the LEAN_APP_URL and proxy settings, and fixes for common errors.",
+    "edition": "self-hosted",
+    "glance": {
+      "minutes": 20,
+      "level": "Some experience",
+      "needs": [
+        "Leantime running, in Docker or on your own web server",
+        "A domain pointing at your server, and a way to get a certificate"
+      ],
+      "where": [
+        "Your proxy's configuration",
+        "Leantime's `.env` file, or the Leantime container's environment"
+      ],
+      "result": "Leantime on your own domain over HTTPS, with sign-in, uploads, the API and the mobile app working"
+    }
   }
 }

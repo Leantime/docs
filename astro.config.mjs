@@ -341,6 +341,7 @@ export default defineConfig({
 								{ label: 'Plugin licenses & updates', slug: 'installation/plugin-licenses' },
 								{ label: 'Authentication', slug: 'installation/authentication-configuration' },
 								{ label: 'Keycloak SSO', slug: 'installation/keycloak-sso' },
+								...menuEntries(['installation/reverse-proxy|Reverse proxy']), // appears once docs#102 is converted
 								{ label: 'Mobile app', slug: 'installation/mobile-app-setup' },
 							],
 						},
