@@ -407,5 +407,6 @@ A GitHub error that says *"The redirect_uri is not associated with this applicat
 - [Authentication: OIDC, LDAP and single sign-on](installation/authentication-configuration.md)
 - [Set up Keycloak single sign-on](installation/keycloak-sso.md)
 - [Set up the mobile app on a self-hosted server](installation/mobile-app-setup.md)
+- [Leantime on your phone](using-leantime/mobile-app.md): signing in and using the app
 - [Installing plugins](installation/plugin-installation.md)
 - [All plugins](installation/using-plugins.md)

@@ -14,22 +14,22 @@ Plugins add features to Leantime. Each one does one job, like planning a strateg
 
 ### Think it through and take notes
 
-- **[Whiteboards](plugins/whiteboards.md):** sketch floor plans, flows and diagrams on a shared whiteboard inside a project.
-- **[Notes](plugins/notes.md):** jot down quick notes and ideas that don't belong in a project's docs yet.
+- **[Whiteboards](plugins/whiteboards.md):** sketch floor plans, flows and diagrams on a shared whiteboard inside a project. [How to use whiteboards](using-leantime/whiteboards.md).
+- **[Notes](plugins/notes.md):** jot down quick notes and ideas that don't belong in a project's docs yet. [How to use Notes](using-leantime/notes.md).
 
 ### Add to your to-dos
 
-- **[Custom fields](plugins/custom-fields.md):** add your own fields to to-dos, for the details your team tracks that Leantime doesn't have a field for.
-- **[Recurring to-dos](plugins/recurring-todos.md):** create a to-do again on a schedule, like every week or every month.
+- **[Custom fields](plugins/custom-fields.md):** add your own fields to to-dos, for the details your team tracks that Leantime doesn't have a field for. [How to use custom fields](using-leantime/custom-fields.md).
+- **[Recurring to-dos](plugins/recurring-todos.md):** create a to-do again on a schedule, like every week or every month. [How to make a to-do repeat](using-leantime/task-management.md#how-do-i-make-a-to-do-repeat).
 
 ### Stay focused
 
-- **[Pomodoro timer](plugins/pomodoro.md):** work in focused blocks with short breaks in between.
-- **[Daily Intentions](plugins/daily-intentions.md):** decide when you'll start a to-do and what the first step is. Leantime Cloud only.
+- **[Pomodoro timer](plugins/pomodoro.md):** work in focused blocks with short breaks in between. [How to use the timer](using-leantime/my-work-dashboard.md#how-do-i-use-the-pomodoro-timer).
+- **[Daily Intentions](plugins/daily-intentions.md):** decide when you'll start a to-do and what the first step is. Leantime Cloud only. [How to set a daily intention](using-leantime/my-work-dashboard.md#how-do-i-set-a-daily-intention).
 
 ### Sign in and connect other tools
 
-- **[Advanced Authentication](plugins/advanced-authentication.md):** sign in with Google, Microsoft, GitHub, Okta and more, and use the [Leantime Mobile](https://leantime.io/mobile) app, including phone notifications (see [Set up the mobile app](installation/mobile-app-setup.md)). Self-hosted only.
+- **[Advanced Authentication](plugins/advanced-authentication.md):** sign in with Google, Microsoft, GitHub, Okta and more, and use the [Leantime Mobile](https://leantime.io/mobile) app, including phone notifications (see [Set up the mobile app](installation/mobile-app-setup.md) and [Leantime on your phone](using-leantime/mobile-app.md)). Self-hosted only.
 - **[MCP Server](installation/leantime-mcp.md):** let AI assistants like Claude work with your Leantime projects.
 
 ## How do I switch a plugin on?
