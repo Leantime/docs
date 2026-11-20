@@ -198,7 +198,7 @@ This restores the Docker backup above: the database dump, the three copied folde
 
 ```bash
 # Clear cache
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 
 # Check migrations
 php ./bin/leantime db:migrate
@@ -261,7 +261,7 @@ Edit `config/.env` and update any server-specific settings:
 
 ```bash
 php ./bin/leantime db:migrate
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 ```
 
 Visit your new URL and verify:
@@ -303,7 +303,7 @@ gunzip < pre_upgrade_YYYYMMDD.sql.gz | mysql -u leantime -p leantime
 tar -xzvf pre_upgrade_files_YYYYMMDD.tar.gz -C /var/www/leantime/
 
 # Clear cache and restart
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 sudo systemctl start apache2
 ```
 

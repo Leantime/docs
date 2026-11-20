@@ -99,7 +99,7 @@ After the container starts, Leantime will automatically run database migrations 
    ```bash
    cd /var/www/leantime
    php ./bin/leantime db:migrate
-   php ./bin/leantime cache:clear
+   php ./bin/leantime cache:clearAll
    ```
 
 6. **Restart the web server:**
@@ -165,7 +165,7 @@ Version 3.2 introduced major changes to session management and plugin handling.
 **Common issues:**
 
 - **Can't login after upgrade:** Session folder missing or has wrong permissions. Create `storage/framework/sessions/` and set permissions.
-- **HTTP 500 errors:** Clear cache with `php ./bin/leantime cache:clear` or manually delete contents of `cache/` folder.
+- **HTTP 500 errors:** Clear cache with `php ./bin/leantime cache:clearAll` or manually delete contents of `cache/` folder.
 - **Plugin errors:** Remove all files from `app/Plugins/` and reinstall plugins fresh.
 
 ### Upgrading to 3.3.x
@@ -174,7 +174,7 @@ Version 3.3 rebuilt the cache system and continued Laravel/Symfony migration.
 
 **Notes:**
 - Check custom plugin event listeners against the latest documentation
-- Clear cache after upgrade: `php ./bin/leantime cache:clear`
+- Clear cache after upgrade: `php ./bin/leantime cache:clearAll`
 - Session configuration now uses environment files — check your `.env` settings
 
 ### Upgrading from 2.x to 3.x
@@ -252,7 +252,7 @@ chown -R www-data:www-data storage
 chmod -R 775 storage
 
 # Clear cache
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 ```
 
 ### HTTP 500 Internal Server Error
@@ -288,7 +288,7 @@ Common causes:
 Usually a cache issue:
 
 ```bash
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 ```
 
 Or manually clear browser cache. If using a CDN, purge the CDN cache.
@@ -300,7 +300,7 @@ Or manually clear browser cache. If using a CDN, purge the CDN cache.
 rm -rf app/Plugins/*
 
 # Clear cache
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 ```
 
 Then reinstall plugins one at a time from the marketplace.
