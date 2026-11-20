@@ -194,7 +194,7 @@ For plugins you installed from a folder:
 1. Disable the plugin in **My Apps**.
 2. Back up the existing plugin folder.
 3. Replace it with the new version's files.
-4. Clear the cache: `php ./bin/leantime cache:clear`
+4. Clear the cache: `php ./bin/leantime cache:clearAll`
 5. Enable the plugin again.
 
 ---
@@ -260,7 +260,7 @@ sudo chmod -R 755 app/Plugins/
 
 **Clear cache:**
 ```bash
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 ```
 
 ### Plugin Doesn't Load on Network Storage (Azure Files, SMB)
@@ -272,7 +272,7 @@ Marketplace plugins are a single `.phar` file, and PHP runs the plugin from insi
 3. **Clear Leantime's cache:**
 
 ```bash
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 ```
 
 ### Plugin Installation Fails (Docker)
@@ -328,7 +328,7 @@ Leantime switches a plugin off when it keeps failing or when your active users g
 UPDATE zp_plugins SET enabled = 0 WHERE foldername = 'PluginName';
 ```
 
-3. Clear cache: `php ./bin/leantime cache:clear`
+3. Clear cache: `php ./bin/leantime cache:clearAll`
 4. Check `storage/logs/leantime-*.log` for error details
 5. Verify PHP version compatibility (Leantime and its plugins need PHP 8.2 or later)
 
