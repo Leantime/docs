@@ -1,63 +1,47 @@
 # Custom Fields
 
-Every team tracks something Leantime doesn't have a field for: a budget code, a cost estimate, which client contact asked for it. The Custom Fields plugin lets you add your own fields to to-dos, for every project or only the ones that need them.
+The Custom Fields plugin lets you add your own fields to to-dos, for the details your team tracks that Leantime doesn't have a field for: a budget code, a cost estimate, which client contact asked for it.
 
 ![A to-do's Custom Fields tab (outlined) with Food type set to Household items and Estimated cost ($) set to 850, and the Save Fields button](../_images/plugins/custom-fields-todo.webp)
 
-**Get it:** [Custom Fields on the Leantime Marketplace](https://marketplace.leantime.io/product/leantime-customfields/). It's already on in Leantime Cloud.
+## What does it add?
 
-## How do I add a custom field?
+- **Your own fields on to-dos:** text, longer text, numbers, a choice from a list, checkboxes, radio buttons and on/off. See [Which field types can I use?](using-leantime/custom-fields.md#which-field-types-can-i-use)
+- **Fields for every project or only some:** show a field in one project, all but one, or on one to-do. See [How do I show a field only on some to-dos?](using-leantime/custom-fields.md#how-do-i-show-a-field-only-on-some-to-dos)
+- **A Custom Fields tab** on each to-do, where people fill them in. See [How do I fill in custom fields on a to-do?](using-leantime/custom-fields.md#how-do-i-fill-in-custom-fields-on-a-to-do)
 
-Custom fields are set up once for your whole Leantime, by an Admin or Owner.
+## Do I have it on Leantime Cloud?
 
-1. **Click Company** at the top of the page, then **Custom Fields** under **Administration** in the left menu.
-2. **Choose the Field Type** and click **Add Field**.
-3. **Fill in the Field Label**: the name people see on the to-do, like "Estimated cost ($)".
-4. **Optional:** add a **Field Placeholder** (example text shown in an empty field), and switch on **Is Required**.
-5. **For a dropdown, checkboxes or radio buttons,** type the **Choices**, one per line. A dropdown can also **Allow multiple selections**.
-6. **Choose where it shows** under **Display Conditions** (see the next section).
-7. **Click Save Fields.**
+Yes. Custom Fields is already on in every Leantime Cloud workspace. To start, see [How do I add a custom field?](using-leantime/custom-fields.md#how-do-i-add-a-custom-field)
 
-![The Custom Fields page under Company: the Food type field with its label, choices and Display Conditions (outlined), set to show on to-dos in the Open the Eastside pantry project](../_images/plugins/custom-fields-admin.webp)
+## How do I install it on my own server?
 
-## Which field types can I use?
+- **Leantime version:** 3.13 or later. To check yours, click the **?** (help) icon at the top right; the version is under **System**.
+- **Get a license:** on the Leantime Marketplace it's called [Custom Fields](https://marketplace.leantime.io/product/leantime-customfields/). The license is sized by the number of users in your Leantime (see [What counts as a user?](installation/plugin-licenses.md#what-counts-as-a-user-for-a-plugin-license)).
+- **Install it** from **Company → Leantime Apps** with the license key (see [Installing from the Marketplace](installation/plugin-installation.md#installing-from-the-marketplace)), or upload it by hand (see [Manual plugin installation](installation/plugin-installation.md#manual-plugin-installation)).
+- **Nothing else to set up:** Custom Fields has no settings in `.env` and no scheduled jobs. Leantime creates the plugin's tables when you install it.
+- **Before you remove it:** **Remove** deletes the plugin's tables, so every field and everything people entered in them is gone. To stop using it for a while, **Disable** it instead (see [What's the difference between Disable and Remove?](installation/plugin-licenses.md#whats-the-difference-between-disable-and-remove)).
 
-| Field Type | What people enter |
-| --- | --- |
-| **Text Field** | A short line of text |
-| **Textarea Field** | Longer text |
-| **Number Field** | A number |
-| **Select Field** | One choice from a dropdown, or several if you allow multiple selections |
-| **Checkbox Field** | Any of the choices, as checkboxes |
-| **Radio Field** | One of the choices, as radio buttons |
-| **Boolean Field** | On or off |
+After it's on, **Custom Fields** shows under **Company**, in the **Administration** menu.
 
-## How do I show a field only on some to-dos?
+## How do I keep it up to date?
 
-**Display Conditions** decide which to-dos a field appears on. A new field starts with one condition that shows it on every to-do.
+Leantime checks the marketplace for plugin updates every day and tells administrators; turn on **Update plugins automatically** in **My Apps** to have minor updates installed for you (see [How do plugin updates work?](installation/plugin-licenses.md#how-do-plugin-updates-work)). Before you update Leantime itself, check that your Custom Fields version supports the new release (see [What happens to plugins when I update Leantime?](installation/plugin-licenses.md#what-happens-to-plugins-when-i-update-leantime)).
 
-- **Only in one project:** set **Entity** to the project option (it reads "when Project ID is"), keep **=**, and pick the project under **Value**.
-- **In every project except one:** the same, with **!=**.
-- **On one particular to-do:** set **Entity** to the to-do option (it reads "when Ticket ID is") and pick the to-do.
-- **On every to-do:** set **Value** to **Any**.
+## Who can use it?
 
-Click **Add Condition** for more than one. A field shows wherever any of its conditions match. If you delete all of a field's conditions, it doesn't show anywhere.
+Setting up fields needs the Admin or Owner role. Filling them in on a to-do needs the Editor role or higher in the project.
 
-## How do I fill in custom fields on a to-do?
+## What if something goes wrong?
 
-1. **Open the to-do** and click the **Custom Fields** tab at the top.
-2. **Fill in the fields** and click **Save Fields**.
-
-Custom fields are on the to-do's **Custom Fields** tab only. They aren't on the form for a new to-do, so save the to-do first, and they don't show in the to-do lists or in exports. Filling them in needs the Editor role or higher in the project.
-
-## What happens when I delete a field?
-
-Click **Delete Field** on the Custom Fields page. Leantime asks first, because deleting a field also deletes everything people entered in it, on every to-do.
-
-When you copy a project, fields that show only in the original project also show in the copy.
+- **There's no Custom Fields under Company:** check that the plugin is switched on under **Company → Leantime Apps → My Apps**, and that you're an Admin or Owner.
+- **A field doesn't show on a to-do:** check its **Display Conditions**. A field with no conditions shows nowhere (see [How do I show a field only on some to-dos?](using-leantime/custom-fields.md#how-do-i-show-a-field-only-on-some-to-dos)).
+- **There's no Date field type:** not yet. Custom Fields has Text, Textarea, Select, Checkbox, Radio, Number and Boolean fields (see [Which field types can I use?](using-leantime/custom-fields.md#which-field-types-can-i-use)).
+- **The plugin switched itself off:** your Leantime has more users than the license allows, or the plugin kept causing errors. See [Plugin licenses, updates and problems](installation/plugin-licenses.md#what-happens-when-we-have-more-users-than-the-license-allows).
 
 ## Related
 
+- [Custom Fields](using-leantime/custom-fields.md)
 - [To-Dos](using-leantime/task-management.md)
-- [Recurring to-dos](plugins/recurring-todos.md)
+- [Installing plugins](installation/plugin-installation.md)
 - [All plugins](installation/using-plugins.md)

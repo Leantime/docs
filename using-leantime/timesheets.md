@@ -86,7 +86,7 @@ Yes. In the project's **Project Settings**, open the **Modules** tab and switch 
 - **[Reports](using-leantime/reports.md)** show the hours logged on a project, and per milestone.
 - In a [program](using-leantime/programs.md#how-do-i-plan-peoples-time-with-resources), the **Resources** page compares each person's booked hours with the time they've logged this week.
 
-With the Pomodoro plugin, you can also drop a to-do onto the Pomodoro timer on My Work: its play and pause buttons then start and stop this same timer.
+With the Pomodoro plugin, you can also drop a to-do onto the Pomodoro timer on My Work: its play and pause buttons then start and stop this same timer (see [Can it log my time to a to-do?](using-leantime/my-work-dashboard.md#can-it-log-my-time-to-a-to-do)).
 
 ## Related
 

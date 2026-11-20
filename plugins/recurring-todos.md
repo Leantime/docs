@@ -1,47 +1,44 @@
 # Recurring to-dos
 
-Some work comes back on a schedule: restocking every Monday, a report at the end of every month, a check-in every two weeks. The Recurring Tasks plugin repeats a to-do for you, so you set it up once instead of adding it again each time.
+The Recurring Tasks plugin repeats a to-do on a schedule, like restocking every Monday or a report at the end of every month, so you set it up once instead of adding it again each time.
 
 ![The recurrence settings of the to-do "Restock the shelves" (outlined): Repeat every 1 Week(s) on Monday, Trigger Recurrence On Due Date, Create new task, and Repeat Task switched on. The link above reads "Repeats every week on Monday".](../_images/plugins/recurring-todos.webp)
 
-**Get it:** [Recurring Tasks on the Leantime Marketplace](https://marketplace.leantime.io/product/recurring-tasks/). It's already on in Leantime Cloud.
+## What does it add?
 
-## How do I make a to-do repeat?
+- **A repeat schedule on any to-do:** every few days, weeks, months or years, on the days you choose. See [How do I make a to-do repeat?](using-leantime/task-management.md#how-do-i-make-a-to-do-repeat)
+- **A choice of what starts the next one:** the due date, the start date, or finishing this one. See [When is the next one created?](using-leantime/task-management.md#when-is-the-next-one-created)
+- **New copies or the same to-do again:** each repeat as a new to-do, kept together as subtasks, or the same to-do reset to **New**.
 
-1. **Open the to-do** and click **Recurring** (↻), next to **Due Date**.
-2. **Switch on Repeat Task.**
-3. **Set Repeat every:** a number, and **Day(s)**, **Week(s)**, **Month(s)** or **Year(s)**. Every two weeks is "2 Week(s)"; every quarter is "3 Month(s)".
-4. **For weeks, tick the days** under **Repeat on**. For months, choose the day of the month.
-5. **Choose what starts the next one** under **Trigger Recurrence On** (see the next section).
-6. **Choose what happens:** **Create new task** adds a new to-do each time; **Reset status to 'New'** reuses the same to-do.
-7. **Click Save.**
+## Do I have it on Leantime Cloud?
 
-The link next to **Due Date** now describes the schedule, like "Repeats every week on Monday". You also find the ↻ icon on the to-do's card on the Kanban board and in **My ToDos** on your dashboard.
+Yes. Recurring Tasks is already on in every Leantime Cloud workspace. To start, see [How do I make a to-do repeat?](using-leantime/task-management.md#how-do-i-make-a-to-do-repeat)
+
+## How do I install it on my own server?
+
+- **Leantime version:** any Leantime 3 release. To check yours, click the **?** (help) icon at the top right; the version is under **System**.
+- **Get a license:** on the Leantime Marketplace it's called [Recurring Tasks](https://marketplace.leantime.io/product/recurring-tasks/). The license is sized by the number of users in your Leantime (see [What counts as a user?](installation/plugin-licenses.md#what-counts-as-a-user-for-a-plugin-license)).
+- **Install it** from **Company → Leantime Apps** with the license key (see [Installing from the Marketplace](installation/plugin-installation.md#installing-from-the-marketplace)), or upload it by hand (see [Manual plugin installation](installation/plugin-installation.md#manual-plugin-installation)).
+- **Set up Leantime's cron job.** The plugin checks for repeats every minute through Leantime's scheduler. Without a [cron job](installation/configuration.md#cron-jobs), Leantime only runs the scheduler while someone is using it, so on a quiet day a repeat can come late. The plugin has no settings in `.env`.
+
+After it's on, **Recurring** (↻) shows next to **Due Date** on every to-do.
+
+## How do I keep it up to date?
+
+Leantime checks the marketplace for plugin updates every day and tells administrators; turn on **Update plugins automatically** in **My Apps** to have minor updates installed for you (see [How do plugin updates work?](installation/plugin-licenses.md#how-do-plugin-updates-work)). Before you update Leantime itself, check that your Recurring Tasks version supports the new release (see [What happens to plugins when I update Leantime?](installation/plugin-licenses.md#what-happens-to-plugins-when-i-update-leantime)).
+
+## Who can use it?
 
 Setting up a repeat needs the Editor role or higher in the project.
 
-## When is the next to-do created?
+## What if something goes wrong?
 
-It depends on **Trigger Recurrence On**:
-
-| Trigger | When the next one comes |
-| --- | --- |
-| **Due Date** | When the next due date arrives. The copy is created then, already due, not ahead of time. |
-| **Scheduled Start Date** | When the next start date arrives, counted from the to-do's **Work Start** date. |
-| **Task is set to done** | Shortly after someone moves it to a Done status, so the next one only comes once this one is finished. |
-
-The new to-do is a copy: same title, description, assignee, project and milestone, starting in **New**. Each copy shows up as a subtask of the first to-do (or of its parent, if the first to-do is a subtask itself), so the repeats stay together. With **Reset status to 'New'**, the same to-do goes back to **New** instead; with the **Due Date** or **Scheduled Start Date** trigger, its date moves to the next time too.
-
-**On your own server:** Leantime checks for repeats in the background, every minute. If no [cron job](installation/configuration.md#cron-jobs) runs Leantime's scheduler, it only checks while someone is using Leantime, so a repeat can come a little late on a quiet day.
-
-## How do I stop a to-do from repeating?
-
-With **Create new task**, the schedule moves to each new copy. So open the most recent to-do in the series, click the ↻ link next to **Due Date**, switch off **Repeat Task** and click **Save**. To-dos that were already created stay. Change the schedule the same way.
-
-Deleting the most recent to-do in the series also stops it from repeating.
+- **There's no Recurring next to Due Date:** check that the plugin is switched on under **Company → Leantime Apps → My Apps**, and that you have the Editor role or higher.
+- **Repeats come late, or only when someone logs in:** Leantime's scheduler isn't running on its own. Set up the [cron job](installation/configuration.md#cron-jobs).
+- **The plugin switched itself off:** your Leantime has more users than the license allows, or the plugin kept causing errors. See [Plugin licenses, updates and problems](installation/plugin-licenses.md#what-happens-when-we-have-more-users-than-the-license-allows).
 
 ## Related
 
 - [To-Dos](using-leantime/task-management.md)
-- [Custom fields](plugins/custom-fields.md)
+- [Installing plugins](installation/plugin-installation.md)
 - [All plugins](installation/using-plugins.md)

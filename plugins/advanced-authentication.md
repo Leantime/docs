@@ -2,15 +2,32 @@
 
 Advanced Authentication lets your team sign in to a self-hosted Leantime with the accounts they already have: Google, Microsoft, GitHub, Okta, SAML 2.0 and more. It's also what lets the Leantime mobile app sign in to your server.
 
-**Get it:** [Advanced Authentication on the Leantime Marketplace](https://marketplace.leantime.io/product/advanced-auth/). It's for self-hosted Leantime; Leantime Cloud has its own sign-in. Install it like any other plugin (see [Installing plugins](installation/plugin-installation.md)), then set it up below.
-
-## What does the plugin give you?
+## What does it add?
 
 - **The Leantime Mobile app.** On a self-hosted server, the app for [iPhone](https://apps.apple.com/app/leantime-mobile/id6773767264) and [Android](https://play.google.com/store/apps/details?id=io.leantime.mobile) can't sign in without this plugin, with a password or with a sign-in provider. With it, your team signs in on their phones, two-factor authentication works there too, and you can turn on phone notifications (see [Set up the mobile app on a self-hosted server](installation/mobile-app-setup.md)).
 - **Sign-in buttons for the accounts people already have:** Google, Microsoft, GitHub, GitLab, Gitea, Okta, Keycloak, Authentik, Auth0, PropelAuth and eduID.
 - **SAML 2.0 single sign-on**, for identity providers that use SAML. In the browser only for now: SAML isn't available in the mobile app yet.
 
 If you only need single sign-on in the browser through an OpenID Connect provider (Keycloak, Authentik, Entra ID and others) or LDAP, that's built into Leantime; see [Authentication](installation/authentication-configuration.md). You need this plugin for the mobile app, the ready-made sign-in buttons and SAML.
+
+## Do I have it on Leantime Cloud?
+
+No, and you don't need to install it there: Leantime Cloud has its own sign-in. Advanced Authentication is for self-hosted Leantime.
+
+## How do I install it on my own server?
+
+- **Leantime version:** any Leantime 3 release; the mobile app's provider buttons need Leantime 3.10.2 or later and Advanced Authentication 1.4.0 or later. To check your Leantime version, click the **?** (help) icon at the top right; the version is under **System**.
+- **Get a license:** on the Leantime Marketplace it's called [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/). The license is sized by the number of users in your Leantime (see [What counts as a user?](installation/plugin-licenses.md#what-counts-as-a-user-for-a-plugin-license)).
+- **Install it** from **Company → Leantime Apps** with the license key (see [Installing from the Marketplace](installation/plugin-installation.md#installing-from-the-marketplace)), or upload it by hand (see [Manual plugin installation](installation/plugin-installation.md#manual-plugin-installation)).
+- **Set up your sign-in providers** in `config/.env`, as described below. The plugin has no scheduled jobs.
+
+## How do I keep it up to date?
+
+Leantime checks the marketplace for plugin updates every day and tells administrators; turn on **Update plugins automatically** in **My Apps** to have minor updates installed for you (see [How do plugin updates work?](installation/plugin-licenses.md#how-do-plugin-updates-work)). Before you update Leantime itself, check that your Advanced Authentication version supports the new release (see [What happens to plugins when I update Leantime?](installation/plugin-licenses.md#what-happens-to-plugins-when-i-update-leantime)).
+
+## Who can use it?
+
+Owners and Admins set it up under **Company Settings → Authentication Settings**. Everyone with a Leantime account can then sign in with an enabled provider, in the browser and in the mobile app (except SAML, which is browser-only for now).
 
 ## General Setup
 
@@ -390,5 +407,6 @@ A GitHub error that says *"The redirect_uri is not associated with this applicat
 - [Authentication: OIDC, LDAP and single sign-on](installation/authentication-configuration.md)
 - [Set up Keycloak single sign-on](installation/keycloak-sso.md)
 - [Set up the mobile app on a self-hosted server](installation/mobile-app-setup.md)
+- [Leantime on your phone](using-leantime/mobile-app.md): signing in and using the app
 - [Installing plugins](installation/plugin-installation.md)
 - [All plugins](installation/using-plugins.md)
