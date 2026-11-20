@@ -79,6 +79,8 @@ The **Archived** status can't be renamed or removed.
 - **My Work → Project Hub** shows your projects as cards, with your favorites at the top (see [What's on the Project Hub?](#whats-on-the-project-hub)).
 - **Company → All Projects** lists every project in a table, closed ones included, for Managers, Administrators and Owners. The **Project Status** column shows which are closed.
 
+**Several projects that belong together?** A [program](using-leantime/programs.md) groups them, with one view of their to-dos, milestones and people. A [strategy](using-leantime/strategies.md) goes a level up, to the goals your programs and projects serve.
+
 ## What's on the Project Hub?
 
 The Projects menu is a list of names. That works when you know which project you want. A long list can be hard to scan, though, and it doesn't tell you how anything is going. The Project Hub shows the same projects as cards, with the ones you care about first and enough on each card to see where things stand without opening the project.

@@ -87,7 +87,6 @@ Only hours booked on Resources count. Time estimates on to-dos, and projects tha
 ## Related
 
 - [Programs: install and set up](plugins/programs.md)
-
 - [Strategies](using-leantime/strategies.md)
 - [Projects](using-leantime/managing-projects.md)
 - [Milestones](using-leantime/roadmap-planning.md)

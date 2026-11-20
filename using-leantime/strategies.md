@@ -80,7 +80,6 @@ A program goes under a strategy the same way, in its **Program Settings** (or **
 ## Related
 
 - [Strategy Pro: install and set up](plugins/strategy-pro.md)
-
 - [Programs](using-leantime/programs.md)
 - [Goals](using-leantime/goals.md)
 - [Blueprints](using-leantime/blueprints.md)

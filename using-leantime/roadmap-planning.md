@@ -40,6 +40,8 @@ On the timeline, drag the ends of a bar to change its dates, or drag the bar to 
 
 Leantime opens the view you used last.
 
+A [program](using-leantime/programs.md#how-do-i-see-all-of-the-programs-work)'s **Timeline** shows the milestones of all its projects together.
+
 ## What does "Depends On" do?
 
 **Depends On** says that this milestone waits for another one. On the timeline, an arrow goes from the first milestone to the one that depends on it.

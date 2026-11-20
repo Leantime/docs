@@ -8,7 +8,7 @@ For research labs, PhD students, thesis writers and grant-funded studies: long p
 |---|---|
 | **One thesis, paper or course** | One project. A milestone per stage with a deadline, like "Literature review", "Data collection", "First draft" and "Submission". |
 | **A lab with several studies** | A project per study, each with its own team. A [client](using-leantime/managing-clients.md) per funder or partner institution if their people need to see their studies. |
-| **Several grants or research lines** | The Program Plans plugin groups the studies under each grant, so you see its milestones and progress together. |
+| **Several grants or research lines** | A [program](using-leantime/programs.md) per grant groups its studies, so you see their milestones and progress together. |
 
 ## How do I break a thesis or paper into steps I can finish?
 

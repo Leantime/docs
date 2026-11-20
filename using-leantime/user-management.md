@@ -80,7 +80,7 @@ Weekly hours tell Leantime how much time someone has to plan with. You set them 
 
 Both fields are optional and start empty. Only people who can edit users see them: the Administrator role or higher.
 
-**Where are the hours used?** In the **Resources** page of the Programs plugin, where you plan people across a program's projects. It shows each person's weekly hours and employment type, adds up the hours they're booked for on every project, in this program and others, and flags anyone booked for more than their hours. Without weekly hours on their user, a planner types each person's hours on the Resources page instead. On the Leantime Marketplace the plugin is called [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/); it's already on in Leantime Cloud.
+**Where are the hours used?** In a program's **Resources** page (see [How do I plan people's time with Resources?](using-leantime/programs.md#how-do-i-plan-peoples-time-with-resources)), where you plan people across a program's projects. It shows each person's weekly hours and employment type, adds up the hours they're booked for on every project, in this program and others, and flags anyone booked for more than their hours. Without weekly hours on their user, a planner types each person's hours on the Resources page instead. On the Leantime Marketplace the plugin is called [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/); it's already on in Leantime Cloud.
 
 ## How do I deactivate or delete someone?
 
