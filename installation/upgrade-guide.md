@@ -165,7 +165,7 @@ Version 3.2 introduced major changes to session management and plugin handling.
 **Common issues:**
 
 - **Can't login after upgrade:** Session folder missing or has wrong permissions. Create `storage/framework/sessions/` and set permissions.
-- **HTTP 500 errors:** Clear cache with `php ./bin/leantime cache:clearAll` or manually delete contents of `cache/` folder.
+- **HTTP 500 errors:** Clear cache with `php ./bin/leantime cache:clear` or manually delete contents of `cache/` folder.
 - **Plugin errors:** Remove all files from `app/Plugins/` and reinstall plugins fresh.
 
 ### Upgrading to 3.3.x
@@ -174,7 +174,7 @@ Version 3.3 rebuilt the cache system and continued Laravel/Symfony migration.
 
 **Notes:**
 - Check custom plugin event listeners against the latest documentation
-- Clear cache after upgrade: `php ./bin/leantime cache:clearAll`
+- Clear cache after upgrade: `php ./bin/leantime cache:clear`
 - Session configuration now uses environment files — check your `.env` settings
 
 ### Upgrading from 2.x to 3.x
