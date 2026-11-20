@@ -309,7 +309,7 @@ Leantime switches a plugin off when it keeps failing or when your active users g
 
 ### Plugin Causes Errors After Enabling
 
-1. Disable the plugin in **Company → Leantime Apps → My Apps**, or from the server with `php ./bin/leantime plugin:disable "<plugin name>"`
+1. Disable the plugin in **Company → Leantime Apps → My Apps**, or from the server with `php ./bin/leantime plugin:disable "<plugin name>"` (see [Using the Leantime CLI](development/commandline.md))
 2. If you can't access Settings, disable via database:
 
 ```sql

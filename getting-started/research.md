@@ -15,7 +15,7 @@ For research labs, PhD students, thesis writers and grant-funded studies: long p
 A paper is too big to feel progress on. Split each stage into outcomes small enough to finish in a few days: for a chapter, "Outline", "Sources gathered", "Draft", "Edits". Each one done is visible progress.
 
 - **For your own work:** make each outcome a to-do and its steps subtasks.
-- **For work you share:** make each outcome a small milestone, so co-authors see it on the timeline.
+- **For work you share:** make each outcome a small [milestone](using-leantime/roadmap-planning.md), so co-authors see it on the timeline.
 - **For outcomes you report on,** like papers submitted or participants recruited, use a goal with a number and link it to the milestones that move it (see [Goals](using-leantime/goals.md)).
 
 ## Where do notes, protocols and sources go?

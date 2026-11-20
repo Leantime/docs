@@ -1,6 +1,6 @@
 # To-Dos
 
-To-Dos are the work in a project: each one has an owner, a status, a priority and a size, and can belong to a milestone. Open **To-Dos** in a project's menu to see them as a Kanban board, a table or a list. Break bigger to-dos into subtasks, add collaborators who need to follow along, and group the board into swimlanes when it gets busy.
+To-Dos are the work in a project: each one has an owner, a status, a priority and a size, and can belong to a milestone. Open **To-Dos** in a project's menu to see them as a [Kanban](knowledge-base/kanban.md) board, a table or a list. Break bigger to-dos into subtasks, add collaborators who need to follow along, and group the board into swimlanes when it gets busy.
 
 ![The To-Dos Kanban board of the Open the Eastside pantry project: columns New, Blocked, In Progress, Waiting for Approval and Done, with New outlined](../_images/using-leantime/todos-kanban.webp)
 

@@ -1,6 +1,6 @@
 # Projects
 
-A project holds your to-dos, milestones, goals and docs, and the people who work on them. Managers, Administrators and Owners can create projects and change their settings. Everyone else works in the projects they're part of.
+A project holds your to-dos, [milestones](using-leantime/roadmap-planning.md), [goals](using-leantime/goals.md) and docs, and the people who work on them. Managers, Administrators and Owners can create projects and change their settings. Everyone else works in the projects they're part of.
 
 ## How do I create a project in Leantime?
 

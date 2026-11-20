@@ -42,7 +42,7 @@ If you don't know where to start, try the **Project Value Canvas**: it asks who 
 
 After you save, the card can do more:
 
-- **Link a milestone.** Under **Linked Milestone**, create a new milestone or link one you already have. This connects a thought on the board, like "Checkout is slow on phones", to the work that deals with it.
+- **Link a milestone.** Under **Linked Milestone**, create a new [milestone](using-leantime/roadmap-planning.md) or link one you already have. This connects a thought on the board, like "Checkout is slow on phones", to the work that deals with it.
 - **Discuss it.** Every card has its own **Discussion** for comments.
 
 The menu at the top right of a board lets you **Edit** its name, **Export** it, **Print** it or **Delete** it. The filter next to it shows only cards with a certain status or relation.
@@ -59,7 +59,7 @@ The Logic Model maps how your work leads to change: the **Inputs** you invest, t
 
 ![The Logic Model board with five columns: Inputs, Activities, Outputs, Outcomes and Impact](../_images/using-leantime/blueprints-logic-model.webp)
 
-In core Leantime, the Logic Model is a board like the others: you fill each column with cards. With the [Strategy Pro](plugins/strategy-pro.md) plugin, a strategy's Logic Model connects to the work: it can be built from your programs, milestones and goals, shows how strong each link between columns is, and can turn into milestones, to-dos and goals. See [Logic Model](blueprints/logic-model.md) for both.
+In core Leantime, the Logic Model is a board like the others: you fill each column with cards. With the [Strategy Pro](plugins/strategy-pro.md) plugin, a strategy's Logic Model connects to the work: it can be built from your programs, milestones and [goals](using-leantime/goals.md), shows how strong each link between columns is, and can turn into milestones, to-dos and goals. See [Logic Model](blueprints/logic-model.md) for both.
 
 ## What if something goes wrong?
 

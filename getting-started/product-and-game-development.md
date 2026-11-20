@@ -13,7 +13,7 @@ For game studios, software and product teams, and startups: you build something,
 ## How do I plan releases with milestones in Leantime?
 
 - **Make each release a milestone** with a due date: the stage ends when the build ships.
-- **Keep outcomes small inside a release.** "Level 1 playable" or "Sign-up works" are outcomes you can finish in days, not weeks; track them as to-dos with subtasks, or as smaller milestones if several people share one.
+- **Keep outcomes small inside a release.** "Level 1 playable" or "Sign-up works" are outcomes you can finish in days, not weeks; track them as to-dos with subtasks, or as smaller [milestones](using-leantime/roadmap-planning.md) if several people share one.
 - **Group the board by milestone** to see each release's work together (see [To-Dos](using-leantime/task-management.md)).
 
 ## Where do ideas, feedback and playtest notes go?

@@ -72,3 +72,5 @@ You need PHP 8.2 or later with the extensions in [System Requirements](installat
 3. Point your web server's document root at the `public/` folder.
 4. Copy `config/sample.env` to `config/.env` and fill in your database settings (`LEAN_DB_HOST`, `LEAN_DB_USER`, `LEAN_DB_PASSWORD`, `LEAN_DB_DATABASE`).
 5. Open `http://<your local domain>/install` and follow the installer.
+
+Ready to send a change back? See [Contributing](development/contributing.md). To build a plugin, see [Plugin Development](development/plugin-development.md).
