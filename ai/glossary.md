@@ -60,7 +60,7 @@ The words that come up when you install and run Leantime, in plain language. Kno
 
 ## Sign-in and security
 
-**Single sign-on (SSO).** Signing in to Leantime with an account you already have somewhere else, like your company's Keycloak, Microsoft or Google account.
+**Single sign-on (SSO).** Signing in to Leantime with an account you already have somewhere else, like your company's [Keycloak](installation/keycloak-sso.md), Microsoft or Google account.
 
 **Identity provider (IdP).** The system that holds the accounts and checks passwords: Keycloak, Authentik, Okta, Microsoft Entra ID.
 

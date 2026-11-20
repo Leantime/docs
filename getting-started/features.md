@@ -1,6 +1,6 @@
 # What can Leantime do?
 
-Leantime is a free, open source project management system you can host yourself. It covers to-dos, milestones, goals, docs, ideas, time tracking and reports. Plugins from the [Leantime Marketplace](https://marketplace.leantime.io/) add more, and [Leantime Cloud](https://leantime.io/pricing/) runs everything for you.
+Leantime is a free, open source project management system you can host yourself. It covers to-dos, milestones, [goals](using-leantime/goals.md), docs, ideas, time tracking and reports. Plugins from the [Leantime Marketplace](https://marketplace.leantime.io/) add more, and [Leantime Cloud](https://leantime.io/pricing/) runs everything for you.
 
 This page lists what's included where, then answers the "Can Leantime…?" questions people ask most, each with a link to the how-to.
 
@@ -161,7 +161,7 @@ Yes. Open the to-do's menu and choose **Move To-Do**. You need edit rights in bo
 
 #### Does Leantime have Kanban swimlanes?
 
-Yes. On the Kanban board, group to-dos by assignee, milestone, sprint, priority, due date and more to get swimlanes. See [Task management](using-leantime/task-management.md).
+Yes. On the [Kanban](knowledge-base/kanban.md) board, group to-dos by assignee, milestone, sprint, priority, due date and more to get swimlanes. See [Task management](using-leantime/task-management.md).
 
 #### Does Leantime have a Gantt chart?
 

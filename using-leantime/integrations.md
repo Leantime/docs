@@ -21,7 +21,7 @@ Project integrations are configured on a **per-project** basis. This allows diff
 
 Whenever an action occurs within a connected project, Leantime automatically formats and dispatches an update to your active integrations. Notifications are sent for:
 
-- **To-Do / Task Updates**: Creation, status transitions (e.g., *In Progress*, *Done*), milestone assignments, and priority changes.
+- **To-Do / Task Updates**: Creation, status transitions (e.g., *In Progress*, *Done*), [milestone](using-leantime/roadmap-planning.md) assignments, and priority changes.
 - **Milestone Updates**: Milestone creation, date adjustments, and progress completion.
 - **Idea Management**: New ideas proposed and status changes across idea boards.
 - **Research & Strategy Updates**: Updates to business research and canvas boards.

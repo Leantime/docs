@@ -22,7 +22,7 @@ Creating and changing milestones needs the Editor role or higher.
 
 ## How do I add to-dos to a milestone?
 
-Open a to-do and choose the milestone in its **Milestone** field. You can also change it from the milestone label on the to-do's card on the Kanban board.
+Open a to-do and choose the milestone in its **Milestone** field. You can also change it from the milestone label on the to-do's card on the [Kanban](knowledge-base/kanban.md) board.
 
 To see the to-dos of one milestone, use **Filter → Milestone** on the To-Dos page. To see them all side by side, use **Group By → Milestone** on the Kanban board.
 

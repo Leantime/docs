@@ -31,7 +31,7 @@ Yes. A to-do has one **assignee**, who owns it, so it's always clear who is movi
 2. **Optional: think it through on a [Blueprint](using-leantime/blueprints.md)**, like the Project Value Canvas, if the problem or the customer isn't clear yet.
 3. **Set a few goals** that show whether it's working: three to five is plenty. Start each one with a verb, like "Increase…" or "Reduce…".
 4. **Plan the milestones**: the stages, each with a clear result.
-5. **Add the to-dos** under each milestone, small enough to finish in a few days.
+5. **Add the to-dos** under each [milestone](using-leantime/roadmap-planning.md), small enough to finish in a few days.
 6. **Look back after each stage** with a [retrospective](using-leantime/retrospectives.md), and adjust.
 
 ## How do I keep sight of why the work matters?
@@ -120,3 +120,5 @@ These help everyone, and especially people with ADHD or anyone who gets overwhel
 - [Non-profits, NGOs and mission-driven teams](getting-started/nonprofits.md)
 - [Research and academic work](getting-started/research.md)
 - [Your own work and career](getting-started/your-own-work.md)
+
+For the methods behind these setups, like Lean, Agile, Scrum and Kanban, see [Project management concepts](knowledge-base/README.md).

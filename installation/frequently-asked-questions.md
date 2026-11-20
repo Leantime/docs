@@ -212,7 +212,7 @@ Not directly, but you can set `LEAN_OIDC_CREATE_USER=true` to auto-create users 
 
 ### What's the difference between a task and a subtask?
 
-- **Tasks (To-Dos):** Primary work items that appear on the Kanban board and can have time tracked
+- **Tasks (To-Dos):** Primary work items that appear on the [Kanban](knowledge-base/kanban.md) board and can have time tracked
 - **Subtasks:** Child items under a parent task; they have their own status but roll up to the parent
 
 Subtasks appear with a subtask identifier on the Kanban board and their completion contributes to the parent task's progress.
@@ -222,7 +222,7 @@ Subtasks appear with a subtask identifier on the Kanban board and their completi
 - **Milestones:** Groups of tasks bundled together with a date range, displayed on the Timeline/Gantt chart
 - **Goals:** OKR-style objectives with measurable metrics (start value, current value, target value)
 
-Goals track outcomes; milestones track delivery timelines.
+Goals track outcomes; [milestones](using-leantime/roadmap-planning.md) track delivery timelines.
 
 ### How do I view tasks on a Gantt chart?
 
@@ -233,7 +233,7 @@ Tasks must be assigned to a milestone to appear on the Timeline view:
 
 ### Can I log time against subtasks?
 
-In timesheets, you select the parent task. Time logged rolls up to the parent task's total hours.
+In [timesheets](using-leantime/timesheets.md), you select the parent task. Time logged rolls up to the parent task's total hours.
 
 ### How do I filter tasks by multiple criteria?
 
@@ -360,7 +360,7 @@ docker-compose up -d
 
 ### Will updating delete my data?
 
-No, if you've configured persistent storage correctly. Always backup before updating.
+No, if you've configured persistent storage correctly. Always [backup](installation/backup-restore.md) before updating.
 
 **Docker users:** Ensure your database container uses a mounted volume, not container storage.
 
@@ -407,7 +407,7 @@ Ensure:
 
 **If email works,** click **Forgot password** on the sign-in page. Leantime emails a link to set a new password.
 
-**If email doesn't work,** you have two ways back in, both from the server. Run the commands in the Leantime folder; on Docker, put `docker compose exec leantime` in front of each `php` command.
+**If email doesn't work,** you have two ways back in, both from the server. Run the commands in the Leantime folder (see [Using the Leantime CLI](development/commandline.md)); on Docker, put `docker compose exec leantime` in front of each `php` command.
 
 **Option 1: create a new Owner account.** Sign in with it, and you're back in charge of the workspace:
 
@@ -447,7 +447,7 @@ The roles are `readonly`, `commenter`, `editor`, `manager`, `admin` and `owner`.
 
 ### Can regular users create API keys?
 
-By default, only admins can create API keys in Company Settings. There's a feature request to allow per-user API keys.
+By default, only admins can create API keys in [Company Settings](using-leantime/company-settings.md). There's a feature request to allow per-user API keys.
 
 ### Does Leantime have webhooks?
 

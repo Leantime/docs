@@ -76,7 +76,7 @@ Suggest the first to-dos for each milestone, and wait for my OK
 before you create them.
 ```
 
-The assistant creates the project and the milestones, shows you the to-dos it suggests, and creates them once you agree. Then add your team on the **Team** tab, and ask it to hand out the to-dos.
+The assistant creates the project and the [milestones](using-leantime/roadmap-planning.md), shows you the to-dos it suggests, and creates them once you agree. Then add your team on the **Team** tab, and ask it to hand out the to-dos.
 
 Creating projects needs the Manager role or higher, the same as in Leantime.
 

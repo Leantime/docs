@@ -5,7 +5,7 @@ There are two ways to use Leantime. Only the first step differs: on Leantime Clo
 ## How do I start with Leantime Cloud?
 
 1. **Start a free two-week trial** at [accounts.leantime.io](https://accounts.leantime.io/accounts/register/). Your workspace gets its own address, like yourteam.leantime.io.
-2. **Sign in and look around.** Cloud includes the marketplace plugins and the AI features inside Leantime. The exception is Advanced Authentication (SAML and sign-in with Google, Microsoft, GitHub and others), which is for self-hosted servers only. To see which features are core and which come from a plugin, see [What can Leantime do?](getting-started/features.md)
+2. **Sign in and look around.** Cloud includes the marketplace plugins and the AI features inside Leantime. The exception is [Advanced Authentication](plugins/advanced-authentication.md) (SAML and sign-in with Google, Microsoft, GitHub and others), which is for self-hosted servers only. To see which features are core and which come from a plugin, see [What can Leantime do?](getting-started/features.md)
 3. **Invite your team** from **Company → User Management** (see [User Management](using-leantime/user-management.md)).
 
 To keep going after two weeks, add a card. If you don't, your workspace is paused and kept for 180 days, so you can come back to it. To pick it up again, or to have it removed sooner, email support@leantime.io. The [privacy policy](https://leantime.io/privacy/) has the details.

@@ -19,7 +19,7 @@ Open the project, open **Data Room** in the left menu and click **Reports**. The
 **The sections below them:**
 
 - **Needs attention** appears when something needs a look, like an overdue milestone or a goal at risk.
-- **Accomplished this period:** the milestones finished in the period. This is the part to share when someone asks what got done.
+- **Accomplished this period:** the [milestones](using-leantime/roadmap-planning.md) finished in the period. This is the part to share when someone asks what got done.
 - **Changed this period:** milestones that were added during the period, or whose due date moved out of it. It keeps the report honest about plans that changed.
 - **In flight:** the milestones being worked on, with their due dates and how far along they are.
 - **Coming up:** milestones planned for the periods after this one.
