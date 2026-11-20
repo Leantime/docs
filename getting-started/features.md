@@ -169,11 +169,11 @@ Yes. **Milestones** shows your milestones on a timeline, and you can show their 
 
 #### Can I create recurring to-dos?
 
-Yes, with the [Recurring Tasks](https://marketplace.leantime.io/product/recurring-tasks/) plugin. It creates to-dos daily, weekly, monthly or yearly, for example for stand-ups or monthly reviews. See [Recurring to-dos](plugins/recurring-todos.md).
+Yes, with the [Recurring Tasks](https://marketplace.leantime.io/product/recurring-tasks/) plugin. It creates to-dos daily, weekly, monthly or yearly, for example for stand-ups or monthly reviews. See [How do I make a to-do repeat?](using-leantime/task-management.md#how-do-i-make-a-to-do-repeat)
 
 #### Can I add custom fields to to-dos?
 
-Yes, with the [Custom Fields](https://marketplace.leantime.io/product/leantime-customfields/) plugin: text, number, dropdown, checkbox and more. See [Custom fields](plugins/custom-fields.md).
+Yes, with the [Custom Fields](https://marketplace.leantime.io/product/leantime-customfields/) plugin: text, numbers, a choice from a list, checkboxes, radio buttons and on/off. See [Custom Fields](using-leantime/custom-fields.md).
 
 #### Does Leantime have a wiki?
 
@@ -181,7 +181,7 @@ Yes. Every project has **Docs** for project knowledge.
 
 #### Does Leantime have whiteboards?
 
-Yes, with the [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/) plugin. See [Whiteboards](plugins/whiteboards.md).
+Yes, with the [Whiteboards](https://marketplace.leantime.io/product/leantime-whiteboards/) plugin. See [Whiteboards](using-leantime/whiteboards.md).
 
 #### Can I manage several projects together?
 
