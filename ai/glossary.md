@@ -16,7 +16,7 @@ The words that come up when you install and run Leantime, in plain language. Kno
 
 **HTTPS** and **TLS certificate.** HTTPS encrypts the connection between browser and server. It needs a certificate for your domain, which tools like Let's Encrypt or Caddy get for free.
 
-**Reverse proxy.** A web server (Nginx, Caddy, Traefik, or a NAS's built-in one) that receives visitors on port 443 with HTTPS and passes them on to Leantime. Say "Leantime runs behind a reverse proxy" when you ask for help.
+**Reverse proxy.** A web server (Nginx, Caddy, Traefik, or a NAS's built-in one) that receives visitors on port 443 with HTTPS and passes them on to Leantime. Say "Leantime runs behind a reverse proxy" when you ask for help. See [Run Leantime behind a reverse proxy](installation/reverse-proxy.md).
 
 **Port.** A numbered door on a server. Web traffic uses 80 (http) and 443 (https). The Leantime container listens on 8080.
 
