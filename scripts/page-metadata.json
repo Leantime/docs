@@ -58,8 +58,9 @@
     "searchTitle": "Leantime API: create an API key and make JSON-RPC calls"
   },
   "development/commandline.md": {
-    "title": "Command-line interface (CLI)",
-    "description": "Run Leantime admin tasks from the command line with bin/leantime: add users, run database updates and cron, save settings, send test email, manage plugins."
+    "title": "Using the Leantime CLI",
+    "description": "Run Leantime admin tasks with php bin/leantime: add users, update the database, schedule jobs with cron, manage plugins and clear the cache, on Docker too.",
+    "searchTitle": "Leantime CLI: bin/leantime commands for self-hosting"
   },
   "development/plugin-development.md": {
     "title": "Plugin development guide",
@@ -327,11 +328,13 @@
   },
   "using-leantime/calendars.md": {
     "title": "Calendar",
-    "description": "Plan work and deadlines in Leantime with My Calendar: where to find it and how to add events."
+    "description": "Your Leantime calendar: events, due to-dos and planned work in one place. Connect Google, Outlook or Apple calendars and subscribe to Leantime from them.",
+    "searchTitle": "Calendar in Leantime: events, due dates and Google sync"
   },
   "using-leantime/company-settings.md": {
-    "title": "Company settings",
-    "description": "Set your company name, logo and theme colors for Leantime screens and emails, and choose whether to share telemetry."
+    "title": "Company Settings",
+    "description": "Set your Leantime company name, language, logo and notification defaults, create API keys, and see exactly what telemetry sends and how to turn it off.",
+    "searchTitle": "Company Settings in Leantime: logo, defaults, API keys"
   },
   "using-leantime/idea-management.md": {
     "title": "Idea management",
