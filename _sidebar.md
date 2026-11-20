@@ -59,6 +59,8 @@
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
 - [Leantime on your phone](using-leantime/mobile-app.md)
 - [Projects](using-leantime/managing-projects.md)
+- [Programs](using-leantime/programs.md)
+- [Strategies](using-leantime/strategies.md)
 - [Milestones](using-leantime/roadmap-planning.md)
 - [Time tracking](using-leantime/timesheets.md)
 - [Clients](using-leantime/managing-clients.md)

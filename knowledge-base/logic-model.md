@@ -49,7 +49,7 @@ Many organizations write a theory of change first, then a logic model for each p
 ## Doing it in Leantime
 
 - **The Logic Model board** has the five columns, and each card has room for evidence, assumptions and why it matters. See [Logic Model](blueprints/logic-model.md).
-- **With the [Strategy Pro](plugins/strategy-pro.md) plugin,** the Logic Model of a strategy connects to the real work: it can be built from your programs, milestones and goals, rate how strong each link between columns is, and turn into milestones, to-dos and goals.
+- **With the [Strategy Pro](plugins/strategy-pro.md) plugin,** the Logic Model of a [strategy](using-leantime/strategies.md) connects to the real work: it can be built from your programs, milestones and goals, rate how strong each link between columns is, and turn into milestones, to-dos and goals.
 - **Outcomes become [goals](using-leantime/goals.md)** with a number you can track, so the model shows real progress.
 - **For non-profit programs,** see [Project management for non-profits](getting-started/nonprofits.md).
 

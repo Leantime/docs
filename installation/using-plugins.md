@@ -9,8 +9,8 @@ Plugins add features to Leantime. Each one does one job, like planning a strateg
 
 ### Plan above your projects
 
-- **[Strategy Pro](plugins/strategy-pro.md):** set out what your organization is working toward, with focus areas and measurable goals, and see which programs and projects serve them.
-- **[Programs](plugins/programs.md):** group related projects into a program, and see their to-dos, milestones and people in one place.
+- **[Strategy Pro](plugins/strategy-pro.md):** set out what your organization is working toward, with focus areas and measurable goals, and see which programs and projects serve them. [How to use strategies](using-leantime/strategies.md).
+- **[Programs](plugins/programs.md):** group related projects into a program, and see their to-dos, milestones and people in one place. [How to use programs](using-leantime/programs.md).
 
 ### Think it through and take notes
 

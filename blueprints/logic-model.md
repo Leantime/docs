@@ -46,7 +46,7 @@ Give each card a **Status** as you learn: **Hypothesis**, **Testing**, **Validat
 
 ## How do I connect the Logic Model to the work?
 
-**With Strategy Pro:** a strategy has its own **Logic Model** in its menu, and there it connects to the programs, projects, goals and milestones under the strategy. Everything below is part of the [Strategy Pro](plugins/strategy-pro.md) plugin (**Get it:** [Leantime Strategies on the Leantime Marketplace](https://marketplace.leantime.io/product/leantime-strategies/); it's already on in Leantime Cloud). You need to be on the strategy's team to use these features.
+**With Strategy Pro:** a [strategy](using-leantime/strategies.md) has its own **Logic Model** in its menu, and there it connects to the programs, projects, goals and milestones under the strategy. Everything below is part of the [Strategy Pro](plugins/strategy-pro.md) plugin (**Get it:** [Leantime Strategies on the Leantime Marketplace](https://marketplace.leantime.io/product/leantime-strategies/); it's already on in Leantime Cloud). You need to be on the strategy's team to use these features.
 
 ### Build it from the work you already have
 
@@ -115,7 +115,7 @@ Each new milestone, to-do and goal stays linked to its card, so the Logic Model 
 
 ### Show it to your board or funders
 
-The strategy's **Report** (in beta) puts the Logic Model next to the strategy's progress: the theory of change, how strong each connection is, and what the programs are delivering. See [Strategy Pro](plugins/strategy-pro.md).
+The strategy's **Report** (in beta) puts the Logic Model next to the strategy's progress: the theory of change, how strong each connection is, and what the programs are delivering. See [What's in a program or strategy report?](using-leantime/reports.md#whats-in-a-program-or-strategy-report)
 
 ## Who can change the Logic Model?
 
@@ -125,6 +125,7 @@ The Logic Model follows the same permissions as other [Blueprints](using-leantim
 
 - [What is a logic model?](knowledge-base/logic-model.md)
 - [Project management for non-profits](getting-started/nonprofits.md)
+- [Strategies](using-leantime/strategies.md)
 - [Strategy Pro](plugins/strategy-pro.md)
 - [Goals](using-leantime/goals.md)
 - [Blueprints](using-leantime/blueprints.md)
