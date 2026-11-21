@@ -4,22 +4,17 @@ When Leantime is connected to an AI assistant like Claude, the assistant can wor
 
 Each workflow uses Leantime's [MCP server](installation/leantime-mcp.md). For shorter examples of what to ask, see [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md).
 
+**At a glance**
+
+- **Time:** about 10 minutes to connect everything, then a minute each time you ask
+- **Level:** Beginner. No terminal needed if you use Claude on the web or the Claude app.
+- **You need:** a Leantime account, a Claude account, and Gmail for the email workflows
+- **At the end:** emails turned into Leantime tasks with an assignee, a priority and a due date, on request or every morning
+
 ## What do I need?
 
-- **Leantime connected to your assistant.** The MCP Server plugin makes Leantime available to assistants. On Leantime Cloud it's already on; if you host Leantime yourself, install it first. Then connect your assistant (see below).
+- **Leantime connected to your assistant.** The MCP Server plugin makes Leantime available to assistants. On Leantime Cloud it's already on; if you host Leantime yourself, install it first. Then connect your assistant: in Claude on the web or the Claude app, or in Claude Code if you use a terminal.
 - **For the email workflows, a mail connector too,** for example the Gmail connector in Claude. The assistant reads your emails through it, and creates the tasks through Leantime.
-
-### Connect Leantime in Claude Code
-
-Run once in a terminal, with your Leantime address:
-
-```bash
-claude mcp add --transport http --scope user leantime https://your-leantime-url/mcp
-```
-
-Then type `/mcp` in Claude Code, choose **leantime**, then **Authenticate**, and sign in to Leantime in your browser. The [MCP server page](installation/leantime-mcp.md#claude-code) has the details, and how to use a token instead.
-
-A Leantime connection you add this way stays on that computer. A [scheduled workflow](?id=every-morning-on-a-schedule) that runs in the cloud can't use it.
 
 ### Add Leantime as a connector in Claude
 
@@ -33,6 +28,18 @@ A Leantime connection you add this way stays on that computer. A [scheduled work
 On Claude Team and Enterprise, an owner adds the connector for the organization first; then each person connects their own Leantime account. On the Free plan you can add one custom connector.
 
 A connector you add in Claude works in Claude on the web, in Claude Desktop and in the phone apps, and in scheduled workflows. If you sign in to Claude Code with the same Claude account, it works there too.
+
+### Or connect Leantime in Claude Code
+
+If you use Claude Code, you can connect Leantime there instead. Run once in a terminal, with your Leantime address:
+
+```bash
+claude mcp add --transport http --scope user leantime https://your-leantime-url/mcp
+```
+
+Then type `/mcp` in Claude Code, choose **leantime**, then **Authenticate**, and sign in to Leantime in your browser. The [MCP server page](installation/leantime-mcp.md#claude-code) has the details, and how to use a token instead.
+
+A Leantime connection you add this way stays on that computer. A [scheduled workflow](?id=every-morning-on-a-schedule) that runs in the cloud can't use it.
 
 ### Connect your email
 
@@ -70,6 +77,10 @@ The assistant searches your mail, groups the messages into conversations, and sh
 > **You:** Yes, but make the Northside one Medium.
 >
 > **Assistant:** Done. I created 4 tasks in Customer Service and assigned them to Sam.
+
+The tasks in the Customer Service project's table, each assigned to Sam with a priority and a due date:
+
+![The Customer Service project's To-Dos table: four customer tasks assigned to Sam, each with a High or Medium priority and a due date](../_images/ai/emails-to-tasks.webp)
 
 Besides the title and description, the assistant can set the **assignee**, **priority** (Critical, High, Medium, Low or Lowest), **due date**, **milestone** and **collaborators**. Ask for what you need. If it isn't sure which project or person you mean, it asks.
 
@@ -127,7 +138,8 @@ The same rules work for both workflows. Put them in your request, or in the sche
 - **The description has what the customer asked for,** and the order or receipt numbers someone needs to look it up.
 - **The description ends with the Gmail thread,** as a line like `Gmail thread: 18c2f9a1b3e4d5f6`. That's the conversation's ID, not an email address. With it, the assistant finds the task again when the customer replies, and doesn't create a second one. When a customer writes about the same thing twice, for example once through a chat form and once by email, both threads go on the same task.
 - **Leave out email addresses, phone numbers and account numbers.** Everyone on the project sees the task, and the reply goes out from your mailbox anyway.
-- **Set a priority from the reason they wrote,** for example money and legal questions higher and how-to questions lower, **and a due date for the first reply,** so urgent requests stand out on the board and in My Work.
+- **Set a priority from the reason they wrote.** For example, money and legal questions rank higher, and how-to questions lower.
+- **Set a due date for the first reply.** With the priority, it makes urgent requests stand out on the board and in My Work.
 - **Add a collaborator** for whoever should follow along, for example the person who answers the customer while someone else fixes the problem.
 
 ## Set up a project for someone else
