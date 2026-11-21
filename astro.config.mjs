@@ -92,6 +92,7 @@ const useLeantimeGroups = USE_LEANTIME_GROUPS.map(([label, pages]) => ({
 const AI_PAGES = [
 	'ai|Overview',
 	'ai/use-leantime-from-your-ai-assistant',
+	'ai/everyday-workflows|Everyday workflows',
 	'ai/leantime-cloud-ai|L.E.O. in Leantime Cloud',
 	'installation/leantime-mcp|MCP server: connect your assistant',
 	'ai/working-with-ai',

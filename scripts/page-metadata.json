@@ -543,6 +543,14 @@
     "searchTitle": "Use Leantime from Claude or ChatGPT: what to ask",
     "description": "Update to-dos, assign work and start projects from Claude, ChatGPT or Cursor in plain language, with example prompts, routines and tips for good results."
   },
+  "ai/everyday-workflows.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Turn emails into tasks with Claude and Leantime's MCP server",
+    "description": "Copy-ready AI workflows for Leantime: turn emails into tasks with Claude and Gmail, on request or every morning, and set up a project for a teammate."
+  },
   "installation/mobile-app-setup.md": {
     "title": "Set up the mobile app on a self-hosted server",
     "description": "Get a self-hosted Leantime ready for the mobile app: Advanced Authentication, sign-in with SSO, and phone notifications through Leantime's relay.",
