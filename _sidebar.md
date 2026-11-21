@@ -35,6 +35,7 @@
 
 - [Overview](ai/README.md)
 - [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md)
+- [Everyday workflows with your AI assistant](ai/everyday-workflows.md)
 - [AI in Leantime Cloud (L.E.O.)](ai/leantime-cloud-ai.md)
 - [MCP server: connect your own assistant](installation/leantime-mcp.md)
 - [Working with AI assistants](ai/working-with-ai.md)
