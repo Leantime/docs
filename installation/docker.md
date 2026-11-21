@@ -121,7 +121,7 @@ Back up the database and the two file volumes. See [Backup and restore](installa
 
 ## How do I use my own domain with HTTPS?
 
-Put a reverse proxy (Nginx, Caddy, Traefik or your NAS's built-in one) in front of port 8080 to handle the certificate, then set these in `.env` (or with `-e` on `docker run`):
+Put a reverse proxy (Nginx, Caddy, Traefik or your NAS's built-in one) in front of port 8080 to handle the certificate (see [Run Leantime behind a reverse proxy](installation/reverse-proxy.md)), then set these in `.env` (or with `-e` on `docker run`):
 
 ```ini
 LEAN_APP_URL = 'https://projects.example.com'
