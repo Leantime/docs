@@ -233,6 +233,27 @@ try{if(localStorage.getItem('lt-reading')==='easy'){document.documentElement.dat
  */
 const tocState = `try{if(localStorage.getItem('lt-toc')==='collapsed')document.documentElement.dataset.ltToc='collapsed';}catch(e){}`;
 
+// A box that scrolls sideways needs to be a keyboard stop with a name, or keyboard users can't scroll
+// it and screen readers announce several identical regions (WCAG 2.1.1, 4.1.2).
+// Code: Expressive Code adds role="region" and tabindex="0" while a block scrolls, but no name, so
+// name it then: "Code example 3, nginx". Tables: Starlight lets wide tables scroll, but leaves them
+// out of the tab order, so do both while a table is wider than its column: "Table 2".
+// The numbers keep the names unique on the page.
+const scrollRegionLabels = `(function(){try{
+var LANG={ini:'settings',bash:'terminal',sh:'terminal',shell:'terminal',yaml:'YAML',json:'JSON',nginx:'nginx',apache:'Apache',text:'text',php:'PHP',js:'JavaScript',sql:'SQL'};
+function nth(sel,el){return Array.prototype.indexOf.call(document.querySelectorAll(sel),el)+1;}
+function codeName(pre){var l=pre.getAttribute('data-language');return 'Code example '+nth('.expressive-code pre',pre)+(l&&LANG[l]?', '+LANG[l]:'');}
+new MutationObserver(function(ms){ms.forEach(function(m){var el=m.target;if(!el.matches||!el.matches('.expressive-code pre'))return;
+if(el.getAttribute('role')==='region')el.setAttribute('aria-label',codeName(el));else el.removeAttribute('aria-label');});})
+.observe(document.documentElement,{subtree:true,attributes:true,attributeFilter:['role']});
+var T='.sl-markdown-content table';
+function tables(){document.querySelectorAll(T).forEach(function(t){var wide=t.scrollWidth>t.clientWidth+1;
+if(wide&&!t.hasAttribute('tabindex')){t.setAttribute('tabindex','0');t.setAttribute('role','region');t.setAttribute('aria-label','Table '+nth(T,t));}
+else if(!wide&&t.getAttribute('role')==='region'){t.removeAttribute('tabindex');t.removeAttribute('role');t.removeAttribute('aria-label');}});}
+var timer;function later(){clearTimeout(timer);timer=setTimeout(tables,150);}
+document.addEventListener('DOMContentLoaded',tables);window.addEventListener('resize',later);
+}catch(e){}})();`;
+
 const crisp = `window.$crisp=[];window.CRISP_WEBSITE_ID="-K4sjRan9gm59MvONQG-";(function(){var d=document,s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`;
 
 const gtag = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FKZP7LPS4X');`;
@@ -282,6 +303,7 @@ export default defineConfig({
 				{ tag: 'script', content: legacyRedirect },
 				{ tag: 'script', content: readingMode },
 				{ tag: 'script', content: tocState },
+				{ tag: 'script', content: scrollRegionLabels },
 				{ tag: 'script', attrs: { type: 'application/ld+json' }, content: JSON.stringify(siteSchema) },
 				{ tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
 				{ tag: 'meta', attrs: { property: 'og:image', content: `${SITE}/og-image.png` } },
