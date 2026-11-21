@@ -9,10 +9,11 @@ A reverse proxy is the web server people actually reach: it holds your domain's 
 - **Allow uploads of up to 100 MB,** the limit inside the Leantime container. nginx allows only 1 MB unless you raise it.
 - **Wait up to 300 seconds** for an answer, for long imports and reports.
 - **Keep the `Authorization` header.** The API, the [mobile app](installation/mobile-app-setup.md) and [AI assistants](installation/leantime-mcp.md) sign in with it. Proxies pass it on unless you remove it.
+- **Be the only way in.** If Leantime's own port stays open, people can reach Leantime over plain HTTP, around the proxy and its HTTPS. With the proxy on the same server, open the port only to the server itself: in the official Docker setup, set `LEAN_PORT = '127.0.0.1:8080'` in `.env`, or use `-p 127.0.0.1:8080:8080` with `docker run`. When the proxy runs in Docker next to Leantime, it doesn't need the port at all: remove the `ports` lines from the Leantime service.
 
 ## Which Leantime settings go with it?
 
-Set these in `config/.env`, or as environment variables of the container, then restart Leantime:
+Set these in `config/.env`, or in the `.env` file of your Docker setup:
 
 ```ini
 LEAN_APP_URL = 'https://projects.example.com'
@@ -25,9 +26,15 @@ LEAN_SESSION_SECURE = true
 | `LEAN_SESSION_SECURE` | Sends the login cookie over HTTPS only. Behind a proxy, Leantime doesn't turn this on by itself, so set it to `true` once the site is on HTTPS. Leave it out while you still use plain `http://`, or you can't log in. |
 | `LEAN_TRUSTED_PROXIES` | Usually not needed. See below. |
 
-**Which proxies does Leantime trust?** Leantime believes the `X-Forwarded-*` headers only from proxies it trusts. Without `LEAN_TRUSTED_PROXIES`, that's any proxy on a private network: on the same server, in Docker, or on your LAN. That covers most setups. Set it only when a proxy connects from a public address, like Cloudflare in front of your own web server (see [Cloudflare](#cloudflare)).
+Then apply them. **In Docker,** recreate the container with `docker compose up -d`, or remove and start it again if you use `docker run`: a plain restart keeps the old values (see [Docker](installation/docker.md#how-do-i-use-my-own-domain-with-https)). **If you installed Leantime yourself,** restart PHP-FPM or your web server.
 
-When you set `LEAN_TRUSTED_PROXIES`, it replaces the private networks, and Leantime refuses every request that doesn't come through a proxy on the list, with `{"error":"Not a trusted proxy"}`. So list the proxy right in front of Leantime too, for example the Docker network (`172.16.0.0/12`) or `127.0.0.1`.
+**Which proxies does Leantime trust?** Leantime believes the `X-Forwarded-*` headers only from proxies it trusts. Without `LEAN_TRUSTED_PROXIES`, that's any proxy on a private network: on the same server, in Docker, or on your LAN. That covers most setups. Set it only when a proxy with a public address is part of the chain, like Cloudflare (see [Cloudflare](#cloudflare)).
+
+When you set `LEAN_TRUSTED_PROXIES`, it replaces the private networks, and Leantime refuses every request that doesn't come through a proxy on the list, with `{"error":"Not a trusted proxy"}`. To keep the private networks, start the list with `PRIVATE_SUBNETS`:
+
+```ini
+LEAN_TRUSTED_PROXIES = 'PRIVATE_SUBNETS,173.245.48.0/20,103.21.244.0/22'
+```
 
 ## nginx
 
@@ -117,6 +124,7 @@ services:
       - --entrypoints.web.address=:80
       - --entrypoints.web.http.redirections.entrypoint.to=websecure
       - --entrypoints.websecure.address=:443
+      - --entrypoints.websecure.transport.respondingTimeouts.readTimeout=600s
       - --certificatesresolvers.le.acme.tlschallenge=true
       - --certificatesresolvers.le.acme.email=you@example.com
       - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
@@ -126,6 +134,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - letsencrypt:/letsencrypt
+    networks:
+      - leantime-net
 
   leantime:
     # ...your existing Leantime service, plus:
@@ -140,8 +150,11 @@ volumes:
   letsencrypt:
 ```
 
-- **Traefik and Leantime need a network in common.** In one Compose file they share one. Otherwise add Leantime to Traefik's network, and tell Traefik which one with `--providers.docker.network=<network>`.
-- **Remove `ports: 8080:8080`** from the Leantime service if people should only reach it through Traefik.
+- **Traefik and Leantime need a network in common.** The example puts Traefik on `leantime-net`, the network in Leantime's official Compose file. If your Leantime service uses another network, use that name. If Leantime is on several networks, tell Traefik which one with the label `traefik.docker.network=<network>`, using the full name from `docker network ls`: Compose puts the project name in front, like `leantime_leantime-net`.
+- **Remove the `ports` lines** from the Leantime service, so people can only reach it through Traefik.
+- **Uploads need the longer read timeout** in the example. By default, Traefik stops reading a request after 60 seconds, which cuts off a large upload on a slow connection.
+- **The Docker socket gives Traefik control of Docker,** and with it of the server, even with `:ro`. If that's more access than you want to give a web-facing service, put a socket proxy like [docker-socket-proxy](https://github.com/Tecnativa/docker-socket-proxy) in between, or use nginx or Caddy instead.
+- **Behind Cloudflare's proxy, the TLS challenge can't get a certificate,** because Cloudflare answers the TLS connection. Use a Cloudflare Origin Certificate (see [Cloudflare](#cloudflare)) or Let's Encrypt's DNS challenge instead.
 - **Use a current Traefik 3.** Older versions, like 3.3, can't talk to recent Docker versions and only log `Error response from daemon`.
 - **Traefik waits for the container's health check.** For about 30 seconds after Leantime starts, Traefik answers `404 page not found`.
 
@@ -149,20 +162,34 @@ volumes:
 
 - **Set SSL/TLS to Full (strict)** and give your server a certificate, for example a free Cloudflare Origin Certificate. With **Flexible**, Cloudflare talks to your server over plain HTTP, and the redirect to HTTPS on your server sends the browser in a loop.
 - **Set `LEAN_APP_URL` and `LEAN_SESSION_SECURE = true`** as described above.
-- **Let Leantime see people's real IP addresses.** Cloudflare connects from its own public addresses, so without this, Leantime sees Cloudflare's address for everyone. Leantime limits sign-in attempts per address, so people can end up sharing one limit. If nginx is in front of Leantime, have it take the address from Cloudflare's header:
+- **Only let Cloudflare reach your server.** Otherwise anyone who finds your server's IP address can go around Cloudflare, and around Cloudflare Access with it. In your server's firewall, allow ports 80 and 443 only from [Cloudflare's IP ranges](https://www.cloudflare.com/ips/). If the proxy runs in Docker, ports Docker publishes skip `ufw` rules: use your hosting provider's firewall instead.
+- **Let Leantime see people's real IP addresses.** Cloudflare connects from its own public addresses, so without this, Leantime sees Cloudflare's address for everyone. Leantime limits sign-in attempts per address, so people can end up sharing one limit. Use the ranges from [cloudflare.com/ips](https://www.cloudflare.com/ips/) in place of the two examples below.
+  - **nginx:** take the address from Cloudflare's header. Leantime needs no change.
 
-  ```nginx
-  # one line per range from https://www.cloudflare.com/ips/
-  set_real_ip_from 173.245.48.0/20;
-  set_real_ip_from 103.21.244.0/22;
-  # ...
-  real_ip_header CF-Connecting-IP;
-  ```
+    ```nginx
+    set_real_ip_from 173.245.48.0/20;
+    set_real_ip_from 103.21.244.0/22;
+    # ...one line per range
+    real_ip_header CF-Connecting-IP;
+    ```
 
-  If Cloudflare connects straight to Leantime's own web server, list Cloudflare's ranges in `LEAN_TRUSTED_PROXIES` instead.
-- **Cloudflare Tunnel** (`cloudflared`) connects to Leantime from your own network, which Leantime trusts already. Point the tunnel at `http://localhost:8080` (or `http://leantime:8080` in Docker), and set `LEAN_APP_URL` and `LEAN_SESSION_SECURE = true`.
+  - **Caddy:** trust Cloudflare in the global options at the top of the `Caddyfile`, and list Cloudflare's ranges in Leantime too (see [Which proxies does Leantime trust?](#which-leantime-settings-go-with-it)): `LEAN_TRUSTED_PROXIES = 'PRIVATE_SUBNETS,173.245.48.0/20,103.21.244.0/22'`.
+
+    ```text
+    {
+    	servers {
+    		trusted_proxies static 173.245.48.0/20 103.21.244.0/22
+    	}
+    }
+    ```
+
+  - **Traefik:** add `--entrypoints.websecure.forwardedHeaders.trustedIPs=173.245.48.0/20,103.21.244.0/22` to Traefik's command, and list the same ranges in `LEAN_TRUSTED_PROXIES` as for Caddy.
+  - **Cloudflare straight to Leantime's own web server:** list the ranges in `LEAN_TRUSTED_PROXIES` the same way.
+- **Cloudflare Tunnel** (`cloudflared`) connects to Leantime from your own network, which Leantime trusts already. Point the tunnel at `http://localhost:8080` (or `http://leantime:8080` in Docker), and set `LEAN_APP_URL` and `LEAN_SESSION_SECURE = true`. With a tunnel, your server needs no open ports for Leantime: close 80, 443 and 8080 in the firewall.
 - **Uploads:** Cloudflare's Free and Pro plans accept uploads of up to 100 MB, the same as Leantime.
-- **A sign-in wall, like Cloudflare Access,** stops the mobile app and AI assistants. Let them through as described in [Set up the mobile app](installation/mobile-app-setup.md).
+- **A sign-in wall, like Cloudflare Access,** stops the mobile app and AI assistants. Let the paths they use through:
+  - the mobile app: the paths in [Set up the mobile app](installation/mobile-app-setup.md#how-does-my-team-sign-in);
+  - AI assistants: `/mcp`, `/oauth/` and `/.well-known/`, which Claude and ChatGPT use to sign in (see [MCP Server settings for administrators](installation/leantime-mcp.md#settings-for-administrators)).
 
 ## What if my web server runs PHP itself?
 
@@ -188,7 +215,7 @@ For Leantime in a folder, like `https://example.com/leantime`, see [Subfolder in
 - **`{"error":"Not a trusted proxy"}`:** `LEAN_TRUSTED_PROXIES` is set, and the proxy right in front of Leantime isn't on it. Add its address or network, or remove the setting.
 - **`413 Request Entity Too Large`:** raise the proxy's upload limit, like `client_max_body_size 100M;` in nginx.
 - **Traefik says `404 page not found`:** wait half a minute after Leantime starts, then check that the router's `Host` rule matches your domain exactly.
-- **The mobile app or an AI assistant can't sign in, but the browser works:** the `Authorization` header goes missing, or a sign-in wall blocks the app. See [What does the app's error message mean?](using-leantime/mobile-app.md#what-does-the-apps-error-message-mean)
+- **The mobile app or an AI assistant can't sign in, but the browser works:** the `Authorization` header goes missing, or a sign-in wall blocks the app. See [What does the app's error message mean?](using-leantime/mobile-app.md#what-does-the-apps-error-message-mean) for the app, and [MCP Server troubleshooting](installation/leantime-mcp.md#troubleshooting) for AI assistants.
 - **Links in emails open the wrong address:** set `LEAN_APP_URL`.
 
 ## Related

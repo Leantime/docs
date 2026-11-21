@@ -398,7 +398,7 @@ Common cause: Enabling SMTP without correct configuration.
 
 ### Why can't I access Leantime behind a reverse proxy?
 
-Set `LEAN_APP_URL` to your public `https://` address and `LEAN_SESSION_SECURE = true`, and make sure the proxy passes the `X-Forwarded-Proto` and `X-Forwarded-Host` headers. Configurations for nginx, Apache, Caddy, Traefik and Cloudflare are in [Run Leantime behind a reverse proxy](installation/reverse-proxy.md).
+Set `LEAN_APP_URL` to the exact address people open, and make sure the proxy passes the `X-Forwarded-Proto` and `X-Forwarded-Host` headers. If that address starts with `https://`, also set `LEAN_SESSION_SECURE = true`. Over plain `http://`, leave it off, or nobody can log in. Configurations for nginx, Apache, Caddy, Traefik and Cloudflare are in [Run Leantime behind a reverse proxy](installation/reverse-proxy.md).
 
 ### I'm locked out. How do I reset the admin password?
 
