@@ -315,6 +315,8 @@ You don't call these tools yourself. The assistant picks them based on what you 
 | `getProjectsAssignedToUser` | Lists the projects you're assigned to | Reads |
 | `getUsersAssignedToProject` | Lists a project's team | Reads |
 | `addProject` | Creates a project (Managers and above) | Adds |
+| `addUserToProject` | Adds someone to a project's team and tells them (Managers and above, Leantime 3.15.4 or later) | Changes |
+| `removeUserFromProject` | Removes someone from a project's team (Managers and above, Leantime 3.15.4 or later) | Changes |
 | `editProject`, `patchProject` | Changes a project (Managers and above) | Changes |
 
 > **Known issue:** in the current version, `editProject` also resets the project fields you don't mention (access, client, budget, dates, program). Until this is fixed, change project settings in Leantime itself, not through the assistant.
@@ -395,7 +397,7 @@ The assistant works best when you are specific about **which project** and **wha
 
 ### What to ask
 
-For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md).
+For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md). For complete workflows, like turning emails into tasks with a mail connector, see [Everyday workflows](ai/everyday-workflows.md).
 
 ## Running an AI agent as a team member
 
