@@ -284,7 +284,7 @@
   },
   "installation/upgrade-guide.md": {
     "title": "Upgrade Leantime",
-    "description": "Upgrade self-hosted Leantime with Docker, the command line updater or by hand, run the database update, and read what changed in each version.",
+    "description": "Upgrade self-hosted Leantime and run the database update: with Docker, the command line updater or by hand, plus what changed in each version.",
     "glance": {
       "minutes": 15,
       "maxMinutes": 45,
@@ -299,7 +299,7 @@
       ],
       "result": "Leantime on the new version, with your data, files and plugins."
     },
-    "searchTitle": "How to upgrade Leantime (Docker, updater or by hand)",
+    "searchTitle": "Upgrade Leantime: new version and database update",
     "edition": "self-hosted",
     "checked": "3.15"
   },
