@@ -210,6 +210,16 @@ def rewrite_links(body, page_src):
     return ''.join(out)
 
 
+# technical/hooks.md is generated from a checkout that can include the private plugins (app/Plugins).
+# Their events and filters (names, file paths) aren't public, so each entry whose source is in
+# app/Plugins is left out of the site.
+HOOK_ENTRY = re.compile(r'^### .*?(?=^### |^## |\Z)', re.M | re.S)
+
+
+def drop_private_plugin_hooks(body):
+    return HOOK_ENTRY.sub(lambda m: '' if 'app/Plugins/' in m.group(0) else m.group(0), body)
+
+
 def convert(page_src, dest):
     text = open(dest, encoding='utf-8').read()
     fm, body = split_frontmatter(text)
@@ -235,7 +245,10 @@ def convert(page_src, dest):
         name, ns = (service, service) if domain == service else (f'{domain} {service}', f'{domain}.{service}')
         description = (f'Reference for the Leantime {name} JSON-RPC service: '
                        f'every leantime.rpc.{ns} method with its parameters and return values.')
-    body = rewrite_links('\n'.join(lines).lstrip('\n') + '\n', page_src)
+    body = '\n'.join(lines).lstrip('\n') + '\n'
+    if page_src == 'technical/hooks.md':
+        body = drop_private_plugin_hooks(body)
+    body = rewrite_links(body, page_src)
 
     head = ['---', 'title: ' + yaml_str(title)]
     if description:
