@@ -23,6 +23,16 @@ An upgrade has two parts. First you replace Leantime's files with the new versio
 
 You don't have to upgrade one version at a time. Leantime runs every database change between your version and the new one. Read the notes for all the versions you skip.
 
+## What happens during the database update?
+
+Many new versions change the database: they add tables or columns, or move data into a new shape. Leantime does this in its database update, which runs after you replace the files.
+
+- Until the update runs, Leantime shows the **Update Database** page instead of any other page, and scheduled jobs wait. Run the update straight after you replace the files.
+- You start it with **Update Now!** in the browser, or `php bin/leantime db:migrate` in the terminal. Both do the same thing.
+- It can take a few minutes on a large database. Don't stop it or close the server while it runs.
+- It can't be undone. To go back, you restore the backup you made before the upgrade.
+- Versions without database changes skip this step: Leantime opens as usual. [What changed between versions?](#what-changed-between-versions) says which versions have database changes.
+
 ## How do I upgrade with Docker?
 
 These steps are for the [Docker Compose setup](installation/docker.md). Your data is in Docker volumes, so it stays when the container is replaced.
@@ -182,7 +192,7 @@ The notes below are the changes that affect an upgrade. Changes for plugin devel
 
 **First, look at the log.** It's in `storage/logs/` in the Leantime folder. In Docker, the `logs` volume holds it, or run `docker compose logs leantime`.
 
-**The Update Database page shows "There was a problem updating your database".** Run `php bin/leantime db:migrate` in the Leantime folder (in Docker: `docker compose exec leantime php bin/leantime db:migrate`). It shows the step that failed.
+**The Update Database page shows "There was a problem updating your database".** Run `php bin/leantime db:migrate` in the Leantime folder (in Docker: `docker compose exec leantime php bin/leantime db:migrate`). It shows the step that failed. In Docker, see also [The update gets stuck on "Update Database"](installation/docker-troubleshooting.md#the-update-gets-stuck-on-update-database).
 
 **A plugin shows Not compatible.** Update it in **My Apps**. Leantime skipped it, so it doesn't stop the rest of Leantime.
 
