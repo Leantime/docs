@@ -19,7 +19,7 @@ An upgrade has two parts. First you replace Leantime's files with the new versio
 4. **Check your plugins.** Leantime skips a plugin that doesn't support the new version, so it can't break Leantime. The plugin shows **Not compatible** in **My Apps** until you update it. Update Leantime first, then update the plugins.
 5. **Pick a quiet time.** After an upgrade, people usually have to sign in again.
 
-> **Tip:** You don't have to upgrade one version at a time. Leantime runs every database change between your version and the new one. Read the notes for all the versions you skip.
+You don't have to upgrade one version at a time. Leantime runs every database change between your version and the new one. Read the notes for all the versions you skip.
 
 ## How do I upgrade with Docker?
 
