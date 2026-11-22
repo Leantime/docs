@@ -365,6 +365,7 @@ export default defineConfig({
 								{ label: 'Authentication', slug: 'installation/authentication-configuration' },
 								{ label: 'Keycloak SSO', slug: 'installation/keycloak-sso' },
 								...menuEntries(['installation/reverse-proxy|Reverse proxy']), // appears once docs#102 is converted
+								...menuEntries(['installation/scheduled-jobs-and-redis|Scheduled jobs and Redis']),
 								{ label: 'Mobile app', slug: 'installation/mobile-app-setup' },
 							],
 						},

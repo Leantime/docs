@@ -787,5 +787,20 @@
       ]
     },
     "checked": "3.15"
+  },
+  "installation/scheduled-jobs-and-redis.md": {
+    "title": "Scheduled jobs, the queue and Redis",
+    "description": "Run Leantime's scheduled jobs with cron or Docker, see what each job does, check that they run, and set up Redis for sign-ins and the cache.",
+    "searchTitle": "Leantime cron, scheduled jobs and Redis setup",
+    "edition": "self-hosted",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "Leantime on your own server or in Docker",
+        "Access to the server's command line"
+      ]
+    },
+    "checked": "3.15"
   }
 }
