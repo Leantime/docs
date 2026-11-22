@@ -6,7 +6,7 @@ This page lists what's included where, then answers the "Can Leantime…?" quest
 
 ## Which edition is right for me?
 
-| | Open source | Open source + plugins | Leantime Cloud |
+| Detail | Open source | Open source + plugins | Leantime Cloud |
 |---|---|---|---|
 | **What it is** | Leantime on your own server, free under the AGPLv3 licence | The same, plus the plugins you choose | Leantime hosted by us |
 | **You pay** | Nothing | Once per plugin licence, sized by number of users. Includes one year of updates. | A monthly or yearly subscription per user |
