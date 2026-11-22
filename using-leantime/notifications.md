@@ -52,4 +52,4 @@ Administrators set these in **Company → Company Settings**:
 ## Why aren't Leantime notification emails arriving?
 
 - **I don't get any emails.** Check that **Receive email notifications** is on and the project isn't **Muted**. If nobody gets emails, an administrator needs to check the [email settings](installation/email-configuration.md).
-- **Emails arrive late.** **Email frequency** sets the shortest wait between emails, and the company setting can make it longer. Self-hosted Leantime also sends emails from its scheduled jobs, so they need a [cron job](installation/configuration.md#cron-jobs) or someone signed in.
+- **Emails arrive late.** **Email frequency** sets the shortest wait between emails, and the company setting can make it longer. Self-hosted Leantime also sends emails from its scheduled jobs, so they need a [cron job](installation/scheduled-jobs-and-redis.md#how-do-i-run-the-scheduled-jobs) or someone signed in.
