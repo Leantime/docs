@@ -84,7 +84,7 @@ The tasks in the Customer Service project's table, each assigned to Sam with a p
 
 Besides the title and description, the assistant can set the **assignee**, **priority** (Critical, High, Medium, Low or Lowest), **due date**, **milestone** and **collaborators**. Ask for what you need. If it isn't sure which project or person you mean, it asks.
 
-**Label the emails you want as tasks.** Give them a Gmail label like `→ Leantime` as they come in, by hand or with a Gmail filter. Then name the label in your request, like "add the emails labelled → Leantime", so the assistant only looks at those, and nothing else in your inbox ends up in Leantime. Once the tasks are created, ask the assistant to take the label off those emails. Then the label only ever holds emails that aren't in Leantime yet.
+**Label the emails you want as tasks.** Give them a Gmail label like `→ Leantime` as they come in, by hand or with a Gmail filter. Then name the label in your request, like "add the emails labelled → Leantime". The assistant only looks at those, so nothing else in your inbox ends up in Leantime. Once the tasks are created, ask the assistant to take the label off those emails. Then the label only ever holds emails that aren't in Leantime yet.
 
 **No mail connector?** Take screenshots of the emails and paste them into the chat with the same request. The assistant reads the screenshots instead.
 
