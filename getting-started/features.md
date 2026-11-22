@@ -205,7 +205,7 @@ Yes, on self-hosted Leantime: OpenID Connect and LDAP / Active Directory are bui
 
 #### Does Leantime have two-factor authentication?
 
-Yes. Each user can turn it on in **My Profile** with an authenticator app.
+Yes. Each user can turn it on in **My Profile** with an authenticator app. See [How do I turn on two-factor authentication?](using-leantime/account-settings.md#how-do-i-turn-on-two-factor-authentication)
 
 #### Which roles does Leantime have?
 
@@ -272,8 +272,8 @@ To look around before you connect, tap **Try Demo Mode** on the app's first scre
 
 #### Is Leantime accessible for people with ADHD, dyslexia or low vision?
 
-Leantime is designed for neurodivergent people. It has light and dark mode, colour schemes, and the Atkinson Hyperlegible font for readers with low vision. Each user chooses these in **My Profile → Theme**.
+Leantime is designed for neurodivergent people. It has light and dark mode, colour schemes, and the Atkinson Hyperlegible font for readers with low vision. Each user chooses these in **My Profile → Theme** (see [How do I change how Leantime looks?](using-leantime/account-settings.md#how-do-i-change-how-leantime-looks)).
 
 #### Which languages does Leantime support?
 
-44 languages. Each user picks theirs in **My Profile**.
+44 languages. Each user picks theirs in **My Profile → Settings** (see [How do I change my language, date format or time zone?](using-leantime/account-settings.md#how-do-i-change-my-language-date-format-or-time-zone)).

@@ -118,7 +118,7 @@ LEAN_PRIMARY_COLOR='#1b75bb'                  # Primary brand color
 LEAN_SECONDARY_COLOR='#81B1A8'                # Secondary accent color
 ```
 
-**Note:** These can also be changed in the UI under Account → Theme.
+**Note:** Each person chooses light or dark mode, the font and a color scheme under **My Profile → Theme**. Your primary and secondary colors appear there as **Company Colors** (see [How do I change how Leantime looks?](using-leantime/account-settings.md#how-do-i-change-how-leantime-looks)).
 
 ---
 
