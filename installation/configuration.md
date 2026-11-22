@@ -215,12 +215,12 @@ This removes your instance ID and stops all telemetry submission.
 Configure session handling for security and compatibility:
 
 ```env
-LEAN_SESSION_PASSWORD='your-secret-key'       # Session encryption key
-LEAN_SESSION_EXPIRATION=28800                 # Session timeout in seconds (8 hours default)
+LEAN_SESSION_PASSWORD='your-secret-key'       # Leantime's secret key: a long random value of your own
+LEAN_SESSION_EXPIRATION=480                   # Minutes without activity before sign-out (480 = 8 hours)
 LEAN_SESSION_SECURE=true                      # Require HTTPS for session cookies
 ```
 
-**Important:** Set `LEAN_SESSION_SECURE=true` when running over HTTPS, `false` only for local development over HTTP.
+**Important:** Set `LEAN_SESSION_SECURE=true` when running over HTTPS, `false` only for local development over HTTP. For what to check before people use your server, see [Secure your Leantime server](installation/security-checklist.md).
 
 ---
 
