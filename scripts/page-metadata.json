@@ -766,5 +766,11 @@
     "description": "Plan work in sprints in Leantime: create a sprint, move to-dos in from the backlog, follow the sprint burndown, and carry open work into the next one.",
     "searchTitle": "Sprints in Leantime: backlog, sprint planning and burndown",
     "checked": "3.15"
+  },
+  "using-leantime/account-settings.md": {
+    "title": "Your account and settings",
+    "description": "Change your Leantime profile, photo, password and two-factor authentication, your language and time zone, and the theme, font and colors you see.",
+    "searchTitle": "Leantime account settings: password, 2FA, language, theme",
+    "checked": "3.15"
   }
 }
