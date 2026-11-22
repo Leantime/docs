@@ -23,6 +23,7 @@
         - [Plugin Licenses & Updates](installation/plugin-licenses.md)
     - [Authentication](installation/authentication-configuration.md)
         - [Keycloak SSO](installation/keycloak-sso.md)
+    - [Reverse proxy](installation/reverse-proxy.md)
     - [Mobile app](installation/mobile-app-setup.md)
     - [Project Integrations](using-leantime/integrations.md)
    - [Backup & Restore](installation/backup-restore.md)
