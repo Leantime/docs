@@ -5,8 +5,8 @@ footer: false
 
 # Messengers
 
-
-
+Posts project notifications to the messenger webhooks a project has configured (Slack,
+Mattermost, Zulip, Discord, Telegram).
 
 `leantime.rpc.Notifications.Messengers.`
 
@@ -22,7 +22,7 @@ __construct - get database connection
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "httpClient": \GuzzleHttp\Client,
+        "httpClient": \Leantime\Core\Support\OutboundHttpClient,
         "settingsRepo": \Leantime\Domain\Setting\Repositories\Setting,
         "language": \Leantime\Core\Language,
     }
@@ -36,12 +36,11 @@ __construct - get database connection
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `httpClient` | **\GuzzleHttp\Client** |  |
+| `httpClient` | **\Leantime\Core\Support\OutboundHttpClient** |  |
 | `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
 | `language` | **\Leantime\Core\Language** |  |
 
@@ -53,53 +52,6 @@ __construct - get database connection
     "jsonrpc": "2.0",
     "id": 1,
     "result": mixed
-}
-```
-
-
-
----
-### `leantime.rpc.Notifications.Messengers.sendNotificationToMessengers`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Notifications.Messengers.sendNotificationToMessengers",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "notification": \Leantime\Domain\Notifications\Models\Notification,
-        "projectName": ,
-        "messengers": array|string,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `notification` | **\Leantime\Domain\Notifications\Models\Notification** |  |
-| `projectName` | **** |  |
-| `messengers` | **array|string** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": void
 }
 ```
 
@@ -120,7 +72,6 @@ slackWebhook
     }
 }
 ```
-
 
 
 
@@ -171,7 +122,6 @@ mattermostWebhook
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -206,7 +156,6 @@ zulipWebhook
     }
 }
 ```
-
 
 
 
@@ -257,7 +206,6 @@ mattermostWebhook
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -292,7 +240,6 @@ mattermostWebhook
     }
 }
 ```
-
 
 
 

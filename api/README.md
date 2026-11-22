@@ -10,29 +10,37 @@ To create a key and make your first call, see [Use the Leantime API](api/usage.m
 RPC Methods are the primary endpoint definition and follow the structure
 `leantime.rpc`.`Module`.`Service`.`Method`
 
-If `Module` and `Service` have the same name they can be summarized to `leantime.rpc`.`servicee`.`method`
+If `Module` and `Service` have the same name they can be summarized to `leantime.rpc`.`service`.`method`
 
+
+## `leantime.rpc.Blueprints`
+
+
+| Available Services | Description |
+|---    |---          |
+| [Blueprints](api/classes/Leantime/Domain/Blueprints/Services/Blueprints.md) | Blueprints service - business logic for unified canvas boards.|
+| [BlueprintsExport](api/classes/Leantime/Domain/Blueprints/Services/BlueprintsExport.md) | BlueprintsExport service - builds the XML export for a blueprint canvas board.|
 
 ## `leantime.rpc.Calendar`
 
 
 | Available Services | Description |
 |---    |---          |
-| [Calendar](api/classes/Leantime/Domain/Calendar/Services/Calendar.md) | |
+| [Calendar](api/classes/Leantime/Domain/Calendar/Services/Calendar.md) | Calendar service: personal events, external-calendar subscriptions, and the public iCal feed.|
 
 ## `leantime.rpc.Canvas`
 
 
 | Available Services | Description |
 |---    |---          |
-| [Canvas](api/classes/Leantime/Domain/Canvas/Services/Canvas.md) | |
+| [Canvas](api/classes/Leantime/Domain/Canvas/Services/Canvas.md) | Thin backwards-compatibility shim over the Blueprints service.|
 
 ## `leantime.rpc.Clients`
 
 
 | Available Services | Description |
 |---    |---          |
-| [Clients](api/classes/Leantime/Domain/Clients/Services/Clients.md) | Class Clients|
+| [Clients](api/classes/Leantime/Domain/Clients/Services/Clients.md) | Client service - Business logic for client management.|
 
 ## `leantime.rpc.Comments`
 
@@ -40,6 +48,15 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 | Available Services | Description |
 |---    |---          |
 | [Comments](api/classes/Leantime/Domain/Comments/Services/Comments.md) | |
+
+
+
+## `leantime.rpc.Dashboard`
+
+
+| Available Services | Description |
+|---    |---          |
+| [Dashboard](api/classes/Leantime/Domain/Dashboard/Services/Dashboard.md) | Dashboard service - business logic backing the project dashboard view.|
 
 ## `leantime.rpc.Files`
 
@@ -53,30 +70,24 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 
 | Available Services | Description |
 |---    |---          |
-| [Goalcanvas](api/classes/Leantime/Domain/Goalcanvas/Services/Goalcanvas.md) | |
+| [Goalcanvas](api/classes/Leantime/Domain/Goalcanvas/Services/Goalcanvas.md) | Goalcanvas (Goals / OKRs) service.|
 
 ## `leantime.rpc.Ideas`
 
 
 | Available Services | Description |
 |---    |---          |
-| [Ideas](api/classes/Leantime/Domain/Ideas/Services/Ideas.md) | |
+| [Ideas](api/classes/Leantime/Domain/Ideas/Services/Ideas.md) | Ideas service - business logic for idea boards and idea items.|
 
 ## `leantime.rpc.Notifications`
 
 
 | Available Services | Description |
 |---    |---          |
-| [Messengers](api/classes/Leantime/Domain/Notifications/Services/Messengers.md) | |
+| [Messengers](api/classes/Leantime/Domain/Notifications/Services/Messengers.md) | Posts project notifications to the messenger webhooks a project has configured (Slack,<br />Mattermost, Zulip, Discord, Telegram).|
 | [News](api/classes/Leantime/Domain/Notifications/Services/News.md) | |
 | [Notifications](api/classes/Leantime/Domain/Notifications/Services/Notifications.md) | |
 
-## `leantime.rpc.Oidc`
-
-
-| Available Services | Description |
-|---    |---          |
-| [Oidc](api/classes/Leantime/Domain/Oidc/Services/Oidc.md) | |
 
 ## `leantime.rpc.Plugins`
 
@@ -84,35 +95,36 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 | Available Services | Description |
 |---    |---          |
 | [Plugins](api/classes/Leantime/Domain/Plugins/Services/Plugins.md) | |
-| [Premium](api/classes/Leantime/Domain/Plugins/Services/Premium.md) | |
 
 ## `leantime.rpc.Projects`
 
 
 | Available Services | Description |
 |---    |---          |
-| [Projects](api/classes/Leantime/Domain/Projects/Services/Projects.md) | The Projects class is responsible for managing projects and project-related operations.|
+| [Projects](api/classes/Leantime/Domain/Projects/Services/Projects.md) | Projects service (the company project god-service) + the engine&#039;s project-access provider.|
 
-## `leantime.rpc.Queue`
-
-
-| Available Services | Description |
-|---    |---          |
-| [Queue](api/classes/Leantime/Domain/Queue/Services/Queue.md) | |
 
 ## `leantime.rpc.Reactions`
 
 
 | Available Services | Description |
 |---    |---          |
-| [Reactions](api/classes/Leantime/Domain/Reactions/Services/Reactions.md) | |
+| [Reactions](api/classes/Leantime/Domain/Reactions/Services/Reactions.md) | Reactions service.|
 
 ## `leantime.rpc.Reports`
 
 
 | Available Services | Description |
 |---    |---          |
-| [Reports](api/classes/Leantime/Domain/Reports/Services/Reports.md) | |
+| [ReportEngine](api/classes/Leantime/Domain/Reports/Services/ReportEngine.md) | Shared, period-aware reporting engine feeding the project, plan and strategy report screens.|
+| [Reports](api/classes/Leantime/Domain/Reports/Services/Reports.md) | Reports service: per-project report aggregation (burndown, ticket-status history) plus the<br />system-level daily-ingestion and telemetry tasks.|
+
+## `leantime.rpc.Search`
+
+
+| Available Services | Description |
+|---    |---          |
+| [Search](api/classes/Leantime/Domain/Search/Services/Search.md) | Global search across entity types. Owns the provider registry, the access scope and the<br />shared filter vocabulary; providers own their queries.|
 
 ## `leantime.rpc.Setting`
 
@@ -140,6 +152,7 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 
 | Available Services | Description |
 |---    |---          |
+| [TicketHistory](api/classes/Leantime/Domain/Tickets/Services/TicketHistory.md) | Change history of a ticket (the field changes recorded in zp_tickethistory), prepared for display.|
 | [Tickets](api/classes/Leantime/Domain/Tickets/Services/Tickets.md) | |
 
 ## `leantime.rpc.Timesheets`
@@ -147,7 +160,8 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 
 | Available Services | Description |
 |---    |---          |
-| [Timesheets](api/classes/Leantime/Domain/Timesheets/Services/Timesheets.md) | |
+| [Timesheets](api/classes/Leantime/Domain/Timesheets/Services/Timesheets.md) | Timesheets service.|
+
 
 ## `leantime.rpc.Users`
 
@@ -161,6 +175,7 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 
 | Available Services | Description |
 |---    |---          |
+| [Dashboard](api/classes/Leantime/Domain/Widgets/Services/Dashboard.md) | Class Dashboard|
 | [Widgets](api/classes/Leantime/Domain/Widgets/Services/Widgets.md) | |
 
 ## `leantime.rpc.Wiki`
@@ -171,5 +186,5 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 | [Wiki](api/classes/Leantime/Domain/Wiki/Services/Wiki.md) | |
 
 ---
-> Automatically generated from source code comments on 2024-09-22 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2026-11-22 using [phpDocumentor](http://www.phpdoc.org/)
 

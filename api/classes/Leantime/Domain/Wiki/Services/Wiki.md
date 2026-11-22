@@ -7,14 +7,13 @@ footer: false
 
 
 
-
 `leantime.rpc.Wiki.Wiki.`
 
 
 ## Available Methods
 ### `leantime.rpc.Wiki.Wiki.getArticle`
 
-
+Get an article by ID and project.
 
 ```json
 {
@@ -22,12 +21,11 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "id": ,
-        "projectId": ,
+        "id": int|null,
+        "projectId": int|null,
     }
 }
 ```
-
 
 
 
@@ -40,17 +38,17 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
-| `projectId` | **** |  |
+| `id` | **int\|null** | Article id (null loads the featured article) |
+| `projectId` | **int\|null** | Project id (defaults to the session project) |
 
 
 **Returns:**
-
+The article, or false when it does not exist or is not visible
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": mixed
+    "result": \Leantime\Domain\Wiki\Models\Article|false
 }
 ```
 
@@ -67,11 +65,10 @@ Gets all project wikis. Creates one if there aren't any
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": mixed,
     }
 }
 ```
-
 
 
 
@@ -84,7 +81,7 @@ Gets all project wikis. Creates one if there aren't any
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **mixed** |  |
 
 
 **Returns:**
@@ -102,7 +99,7 @@ Gets all project wikis. Creates one if there aren't any
 ---
 ### `leantime.rpc.Wiki.Wiki.getAllWikiHeadlines`
 
-
+List the article headlines in a wiki.
 
 ```json
 {
@@ -110,12 +107,11 @@ Gets all project wikis. Creates one if there aren't any
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "wikiId": ,
-        "userId": ,
+        "wikiId": mixed,
+        "userId": mixed,
     }
 }
 ```
-
 
 
 
@@ -128,8 +124,8 @@ Gets all project wikis. Creates one if there aren't any
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `wikiId` | **** |  |
-| `userId` | **** |  |
+| `wikiId` | **mixed** |  |
+| `userId` | **mixed** |  |
 
 
 **Returns:**
@@ -138,7 +134,7 @@ Gets all project wikis. Creates one if there aren't any
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|array
 }
 ```
 
@@ -147,7 +143,7 @@ Gets all project wikis. Creates one if there aren't any
 ---
 ### `leantime.rpc.Wiki.Wiki.getWiki`
 
-
+Get a single wiki (notebook) by id.
 
 ```json
 {
@@ -155,11 +151,10 @@ Gets all project wikis. Creates one if there aren't any
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "id": ,
+        "id": mixed,
     }
 }
 ```
-
 
 
 
@@ -172,7 +167,7 @@ Gets all project wikis. Creates one if there aren't any
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **mixed** |  |
 
 
 **Returns:**
@@ -202,7 +197,6 @@ Gets all project wikis. Creates one if there aren't any
     }
 }
 ```
-
 
 
 
@@ -242,11 +236,10 @@ Gets all project wikis. Creates one if there aren't any
     "id": 1,
     "params": {
         "wiki": \Leantime\Domain\Wiki\Models\Wiki,
-        "wikiId": ,
+        "wikiId": mixed,
     }
 }
 ```
-
 
 
 
@@ -260,7 +253,7 @@ Gets all project wikis. Creates one if there aren't any
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `wiki` | **\Leantime\Domain\Wiki\Models\Wiki** |  |
-| `wikiId` | **** |  |
+| `wikiId` | **mixed** |  |
 
 
 **Returns:**
@@ -278,7 +271,7 @@ Gets all project wikis. Creates one if there aren't any
 ---
 ### `leantime.rpc.Wiki.Wiki.createArticle`
 
-
+Create a new article and record an audit event.
 
 ```json
 {
@@ -290,7 +283,6 @@ Gets all project wikis. Creates one if there aren't any
     }
 }
 ```
-
 
 
 
@@ -321,7 +313,7 @@ Gets all project wikis. Creates one if there aren't any
 ---
 ### `leantime.rpc.Wiki.Wiki.updateArticle`
 
-
+Update an article and record audit events for changed fields.
 
 ```json
 {
@@ -330,10 +322,10 @@ Gets all project wikis. Creates one if there aren't any
     "id": 1,
     "params": {
         "article": \Leantime\Domain\Wiki\Models\Article,
+        "existingArticle": \Leantime\Domain\Wiki\Models\Article|null,
     }
 }
 ```
-
 
 
 
@@ -346,7 +338,92 @@ Gets all project wikis. Creates one if there aren't any
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `article` | **\Leantime\Domain\Wiki\Models\Article** |  |
+| `article` | **\Leantime\Domain\Wiki\Models\Article** | The article with its new values (id required) |
+| `existingArticle` | **\Leantime\Domain\Wiki\Models\Article\|null** | The article before the change, for the audit trail |
+
+
+**Returns:**
+True when the article was saved
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Wiki.Wiki.deleteArticle`
+
+Delete an article, fencing the operation against the article's project.
+
+```json
+{
+    "method": "leantime.rpc.Wiki.Wiki.deleteArticle",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "id": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | Article id |
+
+
+**Returns:**
+True when the article was deleted
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Wiki.Wiki.deleteWiki`
+
+Delete a wiki (notebook), fencing the operation against the wiki's project.
+
+```json
+{
+    "method": "leantime.rpc.Wiki.Wiki.deleteWiki",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "id": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** |  |
 
 
 **Returns:**
@@ -356,6 +433,50 @@ Gets all project wikis. Creates one if there aren't any
     "jsonrpc": "2.0",
     "id": 1,
     "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Wiki.Wiki.getArticleActivity`
+
+Get combined activity feed for an article (audit events + comments).
+
+```json
+{
+    "method": "leantime.rpc.Wiki.Wiki.getArticleActivity",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "articleId": int,
+        "limit": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `articleId` | **int** | Article id |
+| `limit` | **int** | Maximum number of entries |
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array<int,array<string,mixed>>
 }
 ```
 
