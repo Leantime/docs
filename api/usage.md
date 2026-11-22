@@ -36,12 +36,14 @@ A key can also see the projects that are open to everyone in your organization. 
 
 ## How do I create a personal access token?
 
-1. **Click your profile picture** at the top right, then **My Profile**.
+1. **Click your profile picture** at the top right, then **My Profile**. Account Settings opens.
 2. **Open the Personal Access Tokens tab** and click **Create Token**.
 3. **Enter a Token Name,** like the tool you'll use it in, and click **Create Token**.
 4. **Copy the token.** This is the only time you see it.
 
 A token doesn't expire. It works until you delete it on the same tab, where you also see when it was last used.
+
+![Account Settings with the Personal Access Tokens tab open: Create Token outlined, and one token, Reporting script, with when it was last used and created](../_images/api/personal-access-tokens.webp)
 
 ## How do I make my first call?
 
