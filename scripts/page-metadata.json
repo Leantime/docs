@@ -40,22 +40,22 @@
     "description": "Every Leantime JSON-RPC 2.0 namespace and service, with links to the method reference for tasks, projects, timesheets, users, calendars and more."
   },
   "api/usage.md": {
-    "title": "Connect to the JSON-RPC API",
-    "description": "Use the Leantime JSON-RPC 2.0 API: create an API key, send authenticated requests with curl, and find the method you need in the API reference.",
+    "title": "Use the Leantime API",
+    "description": "Use the Leantime JSON-RPC API: create an API key or personal access token, make your first call with curl, and read errors and rate limits.",
     "glance": {
       "minutes": 10,
       "level": "Some experience",
       "needs": [
-        "Access to **Company Settings** in Leantime, to create an API key",
+        "A Leantime account. For an API key, the Administrator or Owner role",
         "A way to send HTTP requests, like `curl` or your own code"
       ],
       "where": [
-        "Leantime, under **Company Settings → API Keys**",
+        "Leantime, under **Company Settings → API Keys** or **My Profile → Personal Access Tokens**",
         "A terminal or your code, calling `/api/jsonrpc`"
       ],
-      "result": "An API key, and a JSON-RPC request that returns data from your Leantime."
+      "result": "A key or token, and a request that returns data from your Leantime."
     },
-    "searchTitle": "Leantime API: create an API key and make JSON-RPC calls"
+    "searchTitle": "Leantime API: API keys, access tokens and JSON-RPC calls"
   },
   "development/commandline.md": {
     "title": "Using the Leantime CLI",

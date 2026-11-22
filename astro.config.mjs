@@ -386,7 +386,7 @@ export default defineConfig({
 					label: 'Build on Leantime',
 					items: [
 						{ label: 'Development / Local', slug: 'installation/development' },
-						{ label: 'Connect to the API', slug: 'api/usage' },
+						{ label: 'Use the API', slug: 'api/usage' },
 						{ label: 'Using the Leantime CLI', slug: 'development/commandline' },
 						{ label: 'Plugin Development', slug: 'development/plugin-development' },
 						{ label: 'Contributing', slug: 'development/contributing' },
