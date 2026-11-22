@@ -16,7 +16,9 @@ An upgrade has two parts. First you replace Leantime's files with the new versio
 1. **Back up your database and files.** Follow [Backup and restore](installation/backup-restore.md). Some database changes can't be undone, so a backup is the only way back.
 2. **Find the version you run now.** In Leantime, open the help menu (the question mark icon at the top right). The version is under **System**, for example **Leantime V3.12.0**.
 3. **Read the notes for every version between yours and the new one.** Start with [What changed between versions?](#what-changed-between-versions) below, then the [release notes](https://github.com/Leantime/leantime/releases).
-4. **Check your plugins.** Leantime skips a plugin that doesn't support the new version, so it can't break Leantime. The plugin shows **Not compatible** in **My Apps** until you update it. Update Leantime first, then update the plugins.
+4. **Check your plugins.** Leantime skips a plugin that says it doesn't support the new version. The plugin shows **Not compatible** in **My Apps** until you update it. Update Leantime first, then update the plugins. Two kinds of plugin aren't checked, so check them yourself before you upgrade:
+   - plugins you turn on with `LEAN_PLUGINS` in your configuration
+   - plugins that don't say which versions they support. Leantime assumes they work with every 3.x version.
 5. **Pick a quiet time.** After an upgrade, people usually have to sign in again.
 
 You don't have to upgrade one version at a time. Leantime runs every database change between your version and the new one. Read the notes for all the versions you skip.
@@ -91,28 +93,31 @@ Use these steps if you can't use Docker or the updater, for example on shared ho
    unzip Leantime-v3.15.3.zip -d /var/www/leantime-new
    ```
 
-3. Copy these from your current Leantime folder into the new one:
+3. Stop changes to your data while you copy it. Stop the web server, and pause the [cron job](installation/configuration.md#cron-jobs) that runs Leantime's scheduled jobs. Otherwise a file someone uploads now stays behind in the old folder. On shared hosting, where you can't stop the web server, upgrade when nobody is using Leantime.
+4. Copy these from your current Leantime folder into the new one:
    - `config/.env` (or `config/configuration.php` on old installs)
    - `userfiles/`
    - `public/userfiles/`
    - `app/Plugins/`
    - your database backup folder, if it's inside the Leantime folder (`backupdb/` in the sample configuration)
-4. Give the new folder to the web server user, and let it write to `storage/`, `userfiles/` and `public/userfiles/`:
+5. If you changed `public/.htaccess`, make the same change in the new version's file. For example, some shared hosts need `RewriteBase /` (see [Common issues](installation/common-issues.md)). Don't copy the old file over the new one: new versions can change its rules.
+6. Give the new folder to the web server user, and let it write to `storage/`, `userfiles/` and `public/userfiles/`:
 
    ```bash
    sudo chown -R www-data:www-data /var/www/leantime-new
    ```
 
-5. Swap the folders. Keep the old one until you know the upgrade worked:
+7. Swap the folders. Keep the old one until you know the upgrade worked:
 
    ```bash
    sudo mv /var/www/leantime /var/www/leantime-old
    sudo mv /var/www/leantime-new /var/www/leantime
    ```
 
-6. Open Leantime and select **Update Now!**, or run `php bin/leantime db:migrate` in the Leantime folder.
+8. Start the web server. Open Leantime and select **Update Now!**, or run `php bin/leantime db:migrate` in the Leantime folder.
+9. Turn the cron job back on.
 
-On shared hosting, do the same with your control panel's **File Manager** or FTP: upload the new files into a new folder, copy the four items from step 3 into it, then rename the folders. See [Shared hosting](installation/shared-hosting.md).
+On shared hosting, do the same with your control panel's **File Manager** or FTP: upload the new files into a new folder, copy the items from step 4 into it, then rename the folders. See [Shared hosting](installation/shared-hosting.md).
 
 Installed from git? After you pull the new version, run `composer install`, because new versions can add dependencies.
 
@@ -141,7 +146,7 @@ The notes below are the changes that affect an upgrade. Changes for plugin devel
 ### 3.12
 
 - **Database update.** Merges duplicate plugin rows that older plugin updates left behind.
-- Leantime checks which versions each plugin supports, and skips plugins that don't support yours.
+- Leantime checks which versions each plugin supports, and skips plugins that don't support yours. It doesn't check plugins set in `LEAN_PLUGINS`, and it assumes plugins that don't say which versions they support work with every 3.x version.
 - A plugin that causes 5 errors in 10 minutes is turned off, and admins get a notification. Its license stays active.
 
 ### 3.10
@@ -195,12 +200,17 @@ On package installs, also check that the server runs PHP 8.2 or later.
 
 ## How do I go back to the old version?
 
-1. Put the old files back:
-   - **Docker:** set `LEAN_VERSION` in `.env` to your old version, then run `docker compose up -d`.
-   - **Updater or by hand:** move the old folder back, or restore your file backup.
-2. Restore the database backup you made before the upgrade. The old version can't use a database that the new version changed.
-
-See [Backup and restore](installation/backup-restore.md).
+1. **Stop Leantime,** so nobody changes data while you restore it.
+   - **Docker:** `docker compose stop leantime`. The database container keeps running.
+   - **Server:** stop the web server and pause the cron job.
+2. **Put the old files back.**
+   - **Docker:** set `LEAN_VERSION` in `.env` to your old version. Don't start the container yet.
+   - **By hand:** move the old folder (`leantime-old`) back into place.
+   - **Updater:** the updater copies the new files over the old ones, so there's no old folder. Download the zip of your old version from the [releases page](https://github.com/Leantime/leantime/releases). Then follow steps 2 and 4 to 7 of [How do I upgrade by hand?](#how-do-i-upgrade-by-hand): unzip it into a new folder, copy your configuration, files and plugins into it, and swap the folders.
+3. **Restore the database backup** you made before the upgrade. The old version can't use a database that the new version changed. See [Backup and restore](installation/backup-restore.md).
+4. **Start Leantime again.**
+   - **Docker:** `docker compose up -d`.
+   - **Server:** start the web server and turn the cron job back on.
 
 ## Related
 
