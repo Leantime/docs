@@ -5,7 +5,7 @@ footer: false
 
 # Leantime Api JsonRPC 2.0 namespaces
 
-For an introduction into connecting to the Leantime API please see [Api Usage](https://docs.leantime.io/#/api/usage)
+To create a key and make your first call, see [Use the Leantime API](api/usage.md).
 
 RPC Methods are the primary endpoint definition and follow the structure
 `leantime.rpc`.`Module`.`Service`.`Method`
