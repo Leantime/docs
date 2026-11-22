@@ -760,5 +760,11 @@
     "title": "Report a security issue",
     "description": "How to report a security issue in Leantime privately, what to include, how reports are triaged and fixed, and how long a reply can take.",
     "searchTitle": "Report a security issue in Leantime"
+  },
+  "using-leantime/sprints.md": {
+    "title": "Sprints",
+    "description": "Plan work in sprints in Leantime: create a sprint, move to-dos in from the backlog, follow the sprint burndown, and carry open work into the next one.",
+    "searchTitle": "Sprints in Leantime: backlog, sprint planning and burndown",
+    "checked": "3.15"
   }
 }
