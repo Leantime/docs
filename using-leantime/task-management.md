@@ -155,7 +155,7 @@ Open the to-do's **⋮** menu and choose **Track Time → Start Work**; choose *
 
 ## What about sprints?
 
-Sprints are optional. Use the menu next to **To-Dos** at the top of the page to **Create Sprint**, or to switch between **All To-Dos**, the **Backlog** and each sprint. A to-do's **Sprint** field puts it in one.
+Sprints are optional. Use the menu next to **To-Dos** at the top of the page to **Create Sprint**, or to switch between **All To-Dos**, the **Backlog** and each sprint. A to-do's **Sprint** field puts it in one. See [Sprints](using-leantime/sprints.md).
 
 ## Who can do what with to-dos?
 
