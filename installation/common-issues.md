@@ -17,7 +17,7 @@ You enter the right email and password, and the login page comes back without an
 1. **`LEAN_SESSION_SECURE` doesn't match how you open Leantime.** With `true`, the browser only sends the login cookie over `https://`. Use `false` if people reach Leantime over plain `http://`, and `true` once it's on HTTPS.
 2. **`LEAN_APP_URL` is missing or wrong.** Set it to the exact address in the browser's address bar, with `http://` or `https://`, for example `LEAN_APP_URL = 'https://projects.example.com'`.
 3. **The session folder isn't writable.** The web server's PHP user (often `www-data`) must be able to write to `storage/` and everything in it, including `storage/framework/sessions`.
-4. **A proxy or CDN on a public address sits in front.** Leantime trusts proxies on private networks (Docker, your LAN) automatically. For Cloudflare or another public proxy, list its addresses in `LEAN_TRUSTED_PROXIES`.
+4. **A proxy or CDN on a public address sits in front.** Leantime trusts proxies on private networks (Docker, your LAN) automatically. For Cloudflare or another public proxy, list its addresses in `LEAN_TRUSTED_PROXIES` (see [Which proxies does Leantime trust?](installation/reverse-proxy.md#which-proxies-does-leantime-trust)).
 
 After a change, clear your browser's cookies for the site and try again.
 

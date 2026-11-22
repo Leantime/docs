@@ -30,7 +30,7 @@ There's nothing extra to register with your login provider: the app uses the sam
 
 **Leantime in a folder?** If Leantime runs in a folder, like `https://example.com/leantime`, **Sign in with SSO** needs Leantime 3.15.1 or later, and `LEAN_APP_URL` must include the folder (see [Subfolder installation](installation/subfolder.md)). On older versions the button opens the address without the folder and fails. Advanced Authentication's provider buttons include the folder, so use those instead.
 
-**Something in front of Leantime?** A reverse proxy, a sign-in wall like Cloudflare Access, or a firewall must let the app through to Leantime: everything under `/advancedAuth/`, `/api/`, `/oidc/` and `/status`, with the `Authorization` header passed on to PHP. When the app can't sign in, it says why; each message and its fix is in [What does the app's error message mean?](using-leantime/mobile-app.md#what-does-the-apps-error-message-mean)
+**Something in front of Leantime?** A [reverse proxy](installation/reverse-proxy.md), a sign-in wall like Cloudflare Access, or a firewall must let the app through to Leantime: everything under `/advancedAuth/`, `/api/`, `/oidc/` and `/status`, with the `Authorization` header passed on to PHP. When the app can't sign in, it says why; each message and its fix is in [What does the app's error message mean?](using-leantime/mobile-app.md#what-does-the-apps-error-message-mean)
 
 ## How do I turn on phone notifications?
 

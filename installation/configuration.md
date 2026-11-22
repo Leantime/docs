@@ -138,20 +138,19 @@ LEAN_DEFAULT_TIMEZONE='America/Los_Angeles'   # Default timezone for dates/times
 
 ## Cron Jobs
 
-Cron jobs process the notification queue and other scheduled tasks. Run at least every 15 minutes for timely notifications.
+Leantime's scheduled jobs send notification emails and webhooks, check plugin licenses and updates, and do other daily work. Run them every minute.
 
 **Important:** You must set `LEAN_APP_URL` in your configuration for email links to work correctly.
 
 ### Option 1: Command Line
 
+Add this line to the web server user's crontab (`sudo crontab -u www-data -e`):
+
 ```bash
-php ./bin/leantime schedule:run
+* * * * * cd /var/www/leantime && php ./bin/leantime schedule:run >> /dev/null 2>&1
 ```
 
-Add to crontab for automatic execution:
-```bash
-*/5 * * * * cd /var/www/leantime && php ./bin/leantime schedule:run >> /dev/null 2>&1
-```
+Or keep `php ./bin/leantime schedule:work` running as a service; it runs the jobs every minute by itself. See [Using the Leantime CLI](development/commandline.md#how-do-i-run-leantimes-scheduled-jobs).
 
 ### Option 2: HTTP Endpoint
 
@@ -160,15 +159,11 @@ Call this URL from an external scheduler or uptime monitor:
 https://your-domain.com/cron/run
 ```
 
+Without either option, the jobs only run while someone has Leantime open in their browser, so emails can arrive late.
+
 ### Docker
 
-For Docker installations, add to your docker-compose.yml or use a sidecar container:
-
-```yaml
-# Using supercronic or similar
-command: >
-  sh -c "while true; do php ./bin/leantime schedule:run; sleep 300; done"
-```
+The official Docker image already runs the scheduled jobs inside the container. There's nothing to add.
 
 ---
 

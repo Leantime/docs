@@ -217,7 +217,7 @@ docker-compose up -d
 
 ```bash
 # Clear any cached configuration
-php ./bin/leantime cache:clear
+php ./bin/leantime cache:clearAll
 
 # Restart PHP-FPM (adjust version as needed)
 sudo systemctl restart php8.2-fpm
@@ -241,21 +241,14 @@ Many shared hosting providers restrict or block SMTP connections. Options includ
 2. **Use an external SMTP service** — SendGrid, Mailgun, and Postmark offer free tiers that work around hosting restrictions
 3. **Fall back to PHP mail()** — Set `LEAN_EMAIL_USE_SMTP=false` (less reliable but may work)
 
-## Email Queue Configuration
+## Why do notification emails arrive late?
 
-By default, Leantime sends emails synchronously (immediately when triggered). For better performance with many users, you can enable the queue system:
+Leantime puts notification emails in a queue, and its scheduled jobs send them every minute. Each person's **Email frequency** also collects changes into one email (see [Notifications](using-leantime/notifications.md)). If emails come late or not at all:
 
-```env
-LEAN_QUEUE_CONNECTION=database
-```
+- **Check that the scheduled jobs run.** Set up the cron job in [Cron Jobs](installation/configuration.md#cron-jobs). Without it, emails only go out while someone has Leantime open. The official Docker image runs the jobs for you.
+- **Check the queue with the scheduler:** `php ./bin/leantime schedule:list` shows `queue:emails` and when it runs next.
 
-When using `database` queue, you must run the queue worker. Add this to your crontab:
-
-```bash
-* * * * * cd /var/www/html && php ./bin/leantime queue:work --stop-when-empty
-```
-
-See [Cron Jobs](installation/configuration.md#cron-jobs) for more details.
+Test emails from `email:testemail` are sent right away, not queued.
 
 ## Need Help?
 

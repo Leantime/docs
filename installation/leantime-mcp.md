@@ -443,7 +443,7 @@ Self-hosted only. Set these in `config/.env`:
 | `LEAN_OAUTH_PRIVATE_KEY`, `LEAN_OAUTH_PUBLIC_KEY` | empty | The key pair that signs sign-in tokens. Leave empty: Leantime creates one and stores it encrypted in the database. |
 | `LEAN_JINA_KEY` | empty | API key for [Jina](https://jina.ai/) search. Needed by the `searchLeantimeDocumentation` tool, which searches Leantime's online documentation. Without it, that tool returns an error. The search queries are sent to Jina. |
 
-**Reverse proxies.** If Leantime runs behind nginx, Apache, Traefik, Cloudflare or a load balancer, make sure the `Authorization` header is passed through. Apache with PHP-FPM or FastCGI often drops it. Add this to your virtual host or `.htaccess`:
+**Reverse proxies.** If Leantime runs behind nginx, Apache, Traefik, Cloudflare or a load balancer, make sure the `Authorization` header is passed through (see [Run Leantime behind a reverse proxy](installation/reverse-proxy.md)). Apache with PHP-FPM or FastCGI often drops it. Add this to your virtual host or `.htaccess`:
 
 ```apache
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
