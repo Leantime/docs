@@ -517,8 +517,8 @@ it fetch just the visible month.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `from` | **null|string|\Carbon\CarbonImmutable** | Optional ISO start of the window |
-| `until` | **null|string|\Carbon\CarbonImmutable** | Optional ISO end of the window |
+| `from` | **null\|string\|\Carbon\CarbonImmutable** | Optional ISO start of the window |
+| `until` | **null\|string\|\Carbon\CarbonImmutable** | Optional ISO end of the window |
 
 
 **Returns:**
@@ -598,8 +598,8 @@ External-calendar events (from the user's subscribed iCal feeds) for the authent
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `from` | **null|string|\Carbon\CarbonImmutable** | Optional ISO start of the window |
-| `until` | **null|string|\Carbon\CarbonImmutable** | Optional ISO end of the window |
+| `from` | **null\|string\|\Carbon\CarbonImmutable** | Optional ISO start of the window |
+| `until` | **null\|string\|\Carbon\CarbonImmutable** | Optional ISO end of the window |
 
 
 **Returns:**

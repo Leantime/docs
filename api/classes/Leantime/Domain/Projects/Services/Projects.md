@@ -371,7 +371,7 @@ Gets projects assigned to a user.
 |-----------|------|-------------|
 | `userId` | **int** | The ID of the user. |
 | `projectStatus` | **string** | The status of the projects. Defaults to &quot;open&quot;. |
-| `clientId` | **int|null** | The ID of the client. Defaults to null. |
+| `clientId` | **int\|null** | The ID of the client. Defaults to null. |
 | `projectTypes` | **string** |  |
 
 
@@ -504,7 +504,7 @@ Gets the hierarchy of projects assigned to a user.
 |-----------|------|-------------|
 | `userId` | **int** | The ID of the user. |
 | `projectStatus` | **string** | The project status. Default is &quot;open&quot;. |
-| `clientId` | **int|null** | The ID of the client. Default is null. |
+| `clientId` | **int\|null** | The ID of the client. Default is null. |
 
 
 **Returns:**
@@ -550,7 +550,7 @@ Gets the project hierarchy available to a user.
 |-----------|------|-------------|
 | `userId` | **int** | The ID of the user. |
 | `projectStatus` | **string** | The status of the projects to retrieve. Defaults to &quot;open&quot;. |
-| `clientId` | **int|null** | The ID of the client. Defaults to null. |
+| `clientId` | **int\|null** | The ID of the client. Defaults to null. |
 
 
 **Returns:**
@@ -688,7 +688,7 @@ Ids of the projects a user can access, for scoping other queries.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int|null** | Optional. If omitted or 0, resolves to the session user. |
+| `userId` | **int\|null** | Optional. If omitted or 0, resolves to the session user. |
 | `projectStatus` | **string** | &#039;open&#039; (default), &#039;closed&#039; or &#039;all&#039;. |
 
 
@@ -731,7 +731,7 @@ Gets the projects that a user has access to.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int|null** | Optional. If omitted or 0, resolves to<br />the authenticated session user. |
+| `userId` | **int\|null** | Optional. If omitted or 0, resolves to<br />the authenticated session user. |
 
 
 **Returns:**
@@ -1140,6 +1140,8 @@ Returns true if the project was successfully updated, false otherwise.
 
 Retrieves the avatar for a project.
 
+**Limit:** Over the API this method doesn't return the file or image. The result is an empty or internal object, and a missing file comes back as a result, not an error.
+
 ```json
 {
     "method": "leantime.rpc.Projects.Projects.getProjectAvatar",
@@ -1445,7 +1447,7 @@ Retrieves the project relations for a given user.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `userId` | **int** | The user ID |
-| `projectId` | **int|null** | Optional project ID filter |
+| `projectId` | **int\|null** | Optional project ID filter |
 
 
 **Returns:**
@@ -1573,7 +1575,7 @@ Authorized JSON-RPC entry point for kanban status + sort of projects.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `params` | **array** | Associative status =&gt; jQuery-sortable-serialized project list |
-| `handler` | **string|null** | Optional drag handler id (unused by the update) |
+| `handler` | **string\|null** | Optional drag handler id (unused by the update) |
 
 
 **Returns:**
@@ -1977,7 +1979,7 @@ Builds the data needed to render the project hub for a user.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `userId` | **int** | The user whose projects should be loaded. |
-| `clientId` | **int|null** | Optional client id to filter the project list. |
+| `clientId` | **int\|null** | Optional client id to filter the project list. |
 
 
 **Returns:**

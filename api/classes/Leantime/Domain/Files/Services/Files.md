@@ -191,6 +191,8 @@ The whitelisted image extensions.
 Resolves a file by its encoded name, authorizes the CURRENT (session) user, and returns
 the file response.
 
+**Limit:** Over the API this method doesn't return the file or image. The result is an empty or internal object, and a missing file comes back as a result, not an error.
+
 ```json
 {
     "method": "leantime.rpc.Files.Files.getFileForUser",

@@ -166,8 +166,8 @@ Polls for new ideas in a project / board, normalizing dates for the API.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | Project to filter by, or null for all accessible projects. |
-| `board` | **int|null** | Board to filter by, or null for all boards. |
+| `projectId` | **int\|null** | Project to filter by, or null for all accessible projects. |
+| `board` | **int\|null** | Board to filter by, or null for all boards. |
 
 
 **Returns:**
@@ -210,8 +210,8 @@ Polls for updated ideas, appending the modified timestamp to the id for change d
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | Project to filter by, or null for all accessible projects. |
-| `board` | **int|null** | Board to filter by, or null for all boards. |
+| `projectId` | **int\|null** | Project to filter by, or null for all accessible projects. |
+| `board` | **int\|null** | Board to filter by, or null for all boards. |
 
 
 **Returns:**
@@ -641,7 +641,7 @@ returning an empty-item default when no id is supplied.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int|null** | Idea item id, or null when creating a new item. |
+| `id` | **int\|null** | Idea item id, or null when creating a new item. |
 | `type` | **string** | Default box/type for a new item. |
 
 
@@ -686,7 +686,7 @@ the historical repository call.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int|null** | Idea item id. |
+| `id` | **int\|null** | Idea item id. |
 
 
 **Returns:**
@@ -946,7 +946,7 @@ Adds a comment to an idea item and queues a notification to project users.
 |-----------|------|-------------|
 | `text` | **string** | Comment text. |
 | `ideaItemId` | **int** | Idea item (module) id. |
-| `parentCommentId` | **int|string** | Parent comment id (&#039;father&#039;). |
+| `parentCommentId` | **int\|string** | Parent comment id (&#039;father&#039;). |
 | `projectId` | **int** | Project id for the notification. |
 | `authorId` | **int** | Author user id. |
 

@@ -15,6 +15,8 @@ footer: false
 
 
 
+**Limit:** Over the API this method doesn't return the file or image. The result is an empty or internal object, and a missing file comes back as a result, not an error.
+
 ```json
 {
     "method": "leantime.rpc.Users.Users.getProfilePicture",
@@ -81,7 +83,7 @@ Updates another user's account.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `values` | **array** | The user values to store. |
-| `id` | **int|string** | The id of the user being edited. |
+| `id` | **int\|string** | The id of the user being edited. |
 
 
 **Returns:**
@@ -514,7 +516,7 @@ usernameExist - Checks if a given username (email) is already in the db
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `username` | **string** | username |
-| `notUserId` | **int|string** | optional userId to skip. (used when changing email addresses to a new one, skips checking the old one) |
+| `notUserId` | **int\|string** | optional userId to skip. (used when changing email addresses to a new one, skips checking the old one) |
 
 
 **Returns:**
@@ -602,7 +604,7 @@ optionally filtered by a search query (used by the @mention autocomplete).
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | Project id, or null for the current project |
+| `projectId` | **int\|null** | Project id, or null for the current project |
 | `query` | **string** | Optional case-insensitive substring filter |
 
 
@@ -1140,7 +1142,7 @@ relations based on the posted project list.
 |-----------|------|-------------|
 | `values` | **array<string,mixed>** | Shaped values for the update. |
 | `id` | **int** | The id of the user being edited. |
-| `projects` | **array<int,mixed>|null** | Posted project ids, or null when none submitted. |
+| `projects` | **array<int,mixed>\|null** | Posted project ids, or null when none submitted. |
 
 
 **Returns:**

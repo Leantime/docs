@@ -137,7 +137,7 @@ getLastUpdatedCanvas - canvas boards ordered by last updated item (delegates to 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | projectId (optional) |
+| `projectId` | **int\|null** | projectId (optional) |
 | `boards` | **array** | Array of project board types |
 
 

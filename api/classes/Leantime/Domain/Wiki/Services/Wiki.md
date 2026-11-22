@@ -38,8 +38,8 @@ Get an article by ID and project.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int|null** | Article id (null loads the featured article) |
-| `projectId` | **int|null** | Project id (defaults to the session project) |
+| `id` | **int\|null** | Article id (null loads the featured article) |
+| `projectId` | **int\|null** | Project id (defaults to the session project) |
 
 
 **Returns:**
@@ -339,7 +339,7 @@ Update an article and record audit events for changed fields.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `article` | **\Leantime\Domain\Wiki\Models\Article** | The article with its new values (id required) |
-| `existingArticle` | **\Leantime\Domain\Wiki\Models\Article|null** | The article before the change, for the audit trail |
+| `existingArticle` | **\Leantime\Domain\Wiki\Models\Article\|null** | The article before the change, for the audit trail |
 
 
 **Returns:**

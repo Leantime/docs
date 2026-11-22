@@ -540,7 +540,7 @@ Get remaining hours for a ticket (planned hours minus logged hours)
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `ticketOrId` | **int|\Leantime\Domain\Tickets\Models\Tickets** | Ticket ID or Tickets object |
+| `ticketOrId` | **int\|\Leantime\Domain\Tickets\Models\Tickets** | Ticket ID or Tickets object |
 
 
 **Returns:**

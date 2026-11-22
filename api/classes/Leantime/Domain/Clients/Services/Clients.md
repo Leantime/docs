@@ -37,7 +37,7 @@ Gets all clients.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `searchparams` | **array|null** | Optional search parameters |
+| `searchparams` | **array\|null** | Optional search parameters |
 
 
 **Returns:**

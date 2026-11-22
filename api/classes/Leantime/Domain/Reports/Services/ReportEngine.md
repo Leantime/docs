@@ -17,6 +17,8 @@ Builds the full report view model for a set of projects in one pass: needs-atten
 milestone buckets, slippage, goals, status updates, effort, prior-period deltas and
 summary stats. This is the single entry point the report screens consume.
 
+**Limit:** This method can't be called through the API in Leantime 3.15: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
+
 ```json
 {
     "method": "leantime.rpc.Reports.ReportEngine.buildReport",
@@ -60,6 +62,8 @@ summary stats. This is the single entry point the report screens consume.
 ### `leantime.rpc.Reports.ReportEngine.getMilestoneReportForProjects`
 
 Buckets the projects' milestones for the period.
+
+**Limit:** This method can't be called through the API in Leantime 3.15: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
 
 ```json
 {
@@ -147,6 +151,8 @@ the Goals module switched off are left out.
 ### `leantime.rpc.Reports.ReportEngine.getStatusUpdatesForProjects`
 
 Status updates posted within the period, grouped by project, newest first.
+
+**Limit:** This method can't be called through the API in Leantime 3.15: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
 
 ```json
 {
@@ -236,6 +242,8 @@ Keyed by project id
 ### `leantime.rpc.Reports.ReportEngine.getEffortForProjects`
 
 Hours logged in the period, totaled and broken down by project and milestone.
+
+**Limit:** This method can't be called through the API in Leantime 3.15: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
 
 ```json
 {

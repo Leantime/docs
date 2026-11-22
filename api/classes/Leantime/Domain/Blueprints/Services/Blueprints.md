@@ -177,7 +177,7 @@ Get canvas boards ordered by last updated item.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | Project identifier (null for all) |
+| `projectId` | **int\|null** | Project identifier (null for all) |
 | `boards` | **array<int,string>** | Array of database canvas types to filter by |
 
 

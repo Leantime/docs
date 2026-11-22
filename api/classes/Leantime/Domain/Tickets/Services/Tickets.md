@@ -425,7 +425,7 @@ Retrieves all tickets based on the provided search criteria.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `searchCriteria` | **array|null** | An associative array containing search parameters such as<br />&#039;currentProject&#039;, &#039;currentUser&#039;, &#039;users&#039;, &#039;status&#039;, &#039;term&#039;,<br />&#039;effort&#039;, &#039;excludeType&#039;, &#039;type&#039;, &#039;milestone&#039;, &#039;groupBy&#039;,<br />&#039;orderBy&#039;, &#039;orderDirection&#039;, &#039;priority&#039;, &#039;clients&#039;, and &#039;sprint&#039;.<br />These values are used to filter the search results.<br />Server-side filters for API watchers (#3700), all optional and<br />usable without a project (results stay limited to projects<br />the caller can access):<br />- &#039;modifiedAfter&#039; / &#039;modifiedBefore&#039;: ISO 8601 datetime; matches<br />the ticket&#039;s last modification (creation date if never modified).<br />- &#039;statusType&#039;: comma list of NEW, INPROGRESS, DONE, NOT_DONE,<br />resolved against each ticket&#039;s own project status labels. |
+| `searchCriteria` | **array\|null** | An associative array containing search parameters such as<br />&#039;currentProject&#039;, &#039;currentUser&#039;, &#039;users&#039;, &#039;status&#039;, &#039;term&#039;,<br />&#039;effort&#039;, &#039;excludeType&#039;, &#039;type&#039;, &#039;milestone&#039;, &#039;groupBy&#039;,<br />&#039;orderBy&#039;, &#039;orderDirection&#039;, &#039;priority&#039;, &#039;clients&#039;, and &#039;sprint&#039;.<br />These values are used to filter the search results.<br />Server-side filters for API watchers (#3700), all optional and<br />usable without a project (results stay limited to projects<br />the caller can access):<br />- &#039;modifiedAfter&#039; / &#039;modifiedBefore&#039;: ISO 8601 datetime; matches<br />the ticket&#039;s last modification (creation date if never modified).<br />- &#039;statusType&#039;: comma list of NEW, INPROGRESS, DONE, NOT_DONE,<br />resolved against each ticket&#039;s own project status labels. |
 | `limit` | **?int** |  |
 
 
@@ -472,9 +472,9 @@ Compact ticket discovery for API/agent watchers (#3703).
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | Limit to one project (null = every accessible, non-closed project). |
-| `statusType` | **string|null** | Which tickets to list as active: NEW, INPROGRESS, DONE, NOT_DONE (comma list). Default INPROGRESS. |
-| `modifiedAfter` | **string|null** | ISO 8601 datetime; only count/list tickets changed since then. |
+| `projectId` | **int\|null** | Limit to one project (null = every accessible, non-closed project). |
+| `statusType` | **string\|null** | Which tickets to list as active: NEW, INPROGRESS, DONE, NOT_DONE (comma list). Default INPROGRESS. |
+| `modifiedAfter` | **string\|null** | ISO 8601 datetime; only count/list tickets changed since then. |
 | `includeSubtasks` | **bool** | Include subtasks (default true). Milestones are never included. |
 | `activeLimit` | **int** | Maximum active tickets returned, most recently modified first (1-500, default 50). |
 
@@ -519,8 +519,8 @@ Retrieves all open user tickets, optionally filtered by user ID and project.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int|null** | The user ID to filter tickets. If null, tickets are not filtered by user. |
-| `project` | **int|null** | The project ID to filter tickets. If null, tickets are not filtered by project. |
+| `userId` | **int\|null** | The user ID to filter tickets. If null, tickets are not filtered by user. |
+| `project` | **int\|null** | The project ID to filter tickets. If null, tickets are not filtered by project. |
 
 
 **Returns:**
@@ -566,7 +566,7 @@ Retrieves scheduled tasks within a given date range and optionally filters by us
 |-----------|------|-------------|
 | `dateFrom` | **\Carbon\CarbonImmutable** | The start date and time, expected in UTC. |
 | `dateTo` | **\Carbon\CarbonImmutable** | The end date and time, expected in UTC. |
-| `userId` | **int|null** | Optional user ID to filter the tasks. |
+| `userId` | **int\|null** | Optional user ID to filter the tasks. |
 
 
 **Returns:**
@@ -752,7 +752,7 @@ Retrieves a ticket based on its ID if the user has access to the associated proj
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int|string** | The ID of the ticket to retrieve. |
+| `id` | **int\|string** | The ID of the ticket to retrieve. |
 
 
 **Returns:**
@@ -846,7 +846,7 @@ narrowed to a single project, with optional inclusion of completed tickets and m
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `userId` | **int** | The ID of the user whose tickets are to be retrieved. |
-| `projectId` | **int|string|null** | Optional project to narrow to; null/0/&#039;&#039; = across all the user&#039;s projects. |
+| `projectId` | **int\|string\|null** | Optional project to narrow to; null/0/&#039;&#039; = across all the user&#039;s projects. |
 | `includeDoneTickets` | **bool** | Whether to include tickets marked as done. Default is false. |
 | `includeMilestones` | **bool** | Whether to include milestones in the results. Default is false. |
 | `limit` | **?int** |  |
@@ -1186,7 +1186,7 @@ Calculate the progress of a milestone based on the tickets associated with it.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `milestoneId` | **int|string** | ID of the milestone. |
+| `milestoneId` | **int\|string** | ID of the milestone. |
 
 
 **Returns:**
@@ -2117,8 +2117,8 @@ controller only has to set the notification and redirect.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `formParams` | **array** | Base quick-add fields (headline, status, milestone, sprint, projectId, editorId). |
-| `swimlane` | **string|null** | The swimlane value the task was added under. |
-| `groupBy` | **string|null** | The active Kanban grouping field. |
+| `swimlane` | **string\|null** | The swimlane value the task was added under. |
+| `groupBy` | **string\|null** | The active Kanban grouping field. |
 | `stayOpen` | **bool** | Whether the quick-add form should stay open after a successful add. |
 
 
@@ -2215,7 +2215,7 @@ Create a subtask under a parent ticket, or update one of the parent's existing s
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `values` | **mixed** | Subtask fields (headline, status, ...); `subtaskId` selects an update. Any non-array is rejected. |
-| `parentTicket` | **\Leantime\Domain\Tickets\Models\Tickets|array|int|string|false|null** | The parent ticket (or its id). |
+| `parentTicket` | **\Leantime\Domain\Tickets\Models\Tickets\|array\|int\|string\|false\|null** | The parent ticket (or its id). |
 
 
 **Returns:**
@@ -2302,7 +2302,7 @@ Applies a kanban drag: sets the status of the posted cards and their manual kanb
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `params` | **mixed** | statusKey =&gt; serialized card list (&quot;ticket[]=1&amp;ticket[]=2&quot;); anything<br />but an array (e.g. a malformed RPC call) is rejected. |
-| `handler` | **string|null** | The dragged card (ticket_ID); only it may change status. |
+| `handler` | **string\|null** | The dragged card (ticket_ID); only it may change status. |
 | `preserveSortIndex` | **bool** | True when the board is sorted by a field rather than the<br />manual order: statuses change but kanbanSortIndex is kept. |
 
 
@@ -2665,7 +2665,7 @@ Finds tickets based on search term, project ID, and optional user ID.
 |-----------|------|-------------|
 | `term` | **string** | The search term to match against ticket headlines. |
 | `projectId` | **int** | The ID of the project to search within. |
-| `userId` | **int|null** | (Optional) The ID of the user to limit the search to. |
+| `userId` | **int\|null** | (Optional) The ID of the user to limit the search to. |
 
 
 **Returns:**
@@ -2708,8 +2708,8 @@ Retrieve milestones for a specific project and user.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | The ID of the project (optional) |
-| `userId` | **int|null** | The ID of the user (optional) |
+| `projectId` | **int\|null** | The ID of the project (optional) |
+| `userId` | **int\|null** | The ID of the user (optional) |
 
 
 **Returns:**
@@ -2752,8 +2752,8 @@ Polls for updated account milestones.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | (optional) The ID of the project to filter milestones by. |
-| `userId` | **int|null** | (optional) The ID of the user to filter milestones by. |
+| `projectId` | **int\|null** | (optional) The ID of the project to filter milestones by. |
+| `userId` | **int\|null** | (optional) The ID of the user to filter milestones by. |
 
 
 **Returns:**
@@ -2796,8 +2796,8 @@ Polls for new account todos.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | The ID of the project to filter the todos (optional). |
-| `userId` | **int|null** | The ID of the user to filter the todos (optional). |
+| `projectId` | **int\|null** | The ID of the project to filter the todos (optional). |
+| `userId` | **int\|null** | The ID of the user to filter the todos (optional). |
 
 
 **Returns:**
@@ -2841,8 +2841,8 @@ Polls for updated account todos.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|null** | The ID of the project (optional) |
-| `userId` | **int|null** | The ID of the user (optional) |
+| `projectId` | **int\|null** | The ID of the project (optional) |
+| `userId` | **int\|null** | The ID of the user (optional) |
 
 
 **Returns:**

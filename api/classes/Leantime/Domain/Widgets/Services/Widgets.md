@@ -245,7 +245,7 @@ widget as visible, records it in the user's widget history.
 |-----------|------|-------------|
 | `data` | **mixed** | The grid layout data to persist. |
 | `userId` | **int** | The user whose grid is being saved. |
-| `visibilityData` | **array|null** | Optional [&#039;visible&#039; =&gt; bool, &#039;widgetId&#039; =&gt; string] payload. |
+| `visibilityData` | **array\|null** | Optional [&#039;visible&#039; =&gt; bool, &#039;widgetId&#039; =&gt; string] payload. |
 
 
 **Returns:**

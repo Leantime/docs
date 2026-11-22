@@ -40,7 +40,7 @@ Resolves which sprint burndown to display on the reports page.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `projectId` | **int** | Project to resolve the burndown for. |
-| `requestedSprintId` | **int|null** | Sprint id explicitly requested by the user, or null. |
+| `requestedSprintId` | **int\|null** | Sprint id explicitly requested by the user, or null. |
 
 
 **Returns:**

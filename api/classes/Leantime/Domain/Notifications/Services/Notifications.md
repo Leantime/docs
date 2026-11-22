@@ -120,7 +120,7 @@ Marks a notification (or 'all') read for the CURRENT (session) user.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int|string** | A notification id, or &#039;all&#039; |
+| `id` | **int\|string** | A notification id, or &#039;all&#039; |
 
 
 **Returns:**
@@ -297,7 +297,7 @@ Register a mobile device's push token for the authenticated user.
 |-----------|------|-------------|
 | `token` | **string** | FCM registration token |
 | `platform` | **string** | &#039;ios&#039; or &#039;android&#039; |
-| `deviceName` | **string|null** | Ignored — kept for backwards-<br />compat with mobile clients that<br />still send it; the device name<br />lives on zp_access_tokens.name<br />already (set at login time) |
+| `deviceName` | **string\|null** | Ignored — kept for backwards-<br />compat with mobile clients that<br />still send it; the device name<br />lives on zp_access_tokens.name<br />already (set at login time) |
 | `provider` | **string** | Must be &#039;fcm&#039; (default &#039;fcm&#039;) |
 
 

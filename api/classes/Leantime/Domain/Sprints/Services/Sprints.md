@@ -163,7 +163,7 @@ All sprints of a project.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **int|string|null** | The project id, or null for the session project. |
+| `projectId` | **int\|string\|null** | The project id, or null for the session project. |
 
 
 **Returns:**
