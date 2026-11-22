@@ -60,7 +60,7 @@ To turn it off, open **Manage two-factor authentication** again and click **Remo
 
 Leantime has no backup codes, and an administrator can't switch two-factor authentication off for you in User Management.
 
-- **Leantime Cloud:** ask for help through the chat on [leantime.io](https://leantime.io/).
+- **Leantime Cloud:** email [support@leantime.io](mailto:support@leantime.io) from the address you sign in with.
 - **Your own server:** an administrator with access to the database can switch it off for you. Replace the email address with yours:
 
   ```sql
