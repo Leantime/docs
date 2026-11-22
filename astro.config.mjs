@@ -390,6 +390,7 @@ export default defineConfig({
 						{ label: 'Using the Leantime CLI', slug: 'development/commandline' },
 						{ label: 'Plugin Development', slug: 'development/plugin-development' },
 						{ label: 'Contributing', slug: 'development/contributing' },
+						{ label: 'Report a security issue', slug: 'development/security' },
 						{
 							label: 'References',
 							collapsed: true,
@@ -418,7 +419,7 @@ export default defineConfig({
 						'- Plugins (for example AdvancedAuth, MCP Server, Leantime Strategies, Custom Fields) come from the marketplace at marketplace.leantime.io when you self-host; most are paid and need a license key. Leantime Cloud includes them, except Advanced Authentication, which is self-hosted only. OpenID Connect and LDAP sign-in are also self-hosted only.',
 						'- The AI features inside Leantime are only on Leantime Cloud. Connecting your own AI assistant through the MCP Server works on Cloud and self-hosted.',
 						'- Every page is also available as Markdown: add `.md` to the page path, e.g. https://docs.leantime.io/installation/docker.md',
-						'- For bugs, use GitHub issues at https://github.com/Leantime/leantime/issues. Report security issues privately as described in the repository security policy.',
+						'- For bugs, use GitHub issues at https://github.com/Leantime/leantime/issues. Report security issues privately as described at https://docs.leantime.io/development/security/.',
 					].join('\n'),
 					customSets: [
 						{ label: 'Self-hosting', description: 'install, configure, upgrade, back up and troubleshoot self-hosted Leantime', paths: ['installation/**'] },

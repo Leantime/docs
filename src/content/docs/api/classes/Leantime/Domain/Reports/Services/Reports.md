@@ -3,20 +3,25 @@ title: "Reports API"
 description: "Reference for the Leantime Reports JSON-RPC service: every leantime.rpc.Reports method with its parameters and return values."
 ---
 
+Reports service: per-project report aggregation (burndown, ticket-status history) plus the
+system-level daily-ingestion and telemetry tasks.
+
 `leantime.rpc.Reports.Reports.`
 
 
 ## Available Methods
-### `leantime.rpc.Reports.Reports.dailyIngestion`
+### `leantime.rpc.Reports.Reports.getSprintBurndownForReport`
 
-
+Resolves which sprint burndown to display on the reports page.
 
 ```json
 {
-    "method": "leantime.rpc.Reports.Reports.dailyIngestion",
+    "method": "leantime.rpc.Reports.Reports.getSprintBurndownForReport",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
+        "projectId": int,
+        "requestedSprintId": int|null,
     }
 }
 ```
@@ -28,15 +33,21 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
 
 
 
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `projectId` | **int** | Project to resolve the burndown for. |
+| `requestedSprintId` | **int\|null** | Sprint id explicitly requested by the user, or null. |
 
 
 **Returns:**
-
+Burndown chart data and the resolved sprint id.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": void
+    "result": array{chart: false|array, currentSprintId: int|false}
 }
 ```
 
@@ -45,7 +56,7 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
 ---
 ### `leantime.rpc.Reports.Reports.getFullReport`
 
-
+Returns a project's stored report history, authorized against the requested project.
 
 ```json
 {
@@ -53,11 +64,10 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
-
 
 
 
@@ -70,7 +80,7 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** |  |
 
 
 **Returns:**
@@ -79,7 +89,7 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|array
 }
 ```
 
@@ -88,7 +98,7 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
 ---
 ### `leantime.rpc.Reports.Reports.getRealtimeReport`
 
-
+Computes a project's current ticket report, authorized against the requested project.
 
 ```json
 {
@@ -96,12 +106,11 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
-        "sprintId": ,
+        "projectId": int,
+        "sprintId": mixed,
     }
 }
 ```
-
 
 
 
@@ -114,8 +123,8 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
-| `sprintId` | **** |  |
+| `projectId` | **int** |  |
+| `sprintId` | **mixed** |  |
 
 
 **Returns:**
@@ -125,189 +134,6 @@ description: "Reference for the Leantime Reports JSON-RPC service: every leantim
     "jsonrpc": "2.0",
     "id": 1,
     "result": array|bool
-}
-```
-
-
-
----
-### `leantime.rpc.Reports.Reports.getAnonymousTelemetry`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Reports.Reports.getAnonymousTelemetry",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "ideaRepository": \Leantime\Domain\Ideas\Repositories\Ideas,
-        "userRepository": \Leantime\Domain\Users\Repositories\Users,
-        "clientRepository": \Leantime\Domain\Clients\Repositories\Clients,
-        "commentsRepository": \Leantime\Domain\Comments\Repositories\Comments,
-        "timesheetRepo": \Leantime\Domain\Timesheets\Repositories\Timesheets,
-        "eaCanvasRepo": \Leantime\Domain\Eacanvas\Repositories\Eacanvas,
-        "insightsCanvasRepo": \Leantime\Domain\Insightscanvas\Repositories\Insightscanvas,
-        "leanCanvasRepo": \Leantime\Domain\Leancanvas\Repositories\Leancanvas,
-        "obmCanvasRepo": \Leantime\Domain\Obmcanvas\Repositories\Obmcanvas,
-        "retrosCanvasRepo": \Leantime\Domain\Retroscanvas\Repositories\Retroscanvas,
-        "goalCanvasRepo": \Leantime\Domain\Goalcanvas\Repositories\Goalcanvas,
-        "valueCanvasRepo": \Leantime\Domain\Valuecanvas\Repositories\Valuecanvas,
-        "minEmpathyCanvasRepo": \Leantime\Domain\Minempathycanvas\Repositories\Minempathycanvas,
-        "risksCanvasRepo": \Leantime\Domain\Riskscanvas\Repositories\Riskscanvas,
-        "sbCanvasRepo": \Leantime\Domain\Sbcanvas\Repositories\Sbcanvas,
-        "swotCanvasRepo": \Leantime\Domain\Swotcanvas\Repositories\Swotcanvas,
-        "wikiRepo": \Leantime\Domain\Wiki\Repositories\Wiki,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `ideaRepository` | **\Leantime\Domain\Ideas\Repositories\Ideas** |  |
-| `userRepository` | **\Leantime\Domain\Users\Repositories\Users** |  |
-| `clientRepository` | **\Leantime\Domain\Clients\Repositories\Clients** |  |
-| `commentsRepository` | **\Leantime\Domain\Comments\Repositories\Comments** |  |
-| `timesheetRepo` | **\Leantime\Domain\Timesheets\Repositories\Timesheets** |  |
-| `eaCanvasRepo` | **\Leantime\Domain\Eacanvas\Repositories\Eacanvas** |  |
-| `insightsCanvasRepo` | **\Leantime\Domain\Insightscanvas\Repositories\Insightscanvas** |  |
-| `leanCanvasRepo` | **\Leantime\Domain\Leancanvas\Repositories\Leancanvas** |  |
-| `obmCanvasRepo` | **\Leantime\Domain\Obmcanvas\Repositories\Obmcanvas** |  |
-| `retrosCanvasRepo` | **\Leantime\Domain\Retroscanvas\Repositories\Retroscanvas** |  |
-| `goalCanvasRepo` | **\Leantime\Domain\Goalcanvas\Repositories\Goalcanvas** |  |
-| `valueCanvasRepo` | **\Leantime\Domain\Valuecanvas\Repositories\Valuecanvas** |  |
-| `minEmpathyCanvasRepo` | **\Leantime\Domain\Minempathycanvas\Repositories\Minempathycanvas** |  |
-| `risksCanvasRepo` | **\Leantime\Domain\Riskscanvas\Repositories\Riskscanvas** |  |
-| `sbCanvasRepo` | **\Leantime\Domain\Sbcanvas\Repositories\Sbcanvas** |  |
-| `swotCanvasRepo` | **\Leantime\Domain\Swotcanvas\Repositories\Swotcanvas** |  |
-| `wikiRepo` | **\Leantime\Domain\Wiki\Repositories\Wiki** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": array
-}
-```
-
-
-
----
-### `leantime.rpc.Reports.Reports.sendAnonymousTelemetry`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Reports.Reports.sendAnonymousTelemetry",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": bool|\GuzzleHttp\Promise\PromiseInterface
-}
-```
-
-
-
----
-### `leantime.rpc.Reports.Reports.optOutTelemetry`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Reports.Reports.optOutTelemetry",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": false|void
-}
-```
-
-
-
----
-### `leantime.rpc.Reports.Reports.getProjectStatusReport`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Reports.Reports.getProjectStatusReport",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": array
 }
 ```
 

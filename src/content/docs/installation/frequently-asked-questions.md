@@ -351,32 +351,26 @@ Or change them in **Account → Theme** settings.
 
 ### How do I update Leantime?
 
-**Docker:**
-```bash
-docker-compose pull
-docker-compose down
-docker-compose up -d
-```
+Back up first, then:
 
-**Standard Installation:**
-1. Backup your database and files
-2. Download the latest release
-3. Replace all files (except your config)
-4. Visit `yourdomain.com/update` if database migrations are needed
+- **Docker:** run `docker compose pull`, then `docker compose up -d`.
+- **Release package:** run `php bin/leantime system:update` as the web server user, or replace the files by hand.
+
+Then open Leantime and select **Update Now!** if it asks to update the database. For every step, see the [Upgrade guide](/installation/upgrade-guide/).
 
 ### Will updating delete my data?
 
-No, if you've configured persistent storage correctly. Always [backup](/installation/backup-restore/) before updating.
+No. Your projects, files and settings stay, as long as they're stored outside the files you replace (in Docker: in volumes). Always [back up](/installation/backup-restore/) before updating.
 
-**Docker users:** Ensure your database container uses a mounted volume, not container storage.
+**Docker users:** Make sure your database container uses a volume, not storage inside the container.
 
 ### How do I know if there's a database update?
 
-After updating files, Leantime automatically redirects to `/update` if database migrations are required.
+After the new files are in place, Leantime sends everyone to its **Update Database** page (`/install/update`) until someone selects **Update Now!** You can also run `php bin/leantime db:migrate`.
 
-### Can I rollback to a previous version?
+### Can I roll back to a previous version?
 
-Yes, if you have backups. Restore your database backup and previous files. However, database schema changes may not be reversible.
+Yes, if you made a backup. Put the old files back and restore the database backup from before the upgrade. The old version can't use a database that the new version changed. See [How do I go back to the old version?](/installation/upgrade-guide/#how-do-i-go-back-to-the-old-version)
 
 ---
 
@@ -404,10 +398,7 @@ Common cause: Enabling SMTP without correct configuration.
 
 ### Why can't I access Leantime behind a reverse proxy?
 
-Ensure:
-1. Your reverse proxy passes the correct headers (`X-Forwarded-Proto`, `X-Forwarded-Host`)
-2. Set `LEAN_APP_URL` to your public URL
-3. Configure SSL termination correctly
+Set `LEAN_APP_URL` to the exact address people open, and make sure the proxy passes the `X-Forwarded-Proto` and `X-Forwarded-Host` headers. If that address starts with `https://`, also set `LEAN_SESSION_SECURE = true`. Over plain `http://`, leave it off, or nobody can log in. Configurations for nginx, Apache, Caddy, Traefik and Cloudflare are in [Run Leantime behind a reverse proxy](/installation/reverse-proxy/).
 
 ### I'm locked out. How do I reset the admin password?
 

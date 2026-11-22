@@ -43,7 +43,7 @@ You see `(unhealthy)` in `docker compose ps`, or `nginx entered FATAL state, too
 
 ## I get "502 Bad Gateway" behind a reverse proxy
 
-- The proxy must forward to port **8080** of the Leantime container.
+- The proxy must forward to port **8080** of the Leantime container. Working configurations are in [Run Leantime behind a reverse proxy](/installation/reverse-proxy/).
 - If the proxy's error log says `upstream sent too big header`, raise its buffer sizes. For Nginx:
 
   ```nginx

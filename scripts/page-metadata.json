@@ -755,5 +755,10 @@
       ],
       "result": "Leantime on your own domain over HTTPS, with sign-in, uploads, the API and the mobile app working"
     }
+  },
+  "development/security.md": {
+    "title": "Report a security issue",
+    "description": "How to report a security issue in Leantime privately, what to include, how reports are triaged and fixed, and how long a reply can take.",
+    "searchTitle": "Report a security issue in Leantime"
   }
 }

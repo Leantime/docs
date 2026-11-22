@@ -7,21 +7,59 @@ description: "Reference for the Leantime Setting JSON-RPC service: every leantim
 
 
 ## Available Methods
-### `leantime.rpc.Setting.Setting.setLogo`
+### `leantime.rpc.Setting.Setting.getCompanyId`
 
-
+The instance's anonymous company id (setting companysettings.telemetry.anonymousId),
+created on first read. A random UUID, not sensitive: analytics clients (the mobile app)
+scope their PostHog distinct ids with it as `{companyId}:{userId}`, matching the web.
 
 ```json
 {
-    "method": "leantime.rpc.Setting.Setting.setLogo",
+    "method": "leantime.rpc.Setting.Setting.getCompanyId",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "file": ,
     }
 }
 ```
 
+
+
+
+
+
+
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": string
+}
+```
+
+
+
+---
+### `leantime.rpc.Setting.Setting.getProjectLabel`
+
+Resolve the current label value for a given module/label key.
+
+```json
+{
+    "method": "leantime.rpc.Setting.Setting.getProjectLabel",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "module": string,
+        "labelKey": int,
+        "projectId": int,
+    }
+}
+```
 
 
 
@@ -34,32 +72,38 @@ description: "Reference for the Leantime Setting JSON-RPC service: every leantim
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `file` | **** |  |
+| `module` | **string** | The label module (ticketlabels&amp;#124;idealabels). |
+| `labelKey` | **int** | The label key within the module&#039;s label set. |
+| `projectId` | **int** | The project the labels belong to. |
 
 
 **Returns:**
-
+The current label name, or an empty string when not found.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": bool
+    "result": string
 }
 ```
 
 
 
 ---
-### `leantime.rpc.Setting.Setting.resetLogo`
+### `leantime.rpc.Setting.Setting.saveProjectLabel`
 
-
+Persist a renamed project label for a given module/label key.
 
 ```json
 {
-    "method": "leantime.rpc.Setting.Setting.resetLogo",
+    "method": "leantime.rpc.Setting.Setting.saveProjectLabel",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
+        "module": string,
+        "labelKey": int,
+        "newLabel": string,
+        "projectId": int,
     }
 }
 ```
@@ -71,6 +115,14 @@ description: "Reference for the Leantime Setting JSON-RPC service: every leantim
 
 
 
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `module` | **string** | The label module (ticketlabels&amp;#124;idealabels). |
+| `labelKey` | **int** | The label key within the module&#039;s label set. |
+| `newLabel` | **string** | The new (already sanitized) label value. |
+| `projectId` | **int** | The project the labels belong to. |
 
 
 **Returns:**
@@ -86,22 +138,20 @@ description: "Reference for the Leantime Setting JSON-RPC service: every leantim
 
 
 ---
-### `leantime.rpc.Setting.Setting.saveSetting`
+### `leantime.rpc.Setting.Setting.getCompanySettings`
 
-
+Build the company settings view model.
 
 ```json
 {
-    "method": "leantime.rpc.Setting.Setting.saveSetting",
+    "method": "leantime.rpc.Setting.Setting.getCompanySettings",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "key": ,
-        "value": ,
+        "logoUrl": string,
     }
 }
 ```
-
 
 
 
@@ -114,139 +164,58 @@ description: "Reference for the Leantime Setting JSON-RPC service: every leantim
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `key` | **** |  |
-| `value` | **** |  |
+| `logoUrl` | **string** | The resolved logo URL from the theme. |
 
 
 **Returns:**
 
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array{companySettings: array<string,mixed>, defaultNotificationTypes: array<int,string>, defaultRelevance: string, pushRelayEnabled: bool, pushRelayContent: string}
+}
+```
+
+
+
+---
+### `leantime.rpc.Setting.Setting.saveCompanySettings`
+
+Persist company settings from a submitted form.
+
+```json
+{
+    "method": "leantime.rpc.Setting.Setting.saveCompanySettings",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "params": array<string,mixed>,
+    }
+}
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `params` | **array<string,mixed>** | The submitted form parameters. |
+
+
+**Returns:**
+True when a settings block was persisted, false when nothing changed.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
     "result": bool
-}
-```
-
-
-
----
-### `leantime.rpc.Setting.Setting.getSetting`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Setting.Setting.getSetting",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "key": ,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `key` | **** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": false|mixed
-}
-```
-
-
-
----
-### `leantime.rpc.Setting.Setting.getSettingsRepo`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Setting.Setting.getSettingsRepo",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": \Leantime\Domain\Setting\Repositories\Setting
-}
-```
-
-
-
----
-### `leantime.rpc.Setting.Setting.setSettingsRepo`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Setting.Setting.setSettingsRepo",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "settingsRepo": \Leantime\Domain\Setting\Repositories\Setting,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": void
 }
 ```
 

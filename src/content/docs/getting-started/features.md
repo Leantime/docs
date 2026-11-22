@@ -237,7 +237,7 @@ Yes. Each user can send their notifications to their own HTTPS address under **M
 
 #### Does Leantime have an API?
 
-Yes, a JSON-RPC API with API keys and personal access tokens. See [Connect to the API](/api/usage/).
+Yes, a JSON-RPC API with API keys and personal access tokens. See [Use the Leantime API](/api/usage/).
 
 #### Can I import from Jira, Trello or Asana?
 

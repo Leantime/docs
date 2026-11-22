@@ -1,377 +1,247 @@
 ---
-title: "Upgrade guide"
-description: "Update self-hosted Leantime safely: back up first, then update the Docker image, the release package or your shared-hosting files, and run the database update."
+title: "Upgrade Leantime"
+description: "Upgrade self-hosted Leantime and run the database update: with Docker, the command line updater or by hand, plus what changed in each version."
 head:
   - tag: title
-    content: "How to update Leantime to a new version"
+    content: "Upgrade Leantime: new version and database update"
+edition: self-hosted
+checked: "3.15"
 glance:
   minutes: 15
   maxMinutes: 45
   level: "Some experience"
   needs:
     - "A fresh backup of your database and files (see [Backup and restore](/installation/backup-restore/))"
-    - "PHP 8.2 or later, for package and shared-hosting installs"
+    - "The version you run now (help menu → **System**)"
   where:
-    - "The [release notes](https://github.com/Leantime/leantime/releases), to check for breaking changes"
-    - "A terminal on your server (on shared hosting: cPanel and FTP)"
-    - "Leantime in your browser, to run the database update if asked and check that everything works"
-  result: "Leantime on the new version, with your projects, settings, files and plugins."
+    - "A terminal on your server (on shared hosting: your control panel's File Manager or FTP)"
+    - "Leantime in your browser, to run the database update"
+  result: "Leantime on the new version, with your data, files and plugins."
 ---
 
-This guide covers how to safely upgrade Leantime across all deployment types, with version-specific notes for known issues.
+This guide is for self-hosted Leantime. Leantime Cloud is upgraded for you.
 
-## Before You Upgrade
+An upgrade has two parts. First you replace Leantime's files with the new version: a new Docker image, the command line updater, or a release package. Then Leantime updates your database. Your projects, files, settings and plugins stay.
 
-**Always backup first.** See the [Backup & Restore Guide](/installation/backup-restore/) for detailed instructions.
+## What should I do before I upgrade?
 
-### Pre-Upgrade Checklist
+1. **Back up your database and files.** Follow [Backup and restore](/installation/backup-restore/). Some database changes can't be undone, so a backup is the only way back.
+2. **Find the version you run now.** In Leantime, open the help menu (the question mark icon at the top right). The version is under **System**, for example **Leantime V3.12.0**.
+3. **Read the notes for every version between yours and the new one.** Start with [What changed between versions?](#what-changed-between-versions) below, then the [release notes](https://github.com/Leantime/leantime/releases).
+4. **Check your plugins.** Leantime skips a plugin that says it doesn't support the new version. The plugin shows **Not compatible** in **My Apps** until you update it. Update Leantime first, then update the plugins. Two kinds of plugin aren't checked, so check them yourself before you upgrade:
+   - plugins you turn on with `LEAN_PLUGINS` in your configuration
+   - plugins that don't say which versions they support. Leantime assumes they work with every 3.x version.
+5. **Pick a quiet time.** After an upgrade, people usually have to sign in again.
 
-1. **Check release notes** at [github.com/Leantime/leantime/releases](https://github.com/Leantime/leantime/releases) for breaking changes
-2. **Backup your database and files:**
+You don't have to upgrade one version at a time. Leantime runs every database change between your version and the new one. Read the notes for all the versions you skip.
+
+## What happens during the database update?
+
+Many new versions change the database: they add tables or columns, or move data into a new shape. Leantime does this in its database update, which runs after you replace the files.
+
+- Until the update runs, Leantime shows the **Update Database** page instead of any other page, and scheduled jobs wait. Run the update straight after you replace the files.
+- You start it with **Update Now!** in the browser, or `php bin/leantime db:migrate` in the terminal. Both do the same thing.
+- It can take a few minutes on a large database. Don't stop it or close the server while it runs.
+- It can't be undone. To go back, you restore the backup you made before the upgrade.
+- Versions without database changes skip this step: Leantime opens as usual. [What changed between versions?](#what-changed-between-versions) says which versions have database changes.
+
+## How do I upgrade with Docker?
+
+These steps are for the [Docker Compose setup](/installation/docker/). Your data is in Docker volumes, so it stays when the container is replaced.
+
+1. Go to the folder with your `docker-compose.yml` and `.env` files.
+2. Choose the version. The image is `leantime/leantime:${LEAN_VERSION:-latest}`:
+   - To get a specific version, set it in `.env`, for example `LEAN_VERSION=3.15.3`.
+   - Without `LEAN_VERSION`, Docker uses `latest`.
+3. Download the new image and replace the container:
+
    ```bash
-   mysqldump -u leantime -p leantime | gzip > pre_upgrade_$(date +%Y%m%d).sql.gz
-   tar -czvf pre_upgrade_files.tar.gz config/.env userfiles/ app/Plugins/
+   docker compose pull
+   docker compose up -d
    ```
-3. **Note your current version** (found in Company Settings → Account or `composer.json`)
-4. **Disable all plugins** via Settings → Plugins before major version upgrades
-5. **Check PHP version** — Leantime 3.2 and later require PHP 8.2+ (3.0 and 3.1 required PHP 8.1). Run `php -v` to check.
 
-## Upgrade Methods
+4. Open Leantime in your browser. If the new version has database changes, you see **Update Database**. Select **Update Now!**
 
-### Docker
+   ![The Update Database page with the Update Now! button](/_images/installation/update-database.webp)
 
-Docker upgrades are the simplest approach.
+5. Sign in again.
 
-**Using docker-compose (recommended):**
+You can also run the database update from the terminal instead of the browser:
 
 ```bash
-cd /path/to/leantime
-
-# Pull latest image
-docker-compose pull
-
-# Recreate containers
-docker-compose up -d
-
-# Run migrations (usually automatic, but run if prompted)
-docker exec -it leantime php ./bin/leantime db:migrate
+docker compose exec leantime php bin/leantime db:migrate
 ```
 
-**Using docker run:**
+:::tip
+Set `LEAN_VERSION` to a version number instead of using `latest`. Then you choose when to upgrade, and moving back to the old version is one change in `.env`.
+:::
 
-```bash
-# Pull latest image
-docker pull leantime/leantime:latest
+If you started Leantime with `docker run`, stop and remove the container, then run the same `docker run` command with the new image tag. Keep the same volumes and environment settings.
 
-# Stop and remove old container
-docker stop leantime
-docker rm leantime
+Don't use the command line updater (`system:update`) in Docker. When the container is replaced, the files from the image come back.
 
-# Start new container with same volumes
-docker run -d --name leantime \
-  -v leantime_userfiles:/var/www/html/userfiles \
-  -v leantime_plugins:/var/www/html/app/Plugins \
-  --env-file .env \
-  leantime/leantime:latest
-```
+## How do I upgrade with the command line updater?
 
-After the container starts, Leantime will automatically run database migrations on first access.
-
-### Package Installation (Apache/Nginx)
-
-1. **Download the new release:**
-   ```bash
-   cd /tmp
-   wget https://github.com/Leantime/leantime/releases/latest/download/Leantime-v3.x.x.zip
-   unzip Leantime-v3.x.x.zip
-   ```
-
-2. **Stop the web server:**
-   ```bash
-   sudo systemctl stop apache2  # or nginx
-   ```
-
-3. **Replace application files:**
-   ```bash
-   # Backup current installation
-   sudo mv /var/www/leantime /var/www/leantime.old
-   
-   # Move new version into place
-   sudo mv /tmp/leantime /var/www/leantime
-   
-   # Restore your config and files
-   sudo cp /var/www/leantime.old/config/.env /var/www/leantime/config/
-   sudo cp -r /var/www/leantime.old/userfiles/* /var/www/leantime/userfiles/
-   sudo cp -r /var/www/leantime.old/app/Plugins/* /var/www/leantime/app/Plugins/
-   ```
-
-4. **Fix permissions:**
-   ```bash
-   sudo chown -R www-data:www-data /var/www/leantime
-   sudo chmod -R 755 /var/www/leantime
-   sudo chmod -R 775 /var/www/leantime/userfiles
-   sudo chmod -R 775 /var/www/leantime/storage
-   ```
-
-5. **Run migrations and clear cache** with the [Leantime CLI](/development/commandline/):
-   ```bash
-   cd /var/www/leantime
-   php ./bin/leantime db:migrate
-   php ./bin/leantime cache:clear
-   ```
-
-6. **Restart the web server:**
-   ```bash
-   sudo systemctl start apache2
-   ```
-
-### CLI Update Command
-
-Leantime includes a built-in update command:
+On a server where you installed the release package, Leantime can upgrade itself. Run the updater as the user your web server runs as, so the new files have the right owner:
 
 ```bash
 cd /var/www/leantime
-sudo -u www-data php ./bin/leantime system:update
+sudo -u www-data php bin/leantime system:update
 ```
 
-This downloads and applies the latest version automatically. Always run as the web server user to avoid permission issues.
+The updater:
 
-### Shared Hosting (FTP/cPanel)
+1. Checks GitHub for the latest version. It always installs the latest release; you can't choose a version.
+2. Lists your enabled plugins that don't support the new version, and asks if you want to continue.
+3. Backs up the database with `mysqldump` to the folder in `LEAN_DB_BACKUP_PATH` (`backupdb/` in the sample configuration).
+4. Downloads the release, turns your plugins off and copies the new files over the old ones.
+5. Clears the caches and signs everyone out.
+6. Turns your plugins back on. A plugin that doesn't support the new version stays off until you update it.
 
-1. **Download the release** from [github.com/Leantime/leantime/releases](https://github.com/Leantime/leantime/releases)
-2. **Extract locally** on your computer
-3. **Backup via cPanel:**
-   - Export database through phpMyAdmin
-   - Download `config/.env`, `userfiles/`, and `app/Plugins/` via File Manager
-4. **Upload new files** via FTP or File Manager, replacing all existing files
-5. **Restore your config:** Upload your backed-up `.env` file to `config/`
-6. **Visit your site** — Leantime will prompt you to run database updates
-
-**Important:** If you've customized `.htaccess`, back it up and restore it after uploading.
-
-## Version-Specific Notes
-
-### Upgrading to 3.6.x
-
-**Important:** Skip v3.6.0 and v3.6.1 — upgrade directly to **v3.6.2 or later**.
-
-Known issues in 3.6.0/3.6.1:
-- Database update redirect loops
-- Missing JavaScript assets causing loading failures
-- Error 500 when opening projects
-
-All fixed in v3.6.2.
-
-**Requirements:** PHP 8.2+ (required since Leantime 3.2) and MySQL 8.0+, MariaDB 10.6+ or PostgreSQL.
-
-### Upgrading to 3.2.x
-
-Version 3.2 introduced major changes to session management and plugin handling.
-
-**Required steps:**
-
-1. **Disable ALL plugins** before upgrading
-2. **Clear the `app/Plugins/` folder** if you encounter errors
-3. **Ensure the `storage/framework/sessions/` folder exists** and is writable:
-   ```bash
-   mkdir -p /var/www/leantime/storage/framework/sessions
-   chown -R www-data:www-data /var/www/leantime/storage
-   chmod -R 775 /var/www/leantime/storage
-   ```
-4. Re-install plugins from the marketplace after upgrade
-
-**Common issues:**
-
-- **Can't login after upgrade:** Session folder missing or has wrong permissions. Create `storage/framework/sessions/` and set permissions.
-- **HTTP 500 errors:** Clear cache with `php ./bin/leantime cache:clear` or manually delete contents of `cache/` folder.
-- **Plugin errors:** Remove all files from `app/Plugins/` and reinstall plugins fresh.
-
-### Upgrading to 3.3.x
-
-Version 3.3 rebuilt the cache system and continued Laravel/Symfony migration.
-
-**Notes:**
-- Check custom plugin event listeners against the latest documentation
-- Clear cache after upgrade: `php ./bin/leantime cache:clear`
-- Session configuration now uses environment files — check your `.env` settings
-
-### Upgrading from 2.x to 3.x
-
-Major version upgrades require extra care.
-
-1. **Backup everything** — database, userfiles, plugins, config
-2. **Disable all plugins** in 2.x before upgrading
-3. **Do a full file replacement** — don't merge files
-4. **Clear all caches:**
-   ```bash
-   rm -rf cache/*
-   rm -rf cache/avatars/*
-   rm -rf cache/views/*
-   ```
-5. **Run database migrations:**
-   ```bash
-   php ./bin/leantime db:migrate
-   ```
-6. **Check folder capitalization** — 3.x uses PSR-4 naming (Plugins, Custom, Core, Domain are capitalized)
-
-**Note:** Configuration moved from `config/configuration.php` to `config/.env` in newer versions. If upgrading from a very old version, you'll need to migrate your settings to the `.env` format.
-
-### Upgrading from very old versions (2.1.x or earlier)
-
-For upgrades spanning multiple major versions:
-
-1. Consider a **fresh install** with database migration rather than in-place upgrade
-2. Export your database from the old version
-3. Install the latest Leantime fresh
-4. Import your database
-5. Run `php ./bin/leantime db:migrate` — this will apply all intermediate migrations
-6. Copy your `userfiles/` directory
-
-## Post-Upgrade Verification
-
-After any upgrade:
-
-1. **Check version** in Settings → About
-2. **Log in** and verify your credentials work
-3. **Check projects and tasks** appear correctly
-4. **Test file uploads** — try uploading and viewing an attachment
-5. **Verify OIDC/LDAP** if configured
-6. **Verify plugins** are working if you use any
-7. **Check the logs** at `storage/logs/leantime-*.log` for errors
-
-## Troubleshooting
-
-### Database Update Redirect Loop
-
-**Symptom:** Redirected to `/install/update`, clicking button just refreshes the page.
-
-**Solutions:**
-1. Upgrade to v3.6.2+ (this was fixed)
-2. Run migration manually: `php ./bin/leantime db:migrate`
-
-### Can't connect to database after upgrade
-
-Your `.env` file may have been overwritten or the format changed.
-
-1. Check that `config/.env` exists and contains your database credentials
-2. Verify the format matches the current version's expectations
-3. Test database connection: `mysql -u leantime -p leantime`
-
-### Login doesn't work after upgrade
-
-Usually a session issue:
+The updater doesn't update the database. When it's done, open Leantime and select **Update Now!**, or run:
 
 ```bash
-# Create session directory
-mkdir -p storage/framework/sessions
-
-# Fix permissions
-chown -R www-data:www-data storage
-chmod -R 775 storage
-
-# Clear cache
-php ./bin/leantime cache:clear
+sudo -u www-data php bin/leantime db:migrate
 ```
 
-### HTTP 500 Internal Server Error
+The updater needs the PHP `zip` extension. If the backup step shows an error, the updater continues without a backup, so make your own backup first.
 
-Check the logs first:
+## How do I upgrade by hand?
+
+Use these steps if you can't use Docker or the updater, for example on shared hosting.
+
+1. Download `Leantime-vX.Y.Z.zip` for the new version from the [releases page](https://github.com/Leantime/leantime/releases).
+2. Unzip it into a new, empty folder. The zip has no folder of its own, so name one:
+
+   ```bash
+   unzip Leantime-v3.15.3.zip -d /var/www/leantime-new
+   ```
+
+3. Stop changes to your data while you copy it. Stop the web server, and pause the [cron job](/installation/configuration/#cron-jobs) that runs Leantime's scheduled jobs. Otherwise a file someone uploads now stays behind in the old folder. On shared hosting, where you can't stop the web server, upgrade when nobody is using Leantime.
+4. Copy these from your current Leantime folder into the new one:
+   - `config/.env` (or `config/configuration.php` on old installs)
+   - `userfiles/`
+   - `public/userfiles/`
+   - `app/Plugins/`
+   - your database backup folder, if it's inside the Leantime folder (`backupdb/` in the sample configuration)
+5. If you changed `public/.htaccess`, make the same change in the new version's file. For example, some shared hosts need `RewriteBase /` (see [Common issues](/installation/common-issues/)). Don't copy the old file over the new one: new versions can change its rules.
+6. Give the new folder to the web server user, and let it write to `storage/`, `userfiles/` and `public/userfiles/`:
+
+   ```bash
+   sudo chown -R www-data:www-data /var/www/leantime-new
+   ```
+
+7. Swap the folders. Keep the old one until you know the upgrade worked:
+
+   ```bash
+   sudo mv /var/www/leantime /var/www/leantime-old
+   sudo mv /var/www/leantime-new /var/www/leantime
+   ```
+
+8. Start the web server. Open Leantime and select **Update Now!**, or run `php bin/leantime db:migrate` in the Leantime folder.
+9. Turn the cron job back on.
+
+On shared hosting, do the same with your control panel's **File Manager** or FTP: upload the new files into a new folder, copy the items from step 4 into it, then rename the folders. See [Shared hosting](/installation/shared-hosting/).
+
+Installed from git? After you pull the new version, run `composer install`, because new versions can add dependencies.
+
+## What changed between versions?
+
+The notes below are the changes that affect an upgrade. Changes for plugin developers are in the [release notes](https://github.com/Leantime/leantime/releases).
+
+### 3.15
+
+- **3.15.1:** Users and API keys that aren't active can't sign in or use the API any more, even with an open session or an existing token. Deleting a client that has projects now also needs permission to delete projects.
+- **3.15.2:** LDAP and OpenID Connect sign-ins are refused for deactivated users and for people who haven't accepted their invite yet, the same as a password sign-in.
+- No database changes.
+
+### 3.14
+
+- **Custom Fields** versions before 1.6.0 don't load. Update Custom Fields in **My Apps**.
+- No database changes.
+
+### 3.13
+
+- **Database update.** Adds the per-project feature switches and custom roles.
+- Leantime runs on Laravel 12. PHP 8.2 is still the minimum. The Docker images use PHP 8.4.
+- **MCP Server plugin:** update to version 2.0. Version 1.x doesn't run on 3.13.
+- The 3.13 releases of Custom Fields, Notes, Programs (PgmPro), Strategy (StrategyPro) and Whiteboards need Leantime 3.13. Update Leantime first, then the plugins.
+
+### 3.12
+
+- **Database update.** Merges duplicate plugin rows that older plugin updates left behind.
+- Leantime checks which versions each plugin supports, and skips plugins that don't support yours. It doesn't check plugins set in `LEAN_PLUGINS`, and it assumes plugins that don't say which versions they support work with every 3.x version.
+- A plugin that causes 5 errors in 10 minutes is turned off, and admins get a notification. Its license stays active.
+
+### 3.10
+
+- **3.10.1:** The server always runs in UTC. `LEAN_DEFAULT_TIMEZONE` is now only the default for users who haven't chosen a timezone. Times saved before this release in another timezone aren't converted and can show shifted.
+- **3.10.2 (security release):** Everyone is signed out once, and password reset links sent before the upgrade stop working.
+  - Set `LEAN_APP_URL` to your public address. If a reverse proxy changes the host name, forms are refused without it.
+  - Leantime now only trusts proxies on private networks. If your proxy or CDN connects from a public address, add it to `LEAN_TRUSTED_PROXIES`.
+  - OpenID Connect sign-ins need a verified email address. For providers that don't verify email, set `LEAN_OIDC_REQUIRE_VERIFIED_EMAIL=false`.
+- **3.10.3:** Password reset and invite emails only use a trusted address. If `LEAN_APP_URL` isn't set, Leantime doesn't send them until an owner or admin signs in. Plugin scheduled jobs (like Recurring Tasks and calendar sync) now run, so the first run after the upgrade can catch up on missed work.
+
+### 3.7
+
+- The text editor changed. Your content stays the same, but custom extensions for the old editor (TinyMCE) don't work any more.
+
+### 3.6
+
+- Skip 3.6.0 and 3.6.1. Upgrade straight to 3.6.2 or later.
+
+### 3.2
+
+- PHP 8.2 or later is required.
+- Turn off all plugins before you upgrade, and make sure `storage/framework/sessions/` exists and the web server can write to it.
+
+### From 2.x to 3.x
+
+- Turn off all plugins in 2.x first.
+- Replace all files with the new version. Don't merge old and new files.
+- Leantime still reads `config/configuration.php`, but new settings only exist in `config/sample.env`. Move your settings to `config/.env` when you can.
+- From 2.1 or older, you can also install the latest version fresh, import your database and copy `userfiles/` across. The database update then runs all the changes in between.
+
+## What if something goes wrong?
+
+**First, look at the log.** It's in `storage/logs/` in the Leantime folder. In Docker, the `logs` volume holds it, or run `docker compose logs leantime`.
+
+**The Update Database page shows "There was a problem updating your database".** Run `php bin/leantime db:migrate` in the Leantime folder (in Docker: `docker compose exec leantime php bin/leantime db:migrate`). It shows the step that failed. In Docker, see also [The update gets stuck on "Update Database"](/installation/docker-troubleshooting/#the-update-gets-stuck-on-update-database).
+
+**A plugin shows Not compatible.** Update it in **My Apps**. Leantime skipped it, so it doesn't stop the rest of Leantime.
+
+**Pages show an error 500.** Check the log, then clear the caches:
 
 ```bash
-# Docker
-docker logs leantime
-
-# Package install
-tail -50 storage/logs/leantime-$(date +%Y-%m-%d).log
+php bin/leantime cache:clearAll
 ```
 
-Common causes:
-- PHP version mismatch (need 8.1+ for 3.6+)
-- Missing PHP extensions
-- Missing session folder
-- Permission issues on `storage/` or `cache/`
-- Plugin conflicts — try removing `app/Plugins/` contents
+On package installs, also check that the server runs PHP 8.2 or later.
 
-### Loading Screen Stuck
+**Forms are refused or you can't sign in after 3.10.2.** Set `LEAN_APP_URL` to the address people use to open Leantime, including `https://`.
 
-**Symptom:** Spinner shows forever, page never loads.
+:::caution[Warning]
+Only use `db:migrate` for database updates. The `migrate:` commands that Leantime's command line also lists come from Laravel, and `migrate:fresh` deletes every table.
+:::
 
-**Solutions:**
-1. Upgrade to v3.6.2+ (fixes missing JS assets)
-2. Hard refresh: Ctrl+Shift+R (Cmd+Shift+R on Mac)
-3. Clear browser cache
+## How do I go back to the old version?
 
-### Styles look broken (no CSS)
+1. **Stop Leantime,** so nobody changes data while you restore it.
+   - **Docker:** `docker compose stop leantime`. The database container keeps running.
+   - **Server:** stop the web server and pause the cron job.
+2. **Put the old files back.**
+   - **Docker:** set `LEAN_VERSION` in `.env` to your old version. Don't start the container yet.
+   - **By hand:** move the old folder (`leantime-old`) back into place.
+   - **Updater:** the updater copies the new files over the old ones, so there's no old folder. Download the zip of your old version from the [releases page](https://github.com/Leantime/leantime/releases). Then follow steps 2 and 4 to 7 of [How do I upgrade by hand?](#how-do-i-upgrade-by-hand): unzip it into a new folder, copy your configuration, files and plugins into it, and swap the folders.
+3. **Restore the database backup** you made before the upgrade. The old version can't use a database that the new version changed. See [Backup and restore](/installation/backup-restore/).
+4. **Start Leantime again.**
+   - **Docker:** `docker compose up -d`.
+   - **Server:** start the web server and turn the cron job back on.
 
-Usually a cache issue:
+## Related
 
-```bash
-php ./bin/leantime cache:clear
-```
-
-Or manually clear browser cache. If using a CDN, purge the CDN cache.
-
-### Plugin conflicts after upgrade
-
-```bash
-# Remove all plugins
-rm -rf app/Plugins/*
-
-# Clear cache
-php ./bin/leantime cache:clear
-```
-
-Then reinstall plugins one at a time from the marketplace.
-
-### Database migration fails
-
-If migration stops partway:
-
-```bash
-# Check current database version
-php ./bin/leantime db:status
-
-# Retry migration
-php ./bin/leantime db:migrate
-```
-
-If still failing, check the specific error in logs and search [GitHub Issues](https://github.com/Leantime/leantime/issues).
-
-## Rolling Back
-
-If an upgrade fails and you need to restore:
-
-1. **Stop web server:**
-   ```bash
-   sudo systemctl stop apache2
-   ```
-
-2. **Restore database:**
-   ```bash
-   gunzip < pre_upgrade_YYYYMMDD.sql.gz | mysql -u leantime -p leantime
-   ```
-
-3. **Restore files:**
-   ```bash
-   sudo rm -rf /var/www/leantime
-   sudo mv /var/www/leantime.old /var/www/leantime
-   # Or extract from your backup
-   ```
-
-4. **For Docker**, change image version in docker-compose.yml:
-   ```yaml
-   image: leantime/leantime:3.5.0  # previous version
-   ```
-   Then run `docker-compose up -d`
-
-5. **Start web server:**
-   ```bash
-   sudo systemctl start apache2
-   ```
-
-## Getting Help
-
-1. Check [Common Problems](/installation/common-issues/)
-2. Search [GitHub Issues](https://github.com/Leantime/leantime/issues)
-3. Ask in [Discord](https://discord.gg/4zMzJtAq9z) #self-hosted
-4. Post on the [Community Forum](https://community.leantime.io)
+- [Backup and restore](/installation/backup-restore/)
+- [Install with Docker](/installation/docker/)
+- [Common issues](/installation/common-issues/)
+- [Plugin licenses and updates](/installation/plugin-licenses/)
+- [Command line](/development/commandline/)

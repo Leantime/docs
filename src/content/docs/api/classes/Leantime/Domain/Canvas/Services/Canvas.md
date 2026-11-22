@@ -3,13 +3,16 @@ title: "Canvas API"
 description: "Reference for the Leantime Canvas JSON-RPC service: every leantime.rpc.Canvas method with its parameters and return values."
 ---
 
+Thin backwards-compatibility shim over the Blueprints service.
+
 `leantime.rpc.Canvas.Canvas.`
+* **Warning:** this class is **deprecated**. This means that this class will likely be removed in a future version.
 
 
 ## Available Methods
 ### `leantime.rpc.Canvas.Canvas.import`
 
-import - Import canvas from XML file
+import - Import canvas from XML file (delegates to Blueprints).
 
 ```json
 {
@@ -30,6 +33,7 @@ import - Import canvas from XML file
 
 
 
+* **Warning:** this method is **deprecated**. This means that this method will likely be removed in a future version.
 
 
 
@@ -38,18 +42,18 @@ import - Import canvas from XML file
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `filename` | **string** | File to import |
-| `canvasName` | **string** |  |
+| `canvasName` | **string** | Legacy canvas type (e.g. &quot;swotcanvas&quot;) or slug |
 | `projectId` | **int** | Project identifier |
-| `authorId` | **int** |  |
+| `authorId` | **int** | Author identifier |
 
 
 **Returns:**
-False if import failed and the id of the newly created canvas otherwise
+False if import failed, otherwise the new canvas id
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": bool|int
+    "result": false|int
 }
 ```
 
@@ -58,7 +62,7 @@ False if import failed and the id of the newly created canvas otherwise
 ---
 ### `leantime.rpc.Canvas.Canvas.getBoardProgress`
 
-getBoardProgress - gets the progress of canvas types. counts items in each box-type and calculates percent done if each box type has at least 1 item.
+getBoardProgress - completion percentage per canvas type (delegates to Blueprints).
 
 ```json
 {
@@ -77,6 +81,7 @@ getBoardProgress - gets the progress of canvas types. counts items in each box-t
 
 
 
+* **Warning:** this method is **deprecated**. This means that this method will likely be removed in a future version.
 
 
 
@@ -103,7 +108,7 @@ List of boards with a progress percentage
 ---
 ### `leantime.rpc.Canvas.Canvas.getLastUpdatedCanvas`
 
-getLastUpdatedCanvas - gets the list of canvas boards ordered by last updated item
+getLastUpdatedCanvas - canvas boards ordered by last updated item (delegates to Blueprints).
 
 ```json
 {
@@ -111,7 +116,7 @@ getLastUpdatedCanvas - gets the list of canvas boards ordered by last updated it
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": string,
+        "projectId": int|null,
         "boards": array,
     }
 }
@@ -122,6 +127,7 @@ getLastUpdatedCanvas - gets the list of canvas boards ordered by last updated it
 
 
 
+* **Warning:** this method is **deprecated**. This means that this method will likely be removed in a future version.
 
 
 
@@ -129,12 +135,12 @@ getLastUpdatedCanvas - gets the list of canvas boards ordered by last updated it
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **string** | projectId (optional) |
+| `projectId` | **int\|null** | projectId (optional) |
 | `boards` | **array** | Array of project board types |
 
 
 **Returns:**
-List of boards with a progress percentage
+List of boards
 ```json
 {
     "jsonrpc": "2.0",

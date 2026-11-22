@@ -17,11 +17,10 @@ description: "Reference for the Leantime Sprints JSON-RPC service: every leantim
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "id": ,
+        "id": int,
     }
 }
 ```
-
 
 
 
@@ -34,7 +33,7 @@ description: "Reference for the Leantime Sprints JSON-RPC service: every leantim
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **** |  |
+| `id` | **int** |  |
 
 
 **Returns:**
@@ -43,7 +42,7 @@ description: "Reference for the Leantime Sprints JSON-RPC service: every leantim
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|\Leantime\Domain\Sprints\Models\Sprints
 }
 ```
 
@@ -60,11 +59,10 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
-
 
 
 
@@ -77,16 +75,16 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** |  |
 
 
 **Returns:**
-
+The selected sprint id, or false when no single sprint is selected
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": int|bool
+    "result": false|int
 }
 ```
 
@@ -103,11 +101,10 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
-
 
 
 
@@ -120,7 +117,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** |  |
 
 
 **Returns:**
@@ -129,7 +126,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|\Leantime\Domain\Sprints\Models\Sprints
 }
 ```
 
@@ -138,7 +135,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 ---
 ### `leantime.rpc.Sprints.Sprints.getAllSprints`
 
-
+All sprints of a project.
 
 ```json
 {
@@ -146,11 +143,10 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int|string|null,
     }
 }
 ```
-
 
 
 
@@ -163,7 +159,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int\|string\|null** | The project id, or null for the session project. |
 
 
 **Returns:**
@@ -172,7 +168,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array
+    "result": array<int,\Leantime\Domain\Sprints\Models\Sprints>
 }
 ```
 
@@ -189,11 +185,10 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "projectId": ,
+        "projectId": int,
     }
 }
 ```
-
 
 
 
@@ -206,7 +201,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `projectId` | **** |  |
+| `projectId` | **int** |  |
 
 
 **Returns:**
@@ -215,7 +210,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|array
 }
 ```
 
@@ -232,11 +227,10 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "params": ,
+        "params": mixed,
     }
 }
 ```
-
 
 
 
@@ -249,7 +243,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **** |  |
+| `params` | **mixed** |  |
 
 
 **Returns:**
@@ -258,7 +252,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": false|object
+    "result": int|false
 }
 ```
 
@@ -275,11 +269,10 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "params": ,
+        "params": mixed,
     }
 }
 ```
-
 
 
 
@@ -292,7 +285,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `params` | **** |  |
+| `params` | **mixed** |  |
 
 
 **Returns:**
@@ -301,7 +294,49 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": false|object
+    "result": \Leantime\Domain\Sprints\Models\Sprints|false
+}
+```
+
+
+
+---
+### `leantime.rpc.Sprints.Sprints.deleteSprint`
+
+deleteSprint - deletes a sprint and clears the current-sprint session value.
+
+```json
+{
+    "method": "leantime.rpc.Sprints.Sprints.deleteSprint",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "id": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | Sprint id to delete. |
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": void
 }
 ```
 
@@ -310,7 +345,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 ---
 ### `leantime.rpc.Sprints.Sprints.getSprintBurndown`
 
-
+Burndown chart data for a sprint.
 
 ```json
 {
@@ -318,11 +353,10 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "sprint": ,
+        "sprint": \Leantime\Domain\Sprints\Models\Sprints,
     }
 }
 ```
-
 
 
 
@@ -335,16 +369,16 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `sprint` | **** |  |
+| `sprint` | **\Leantime\Domain\Sprints\Models\Sprints** | The sprint (only its id is used). |
 
 
 **Returns:**
-
+The burndown rows, or false when the sprint does not exist.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|array
 }
 ```
 
@@ -361,11 +395,10 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "project": ,
+        "project": mixed,
     }
 }
 ```
-
 
 
 
@@ -378,7 +411,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `project` | **** |  |
+| `project` | **mixed** |  |
 
 
 **Returns:**
@@ -387,7 +420,7 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|array
 }
 ```
 

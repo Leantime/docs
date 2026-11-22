@@ -22,7 +22,11 @@ The words that come up when you install and run Leantime, in plain language. Kno
 
 **HTTPS** and **TLS certificate.** HTTPS encrypts the connection between browser and server. It needs a certificate for your domain, which tools like Let's Encrypt or Caddy get for free.
 
-**Reverse proxy.** A web server (Nginx, Caddy, Traefik, or a NAS's built-in one) that receives visitors on port 443 with HTTPS and passes them on to Leantime. Say "Leantime runs behind a reverse proxy" when you ask for help.
+**Reverse proxy.** A web server (Nginx, Caddy, Traefik, or a NAS's built-in one) that receives visitors on port 443 with HTTPS and passes them on to Leantime. Say "Leantime runs behind a reverse proxy" when you ask for help. See [Run Leantime behind a reverse proxy](/installation/reverse-proxy/).
+
+**Forwarded headers.** Notes a reverse proxy adds to each request it passes on: `X-Forwarded-For` (the visitor's IP address), `X-Forwarded-Proto` (`https`) and `X-Forwarded-Host` (the domain they typed). Leantime only believes them from a **trusted proxy**.
+
+**Trusted proxy.** A proxy whose forwarded headers Leantime believes. By default, that's any proxy on a private network. `LEAN_TRUSTED_PROXIES` changes the list, for example to add Cloudflare.
 
 **Port.** A numbered door on a server. Web traffic uses 80 (http) and 443 (https). The Leantime container listens on 8080.
 
@@ -43,6 +47,8 @@ The words that come up when you install and run Leantime, in plain language. Kno
 **Recreate (a container).** Delete the container and start a new one from the image, which applies new settings. A plain restart keeps the old settings.
 
 **Logs.** The messages an app writes while it runs. `docker compose logs leantime` shows the container's; Leantime's own are in `storage/logs/`.
+
+**Docker socket.** The connection Docker is controlled through, `/var/run/docker.sock`. A container that gets the socket, like Traefik, can control Docker and the server.
 
 **Health check.** A test Docker runs regularly to see if the app answers. A container that fails it shows as **unhealthy**.
 
