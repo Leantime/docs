@@ -772,5 +772,20 @@
     "description": "Change your Leantime profile, photo, password and two-factor authentication, your language and time zone, and the theme, font and colors you see.",
     "searchTitle": "Leantime account settings: password, 2FA, language, theme",
     "checked": "3.15"
+  },
+  "installation/security-checklist.md": {
+    "title": "Secure your Leantime server",
+    "description": "A security checklist for self-hosted Leantime: your own secret key, database passwords, HTTPS, sign-in limits, two-factor, updates and backups.",
+    "searchTitle": "Leantime security checklist for self-hosted servers",
+    "edition": "self-hosted",
+    "glance": {
+      "minutes": 30,
+      "level": "Some experience",
+      "needs": [
+        "Leantime installed on your own server or in Docker",
+        "Access to its config/.env file or Docker settings"
+      ]
+    },
+    "checked": "3.15"
   }
 }

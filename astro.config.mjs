@@ -368,6 +368,7 @@ export default defineConfig({
 								{ label: 'Mobile app', slug: 'installation/mobile-app-setup' },
 							],
 						},
+						...menuEntries(['installation/security-checklist|Secure your server']),
 						{ label: 'Backup & Restore', slug: 'installation/backup-restore' },
 						{ label: 'Move to a new server', slug: 'installation/move-server' },
 						{ label: 'Upgrade Leantime', slug: 'installation/upgrade-guide' },
