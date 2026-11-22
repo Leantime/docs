@@ -44,7 +44,7 @@
 
 - [Development/Local](installation/development.md)
 - [Contributing](development/contributing.md)
-- [Connect to API](api/usage.md)
+- [Use the API](api/usage.md)
 - [Using the Leantime CLI](development/commandline.md)
 - [Plugin Development](development/plugin-development.md)
 
