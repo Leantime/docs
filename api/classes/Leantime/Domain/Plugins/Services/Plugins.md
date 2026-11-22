@@ -14,7 +14,7 @@ footer: false
 ## Available Methods
 ### `leantime.rpc.Plugins.Plugins.getAllPlugins`
 
-
+Retrieves all plugins, optionally filtering only the enabled ones.
 
 ```json
 {
@@ -39,16 +39,16 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `enabledOnly` | **bool** |  |
+| `enabledOnly` | **bool** | If set to true, only enabled plugins will be returned. |
 
 
 **Returns:**
-
+Returns an array of all plugins or false if an error occurs.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|false
+    "result": false|\Leantime\Domain\Plugins\Models\InstalledPlugin[]
 }
 ```
 
@@ -65,7 +65,7 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "pluginFolder": ,
+        "pluginFolder": mixed,
     }
 }
 ```
@@ -82,7 +82,7 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `pluginFolder` | **** |  |
+| `pluginFolder` | **mixed** |  |
 
 
 **Returns:**
@@ -100,7 +100,7 @@ footer: false
 ---
 ### `leantime.rpc.Plugins.Plugins.getEnabledPlugins`
 
-
+Returns the enabled plugins (database plus system plugins from config), cached.
 
 ```json
 {
@@ -108,17 +108,30 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
+        "failOnDatabaseError": bool,
     }
 }
 ```
 
 
+Only plugins that support this Leantime version are returned: everything that loads plugin
+code (register files, routes, views, the console) goes through here, so an incompatible
+plugin stays enabled in the database but is not loaded. Administrators are told once.
+
+A failing plugin-table query is never cached as "no plugins": the next call retries. Web
+requests keep running without user plugins in that case; callers that must not silently run
+without them (the console scheduler) pass $failOnDatabaseError to get the exception instead.
 
 
 
 
 
 
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `failOnDatabaseError` | **bool** | Rethrow a failing plugin-table query instead of falling back. |
 
 
 **Returns:**
@@ -180,7 +193,7 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "pluginFolder": ,
+        "pluginFolder": mixed,
     }
 }
 ```
@@ -197,7 +210,7 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `pluginFolder` | **** |  |
+| `pluginFolder` | **mixed** |  |
 
 
 **Returns:**
@@ -385,18 +398,63 @@ footer: false
 
 
 ---
-### `leantime.rpc.Plugins.Plugins.getMarketplacePlugins`
+### `leantime.rpc.Plugins.Plugins.buildMarketplacePluginFromRequest`
 
-
+Builds a MarketplacePlugin from raw request properties.
 
 ```json
 {
-    "method": "leantime.rpc.Plugins.Plugins.getMarketplacePlugins",
+    "method": "leantime.rpc.Plugins.Plugins.buildMarketplacePluginFromRequest",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "page": int,
-        "query": string,
+        "pluginProps": array<string,mixed>,
+    }
+}
+```
+
+
+Request data arrives with every field encoded as a string. Any field whose
+value is a valid JSON string (arrays/objects) is decoded back into its native
+structure before being assigned to the model. The 'version' field is treated
+separately by the caller and is therefore expected to already be removed.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `pluginProps` | **array<string,mixed>** | Raw plugin properties from the request (without &#039;version&#039;). |
+
+
+**Returns:**
+The hydrated plugin model.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": \Leantime\Domain\Plugins\Models\MarketplacePlugin
+}
+```
+
+
+
+---
+### `leantime.rpc.Plugins.Plugins.isBundle`
+
+Determines whether a marketplace plugin belongs to the "bundles" category.
+
+```json
+{
+    "method": "leantime.rpc.Plugins.Plugins.isBundle",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "plugin": \Leantime\Domain\Plugins\Models\MarketplacePlugin,
     }
 }
 ```
@@ -413,17 +471,63 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `page` | **int** |  |
-| `query` | **string** |  |
+| `plugin` | **\Leantime\Domain\Plugins\Models\MarketplacePlugin** | The plugin to inspect. |
 
 
 **Returns:**
-
+True if the plugin is part of the bundles category.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": \Leantime\Domain\Plugins\Models\MarketplacePlugin[]
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Plugins.Plugins.parseMarketplaceError`
+
+Parses a marketplace download/install RequestException into a clean,
+user-facing error message.
+
+```json
+{
+    "method": "leantime.rpc.Plugins.Plugins.parseMarketplaceError",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "exception": \Illuminate\Http\Client\RequestException,
+    }
+}
+```
+
+
+The marketplace answers with a JSON body ({"error": "..."}). It is read from the response
+itself: the exception message carries only the first 120 characters of the body, which cut
+the longer marketplace messages (license key not found, user limit, ...) into invalid JSON.
+Falls back to a generic installation error.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `exception` | **\Illuminate\Http\Client\RequestException** | The exception thrown while installing. |
+
+
+**Returns:**
+A clean error message safe to show to the user.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": string
 }
 ```
 
@@ -432,7 +536,7 @@ footer: false
 ---
 ### `leantime.rpc.Plugins.Plugins.getMarketplacePlugin`
 
-
+Retrieves a marketplace plugin's details by its identifier.
 
 ```json
 {
@@ -457,34 +561,35 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `identifier` | **string** |  |
+| `identifier` | **string** | The unique identifier of the marketplace plugin. |
 
 
 **Returns:**
-
+Returns a MarketplacePlugin instance if found, or false if the plugin could not be retrieved.
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": \Leantime\Domain\Plugins\Models\MarketplacePlugin[]
+    "result": \Leantime\Domain\Plugins\Models\MarketplacePlugin|false
 }
 ```
 
 
 
 ---
-### `leantime.rpc.Plugins.Plugins.installMarketplacePlugin`
+### `leantime.rpc.Plugins.Plugins.updatePlugin`
 
-
+Updates an installed marketplace plugin to its newest version that supports this Leantime
+version, with the license key it was installed with. A version that doesn't load is rolled
+back (the error says so).
 
 ```json
 {
-    "method": "leantime.rpc.Plugins.Plugins.installMarketplacePlugin",
+    "method": "leantime.rpc.Plugins.Plugins.updatePlugin",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "plugin": \Leantime\Domain\Plugins\Models\MarketplacePlugin,
-        "version": string,
+        "id": int,
     }
 }
 ```
@@ -501,8 +606,93 @@ footer: false
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `plugin` | **\Leantime\Domain\Plugins\Models\MarketplacePlugin** |  |
-| `version` | **string** |  |
+| `id` | **int** | The plugin id. |
+
+
+**Returns:**
+False when there is nothing to update to.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Plugins.Plugins.checkForUpdates`
+
+Asks the marketplace for a newer version of every installed marketplace plugin, keeps the
+result for My Apps, and tells the administrators about each new version once.
+
+```json
+{
+    "method": "leantime.rpc.Plugins.Plugins.checkForUpdates",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+    }
+}
+```
+
+
+The marketplace lists only versions whose range includes this Leantime version (it gets
+`lt-v`); the range is checked here again so a listing mistake can't offer an incompatible one.
+A plugin the marketplace can't answer for (outage, error) is not reported as up to date: it
+keeps what the previous check found and is listed in `failed` (logged).
+
+
+
+
+
+
+
+**Returns:**
+
+updates: plugin folder => version; failed: plugin folders that could not be checked.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array{updates: array<string,string>, failed: array<int,string>}
+}
+```
+
+
+
+---
+### `leantime.rpc.Plugins.Plugins.setAutoUpdate`
+
+Turns automatic plugin updates on or off (off by default). When on, the daily update check
+installs new minor and patch releases of marketplace plugins; major releases wait for an
+administrator.
+
+```json
+{
+    "method": "leantime.rpc.Plugins.Plugins.setAutoUpdate",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "enabled": bool,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `enabled` | **bool** |  |
 
 
 **Returns:**
@@ -512,6 +702,128 @@ footer: false
     "jsonrpc": "2.0",
     "id": 1,
     "result": void
+}
+```
+
+
+
+---
+### `leantime.rpc.Plugins.Plugins.isAutoUpdateEnabled`
+
+Whether automatic plugin updates are on (off unless an administrator turned them on).
+
+```json
+{
+    "method": "leantime.rpc.Plugins.Plugins.isAutoUpdateEnabled",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Plugins.Plugins.performPluginAction`
+
+Runs a single plugin lifecycle action (install, enable, disable, remove) and
+returns the notification descriptor describing the outcome.
+
+```json
+{
+    "method": "leantime.rpc.Plugins.Plugins.performPluginAction",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "action": string,
+        "id": mixed,
+    }
+}
+```
+
+
+The returned array is a [messageKey, type] pair where messageKey is a language
+key and type is the notification severity ('success' or 'error'). This keeps the
+dynamic dispatch and notification-key assembly out of the controller.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `action` | **string** | One of: install, enable, disable, remove, update. |
+| `id` | **mixed** | The plugin identifier (folder name for install, numeric id otherwise). |
+
+
+**Returns:**
+A [messageKey, type] notification descriptor.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array{0: string, 1: string}
+}
+```
+
+
+
+---
+### `leantime.rpc.Plugins.Plugins.getAggregatedPluginCss`
+
+Aggregates the CSS contributed by enabled plugins into a single payload.
+
+```json
+{
+    "method": "leantime.rpc.Plugins.Plugins.getAggregatedPluginCss",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+    }
+}
+```
+
+
+Runs the 'pluginCss' filter to collect the list of plugin CSS files, keeps only
+the files that actually exist under APP_ROOT/plugins, reads their contents and
+concatenates them into one string.
+
+
+
+
+
+
+
+**Returns:**
+The combined CSS contents of all registered, existing plugin files.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": string
 }
 ```
 

@@ -22,10 +22,6 @@ __construct - get database connection
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "db": \Leantime\Core\Db\Db,
-        "notificationsRepo": \Leantime\Domain\Notifications\Repositories\Notifications,
-        "userRepository": \Leantime\Domain\Users\Repositories\Users,
-        "language": \Leantime\Core\Language,
         "settingService": \Leantime\Domain\Setting\Services\Setting,
     }
 }
@@ -43,10 +39,6 @@ __construct - get database connection
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `db` | **\Leantime\Core\Db\Db** |  |
-| `notificationsRepo` | **\Leantime\Domain\Notifications\Repositories\Notifications** |  |
-| `userRepository` | **\Leantime\Domain\Users\Repositories\Users** |  |
-| `language` | **\Leantime\Core\Language** |  |
 | `settingService` | **\Leantime\Domain\Setting\Services\Setting** |  |
 
 

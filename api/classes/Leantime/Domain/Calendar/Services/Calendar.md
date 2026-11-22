@@ -5,9 +5,14 @@ footer: false
 
 # Calendar
 
+Calendar service: personal events, external-calendar subscriptions, and the public iCal feed.
 
-
-
+Authorization: the @api methods carry a dispatch #[RequiresPermission(calendar.*)] capability gate
+(project-scoped, session project — readonly+ to view, editor+ to create/edit/delete). OWNERSHIP is
+separate and user-based: reads that aren't already userId-scoped by the repository self-authorize
+in-body (row.userId === currentUserId() OR can(MANAGE)); the userId PARAMS on the external-calendar
+reads are ignored in favor of the session user (closing the RPC param-spoof). The iCal feed methods
+are NOT @api — they are served by the public, hash-authenticated /calendar/ical route.
 `leantime.rpc.Calendar.Calendar.`
 
 
@@ -57,7 +62,7 @@ Returns true if the Google Calendar was successfully deleted, false otherwise.
 ---
 ### `leantime.rpc.Calendar.Calendar.patch`
 
-Patches calendar event
+Patches calendar event.
 
 ```json
 {
@@ -65,8 +70,8 @@ Patches calendar event
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "id": mixed,
-        "params": mixed,
+        "id": int,
+        "params": array,
     }
 }
 ```
@@ -83,51 +88,8 @@ Patches calendar event
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **mixed** |  |
-| `params` | **mixed** |  |
-
-
-**Returns:**
-true on success, false on failure
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": bool
-}
-```
-
-
-
----
-### `leantime.rpc.Calendar.Calendar.userIsAllowedToUpdate`
-
-Checks if user is allowed to make changes to event
-
-```json
-{
-    "method": "leantime.rpc.Calendar.Calendar.userIsAllowedToUpdate",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "eventId": mixed,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `eventId` | **mixed** |  |
+| `id` | **int** | Id of the event to update (only events; tickets are updated via the ticket API). |
+| `params` | **array** | Key/value array of columns to update (limited to PATCHABLE_EVENT_COLUMNS). |
 
 
 **Returns:**
@@ -188,7 +150,9 @@ returns the id on success, false on failure
 ---
 ### `leantime.rpc.Calendar.Calendar.getEvent`
 
-
+Returns a single event, fail-closed to its owner. The repository fetches by bare id, so
+without this check any user could read any event by id over RPC; calendar.manage (admin+)
+is the cross-user override. Soft-denies (returns false) for a foreign event.
 
 ```json
 {
@@ -318,7 +282,9 @@ returns the id on success, false on failure
 ---
 ### `leantime.rpc.Calendar.Calendar.getExternalCalendar`
 
-
+Returns one external-calendar subscription, scoped to the SESSION user. The $userId argument
+is retained for signature/RPC compatibility but IGNORED for authorization — otherwise an RPC
+caller could read another user's subscription by passing a foreign id.
 
 ```json
 {
@@ -361,9 +327,61 @@ returns the id on success, false on failure
 
 
 ---
+### `leantime.rpc.Calendar.Calendar.getCachedExternalCalendarContent`
+
+Returns the raw iCal content for an external calendar, using a
+session-based cache with a 30 minute time to live.
+
+```json
+{
+    "method": "leantime.rpc.Calendar.Calendar.getCachedExternalCalendarContent",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "calId": int,
+        "userId": int,
+    }
+}
+```
+
+
+Looks up the cached content for the given calendar in the session and
+returns it when still fresh. Otherwise it resolves the external
+calendar's URL, fetches its content (with SSRF protection via
+{@see \Leantime\Domain\Calendar\Services\loadIcalUrl()}), stores it in the session cache and returns it.
+Any fetch failure (or a body that is not iCal) is logged and resolves to an
+empty calendar, which the browser's iCal parser accepts.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `calId` | **int** | The external calendar id. |
+| `userId` | **int** | Retained for signature compatibility; the underlying read is pinned to<br />the session user via getExternalCalendar(). |
+
+
+**Returns:**
+The iCal content, or an empty calendar when unavailable.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": string
+}
+```
+
+
+
+---
 ### `leantime.rpc.Calendar.Calendar.editExternalCalendar`
 
-
+Edits an external-calendar subscription. The repository scopes the update to the session
+user (WHERE userId = session), so a foreign id is a no-op.
 
 ```json
 {
@@ -406,18 +424,17 @@ returns the id on success, false on failure
 
 
 ---
-### `leantime.rpc.Calendar.Calendar.getIcalByHash`
+### `leantime.rpc.Calendar.Calendar.getMyExternalCalendars`
 
-Retrieves iCal calendar by user hash and calendar hash.
+Retrieves all external calendars for a given user.
 
 ```json
 {
-    "method": "leantime.rpc.Calendar.Calendar.getIcalByHash",
+    "method": "leantime.rpc.Calendar.Calendar.getMyExternalCalendars",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userHash": string,
-        "calHash": string,
+        "userId": int,
     }
 }
 ```
@@ -434,44 +451,33 @@ Retrieves iCal calendar by user hash and calendar hash.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userHash` | **string** | The hash of the user. |
-| `calHash` | **string** | The hash of the calendar. |
+| `userId` | **int** | Retained for signature/RPC compatibility but IGNORED — the list is<br />always scoped to the SESSION user, closing the cross-user param spoof. |
 
 
 **Returns:**
-The iCal calendar generated from the calendar events.
+The external calendars or false if none found
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": \Spatie\IcalendarGenerator\Components\Calendar
+    "result": array|false
 }
 ```
 
 
 
 ---
-### `leantime.rpc.Calendar.Calendar.mapEventData`
+### `leantime.rpc.Calendar.Calendar.addExternalCalendarUrl`
 
-Generates an event array for fullcalendar.io frontend.
+Adds a new external calendar URL.
 
 ```json
 {
-    "method": "leantime.rpc.Calendar.Calendar.mapEventData",
+    "method": "leantime.rpc.Calendar.Calendar.addExternalCalendarUrl",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "title": string,
-        "description": string,
-        "allDay": bool,
-        "id": int,
-        "projectId": int,
-        "eventType": string,
-        "dateContext": string,
-        "backgroundColor": string,
-        "borderColor": string,
-        "dateFrom": int|null,
-        "dateTo": int|null,
+        "values": array,
     }
 }
 ```
@@ -488,17 +494,7 @@ Generates an event array for fullcalendar.io frontend.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `title` | **string** |  |
-| `description` | **string** |  |
-| `allDay` | **bool** |  |
-| `id` | **int** |  |
-| `projectId` | **int** |  |
-| `eventType` | **string** |  |
-| `dateContext` | **string** |  |
-| `backgroundColor` | **string** |  |
-| `borderColor` | **string** |  |
-| `dateFrom` | **int|null** |  |
-| `dateTo` | **int|null** |  |
+| `values` | **array** | The calendar values (url, name, colorClass) |
 
 
 **Returns:**
@@ -507,7 +503,139 @@ Generates an event array for fullcalendar.io frontend.
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array
+    "result": void
+}
+```
+
+
+
+---
+### `leantime.rpc.Calendar.Calendar.getMyCalendar`
+
+Session-scoped calendar feed (personal events + ticket due/edit events) for the
+authenticated user. Mobile's calendar tab calls this; the optional from/until window lets
+it fetch just the visible month.
+
+```json
+{
+    "method": "leantime.rpc.Calendar.Calendar.getMyCalendar",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "from": null|string|\Carbon\CarbonImmutable,
+        "until": null|string|\Carbon\CarbonImmutable,
+    }
+}
+```
+
+
+getCalendar() itself is internal-only — it trusts an arbitrary $userId — so this wrapper is
+the API entry point and pins the read to the session user (no spoofable param).
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `from` | **null|string|\Carbon\CarbonImmutable** | Optional ISO start of the window |
+| `until` | **null|string|\Carbon\CarbonImmutable** | Optional ISO end of the window |
+
+
+**Returns:**
+FullCalendar-shaped event arrays
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array<int,array<string,mixed>>
+}
+```
+
+
+
+---
+### `leantime.rpc.Calendar.Calendar.getICalUrl`
+
+The authenticated user's personal iCal subscription URL (hash-authenticated feed). Already
+session-scoped — it takes no userId. Mobile surfaces this so the user can subscribe their
+device calendar.
+
+```json
+{
+    "method": "leantime.rpc.Calendar.Calendar.getICalUrl",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+**Returns:**
+The full iCal feed URL
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": string
+}
+```
+
+
+
+---
+### `leantime.rpc.Calendar.Calendar.getExternalCalendarEvents`
+
+External-calendar events (from the user's subscribed iCal feeds) for the authenticated user.
+
+```json
+{
+    "method": "leantime.rpc.Calendar.Calendar.getExternalCalendarEvents",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "from": null|string|\Carbon\CarbonImmutable,
+        "until": null|string|\Carbon\CarbonImmutable,
+    }
+}
+```
+
+
+Already session-scoped — it keys off session('userdata.id') with no spoofable param. Mobile
+merges these into its calendar view.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `from` | **null|string|\Carbon\CarbonImmutable** | Optional ISO start of the window |
+| `until` | **null|string|\Carbon\CarbonImmutable** | Optional ISO end of the window |
+
+
+**Returns:**
+Array of external calendar events
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array<int,array<string,mixed>>
 }
 ```
 

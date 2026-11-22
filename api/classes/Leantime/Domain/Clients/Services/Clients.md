@@ -5,59 +5,16 @@ footer: false
 
 # Clients
 
-Class Clients
+Client service - Business logic for client management.
 
 
 `leantime.rpc.Clients.Clients.`
 
 
 ## Available Methods
-### `leantime.rpc.Clients.Clients.getUserClients`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Clients.Clients.getUserClients",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "userId": int,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `userId` | **int** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": array
-}
-```
-
-
-
----
 ### `leantime.rpc.Clients.Clients.getAll`
 
-
+Gets all clients.
 
 ```json
 {
@@ -65,7 +22,7 @@ Class Clients
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "searchparams": array,
+        "searchparams": array|null,
     }
 }
 ```
@@ -82,11 +39,11 @@ Class Clients
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `searchparams` | **array** |  |
+| `searchparams` | **array|null** | Optional search parameters |
 
 
 **Returns:**
-
+List of all clients
 ```json
 {
     "jsonrpc": "2.0",
@@ -100,7 +57,7 @@ Class Clients
 ---
 ### `leantime.rpc.Clients.Clients.patch`
 
-patches the client by key.
+Patches the client by key.
 
 ```json
 {
@@ -127,11 +84,11 @@ patches the client by key.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `id` | **int** | Id of the object to be patched |
-| `params` | **array** | Key=&gt;value array where key represents the object field name and value the value. |
+| `params` | **array** | Key=&gt;value array where key represents the object field name and value the value |
 
 
 **Returns:**
-returns true on success, false on failure
+Returns true on success, false on failure
 ```json
 {
     "jsonrpc": "2.0",
@@ -145,7 +102,7 @@ returns true on success, false on failure
 ---
 ### `leantime.rpc.Clients.Clients.editClient`
 
-updates the client by key.
+Updates an existing client.
 
 ```json
 {
@@ -153,7 +110,7 @@ updates the client by key.
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "values": object|array,
+        "values": array,
     }
 }
 ```
@@ -170,7 +127,7 @@ updates the client by key.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **object|array** | expects the entire object to be updated as object or array |
+| `values` | **array** | Client data including &#039;id&#039; key |
 
 
 **Returns:**
@@ -188,7 +145,7 @@ Returns true on success, false on failure
 ---
 ### `leantime.rpc.Clients.Clients.create`
 
-Creates a new client
+Creates a new client.
 
 ```json
 {
@@ -196,7 +153,7 @@ Creates a new client
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "values": object|array,
+        "values": array,
     }
 }
 ```
@@ -213,7 +170,7 @@ Creates a new client
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `values` | **object|array** | Object or array to be created |
+| `values` | **array** | Client data to create |
 
 
 **Returns:**
@@ -231,7 +188,7 @@ Returns id of new element or false
 ---
 ### `leantime.rpc.Clients.Clients.delete`
 
-Deletes a client
+Deletes a client and its projects.
 
 ```json
 {
@@ -245,7 +202,10 @@ Deletes a client
 ```
 
 
-
+A client whose projects hold to-dos is not deleted. Its projects are deleted through
+{@see \Leantime\Domain\Projects\Services\Projects::deleteProject()}, so they are cleaned up exactly like a project deleted
+from its settings (team memberships removed, cached project access refreshed). Deleting
+projects needs projects.delete as well; without it nothing is deleted.
 
 
 
@@ -256,11 +216,11 @@ Deletes a client
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int** | Id of the object to be deleted |
+| `id` | **int** | Id of the client to be deleted |
 
 
 **Returns:**
-Returns id of new element or false
+Returns true on success, false when the client has to-dos or a project could not be deleted
 ```json
 {
     "jsonrpc": "2.0",
@@ -274,7 +234,7 @@ Returns id of new element or false
 ---
 ### `leantime.rpc.Clients.Clients.get`
 
-Gets 1 specific client by id
+Gets 1 specific client by id.
 
 ```json
 {
@@ -299,16 +259,365 @@ Gets 1 specific client by id
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `id` | **int** | Id of the object to be retrieved |
+| `id` | **int** | Id of the client to be retrieved |
 
 
 **Returns:**
-Returns object or array. False on failure or if item cannot be found
+Returns client data or false if not found
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": object|array|false
+    "result": array|false
+}
+```
+
+
+
+---
+### `leantime.rpc.Clients.Clients.isClient`
+
+Checks if a client with the same name and street already exists.
+
+```json
+{
+    "method": "leantime.rpc.Clients.Clients.isClient",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "values": array,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **array** | Client data with &#039;name&#039; and &#039;street&#039; keys |
+
+
+**Returns:**
+Returns true if client exists
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Clients.Clients.hasTickets`
+
+Checks if a client has any tickets via its projects.
+
+```json
+{
+    "method": "leantime.rpc.Clients.Clients.hasTickets",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "id": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | Client id |
+
+
+**Returns:**
+Returns true if client has tickets
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Clients.Clients.getClientsUsers`
+
+Gets all users assigned to a client.
+
+```json
+{
+    "method": "leantime.rpc.Clients.Clients.getClientsUsers",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "clientId": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `clientId` | **int** | Client id |
+
+
+**Returns:**
+Returns list of users or false
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array|false
+}
+```
+
+
+
+---
+### `leantime.rpc.Clients.Clients.getClientProjects`
+
+Gets projects belonging to a client.
+
+```json
+{
+    "method": "leantime.rpc.Clients.Clients.getClientProjects",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "clientId": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `clientId` | **int** | Client id |
+
+
+**Returns:**
+List of projects for this client
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array
+}
+```
+
+
+
+---
+### `leantime.rpc.Clients.Clients.createClient`
+
+Creates a new client after validating it and checking for duplicates.
+
+```json
+{
+    "method": "leantime.rpc.Clients.Clients.createClient",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "values": array,
+    }
+}
+```
+
+
+Encapsulates the name-required validation and the duplicate-name check
+that previously lived in the controller.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **array** | Client data to create (requires a non-empty &#039;name&#039;) |
+
+
+**Returns:**
+Id of the newly created client
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": int
+}
+```
+
+
+
+---
+### `leantime.rpc.Clients.Clients.updateClient`
+
+Updates an existing client after validating the name is present.
+
+```json
+{
+    "method": "leantime.rpc.Clients.Clients.updateClient",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "values": array,
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `values` | **array** | Client data including &#039;id&#039; key (requires a non-empty &#039;name&#039;) |
+
+
+**Returns:**
+Returns true on success, false on failure
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Clients.Clients.removeUser`
+
+Removes a user from a client by clearing the user's client assignment.
+
+```json
+{
+    "method": "leantime.rpc.Clients.Clients.removeUser",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "clientId": int,
+        "userId": int,
+    }
+}
+```
+
+
+Keeps the Clients controllers within the Clients service surface while the
+underlying mutation lives on the Users repository.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `clientId` | **int** | Client the user should be removed from |
+| `userId` | **int** | User to remove from the client |
+
+
+**Returns:**
+Returns true on success, false on failure
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Clients.Clients.getClientPageData`
+
+Assembles the template data needed to render the client detail page.
+
+```json
+{
+    "method": "leantime.rpc.Clients.Clients.getClientPageData",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "id": int,
+    }
+}
+```
+
+
+Centralizes the shared assignment block previously duplicated across the
+GET and POST handlers of the ShowClient controller.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | **int** | Client id |
+
+
+**Returns:**
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": array{userClients: array|false, comments: array|false, imgExtensions: array<int,string>, clientProjects: array, files: array|false}
 }
 ```
 

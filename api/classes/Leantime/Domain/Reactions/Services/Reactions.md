@@ -5,24 +5,25 @@ footer: false
 
 # Reactions
 
+Reactions service.
 
-
-
+Reactions are keyed by (module, moduleId) with no project column, so every @api entry point
+resolves the reacted-on entity's REAL project server-side (project, ticket, comment, canvas
+item) and requires the caller to be able to view it. Unknown modules fail closed.
 `leantime.rpc.Reactions.Reactions.`
 
 
 ## Available Methods
-### `leantime.rpc.Reactions.Reactions.addReaction`
+### `leantime.rpc.Reactions.Reactions.react`
 
-addReaction - adds a reaction to an entity, checks if a user has already reacted the same way
+Adds a reaction on behalf of the CURRENT (session) user.
 
 ```json
 {
-    "method": "leantime.rpc.Reactions.Reactions.addReaction",
+    "method": "leantime.rpc.Reactions.Reactions.react",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userId": int,
         "module": string,
         "moduleId": int,
         "reaction": string,
@@ -31,7 +32,8 @@ addReaction - adds a reaction to an entity, checks if a user has already reacted
 ```
 
 
-
+JSON-RPC entry point: derives the user from the session rather than
+accepting a userId, so a caller cannot react as another user.
 
 
 
@@ -42,14 +44,61 @@ addReaction - adds a reaction to an entity, checks if a user has already reacted
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int** |  |
-| `module` | **string** |  |
-| `moduleId` | **int** |  |
-| `reaction` | **string** |  |
+| `module` | **string** | The entity module (e.g. &#039;tickets&#039;) |
+| `moduleId` | **int** | The entity id |
+| `reaction` | **string** | The reaction key |
 
 
 **Returns:**
+True if the reaction was added
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
 
+
+
+---
+### `leantime.rpc.Reactions.Reactions.unreact`
+
+Removes a reaction on behalf of the CURRENT (session) user.
+
+```json
+{
+    "method": "leantime.rpc.Reactions.Reactions.unreact",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "module": string,
+        "moduleId": int,
+        "reaction": string,
+    }
+}
+```
+
+
+JSON-RPC entry point: derives the user from the session rather than
+accepting a userId, so a caller cannot remove another user's reaction.
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `module` | **string** | The entity module (e.g. &#039;tickets&#039;) |
+| `moduleId` | **int** | The entity id |
+| `reaction` | **string** | The reaction key |
+
+
+**Returns:**
+True if the reaction was removed
 ```json
 {
     "jsonrpc": "2.0",
@@ -121,7 +170,7 @@ getGroupedEntityReactions - gets all reactions for a given entity grouped and co
 ```
 
 
-
+The caller must be able to view the entity's project; otherwise an empty list.
 
 
 
@@ -142,55 +191,6 @@ returns the array on success or false on failure
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": array|bool
-}
-```
-
-
-
----
-### `leantime.rpc.Reactions.Reactions.getUserReactions`
-
-getMyReactions - gets user reactions. Can be very broad or very targeted
-
-```json
-{
-    "method": "leantime.rpc.Reactions.Reactions.getUserReactions",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "userId": int,
-        "module": string,
-        "moduleId": int|null,
-        "reaction": string,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `userId` | **int** |  |
-| `module` | **string** |  |
-| `moduleId` | **int|null** |  |
-| `reaction` | **string** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
     "result": array|false
 }
 ```
@@ -198,26 +198,25 @@ getMyReactions - gets user reactions. Can be very broad or very targeted
 
 
 ---
-### `leantime.rpc.Reactions.Reactions.removeReaction`
+### `leantime.rpc.Reactions.Reactions.getEntityReactionsWithUsers`
 
-addReaction - adds a reaction to an entity, checks if a user has already reacted the same way
+getEntityReactionsWithUsers - gets all reactions for an entity with user names
 
 ```json
 {
-    "method": "leantime.rpc.Reactions.Reactions.removeReaction",
+    "method": "leantime.rpc.Reactions.Reactions.getEntityReactionsWithUsers",
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "userId": int,
         "module": string,
         "moduleId": int,
-        "reaction": string,
     }
 }
 ```
 
 
-
+The caller must be able to view the entity's project; otherwise an empty list (reactor
+names are not exposed across projects).
 
 
 
@@ -228,19 +227,17 @@ addReaction - adds a reaction to an entity, checks if a user has already reacted
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `userId` | **int** |  |
 | `module` | **string** |  |
 | `moduleId` | **int** |  |
-| `reaction` | **string** |  |
 
 
 **Returns:**
-
+returns array grouped by reaction with user info
 ```json
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": bool
+    "result": array
 }
 ```
 

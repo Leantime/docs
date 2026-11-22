@@ -5,9 +5,12 @@ footer: false
 
 # Messengers
 
+Posts project notifications to the messenger webhooks a project has configured (Slack,
+Mattermost, Zulip, Discord, Telegram).
 
-
-
+Every request goes through {@see \Leantime\Core\Support\OutboundHttpClient}: the webhook URL is checked by the SSRF guard,
+the connection is pinned to the validated address (no DNS re-resolution), and connect/total
+timeouts bound each call. A refused URL surfaces as an exception and the webhook reports false.
 `leantime.rpc.Notifications.Messengers.`
 
 
@@ -22,7 +25,7 @@ __construct - get database connection
     "jsonrpc": "2.0",
     "id": 1,
     "params": {
-        "httpClient": \GuzzleHttp\Client,
+        "httpClient": \Leantime\Core\Support\OutboundHttpClient,
         "settingsRepo": \Leantime\Domain\Setting\Repositories\Setting,
         "language": \Leantime\Core\Language,
     }
@@ -41,7 +44,7 @@ __construct - get database connection
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `httpClient` | **\GuzzleHttp\Client** |  |
+| `httpClient` | **\Leantime\Core\Support\OutboundHttpClient** |  |
 | `settingsRepo` | **\Leantime\Domain\Setting\Repositories\Setting** |  |
 | `language` | **\Leantime\Core\Language** |  |
 
@@ -53,53 +56,6 @@ __construct - get database connection
     "jsonrpc": "2.0",
     "id": 1,
     "result": mixed
-}
-```
-
-
-
----
-### `leantime.rpc.Notifications.Messengers.sendNotificationToMessengers`
-
-
-
-```json
-{
-    "method": "leantime.rpc.Notifications.Messengers.sendNotificationToMessengers",
-    "jsonrpc": "2.0",
-    "id": 1,
-    "params": {
-        "notification": \Leantime\Domain\Notifications\Models\Notification,
-        "projectName": ,
-        "messengers": array|string,
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `notification` | **\Leantime\Domain\Notifications\Models\Notification** |  |
-| `projectName` | **** |  |
-| `messengers` | **array|string** |  |
-
-
-**Returns:**
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": void
 }
 ```
 
