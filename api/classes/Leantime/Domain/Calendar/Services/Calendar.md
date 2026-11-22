@@ -7,12 +7,6 @@ footer: false
 
 Calendar service: personal events, external-calendar subscriptions, and the public iCal feed.
 
-Authorization: the @api methods carry a dispatch #[RequiresPermission(calendar.*)] capability gate
-(project-scoped, session project — readonly+ to view, editor+ to create/edit/delete). OWNERSHIP is
-separate and user-based: reads that aren't already userId-scoped by the repository self-authorize
-in-body (row.userId === currentUserId() OR can(MANAGE)); the userId PARAMS on the external-calendar
-reads are ignored in favor of the session user (closing the RPC param-spoof). The iCal feed methods
-are NOT @api — they are served by the public, hash-authenticated /calendar/ical route.
 `leantime.rpc.Calendar.Calendar.`
 
 
@@ -31,7 +25,6 @@ Deletes a Google Calendar.
     }
 }
 ```
-
 
 
 
@@ -83,7 +76,6 @@ Patches calendar event.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -119,7 +111,6 @@ Adds a new event to the user's calendar
     }
 }
 ```
-
 
 
 
@@ -172,7 +163,6 @@ is the cross-user override. Soft-denies (returns false) for a foreign event.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -216,7 +206,6 @@ Important: Time needs to come in as user formatted time value.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -251,7 +240,6 @@ deletes an event on the user's calendar
     }
 }
 ```
-
 
 
 
@@ -305,7 +293,6 @@ caller could read another user's subscription by passing a foreign id.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -345,12 +332,6 @@ session-based cache with a 30 minute time to live.
 ```
 
 
-Looks up the cached content for the given calendar in the session and
-returns it when still fresh. Otherwise it resolves the external
-calendar's URL, fetches its content (with SSRF protection via
-{@see \Leantime\Domain\Calendar\Services\loadIcalUrl()}), stores it in the session cache and returns it.
-Any fetch failure (or a body that is not iCal) is logged and resolves to an
-empty calendar, which the browser's iCal parser accepts.
 
 
 
@@ -402,7 +383,6 @@ user (WHERE userId = session), so a foreign id is a no-op.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -438,7 +418,6 @@ Retrieves all external calendars for a given user.
     }
 }
 ```
-
 
 
 
@@ -489,7 +468,6 @@ Adds a new external calendar URL.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -529,8 +507,6 @@ it fetch just the visible month.
 ```
 
 
-getCalendar() itself is internal-only — it trusts an arbitrary $userId — so this wrapper is
-the API entry point and pins the read to the session user (no spoofable param).
 
 
 
@@ -582,7 +558,6 @@ device calendar.
 
 
 
-
 **Returns:**
 The full iCal feed URL
 ```json
@@ -613,8 +588,6 @@ External-calendar events (from the user's subscribed iCal feeds) for the authent
 ```
 
 
-Already session-scoped — it keys off session('userdata.id') with no spoofable param. Mobile
-merges these into its calendar view.
 
 
 

@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Widgets.Widgets.`
 
 
@@ -26,7 +25,6 @@ Register a new widget.
     }
 }
 ```
-
 
 
 
@@ -77,7 +75,6 @@ Retrieves all available widgets.
 
 
 
-
 **Returns:**
 The array of available widgets.
 ```json
@@ -105,7 +102,6 @@ Retrieves the active widgets for a specific user.
     }
 }
 ```
-
 
 
 
@@ -156,7 +152,6 @@ Resets the dashboard grid for a specific user.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -191,7 +186,6 @@ Get new widgets for the user.
     }
 }
 ```
-
 
 
 
@@ -245,7 +239,6 @@ widget as visible, records it in the user's widget history.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -285,7 +278,6 @@ plus a deduplicated client map.
     }
 }
 ```
-
 
 
 

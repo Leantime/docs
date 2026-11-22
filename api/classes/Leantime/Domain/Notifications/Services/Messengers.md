@@ -8,9 +8,6 @@ footer: false
 Posts project notifications to the messenger webhooks a project has configured (Slack,
 Mattermost, Zulip, Discord, Telegram).
 
-Every request goes through {@see \Leantime\Core\Support\OutboundHttpClient}: the webhook URL is checked by the SSRF guard,
-the connection is pinned to the validated address (no DNS re-resolution), and connect/total
-timeouts bound each call. A refused URL surfaces as an exception and the webhook reports false.
 `leantime.rpc.Notifications.Messengers.`
 
 
@@ -31,7 +28,6 @@ __construct - get database connection
     }
 }
 ```
-
 
 
 
@@ -84,7 +80,6 @@ slackWebhook
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -119,7 +114,6 @@ mattermostWebhook
     }
 }
 ```
-
 
 
 
@@ -170,7 +164,6 @@ zulipWebhook
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -213,7 +206,6 @@ mattermostWebhook
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -248,7 +240,6 @@ mattermostWebhook
     }
 }
 ```
-
 
 
 

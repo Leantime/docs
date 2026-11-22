@@ -7,10 +7,6 @@ footer: false
 
 Shared, period-aware reporting engine feeding the project, plan and strategy report screens.
 
-All methods operate on explicit project-id sets so higher levels (plan = child projects,
-strategy = descendant projects, later company = all projects) compose the same building
-blocks. Ids are filtered to projects the requesting user may view before any query runs,
-and the repository re-applies the SQL access predicate — defense in depth.
 `leantime.rpc.Reports.ReportEngine.`
 
 
@@ -32,7 +28,6 @@ summary stats. This is the single entry point the report screens consume.
     }
 }
 ```
-
 
 
 
@@ -79,13 +74,6 @@ Buckets the projects' milestones for the period.
 ```
 
 
-- completed: DONE status and completed inside the period (completion date derived from
-  the ticket status-change history, falling back to due date, then last modified)
-- inProgress: not done, scheduled to overlap the period (or unscheduled), not overdue
-- overdue: not done and due date in the past
-- upcoming: starting after the period, within the next two quarters, grouped by quarter
-- allDone: every done milestone with its completion date (feeds prior-period deltas)
-- slippage: due dates pushed out of the period + milestones added mid-period
 
 
 
@@ -136,7 +124,6 @@ the Goals module switched off are left out.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -173,7 +160,6 @@ Status updates posted within the period, grouped by project, newest first.
     }
 }
 ```
-
 
 
 
@@ -227,7 +213,6 @@ update (the status pill), staleness and timeline.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -263,7 +248,6 @@ Hours logged in the period, totaled and broken down by project and milestone.
     }
 }
 ```
-
 
 
 

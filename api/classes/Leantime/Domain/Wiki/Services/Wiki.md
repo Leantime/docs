@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Wiki.Wiki.`
 
 
@@ -29,13 +28,6 @@ Get an article by ID and project.
 ```
 
 
-The repository already filters by project, so this read is project-scoped: when a projectId
-is passed it is authorized against (closing the explicit-foreign-project RPC read); when it is
-omitted the call resolves to the caller's session project and can only read articles there.
-
-A draft belongs to its author until it is published: another user's draft is not found
-(false), the same rule getAllWikiHeadlines() applies to the Contents list. A null or unknown
-id falls back to the project's featured article, under the same rule.
 
 
 
@@ -77,7 +69,6 @@ Gets all project wikis. Creates one if there aren't any
     }
 }
 ```
-
 
 
 
@@ -129,7 +120,6 @@ List the article headlines in a wiki.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -173,7 +163,6 @@ Get a single wiki (notebook) by id.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -208,7 +197,6 @@ Get a single wiki (notebook) by id.
     }
 }
 ```
-
 
 
 
@@ -260,7 +248,6 @@ Get a single wiki (notebook) by id.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -296,7 +283,6 @@ Create a new article and record an audit event.
     }
 }
 ```
-
 
 
 
@@ -342,7 +328,6 @@ Update an article and record audit events for changed fields.
 ```
 
 
-Another user's draft is refused (false), like an unknown id: drafts belong to their author.
 
 
 
@@ -386,7 +371,6 @@ Delete an article, fencing the operation against the article's project.
 ```
 
 
-Another user's draft is refused (false), like an unknown id: drafts belong to their author.
 
 
 
@@ -435,7 +419,6 @@ Delete a wiki (notebook), fencing the operation against the wiki's project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -473,7 +456,6 @@ Get combined activity feed for an article (audit events + comments).
 ```
 
 
-Empty for an unknown id and for another user's draft (drafts are author-only, see getArticle()).
 
 
 

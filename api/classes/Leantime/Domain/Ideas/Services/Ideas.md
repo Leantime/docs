@@ -7,7 +7,6 @@ footer: false
 
 Ideas service - business logic for idea boards and idea items.
 
-
 `leantime.rpc.Ideas.Ideas.`
 
 
@@ -28,8 +27,6 @@ Authorized JSON-RPC entry point: persist a new idea sort order.
 ```
 
 
-Requires editor+ and per-item project access (JSON-RPC has no controller
-gate, and the repository sorts by item id with no project scoping).
 
 
 
@@ -72,8 +69,6 @@ Authorized JSON-RPC entry point: bulk status/sort update from the idea kanban.
 ```
 
 
-Requires editor+ and project access for every item in the (jQuery-sortable
-serialized) payload.
 
 
 
@@ -117,7 +112,6 @@ Authorized JSON-RPC entry point: patch a single idea/canvas item.
 ```
 
 
-Requires editor+ and access to the item's project.
 
 
 
@@ -160,7 +154,6 @@ Polls for new ideas in a project / board, normalizing dates for the API.
     }
 }
 ```
-
 
 
 
@@ -213,7 +206,6 @@ Polls for updated ideas, appending the modified timestamp to the id for change d
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -249,7 +241,6 @@ Returns all idea boards for a project.
     }
 }
 ```
-
 
 
 
@@ -300,7 +291,6 @@ Returns a single idea board by id.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -335,7 +325,6 @@ Returns the title of a single idea board, or an empty string if not found.
     }
 }
 ```
-
 
 
 
@@ -386,7 +375,6 @@ Returns the canvas items for a board.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -429,7 +417,6 @@ Returns the configured idea status labels.
 
 
 
-
 **Returns:**
 Label structure (array keyed by status).
 ```json
@@ -459,7 +446,6 @@ Creates a new idea board, queuing a creation notification to project users.
     }
 }
 ```
-
 
 
 
@@ -509,8 +495,6 @@ creation notification to project users.
 ```
 
 
-This intentionally uses a different notification subject/message than
-{@see \Leantime\Domain\Ideas\Services\self::createBoard()} to preserve the historical board-dialog behavior.
 
 
 
@@ -562,7 +546,6 @@ Updates an idea board title.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -602,8 +585,6 @@ Ensures at least one board exists for a project, creating a default one if none 
 ```
 
 
-Returns the id of the newly created default board if one was created, or 0 if boards
-already existed (no board created).
 
 
 
@@ -648,7 +629,6 @@ returning an empty-item default when no id is supplied.
     }
 }
 ```
-
 
 
 
@@ -702,7 +682,6 @@ the historical repository call.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -745,7 +724,6 @@ Returns the canvas type map (status keys to label keys).
 
 
 
-
 **Returns:**
 Canvas types.
 ```json
@@ -775,7 +753,6 @@ Creates a new idea item and queues a creation notification to project users.
     }
 }
 ```
-
 
 
 
@@ -831,7 +808,6 @@ then queues an edit notification to project users.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -876,7 +852,6 @@ Detaches a milestone from an idea item.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -911,7 +886,6 @@ Returns all milestones available to attach to an idea item, for the current proj
     }
 }
 ```
-
 
 
 
@@ -966,7 +940,6 @@ Adds a comment to an idea item and queues a notification to project users.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1013,7 +986,6 @@ Deletes a comment.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1049,7 +1021,6 @@ Returns the comments for a module/entity.
     }
 }
 ```
-
 
 
 
@@ -1102,7 +1073,6 @@ Returns the number of comments for a module/entity.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1140,8 +1110,6 @@ Delete an idea board, fencing the operation against the board's project.
 ```
 
 
-Replaces the previous controller->repository direct delete (which only had a global-role
-gate and no project scoping, so an editor in any project could delete another's board).
 
 
 
@@ -1184,7 +1152,6 @@ Delete an idea item, fencing the operation against the item's project.
 ```
 
 
-Replaces the previous controller->repository direct delete (id-only, no project scoping).
 
 
 

@@ -7,7 +7,6 @@ footer: false
 
 Client service - Business logic for client management.
 
-
 `leantime.rpc.Clients.Clients.`
 
 
@@ -26,7 +25,6 @@ Gets all clients.
     }
 }
 ```
-
 
 
 
@@ -78,7 +76,6 @@ Patches the client by key.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -114,7 +111,6 @@ Updates an existing client.
     }
 }
 ```
-
 
 
 
@@ -165,7 +161,6 @@ Creates a new client.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -202,10 +197,6 @@ Deletes a client and its projects.
 ```
 
 
-A client whose projects hold to-dos is not deleted. Its projects are deleted through
-{@see \Leantime\Domain\Projects\Services\Projects::deleteProject()}, so they are cleaned up exactly like a project deleted
-from its settings (team memberships removed, cached project access refreshed). Deleting
-projects needs projects.delete as well; without it nothing is deleted.
 
 
 
@@ -246,7 +237,6 @@ Gets 1 specific client by id.
     }
 }
 ```
-
 
 
 
@@ -297,7 +287,6 @@ Checks if a client with the same name and street already exists.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -332,7 +321,6 @@ Checks if a client has any tickets via its projects.
     }
 }
 ```
-
 
 
 
@@ -383,7 +371,6 @@ Gets all users assigned to a client.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -418,7 +405,6 @@ Gets projects belonging to a client.
     }
 }
 ```
-
 
 
 
@@ -463,8 +449,6 @@ Creates a new client after validating it and checking for duplicates.
 ```
 
 
-Encapsulates the name-required validation and the duplicate-name check
-that previously lived in the controller.
 
 
 
@@ -513,7 +497,6 @@ Updates an existing client after validating the name is present.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -551,8 +534,6 @@ Removes a user from a client by clearing the user's client assignment.
 ```
 
 
-Keeps the Clients controllers within the Clients service surface while the
-underlying mutation lives on the Users repository.
 
 
 
@@ -596,8 +577,6 @@ Assembles the template data needed to render the client detail page.
 ```
 
 
-Centralizes the shared assignment block previously duplicated across the
-GET and POST handlers of the ShowClient controller.
 
 
 

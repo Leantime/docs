@@ -7,14 +7,6 @@ footer: false
 
 Goalcanvas (Goals / OKRs) service.
 
-Goal boards/items live in the shared zp_canvas (type "goalcanvas") / zp_canvas_items (box
-"goal") tables. Every by-id board/item operation routes through this service, which resolves
-the entity's REAL project via the repository's fail-closed resolvers (inherited from the
-Blueprints repo, scoped to the "goalcanvas" type) and authorizes the matching
-{@see \Leantime\Domain\Goalcanvas\Permissions\GoalcanvasPermissions} verb against it. A resolver returning null (missing id, or an id
-whose board is a different canvas type) is treated as DENY — reads soft-deny (neutral value)
-so they are not a cross-project existence oracle; writes throw an AuthorizationException
-without writing. Never falls back to the session project for a by-id entity.
 `leantime.rpc.Goalcanvas.Goalcanvas.`
 
 
@@ -35,7 +27,6 @@ List the goals on a board (by board id), authorized for VIEW against the board's
 ```
 
 
-Returns [] for a missing/foreign/unauthorized board (neutral — no oracle).
 
 
 
@@ -87,7 +78,6 @@ module switched off are left out. Returns 0 for a missing/foreign/unauthorized p
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -123,7 +113,6 @@ project. Returns [] for a missing/foreign/unauthorized parent.
     }
 }
 ```
-
 
 
 
@@ -174,7 +163,6 @@ Available parent KPIs for linking, authorized for VIEW against $projectId (dispa
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -200,7 +188,7 @@ Available parent KPIs for linking, authorized for VIEW against $projectId (dispa
 Goals linked to a milestone, authorized for VIEW against the milestone's
 project. Reachable beyond the milestone UI (MCP getGoalsByMilestone wraps
 it verbatim), so the caller's access to the milestone cannot be assumed —
-a missing/foreign/unauthorized milestone returns [] (neutral, no oracle).
+a missing/foreign/unauthorized milestone returns [].
 
 ```json
 {
@@ -212,7 +200,6 @@ a missing/foreign/unauthorized milestone returns [] (neutral, no oracle).
     }
 }
 ```
-
 
 
 
@@ -266,7 +253,6 @@ roll-up above the chips.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -308,7 +294,6 @@ array when it has no milestones — so callers get a predictable key set.
 ```
 
 
-Only unauthorized/invisible goals are absent.
 
 
 
@@ -352,7 +337,6 @@ Link one milestone to a goal (append — leaves existing links intact).
 ```
 
 
-Authorized for EDIT against the goal's project.
 
 
 
@@ -397,7 +381,6 @@ Unlink one milestone from a goal (leaves the goal's other links intact).
 ```
 
 
-Authorized for EDIT against the goal's project.
 
 
 
@@ -452,7 +435,6 @@ for a missing/foreign/unauthorized goal. Dates are returned as stored
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -491,9 +473,6 @@ project; milestones filtered to the caller's accessible projects.
 ```
 
 
-Computed over the batched milestone read (no N+1). Dates returned as
-stored (UTC); `currentMilestoneId` is the first not-done milestone in
-the working order (in-progress -> not-started -> done, by due date).
 
 
 
@@ -534,7 +513,6 @@ Fetch a single goal board by id, authorized for VIEW against the board's real pr
     }
 }
 ```
-
 
 
 
@@ -585,7 +563,6 @@ Create a goal board, authorized for CREATE against the target project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -620,7 +597,6 @@ Rename a goal board, authorized for EDIT against the board's real project.
     }
 }
 ```
-
 
 
 
@@ -671,7 +647,6 @@ Create a goal item, authorized for CREATE against the target board's real projec
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -708,7 +683,6 @@ project.
     }
 }
 ```
-
 
 
 
@@ -763,7 +737,6 @@ capability check.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -800,7 +773,6 @@ capability check.
     }
 }
 ```
-
 
 
 

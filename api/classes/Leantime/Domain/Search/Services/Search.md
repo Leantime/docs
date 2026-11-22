@@ -8,8 +8,6 @@ footer: false
 Global search across entity types. Owns the provider registry, the access scope and the
 shared filter vocabulary; providers own their queries.
 
-The searching user is always the session user. The @api methods are reachable over
-JSON-RPC and never accept a user id.
 `leantime.rpc.Search.Search.`
 
 
@@ -29,7 +27,6 @@ Top hits per entity type for the header dropdown. One request, one small query p
     }
 }
 ```
-
 
 
 
@@ -77,7 +74,6 @@ Paged results for one entity type (the full results page loads one panel per typ
     }
 }
 ```
-
 
 
 

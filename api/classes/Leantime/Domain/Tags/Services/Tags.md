@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Tags.Tags.`
 
 
@@ -29,12 +28,6 @@ Returns the tag autocomplete suggestions for a project, filtered by $term.
 ```
 
 
-The JSON-RPC endpoint has no controller-level project gate (the retired
-Api\Controllers\Tags forced session('currentProject'), but a JSON-RPC caller
-can pass any projectId). isUserAssignedToProject() is the full access check —
-it allows admins/owners, org-wide ("all") and client-level projects, and
-directly assigned users — so this both preserves legitimate access and prevents
-cross-project tag enumeration.
 
 
 

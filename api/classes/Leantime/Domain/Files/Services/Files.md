@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Files.Files.`
 
 
@@ -30,11 +29,6 @@ Lists files for a module/entity, fail-closed against the entity's owning project
 ```
 
 
-We resolve the target's real project and require files.view in it (readonly+);
-owner-restricted listings (private/user/lead/export) are limited to the owner; client
-listings need clients.view and a specific client id; an empty/unknown module returns []
-rather than dumping the whole table. The module name is normalized (lowercased) first so a
-differently-cased name can't side-step the checks.
 
 
 
@@ -90,7 +84,6 @@ userCanUploadToModule() (empty or unknown modules are denied).
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -132,11 +125,6 @@ files.delete (editor+) IN THE FILE'S OWN PROJECT.
 ```
 
 
-The old check allowed any manager+ to delete ANY file globally (no project scope) — an IDOR
-across projects. We now resolve the file's real project and require files.delete there
-(admin/owner still bypass project membership). Owner-restricted/no-project files (private,
-user avatar, ...) can only be deleted by their uploader. Denials soft-deny (return false) to
-preserve the prior contract and keep handleFileAction's success flag meaningful.
 
 
 
@@ -185,7 +173,6 @@ Returns the list of image file extensions treated as previewable images.
 
 
 
-
 **Returns:**
 The whitelisted image extensions.
 ```json
@@ -217,11 +204,6 @@ the file response.
 ```
 
 
-Project-scoped files require files.view in the owning project (readonly+; admin/owner bypass
-project membership — equivalent to the prior admin-bypass + isUserAssignedToProject check).
-Owner-restricted modules require the caller to be the uploader. Authorization always uses the
-session user, never the $userId argument: this @api method previously trusted the passed id,
-so a JSON-RPC caller could read any owner-restricted file by claiming to be its uploader.
 
 
 

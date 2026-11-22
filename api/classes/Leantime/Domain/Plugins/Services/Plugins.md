@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Plugins.Plugins.`
 
 
@@ -26,7 +25,6 @@ Retrieves all plugins, optionally filtering only the enabled ones.
     }
 }
 ```
-
 
 
 
@@ -77,7 +75,6 @@ Returns an array of all plugins or false if an error occurs.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -114,13 +111,6 @@ Returns the enabled plugins (database plus system plugins from config), cached.
 ```
 
 
-Only plugins that support this Leantime version are returned: everything that loads plugin
-code (register files, routes, views, the console) goes through here, so an incompatible
-plugin stays enabled in the database but is not loaded. Administrators are told once.
-
-A failing plugin-table query is never cached as "no plugins": the next call retries. Web
-requests keep running without user plugins in that case; callers that must not silently run
-without them (the console scheduler) pass $failOnDatabaseError to get the exception instead.
 
 
 
@@ -169,7 +159,6 @@ without them (the console scheduler) pass $failOnDatabaseError to get the except
 
 
 
-
 **Returns:**
 
 ```json
@@ -197,7 +186,6 @@ without them (the console scheduler) pass $failOnDatabaseError to get the except
     }
 }
 ```
-
 
 
 
@@ -248,7 +236,6 @@ without them (the console scheduler) pass $failOnDatabaseError to get the except
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -283,7 +270,6 @@ without them (the console scheduler) pass $failOnDatabaseError to get the except
     }
 }
 ```
-
 
 
 
@@ -334,7 +320,6 @@ without them (the console scheduler) pass $failOnDatabaseError to get the except
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -369,7 +354,6 @@ without them (the console scheduler) pass $failOnDatabaseError to get the except
     }
 }
 ```
-
 
 
 
@@ -414,10 +398,6 @@ Builds a MarketplacePlugin from raw request properties.
 ```
 
 
-Request data arrives with every field encoded as a string. Any field whose
-value is a valid JSON string (arrays/objects) is decoded back into its native
-structure before being assigned to the model. The 'version' field is treated
-separately by the caller and is therefore expected to already be removed.
 
 
 
@@ -466,7 +446,6 @@ Determines whether a marketplace plugin belongs to the "bundles" category.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -504,10 +483,6 @@ user-facing error message.
 ```
 
 
-The marketplace answers with a JSON body ({"error": "..."}). It is read from the response
-itself: the exception message carries only the first 120 characters of the body, which cut
-the longer marketplace messages (license key not found, user limit, ...) into invalid JSON.
-Falls back to a generic installation error.
 
 
 
@@ -548,7 +523,6 @@ Retrieves a marketplace plugin's details by its identifier.
     }
 }
 ```
-
 
 
 
@@ -601,7 +575,6 @@ back (the error says so).
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -638,10 +611,6 @@ result for My Apps, and tells the administrators about each new version once.
 ```
 
 
-The marketplace lists only versions whose range includes this Leantime version (it gets
-`lt-v`); the range is checked here again so a listing mistake can't offer an incompatible one.
-A plugin the marketplace can't answer for (outage, error) is not reported as up to date: it
-keeps what the previous check found and is listed in `failed` (logged).
 
 
 
@@ -679,7 +648,6 @@ administrator.
     }
 }
 ```
-
 
 
 
@@ -730,7 +698,6 @@ Whether automatic plugin updates are on (off unless an administrator turned them
 
 
 
-
 **Returns:**
 
 ```json
@@ -762,9 +729,6 @@ returns the notification descriptor describing the outcome.
 ```
 
 
-The returned array is a [messageKey, type] pair where messageKey is a language
-key and type is the notification severity ('success' or 'error'). This keeps the
-dynamic dispatch and notification-key assembly out of the controller.
 
 
 
@@ -807,9 +771,6 @@ Aggregates the CSS contributed by enabled plugins into a single payload.
 ```
 
 
-Runs the 'pluginCss' filter to collect the list of plugin CSS files, keeps only
-the files that actually exist under APP_ROOT/plugins, reads their contents and
-concatenates them into one string.
 
 
 

@@ -7,17 +7,6 @@ footer: false
 
 Blueprints service - business logic for unified canvas boards.
 
-Replaces the old Canvas\Services\Canvas by using the Blueprints repo
-and TemplateRegistry directly instead of dynamically resolving variant repos.
-
-Authorization: canvas boards and items are PROJECT-scoped (each board belongs to one
-project; items belong to a board). Every by-id board/item operation routes through this
-service, which resolves the entity's REAL project via the repository's fail-closed
-resolvers and authorizes the matching {@see \Leantime\Domain\Blueprints\Permissions\BlueprintsPermissions} verb against it. A
-resolver returning null (missing id, or an id whose board is a different canvas type — the
-shared `zp_canvas`/`zp_canvas_items` tables hold every variant under one id sequence) is
-treated as DENY, never as "fall back to the session project". Controllers therefore call
-these methods instead of the repository directly.
 `leantime.rpc.Blueprints.Blueprints.`
 
 
@@ -39,7 +28,6 @@ project. Used by the inline board-update API.
     }
 }
 ```
-
 
 
 
@@ -89,8 +77,6 @@ Import a canvas board from an XML file.
 ```
 
 
-Parses the XML, validates its structure, then creates a new canvas board
-with all items from the file.
 
 
 
@@ -137,8 +123,6 @@ Get progress percentages for canvas boards in a project.
 ```
 
 
-Counts items per box type for each canvas and calculates what fraction
-of box types have at least one item.
 
 
 
@@ -181,7 +165,6 @@ Get canvas boards ordered by last updated item.
     }
 }
 ```
-
 
 
 

@@ -7,10 +7,6 @@ footer: false
 
 Class Dashboard
 
-Aggregates and orchestrates the business logic behind the dashboard widgets
-(the Welcome widget and the "My To-Dos" widget). The HxControllers in this
-domain delegate all data access, grouping, ordering and orchestration to this
-service so they can stay thin.
 `leantime.rpc.Widgets.Dashboard.`
 
 
@@ -30,8 +26,6 @@ Fires the anonymous telemetry collection and waits for it to complete.
 ```
 
 
-Failures are logged and swallowed so the dashboard render path is never
-blocked or broken by telemetry issues.
 
 
 
@@ -68,8 +62,6 @@ Aggregates all data the Welcome widget needs into a single array.
 ```
 
 
-Moves the count()/is_array guards and the today start/end computation out
-of the controller and into the service.
 
 
 
@@ -113,7 +105,6 @@ the pagination "has more" computation.
     }
 }
 ```
-
 
 
 
@@ -168,7 +159,6 @@ of the "My To-Dos" widget.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -207,7 +197,6 @@ full page was returned.
     }
 }
 ```
-
 
 
 
@@ -259,7 +248,6 @@ Reads the user's stored personal task sorting preferences.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -300,10 +288,6 @@ changes (time/project/priority moves) and dependency (parent) updates.
 ```
 
 
-Owns the json_decode / normalize / +10 ordering, persistence of the sorting
-setting, the dependency updates and the group-change application. Returns the
-success/error counts of the group changes so the caller can map them to
-notifications.
 
 
 
@@ -356,7 +340,6 @@ Toggles the collapse state of a task for a user and returns the new state.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -393,7 +376,6 @@ Quick-adds a to-do, defaulting its due date based on the group context
     }
 }
 ```
-
 
 
 
@@ -445,7 +427,6 @@ Creates a subtask under the given parent ticket.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -483,9 +464,6 @@ Resolves the due date for a quick-added to-do based on the group context.
 ```
 
 
-If a non-empty date was already supplied it is returned unchanged. Otherwise
-"thisWeek" maps to next Friday, "overdue" maps to today, and "later" leaves
-the date empty.
 
 
 

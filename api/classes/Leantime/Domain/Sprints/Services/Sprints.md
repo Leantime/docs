@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Sprints.Sprints.`
 
 
@@ -26,7 +25,6 @@ footer: false
     }
 }
 ```
-
 
 
 
@@ -71,8 +69,6 @@ getCurrentSprintId returns the ID of the current sprint in the project provided
 ```
 
 
-The session value is the task-view sprint filter, which can also hold non-id selections
-such as "all" or "backlog"; those yield false just like an unset filter.
 
 
 
@@ -121,7 +117,6 @@ The selected sprint id, or false when no single sprint is selected
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -158,8 +153,6 @@ All sprints of a project.
 ```
 
 
-A null project means the session project (never "every project"); a non-positive or
-unresolvable project, or one the caller cannot view, yields an empty list.
 
 
 
@@ -200,7 +193,6 @@ unresolvable project, or one the caller cannot view, yields an empty list.
     }
 }
 ```
-
 
 
 
@@ -251,7 +243,6 @@ unresolvable project, or one the caller cannot view, yields an empty list.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -286,7 +277,6 @@ unresolvable project, or one the caller cannot view, yields an empty list.
     }
 }
 ```
-
 
 
 
@@ -337,7 +327,6 @@ deleteSprint - deletes a sprint and clears the current-sprint session value.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -374,8 +363,6 @@ Burndown chart data for a sprint.
 ```
 
 
-The sprint is reloaded by id and authorized against its REAL project (a caller-supplied
-model is never trusted for its project or dates).
 
 
 
@@ -416,7 +403,6 @@ The burndown rows, or false when the sprint does not exist.
     }
 }
 ```
-
 
 
 

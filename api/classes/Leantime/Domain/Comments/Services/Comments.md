@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Comments.Comments.`
 
 
@@ -32,8 +31,6 @@ Get the comments of an entity.
 ```
 
 
-Accepts the same module aliases as addComment() (e.g. "tickets"), so a comment written
-through an alias can be read back through it.
 
 
 
@@ -83,11 +80,6 @@ Add a comment to an entity (API entry point).
 ```
 
 
-The module is validated and the entity is ALWAYS loaded (and access-checked) server-side from
-(module, entityId); a caller-supplied entity is ignored, so an RPC/MCP caller cannot attach a
-comment to an arbitrary module/id by shipping a fake entity. An unknown module or a
-missing/inaccessible entity raises a ValidationException / NotFoundException (JSON-RPC
--32602 / -32002) instead of returning a silent false (#3704).
 
 
 
@@ -140,7 +132,6 @@ Edit a comment. The caller must be the comment author or a manager+.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -176,7 +167,6 @@ Delete a comment. The caller must be the comment author or a manager+.
     }
 }
 ```
-
 
 
 
@@ -222,7 +212,6 @@ Comments across the projects the user can access, newest data for polling client
 ```
 
 
-Comments on other users' draft articles are left out (see the repository).
 
 
 
@@ -268,11 +257,6 @@ Toggle a sentiment reaction on a comment for a given user.
 ```
 
 
-Enforces the domain rule that a user may only have one sentiment
-reaction per comment: clicking the reaction the user already has
-removes it (toggle off); clicking a different reaction removes any
-existing reactions first, then adds the new one. Unknown reaction
-types are rejected.
 
 
 
@@ -319,9 +303,6 @@ Build the reaction view data for a comment.
 ```
 
 
-Returns the grouped reactions (with user names for tooltips) plus a
-flat list of the given user's reaction codes for the comment, ready
-to be assigned to the template.
 
 
 

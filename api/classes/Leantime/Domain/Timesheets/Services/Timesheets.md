@@ -7,28 +7,6 @@ footer: false
 
 Timesheets service.
 
-Timesheets are GLOBAL-scoped (company-wide time logging): every gate resolves the user's
-GLOBAL role via {@see \Leantime\Domain\Timesheets\Permissions\TimesheetsPermissions}. The standard verbs (view/create/edit/delete) are
-editor+ and operate on the user's OWN time — ownership is enforced in-body by comparing the
-entry's userId to the current user; acting on ANOTHER user's time, invoicing, and the
-cross-user reports require timesheets.manage (manager+).
-
-Two-tier denial: the base capability is checked with {@see \Leantime\Domain\Timesheets\Services\authorize()}, which throws
-AuthorizationException when the role lacks create/edit/manage; the ownership check that follows
-soft-denies (deleteTime() returns false, updateTime() returns early) rather than throwing, so a
-manager-less user editing a peer's entry is a silent no-op, not a 403. Reads soft-deny (return
-the neutral empty value) for the unauthorized/cross-user case.
-
-NOTE: the ticket-hours reads (getLoggedHoursForTicketByDate / getSumLoggedHoursForTicket /
-getRemainingHours / getUsersTicketHours) carry NO timesheets.* role gate — they render on the
-ticket view (ShowTicket, reachable by readonly users). They are scoped instead by
-{@see \Leantime\Domain\Timesheets\Services\authorizeTicketView()}: tickets.view on the ticket's REAL project, so a caller-supplied
-ticket id cannot read hours across projects the caller is not a member of.
-
-Project modules: when a project has the Timesheets module switched off, no time can be booked
-on its tickets (log, add, edit, timer start/stop all go through
-{@see \Leantime\Domain\Timesheets\Services\authorizeTicketForTimeEntry()}). Existing entries stay readable, deletable and
-invoiceable: they are payroll and billing records.
 `leantime.rpc.Timesheets.Timesheets.`
 
 
@@ -47,7 +25,6 @@ isClocked - Checks to see whether a user is clocked in
     }
 }
 ```
-
 
 
 
@@ -92,8 +69,6 @@ Start the session user's timer on a ticket.
 ```
 
 
-Besides the (global) timesheets.create capability, the ticket must exist and the caller must
-be able to view its real project — time cannot be tracked on another project's tickets.
 
 
 
@@ -137,9 +112,6 @@ Stop the session user's timer on a ticket and book the elapsed time.
 ```
 
 
-The ticket's project is re-checked at stop time: if the caller can no longer access the
-ticket (access revoked while the timer ran, or a timer started before the start-time check
-existed), the timer is discarded and no time is booked.
 
 
 
@@ -189,7 +161,6 @@ Stop the active timer for the current user (no ticket ID required)
 
 
 
-
 **Returns:**
 
 ```json
@@ -218,7 +189,6 @@ logTime, will always add hours or increment existing values
     }
 }
 ```
-
 
 
 
@@ -271,7 +241,6 @@ Upserts a time entry for a ticket. Will update hours based on the values provide
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -309,7 +278,6 @@ Delete a timesheet entry.
 ```
 
 
-The caller must be the entry owner or have at least manager role.
 
 
 
@@ -358,7 +326,6 @@ Retrieve a single timesheet entry by ID.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -395,8 +362,6 @@ Add a new time entry directly from a prepared values array.
 ```
 
 
-When called via API, the userId is forced to the authenticated user
-unless the caller is a manager or above.
 
 
 
@@ -439,8 +404,6 @@ Update an existing time entry.
 ```
 
 
-When called via API, only the entry owner or a manager+ can update.
-Non-managers cannot reassign entries to other users.
 
 
 
@@ -481,7 +444,6 @@ Non-managers cannot reassign entries to other users.
     }
 }
 ```
-
 
 
 
@@ -532,7 +494,6 @@ Non-managers cannot reassign entries to other users.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -567,7 +528,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
     }
 }
 ```
-
 
 
 
@@ -619,7 +579,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -654,7 +613,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
     }
 }
 ```
-
 
 
 
@@ -700,7 +658,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
     }
 }
 ```
-
 
 
 
@@ -762,7 +719,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -801,7 +757,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
     }
 }
 ```
-
 
 
 
@@ -854,7 +809,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
 
 
 
-
 **Returns:**
 
 ```json
@@ -882,7 +836,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
     }
 }
 ```
-
 
 
 
@@ -933,7 +886,6 @@ Get remaining hours for a ticket (planned hours minus logged hours)
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -970,7 +922,6 @@ add/edit/weekly timesheet ticket pickers.
     }
 }
 ```
-
 
 
 

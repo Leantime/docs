@@ -7,8 +7,6 @@ footer: false
 
 Dashboard service - business logic backing the project dashboard view.
 
-Wraps the comment and reaction data assembly the dashboard needs so the
-controllers stay thin (param-read -> service call -> assign -> Response).
 `leantime.rpc.Dashboard.Dashboard.`
 
 
@@ -29,8 +27,6 @@ Gets the top-level comments for a project with their replies attached.
 ```
 
 
-Mirrors the legacy dashboard behavior: top-level comments (parent 0)
-each enriched with a 'replies' key holding their direct replies.
 
 
 
@@ -73,7 +69,6 @@ Counts all comments attached to a project.
 ```
 
 
-The caller must be able to view comments in that project (role + membership).
 
 
 
@@ -116,8 +111,6 @@ Deletes a project comment.
 ```
 
 
-Delegates to the comment service so its author/manager authorization
-check is enforced (the legacy dashboard deleted directly with no check).
 
 
 
@@ -168,7 +161,6 @@ Adds a comment to a project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -206,7 +198,6 @@ Determines whether a user has favorited a project.
     }
 }
 ```
-
 
 
 

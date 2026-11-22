@@ -7,7 +7,6 @@ footer: false
 
 Change history of a ticket (the field changes recorded in zp_tickethistory), prepared for display.
 
-
 `leantime.rpc.Tickets.TicketHistory.`
 
 
@@ -28,8 +27,6 @@ The change history of a ticket, newest first.
 ```
 
 
-Authorizes against the ticket's own project and fails closed: a missing ticket and a ticket
-the current user cannot view both return false (no existence oracle).
 
 
 

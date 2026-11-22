@@ -7,8 +7,6 @@ footer: false
 
 BlueprintsExport service - builds the XML export for a blueprint canvas board.
 
-The XML generation used to live in the Export controller; it is business logic
-and belongs in the service layer so the controller stays thin.
 `leantime.rpc.Blueprints.BlueprintsExport.`
 
 
@@ -28,7 +26,6 @@ exportToXml - generate the XML document for a canvas board.
     }
 }
 ```
-
 
 
 

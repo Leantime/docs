@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Users.Users.`
 
 
@@ -26,7 +25,6 @@ footer: false
     }
 }
 ```
-
 
 
 
@@ -72,8 +70,6 @@ Updates another user's account.
 ```
 
 
-Role ceiling: the caller may not edit an account whose current role is above their own,
-nor assign a role above their own.
 
 
 
@@ -116,7 +112,6 @@ True on success.
     }
 }
 ```
-
 
 
 
@@ -168,7 +163,6 @@ True on success.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -203,7 +197,6 @@ True on success.
     }
 }
 ```
-
 
 
 
@@ -255,7 +248,6 @@ True on success.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -291,7 +283,6 @@ True on success.
     }
 }
 ```
-
 
 
 
@@ -344,7 +335,6 @@ True on success.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -384,9 +374,6 @@ Records that the current user dismissed a modal.
 ```
 
 
-The dismissal is always stored in the session. When $permanent is true it is
-additionally persisted to the user's stored settings so the modal stays
-dismissed across sessions.
 
 
 
@@ -436,7 +423,6 @@ createUserInvite - generates a new invite token, creates the user in the db and 
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -474,14 +460,6 @@ addUser - simple service wrapper to create a new user
 ```
 
 
-Role ceiling: the requested role may not exceed the caller's own role. Callers below admin
-(e.g. managers, who hold users.create) cannot create active accounts with a password they
-chose: their request is turned into an invitation, scoped to their own client. The reserved
-'api' source is never accepted here (see allowedAccountSource()). A request without a
-password is also turned into an invitation: the user sets their own password from the
-invite link.
-
-TODO: Should accept userModel
 
 
 
@@ -525,7 +503,6 @@ usernameExist - Checks if a given username (email) is already in the db
 ```
 
 
-TODO: Should accept userModel
 
 
 
@@ -570,9 +547,6 @@ Patch specific fields on a user record.
 ```
 
 
-Only admins/owners can patch other users. Regular users may only patch
-their own record and only non-privileged fields. Role ceiling: privileged patches may not
-target an account with a higher role than the caller's, nor set a role above it.
 
 
 
@@ -618,10 +592,6 @@ optionally filtered by a search query (used by the @mention autocomplete).
 ```
 
 
-Resolves to the current project when no id is given. Project access is
-enforced by getUsersWithProjectAccess() (which returns [] when the session
-user is not assigned to the project), so a caller cannot enumerate the
-users of a project they aren't part of.
 
 
 
@@ -671,7 +641,6 @@ Delete the user with the specified id.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -710,8 +679,6 @@ Returns the list of users visible to the current session user.
 ```
 
 
-Callers who work across clients (clients.view, admin+ by default) see every
-user. Anyone else is scoped to the users that belong to their own client.
 
 
 
@@ -748,7 +715,6 @@ previously lived inline in the controller.
     }
 }
 ```
-
 
 
 
@@ -797,7 +763,6 @@ applies its own defaults).
 ```
 
 
-Self-scoped: always the session user, never a caller-supplied id.
 
 
 
@@ -845,7 +810,6 @@ switch (pushEnabled, on until the user switches it off).
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -885,11 +849,6 @@ ensures it is not already taken.
 ```
 
 
-Returns a status code the controller maps to a notification:
-- 'success'        profile saved
-- 'user_exists'    new email already belongs to another account
-- 'no_valid_email' email is not a valid address
-- 'enter_email'    email was empty
 
 
 
@@ -937,11 +896,6 @@ password, the confirmation match, and the strength requirements.
 ```
 
 
-Returns a status code the controller maps to a notification:
-- 'success'                    password changed
-- 'password_not_strong_enough' new password failed strength check
-- 'passwords_dont_match'       new and confirmation differed
-- 'previous_password_incorrect' current password was wrong
 
 
 
@@ -987,7 +941,6 @@ matching theme/cache side effects so the change takes effect immediately.
     }
 }
 ```
-
 
 
 
@@ -1042,7 +995,6 @@ the change takes effect on the next request.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1085,10 +1037,6 @@ levels). Cleans up the legacy muted-projects format when present.
 ```
 
 
-The mobile push switch (pushNotifications, any boolean-ish value) is saved
-only when the key is present; a missing key leaves it as it was.
-
-The personal webhook is saved separately, with saveOwnWebhookSettings().
 
 
 
@@ -1134,13 +1082,6 @@ validated before anything is written) and the webhookEnabled checkbox.
 ```
 
 
-An empty or missing URL disables the webhook; unchecking the box keeps the URL on
-file. Both go into one setting (Webhooks::settingKey()), which is read
-back when the write reports no change, so a failed save never leaves an
-old URL or opt-in live behind a success message.
-
-A missing webhookEnabled means unchecked, so API clients that change
-only the opt-in must send the current URL as well.
 
 
 
@@ -1193,7 +1134,6 @@ relations based on the posted project list.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1230,7 +1170,6 @@ Returns the flat list of project ids a user is assigned to.
     }
 }
 ```
-
 
 
 
@@ -1276,15 +1215,6 @@ Resends an invitation to a pending user.
 ```
 
 
-Enforces a 240 second rate-limit (per user, via the session), generates
-a password-reset/invite code when the user does not yet have one, and
-sends the invitation email.
-
-Returns a status code the controller maps to a notification:
-  - 'sent'             invitation sent
-  - 'too_soon'         another invite was sent within the 240s resend cooldown
-  - 'too_many_invites' the hourly/daily invite cap was reached
-  - 'invite_email_failed' the invitation email could not be sent
 
 
 
@@ -1328,7 +1258,6 @@ dialog. Returns false when the bind fails.
     }
 }
 ```
-
 
 
 
@@ -1381,7 +1310,6 @@ Imports/updates the LDAP users selected from the staged member list.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1416,7 +1344,6 @@ The roles the current user may assign (their own role and below), for role dropd
     }
 }
 ```
-
 
 
 

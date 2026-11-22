@@ -7,9 +7,6 @@ footer: false
 
 Reactions service.
 
-Reactions are keyed by (module, moduleId) with no project column, so every @api entry point
-resolves the reacted-on entity's REAL project server-side (project, ticket, comment, canvas
-item) and requires the caller to be able to view it. Unknown modules fail closed.
 `leantime.rpc.Reactions.Reactions.`
 
 
@@ -32,8 +29,6 @@ Adds a reaction on behalf of the CURRENT (session) user.
 ```
 
 
-JSON-RPC entry point: derives the user from the session rather than
-accepting a userId, so a caller cannot react as another user.
 
 
 
@@ -80,8 +75,6 @@ Removes a reaction on behalf of the CURRENT (session) user.
 ```
 
 
-JSON-RPC entry point: derives the user from the session rather than
-accepting a userId, so a caller cannot remove another user's reaction.
 
 
 
@@ -132,7 +125,6 @@ getReactionType - returns the category/type of a given reaction
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -170,7 +162,6 @@ getGroupedEntityReactions - gets all reactions for a given entity grouped and co
 ```
 
 
-The caller must be able to view the entity's project; otherwise an empty list.
 
 
 
@@ -215,8 +206,6 @@ getEntityReactionsWithUsers - gets all reactions for an entity with user names
 ```
 
 
-The caller must be able to view the entity's project; otherwise an empty list (reactor
-names are not exposed across projects).
 
 
 

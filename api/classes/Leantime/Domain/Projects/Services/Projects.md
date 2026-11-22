@@ -7,19 +7,6 @@ footer: false
 
 Projects service (the company project god-service) + the engine's project-access provider.
 
-AUTHORIZATION MODEL (two scopes — see {@see \Leantime\Domain\Projects\Permissions\ProjectsPermissions}):
- - by-id READS carry a dispatch #[RequiresPermission(projects.view, projectIdParam: ...)] gate
-   (readonly+, AND-ins data access) — closes the cross-project read IDOR on the RPC surface.
- - MUTATIONS carry #[RequiresPermission(projects.create|edit|delete, global: true)] (manager+,
-   company-wide — grant-equivalent to the legacy forceGlobal manager controllers).
- - $userId-param reads pin to the session user (admin may query others), mirroring
-   getProjectsUserHasAccessTo().
-
-⚠️ RECURSION GUARDRAIL: this class implements {@see \Leantime\Core\Auth\Contracts\ChecksProjectAccess}; the permission engine
-calls getProjectRole() and isUserAssignedToProject() during EVERY project-scoped authorization.
-Those two methods — and userCanManageProject()/getProjectsUserHasAccessTo() which the engine path
-also touches — MUST NEVER call $this->authorize()/$this->can() in-body, or authorization recurses
-infinitely. They stay ungated (pure repo / role reads).
 `leantime.rpc.Projects.Projects.`
 
 
@@ -37,7 +24,6 @@ Gets the project types.
     }
 }
 ```
-
 
 
 
@@ -76,10 +62,6 @@ Gets the project with the given ID.
 ```
 
 
-Self-authorizing (MCP tools and other in-process callers do not pass the attribute gate):
-the caller must be able to view the project (role + membership), or hold the company-wide
-projects.edit capability (managers manage any project). Otherwise false — the same result
-as a missing project, so there is no existence oracle.
 
 
 
@@ -122,8 +104,6 @@ Gets the progress of a project.
 ```
 
 
-Calculates the completion percentage, estimated completion date,
-and planned completion date of the project.
 
 
 
@@ -164,7 +144,6 @@ Gets an array of user IDs to notify for a given project.
     }
 }
 ```
-
 
 
 
@@ -215,7 +194,6 @@ Gets all the users who need to be notified for a given project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -250,7 +228,6 @@ Gets the count of users who have muted notifications for a specific project.
     }
 }
 ```
-
 
 
 
@@ -301,7 +278,6 @@ Retrieves the name of a project based on its ID.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -336,7 +312,6 @@ Gets the project IDs assigned to a specified user.
     }
 }
 ```
-
 
 
 
@@ -382,7 +357,6 @@ Gets projects assigned to a user.
     }
 }
 ```
-
 
 
 
@@ -437,7 +411,6 @@ Finds all children projects for a given parent project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -475,8 +448,6 @@ Cleans the parent relationship in the given array of projects.
 ```
 
 
-Removes projects that have a parent project that does not exist in the array.
-Assigns a parent id of 0 to projects that have no parent.
 
 
 
@@ -527,7 +498,6 @@ Gets the hierarchy of projects assigned to a user.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -566,7 +536,6 @@ Gets the project hierarchy available to a user.
     }
 }
 ```
-
 
 
 
@@ -623,7 +592,6 @@ Gets all the clients available to a user.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -660,7 +628,6 @@ Gets the role of a user in a specific project.
     }
 }
 ```
-
 
 
 
@@ -711,9 +678,6 @@ Ids of the projects a user can access, for scoping other queries.
 ```
 
 
-Same access rule as getProjectsUserHasAccessTo() (direct assignment, public project,
-client-shared project, or admin/owner) but returns only ids and, by default, only open
-projects. Non-admin callers are always pinned to the session user.
 
 
 
@@ -757,19 +721,6 @@ Gets the projects that a user has access to.
 ```
 
 
-The $userId parameter is preserved for backwards compatibility with
-existing positional callers (web controllers like ShowTicket::run,
-NewTicket::run, and any plugin/custom code). Default is null so RPC
-clients (mobile) can call without it and have the session user
-resolved server-side.
-
-Role-based authorization on $userId, per @marcelfolaron review:
-  - Not passed (null/0): use the authenticated session user
-  - Passed AND caller sees all projects (projects.viewAll): honor the requested user id
-    (admin tooling, "show me Alice's projects" workflows)
-  - Passed by anyone else AND differs from session: ignored and
-    overridden to the session user (prevents IDOR via the optional
-    param)
 
 
 
@@ -818,7 +769,6 @@ The array of projects if the user has access, false otherwise.
 
 
 
-
 **Returns:**
 
 ```json
@@ -846,7 +796,6 @@ Change the current session project to the specified projectId.
     }
 }
 ```
-
 
 
 
@@ -892,7 +841,6 @@ Gets all users that have access to a project.
 ```
 
 
-For direct access only set the teamOnly flag to true
 
 
 
@@ -938,8 +886,6 @@ active users ('all') or the client's active users ('clients').
 ```
 
 
-Use this for assignee/user pickers; use getUsersAssignedToProject() when only
-the directly assigned team is wanted (e.g. notifications).
 
 
 
@@ -981,7 +927,6 @@ Checks if a user is assigned to a particular project.
     }
 }
 ```
-
 
 
 
@@ -1034,7 +979,6 @@ Checks if a user is a member of a specific project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1070,7 +1014,6 @@ Adds a new project.
     }
 }
 ```
-
 
 
 
@@ -1125,7 +1068,6 @@ Duplicates a project with the specified details.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1167,10 +1109,6 @@ Patches a project with partial updates.
 ```
 
 
-Unlike editProject(), this method only updates the fields provided in $params,
-preserving all other existing values including the project type.
-
-Recommended for API usage to avoid accidentally overwriting fields.
 
 
 
@@ -1212,7 +1150,6 @@ Retrieves the avatar for a project.
     }
 }
 ```
-
 
 
 
@@ -1263,7 +1200,6 @@ Retrieves all projects.
 
 
 
-
 **Returns:**
 The projects.
 ```json
@@ -1292,7 +1228,6 @@ Gets all strategy projects.
 ```
 
 
-Admins/owners see every strategy; everyone else only the ones they can access.
 
 
 
@@ -1328,7 +1263,6 @@ Gets all program projects.
 ```
 
 
-Admins/owners see every program; everyone else only the ones they can access.
 
 
 
@@ -1364,7 +1298,6 @@ Edits the project relations of a user.
     }
 }
 ```
-
 
 
 
@@ -1413,25 +1346,6 @@ relations untouched.
 ```
 
 
-Exists because {@see \Leantime\Domain\Projects\Services\self::editUserProjectRelations()} is a full
-REPLACE — it deletes any relation not present in the array it is
-given. Callers that only want to add one membership had to read the
-user's current projects, append, and write the whole set back; if
-that read returned an incomplete list for any reason, the write
-silently deleted every other assignment the user had. This method
-removes the need for that read-modify-write entirely.
-
-Idempotent: an existing membership is left alone and reported as
-false rather than inserted twice. The check matters because
-`zp_relationuserproject` has no unique index on
-(userId, projectId) — a blind insert would produce duplicate rows
-and show the person twice on the project team.
-
-Permission is deliberately identical to editUserProjectRelations
-(global projects.edit, i.e. manager+). Assigning users to projects
-is a company-scoped action; gating this per-project instead would
-let a project-scoped editor grant access to a project, which is
-more power than they have today.
 
 
 
@@ -1483,7 +1397,6 @@ Removes all project relations for a given user.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1521,8 +1434,6 @@ Retrieves the project relations for a given user.
 ```
 
 
-Callers read their OWN relations (the userId is pinned to the session user) unless they see all
-projects or manage users, see resolveMembershipUserId().
 
 
 
@@ -1566,8 +1477,6 @@ Deletes a project and all associated user relations.
 ```
 
 
-Managers and above (manager/admin/owner) can delete any project, company-wide
-(projects.delete is a global, manager+ capability).
 
 
 
@@ -1616,7 +1525,6 @@ Checks if a project has any tickets.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1654,10 +1562,6 @@ Authorized JSON-RPC entry point for kanban status + sort of projects.
 ```
 
 
-The JSON-RPC endpoint has no controller-level role gate, so this wrapper
-enforces manager+ and per-project access for every project in the batch
-(prevents re-statusing/re-sorting projects the caller cannot manage), then
-delegates to the internal updateProjectStatusAndSorting().
 
 
 
@@ -1701,9 +1605,6 @@ Authorized JSON-RPC entry point for Program Timeline (Gantt) re-sorting.
 ```
 
 
-Validates manager+ access for every entity in the mixed payload (pgm-/ticket-
-prefixed and legacy numeric ids) before delegating to updateProjectSorting().
-Ticket ids are resolved to their project so the same manage-access rule applies.
 
 
 
@@ -1748,8 +1649,6 @@ date/sort changes from the Program Timeline).
 ```
 
 
-Enforces manager+ access on the target project, strips framework/control
-fields, then delegates to the internal patch().
 
 
 
@@ -1793,7 +1692,6 @@ Gets all the projects for the current user.
 ```
 
 
-By default, closed projects are not included.
 
 
 
@@ -1842,7 +1740,6 @@ Finds projects based on a search term.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1878,7 +1775,6 @@ Polls for new projects for the current user session.
 ```
 
 
-Retrieves all projects for the current user and prepares the dates for API response.
 
 
 
@@ -1914,8 +1810,6 @@ Polls for updated projects.
 ```
 
 
-Retrieves all the projects the current user has access to and prepares them for API response.
-Adds the modified timestamp to the project ID for tracking updates.
 
 
 
@@ -1952,7 +1846,6 @@ Returns all users in the system.
 ```
 
 
-Thin passthrough so controllers do not have to inject the user repository.
 
 
 
@@ -1994,7 +1887,6 @@ Returns all users flagged as employees.
 ```
 
 
-Thin passthrough so controllers do not have to inject the user repository.
 
 
 
@@ -2029,7 +1921,6 @@ Builds the default value set used to render the new-project form.
     }
 }
 ```
-
 
 
 
@@ -2075,9 +1966,6 @@ Builds the data needed to render the project hub for a user.
 ```
 
 
-Collects the user's open projects, derives the unique client map across
-all of them and filters the displayed projects by the optionally selected
-client. Used by both the standard and the HTMX project-hub endpoints.
 
 
 
@@ -2121,9 +2009,6 @@ Builds the progress view-model for a single project card.
 ```
 
 
-Combines the project's completion progress, assigned team and most recent
-project comment (used as the "last update" / status) into one structure
-for the project-card progress bar partial.
 
 
 
@@ -2166,16 +2051,6 @@ Builds the progress view-model for several project cards in one call.
 ```
 
 
-Batch form of getProjectCardData() for clients that render a list of project cards
-(one request and one bootstrap instead of one per project). Each entry has exactly the
-shape getProjectCardData() returns.
-
-Ids are int-cast; non-positive and duplicate ids are dropped, and only the first
-PROJECT_CARD_BATCH_LIMIT (100) distinct ids are processed — the rest are ignored.
-
-Authorization is per project: each id is checked for projects.view (role + membership)
-on its own. Projects that do not exist or that the caller cannot view are left out of
-the result instead of failing the whole batch.
 
 
 
@@ -2217,7 +2092,6 @@ Persists the Mattermost webhook for a project.
     }
 }
 ```
-
 
 
 
@@ -2270,7 +2144,6 @@ Persists the Slack webhook for a project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -2309,8 +2182,6 @@ Validates and persists the Zulip webhook configuration for a project.
 ```
 
 
-All five fields are required. The sanitized hook is returned so the
-caller can re-render the form with the submitted values.
 
 
 
@@ -2355,10 +2226,6 @@ Validates and persists the Telegram bot configuration for a project.
 ```
 
 
-Requires a bot token. If no chat id is supplied, calls Telegram's getUpdates
-API to auto-detect the most recent chat that has messaged the bot. If a chat
-id is supplied directly (group/topic mode), it is used as-is and no API call
-is made.
 
 
 
@@ -2409,7 +2276,6 @@ Persists the (up to three) Discord webhooks for a project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -2447,8 +2313,6 @@ Loads and de-serializes the integration webhook settings for a project.
 ```
 
 
-Returns the Mattermost and Slack URLs, the three Discord URLs and the
-(safely unserialized) Zulip hook configuration ready for the template.
 
 
 
@@ -2496,8 +2360,6 @@ Edits a project and notifies its users about the update.
 ```
 
 
-Persists the project changes via editProject and then assembles and
-dispatches the "project updated" notification to the project's users.
 
 
 

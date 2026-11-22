@@ -7,9 +7,6 @@ footer: false
 
 Thin backwards-compatibility shim over the Blueprints service.
 
-The canvas system was consolidated into Leantime\Domain\Blueprints. This class
-is kept ONLY so plugins (and any code) that still call the old canvas service
-keep working: every method delegates to the Blueprints service.
 `leantime.rpc.Canvas.Canvas.`
 * **Warning:** this class is **deprecated**. This means that this class will likely be removed in a future version.
 
@@ -32,7 +29,6 @@ import - Import canvas from XML file (delegates to Blueprints).
     }
 }
 ```
-
 
 
 
@@ -87,7 +83,6 @@ getBoardProgress - completion percentage per canvas type (delegates to Blueprint
 
 
 
-
 * **Warning:** this method is **deprecated**. This means that this method will likely be removed in a future version.
 
 
@@ -128,7 +123,6 @@ getLastUpdatedCanvas - canvas boards ordered by last updated item (delegates to 
     }
 }
 ```
-
 
 
 

@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Setting.Setting.`
 
 
@@ -29,8 +28,6 @@ scope their PostHog distinct ids with it as `{companyId}:{userId}`, matching the
 ```
 
 
-Intentionally no #[RequiresPermission]: any authenticated user may read it. JSON-RPC
-still requires an authenticated caller (AuthCheck).
 
 
 
@@ -69,9 +66,6 @@ Resolve the current label value for a given module/label key.
 ```
 
 
-Reads the current label name from the appropriate source label set
-(ticket state labels or idea labels)
-for the given project.
 
 
 
@@ -119,10 +113,6 @@ Persist a renamed project label for a given module/label key.
 ```
 
 
-Fetches the source label set, updates the requested label, serializes the
-result, and writes it back under the project's settings key. Also handles
-the per-module cache/session invalidation and (for idea labels) the
-normalization of the label array shape.
 
 
 
@@ -168,10 +158,6 @@ Build the company settings view model.
 ```
 
 
-Encapsulates the company-settings defaulting/fallback chain: colors
-(including legacy mainColor fallback), sitename, language, message
-frequency, default notification event types, and the default notification
-relevance level.
 
 
 
@@ -214,10 +200,6 @@ Persist company settings from a submitted form.
 ```
 
 
-Owns the post-time persistence: look & feel (color save + legacy mainColor
-cleanup + session sync), main details (sitename/language/messageFrequency),
-localization cache invalidation, notification event-type filtering and
-relevance validation, session sync, and telemetry opt-out orchestration.
 
 
 

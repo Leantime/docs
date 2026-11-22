@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Notifications.Notifications.`
 
 
@@ -28,7 +27,6 @@ __construct - get database connection
     }
 }
 ```
-
 
 
 
@@ -76,7 +74,6 @@ assembled payload.
 ```
 
 
-Returns null when there is no pending notification.
 
 
 
@@ -113,8 +110,6 @@ Marks a notification (or 'all') read for the CURRENT (session) user.
 ```
 
 
-JSON-RPC entry point: derives the user from the session so a caller
-cannot mark another user's notifications read.
 
 
 
@@ -160,9 +155,6 @@ by accident.
 ```
 
 
-Session-scoped: the row is matched on (id, session user), so a caller
-cannot flip another user's notification unread by guessing its id. (The
-id is a global sequence, so an unscoped update would be an IDOR.)
 
 
 
@@ -214,7 +206,6 @@ makes it a fast count.
 
 
 
-
 **Returns:**
 
 ```json
@@ -247,17 +238,6 @@ calls this with {} and gets only its own notifications (newest first).
 ```
 
 
-Session-scoped on purpose: getAllNotifications() takes an arbitrary
-$userId and is deliberately NOT @api-exposed (it would let a caller read
-another user's inbox). This wrapper derives the user from the session,
-exactly like getUnreadCount()/markRead() do, so there is nothing to gate.
-
-(Mark-all-read is already covered by markRead('all').)
-
-Pagination is clamped and the repo's arbitrary column=>value filter
-passthrough is intentionally NOT exposed here — an @api caller gets a
-bounded page of its OWN rows only (no caller-supplied WHERE columns, no
-unbounded limit).
 
 
 
@@ -305,29 +285,6 @@ Register a mobile device's push token for the authenticated user.
 ```
 
 
-Mobile calls this on every login (idempotent). The push fields
-live directly on the bearer's zp_access_tokens row, so:
-  - logout / token revoke deletes the push registration too
-    (no orphan rows, no prune cron needed)
-  - re-login auto-creates a fresh row that will be updated on the
-    next registerPushToken call
-
-Per [[feedback-mobile-owns-explicit-rpc-params]] convention,
-userId is resolved server-side from session — we don't accept it
-from the client (a stolen bearer shouldn't be able to register
-push tokens on someone else's account).
-
-Provider:
-  - 'fcm': raw Firebase Cloud Messaging registration token.
-           Dispatched direct to FCM HTTP v1.
-
-No token-format validation. Bad tokens are caught at send-time
-by FCM (UNREGISTERED / INVALID_ARGUMENT) and we mark
-push_invalidated_at then. Pre-validating here would just shift a
-small class of failures earlier without saving any work.
-
-The push_provider column on zp_access_tokens is retained for
-forward compatibility, but only 'fcm' is accepted today.
 
 
 
@@ -374,7 +331,6 @@ access-token row itself for the rest of the logout sequence.
     }
 }
 ```
-
 
 
 

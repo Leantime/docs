@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Tickets.Tickets.`
 
 
@@ -26,7 +25,6 @@ Gets all status labels for the current set project
     }
 }
 ```
-
 
 
 
@@ -71,7 +69,6 @@ getAllStatusLabelsByUserId - Gets all the status labels a specific user might en
 ```
 
 
-Used to get all the status dropdowns for user home dashboards
 
 
 
@@ -112,7 +109,6 @@ saveStatusLabels - Saves the description/label of a status
     }
 }
 ```
-
 
 
 
@@ -163,7 +159,6 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-
 **Returns:**
 
 ```json
@@ -190,7 +185,6 @@ saveStatusLabels - Saves the description/label of a status
     }
 }
 ```
-
 
 
 
@@ -235,7 +229,6 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-
 **Returns:**
 
 ```json
@@ -262,7 +255,6 @@ saveStatusLabels - Saves the description/label of a status
     }
 }
 ```
-
 
 
 
@@ -307,7 +299,6 @@ saveStatusLabels - Saves the description/label of a status
 
 
 
-
 **Returns:**
 
 ```json
@@ -335,7 +326,6 @@ saveStatusLabels - Saves the description/label of a status
     }
 }
 ```
-
 
 
 
@@ -379,7 +369,6 @@ saveStatusLabels - Saves the description/label of a status
     }
 }
 ```
-
 
 
 
@@ -432,7 +421,6 @@ Retrieves all tickets based on the provided search criteria.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -474,9 +462,6 @@ Compact ticket discovery for API/agent watchers (#3703).
 ```
 
 
-Returns status counts for every ticket in scope plus a slim list of the "active" tickets
-(by default everything in an INPROGRESS-type status), so a watcher does not have to pull and
-filter the full getAll() payload. Only projects the caller can access are counted.
 
 
 
@@ -530,7 +515,6 @@ Retrieves all open user tickets, optionally filtered by user ID and project.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -568,7 +552,6 @@ Retrieves scheduled tasks within a given date range and optionally filters by us
     }
 }
 ```
-
 
 
 
@@ -623,7 +606,6 @@ Returns an associative array containing the following keys:
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -662,8 +644,6 @@ Get status breakdown counts for grouped tickets
 ```
 
 
-Calculates ticket counts per status column for each swimlane group.
-This is used to populate status breakdown visualizations like progress bars.
 
 
 
@@ -719,9 +699,6 @@ Tickets of a project that may serve as the parent of $ticket.
 ```
 
 
-The project defaults to the session project. Whatever it resolves to, the caller must hold
-tickets.view in THAT project; an unresolvable/non-positive project or a denied one yields
-an empty list (never the unscoped all-projects query).
 
 
 
@@ -771,7 +748,6 @@ Retrieves a ticket based on its ID if the user has access to the associated proj
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -807,7 +783,6 @@ The ticket object if found and accessible, or false otherwise.
     }
 }
 ```
-
 
 
 
@@ -860,13 +835,6 @@ narrowed to a single project, with optional inclusion of completed tickets and m
 ```
 
 
-This is a "my work" view (filtered by $userId). $projectId is optional: pass a project id to
-narrow to it (the dispatch gate then runs the per-project membership check), or omit it / pass
-0 for the cross-project view mobile's Tasks tab uses. When no concrete project resolves, the
-enforcer has no project to scope to (the session project is null on Bearer), so tickets.view
-is evaluated against the user's global role — a user can always see their own assigned
-tickets. A mandatory $projectId here previously fail-closed (-32001 on 0, -32602 when omitted)
-for every role, breaking the mobile Tasks tab.
 
 
 
@@ -927,7 +895,6 @@ overdue, this week, later).
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -972,7 +939,6 @@ overdue, this week, later).
     }
 }
 ```
-
 
 
 
@@ -1033,7 +999,6 @@ overdue, this week, later).
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1074,7 +1039,6 @@ Retrieves all milestones based on the provided search criteria and sort option.
     }
 }
 ```
-
 
 
 
@@ -1130,7 +1094,6 @@ Milestones sorted hierarchically; an empty array when the criteria are not proje
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1169,7 +1132,6 @@ Milestones sorted hierarchically; an empty array when the criteria are not proje
     }
 }
 ```
-
 
 
 
@@ -1220,7 +1182,6 @@ Calculate the progress of a milestone based on the tickets associated with it.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1263,7 +1224,6 @@ The progress of the milestone as a percentage.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1298,7 +1258,6 @@ Adds a new ticket quickly based on the provided parameters.
     }
 }
 ```
-
 
 
 
@@ -1350,7 +1309,6 @@ Adds a milestone quickly with the given parameters.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1385,7 +1343,6 @@ Adds a ticket to the system.
     }
 }
 ```
-
 
 
 
@@ -1438,7 +1395,6 @@ Updates the details of an existing ticket based on the provided parameters.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1483,7 +1439,6 @@ If an error occurs, an array with keys 'msg' and 'type' is returned. Returns fal
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1520,7 +1475,6 @@ If an error occurs, an array with keys 'msg' and 'type' is returned. Returns fal
     }
 }
 ```
-
 
 
 
@@ -1574,7 +1528,6 @@ If an error occurs, an array with keys 'msg' and 'type' is returned. Returns fal
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1613,7 +1566,6 @@ If an error occurs, an array with keys 'msg' and 'type' is returned. Returns fal
     }
 }
 ```
-
 
 
 
@@ -1670,7 +1622,6 @@ statusType that the getAll*UserTickets methods attach.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1708,9 +1659,6 @@ it. Mobile's swipe-to-complete (the marquee gesture). Companion to {@see markTic
 ```
 
 
-Was unexposed (-32601) AND unauthorized — unlike its reopen companion it carried no @api,
-no #[RequiresPermission], and no in-body authorize (patch()'s dispatch attribute does not
-fire on this internal call). Now mirrors markTicketReopen exactly.
 
 
 
@@ -1755,15 +1703,6 @@ Authorized JSON-RPC entry point for patching a single ticket field.
 ```
 
 
-Unlike the internal patch(), this enforces authorization because the
-JSON-RPC endpoint has no controller-level role gate: the caller must be an
-editor or above AND be assigned to the ticket's project (prevents
-cross-project IDOR via a smuggled ticket id).
-
-Field names the ticket does not have are never written. When NONE of the submitted fields
-can be applied the call fails with a ValidationException instead of reporting a silent
-no-op; with $strict any unknown field fails the call (#3704). Unknown fields are listed in
-the error data under `ignoredFields`.
 
 
 
@@ -1809,11 +1748,6 @@ Set a ticket's status from a semantic status type ("new" / "inprogress" / "done"
 ```
 
 
-Used by the program cross-project kanban: columns are status types, but the value
-written is always a real status key that exists in the ticket's OWN project, so a
-drag on the program board can never leave the task with a status its project board
-doesn't recognize. Authorization (edit in the ticket's project) is delegated to
-patchTicket().
 
 
 
@@ -1856,7 +1790,6 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
     }
 }
 ```
-
 
 
 
@@ -1908,7 +1841,6 @@ moveTicket - Moves a ticket from one project to another. Milestone children will
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -1945,8 +1877,6 @@ Loads a milestone (or any ticket) by id for the milestone dialog.
 ```
 
 
-Entity-scoped: the id is a ticket id, not a project id, so the attribute only marks
-coverage and the body authorizes tickets.view against the milestone's REAL project.
 
 
 
@@ -1991,7 +1921,6 @@ notification on top of the generic comment notification).
     }
 }
 ```
-
 
 
 
@@ -2046,7 +1975,6 @@ quickUpdateMilestone() so existing non-dialog callers keep their current
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -2092,7 +2020,6 @@ quickAddMilestone() so existing non-dialog callers keep their current
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -2128,7 +2055,6 @@ id is given or the client cannot be found.
     }
 }
 ```
-
 
 
 
@@ -2186,7 +2112,6 @@ controller only has to set the notification and redirect.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -2231,9 +2156,6 @@ Quick-add a task from the program (cross-project) kanban.
 ```
 
 
-The board columns are semantic status types, so the status is resolved to a real
-status key in the explicitly chosen child project (a task belongs to exactly one
-project). Authorization (create in that project) is enforced by quickAddTicket().
 
 
 
@@ -2282,11 +2204,6 @@ Create a subtask under a parent ticket, or update one of the parent's existing s
 ```
 
 
-The parent is always reloaded server-side by id (a caller-supplied object/array is never
-trusted for its projectId), and authorization runs against the parent's REAL project:
-tickets.create for a new subtask, tickets.edit for an update. An update additionally
-requires that the target really is a subtask of that parent in the same project, so a
-caller cannot overwrite an arbitrary ticket by id or move it into another project.
 
 
 
@@ -2330,8 +2247,6 @@ Authorized JSON-RPC entry point for Gantt re-sorting of tickets/milestones.
 ```
 
 
-Enforces editor+ and per-ticket project access (the RPC endpoint has no
-controller-level gate), then delegates to the internal updateTicketSorting().
 
 
 
@@ -2374,7 +2289,6 @@ Applies a kanban drag: sets the status of the posted cards and their manual kanb
     }
 }
 ```
-
 
 
 
@@ -2427,7 +2341,6 @@ Applies a kanban drag: sets the status of the posted cards and their manual kanb
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -2462,7 +2375,6 @@ Applies a kanban drag: sets the status of the posted cards and their manual kanb
     }
 }
 ```
-
 
 
 
@@ -2513,7 +2425,6 @@ Applies a kanban drag: sets the status of the posted cards and their manual kanb
 
 
 
-
 **Returns:**
 
 ```json
@@ -2540,7 +2451,6 @@ Applies a kanban drag: sets the status of the posted cards and their manual kanb
     }
 }
 ```
-
 
 
 
@@ -2585,7 +2495,6 @@ Applies a kanban drag: sets the status of the posted cards and their manual kanb
 
 
 
-
 **Returns:**
 
 ```json
@@ -2612,7 +2521,6 @@ Applies a kanban drag: sets the status of the posted cards and their manual kanb
     }
 }
 ```
-
 
 
 
@@ -2654,12 +2562,6 @@ Build the template assignments for a program-level cross-project task board.
 ```
 
 
-Mirrors getTicketTemplateAssignments() but scopes the ticket query to a set of
-child project ids (instead of the single session project), aggregates the
-supporting datasets (users, milestones) across those projects, and surfaces the
-data a cross-project board needs: per-project status labels (so a task is always
-rendered/edited with statuses that exist in ITS OWN project) and the semantic
-status-type columns used by the program kanban.
 
 
 
@@ -2704,7 +2606,6 @@ Find milestones that contain a specific term in their headline.
     }
 }
 ```
-
 
 
 
@@ -2758,7 +2659,6 @@ Finds tickets based on search term, project ID, and optional user ID.
 
 
 
-
 **Parameters:**
 
 | Parameter | Type | Description |
@@ -2796,7 +2696,6 @@ Retrieve milestones for a specific project and user.
     }
 }
 ```
-
 
 
 
@@ -2843,7 +2742,6 @@ Polls for updated account milestones.
 ```
 
 
-Retrieves all milestones based on the provided search criteria and prepares the dates for API response.
 
 
 
@@ -2888,9 +2786,6 @@ Polls for new account todos.
 ```
 
 
-Retrieves all account todos based on the provided search criteria. If no criteria are provided,
-it will return all todos. Optionally, a project ID and a user ID can be specified to filter the todos.
-It excludes todos of type "milestone".
 
 
 
@@ -2934,7 +2829,6 @@ Polls for updated account todos.
     }
 }
 ```
-
 
 
 

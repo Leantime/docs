@@ -7,7 +7,6 @@ footer: false
 
 
 
-
 `leantime.rpc.Notifications.News.`
 
 
@@ -26,7 +25,6 @@ __construct - get database connection
     }
 }
 ```
-
 
 
 
@@ -68,7 +66,6 @@ getFeed - Fetches the feed from a remote URL and returns the contents as a Simpl
     }
 }
 ```
-
 
 
 
