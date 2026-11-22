@@ -13,7 +13,7 @@ Each workflow uses Leantime's [MCP server](installation/leantime-mcp.md). For sh
 
 ## What do I need?
 
-- **Leantime connected to your assistant.** The MCP Server plugin makes Leantime available to assistants. On Leantime Cloud it's already on; if you host Leantime yourself, install it first. Then connect your assistant: in Claude on the web or the Claude app, or in Claude Code if you use a terminal.
+- **Leantime connected to your assistant.** The MCP Server plugin makes Leantime available to assistants. On Leantime Cloud it's already on. If you host Leantime yourself, install it first, and check that your version supports signing in from Claude (see [Before you start](installation/leantime-mcp.md#before-you-start)). Then connect your assistant: in Claude on the web or the Claude app, or in Claude Code if you use a terminal.
 - **For the email workflows, a mail connector too,** for example the Gmail connector in Claude. The assistant reads your emails through it, and creates the tasks through Leantime.
 
 ### Add Leantime as a connector in Claude
@@ -84,7 +84,7 @@ The tasks in the Customer Service project's table, each assigned to Sam with a p
 
 Besides the title and description, the assistant can set the **assignee**, **priority** (Critical, High, Medium, Low or Lowest), **due date**, **milestone** and **collaborators**. Ask for what you need. If it isn't sure which project or person you mean, it asks.
 
-**Label the emails you want as tasks.** Give them a Gmail label like `→ Leantime` as they come in, by hand or with a Gmail filter. Then "add the new support emails" means the labelled ones, and nothing else in your inbox ends up in Leantime. Once the tasks are created, ask the assistant to take the label off those emails. Then the label only ever holds emails that aren't in Leantime yet.
+**Label the emails you want as tasks.** Give them a Gmail label like `→ Leantime` as they come in, by hand or with a Gmail filter. Then name the label in your request, like "add the emails labelled → Leantime", so the assistant only looks at those, and nothing else in your inbox ends up in Leantime. Once the tasks are created, ask the assistant to take the label off those emails. Then the label only ever holds emails that aren't in Leantime yet.
 
 **No mail connector?** Take screenshots of the emails and paste them into the chat with the same request. The assistant reads the screenshots instead.
 
@@ -107,8 +107,9 @@ task. If not, create one task, following these rules:
 - Title: "Customer: what they need", for example "Harbor Café: replacement
   for a damaged order".
 - Description: what the customer asked for, and any order or receipt numbers.
-  Don't include email addresses, phone numbers or account numbers.
   End it with a line "Gmail thread: " and the conversation's thread ID.
+- In every description and comment, leave out email addresses, phone
+  numbers and account numbers. Summarize new messages instead of copying them.
 - If the same customer asks about the same thing in another conversation,
   add that thread ID and the message to their existing task instead.
 - Priority: from the reason they wrote. Money (refunds, billing) and legal
@@ -137,7 +138,7 @@ The same rules work for both workflows. Put them in your request, or in the sche
 - **The title says who and what:** "Customer: what they need". People can scan the list without opening anything.
 - **The description has what the customer asked for,** and the order or receipt numbers someone needs to look it up.
 - **The description ends with the Gmail thread,** as a line like `Gmail thread: 18c2f9a1b3e4d5f6`. That's the conversation's ID, not an email address. With it, the assistant finds the task again when the customer replies, and doesn't create a second one. When a customer writes about the same thing twice, for example once through a chat form and once by email, both threads go on the same task.
-- **Leave out email addresses, phone numbers and account numbers.** Everyone on the project sees the task, and the reply goes out from your mailbox anyway.
+- **Leave out email addresses, phone numbers and account numbers,** in the description and in comments about later replies. Everyone on the project sees the task, and the reply goes out from your mailbox anyway.
 - **Set a priority from the reason they wrote.** For example, money and legal questions rank higher, and how-to questions lower.
 - **Set a due date for the first reply.** With the priority, it makes urgent requests stand out on the board and in My Work.
 - **Add a collaborator** for whoever should follow along, for example the person who answers the customer while someone else fixes the problem.
