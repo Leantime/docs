@@ -283,24 +283,25 @@
     "searchTitle": "Leantime system requirements: PHP, MySQL and Docker"
   },
   "installation/upgrade-guide.md": {
-    "title": "Upgrade guide",
-    "description": "Update self-hosted Leantime safely: back up first, then update the Docker image, the release package or your shared-hosting files, and run the database update.",
+    "title": "Upgrade Leantime",
+    "description": "Upgrade self-hosted Leantime with Docker, the command line updater or by hand, run the database update, and read what changed in each version.",
     "glance": {
       "minutes": 15,
       "maxMinutes": 45,
       "level": "Some experience",
       "needs": [
         "A fresh backup of your database and files (see [Backup and restore](/installation/backup-restore/))",
-        "PHP 8.2 or later, for package and shared-hosting installs"
+        "The version you run now (help menu → **System**)"
       ],
       "where": [
-        "The [release notes](https://github.com/Leantime/leantime/releases), to check for breaking changes",
-        "A terminal on your server (on shared hosting: cPanel and FTP)",
-        "Leantime in your browser, to run the database update if asked and check that everything works"
+        "A terminal on your server (on shared hosting: your control panel's File Manager or FTP)",
+        "Leantime in your browser, to run the database update"
       ],
-      "result": "Leantime on the new version, with your projects, settings, files and plugins."
+      "result": "Leantime on the new version, with your data, files and plugins."
     },
-    "searchTitle": "How to update Leantime to a new version"
+    "searchTitle": "How to upgrade Leantime (Docker, updater or by hand)",
+    "edition": "self-hosted",
+    "checked": "3.15"
   },
   "installation/using-plugins.md": {
     "title": "Plugins",

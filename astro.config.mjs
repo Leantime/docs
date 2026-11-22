@@ -370,7 +370,7 @@ export default defineConfig({
 						},
 						{ label: 'Backup & Restore', slug: 'installation/backup-restore' },
 						{ label: 'Move to a new server', slug: 'installation/move-server' },
-						{ label: 'Upgrade Guide', slug: 'installation/upgrade-guide' },
+						{ label: 'Upgrade Leantime', slug: 'installation/upgrade-guide' },
 						{ label: 'Common Issues', slug: 'installation/common-issues' },
 					],
 				},
