@@ -23,7 +23,7 @@ Import in this order, so each step finds what the next one needs:
 4. **Milestones,** if you use them.
 5. **To-dos.**
 
-> **Tip:** Leantime notifies people about every to-do it imports: the assignee gets "assigned to you", and the project team gets an update. For a big import, tell your team first.
+Leantime notifies people about every to-do it imports: the assignee gets "assigned to you", and the project team gets an update. For a big import, tell your team first.
 
 ## Step 1: Export from your old tool
 
