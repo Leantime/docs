@@ -26,7 +26,7 @@ Click a to-do's title to open it. The **Details** tab holds everything about it:
 | **Assigned to** | The one person who owns it. **Assign to me** takes it yourself. |
 | **Collaborators** | Others who work on it or need to follow it |
 | **Due Date** | When it's due, with an optional time |
-| **Tags** | Your own labels, to find related to-dos |
+| **Tags** | Your own labels, to find related to-dos (see [Tags](using-leantime/tags.md)) |
 | **Type**, **Project**, **Milestone**, **Sprint**, **Related To** | Under **Organization**: what kind of to-do it is (Task, Subtask, Story or Bug), which project and milestone it belongs to, which sprint, and which to-do it's part of |
 | **Work Start**, **Work End**, **Planned Hours / Hours Left** | Under **Schedule**: when you plan to work on it and how long it should take |
 

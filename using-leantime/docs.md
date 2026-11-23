@@ -34,7 +34,7 @@ The toolbar above the text has the everyday formatting: bold, italic, lists, lin
 
 - **Put a page under another one.** Under **Details**, choose the page it belongs to in **Parent**. The **Contents** list on the left shows pages nested under their parent.
 - **Connect a doc to a milestone.** Choose it under **Milestone**. The doc then shows the [milestone](using-leantime/roadmap-planning.md)'s due date and progress under its text, so a launch checklist sits right next to how the launch is going.
-- **Add tags** under the title to label docs that belong together.
+- **Add [tags](using-leantime/tags.md)** under the title to label docs that belong together.
 - **Make more than one space.** A project starts with one space called **Default**. To add another, for example one per team or for "Processes" and "Meeting notes", click the space name next to **Docs** and choose **Create a new wiki**.
 
 ![The space menu next to Docs open, with "Create a new wiki" outlined above the Default space](../_images/using-leantime/docs-spaces.webp)

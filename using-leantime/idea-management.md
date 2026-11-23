@@ -8,7 +8,7 @@ Good ideas turn up in the middle of other work and get lost. The Ideas board in 
 
 1. **Open the project** and click **Ideas** in the left menu, under **Think**.
 2. **Click Add Idea.**
-3. **Give it a short name,** and describe it below. Add tags if they help you find it later.
+3. **Give it a short name,** and describe it below. Add [tags](using-leantime/tags.md) if they help you find it later.
 4. **Click Save & Close,** or **Save** to keep it open.
 
 New ideas start as **New Idea**. Adding and changing ideas needs the Editor role or higher; Commenters can join the discussion.
