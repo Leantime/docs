@@ -19,14 +19,20 @@ Two other places show a calendar:
 | --- | --- |
 | **Your events** | Your own events, in the color shown next to **Events** in the left panel |
 | **To-dos with a due date** | "❕ Due To-Do:" with the to-do and its status, on its due date |
-| **Planned work** | "Planned Edit:" across the to-do's **Work Start** and **Work End** times. A **Work Start** date without a time shows as an all-day "Planned:" item (Leantime 3.17 and later) |
+| **Planned work** | "Planned Edit:" across the to-do's **Work Start** and **Work End** times. When neither has a time, it shows as an all-day "Planned:" item instead (Leantime 3.17 and later) |
 | **Connected calendars** | Each in the color you chose for it |
 
 To-dos show when you're assigned to them or a collaborator on them, in every project, done ones included. Their border has the color of their status. Click a to-do to open it.
 
 ## Why do some to-dos show as "Planned:"?
 
-From Leantime 3.17, a to-do whose **Work Start** has a date but no time shows as an all-day item, "Planned:" and the to-do's name, on that day. It marks a day you chose to work on it. It shows on My Calendar, in the calendar on your My Work dashboard, and in your [calendar subscription](#how-do-i-see-my-leantime-calendar-in-google-outlook-or-apple-calendar). Dragging it to another day keeps it an all-day item.
+From Leantime 3.17, a to-do whose **Work Start** has a date but no time shows as an all-day item, "Planned:" and the to-do's name. It marks a day you chose to work on it. Which days it covers depends on **Work End**:
+
+- **No Work End, or the same date:** the **Work Start** day.
+- **A later date without a time:** every day from **Work Start** up to the day before **Work End**.
+- **A Work End with a time:** it isn't a planned day. It shows as "Planned Edit:" until that time.
+
+A "Planned:" item shows on My Calendar, in the calendar on your My Work dashboard, and in your [calendar subscription](#how-do-i-see-my-leantime-calendar-in-google-outlook-or-apple-calendar). Dragging it to another day keeps it an all-day item.
 
 To hide these all-day items:
 
@@ -34,7 +40,7 @@ To hide these all-day items:
 2. **Under Planned days, clear Show planned days on my calendar.**
 3. **Click Save.**
 
-To-dos with a set time always show.
+This only hides "Planned:" items. "Planned Edit:" items, with a set time on **Work Start** or **Work End**, always show.
 
 ## How do I add an event?
 
