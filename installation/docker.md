@@ -41,7 +41,7 @@ Both are below. The update steps further down cover both too.
    | `MYSQL_ROOT_PASSWORD` | A new, strong password for the database's root user |
    | `MYSQL_PASSWORD` | A new, strong password for Leantime's database user |
    | `LEAN_DB_PASSWORD` | **The same** password as `MYSQL_PASSWORD` |
-   | `LEAN_SESSION_PASSWORD` | A long random string. It protects login sessions. |
+   | `LEAN_SESSION_PASSWORD` | A long random string of your own. It's Leantime's secret key. |
 
    To make a strong random value, run `openssl rand -base64 32` and copy the result.
 
@@ -102,6 +102,8 @@ Both are below. The update steps further down cover both too.
 4. **Open the installer.** In your browser, go to `http://localhost:8080`, or `http://<your-server-address>:8080` on a server. Enter your email address, name and company name and click **Install**. Then set your password and click through the short welcome steps.
 
 > **It worked if…** You see the Leantime dashboard, and you can log out and back in with your email address and new password.
+
+Before your team starts, go through [Secure your Leantime server](installation/security-checklist.md).
 
 ## Where is my data stored?
 

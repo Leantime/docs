@@ -91,7 +91,7 @@ Both need the Administrator role or higher.
 
 ## What about two-factor authentication?
 
-The **Two-Factor Authentication** column shows who has it on. Each person turns it on or off under their own profile; an administrator can't do it for them.
+The **Two-Factor Authentication** column shows who has it on. Each person turns it on or off under their own profile; an administrator can't do it for them. If someone loses the phone with their authenticator app, see [What if I lose my phone?](using-leantime/account-settings.md#what-if-i-lose-my-phone)
 
 ## Related
 

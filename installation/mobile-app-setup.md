@@ -10,7 +10,7 @@ On Leantime Cloud there's nothing to set up: the app and its notifications work 
 | --- | --- | --- |
 | **Leantime 3.9.5 or later** | Signing in | Older versions can't answer the app. |
 | **Leantime 3.10.2 or later** | Signing in with a company login (SSO) | |
-| **Leantime 3.15.4 or later** (pending release) | Phone notifications | Earlier versions push every change in a project to everyone on it. |
+| **Leantime 3.16.0 or later** | Phone notifications | Earlier versions push every change in a project to everyone on it. |
 | **The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin, enabled, with a valid license** | Everything in the app | It signs the app in with its own token, so the app never stores anyone's password, and access can be revoked without changing it. The relay for phone notifications checks the same license. See [installing a plugin](installation/plugin-installation.md). |
 | **HTTPS with a certificate from a public authority,** such as Let's Encrypt, at an address phones can reach | Signing in | Phones don't accept self-signed certificates. A certificate from your own authority works only once it's installed and trusted on each phone. |
 | **Outgoing HTTPS to `accounts.leantime.io`** | Phone notifications | Your server sends notifications through Leantime's relay (see below). |
@@ -36,15 +36,15 @@ There's nothing extra to register with your login provider: the app uses the sam
 
 The app can tell people on their phones when someone assigns them a to-do, mentions them, or comments on their work. On a self-hosted server it's off until you turn it on.
 
-> **Pending release of Leantime 3.15.4.** The switch below is already in 3.15.3, but 3.15.3 sends every change in a project to everyone on it, not only what involves them. Wait for 3.15.4 before turning it on.
+> **Update to Leantime 3.16.0 first.** The switch below is already in 3.15, but 3.15 sends every change in a project to everyone on it, not only what involves them.
 
 1. **Sign in as an administrator.**
 2. **Open Company → Company Settings.** The **Mobile push notifications** section is on the **Details** tab.
 3. **Turn on Send push notifications through Leantime's relay.**
-4. **Under What the relay receives,** choose **Full message** or **Content-free** (see the next section).
+4. **Under What phone notifications show,** choose **Everything**, **Names only** or **Nothing** (see the next section).
 5. **Click Save.**
 
-If the section is grayed out, Advanced Authentication isn't enabled. Enable it first; the section links to the plugin in the marketplace. (Pending release: until then, the section isn't grayed out, and without Advanced Authentication you can turn the switch on but nothing is sent.)
+If the section is grayed out, Advanced Authentication isn't enabled. Enable it first; the section links to the plugin in the marketplace. (Before Leantime 3.16.0, the section isn't grayed out, and without Advanced Authentication you can turn the switch on but nothing is sent.)
 
 Then each person turns notifications on for their phone, in the app: **You → Settings → Notification settings → Phone notifications**. It needs the latest version of the app. What they get follows their [notification settings](using-leantime/notifications.md): projects they've muted and kinds of changes they've switched off stay quiet on the phone too, except @mentions and changes to to-dos they're a collaborator on.
 
@@ -54,10 +54,17 @@ Your server can't send to phones directly, because a phone's notification addres
 
 You choose how much each notification carries:
 
-- **Full message** (the default): the phone shows who did what and on which to-do, for example the to-do's name and "Ben assigned this to you".
-- **Content-free:** the phone shows "New activity in Leantime. Open the app to see it." To-do names, comment text and people's names stay on your server. Tapping the notification opens the right place in the app, which loads the details from your server.
+| Setting | What the phone shows | Example |
+| --- | --- | --- |
+| **Everything** (the default) | Who did what, the to-do's name and comment text | **Pantry open** · Ben: Can we open at 9 on Saturday? |
+| **Names only** | Who did what and the to-do's name, but no comment text | **Pantry open** · Ben commented · Open the Eastside pantry |
+| **Nothing** | Only "New activity in Leantime. Open the app to see it." | **Leantime** · New activity in Leantime. Open the app to see it. |
 
-If your team works with health, legal or other sensitive information, choose **Content-free**. A full message passes through Leantime and Google, and through Apple for iPhones, and can show on the phone's lock screen.
+With **Nothing**, to-do names, comments and people's names stay on your server. Tapping the notification still opens the right place in the app, which loads the details from your server.
+
+> **On Leantime 3.15,** this setting is called **What the relay receives**, with two choices: **Full message** (like Everything) and **Content-free** (like Nothing). **Names only** needs 3.16.0 or later.
+
+If your team works with health, legal or other sensitive information, choose **Nothing**. Everything else passes through Leantime and Google, and through Apple for iPhones, and can show on the phone's lock screen. **Names only** isn't enough there: the to-do's name is often the sensitive part.
 
 ## How do I turn phone notifications off?
 

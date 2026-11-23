@@ -155,25 +155,7 @@ The List View offers the same options but in a different viewing format.  This i
 
 ## Start a Sprint
 
-From the To Do screen, click on the upper top text that says, “Start A Sprint.” From there, this screen will pop up: 
-
-![logo](../_images/getting-started/image16.png)
-
-Fill it out, click save:
-
-![logo](../_images/getting-started/image25.png)
-
-You can click the Backlog here or click into the gray area of the screen to stay in the Kanban view.  You can then add To-Dos for this Sprint in either view.
-
-If you choose to stay in the Kanban view, you’ll default to the original to do box:
-
-![logo](../_images/getting-started/image8.png)
-
-Click the pull down at the arrow to switch to the new Sprint. 
-
-Click into the Sprint - in this case, it’s called The Big Push.  The Title of the Sprint will now show the dates of the sprint underneath.  Now I can go back and add more To Dos.
-
-![logo](../_images/getting-started/image12.png)
+Sprints are optional: a sprint is a fixed stretch of time, often two weeks, with the to-dos your team plans to finish in it. To create one and fill it, see [Sprints](using-leantime/sprints.md).
 
 Adding a To Do is on the top left corner of this working window.  See the arrow.  Here you can also add a new milestone and sprint.
 

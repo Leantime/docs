@@ -118,7 +118,7 @@ LEAN_PRIMARY_COLOR='#1b75bb'                  # Primary brand color
 LEAN_SECONDARY_COLOR='#81B1A8'                # Secondary accent color
 ```
 
-**Note:** These can also be changed in the UI under Account → Theme.
+**Note:** Each person chooses light or dark mode, the font and a color scheme under **My Profile → Theme**. Your primary and secondary colors appear there as **Company Colors** (see [How do I change how Leantime looks?](using-leantime/account-settings.md#how-do-i-change-how-leantime-looks)).
 
 ---
 
@@ -196,12 +196,12 @@ This removes your instance ID and stops all telemetry submission.
 Configure session handling for security and compatibility:
 
 ```env
-LEAN_SESSION_PASSWORD='your-secret-key'       # Session encryption key
-LEAN_SESSION_EXPIRATION=28800                 # Session timeout in seconds (8 hours default)
+LEAN_SESSION_PASSWORD='your-secret-key'       # Leantime's secret key: a long random value of your own
+LEAN_SESSION_EXPIRATION=480                   # Minutes without activity before sign-out (480 = 8 hours)
 LEAN_SESSION_SECURE=true                      # Require HTTPS for session cookies
 ```
 
-**Important:** Set `LEAN_SESSION_SECURE=true` when running over HTTPS, `false` only for local development over HTTP.
+**Important:** Set `LEAN_SESSION_SECURE=true` when running over HTTPS, `false` only for local development over HTTP. For what to check before people use your server, see [Secure your Leantime server](installation/security-checklist.md).
 
 ---
 
