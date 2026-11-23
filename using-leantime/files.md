@@ -19,7 +19,7 @@ You can also record something without leaving Leantime:
 
 Your browser asks for permission to use the camera or your screen the first time.
 
-**What can't I upload?** For security, Leantime refuses PHP files, `.htaccess` files and SVG images. Everything else is allowed, up to your server's upload size limit.
+**What can't I upload?** For security, Leantime refuses files ending in `.php`, `.phtml`, `.php3`, `.php4`, `.php5`, `.phar`, `.htaccess` or `.shtml`, and SVG images (`.svg`, `.svgz`). It also refuses names that contain one of these in the middle, like `report.php.txt`. Everything else is allowed, up to your server's upload size limit.
 
 ## How do I download or delete a file?
 
@@ -37,9 +37,9 @@ Files attached to a to-do stay with that to-do. They don't appear in the project
 | --- | --- |
 | Read Only | See and download them |
 | Commenter | Also upload them |
-| Editor and above | Also delete them |
+| Editor and above | Also delete other people's files |
 
-See [User Management](using-leantime/user-management.md) for the roles.
+Anyone can delete the files they uploaded themselves, whatever their role, even after it changes to Read Only. See [User Management](using-leantime/user-management.md) for the roles.
 
 ## Can I switch off the file library for a project?
 
