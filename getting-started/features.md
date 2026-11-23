@@ -161,7 +161,7 @@ Yes. Open the to-do's menu and choose **Move To-Do**. You need edit rights in bo
 
 #### Does Leantime have Kanban swimlanes?
 
-Yes. On the [Kanban](knowledge-base/kanban.md) board, group to-dos by assignee, milestone, sprint, priority, due date and more to get swimlanes. See [Task management](using-leantime/task-management.md).
+Yes. On the [Kanban](knowledge-base/kanban.md) board, click **Group By** and choose assignee, milestone, sprint, priority, due date and more to get swimlanes. See [Kanban swimlanes](using-leantime/swimlanes.md).
 
 #### Does Leantime have a Gantt chart?
 
