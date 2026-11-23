@@ -69,6 +69,7 @@
 - [Clients](using-leantime/managing-clients.md)
 - [User Management](using-leantime/user-management.md)
 - [Notifications](using-leantime/notifications.md)
+- [Your account and settings](using-leantime/account-settings.md)
 - [Custom Fields](using-leantime/custom-fields.md)
 - [Goals](using-leantime/goals.md)
 - [Ideas](using-leantime/idea-management.md)
