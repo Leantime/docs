@@ -84,6 +84,8 @@ What you get follows your [notification settings](using-leantime/notifications.m
 
 Don't see **Phone notifications**? Update the app to the latest version.
 
+How much a notification shows on your lock screen (everything, names only, or nothing but "New activity in Leantime") is set by your workspace's administrator.
+
 On Leantime Cloud, that's all. On a self-hosted server, your administrator turns phone notifications on for the server first (see [Set up the mobile app on a self-hosted server](installation/mobile-app-setup.md#how-do-i-turn-on-phone-notifications)). If you've turned them on and nothing arrives, ask them.
 
 ## How do reminders work?
@@ -122,7 +124,7 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 
 ## How do I delete my account or my data?
 
-- **Workspace owners:** **Settings → Delete Account** opens your workspace's deletion page in the browser.
+- **Workspace owners:** **Settings → Delete Account** opens your workspace's deletion page in the browser (see [Delete your Leantime Cloud account](using-leantime/delete-cloud-account.md)).
 - **Everyone else:** your account belongs to your workspace. Ask its owner to remove you. Signing out of the app clears everything it stored on your phone.
 - **Usage data:** the app collects pseudonymous usage data (which screens and features are used, never your content). Turn it off under **Settings → Privacy & Security → Share Usage Data**, or email support@leantime.io to have it deleted.
 
