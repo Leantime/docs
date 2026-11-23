@@ -2,7 +2,7 @@
 
 On your own server, you add paid plugins by buying a license on the [Leantime Marketplace](https://marketplace.leantime.io/) and installing the plugin with its license key. This page explains what you buy, how bundles and their keys work, and what the yearly renewal is for.
 
-On Leantime Cloud, there's nothing to buy: the marketplace plugins are already included (see [Plugins](installation/using-plugins.md)).
+On Leantime Cloud, there's nothing to buy: the marketplace plugins are already included, except Advanced Authentication, which is for self-hosted servers (see [Plugins](installation/using-plugins.md)).
 
 ## What am I buying?
 
@@ -40,7 +40,7 @@ No. Your license is a one-time purchase, and you can keep using it with no oblig
 What renews every year is the **updates and support plan**:
 
 - **With the plan,** you get plugin updates, including updates for new Leantime versions, and email support.
-- **Without it,** the plugin keeps working on the Leantime versions it supports. We can't guarantee that it works with Leantime versions released after your plan ends. When you update Leantime, a plugin that doesn't support the new version shows **Not compatible** and is switched off until you update it (see [What happens to plugins when I update Leantime?](installation/plugin-licenses.md#what-happens-to-plugins-when-i-update-leantime)).
+- **Without it,** the plugin keeps working on the Leantime versions it supports. We can't guarantee that it works with Leantime versions released after your plan ends. When you update Leantime, a plugin that doesn't support the new version shows **Not compatible** and stops loading. It stays switched on, and loads again once you install a version that supports your Leantime version (see [What happens to plugins when I update Leantime?](installation/plugin-licenses.md#what-happens-to-plugins-when-i-update-leantime)).
 
 Because of how the marketplace works, the plan is set to renew automatically. You can cancel the renewal in your marketplace account at any time, even right after you buy. Cancelling doesn't take away your license.
 
