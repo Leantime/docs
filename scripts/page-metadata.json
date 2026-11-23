@@ -898,5 +898,11 @@
     "description": "Turn on Kanban swimlanes in Leantime with Group By: rows per person, milestone, priority, sprint or due date, and drag cards between rows.",
     "searchTitle": "Kanban swimlanes in Leantime: rows with Group By",
     "checked": "3.17"
+  },
+  "using-leantime/mobile-app-how-to.md": {
+    "title": "Everyday tasks in the Leantime app",
+    "description": "How to use the Leantime phone app each day: the Today screen and day bar, your one thing, adding and finishing tasks, tracking time, reminders and notes.",
+    "searchTitle": "Leantime mobile app how-to: Today, tasks, time and notes",
+    "checked": "mobile 1.1.0"
   }
 }
