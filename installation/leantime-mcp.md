@@ -354,7 +354,7 @@ These work on **your own** calendar.
 
 These work on **your own** morning summary and reminders. They need Leantime Cloud, or Leantime 3.17 or later with MCP Server plugin 2.1.0 or later.
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getComingUp` | Shows what's coming up for you: due to-dos, milestones and projects ending soon, the same list as your morning summary | Reads |
 | `setTaskReminder` | Chooses how often one to-do reminds you: the day before, every morning, only the morning it's due, or never | Changes |
