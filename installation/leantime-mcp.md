@@ -350,6 +350,17 @@ These work on **your own** calendar.
 
 > **Known issue:** in the current version, editing an event with `editEvent` or `bulkEditEvents` turns it into an all-day event. Until this is fixed, change existing events in Leantime itself. Creating and deleting events works as expected.
 
+### Reminders
+
+These work on **your own** morning summary and reminders. They need Leantime Cloud, or Leantime 3.17 or later with MCP Server plugin 2.1.0 or later.
+
+| Tool | What it does | |
+|---|---|---|
+| `getComingUp` | Shows what's coming up for you: due to-dos, milestones and projects ending soon, the same list as your morning summary | Reads |
+| `setTaskReminder` | Chooses how often one to-do reminds you: the day before, every morning, only the morning it's due, or never | Changes |
+| `getReminderSettings` | Shows your morning summary settings: on or off, the time, and your default for to-dos | Reads |
+| `updateReminderSettings` | Changes your morning summary settings | Changes |
+
 ### Comments and status updates
 
 | Tool | What it does | |
