@@ -11,13 +11,15 @@ Leantime Cloud is run by Hyve5, Inc., doing business as Leantime, which is the d
 ## How is my data protected?
 
 - **Encryption:** your data is encrypted in transit and at rest.
-- **Access by role and project:** people only see the projects they're on, and their role decides what they can do there (see [User Management](using-leantime/user-management.md#roles)).
+- **Access by role and project:** each project decides who can open it: only its team (the default), everyone with the project's client, or everyone in the workspace. Administrators and Owners can open every project. A person's role decides what they can do there (see [Who can see a project?](using-leantime/user-management.md#who-can-see-a-project) and [roles](using-leantime/user-management.md#roles)).
 - **Two-factor authentication:** each person can turn it on for their own account (see [How do I turn on two-factor authentication?](using-leantime/account-settings.md#how-do-i-turn-on-two-factor-authentication)).
 - **Backups:** Leantime keeps rolling 7-day snapshots of its databases for disaster recovery.
 
 ## Do you sell my data?
 
-No. Leantime hasn't sold personal data and doesn't intend to. Your data is shared only with the service providers that run Leantime Cloud, like hosting and payment processing, as listed in the [privacy policy](https://leantime.io/privacy/).
+No. Leantime hasn't sold personal data and doesn't intend to. Leantime shares your data only with the service providers that run Leantime Cloud, like hosting and payment processing, as listed in the [privacy policy](https://leantime.io/privacy/).
+
+Your data also goes where your team sends it. A [project integration](using-leantime/integrations.md), like Slack or Discord, gets that project's updates, and an AI assistant someone connects to Leantime (see [Leantime MCP Server](installation/leantime-mcp.md)) gets what it reads, under that provider's terms. Your team decides what to connect.
 
 ## Can my data stay in the EU?
 
