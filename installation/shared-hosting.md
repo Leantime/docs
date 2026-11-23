@@ -9,7 +9,7 @@ Before you start, check with your host that the plan has:
 - **PHP 8.2 or later**, with the extensions on [System requirements](installation/system-requirements.md)
 - **MySQL 8.0+ or MariaDB 10.6+**
 - **A domain or subdomain** you can point at a folder of your choice
-- **Cron jobs**, for reminders and notification emails
+- **Cron jobs**, for notification emails and Leantime's daily jobs
 
 ## Step 1: Check PHP
 
@@ -70,7 +70,7 @@ All settings are explained on [Configuration](installation/configuration.md).
 
 ## Step 7: Set up the cron job
 
-Leantime needs a cron job to send reminders and notification emails.
+Leantime needs a cron job to send notification emails and run its daily jobs (see [Scheduled jobs, the queue and Redis](installation/scheduled-jobs-and-redis.md)).
 
 1. In cPanel, open **Cron Jobs**.
 2. Choose **Once Per Five Minutes**.
@@ -80,7 +80,7 @@ Leantime needs a cron job to send reminders and notification emails.
 cd /home/YOUR_CPANEL_USER/leantime && php ./bin/leantime schedule:run >/dev/null 2>&1
 ```
 
-If the cron job's `php` is older than 8.2, ask your host for the path to PHP 8.2 for cron jobs and use that instead of `php`. If your plan has no cron jobs, call `https://projects.example.com/cron/run` from an external scheduler instead (see [Cron jobs](installation/configuration.md#cron-jobs)).
+If the cron job's `php` is older than 8.2, ask your host for the path to PHP 8.2 for cron jobs and use that instead of `php`. If your plan has no cron jobs, call `https://projects.example.com/cron/run` from an external scheduler instead (see [How do I run the scheduled jobs?](installation/scheduled-jobs-and-redis.md#how-do-i-run-the-scheduled-jobs)).
 
 ## Step 8: Set up email
 

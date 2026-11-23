@@ -24,6 +24,7 @@
     - [Authentication](installation/authentication-configuration.md)
         - [Keycloak SSO](installation/keycloak-sso.md)
     - [Reverse proxy](installation/reverse-proxy.md)
+    - [Scheduled jobs and Redis](installation/scheduled-jobs-and-redis.md)
     - [Secure your server](installation/security-checklist.md)
     - [Mobile app](installation/mobile-app-setup.md)
     - [Project Integrations](using-leantime/integrations.md)
