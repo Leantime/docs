@@ -155,6 +155,10 @@ Open the to-do's **⋮** menu, on its card on the board or at the top of the to-
 
 **"Task has timesheets attached":** Leantime doesn't delete a to-do that has time logged on it, so the hours stay in your timesheets and reports. Either delete its time entries first, or move the to-do to the **Archived** status instead. You can delete your own entries (see [How do I fill in a week at a time?](using-leantime/timesheets.md#how-do-i-fill-in-a-week-at-a-time)). Entries other people logged can only be deleted by them, or by a Company Manager, Administrator or Owner from **Company → All Timesheets** (see [How do I see everyone's time?](using-leantime/timesheets.md#how-do-i-see-everyones-time)). Archived to-dos are hidden from the board and keep their hours.
 
+## Can Leantime remind me about a to-do?
+
+Yes, from Leantime 3.17. Your morning summary lists your to-dos that are due soon. To choose how often one to-do reminds you, open its **⋮** menu and choose **Remind me** (see [Reminders and the morning summary](using-leantime/reminders.md)).
+
 ## How do I track time on a to-do?
 
 Open the to-do's **⋮** menu and choose **Track Time → Start Work**; choose **Stop Work** when you're done. To log time afterwards, open the to-do's **Time Tracking** tab. Both need time tracking to be on for the project (see [Time tracking](using-leantime/timesheets.md)).

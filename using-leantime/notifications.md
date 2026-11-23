@@ -29,6 +29,8 @@ Click a notification to open what it's about.
 
 @Mentions always reach you, whatever you switch off, and so do changes to to-dos you're a collaborator on.
 
+From Leantime 3.17, you also get a morning summary of what's coming up, with these same email and phone switches. Its settings are at the bottom of this tab (see [Reminders and the morning summary](using-leantime/reminders.md)).
+
 ## How do I get fewer notifications from a busy project?
 
 Change the project's level under **Per-Project Notifications**:

@@ -143,6 +143,10 @@ Yes. We can migrate your data for a small fee. Ask through the chat on [leantime
 
 ### Planning and to-dos
 
+#### Can Leantime remind me when something is due?
+
+Yes, from Leantime 3.17. Each person gets a morning summary of their to-dos due soon, milestones ending and, for project managers, projects ending, in the bell, by email and on their phone. Each to-do's **Remind me** chooses how often it shows up. See [Reminders and the morning summary](using-leantime/reminders.md).
+
 #### Can a to-do have more than one person assigned?
 
 Yes. A to-do has one assignee, who owns it, and any number of collaborators, who are notified and see it in their work.
