@@ -7,4 +7,5 @@ Leantime can be installed in different ways. The following are few options of in
 - [Docker based installation](installation/docker.md)
     - [Synology NAS](installation/synology.md)
     - [Kubernetes (Helm)](installation/kubernetes.md)
-- [Other](installation/other-methods.md)
+- [Portainer, TrueNAS, Unraid and Raspberry Pi](installation/other-methods.md)
+- [One-click installs (Coolify, Dokploy, Easypanel and others)](installation/one-click-installs.md)
