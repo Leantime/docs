@@ -17,7 +17,7 @@ Builds the full report view model for a set of projects in one pass: needs-atten
 milestone buckets, slippage, goals, status updates, effort, prior-period deltas and
 summary stats. This is the single entry point the report screens consume.
 
-**Limit:** This method can't be called through the API in Leantime 3.15 and 3.16: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
+**Limit:** This method can't be called through the API in Leantime 3.15 to 3.17: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
 
 ```json
 {
@@ -63,7 +63,7 @@ summary stats. This is the single entry point the report screens consume.
 
 Buckets the projects' milestones for the period.
 
-**Limit:** This method can't be called through the API in Leantime 3.15 and 3.16: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
+**Limit:** This method can't be called through the API in Leantime 3.15 to 3.17: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
 
 ```json
 {
@@ -152,7 +152,7 @@ the Goals module switched off are left out.
 
 Status updates posted within the period, grouped by project, newest first.
 
-**Limit:** This method can't be called through the API in Leantime 3.15 and 3.16: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
+**Limit:** This method can't be called through the API in Leantime 3.15 to 3.17: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
 
 ```json
 {
@@ -243,7 +243,7 @@ Keyed by project id
 
 Hours logged in the period, totaled and broken down by project and milestone.
 
-**Limit:** This method can't be called through the API in Leantime 3.15 and 3.16: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
+**Limit:** This method can't be called through the API in Leantime 3.15 to 3.17: the `period` parameter can't be sent as JSON, so the call returns error -32602 (Invalid params).
 
 ```json
 {

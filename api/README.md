@@ -118,6 +118,13 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 |---    |---          |
 | [Reactions](api/classes/Leantime/Domain/Reactions/Services/Reactions.md) | Reactions service.|
 
+## `leantime.rpc.Reminders`
+
+
+| Available Services | Description |
+|---    |---          |
+| [Reminders](api/classes/Leantime/Domain/Reminders/Services/Reminders.md) | Reminders for the person who is signed in: their morning summary as data, their reminder<br />settings, and the reminders on one to-do. Every method acts for the session user only; none<br />takes another person&#039;s id. Methods about a to-do check that the person can see it.|
+
 ## `leantime.rpc.Reports`
 
 
@@ -159,6 +166,9 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 
 | Available Services | Description |
 |---    |---          |
+| [OneThing](api/classes/Leantime/Domain/Tickets/Services/OneThing.md) | &quot;Your one thing&quot;: the one to-do a person picks as the thing that matters most on a given day.|
+| [Planning](api/classes/Leantime/Domain/Tickets/Services/Planning.md) | Plans a to-do for a day: the day someone chose to work on it, which they can move any time.|
+| [Suggestions](api/classes/Leantime/Domain/Tickets/Services/Suggestions.md) | Suggestions for what to work on, from your own open to-dos: &quot;Tasks to consider&quot; and &quot;Quick wins&quot;.|
 | [TicketHistory](api/classes/Leantime/Domain/Tickets/Services/TicketHistory.md) | Change history of a ticket (the field changes recorded in zp_tickethistory), prepared for display.|
 | [Tickets](api/classes/Leantime/Domain/Tickets/Services/Tickets.md) | |
 
