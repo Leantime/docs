@@ -866,5 +866,12 @@
     "description": "Leantime's morning summary of what's coming up: due to-dos, milestones and project ends, Remind me on each to-do, the time setting and the admin switch.",
     "searchTitle": "Leantime reminders: morning summary and Remind me on to-dos",
     "checked": "3.17"
+  },
+  "using-leantime/cloud-security.md": {
+    "title": "Security and privacy on Leantime Cloud",
+    "description": "How Leantime Cloud protects your data: encryption, access by role, backups, AI, EU data, deletion, and answers for vendor and security reviews.",
+    "searchTitle": "Leantime Cloud security and privacy: data, AI and reviews",
+    "edition": "cloud",
+    "checked": "3.17"
   }
 }
