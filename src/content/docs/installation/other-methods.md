@@ -1,6 +1,11 @@
 ---
-title: "Other installation methods"
-description: "More ways to run Leantime: in a subfolder of your domain, on a Raspberry Pi, or on Kubernetes with a community Helm chart."
+title: "Other ways to install Leantime"
+description: "Install Leantime with Portainer, on TrueNAS or Unraid, or on a Raspberry Pi: a tested Compose file, the settings to change, and how to update."
+head:
+  - tag: title
+    content: "Install Leantime with Portainer, TrueNAS, Unraid or a Pi"
+edition: self-hosted
+checked: "3.15"
 ---
 
 ## Shared hosting (cPanel)

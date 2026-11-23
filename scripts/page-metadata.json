@@ -815,5 +815,12 @@
     "searchTitle": "Leantime one-click installs: Coolify, Dokploy, Easypanel",
     "edition": "self-hosted",
     "checked": "3.15"
+  },
+  "using-leantime/delete-cloud-account.md": {
+    "title": "Delete your Leantime Cloud account",
+    "description": "Delete your Leantime Cloud account and all its data: where the Owner finds Delete Account, why Billing may be missing, and how to leave a team instead.",
+    "searchTitle": "How to delete your Leantime account and data",
+    "edition": "cloud",
+    "checked": "3.15"
   }
 }
