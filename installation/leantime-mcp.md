@@ -279,7 +279,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 ### Tasks
 
-| Tool | What it does | Reads or changes |
+| Tool | What it does | Effect |
 |---|---|---|
 | `findTasks` | Finds tasks across your projects by assignee, status or last change | Reads |
 | `getTicket` | Shows one task with all its details | Reads |
@@ -296,7 +296,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 ### Milestones
 
-| Tool | What it does | Reads or changes |
+| Tool | What it does | Effect |
 |---|---|---|
 | `findMilestones` | Lists a project's milestones | Reads |
 | `getMilestone` | Shows one milestone | Reads |
@@ -306,7 +306,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 ### Projects
 
-| Tool | What it does | Reads or changes |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getAllProjects` | Lists your projects with progress | Reads |
 | `findProject` | Finds a project by name | Reads |
@@ -323,7 +323,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 ### Goals
 
-| Tool | What it does | Reads or changes |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getAllGoals` | Lists a project's goals | Reads |
 | `getGoal` | Shows one goal with its progress | Reads |
@@ -337,7 +337,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 These work on **your own** calendar.
 
-| Tool | What it does | Reads or changes |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getCalendar` | Shows your events and scheduled tasks for a date range | Reads |
 | `getICalUrl` | Gives you the address to subscribe to your Leantime calendar | Reads |
@@ -352,7 +352,7 @@ These work on **your own** calendar.
 
 ### Comments and status updates
 
-| Tool | What it does | Reads or changes |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getComments` | Shows comments on a task, goal, idea or doc | Reads |
 | `getAllProjectComments` | Shows a project's status updates | Reads |
@@ -362,7 +362,7 @@ These work on **your own** calendar.
 
 ### Time tracking
 
-| Tool | What it does | Reads or changes |
+| Tool | What it does | Effect |
 |---|---|---|
 | `startTimer`, `stopTimer` | Starts and stops your timer on a task | Changes |
 | `logTime` | Logs hours to a task | Adds |
@@ -373,7 +373,7 @@ These work on **your own** calendar.
 
 ### Search and help
 
-| Tool | What it does | Reads or changes |
+| Tool | What it does | Effect |
 |---|---|---|
 | `search` | Searches tasks, projects, goals, milestones, docs and more, like the search bar in Leantime | Reads |
 | `searchLeantimeDocumentation` | Searches Leantime's online documentation (self-hosted: needs `LEAN_JINA_KEY`, see [Settings for administrators](?id=settings-for-administrators)) | Reads |
