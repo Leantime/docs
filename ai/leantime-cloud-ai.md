@@ -39,6 +39,21 @@ On your [My Work dashboard](using-leantime/my-work-dashboard.md):
 
 L.E.O. looks at due dates, priority and the size of each to-do, and mixes small to-dos with a bigger one so it's easier to get started. Next to each to-do, the info button explains why it's where it is.
 
+### How does L.E.O. decide the order?
+
+L.E.O. sorts for two things at once: that you stay motivated, and that your projects, goals and milestones get done on time. It weighs:
+
+- **What keeps you going:** how much a to-do matters for the project, how interesting it is, how much say you have in how to do it, and how much energy it needs right now.
+- **What's around it:** how much work it is, deadlines and the people waiting on it, and how it moves a goal or milestone forward, because seeing progress helps you keep going.
+
+It also uses three well-known ways to prioritize:
+
+- **The Pareto principle:** find the few to-dos (about 20%) that get most of the work done (about 80%), and do those first.
+- **The Goldilocks rule:** aim for work that's the right size, neither too big to start nor too small to matter.
+- **Task pairing:** pair one bigger to-do with one or two smaller ones, so you get a quick win before the hard part.
+
+It also takes into account what it remembers about how you work and the preferences you've told it.
+
 The order is worked out once a day. To work it out again, for example after you've added to-dos, click **Reprioritize my Tasks** in the same menu. While L.E.O. sorts your list, you can't drag to-dos or group them yourself; switch it off to get your own order back.
 
 ## How do I break a to-do into steps?
