@@ -1,6 +1,6 @@
 # System Requirements
 
-Leantime needs **PHP 8.2 or later** and a database (**MySQL 8.0+**, **MariaDB 10.6+** or **PostgreSQL**), or a machine that runs **Docker**. These requirements apply to Leantime 3.2 and later; PostgreSQL works from Leantime 3.6.
+Leantime needs **PHP 8.2 or later** and a database (**MySQL 8.0+**, **MariaDB 10.6+** or **PostgreSQL**), or a machine that runs **Docker**. These requirements apply to Leantime 3.2 and later; PostgreSQL works from Leantime 3.7.
 
 ## What do I need to run Leantime with Docker?
 

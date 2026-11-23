@@ -209,7 +209,10 @@ sudo systemctl start apache2
 
 ## Moving to a new server
 
-To move Leantime to another server, back it up as above, [install Leantime](installation/installation-types.md) on the new one, and restore your backup there. [Move Leantime to a new server](installation/move-server.md) has the steps for Docker and package installations, and what to check afterwards.
+To move Leantime to another server, follow [Move Leantime to a new server](installation/move-server.md). It uses the backup above and has the steps for Docker and package installations, and what to check afterwards. Two rules matter most:
+
+- **Install the same Leantime version** on the new server (see [installation options](installation/installation-types.md)). Move first, upgrade afterwards.
+- **Don't run the web installer** (`/install`) on the new server. It sets up a new, empty database. Restore your backup instead.
 
 ## Before you upgrade
 

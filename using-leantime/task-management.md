@@ -153,7 +153,7 @@ Open the to-do's **⋮** menu and choose **Move To-Do**, then pick the project. 
 
 Open the to-do's **⋮** menu, on its card on the board or at the top of the to-do, and choose **Delete To-Do**. Then click **Yes, delete!** Deleting can't be undone. You need the Editor role or higher.
 
-**"Task has timesheets attached":** Leantime doesn't delete a to-do that has time logged on it, so the hours stay in your timesheets and reports. Either delete its time entries first (see [How do I fill in a week at a time?](using-leantime/timesheets.md#how-do-i-fill-in-a-week-at-a-time)), or move the to-do to the **Archived** status instead. Archived to-dos are hidden from the board and keep their hours.
+**"Task has timesheets attached":** Leantime doesn't delete a to-do that has time logged on it, so the hours stay in your timesheets and reports. Either delete its time entries first, or move the to-do to the **Archived** status instead. You can delete your own entries (see [How do I fill in a week at a time?](using-leantime/timesheets.md#how-do-i-fill-in-a-week-at-a-time)). Entries other people logged can only be deleted by them, or by a Company Manager, Administrator or Owner from **Company → All Timesheets** (see [How do I see everyone's time?](using-leantime/timesheets.md#how-do-i-see-everyones-time)). Archived to-dos are hidden from the board and keep their hours.
 
 ## How do I track time on a to-do?
 
