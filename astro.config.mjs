@@ -19,7 +19,7 @@ const USE_LEANTIME_GROUPS = [
 	['Plan and track', ['managing-projects', 'task-management|To-Dos', 'custom-fields|Custom Fields', 'roadmap-planning|Milestones', 'sprints', 'goals']],
 	['Above your projects', ['programs', 'strategies']],
 	['Think', ['idea-management|Ideas', 'blueprints', 'whiteboards', 'research-boards', 'retrospectives']],
-	['Write and share', ['docs', 'files', 'reports']],
+	['Write and share', ['comments|Comments and @mentions', 'docs', 'files', 'reports']],
 	['Your team and company', ['managing-clients', 'user-management', 'company-settings', 'integrations|Integrations', 'import-csv']],
 ];
 // using-leantime pages that sit in another menu group instead (the Leantime Cloud group).
