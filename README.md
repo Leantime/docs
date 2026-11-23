@@ -38,7 +38,11 @@ npm run preview   # serve the production build
 
 ## Publishing
 
-Every pull request is built by the **Build docs** workflow, which also checks all internal links. After merging to `master`, run the **🚀 Deploy Docs** workflow manually to build and upload the site.
+Every pull request is built by the **Build docs** workflow, which also checks all internal links.
+
+docs.leantime.io is served from Coolify. Merging to `master` doesn't publish anything: redeploy the docs resource in Coolify. It builds the site with `npm ci && npm run build` (Node.js 22.23.4 or later) and serves the `dist/` folder.
+
+The **🚀 Deploy Docs** workflow uploads over FTP, which no longer reaches docs.leantime.io (Cloudflare in front of it doesn't pass FTP). Don't use it.
 
 ## Search engines and AI tools
 
