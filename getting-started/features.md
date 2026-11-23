@@ -123,7 +123,7 @@ Yes, MariaDB 10.6 or later. See [System requirements](installation/system-requir
 
 #### Does Leantime work with PostgreSQL?
 
-Yes, since Leantime 3.6. Set `LEAN_DB_DEFAULT_CONNECTION = 'pgsql'` before you install. See [System requirements](installation/system-requirements.md).
+Yes, since Leantime 3.7. Set `LEAN_DB_DEFAULT_CONNECTION = 'pgsql'` before you install. See [System requirements](installation/system-requirements.md).
 
 #### Can Leantime run on Windows or IIS?
 
