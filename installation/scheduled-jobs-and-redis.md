@@ -78,7 +78,13 @@ Use Redis when you run more than one Leantime container or server behind a load 
 - **The cache,** so a change made on one server shows on the others.
 - **The sign-in limits,** so the limits count across all servers.
 
-Each server also needs the same database and the same uploaded files, for example by [storing files in S3](installation/configuration.md#s3-file-storage).
+Each server also needs:
+
+- the same database;
+- the same uploaded files, for example by [storing files in S3](installation/configuration.md#s3-file-storage);
+- the same `LEAN_APP_URL` and `LEAN_SESSION_PASSWORD`. Leantime uses both to name its cache, so with different values the servers don't share the cache or the sign-in limits, even on one Redis.
+
+**Run the scheduled jobs on one server only.** Leantime doesn't coordinate them between servers, so two servers can send the same queued email. On your own servers, add the cron job to one of them, and set `LEAN_POOR_MANS_CRON = false` on all of them. The official Docker image always runs the jobs in every container, and in 3.15 there's no setting to turn that off, so with several containers people can get some notification emails twice.
 
 Sign-ins kept in Redis also survive when you recreate Leantime's container.
 
@@ -112,7 +118,7 @@ Instead of the host, port and scheme, you can give one address: `LEAN_REDIS_URL 
       - leantime-net
 ```
 
-Add `redis_data:` under `volumes:` at the end of the file, set `LEAN_REDIS_HOST = 'redis'` and the other settings above in `.env`, and run `docker compose up -d`.
+Add `redis_data:` under `volumes:` at the end of the file. In `.env`, set `LEAN_USE_REDIS = true`, `LEAN_REDIS_HOST = 'redis'`, `LEAN_REDIS_PORT = 6379` and `LEAN_REDIS_SCHEME = 'tcp'`, and leave out `LEAN_REDIS_PASSWORD`: this Redis has no password, and Redis refuses a password it doesn't expect. Then run `docker compose up -d`.
 
 Leantime keeps sign-ins in Redis database 1 and the cache in database 0, so clearing the cache doesn't sign anyone out. To use other databases, set `LEAN_REDIS_DB` for the cache and `LEAN_REDIS_SESSION_DB` for sign-ins.
 
