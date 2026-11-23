@@ -32,7 +32,7 @@ Despite its name, `LEAN_SESSION_PASSWORD` is Leantime's secret key. Leantime use
    LEAN_SESSION_PASSWORD = 'the value you made'
    ```
 
-   Leantime uses the first 32 characters, so the value needs at least 32.
+   It needs at least 32 characters: encryption uses the first 32. Calendar links use the whole value, so keep all of it, not only the first 32 characters.
 
 Set it before you install, if you can. If you change it on a server that's already in use:
 

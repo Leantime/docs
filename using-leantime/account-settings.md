@@ -39,6 +39,8 @@ If your company signs you in with LDAP or single sign-on, your name, email and p
 
 A password needs at least 8 characters, with an uppercase letter, a lowercase letter, a number and a special character.
 
+In Leantime 3.16 and later, changing your password also disconnects the apps you connected by signing in, like an AI assistant connected with OAuth, so connect them again afterwards (see [Which apps are connected?](installation/leantime-mcp.md#which-apps-are-connected)). Personal access tokens you created yourself keep working.
+
 Forgot your password? Click **Forgot password?** on the sign-in page, and Leantime emails you a link to set a new one.
 
 If your company signs you in with LDAP or single sign-on, you can't change your password here. Change it in your company's sign-in system.

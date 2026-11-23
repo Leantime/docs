@@ -59,7 +59,7 @@ The steps below were tested with Leantime 3.15.3 on a local Kubernetes cluster; 
 
 > **Tip:** To try Leantime before you set up a domain, add `leanSessionSecure: "false"` under `app:` and `url: "http://localhost:8080"`, run `helm upgrade leantime -f values.yaml ./leantime/helm`, then `kubectl port-forward svc/leantime 8080:80`, and open `http://localhost:8080`. Without `leanSessionSecure: "false"`, you can't sign in over plain `http://`. Put both back before you go live.
 
-If you name the release something other than `leantime`, the service is called `<release>-leantime`.
+The service is named after the release: `leantime` here. With another release name, the service name can differ, so check it with `kubectl get svc`.
 
 ## How do I use my own domain?
 
@@ -113,6 +113,8 @@ Other settings, like OpenID Connect, Redis or the sign-in limits, can't be set t
   value: {{ .Values.app.ldap.keys | quote }}
   value: {{ .Values.app.ldap.groupAssignment | quote }}
   ```
+
+  Do the same for `app.ldap.defaultRoleKey` if you set it: `value: {{ .Values.app.ldap.defaultRoleKey | quote }}`. Kubernetes only accepts text for these values, not numbers.
 
 Each restart or update of the Leantime pod also signs everyone out, because sign-ins are kept inside the pod.
 
