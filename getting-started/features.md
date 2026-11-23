@@ -59,7 +59,7 @@ Trying Leantime Cloud? The marketplace plugins are switched on there (except Adv
 | Six roles: Read Only, Commenter, Editor, Manager, Administrator, Owner | Core | Yes |
 | Clients with access to their own projects | Core | Yes |
 | Two-factor authentication (authenticator apps) | Core | Yes |
-| Single sign-on with OpenID Connect (Keycloak, Authentik, Entra ID and others) | Core | No |
+| Single sign-on with OpenID Connect (Keycloak, Authentik, Entra ID and others) | Core | Enterprise option, on request |
 | LDAP and Active Directory | Core | No |
 | [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/): SAML, ready-made sign-in with Google, Microsoft, GitHub, Okta and more, and signing in from the Leantime Mobile app | Plugin | No |
 
@@ -201,7 +201,7 @@ Yes. In **My Calendar**, open **Integrate Calendar**, create your iCal URL and s
 
 #### Does Leantime support single sign-on (SSO)?
 
-Yes, on self-hosted Leantime: OpenID Connect and LDAP / Active Directory are built in; see [Authentication](installation/authentication-configuration.md). They aren't available on Leantime Cloud. The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin adds SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more; see [Advanced Auth](plugins/advanced-authentication.md).
+Yes, on self-hosted Leantime: OpenID Connect and LDAP / Active Directory are built in; see [Authentication](installation/authentication-configuration.md). On Leantime Cloud, OpenID Connect can be set up as an enterprise option; email support@leantime.io to ask (see [Security and privacy on Leantime Cloud](using-leantime/cloud-security.md)). The [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin adds SAML and ready-made sign-in with Google, Microsoft, GitHub, Okta and more; see [Advanced Auth](plugins/advanced-authentication.md).
 
 #### Does Leantime have two-factor authentication?
 

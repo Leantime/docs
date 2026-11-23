@@ -55,6 +55,12 @@ In any editor, like a to-do's description or a doc, click **AI Tools** in the to
 - **Brainstorm Solutions**, **Create Implementation Intention**
 - **Write a blog post about**
 
+## Which AI does L.E.O. use?
+
+L.E.O. runs on Anthropic's Claude models, through Amazon Bedrock. Your workspace's data isn't used to train these models.
+
+The AI features are optional. If your organization doesn't want them, email [support@leantime.io](mailto:support@leantime.io) to have them removed from your workspace. For more on how Leantime Cloud handles your data, see [Security and privacy on Leantime Cloud](using-leantime/cloud-security.md).
+
 ## What does it cost?
 
 L.E.O. uses AI credits from your Leantime Cloud plan. Chatting, sorting, breaking down and writing each use some. If you run out, L.E.O. tells you; the workspace's Owner can buy more credits or change your plan (see [What are AI credits?](using-leantime/cloud-billing.md#what-are-ai-credits)).
