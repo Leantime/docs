@@ -19,10 +19,22 @@ Two other places show a calendar:
 | --- | --- |
 | **Your events** | Your own events, in the color shown next to **Events** in the left panel |
 | **To-dos with a due date** | "❕ Due To-Do:" with the to-do and its status, on its due date |
-| **Planned work** | "Planned Edit:" across the to-do's **Work Start** and **Work End** dates or times |
+| **Planned work** | "Planned Edit:" across the to-do's **Work Start** and **Work End** times. A **Work Start** date without a time shows as an all-day "Planned:" item (Leantime 3.17 and later) |
 | **Connected calendars** | Each in the color you chose for it |
 
 To-dos show when you're assigned to them or a collaborator on them, in every project, done ones included. Their border has the color of their status. Click a to-do to open it.
+
+## Why do some to-dos show as "Planned:"?
+
+From Leantime 3.17, a to-do whose **Work Start** has a date but no time shows as an all-day item, "Planned:" and the to-do's name, on that day. It marks a day you chose to work on it. It shows on My Calendar, in the calendar on your My Work dashboard, and in your [calendar subscription](#how-do-i-see-my-leantime-calendar-in-google-outlook-or-apple-calendar). Dragging it to another day keeps it an all-day item.
+
+To hide these all-day items:
+
+1. **Open My Calendar, then Calendar Settings** in the left panel.
+2. **Under Planned days, clear Show planned days on my calendar.**
+3. **Click Save.**
+
+To-dos with a set time always show.
 
 ## How do I add an event?
 
