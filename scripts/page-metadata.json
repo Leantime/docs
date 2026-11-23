@@ -845,5 +845,11 @@
     "searchTitle": "Buy Leantime plugins: licenses, bundles and renewals",
     "edition": "self-hosted",
     "checked": "3.15"
+  },
+  "using-leantime/files.md": {
+    "title": "Files",
+    "description": "Share files in a Leantime project: upload, record your webcam or screen, attach files to to-dos, who can delete them, and what to do if an upload fails.",
+    "searchTitle": "Files in Leantime: upload, attach and share project files",
+    "checked": "3.16"
   }
 }
