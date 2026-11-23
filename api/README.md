@@ -88,6 +88,13 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 | [News](api/classes/Leantime/Domain/Notifications/Services/News.md) | |
 | [Notifications](api/classes/Leantime/Domain/Notifications/Services/Notifications.md) | |
 
+## `leantime.rpc.Oauth`
+
+
+| Available Services | Description |
+|---    |---          |
+| [ConnectedApps](api/classes/Leantime/Domain/Oauth/Services/ConnectedApps.md) | The apps (Claude, ChatGPT, …) a user connected to their Leantime account through OAuth.|
+
 
 ## `leantime.rpc.Plugins`
 
@@ -186,5 +193,5 @@ If `Module` and `Service` have the same name they can be summarized to `leantime
 | [Wiki](api/classes/Leantime/Domain/Wiki/Services/Wiki.md) | |
 
 ---
-> Automatically generated from source code comments on 2026-11-22 using [phpDocumentor](http://www.phpdoc.org/)
+> Automatically generated from source code comments on 2026-11-23 using [phpDocumentor](http://www.phpdoc.org/)
 
