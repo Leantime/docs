@@ -886,5 +886,17 @@
     "description": "Search Leantime with ⌘K: find to-dos, projects, docs, ideas, goals, comments, files and people, see what it matches, and filter by project or date.",
     "searchTitle": "Search in Leantime: ⌘K, matching rules and filters",
     "checked": "3.17"
+  },
+  "using-leantime/tags.md": {
+    "title": "Tags",
+    "description": "Use tags in Leantime to label to-dos, ideas and docs: add them, reuse suggestions, see them on cards, and find every item with a tag.",
+    "searchTitle": "Tags in Leantime: label and find to-dos, ideas and docs",
+    "checked": "3.17"
+  },
+  "using-leantime/swimlanes.md": {
+    "title": "Kanban swimlanes",
+    "description": "Turn on Kanban swimlanes in Leantime with Group By: rows per person, milestone, priority, sprint or due date, and drag cards between rows.",
+    "searchTitle": "Kanban swimlanes in Leantime: rows with Group By",
+    "checked": "3.17"
   }
 }
