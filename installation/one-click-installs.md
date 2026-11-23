@@ -8,7 +8,7 @@ All the templates on this page use the official [`leantime/leantime`](https://hu
 
 ## What should I check after a one-click install?
 
-1. **The Leantime version.** Open the help menu (the question mark icon at the top right). The version is under **System**, for example **Leantime V3.15.3**. Compare it with the [latest release](https://github.com/Leantime/leantime/releases). If it's older, change the image tag in the platform, for example to `leantime/leantime:3.15.3`, and redeploy. Then open Leantime and click **Update Now!** if it asks (see [Upgrade Leantime](installation/upgrade-guide.md)). A template set to `latest` updates whenever the platform pulls the image again, so set a version number to update when you choose.
+1. **The Leantime version.** Open the help menu (the question mark icon at the top right). The version is under **System**, for example **Leantime V3.16.0**. Compare it with the [latest release](https://github.com/Leantime/leantime/releases). If it's older, change the image tag in the platform, for example to `leantime/leantime:3.16.0`, and redeploy. Then open Leantime and click **Update Now!** if it asks (see [Upgrade Leantime](installation/upgrade-guide.md)). A template set to `latest` updates whenever the platform pulls the image again, so set a version number to update when you choose.
 2. **The secret key, `LEAN_SESSION_PASSWORD`.** It has to be a long random value of your own. If the template doesn't set it, or sets the value from Leantime's sample file, set your own (make one with `openssl rand -base64 32`). Set it before your team starts: changing it later changes everyone's calendar (iCal) links.
 3. **How long sign-ins last, `LEAN_SESSION_EXPIRATION`.** It's in minutes. 480 keeps people signed in for 8 hours without activity. Some templates set 28800, which is 20 days.
 4. **The address, `LEAN_APP_URL`.** It has to be the `https://` address people open, so links in emails work. With HTTPS, also set `LEAN_SESSION_SECURE = true`.
@@ -29,7 +29,7 @@ Coolify has Leantime in its services list. Its template sets up Leantime with My
 
 Dokploy's Leantime template sets up Leantime with MariaDB, volumes for uploaded files, and its own secret key. Change three things:
 
-- **The version:** the template uses `latest`. Set a version number, like `leantime/leantime:3.15.3`, so updates only happen when you choose.
+- **The version:** the template uses `latest`. Set a version number, like `leantime/leantime:3.16.0`, so updates only happen when you choose.
 - **`LEAN_APP_URL`:** the template sets an `http://` address. Change it to `https://` once your domain has a certificate.
 - **A volume for plugins:** add one for `/var/www/html/app/Plugins`, or plugins you install are gone after a redeploy.
 
@@ -37,7 +37,7 @@ Dokploy's Leantime template sets up Leantime with MariaDB, volumes for uploaded 
 
 Easypanel's Leantime template sets up Leantime with MySQL, but not the secret key or any volumes for files. Change three things:
 
-- **The image:** when you create the app, Easypanel asks for the image. Enter the latest version, like `leantime/leantime:3.15.3`.
+- **The image:** when you create the app, Easypanel asks for the image. Enter the latest version, like `leantime/leantime:3.16.0`.
 - **`LEAN_SESSION_PASSWORD`:** add it to the environment, with your own long random value.
 - **Volumes:** add mounts for `/var/www/html/userfiles`, `/var/www/html/public/userfiles` and `/var/www/html/app/Plugins`. Without them, uploaded files and plugins are gone after a redeploy.
 
