@@ -80,7 +80,7 @@ We close these without a fix, with a short reason:
 
 ## Which versions get security fixes?
 
-Only the latest Leantime release line, currently 3.15.x. If you run an older version, [update](installation/upgrade-guide.md) to get security fixes.
+Only the latest Leantime release line, currently 3.16.x. If you run an older version, [update](installation/upgrade-guide.md) to get security fixes.
 
 ## Do security issues get a CVE?
 
