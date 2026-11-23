@@ -33,7 +33,7 @@ Click the summary, or **See what's coming up** in the email, to open the **Comin
 3. **Change the settings** and click the **Save** under them:
    - **Send me a morning summary:** switch it off to stop the summary and all reminders.
    - **Time:** when the summary comes, in your time zone (see [How do I change my language, date format or time zone?](using-leantime/account-settings.md#how-do-i-change-my-language-date-format-or-time-zone)).
-   - **How often to-dos remind you:** your default for all your to-dos. You can choose differently for one to-do.
+   - **How often to-dos remind you:** your default for your to-dos. You can choose differently for one to-do. To-dos that repeat every day or every weekday remind you only the morning they're due, whatever this default, unless it's **Don't remind me**.
 
 ![The Morning summary section of the Notifications tab (outlined): the Send me a morning summary switch, Time 08:00 AM in your timezone, How often to-dos remind you, and Save](../_images/using-leantime/reminders-settings.webp)
 
@@ -46,7 +46,7 @@ Open the to-do's **⋮** menu (on its card, at the top of the open to-do, or in 
 | Choice | When the to-do shows in your summary |
 | --- | --- |
 | **The day before and the morning it's due** | The usual choice, and the starting default |
-| **Every morning until it's due** | Every morning from its start date, or for 3 days without one |
+| **Every morning until it's due** | Every morning from its start date, or from 3 days before it's due when it has none. Always the day before and the morning it's due too |
 | **Only the morning it's due** | Just that morning |
 | **Don't remind me** | Never |
 
@@ -62,11 +62,11 @@ Yes. In **Company Settings**, on the **Details** tab, switch off **Send morning 
 
 ## What does it need on my own server?
 
-- **Leantime's scheduled jobs.** The summary is sent by the `reminders:dispatch` job, which runs every 5 minutes (see [Scheduled jobs, the queue and Redis](installation/scheduled-jobs-and-redis.md)). If the jobs haven't run in the last hour, the **Morning summary** settings show "Reminders aren't going out" with the cron command to set up. The official Docker image runs the jobs for you.
+- **Leantime's scheduled jobs.** The summary is sent by the `reminders:dispatch` job, which runs every 5 minutes (see [Scheduled jobs, the queue and Redis](installation/scheduled-jobs-and-redis.md)). If the jobs haven't run in the last hour, the **Morning summary** settings show Administrators and Owners "Reminders aren't going out" with the cron command to set up. Other people don't see this warning, so ask an administrator to check. The official Docker image runs the jobs for you.
 - **Email,** for summaries by email (see [Email configuration](installation/email-configuration.md)).
 - **Phone notifications,** for summaries on phones (see [Set up the mobile app](installation/mobile-app-setup.md)).
 
-A summary goes out within three hours after each person's chosen time. If the scheduled jobs were stopped for longer than that, that day's summary is skipped.
+A summary goes out within three hours after each person's chosen time, and no later than midnight in their time zone. If the scheduled jobs don't run in that window, that day's summary is skipped.
 
 ## What if I don't get a summary?
 
