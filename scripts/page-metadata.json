@@ -879,5 +879,11 @@
     "description": "Comment on to-dos, docs and ideas in Leantime: reply, @mention people, react, edit or delete, log a comment as time, and read a to-do's History.",
     "searchTitle": "Leantime comments, @mentions and reactions",
     "checked": "3.17"
+  },
+  "using-leantime/search.md": {
+    "title": "Search",
+    "description": "Search Leantime with ⌘K: find to-dos, projects, docs, ideas, goals, comments, files and people, see what it matches, and filter by project or date.",
+    "searchTitle": "Search in Leantime: ⌘K, matching rules and filters",
+    "checked": "3.17"
   }
 }
