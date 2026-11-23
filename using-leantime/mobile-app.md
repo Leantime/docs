@@ -80,7 +80,7 @@ Yes. The app can tell you when someone assigns you a to-do, mentions you, or com
 
 1. **Open You → Settings → Notification settings.**
 2. **Turn on Phone notifications.** If your phone asks whether Leantime may send notifications, allow it.
-3. **Optional:** under **How they arrive**, choose whether they show as a banner or arrive quietly.
+3. **Optional, on iPhone:** under **How they arrive**, choose **Alerts** (a banner, and a sound for things meant for you if your sounds are on) or **Quietly** (straight to Notification Center).
 
 What you get follows your [notification settings](using-leantime/notifications.md), the same ones as in the browser: muted projects and kinds of changes you've switched off stay quiet on your phone too. @Mentions and changes to to-dos you're a collaborator on still reach you. Turning **Phone notifications** off only affects that phone.
 
@@ -95,7 +95,8 @@ On Leantime Cloud, that's all. On a self-hosted server, your administrator turns
 Open **You → Settings → Reminders**. What you see there depends on your Leantime:
 
 - **With Leantime's built-in reminders (Leantime 3.17 or later):**
-  - **Morning summary:** what's coming up, once a day by push, email and in your inbox. Nothing due means no message. It's on by default; set **Time** to when you want it.
+  - **Morning summary:** what's coming up, once a day by push, email and in your inbox. Nothing due means no message. It's on by default. While it's on, you also see:
+  - **Time:** when the summary arrives.
   - **How often tasks remind you:** your default for **Remind me** on each to-do (see [How do I get reminded about a task?](using-leantime/mobile-app-how-to.md#how-do-i-get-reminded-about-a-task)).
 - **With an older Leantime:** **Morning cue**, a gentle start to the day at the **Time** you choose.
 - **Plan tomorrow**, on every server: an evening nudge to pick tomorrow's to-dos. It's off until you turn it on.
@@ -131,7 +132,7 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 
 Open **You → Settings** and scroll to **Delete Account**. What it offers depends on who you are:
 
-- **Owner of a Leantime Cloud workspace:** **Delete Workspace** opens your workspace's deletion page in the browser. On Cloud, your account is your workspace, so this deletes it for your whole team (see [Delete your Leantime Cloud account](using-leantime/delete-cloud-account.md)).
+- **Owner of a Leantime Cloud workspace:** tap **Delete Workspace**, then **Continue to web**: your workspace's deletion page opens in the browser. On Cloud, your account is your workspace, so this deletes it for your whole team (see [Delete your Leantime Cloud account](using-leantime/delete-cloud-account.md)).
 - **Everyone else** (Cloud team members, and everyone on a self-hosted server): your account is managed by your workspace's owner or your Leantime administrator. **How to delete my account** opens the instructions on leantime.io: ask them to remove you.
 
 Signing out of the app clears everything it stored on your phone.
