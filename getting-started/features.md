@@ -50,7 +50,7 @@ Trying Leantime Cloud? The marketplace plugins are switched on there (except Adv
 | Timers, timesheets, billable work types, invoiced and paid flags, CSV export | Core | Yes |
 | Calendar feed (iCal) to subscribe from Google, Outlook or Apple Calendar | Core | Yes |
 | Show an external iCal calendar inside Leantime (read-only) | Core | Yes |
-| CalDAV Calendar Sync: two-way sync with Nextcloud, ownCloud, Baikal, Radicale, Apple Calendar and Thunderbird | Free plugin, coming soon | Coming soon |
+| [CalDAV Calendar Sync](plugins/caldav.md): two-way sync with Nextcloud, ownCloud, Baikal, Radicale, Apple Calendar and Thunderbird | Free plugin | Coming soon |
 
 ### Sign-in and security
 
@@ -195,7 +195,7 @@ Yes. Start a timer from any to-do or log hours in **Timesheets**. Mark time as b
 
 #### Can I see Leantime in Google Calendar, Outlook or Apple Calendar?
 
-Yes. In **My Calendar**, open **Integrate Calendar**, create your iCal URL and subscribe to it in your calendar app. Two-way sync with Nextcloud, Apple Calendar or Thunderbird is coming soon as a free plugin, CalDAV Calendar Sync.
+Yes. In **My Calendar**, open **Integrate Calendar**, create your iCal URL and subscribe to it in your calendar app. For two-way sync with Nextcloud, Apple Calendar or Thunderbird, use the free [CalDAV Calendar Sync](plugins/caldav.md) plugin.
 
 ### Sign-in and security
 
