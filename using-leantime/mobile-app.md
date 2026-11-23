@@ -4,7 +4,7 @@ Leantime Mobile is the free app for iPhone and Android that connects to the Lean
 
 The app is for your own day, not for setting up projects: see what's due, plan tomorrow, focus on one to-do, track time and keep notes. Project setup and administration stay in the browser.
 
-![The app's Connect screen with the Cloud and Self-Hosted tabs, a box for the workspace name, Connect, and Try Demo Mode](../_images/using-leantime/mobile-connect.webp)
+![The app's Connect screen: the Cloud and Self-Hosted tabs, a box for the workspace name, Connect, and Try Demo Mode](../_images/using-leantime/mobile-connect.webp)
 
 ## How do I get the Leantime mobile app?
 
@@ -51,13 +51,13 @@ No button for your company login? Ask your administrator: what the server needs 
 
 For step-by-step help with each of these, see [Everyday tasks in the Leantime app](using-leantime/mobile-app-how-to.md).
 
-![The Today tab: what's due today, quick wins, the schedule, and what's coming up tomorrow](../_images/using-leantime/mobile-today.webp)
+![The Today tab: Choose today's must-do, the task you last worked on with Resume, the schedule, Quick Wins and what's due today](../_images/using-leantime/mobile-today.webp)
 
 - **Today:** what's due, what you worked on last, quick wins and your schedule for the day.
 - **Tasks:** your to-dos from every project. Add, update and finish them, and log time.
 - **Now:** a timer for one to-do. Count up while you work, or count down a set length (Pomodoro style). Pause, resume, then stop and log the time to the to-do, even if you only worked for five minutes. It also offers short moments to breathe.
 - **Notes:** your notes, kept with your projects.
-- **You:** your calendar, timesheet, inbox and settings, and **Progress**: a view of where you stand right now and a weekly reflection of what you closed and helped with. Progress is only in the app and is just for you.
+- **You:** your calendar, timesheet, inbox and settings, and **Progress**: swipe between **Present** (where you stand right now), **This week** and **This month** (what you closed and helped with). Progress is only in the app and is just for you.
 - **Plan tomorrow:** pick a few to-dos for the next day. They move to tomorrow's date.
 
 ![Plan Tomorrow: a short list of suggested to-dos to move to tomorrow](../_images/using-leantime/mobile-plan-tomorrow.webp)
@@ -72,7 +72,7 @@ What you can change follows your [role](using-leantime/user-management.md) in th
 
 If the app says your role can't do something, ask your workspace administrator.
 
-![The Now tab: a focus timer counting down on one to-do](../_images/using-leantime/mobile-now-timer.webp)
+![The Now tab: the focus timer set to 15 minutes, with the presets and the to-do it logs time to](../_images/using-leantime/mobile-now-timer.webp)
 
 ## Can I get notifications on my phone?
 
@@ -92,12 +92,15 @@ On Leantime Cloud, that's all. On a self-hosted server, your administrator turns
 
 ## How do reminders work?
 
-Turn them on under **You → Settings → Reminders**:
+Open **You → Settings → Reminders**. What you see there depends on your Leantime:
 
-- **Morning cue:** a gentle start to the day, at the time you choose.
-- **Plan tomorrow:** an evening nudge to pick tomorrow's to-dos.
+- **With Leantime's built-in reminders (Leantime 3.17 or later):**
+  - **Morning summary:** what's coming up, once a day by push, email and in your inbox. Nothing due means no message. It's on by default; set **Time** to when you want it.
+  - **How often tasks remind you:** your default for **Remind me** on each to-do (see [How do I get reminded about a task?](using-leantime/mobile-app-how-to.md#how-do-i-get-reminded-about-a-task)).
+- **With an older Leantime:** **Morning cue**, a gentle start to the day at the **Time** you choose.
+- **Plan tomorrow**, on every server: an evening nudge to pick tomorrow's to-dos. It's off until you turn it on.
 
-The app also tells you when a focus timer ends. The first time, your phone asks whether Leantime may send notifications. If you said no, turn them on again in your phone's settings, under **Notifications → Leantime**.
+The app also tells you when a focus timer ends. If your phone doesn't allow Leantime notifications, the Reminders section says so and offers **Open phone Settings**; turn them on under **Notifications → Leantime**.
 
 ## What does the app's error message mean?
 
@@ -126,9 +129,14 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 
 ## How do I delete my account or my data?
 
-- **Workspace owners:** **Settings → Delete Account** opens your workspace's deletion page in the browser (see [Delete your Leantime Cloud account](using-leantime/delete-cloud-account.md)).
-- **Everyone else:** your account belongs to your workspace. Ask its owner to remove you. Signing out of the app clears everything it stored on your phone.
-- **Usage data:** the app collects pseudonymous usage data (which screens and features are used, never your content). Turn it off under **Settings → Privacy & Security → Share Usage Data**, or email support@leantime.io to have it deleted.
+Open **You → Settings** and scroll to **Delete Account**. What it offers depends on who you are:
+
+- **Owner of a Leantime Cloud workspace:** **Delete Workspace** opens your workspace's deletion page in the browser. On Cloud, your account is your workspace, so this deletes it for your whole team (see [Delete your Leantime Cloud account](using-leantime/delete-cloud-account.md)).
+- **Everyone else** (Cloud team members, and everyone on a self-hosted server): your account is managed by your workspace's owner or your Leantime administrator. **How to delete my account** opens the instructions on leantime.io: ask them to remove you.
+
+Signing out of the app clears everything it stored on your phone.
+
+**Usage data:** the app collects pseudonymous usage data (which screens and features are used, never your content). Turn it off under **Settings → Privacy & Security → Share Usage Data**, or email support@leantime.io to have it deleted.
 
 ## Still stuck?
 
