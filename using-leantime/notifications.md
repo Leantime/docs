@@ -4,7 +4,7 @@ Leantime tells you when something changes in your projects: a new comment, a to-
 
 ## Where do I see my notifications?
 
-Click the bell at the top right. **Notifications** lists recent changes in your projects. **Mentions** lists the times someone wrote your name with @, like `@Ada`.
+Click the bell at the top right. **Notifications** lists recent changes in your projects. **Mentions** lists the times someone wrote your name with @, like `@Ada` (see [How do I @mention someone?](using-leantime/comments.md#how-do-i-mention-someone)).
 
 ![The notifications panel under the bell, with Notifications and Mentions tabs and a comment from Ben](../_images/using-leantime/notifications-bell.webp)
 
