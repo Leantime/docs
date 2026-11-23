@@ -76,7 +76,7 @@ AUTH_CREATE_USER=true
 
 New accounts get the **Manager** role and use the provider's display name as their first name. You can change both afterwards in user management.
 
-> **Note:** The **Automatically create user accounts** toggle in Authentication Settings does not control this in AdvancedAuth 1.4.1 and earlier. Set `AUTH_CREATE_USER=true` instead.
+**Note:** The **Automatically create user accounts** toggle in Authentication Settings does not control this in AdvancedAuth 1.4.1 and earlier. Set `AUTH_CREATE_USER=true` instead.
 
 Leantime refuses a login when the provider reports the email as unverified. If your provider marks real users as unverified, you can turn this check off with `AUTH_REQUIRE_VERIFIED_EMAIL=false`.
 
@@ -270,7 +270,7 @@ MICROSOFT_PROXY=
 
 Leantime matches users by the account's **user principal name (UPN)**, not its `mail` attribute. They are usually the same. When they differ (for example `jane@contoso.onmicrosoft.com` vs `jane@contoso.com`), the user's Leantime email must be the UPN.
 
-> **Note:** Leave `MICROSOFT_TENANT_FIELDS` unset. Setting it to `[]` in the environment file breaks sign-in for work and school accounts.
+**Note:** Leave `MICROSOFT_TENANT_FIELDS` unset. Setting it to `[]` in the environment file breaks sign-in for work and school accounts.
 
 ### Microsoft Azure (Key: `AZURE`)
 [Documentation](https://github.com/SocialiteProviders/Microsoft-Azure)
