@@ -39,7 +39,7 @@ These steps are for the [Docker Compose setup](installation/docker.md). Your dat
 
 1. Go to the folder with your `docker-compose.yml` and `.env` files.
 2. Choose the version. The image is `leantime/leantime:${LEAN_VERSION:-latest}`:
-   - To get a specific version, set it in `.env`, for example `LEAN_VERSION=3.15.3`.
+   - To get a specific version, set it in `.env`, for example `LEAN_VERSION=3.16.0`.
    - Without `LEAN_VERSION`, Docker uses `latest`.
 3. Download the new image and replace the container:
 
@@ -100,7 +100,7 @@ Use these steps if you can't use Docker or the updater, for example on shared ho
 2. Unzip it into a new, empty folder. The zip has no folder of its own, so name one:
 
    ```bash
-   unzip Leantime-v3.15.3.zip -d /var/www/leantime-new
+   unzip Leantime-v3.16.0.zip -d /var/www/leantime-new
    ```
 
 3. Stop changes to your data while you copy it. Stop the web server, and pause the [cron job](installation/configuration.md#cron-jobs) that runs Leantime's scheduled jobs. Otherwise a file someone uploads now stays behind in the old folder. On shared hosting, where you can't stop the web server, upgrade when nobody is using Leantime.
@@ -134,6 +134,13 @@ Installed from git? After you pull the new version, run `composer install`, beca
 ## What changed between versions?
 
 The notes below are the changes that affect an upgrade. Changes for plugin developers are in the [release notes](https://github.com/Leantime/leantime/releases).
+
+### 3.16
+
+- **The database changes.** Open Leantime and click **Update Now!**, or run `php bin/leantime db:migrate`.
+- **AI assistants can sign in.** Claude, ChatGPT and other apps connect to Leantime's MCP server by signing in, with no API key. It's on by default; set `LEAN_OAUTH_ENABLED=false` to switch it off (see [MCP server](installation/leantime-mcp.md)).
+- **Update Advanced Authentication to 1.5.0** if you use it. Then signing in with a provider also works when an AI assistant connects, and the mobile app can tell whether your server sends phone notifications.
+- **Phone notifications** have a new setting in **Company Settings**: what they show on lock screens. It starts at **Everything** (see [Notifications](using-leantime/notifications.md#how-do-administrators-set-the-defaults)).
 
 ### 3.15
 

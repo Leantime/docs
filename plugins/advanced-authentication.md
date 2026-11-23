@@ -23,7 +23,7 @@ No, and you don't need to install it there: Leantime Cloud has its own sign-in. 
 
 ## How do I keep it up to date?
 
-Leantime checks the marketplace for plugin updates every day and tells administrators; turn on **Update plugins automatically** in **My Apps** to have minor updates installed for you (see [How do plugin updates work?](installation/plugin-licenses.md#how-do-plugin-updates-work)). Before you update Leantime itself, check that your Advanced Authentication version supports the new release (see [What happens to plugins when I update Leantime?](installation/plugin-licenses.md#what-happens-to-plugins-when-i-update-leantime)).
+Leantime checks the marketplace for plugin updates every day and tells administrators; turn on **Update plugins automatically** in **My Apps** to have minor updates installed for you (see [How do plugin updates work?](installation/plugin-licenses.md#how-do-plugin-updates-work)). With Leantime 3.16 or later, use Advanced Authentication 1.5.0 or later, so signing in with a provider also works when an AI assistant connects to Leantime. Before you update Leantime itself, check that your Advanced Authentication version supports the new release (see [What happens to plugins when I update Leantime?](installation/plugin-licenses.md#what-happens-to-plugins-when-i-update-leantime)).
 
 ## Who can use it?
 
