@@ -62,7 +62,9 @@ Everything else is mine. Put them all in the Volunteers trained milestone.
 
 The assistant creates the to-dos, assigns them and sets the dates in one go, then lists what it made.
 
-People can only be assigned in projects they're on. The assistant can't add someone to a project's team yet: do that on the project's **Team** tab (see [Projects](using-leantime/managing-projects.md)), then ask again.
+With a mail connector, the assistant can read the emails itself, or check your inbox every morning. See [Turn emails into tasks](ai/everyday-workflows.md#turn-emails-into-tasks).
+
+Add people to the project's team before you assign them to-dos, or they may not be able to open them. On Leantime Cloud, and on self-hosted Leantime 3.16.0 or later with an MCP Server plugin newer than 2.0.1, the assistant can do that too (see [Add or remove people from a project's team](ai/everyday-workflows.md#add-or-remove-people-from-a-projects-team)). On older versions, do it on the project's **Team** tab (see [Projects](using-leantime/managing-projects.md)), then ask again.
 
 ## Start a new project in one message
 
@@ -76,7 +78,7 @@ Suggest the first to-dos for each milestone, and wait for my OK
 before you create them.
 ```
 
-The assistant creates the project and the [milestones](using-leantime/roadmap-planning.md), shows you the to-dos it suggests, and creates them once you agree. Then add your team on the **Team** tab, and ask it to hand out the to-dos.
+The assistant creates the project and the [milestones](using-leantime/roadmap-planning.md), shows you the to-dos it suggests, and creates them once you agree. Then ask it to add your team (or add them on the **Team** tab) and to hand out the to-dos. For a complete example, see [Set up a project for someone else](ai/everyday-workflows.md#set-up-a-project-for-someone-else).
 
 Creating projects needs the Manager role or higher, the same as in Leantime.
 
@@ -140,5 +142,6 @@ The assistant works with your account and your permissions, so everything it doe
 ## Related
 
 - [MCP server: connect your own assistant](installation/leantime-mcp.md): setup, and the full list of what the assistant can do
+- [Everyday workflows with your AI assistant](ai/everyday-workflows.md): complete workflows, like turning emails into tasks
 - [AI in Leantime Cloud (L.E.O.)](ai/leantime-cloud-ai.md)
 - [AI with Leantime](ai/README.md)
