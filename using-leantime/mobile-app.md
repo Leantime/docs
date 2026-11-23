@@ -49,6 +49,8 @@ No button for your company login? Ask your administrator: what the server needs 
 
 ## What can I do in the app?
 
+For step-by-step help with each of these, see [Everyday tasks in the Leantime app](using-leantime/mobile-app-how-to.md).
+
 ![The Today tab: what's due today, quick wins, the schedule, and what's coming up tomorrow](../_images/using-leantime/mobile-today.webp)
 
 - **Today:** what's due, what you worked on last, quick wins and your schedule for the day.

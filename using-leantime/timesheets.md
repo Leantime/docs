@@ -88,6 +88,8 @@ Yes. In the project's **Project Settings**, open the **Modules** tab and switch 
 
 With the Pomodoro plugin, you can also drop a to-do onto the Pomodoro timer on My Work: its play and pause buttons then start and stop this same timer (see [Can it log my time to a to-do?](using-leantime/my-work-dashboard.md#can-it-log-my-time-to-a-to-do)).
 
+On your phone, the Leantime app tracks time too: **Start Work** on a to-do, the **Now** timer, or **Log Time** (see [Everyday tasks in the Leantime app](using-leantime/mobile-app-how-to.md#how-do-i-track-my-time)). It's the same timesheet.
+
 ## Related
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
