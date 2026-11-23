@@ -24,7 +24,7 @@ When your workspace can start a trial, the Billing page shows **You're eligible 
 
 During the trial you can use L.E.O. (Leantime's AI), the API, and the plugins Strategy Pro, Programs, Notes, Whiteboards, Pomodoro and Custom Fields, with no limit on to-dos.
 
-When the trial ends without a plan, those features switch off and your plan's limits apply again. Your projects and to-dos stay. Choose a plan any time to switch them back on.
+To keep going after the trial, choose a plan (see [How do I choose or change my plan?](#how-do-i-choose-or-change-my-plan)). If the trial ends without one, see [What happens to an inactive workspace?](#what-happens-to-an-inactive-workspace)
 
 ## How do I choose or change my plan?
 
@@ -69,13 +69,21 @@ The Owner can fix it in one of these ways:
 - **Remove people** who no longer need access, in **Company → User Management** (see [How do I deactivate or delete someone?](using-leantime/user-management.md#how-do-i-deactivate-or-delete-someone)).
 - **Choose a plan,** if the trial ended and you're over the free to-do limit.
 
-If you aren't the Owner and you see this, ask your workspace's Owner.
+## I'm on the team, and Leantime only shows Billing or an error
+
+Your workspace's plan needs attention: a payment failed, or the workspace has more users or to-dos than its plan allows. Only the Owner can fix that, so ask them; they can follow [What happens when a payment fails?](#what-happens-when-a-payment-fails) or [Why does Leantime say I've exceeded my plan's limits?](#why-does-leantime-say-ive-exceeded-my-plans-limits) If you can't reach the Owner, email [support@leantime.io](mailto:support@leantime.io) with your workspace's address, like `yourteam.leantime.io`.
 
 ## How do I cancel?
 
-Click **Cancel Subscription** under **Your Current Plan**. You keep your plan until the end of the period you've paid for, and the Billing page shows **Cancels on** with the date. After that, your plan's free limits apply. Your workspace and data stay.
+Click **Cancel Subscription** under **Your Current Plan**. You keep your plan until the end of the period you've paid for, and the Billing page shows **Cancels on** with the date. After that, the workspace becomes inactive (see [What happens to an inactive workspace?](#what-happens-to-an-inactive-workspace)).
 
 To delete the workspace and all its data instead, use **Delete Account** under **Danger Zone** at the bottom of the Billing page. It can't be undone.
+
+## What happens to an inactive workspace?
+
+A workspace becomes inactive when its trial ends without a plan, or when a cancelled plan runs out. Leantime then moves it and its data to an archive. If it stays inactive for another 180 days, it's deleted permanently. The [privacy policy](https://leantime.io/privacy/) has the details.
+
+To get an archived workspace back, or to have it deleted sooner, email [support@leantime.io](mailto:support@leantime.io) with its address, like `yourteam.leantime.io`.
 
 ## Related
 
