@@ -64,6 +64,7 @@
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
 - [Leantime on your phone](using-leantime/mobile-app.md)
+- [Delete your Cloud account](using-leantime/delete-cloud-account.md)
 - [Projects](using-leantime/managing-projects.md)
 - [Programs](using-leantime/programs.md)
 - [Strategies](using-leantime/strategies.md)
