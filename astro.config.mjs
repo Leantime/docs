@@ -352,7 +352,8 @@ export default defineConfig({
 								{ label: 'Synology NAS', slug: 'installation/synology' },
 								{ label: 'Kubernetes', slug: 'installation/kubernetes' },
 								{ label: 'Subfolder', slug: 'installation/subfolder' },
-								{ label: 'Other', slug: 'installation/other-methods' },
+								{ label: 'Portainer, TrueNAS, Unraid', slug: 'installation/other-methods' },
+								...menuEntries(['installation/one-click-installs|One-click installs']),
 							],
 						},
 						{
