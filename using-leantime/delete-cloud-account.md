@@ -37,7 +37,7 @@ You can't delete a workspace that someone else owns, and you don't need to. Ask 
 
 ## Can I stop paying without deleting?
 
-Yes. On the same **Billing** page, click **Cancel Subscription**. You keep access until the end of the billing period you've paid for. Cancelling doesn't delete the workspace or its data: to remove those, delete the account as described above.
+Yes. On the same **Billing** page, click **Cancel Subscription**. You keep access until the end of the billing period you've paid for. Then Leantime moves the workspace to an archive, and deletes it permanently after another 180 days without a plan (see the [privacy policy](https://leantime.io/privacy/)). To remove it right away, delete the account as described above.
 
 ## What if I can't sign in anymore?
 
