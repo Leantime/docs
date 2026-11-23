@@ -114,6 +114,7 @@ const PLUGIN_PAGES = [
 	'plugins/pomodoro',
 	'plugins/daily-intentions',
 	'plugins/advanced-authentication',
+	'plugins/caldav|CalDAV Calendar Sync',
 ];
 const CONCEPT_PAGES = [
 	'knowledge-base|Overview',

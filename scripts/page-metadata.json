@@ -851,5 +851,14 @@
     "description": "Share files in a Leantime project: upload, record your webcam or screen, attach files to to-dos, who can delete them, and what to do if an upload fails.",
     "searchTitle": "Files in Leantime: upload, attach and share project files",
     "checked": "3.16"
+  },
+  "plugins/caldav.md": {
+    "plugin": {
+      "name": "CalDAV Calendar Sync",
+      "url": "https://marketplace.leantime.io/product/caldav-calendar-sync/"
+    },
+    "searchTitle": "CalDAV Calendar Sync for Leantime: Apple, Thunderbird, Nextcloud",
+    "description": "The free CalDAV Calendar Sync plugin for Leantime: sync with Apple Calendar, Thunderbird, DAVx5 and Nextcloud both ways, app passwords, and how to install it.",
+    "checked": "3.16"
   }
 }
