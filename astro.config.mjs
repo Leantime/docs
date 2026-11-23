@@ -366,6 +366,7 @@ export default defineConfig({
 							items: [
 								{ label: 'Overview', slug: 'installation/configuration' },
 								{ label: 'Email', slug: 'installation/email-configuration' },
+								...menuEntries(['installation/buy-plugins|Buying plugins']),
 								{ label: 'Installing plugins', slug: 'installation/plugin-installation' },
 								{ label: 'Plugin licenses & updates', slug: 'installation/plugin-licenses' },
 								{ label: 'Authentication', slug: 'installation/authentication-configuration' },

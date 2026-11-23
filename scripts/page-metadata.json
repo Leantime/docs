@@ -838,5 +838,12 @@
     "searchTitle": "Leantime Cloud billing: plans, invoices, failed payments",
     "edition": "cloud",
     "checked": "3.15"
+  },
+  "installation/buy-plugins.md": {
+    "title": "Buy a plugin from the Leantime Marketplace",
+    "description": "Buy a Leantime plugin or bundle: user tiers, which license key to use for bundles, the yearly updates and support plan, upgrades and lost keys.",
+    "searchTitle": "Buy Leantime plugins: licenses, bundles and renewals",
+    "edition": "self-hosted",
+    "checked": "3.15"
   }
 }
