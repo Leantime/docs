@@ -14,6 +14,7 @@ Leantime does some of its work in the background: it sends notification emails a
 | `plugins:checkLicense` | Once a day | Checks marketplace plugin licenses |
 | `plugins:checkUpdates` | Once a day | Looks for plugin updates, and installs them if automatic updates are on (see [Plugin licenses and updates](installation/plugin-licenses.md)) |
 | `reports:telemetry` | Once a day | Sends the anonymous usage summary, unless you turned it off |
+| `oauth:purge` | Once a day | Cleans up expired AI assistant sign-ins (OAuth) and unused registrations. Leantime 3.16 and later, unless `LEAN_OAUTH_ENABLED = false` |
 
 Plugins can add their own jobs. The CalDAV plugin, for example, adds `caldav-sync` every 15 minutes. To see the jobs on your server and when each runs next:
 
@@ -84,7 +85,7 @@ Each server also needs:
 - the same uploaded files, for example by [storing files in S3](installation/configuration.md#s3-file-storage);
 - the same `LEAN_APP_URL` and `LEAN_SESSION_PASSWORD`. Leantime uses both to name its cache, so with different values the servers don't share the cache or the sign-in limits, even on one Redis.
 
-**Run the scheduled jobs on one server only.** Leantime doesn't coordinate them between servers, so two servers can send the same queued email. On your own servers, add the cron job to one of them, and set `LEAN_POOR_MANS_CRON = false` on all of them. The official Docker image always runs the jobs in every container, and in 3.15 there's no setting to turn that off, so with several containers people can get some notification emails twice.
+**Run the scheduled jobs on one server only.** Leantime doesn't coordinate them between servers, so two servers can send the same queued email. On your own servers, add the cron job to one of them, and set `LEAN_POOR_MANS_CRON = false` on all of them. The official Docker image always runs the jobs in every container, and has no setting to turn that off, so with several containers people can get some notification emails twice.
 
 Sign-ins kept in Redis also survive when you recreate Leantime's container.
 
