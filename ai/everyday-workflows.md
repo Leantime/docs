@@ -162,7 +162,7 @@ The assistant creates the project and the tasks, and Sam is told: once for being
 
 ### Add or remove people from a project's team
 
-On Leantime Cloud, and on self-hosted Leantime 3.16.0 or later with an MCP Server plugin newer than 2.0.1 (pending release), the assistant can change a project's team:
+On Leantime Cloud, and on self-hosted Leantime 3.16.0 or later with MCP Server plugin 2.1.0 or later, the assistant can change a project's team:
 
 - "Add Sam and Priya to the Customer Service project."
 - "Who's on the Website team? Remove Alex, who moved to another team."

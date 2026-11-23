@@ -315,8 +315,8 @@ You don't call these tools yourself. The assistant picks them based on what you 
 | `getProjectsAssignedToUser` | Lists the projects you're assigned to | Reads |
 | `getUsersAssignedToProject` | Lists a project's team | Reads |
 | `addProject` | Creates a project (Managers and above) | Adds |
-| `addUserToProject` | Adds someone to a project's team and tells them (Managers and above; Leantime Cloud, or Leantime 3.16.0 or later with an MCP Server plugin newer than 2.0.1) | Changes |
-| `removeUserFromProject` | Removes someone from a project's team (Managers and above; Leantime Cloud, or Leantime 3.16.0 or later with an MCP Server plugin newer than 2.0.1) | Changes |
+| `addUserToProject` | Adds someone to a project's team and tells them (Managers and above; Leantime Cloud, or Leantime 3.16.0 or later with MCP Server plugin 2.1.0 or later) | Changes |
+| `removeUserFromProject` | Removes someone from a project's team (Managers and above; Leantime Cloud, or Leantime 3.16.0 or later with MCP Server plugin 2.1.0 or later) | Changes |
 | `editProject`, `patchProject` | Changes a project (Managers and above) | Changes |
 
 > **Known issue:** in the current version, `editProject` also resets the project fields you don't mention (access, client, budget, dates, program). Until this is fixed, change project settings in Leantime itself, not through the assistant.
