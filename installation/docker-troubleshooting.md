@@ -128,7 +128,7 @@ Logging uses `LEAN_LOG_CHANNELS` (comma-separated: `single`, `syslog`, `sentry`,
 
 ## Kubernetes
 
-See [Install on Kubernetes](installation/kubernetes.md) for the community Helm chart.
+See [Install Leantime on Kubernetes](installation/kubernetes.md) for Leantime's Helm chart, what it can't do yet, and its own troubleshooting.
 
 ## Still stuck?
 

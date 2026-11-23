@@ -275,6 +275,24 @@ Marketplace plugins are a single `.phar` file, and PHP runs the plugin from insi
 php ./bin/leantime cache:clearAll
 ```
 
+**If the plugin has to stay on the share,** unpack the `.phar` so PHP can read the plugin's files as plain files. This has worked on Azure App Service with an Azure Files share.
+
+1. Go to the plugin's folder. The folder name must match the plugin's name exactly, including upper and lower case, for example `app/Plugins/AdvancedAuth/`.
+2. Unpack the `.phar` into that same folder:
+
+```bash
+cd app/Plugins/AdvancedAuth
+php -r '$phar = new Phar("AdvancedAuth.phar"); $phar->extractTo(".", null, true);'
+```
+
+3. Check that `composer.json` and `register.php` are now in the folder, next to `AdvancedAuth.phar`.
+4. Leave `AdvancedAuth.phar` and `AdvancedAuth.phar.pubkey` where they are. Leantime still uses the `.phar` to load the plugin and check its license. If you delete or move it, the plugin doesn't load.
+5. Give the web server user the new files (`chown -R www-data:www-data .`), restart PHP and clear Leantime's cache as above.
+
+If PHP can't open the `.phar` on the share at all, copy the `.phar` and `.phar.pubkey` to a local folder, unpack them there, and copy the unpacked files into the plugin's folder.
+
+An update replaces the `.phar` but not the unpacked files. Unpack the new `.phar` again after every update, including automatic ones. Keeping plugins on local storage avoids this step.
+
 ### Plugin Installation Fails (Docker)
 
 **Volume not mounted:**

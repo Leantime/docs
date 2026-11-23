@@ -43,7 +43,7 @@ The same count is checked when you install or update a plugin. If you're over th
 
 ## When does Leantime check licenses?
 
-Once a day, together with the other scheduled jobs. These run from your server's cron job if you set one up (see [Configuration](installation/configuration.md)), and otherwise while people are signed in to Leantime.
+Once a day, together with the other scheduled jobs. They need a cron job on your server, or the official Docker image, which runs them for you. Without one, the daily checks are often skipped (see [What happens without a cron job?](installation/scheduled-jobs-and-redis.md#what-happens-without-a-cron-job)).
 
 If Leantime can't reach marketplace.leantime.io during a check (a firewall, a proxy or an outage), it skips that check and the plugin stays on. Installing and updating plugins does need an HTTPS connection to marketplace.leantime.io.
 
