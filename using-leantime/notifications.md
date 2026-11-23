@@ -38,7 +38,7 @@ Since Leantime 3.16, you also hear:
 - **When someone adds you to a project:** "You were added to" the project, in the bell, by email and on your phone.
 - **About @mentions on boards, goals and ideas,** on your phone too, like mentions on to-dos.
 
-Each change arrives as one notification. Assigning a to-do to you and changing it at the same time doesn't send two.
+On your phone, each change arrives as one notification: assigning a to-do to you and changing it at the same time doesn't push twice. The bell and the update emails can still list them separately.
 
 ## How do I get fewer notifications from a busy project?
 
