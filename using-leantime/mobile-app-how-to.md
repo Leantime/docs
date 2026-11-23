@@ -2,7 +2,7 @@
 
 The Leantime app is built for your own day: what to do now, what's next, and the time you spend. This page walks through the things you'll do most, from the first look in the morning to logging time and planning tomorrow.
 
-To install the app and connect it to your workspace, see [Leantime on your phone](using-leantime/mobile-app.md). To look around first, try the demo on the first screen: every screenshot here comes from it, with its sample data.
+To install the app and connect it to your workspace, see [Leantime on your phone](using-leantime/mobile-app.md). To look around first, tap **Explore the demo** on the first screen: every screenshot here comes from it, with its sample data.
 
 The app has five tabs at the bottom: **Today**, **Tasks**, **Now**, **Notes** and **You**. In the app, to-dos are called tasks.
 
@@ -10,7 +10,7 @@ The app has five tabs at the bottom: **Today**, **Tasks**, **Now**, **Notes** an
 
 Open **Today**. At the top, a bar runs from a sun to a moon across your day, split into **morning** (until noon), **afternoon** (until 6 pm) and **evening**. The white dot is now. The bar's color follows the sun: yellow in the morning, orange in the afternoon, pink at sunset and violet at night. It's there for time blindness: one glance tells you how much of the day has passed, without reading a clock. If you've set an evening plan-tomorrow reminder, a small amber tick marks it.
 
-![The Today tab: the day bar at afternoon, Today's must-do with its Resume button, the schedule, Quick Wins and what's due today](../_images/using-leantime/mobile-today-must-do.webp)
+![The Today tab: the day bar in the evening, Today's must-do with its Resume button, the schedule, Quick Wins and what's due today](../_images/using-leantime/mobile-today-must-do.webp)
 
 Below it, Today shows:
 
@@ -82,7 +82,7 @@ There are three ways, and they all end up in your Leantime timesheet.
 
 **Start Work on a task.** Open the task and tap **Start Work** (under **Time Logged**). The **Now** tab opens on **Track** with that task, and the clock runs. A task that's still **New** moves to **In Progress** (switch this off under **Settings → Auto-Promote on Start Work**). Tap the timer to pause or resume. When you're done, tap **Stop & log** to log the time to the task.
 
-![Now, on the Track tab: Track Your Work, a timer at 00:00 to tap to start, and the task Review homepage designs below it](../_images/using-leantime/mobile-track.webp)
+![Now, on the Track tab: Track Your Work, a timer at 00:00 to tap to start, and the task Draft the launch announcement below it](../_images/using-leantime/mobile-track.webp)
 
 **Use the Now tab.** **Now** has three modes at the top:
 

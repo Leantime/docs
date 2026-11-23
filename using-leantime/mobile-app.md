@@ -4,7 +4,7 @@ Leantime Mobile is the free app for iPhone and Android that connects to the Lean
 
 The app is for your own day, not for setting up projects: see what's due, plan tomorrow, focus on one to-do, track time and keep notes. Project setup and administration stay in the browser.
 
-![The app's Connect screen: the Cloud and Self-Hosted tabs, a box for the workspace name, Connect, and Try Demo Mode](../_images/using-leantime/mobile-connect.webp)
+![The app's first screen, Welcome to Leantime: a Leantime Cloud card, a Your own server card, and Explore the demo](../_images/using-leantime/mobile-welcome.webp)
 
 ## How do I get the Leantime mobile app?
 
@@ -13,14 +13,18 @@ The app is for your own day, not for setting up projects: see what's due, plan t
 
 The app is for phones; tablet layouts come later. It's free. On Leantime Cloud it works with your plan at no extra cost, trials included. On a self-hosted server it needs the [Advanced Authentication](plugins/advanced-authentication.md) plugin, a paid plugin from the marketplace.
 
-**Just looking?** Tap **Try Demo Mode** on the first screen. It opens a sample workspace, with no account or server needed.
+**Just looking?** Tap **Explore the demo** on the first screen. It opens a sample workspace with a pretend team. You don't need an account, and nothing you do is saved.
 
 ## How do I connect the app to Leantime Cloud?
 
-1. **Choose Cloud** on the Connect screen.
-2. **Enter your workspace name:** only the part before `.leantime.io`. If your workspace is `acme.leantime.io`, enter `acme`.
-3. **Sign in** with the email and password you use in the browser.
+1. **Tap Leantime Cloud** on the first screen.
+2. **Enter your workspace name:** the first part of the address you open in your browser. If your workspace is `acme.leantime.io`, enter `acme`. Then tap **Continue**.
+3. **Sign in** with the email and password you use in the browser. The workspace you're signing in to is shown at the top, with **Change** if it's the wrong one.
 4. **Enter your code** if your account uses two-factor authentication. Codes change every 30 seconds, so use the current one.
+
+![The Leantime Cloud screen: Workspace name ending in .leantime.io, Continue, and My team runs its own server](../_images/using-leantime/mobile-cloud.webp)
+
+If the app says there's no workspace at that address, check the spelling. Your workspace name is in your invite email, and in the address bar when you use Leantime in a browser: it's the part before `.leantime.io`.
 
 Everything in the app works on Leantime Cloud, with no plugins or setup.
 
@@ -30,10 +34,14 @@ Your Leantime administrator sets up the server first: it needs Leantime 3.9.5 or
 
 Then, in the app:
 
-1. **Choose Self-Hosted** on the Connect screen.
-2. **Enter the full address** you use in the browser, including `https://` and any port or folder, for example `https://leantime.example.com` or `https://example.com/leantime`.
+1. **Tap Your own server** on the first screen.
+2. **Enter the server address:** the full address you open Leantime at in your browser, including any port or folder, for example `https://leantime.example.com` or `https://example.com/leantime`. Then tap **Continue**.
 3. **Sign in** with your Leantime email and password, or with your company login (see the next section).
 4. **Enter your code** if your account uses two-factor authentication.
+
+![The Your own server screen: Server address, Continue, and My address ends in .leantime.io](../_images/using-leantime/mobile-own-server.webp)
+
+Typed your own server's address on the Cloud screen? The app notices: it says **This is your own server's address** and offers **Connect to your own server**. Each screen also links to the other one: **My team runs its own server** and **My address ends in .leantime.io**.
 
 **Quick test:** open the same address in your phone's browser. If Leantime's login page loads and you can sign in there, your phone can reach the server. If the app still can't sign in, the server may be missing Advanced Authentication or dropping the app's sign-in token; see [What does the app's error message mean?](#what-does-the-apps-error-message-mean).
 
@@ -72,7 +80,7 @@ What you can change follows your [role](using-leantime/user-management.md) in th
 
 If the app says your role can't do something, ask your workspace administrator.
 
-![The Now tab: the focus timer set to 15 minutes, with the presets and the to-do it logs time to](../_images/using-leantime/mobile-now-timer.webp)
+![The Now tab: the focus timer set to 25 minutes, with the presets and the to-do it logs time to](../_images/using-leantime/mobile-now-timer.webp)
 
 ## Can I get notifications on my phone?
 
@@ -122,7 +130,7 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 
 | What's going on | What to do |
 | --- | --- |
-| A full address in the Cloud box, or a workspace name in the Self-Hosted box | Cloud: type only the part before `.leantime.io`. Self-hosted: switch to **Self-Hosted** and type the whole address. |
+| A workspace name on the **Your own server** screen | Tap **My address ends in .leantime.io** and enter only the part before `.leantime.io`. |
 | The address redirects (adds `www`, switches to `https`, adds a folder) | Use the address your browser ends up on. |
 | You only sign in with a company login and never set a password | Use **Sign in with SSO** or your provider's button. If there's none, ask your administrator. |
 | The two-factor code is right but fails | A clock is off: check that your phone sets its time automatically, and ask your administrator to sync the server time (NTP). |
