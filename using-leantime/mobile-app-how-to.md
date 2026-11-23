@@ -129,7 +129,7 @@ Then tap **+**, then **New Note**. Choose the notebook, give the note a title, w
 
 The chips at the top filter by notebook or tag, and the magnifier searches your notes. Swipe a note right and tap **Pin** to keep it at the top, or swipe left and tap **Delete**. Press and hold a note to pin, share, duplicate, move or delete it; press and hold a notebook to rename it, change its color or delete it.
 
-On a self-hosted server, Notes needs the [Notes](https://marketplace.leantime.io/product/leantime-notes/) plugin; without it the app tells you so.
+On a self-hosted server, Notes needs the [Notes](https://marketplace.leantime.io/product/leantime-notes/) plugin; without it the app tells you so. On Leantime Cloud, Notes is there with nothing to set up.
 
 ## How do I keep up with what changed?
 
