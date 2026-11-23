@@ -133,7 +133,7 @@ Click **Filter** and choose a **User**, **Milestone**, **Type**, **Priority** or
 
 ![The Filter panel: User, Milestone, Type, Priority, Status and Search Term, with the Search button](../_images/using-leantime/todos-filter.webp)
 
-To find a to-do in any project, use the search box at the top of every page.
+To find a to-do in any project, use the search box at the top of every page, or press **⌘K** or **Ctrl+K** (see [Search](using-leantime/search.md)).
 
 ## How do I change the statuses?
 

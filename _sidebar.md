@@ -64,6 +64,7 @@
 **Using Leantime**
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
+- [Search](using-leantime/search.md)
 - [Leantime on your phone](using-leantime/mobile-app.md)
 - [Billing on Leantime Cloud](using-leantime/cloud-billing.md)
 - [Delete your Cloud account](using-leantime/delete-cloud-account.md)

@@ -187,6 +187,10 @@ Yes, with the [Whiteboards](https://marketplace.leantime.io/product/leantime-whi
 
 Yes. **My Work** shows your to-dos across all projects. To run several projects as one program, with their to-dos on one board and their milestones on one timeline, use the [Program Plans](https://marketplace.leantime.io/product/leantime-program-plans/) plugin. See [Programs](plugins/programs.md).
 
+#### Can I search across all my projects?
+
+Yes. The search box at the top of every page, or **⌘K** / **Ctrl+K**, finds to-dos, projects, docs, ideas, goals, Blueprint cards, comments and files in every project you can see, with filters for project, dates and your own work. See [Search](using-leantime/search.md).
+
 ### Time and calendars
 
 #### Does Leantime have time tracking?
