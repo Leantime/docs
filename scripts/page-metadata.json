@@ -171,20 +171,23 @@
     "searchTitle": "How to install Leantime: Docker, server or shared hosting"
   },
   "installation/kubernetes.md": {
-    "title": "Install on Kubernetes (Helm)",
-    "description": "Install Leantime on Kubernetes with the community gissilabs Helm chart. Data is not persistent by default, so set the chart's storage options.",
+    "title": "Install Leantime on Kubernetes",
+    "description": "Install Leantime on Kubernetes with the Helm chart from Leantime's repository: values to set, your own domain, updates, backups and what the chart can't do yet.",
     "glance": {
-      "minutes": 10,
+      "minutes": 30,
       "level": "Advanced",
       "needs": [
-        "A Kubernetes cluster",
-        "Helm, set up to reach that cluster"
+        "A Kubernetes cluster with a default storage class",
+        "Helm 3 or later, and kubectl set up to reach the cluster"
       ],
       "where": [
-        "A terminal where `helm` can reach your cluster"
+        "A terminal where `helm` and `kubectl` can reach your cluster"
       ],
-      "result": "Leantime running in your cluster from the community gissilabs chart. Data isn't kept by default: set the chart's storage options."
-    }
+      "result": "Leantime and its MariaDB database running in your cluster, with volumes for uploaded files, from the chart in Leantime's repository."
+    },
+    "searchTitle": "Install Leantime on Kubernetes with Helm",
+    "edition": "self-hosted",
+    "checked": "3.15"
   },
   "installation/leantime-mcp.md": {
     "title": "MCP server: connect AI assistants to Leantime",
