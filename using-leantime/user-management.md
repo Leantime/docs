@@ -61,7 +61,7 @@ A project role can go up or down: a Commenter can be an Editor on one project, a
 
 ## How do I change someone's role or details?
 
-Open **Company → User Management** and click their name. Change their details, **Role**, **Client** or **Project Assignment**, and click **Save**.
+Open **Company → User Management** and click their name. Change their details, **Role**, **Client** or **Project Assignment**, and click **Save**. A new role or client applies from the person's next click; they don't need to sign in again.
 
 ## How do I set how many hours someone works?
 

@@ -23,7 +23,7 @@ Click a to-do's title to open it. The **Details** tab holds everything about it:
 | **Status** | Where the work is: New, In Progress, Done and so on (see [How do I change the statuses?](#how-do-i-change-the-statuses)) |
 | **Priority** | Critical, High, Medium, Low or Lowest |
 | **Effort** | How big it is: < 2min, XS, S, M, L, XL or XXL |
-| **Assigned to** | The one person who owns it. **Assign to me** takes it yourself. |
+| **Assigned to** | The one person who owns it. **Assign to me** takes it yourself. You can only pick people who can see the project. |
 | **Collaborators** | Others who work on it or need to follow it |
 | **Due Date** | When it's due, with an optional time |
 | **Tags** | Your own labels, to find related to-dos |

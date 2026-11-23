@@ -61,7 +61,7 @@ With a personal access token, use `-H "Authorization: Bearer your_token"` instea
 The answer:
 
 ```json
-{"jsonrpc":"2.0","result":{"version":"3.16.0","enabledPlugins":[]},"id":1}
+{"jsonrpc":"2.0","result":{"version":"3.17.0","enabledPlugins":[]},"id":1}
 ```
 
 Every request has the same four parts:
