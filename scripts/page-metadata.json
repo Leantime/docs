@@ -860,5 +860,11 @@
     "searchTitle": "CalDAV Calendar Sync for Leantime: Apple, Thunderbird, Nextcloud",
     "description": "The free CalDAV Calendar Sync plugin for Leantime: sync with Apple Calendar, Thunderbird, DAVx5 and Nextcloud both ways, app passwords, and how to install it.",
     "checked": "3.16"
+  },
+  "using-leantime/reminders.md": {
+    "title": "Reminders and the morning summary",
+    "description": "Leantime's morning summary of what's coming up: due to-dos, milestones and project ends, Remind me on each to-do, the time setting and the admin switch.",
+    "searchTitle": "Leantime reminders: morning summary and Remind me on to-dos",
+    "checked": "3.17"
   }
 }
