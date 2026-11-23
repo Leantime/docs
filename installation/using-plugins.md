@@ -3,7 +3,7 @@
 Plugins add features to Leantime. Each one does one job, like planning a strategy above your projects, sketching on a whiteboard, or repeating a to-do every week. Pick the ones your team needs.
 
 - **In Leantime Cloud,** the marketplace plugins are already switched on, except Advanced Authentication, which is for self-hosted servers.
-- **On your own server,** get a plugin from the [Leantime Marketplace](https://marketplace.leantime.io/) and install it with its license key: see [Installing plugins](installation/plugin-installation.md) and [Plugin licenses and updates](installation/plugin-licenses.md).
+- **On your own server,** buy a plugin on the [Leantime Marketplace](https://marketplace.leantime.io/) and install it with its license key: see [Buy a plugin](installation/buy-plugins.md), [Installing plugins](installation/plugin-installation.md) and [Plugin licenses and updates](installation/plugin-licenses.md).
 
 ## Which plugin do I need?
 

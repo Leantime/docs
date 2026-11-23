@@ -71,7 +71,7 @@ The easiest way to install plugins is through the built-in marketplace interface
 2. Choose the number of users and complete the purchase.
 3. Your license key arrives by email with your order receipt. Lost it? The [Lost License](https://marketplace.leantime.io/lost-license/) page sends it again.
 
-Each plugin has its own license key, also when you buy a bundle. You install each plugin separately with its own key.
+Each plugin has its own license key, also when you buy a bundle. You install each plugin separately with its own key. For tiers, bundles and the yearly updates plan, see [Buy a plugin from the Leantime Marketplace](installation/buy-plugins.md).
 
 ### Step 3: Enter the Key and Install
 

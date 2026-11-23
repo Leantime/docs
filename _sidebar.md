@@ -20,6 +20,7 @@
   - [Configuration](installation/configuration.md)
     - [Email](installation/email-configuration.md)
     - [Plugin](installation/plugin-installation.md)
+        - [Buy a plugin](installation/buy-plugins.md)
         - [Plugin Licenses & Updates](installation/plugin-licenses.md)
     - [Authentication](installation/authentication-configuration.md)
         - [Keycloak SSO](installation/keycloak-sso.md)
