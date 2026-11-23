@@ -15,6 +15,7 @@
     - [Docker based Installation](installation/docker.md)
         - [Docker Troubleshooting](installation/docker-troubleshooting.md)
         - [Synology NAS](installation/synology.md)
+        - [Kubernetes (Helm)](installation/kubernetes.md)
     - [Shared hosting (cPanel)](installation/shared-hosting.md)
     - [Other](installation/other-methods.md)
   - [Configuration](installation/configuration.md)
