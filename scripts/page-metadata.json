@@ -556,7 +556,16 @@
       "url": "https://marketplace.leantime.io/product/mcp-server/"
     },
     "searchTitle": "Turn emails into tasks with Claude and Leantime's MCP server",
-    "description": "Copy-ready AI workflows for Leantime: turn emails into tasks with Claude and Gmail, on request or every morning, and set up a project for a teammate."
+    "description": "Copy-ready AI workflows for Leantime: turn emails into tasks with Claude and Gmail, on request or every morning, and set up a project for a teammate.",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "A Leantime account and a Claude account",
+        "Gmail, for the email workflows"
+      ],
+      "result": "Emails turned into Leantime tasks with an assignee, a priority and a due date, on request or every morning"
+    }
   },
   "installation/mobile-app-setup.md": {
     "title": "Set up the mobile app on a self-hosted server",

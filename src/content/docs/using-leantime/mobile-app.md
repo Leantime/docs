@@ -128,7 +128,7 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 
 ## How do I delete my account or my data?
 
-- **Workspace owners:** **Settings → Delete Account** opens your workspace's deletion page in the browser (see [Delete your Leantime Cloud account](/using-leantime/delete-cloud-account/)).
+- **Workspace owners:** **Settings → Delete Account** opens your workspace's deletion page in the browser.
 - **Everyone else:** your account belongs to your workspace. Ask its owner to remove you. Signing out of the app clears everything it stored on your phone.
 - **Usage data:** the app collects pseudonymous usage data (which screens and features are used, never your content). Turn it off under **Settings → Privacy & Security → Share Usage Data**, or email support@leantime.io to have it deleted.
 
