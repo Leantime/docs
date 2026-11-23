@@ -14,7 +14,7 @@ See [Docker based installation](installation/docker.md).
 | Component | Requirement |
 |---|---|
 | PHP | 8.2 or later. The official Docker image uses PHP 8.4. |
-| Database | MySQL 8.0 or later (8.4 LTS recommended), MariaDB 10.6 or later, or PostgreSQL (Leantime 3.6 and later) |
+| Database | MySQL 8.0 or later (8.4 LTS recommended), MariaDB 10.6 or later, or PostgreSQL (Leantime 3.7 and later) |
 | Web server | Apache 2.4 with `mod_rewrite`, or Nginx with PHP-FPM. IIS works with some changes. |
 | Operating system | Any Linux distribution that provides PHP 8.2+. Ubuntu 24.04 LTS ships PHP 8.3 and Debian 12 ships PHP 8.2. Ubuntu 22.04 ships PHP 8.1, which is too old; install a newer PHP from a third-party repository. |
 

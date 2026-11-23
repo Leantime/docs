@@ -207,105 +207,13 @@ php ./bin/leantime db:migrate
 sudo systemctl start apache2
 ```
 
-## Server Migration
+## Moving to a new server
 
-Moving Leantime to a new server requires backing up from the old server, installing on the new one, and restoring your data.
+To move Leantime to another server, back it up as above, [install Leantime](installation/installation-types.md) on the new one, and restore your backup there. [Move Leantime to a new server](installation/move-server.md) has the steps for Docker and package installations, and what to check afterwards.
 
-### Step 1: Backup Everything on Old Server
+## Before you upgrade
 
-```bash
-# Database
-mysqldump --no-tablespaces -u leantime -p leantime | gzip > leantime_migration.sql.gz
-
-# Files
-tar -czvf leantime_files.tar.gz config/.env userfiles/ public/userfiles/ app/Plugins/
-```
-
-### Step 2: Install Leantime on New Server
-
-Follow the standard [installation guide](installation/installation-types.md) but **stop before the web installer**. You'll restore your existing database instead of creating a new one.
-
-### Step 3: Transfer Backup Files
-
-```bash
-# From old server or your local machine
-scp leantime_migration.sql.gz user@newserver:/tmp/
-scp leantime_files.tar.gz user@newserver:/tmp/
-```
-
-### Step 4: Restore on New Server
-
-```bash
-# Create database
-mysql -u root -p -e "CREATE DATABASE leantime;"
-mysql -u root -p -e "GRANT ALL ON leantime.* TO 'leantime'@'localhost' IDENTIFIED BY 'yourpassword';"
-
-# Import data
-gunzip < /tmp/leantime_migration.sql.gz | mysql -u leantime -p leantime
-
-# Restore files
-tar -xzvf /tmp/leantime_files.tar.gz -C /var/www/leantime/
-
-# Fix permissions
-chown -R www-data:www-data /var/www/leantime/userfiles /var/www/leantime/public/userfiles /var/www/leantime/app/Plugins
-```
-
-### Step 5: Update Configuration
-
-Edit `config/.env` and update any server-specific settings:
-- `LEAN_APP_URL` - your new domain
-- Database credentials if changed
-- File paths if different
-
-### Step 6: Verify
-
-```bash
-php ./bin/leantime db:migrate
-php ./bin/leantime cache:clearAll
-```
-
-Visit your new URL and verify:
-- You can log in with existing credentials
-- Projects and tasks appear correctly
-- Uploaded files are accessible
-
-## Pre-Upgrade Checklist
-
-Always backup before upgrading Leantime. This protects you if an upgrade fails or introduces issues.
-
-### Before You Upgrade
-
-1. **Check the release notes** for breaking changes
-2. **Create a full backup:**
-   ```bash
-   # Quick pre-upgrade backup
-   mysqldump --no-tablespaces -u leantime -p leantime | gzip > pre_upgrade_$(date +%Y%m%d).sql.gz
-   tar -czvf pre_upgrade_files_$(date +%Y%m%d).tar.gz config/.env userfiles/ public/userfiles/ app/Plugins/
-   ```
-3. **Note your current version.** Click the **?** (help) icon in the top right of Leantime. The version is at the bottom, under **System**.
-4. **Test in staging first** if possible
-
-### If Upgrade Fails
-
-Rollback procedure:
-
-```bash
-# Stop web server
-sudo systemctl stop apache2
-
-# Restore previous Leantime version files
-# (from your backup or re-download the previous release)
-
-# Restore database
-gunzip < pre_upgrade_YYYYMMDD.sql.gz | mysql -u leantime -p leantime
-
-# Restore config and files
-tar -xzvf pre_upgrade_files_YYYYMMDD.tar.gz -C /var/www/leantime/
-
-# Clear cache and restart
-php ./bin/leantime cache:clearAll
-sudo systemctl start apache2
-```
+Back up the database, `config/.env` and your files before every upgrade. [Upgrade Leantime](installation/upgrade-guide.md) lists what to check first, and how to go back to the old version if something goes wrong.
 
 ## Best Practices
 

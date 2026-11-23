@@ -149,6 +149,12 @@ The **⋮** menu on a Kanban column has the same options for that column: **Edit
 
 Open the to-do's **⋮** menu and choose **Move To-Do**, then pick the project. Its sprint, milestone and parent are cleared, because they belong to the old project. You need edit rights in both projects.
 
+## How do I delete a to-do?
+
+Open the to-do's **⋮** menu, on its card on the board or at the top of the to-do, and choose **Delete To-Do**. Then click **Yes, delete!** Deleting can't be undone. You need the Editor role or higher.
+
+**"Task has timesheets attached":** Leantime doesn't delete a to-do that has time logged on it, so the hours stay in your timesheets and reports. Either delete its time entries first (see [How do I fill in a week at a time?](using-leantime/timesheets.md#how-do-i-fill-in-a-week-at-a-time)), or move the to-do to the **Archived** status instead. Archived to-dos are hidden from the board and keep their hours.
+
 ## How do I track time on a to-do?
 
 Open the to-do's **⋮** menu and choose **Track Time → Start Work**; choose **Stop Work** when you're done. To log time afterwards, open the to-do's **Time Tracking** tab. Both need time tracking to be on for the project (see [Time tracking](using-leantime/timesheets.md)).
