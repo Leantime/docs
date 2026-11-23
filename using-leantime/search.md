@@ -14,7 +14,7 @@ To see everything, press **Enter** without choosing a result, or click **See all
 
 ## How does Leantime match my words?
 
-Every word you type has to match, so `checkout phones` finds "Test the checkout on phones" but not "Choose the checkout provider". Leantime uses up to five words.
+Every word you type has to match, so `checkout phones` finds "Test the checkout on phones" but not "Choose the checkout provider". Very common words like "the", "on" or "for" can be skipped, so `the roadmap` also finds "Roadmap review". Leantime uses up to five words.
 
 | Type | What Leantime looks in |
 | --- | --- |
@@ -32,7 +32,7 @@ On the results page:
 
 - **Types:** tick the kinds of results you want.
 - **Filter:**
-  - **Project** limits the results to one project.
+  - **Project** limits the results to one project. People results aren't limited by it: they show everyone who matches, not only the project's team.
   - **Changed after** and **Changed before** limit them to things changed in that period.
   - **Only mine** keeps to-dos assigned to you or created by you, and the docs, ideas, cards, comments and files you wrote or uploaded.
 - **Reset filters** clears them.
