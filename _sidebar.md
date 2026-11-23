@@ -81,6 +81,7 @@
 - [Goals](using-leantime/goals.md)
 - [Ideas](using-leantime/idea-management.md)
 - [Docs](using-leantime/docs.md)
+- [Files](using-leantime/files.md)
 - [Notes](using-leantime/notes.md)
 - [Whiteboards](using-leantime/whiteboards.md)
 - [Blueprints](using-leantime/blueprints.md)

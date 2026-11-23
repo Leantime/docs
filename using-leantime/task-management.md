@@ -30,7 +30,7 @@ Click a to-do's title to open it. The **Details** tab holds everything about it:
 | **Type**, **Project**, **Milestone**, **Sprint**, **Related To** | Under **Organization**: what kind of to-do it is (Task, Subtask, Story or Bug), which project and milestone it belongs to, which sprint, and which to-do it's part of |
 | **Work Start**, **Work End**, **Planned Hours / Hours Left** | Under **Schedule**: when you plan to work on it and how long it should take |
 
-Below the form are the to-do's **Subtasks** and the **Discussion**, where your team comments and @mentions each other. The other tabs hold the to-do's **Files**, its **Time Tracking** and its **History**.
+Below the form are the to-do's **Subtasks** and the **Discussion**, where your team comments and @mentions each other. The other tabs hold the to-do's **Files** (see [Files](using-leantime/files.md#how-do-i-attach-a-file-to-a-to-do)), its **Time Tracking** and its **History**.
 
 ## Can a to-do have more than one person?
 
