@@ -64,7 +64,7 @@ The assistant creates the to-dos, assigns them and sets the dates in one go, the
 
 With a mail connector, the assistant can read the emails itself, or check your inbox every morning. See [Turn emails into tasks](ai/everyday-workflows.md#turn-emails-into-tasks).
 
-Add people to the project's team before you assign them to-dos, or they may not be able to open them. On Leantime 3.15.4 or later, the assistant can do that too (see [Add or remove people from a project's team](ai/everyday-workflows.md#add-or-remove-people-from-a-projects-team)). On older versions, do it on the project's **Team** tab (see [Projects](using-leantime/managing-projects.md)), then ask again.
+Add people to the project's team before you assign them to-dos, or they may not be able to open them. On Leantime Cloud, and on self-hosted Leantime 3.16.0 or later with an MCP Server plugin newer than 2.0.1, the assistant can do that too (see [Add or remove people from a project's team](ai/everyday-workflows.md#add-or-remove-people-from-a-projects-team)). On older versions, do it on the project's **Team** tab (see [Projects](using-leantime/managing-projects.md)), then ask again.
 
 ## Start a new project in one message
 
