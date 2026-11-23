@@ -4,6 +4,16 @@ Leantime is a free, open source project management system you can host yourself.
 
 This page lists what's included where, then answers the "Can Leantime…?" questions people ask most, each with a link to the how-to.
 
+## What makes Leantime different?
+
+Most project tools manage tasks. Leantime also keeps in view why the work matters:
+
+- **The why stays next to the work.** Goals and milestones (and, with plugins, strategies and programs) connect to the to-dos that move them forward, so you see what your work is for and how far it has come.
+- **Built for how people actually work.** Leantime is designed with cognitive accessibility in mind, including for people with ADHD: small steps, visible progress, and a calmer screen when you want one.
+- **Project management without the jargon.** Proven practices like Kanban, Scrum and Lean are built in as simple steps, so you don't need training to use them.
+
+To set this up for your team, see [How should I organize my work?](getting-started/organize-your-work.md)
+
 ## Which edition is right for me?
 
 | Detail | Open source | Open source + plugins | Leantime Cloud |
