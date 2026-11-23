@@ -107,20 +107,29 @@ Other settings, like OpenID Connect, Redis or the sign-in limits, can't be set t
 - **Run more than one pod.** Keep `replicaCount: 1` and leave `autoscaling` off. Sign-ins are kept inside each pod, the file volumes can only be attached to one node (`ReadWriteOnce`), and every pod runs Leantime's scheduled jobs.
 - **Keep plugins.** The plugins folder isn't on a volume, so plugins you install in **My Apps** are gone when the pod restarts. Their data in the database stays.
 - **Use your own database.** The chart always runs its own MariaDB 10.6, from Bitnami's archived `bitnamilegacy` images, and Leantime always connects to it.
-- **Two LDAP values have no effect:** `app.ldap.baseDN` and `app.ldap.userDomain` don't reach Leantime.
+- **Use LDAP without a small fix.** `app.ldap.baseDN` and `app.ldap.userDomain` don't reach Leantime. And with `app.ldap.keys` or `app.ldap.groupAssignment` set, the install fails with `expected string`. To fix that, open `leantime/helm/templates/deployment.yaml` and add `| quote` to those two lines, so they read:
+
+  ```yaml
+  value: {{ .Values.app.ldap.keys | quote }}
+  value: {{ .Values.app.ldap.groupAssignment | quote }}
+  ```
 
 Each restart or update of the Leantime pod also signs everyone out, because sign-ins are kept inside the pod.
 
 ## How do I update Leantime?
 
 1. [Back up](#how-do-i-back-up-leantime-on-kubernetes) the database and the files.
-2. Change `image.tag` in `values.yaml` to the new version, and apply it:
+2. Change `image.tag` in `values.yaml` to the new version.
+3. Stop the Leantime pod, then apply the update:
 
    ```sh
+   kubectl scale deployment/leantime --replicas=0
    helm upgrade leantime -f values.yaml ./leantime/helm
    ```
 
-3. Open Leantime. If the new version changes the database, Leantime shows **Update Database**: click **Update Now!**
+   Its file volumes can only be attached to one pod at a time. Stopping the old pod first lets the new one attach them, even if it starts on another node. `helm upgrade` starts the new pod by itself. Leantime is offline for the minute in between. Do the same whenever you apply changed settings with `helm upgrade` on a cluster with more than one node.
+
+4. Open Leantime. If the new version changes the database, Leantime shows **Update Database**: click **Update Now!**
 
 Read what changed first in [Upgrade Leantime](installation/upgrade-guide.md).
 
