@@ -61,7 +61,7 @@ In any editor, like a to-do's description or a doc, click **AI Tools** in the to
 
 ## What does it cost?
 
-L.E.O. uses AI credits from your Leantime Cloud plan. Chatting, sorting, breaking down and writing each use some. If you run out, L.E.O. tells you; you can buy more credits or change your plan (see [Leantime Cloud pricing](https://leantime.io/pricing/)).
+L.E.O. uses AI credits from your Leantime Cloud plan. Chatting, sorting, breaking down and writing each use some. If you run out, L.E.O. tells you; the workspace's Owner can buy more credits or change your plan (see [What are AI credits?](/using-leantime/cloud-billing/#what-are-ai-credits)).
 
 ## Related
 

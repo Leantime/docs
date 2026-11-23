@@ -17,6 +17,7 @@ There are three ways to use AI with Leantime:
 If you already use an AI assistant at work, connect it to Leantime. Then you can ask it "what's due this week?", "turn these meeting notes into to-dos" or "log 2 hours on #456" without leaving it, and it answers from your real projects. It works on Leantime Cloud and self-hosted, and it only sees what you can see.
 
 - [Use Leantime from your AI assistant](/ai/use-leantime-from-your-ai-assistant/): connect the assistant you already use, which assistants work today, and what to ask it.
+- [Everyday workflows with your AI assistant](/ai/everyday-workflows/): complete workflows to copy, like turning emails into tasks and setting up a project for a teammate.
 - [MCP server: connect your own AI assistant](/installation/leantime-mcp/): how to connect Claude, ChatGPT, Cursor, VS Code, Windsurf or Codex, and everything the assistant can do. Uses the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin, which is already on in Leantime Cloud.
 - [AI in Leantime Cloud (L.E.O.)](/ai/leantime-cloud-ai/): the built-in assistant. Ask it questions, let it sort your to-dos, break a to-do into steps, or help you write.
 

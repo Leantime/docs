@@ -55,8 +55,9 @@ Administrators set these in **Company → Company Settings**:
 
 - **Email frequency:** the shortest wait for everyone. People can choose a longer wait in their own settings, not a shorter one.
 - **Default notification types for new users** and **Default notification level:** what people get until they change their own settings.
+- **What phone notifications show,** under **Mobile push notifications:** **Everything**, **Names only** (no comment text) or **Nothing** ("New activity in Leantime" only), for teams whose to-do names or comments shouldn't show on a lock screen. On a self-hosted server, this needs Leantime 3.16.0 or later; see [Set up the mobile app](/installation/mobile-app-setup/#what-leaves-my-server).
 
 ## Why aren't Leantime notification emails arriving?
 
 - **I don't get any emails.** Check that **Receive email notifications** is on and the project isn't **Muted**. If nobody gets emails, an administrator needs to check the [email settings](/installation/email-configuration/).
-- **Emails arrive late.** **Email frequency** sets the shortest wait between emails, and the company setting can make it longer. Self-hosted Leantime also sends emails from its scheduled jobs, so they need a [cron job](/installation/configuration/#cron-jobs) or someone signed in.
+- **Emails arrive late.** **Email frequency** sets the shortest wait between emails, and the company setting can make it longer. Self-hosted Leantime also sends emails from its scheduled jobs, so they need a [cron job](/installation/scheduled-jobs-and-redis/#how-do-i-run-the-scheduled-jobs) or someone signed in.

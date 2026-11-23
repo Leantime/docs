@@ -77,7 +77,7 @@ sudo systemctl restart apache2
 
 8. Navigate to the `config/` directory in your leantime installation. Copy `sample.env` to `.env`
 
-9. Fill in your database credentials (username, password, host, dbname) in `.env`
+9. Fill in your database credentials (username, password, host, dbname) and your own `LEAN_SESSION_PASSWORD` in `.env`
 
 ```.env
 LEAN_DB_HOST=<your host name>
@@ -85,11 +85,14 @@ LEAN_DB_USER=<your db_user name>
 LEAN_DB_PASSWORD=<your db_user password>
 LEAN_DB_DATABASE=<your db name. From step 2>
 LEAN_DB_PORT='3306'                     # Database default port
+LEAN_SESSION_PASSWORD=<a long random value of your own, e.g. from: openssl rand -base64 32>
 ```
 
 10. Navigate to `<yourdomain.com>/install`
 
 11. Follow instructions to install database and set up User Account
+
+12. Before your team starts, go through [Secure your Leantime server](/installation/security-checklist/).
 
 ## Nginx Installation Process
 
@@ -138,7 +141,7 @@ sudo systemctl restart nginx
 
 8. Navigate to the `config/` directory in your leantime installation. Copy `sample.env` to `.env`
 
-9. Fill in your database credentials (username, password, host, dbname) in `.env`
+9. Fill in your database credentials (username, password, host, dbname) and your own `LEAN_SESSION_PASSWORD` in `.env`
 
 ```.env
 LEAN_DB_HOST=<your host name>
@@ -146,6 +149,7 @@ LEAN_DB_USER=<your db_user name>
 LEAN_DB_PASSWORD=<your db_user password>
 LEAN_DB_DATABASE=<your db name. From step 2>
 LEAN_DB_PORT='3306'                     # Database default port
+LEAN_SESSION_PASSWORD=<a long random value of your own, e.g. from: openssl rand -base64 32>
 ```
 
 <!-- LEAN_APP_URL =<your base url>           # Base URL -->
@@ -153,3 +157,5 @@ LEAN_DB_PORT='3306'                     # Database default port
 10. Navigate to `<yourdomain.com>/install`
 
 11. Follow instructions to install database and set up User Account
+
+12. Before your team starts, go through [Secure your Leantime server](/installation/security-checklist/).

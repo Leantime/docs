@@ -100,7 +100,7 @@ Add the line with `sudo crontab -u www-data -e`. Instead of cron, you can keep `
 - **See the jobs and when they run next:** `php bin/leantime schedule:list`
 - **Run one job now:** `php bin/leantime schedule:test --name=plugins:checkUpdates` (use a name from the list)
 
-Without cron, the jobs only run while someone has Leantime open in their browser, so emails can be late. See [Cron jobs](/installation/configuration/#cron-jobs).
+Without cron, the jobs only run while someone has Leantime open in their browser, so emails can be late and daily jobs get skipped. See [Scheduled jobs, the queue and Redis](/installation/scheduled-jobs-and-redis/).
 
 ## How do I save a setting?
 

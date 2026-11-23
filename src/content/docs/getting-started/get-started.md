@@ -14,7 +14,7 @@ There are two ways to use Leantime. Only the first step differs: on Leantime Clo
 2. **Sign in and look around.** Cloud includes the marketplace plugins and the AI features inside Leantime. The exception is [Advanced Authentication](/plugins/advanced-authentication/) (SAML and sign-in with Google, Microsoft, GitHub and others), which is for self-hosted servers only. To see which features are core and which come from a plugin, see [What can Leantime do?](/getting-started/features/)
 3. **Invite your team** from **Company → User Management** (see [User Management](/using-leantime/user-management/)).
 
-To keep going after two weeks, add a card. If you don't, your workspace is paused and kept for 180 days, so you can come back to it. To pick it up again, or to have it removed sooner, email support@leantime.io. The [privacy policy](https://leantime.io/privacy/) has the details.
+To keep going after two weeks, choose a plan under **Company → Billing** (see [Billing on Leantime Cloud](/using-leantime/cloud-billing/)). If you don't, your workspace is paused and kept for 180 days, so you can come back to it. To pick it up again, email support@leantime.io. To remove it sooner, delete it yourself (see [Delete your Leantime Cloud account](/using-leantime/delete-cloud-account/)). The [privacy policy](https://leantime.io/privacy/) has the details.
 
 ## How do I install Leantime on my own server?
 

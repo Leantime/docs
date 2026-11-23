@@ -268,7 +268,7 @@ Many shared hosting providers restrict or block SMTP connections. Options includ
 
 Leantime puts notification emails in a queue, and its scheduled jobs send them every minute. Each person's **Email frequency** also collects changes into one email (see [Notifications](/using-leantime/notifications/)). If emails come late or not at all:
 
-- **Check that the scheduled jobs run.** Set up the cron job in [Cron Jobs](/installation/configuration/#cron-jobs). Without it, emails only go out while someone has Leantime open. The official Docker image runs the jobs for you.
+- **Check that the scheduled jobs run.** Set up the cron job in [How do I run the scheduled jobs?](/installation/scheduled-jobs-and-redis/#how-do-i-run-the-scheduled-jobs). Without it, emails only go out while someone has Leantime open. The official Docker image runs the jobs for you.
 - **Check the queue with the scheduler:** `php ./bin/leantime schedule:list` shows `queue:emails` and when it runs next.
 
 Test emails from `email:testemail` are sent right away, not queued.

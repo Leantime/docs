@@ -53,10 +53,10 @@ These aren't part of Scrum itself, but many Scrum teams use them.
 
 ## Doing it in Leantime
 
-- **Sprints:** create a sprint from the menu next to **To-Dos**, and put to-dos in it. The rest wait in the **Backlog**. See [To-Dos](/using-leantime/task-management/).
+- **Sprints:** create a sprint from the menu next to **To-Dos**, and put to-dos in it. The rest wait in the **Backlog**. See [Sprints](/using-leantime/sprints/).
 - **Estimating:** each to-do's **Effort** is a size, from "< 2min" and XS to XXL.
 - **Daily Scrum:** the To-Dos [Kanban board](/using-leantime/task-management/), showing the sprint.
-- **Burndown:** with sprints in use, **Delivery Metrics** in [Reports](/using-leantime/reports/) shows a Sprint Burndown.
+- **Burndown:** with sprints in use, **Delivery Metrics** in [Reports](/using-leantime/reports/) shows a Sprint Burndown (see [How do I follow a sprint's progress?](/using-leantime/sprints/#how-do-i-follow-a-sprints-progress)).
 - **Velocity:** Leantime doesn't calculate it. To plan the next sprint, look at the **Effort** of the to-dos finished in recent ones, for example "3 XL, 2 M and 1 S".
 - **Retrospective:** the **Retrospectives** blueprint has Continue, Stop and Start columns. See [Retrospectives](/using-leantime/retrospectives/).
 - **Roles:** Leantime's user roles are about permissions, not Scrum accountabilities. A Product Owner or Scrum Master can have any role that lets them do their part.

@@ -86,7 +86,7 @@ We close these without a fix, with a short reason:
 
 ## Which versions get security fixes?
 
-Only the latest Leantime release line, currently 3.14.x. If you run an older version, [update](/installation/upgrade-guide/) to get security fixes.
+Only the latest Leantime release line, currently 3.16.x. If you run an older version, [update](/installation/upgrade-guide/) to get security fixes.
 
 ## Do security issues get a CVE?
 
@@ -98,7 +98,4 @@ No. Leantime doesn't offer payments for reports. Every published advisory credit
 
 ## How do I keep my own Leantime installation secure?
 
-- **Use HTTPS.** Set `LEAN_APP_URL` to your `https://` address and `LEAN_SESSION_SECURE=true`, so session cookies are only sent over HTTPS. Leantime detects HTTPS by itself, but behind a reverse proxy it may not (see [Configuration](/installation/configuration/)).
-- **Keep Leantime up to date,** along with PHP and your database (see [Upgrade Guide](/installation/upgrade-guide/)).
-- **Turn on two-factor authentication** under **My Profile → Security**, and ask your team to do the same.
-- **Back up regularly** (see [Backup & Restore](/installation/backup-restore/)).
+Go through [Secure your Leantime server](/installation/security-checklist/): your own secret key, database passwords, HTTPS, two-factor authentication, updates and backups.
