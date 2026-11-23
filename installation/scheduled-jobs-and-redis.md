@@ -9,6 +9,7 @@ Leantime does some of its work in the background: it sends notification emails a
 | `queue:emails` | Every minute | Sends notification emails, following each person's **Email frequency** |
 | `queue:webhooks` | Every minute | Delivers personal webhooks (see [Notifications](using-leantime/notifications.md)) |
 | `queue:httprequests` and `queue:default` | Every 5 minutes | Work that plugins put in the queue |
+| `reminders:dispatch` | Every 5 minutes | Sends each person's morning summary once it's their chosen time. A missed run catches up on the next one. Leantime 3.17 and later |
 | `reports:dailyIngestion` | Once a day | Takes the daily snapshot of every project for reports and the sprint burndown |
 | `reports:goalValueSnapshot` | Once a day | Records goal values for the trend in [Goals](using-leantime/goals.md) |
 | `plugins:checkLicense` | Once a day | Checks marketplace plugin licenses |
