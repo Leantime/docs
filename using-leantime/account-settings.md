@@ -29,7 +29,7 @@ Open the **Profile information** tab.
 - **Photo:** on the right, click **Select File** and choose a JPG, PNG, GIF or WebP picture. Move and zoom it until it fits the circle, then click **Save** under it.
 - **Job title, job level and department** (under **Employee Information**) are set by an administrator in [User Management](using-leantime/user-management.md#how-do-i-change-someones-role-or-details).
 
-If your company signs you in with LDAP or single sign-on, your name, email and phone are grayed out. Change them in your company's sign-in system.
+If your company signs you in with LDAP or single sign-on, your name, email and phone are grayed out. Change them in your company's sign-in system. If your email changes there, ask an administrator to change it in Leantime's [User Management](using-leantime/user-management.md#how-do-i-change-someones-role-or-details) before you next sign in. Leantime finds your account by email, so with the new address it refuses the sign-in or creates a second account.
 
 ## How do I change my password?
 
@@ -94,7 +94,7 @@ Each person picks their own look; it doesn't change what anyone else sees.
 
 ## What if something goes wrong?
 
-- **The fields are gray and won't change:** your company signs you in with LDAP or single sign-on. Change your details in that system.
+- **The fields are gray and won't change:** your company signs you in with LDAP or single sign-on. Change your details in that system. If that changes your email, have an administrator change it in Leantime first, before you sign in again.
 - **"Old password is incorrect":** check the **Old Password**. If you've forgotten it, sign out and use **Forgot password?** on the sign-in page.
 - **The new password isn't accepted:** it needs at least 8 characters, with an uppercase letter, a lowercase letter, a number and a special character.
 - **"This email address is already used" or "Not a valid email address":** someone else in your Leantime already has that email, or there's a typo in it.
