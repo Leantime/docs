@@ -23,7 +23,7 @@ Import in this order, so each step finds what the next one needs:
 4. **Milestones,** if you use them.
 5. **To-dos.**
 
-Leantime notifies people about every to-do it imports: the assignee gets "assigned to you", and the project team gets an update. For a big import, tell your team first.
+Imported to-dos send the same notifications as to-dos you add by hand. Each assignee gets "assigned to you" in their notifications, and by email or on their phone if they have those switched on. The project team gets an update, filtered by each person's own [notification settings](using-leantime/notifications.md#how-do-i-choose-which-notifications-i-get-in-leantime). You, the person importing, get neither: not for to-dos assigned to you, and not for the team update. For a big import, tell your team first.
 
 ## Step 1: Export from your old tool
 
