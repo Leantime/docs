@@ -22,7 +22,7 @@ Plugins can add their own jobs. The CalDAV plugin, for example, adds `caldav-syn
 php bin/leantime schedule:list
 ```
 
-The daily jobs run at midnight in your default time zone (`LEAN_DEFAULT_TIMEZONE`).
+The daily jobs run at midnight UTC, whatever your default time zone is.
 
 ## How do I run the scheduled jobs?
 
@@ -50,7 +50,7 @@ Then the jobs only run from people's browsers: while someone is signed in with L
 
 - Nothing runs while nobody is signed in. Emails wait until someone opens Leantime.
 - The every-minute jobs only run every 5 minutes.
-- The daily jobs only run if one of those requests lands in the first minute after midnight. Most days, none does, so daily report snapshots, plugin license checks and plugin updates get skipped.
+- The daily jobs only run if one of those requests lands in the first minute after midnight UTC. Most days, none does, so daily report snapshots, plugin license checks and plugin updates get skipped.
 
 Once a cron job (or `schedule:work`) runs the jobs, you can turn the browser requests off:
 
