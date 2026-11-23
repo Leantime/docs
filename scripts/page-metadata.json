@@ -822,5 +822,12 @@
     "searchTitle": "How to delete your Leantime account and data",
     "edition": "cloud",
     "checked": "3.15"
+  },
+  "using-leantime/cloud-billing.md": {
+    "title": "Billing on Leantime Cloud",
+    "description": "Manage your Leantime Cloud plan: the free trial, changing plans and users, AI credits, invoices, failed payments, plan limits and cancelling.",
+    "searchTitle": "Leantime Cloud billing: plans, invoices, failed payments",
+    "edition": "cloud",
+    "checked": "3.15"
   }
 }

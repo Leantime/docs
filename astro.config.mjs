@@ -23,7 +23,7 @@ const USE_LEANTIME_GROUPS = [
 	['Your team and company', ['managing-clients', 'user-management', 'company-settings', 'integrations|Integrations', 'import-csv']],
 ];
 // using-leantime pages that sit in another menu group instead (the Leantime Cloud group).
-const PLACED_ELSEWHERE = ['delete-cloud-account'];
+const PLACED_ELSEWHERE = ['delete-cloud-account', 'cloud-billing'];
 const placedPages = new Set([
 	...USE_LEANTIME_GROUPS.flatMap(([, pages]) => pages.map((entry) => entry.split('|')[0])),
 	...PLACED_ELSEWHERE,
@@ -387,6 +387,7 @@ export default defineConfig({
 					items: [
 						// Cloud pages (account, billing, what's included, support hours) once they're written.
 						{ label: 'Try Leantime Cloud', link: 'https://leantime.io/pricing/' },
+						...menuEntries(['using-leantime/cloud-billing|Billing and plans']),
 						...menuEntries(['using-leantime/delete-cloud-account|Delete your account']),
 						{ label: 'Cloud help and support', link: 'https://support.leantime.io/' },
 					],
