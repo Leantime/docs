@@ -64,6 +64,7 @@
 - [Programs](using-leantime/programs.md)
 - [Strategies](using-leantime/strategies.md)
 - [Milestones](using-leantime/roadmap-planning.md)
+- [Sprints](using-leantime/sprints.md)
 - [Time tracking](using-leantime/timesheets.md)
 - [Clients](using-leantime/managing-clients.md)
 - [User Management](using-leantime/user-management.md)
