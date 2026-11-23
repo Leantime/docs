@@ -40,7 +40,7 @@ If a plugin isn't compatible with the new version, Leantime shows it as **Not co
 
 > **Danger:** Never empty the database of a Leantime that's already in use. An existing install that suddenly redirects to `/install` usually has wrong database settings in `.env`; fix those instead, and back up before you change anything.
 
-> **Note:** A log line like `Table 'leantime.zp_user' doesn't exist` before you've run the installer is expected. It means Leantime hasn't been installed yet.
+**Note:** A log line like `Table 'leantime.zp_user' doesn't exist` before you've run the installer is expected. It means Leantime hasn't been installed yet.
 
 ## 500 Internal Server Error right after installing
 

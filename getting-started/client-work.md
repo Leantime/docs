@@ -4,7 +4,7 @@ For managed service providers (MSPs), agencies, consultancies and development fi
 
 ## How should an agency or MSP set up Leantime?
 
-| | What to create |
+| For | What to create |
 |---|---|
 | **Each customer** | A [client](using-leantime/managing-clients.md), with a project per piece of work: "Website rebuild", "Managed IT, 2027", "Security audit" |
 | **Your own business** | Projects for your internal work, for example "Sales and marketing" and "Internal tools", with no client or with a client named after your company |
