@@ -274,6 +274,14 @@ export default defineConfig({
 		'/knowledge-base/wheretostart': '/getting-started/get-started/',
 		'/knowledge-base/product-validation': '/using-leantime/research-boards/',
 		'/knowledge-base/team-happiness': '/using-leantime/retrospectives/',
+		// docsify pages removed or renamed before the conversion; old links and search results still point here.
+		'/getting-started/agencies': '/getting-started/client-work/',
+		'/getting-started/product-managers': '/getting-started/product-and-game-development/',
+		'/getting-started/startups': '/getting-started/product-and-game-development/',
+		'/getting-started/quick-start': '/getting-started/new-project/',
+		'/installation/advanced': '/installation/other-methods/',
+		'/installation/plugin-configuration': '/plugins/advanced-authentication/',
+		'/installation/quick-installation': '/installation/package-installation/',
 	},
 	integrations: [
 		starlight({
