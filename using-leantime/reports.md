@@ -32,6 +32,7 @@ Open the project, open **Data Room** in the left menu and click **Reports**. The
 
 - **Summary:** planned hours, hours left, logged hours and open to-dos.
 - **Cumulative Flow:** how many to-dos were new, in progress and done on each day. Switch between **Number of To-Dos**, **Effort** and **Hours** above the chart. A band that keeps growing while **Done** stays flat means work is piling up.
+- **Sprint Burndown:** when the project has [sprints](using-leantime/sprints.md#how-do-i-follow-a-sprints-progress), the work left in the sprint you pick, day by day.
 - **Project Progress:** done and open to-dos as a ring.
 - **Milestones:** each milestone's due date and progress.
 

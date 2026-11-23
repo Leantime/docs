@@ -118,7 +118,7 @@ LEAN_PRIMARY_COLOR='#1b75bb'                  # Primary brand color
 LEAN_SECONDARY_COLOR='#81B1A8'                # Secondary accent color
 ```
 
-**Note:** These can also be changed in the UI under Account → Theme.
+**Note:** Each person chooses light or dark mode, the font and a color scheme under **My Profile → Theme**. Your primary and secondary colors appear there as **Company Colors** (see [How do I change how Leantime looks?](using-leantime/account-settings.md#how-do-i-change-how-leantime-looks)).
 
 ---
 
@@ -138,32 +138,13 @@ LEAN_DEFAULT_TIMEZONE='America/Los_Angeles'   # Default timezone for dates/times
 
 ## Cron Jobs
 
-Leantime's scheduled jobs send notification emails and webhooks, check plugin licenses and updates, and do other daily work. Run them every minute.
-
-**Important:** You must set `LEAN_APP_URL` in your configuration for email links to work correctly.
-
-### Option 1: Command Line
-
-Add this line to the web server user's crontab (`sudo crontab -u www-data -e`):
+Leantime's scheduled jobs send notification emails and webhooks, take daily report snapshots, and check plugin licenses and updates. The official Docker image runs them for you. On your own server, add this line to the web server user's crontab (`sudo crontab -u www-data -e`):
 
 ```bash
 * * * * * cd /var/www/leantime && php ./bin/leantime schedule:run >> /dev/null 2>&1
 ```
 
-Or keep `php ./bin/leantime schedule:work` running as a service; it runs the jobs every minute by itself. See [Using the Leantime CLI](development/commandline.md#how-do-i-run-leantimes-scheduled-jobs).
-
-### Option 2: HTTP Endpoint
-
-Call this URL from an external scheduler or uptime monitor:
-```
-https://your-domain.com/cron/run
-```
-
-Without either option, the jobs only run while someone has Leantime open in their browser, so emails can arrive late.
-
-### Docker
-
-The official Docker image already runs the scheduled jobs inside the container. There's nothing to add.
+Set `LEAN_APP_URL` too, so links in emails work. What each job does, what happens without cron, and when Redis helps: see [Scheduled jobs, the queue and Redis](installation/scheduled-jobs-and-redis.md).
 
 ---
 
@@ -215,12 +196,12 @@ This removes your instance ID and stops all telemetry submission.
 Configure session handling for security and compatibility:
 
 ```env
-LEAN_SESSION_PASSWORD='your-secret-key'       # Session encryption key
-LEAN_SESSION_EXPIRATION=28800                 # Session timeout in seconds (8 hours default)
+LEAN_SESSION_PASSWORD='your-secret-key'       # Leantime's secret key: a long random value of your own
+LEAN_SESSION_EXPIRATION=480                   # Minutes without activity before sign-out (480 = 8 hours)
 LEAN_SESSION_SECURE=true                      # Require HTTPS for session cookies
 ```
 
-**Important:** Set `LEAN_SESSION_SECURE=true` when running over HTTPS, `false` only for local development over HTTP.
+**Important:** Set `LEAN_SESSION_SECURE=true` when running over HTTPS, `false` only for local development over HTTP. For what to check before people use your server, see [Secure your Leantime server](installation/security-checklist.md).
 
 ---
 

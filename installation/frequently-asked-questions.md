@@ -10,7 +10,7 @@ This FAQ document addresses common questions and issues gathered from GitHub iss
 
 Leantime 3.2 and later require:
 - PHP 8.2 or higher
-- MySQL 8.0+, MariaDB 10.6+, or PostgreSQL (since Leantime 3.6)
+- MySQL 8.0+, MariaDB 10.6+, or PostgreSQL (since Leantime 3.7)
 - Web server (Apache, Nginx, or IIS)
 - Minimum 512MB RAM (1GB recommended)
 
@@ -282,11 +282,7 @@ This was a bug in some versions. Update to the latest version where this has bee
 
 ### How do I integrate Leantime with my calendar?
 
-Leantime provides an iCal URL for each user:
-1. Go to **Account Settings**
-2. Find the **Calendar** section
-3. Copy your iCal URL
-4. Add it as a calendar subscription in Google Calendar, Outlook, Apple Calendar, etc.
+Each person can subscribe to their Leantime calendar from Google Calendar, Outlook or Apple Calendar with an iCal link. See [How do I see my Leantime calendar in Google, Outlook or Apple Calendar?](using-leantime/calendars.md#how-do-i-see-my-leantime-calendar-in-google-outlook-or-apple-calendar)
 
 ### What appears on the calendar?
 
@@ -337,7 +333,7 @@ LEAN_SECONDARY_COLOR='#81B1A8'
 LEAN_LOGO_PATH='/dist/images/logo.svg'
 ```
 
-Or change them in **Account → Theme** settings.
+Each person can then choose them as **Company Colors** under **My Profile → Theme** (see [How do I change how Leantime looks?](using-leantime/account-settings.md#how-do-i-change-how-leantime-looks)).
 
 ---
 
