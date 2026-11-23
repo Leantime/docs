@@ -14,7 +14,7 @@ When you host Leantime yourself, keeping it safe is up to you. Go through this c
 8. [Check who has access, and which API keys exist](#how-do-i-keep-access-tidy)
 9. [Install plugins only from sources you trust](#what-about-plugins)
 10. [Update Leantime with every release](#how-do-i-stay-up-to-date)
-11. [Back up, including `config/.env`](#what-should-my-backups-include)
+11. [Back up, including your settings and secret key](#what-should-my-backups-include)
 
 ## Why do I need my own `LEAN_SESSION_PASSWORD`?
 
@@ -39,7 +39,7 @@ Set it before you install, if you can. If you change it on a server that's alrea
 - Everyone's calendar (iCal) links change, so people have to copy their new link from the Calendar and update their calendar apps.
 - Calendars connected through the CalDAV plugin have to be connected again, because their saved passwords can't be read anymore.
 
-Keep the value safe, and include `config/.env` in your backups (see [What should my backups include?](#what-should-my-backups-include)).
+Keep the value safe, and include it in your backups (see [What should my backups include?](#what-should-my-backups-include)).
 
 **Docker secrets.** The official Docker image can read secrets from files instead of the environment. Set `LEAN_SESSION_PASSWORD_FILE`, `LEAN_DB_PASSWORD_FILE`, `LEAN_EMAIL_SMTP_PASSWORD_FILE`, `LEAN_S3_SECRET_FILE` or `LEAN_REDIS_PASSWORD_FILE` to the path of a mounted secret, and the image reads the value from that file when it starts.
 
@@ -60,18 +60,22 @@ LEAN_SESSION_SECURE = true
 
 - `LEAN_APP_URL` is the address Leantime puts in links, like the ones in password-reset and invitation emails. Set it to the address people really use.
 - `LEAN_SESSION_SECURE = true` sends the sign-in cookie over HTTPS only.
-- **Behind a proxy or CDN on a public address,** like Cloudflare, list its address ranges in `LEAN_TRUSTED_PROXIES`. Otherwise Leantime sees every request as coming from the proxy. Then everyone shares one limit on sign-in attempts, and Leantime may not notice that the site is on HTTPS.
+- **Behind a proxy or CDN on a public address,** like Cloudflare, add its address ranges to `LEAN_TRUSTED_PROXIES`. Otherwise Leantime sees every request as coming from the proxy. Then everyone shares one limit on sign-in attempts, and Leantime may not notice that the site is on HTTPS. Keep `PRIVATE_SUBNETS` at the start of the list, so a proxy on your own server or in Docker stays trusted. Without it, Leantime refuses every request that comes through that proxy:
+
+  ```ini
+  LEAN_TRUSTED_PROXIES = 'PRIVATE_SUBNETS,173.245.48.0/20,103.21.244.0/22'
+  ```
 
 The steps for Nginx, Caddy, Traefik and Cloudflare are in [Run Leantime behind a reverse proxy](installation/reverse-proxy.md).
 
 ## Which folders can people reach from the web?
 
-Only the `public` folder. Your settings (`config/.env`), uploaded files (`userfiles`), database backups and logs (`storage`) sit next to it, outside the web root.
+Only the `public` folder. Your settings (`config/.env`), uploaded files (`userfiles`), database backups (`backupdb`) and logs (`storage`) sit next to it, outside the web root.
 
 - **Your own server:** point the web server's document root at `leantime/public`, never at the `leantime` folder (see [Package based Installation](installation/package-installation.md) and [Shared hosting (cPanel)](installation/shared-hosting.md)).
 - **Docker:** the image is set up this way already. Its web server and PHP run as the unprivileged `www-data` user, not as root.
 
-Leantime needs to write to `storage/`, `bootstrap/cache/`, `userfiles/` and `public/userfiles/`. Everything else can stay read-only for the web server's user. Make `config/.env` readable only by that user and the server's administrators, for example:
+While it runs, Leantime writes to `storage/`, `bootstrap/cache/`, `userfiles/` and `public/userfiles/`, and to `app/Plugins/` when you install or update plugins. Database backups and the [command line updater](installation/upgrade-guide.md) also write to the Leantime folder, so run them as the user that owns it. Make `config/.env` readable only by that user and the server's administrators, for example:
 
 ```sh
 chmod 640 config/.env
@@ -125,7 +129,11 @@ Security fixes ship in regular releases, and only the latest release line gets t
 
 ## What should my backups include?
 
-The database, the uploaded files (`userfiles` and `public/userfiles`) and `config/.env`. Without the `LEAN_SESSION_PASSWORD` in `.env`, a restored server builds different calendar links and can't read encrypted secrets. Backups hold all your data, so keep them somewhere safe, away from the server. See [Backup and restore](installation/backup-restore.md).
+- The database.
+- The uploaded files (`userfiles` and `public/userfiles`).
+- Your settings, with `LEAN_SESSION_PASSWORD`: `config/.env` on your own server. With Docker, that's the `.env` file next to `docker-compose.yml`, the `-e` values of your `docker run` command, or the secret files you mount.
+
+Without the same `LEAN_SESSION_PASSWORD`, a restored server builds different calendar links and can't read encrypted secrets. Backups hold all your data, so keep them somewhere safe, away from the server. See [Backup and restore](installation/backup-restore.md).
 
 ## What does Leantime send to the internet?
 
