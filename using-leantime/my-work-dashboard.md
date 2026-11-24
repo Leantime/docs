@@ -6,7 +6,7 @@ My Work is your personal start page: your to-dos from every project, your calend
 
 ## What do the numbers at the top mean?
 
-- **Time boxed tasks completed:** of the to-dos you planned on your calendar for today, how many are done.
+- **Time boxed tasks completed:** of today's to-dos with a set time (a **Work Start** or **Work End** time), how many are done. To-dos planned for today without a time don't count (see [What do planned and time-boxed mean?](using-leantime/task-management.md#what-do-planned-and-time-boxed-mean)).
 - **Tasks completed (last 7 days):** to-dos you finished this week.
 - **Total tasks left:** your open to-dos across all projects.
 - **Goals you are contributing to:** goals that your to-dos help reach.

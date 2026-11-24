@@ -61,6 +61,20 @@ Leantime links to-dos in one way: a subtask belongs to its parent (**Related To*
 - **One stage can't start before another ends?** Use milestones. A milestone can **depend on** another milestone, and the Milestones timeline draws an arrow between them (see [Milestones](using-leantime/roadmap-planning.md)).
 - **Work that has to happen in order inside one to-do?** Break it into subtasks and work through them.
 
+## What do planned and time-boxed mean?
+
+**Work Start** and **Work End**, under **Schedule**, say when you plan to work on a to-do. Each has a date and an optional time, and the time decides what kind of plan it is:
+
+| Kind | What you set | How it shows on your calendar |
+| --- | --- | --- |
+| **Planned** | A **Work Start** date, without a time | An all-day "Planned:" item. With a later **Work End** date, one on every day from **Work Start** up to the day before **Work End**. |
+| **Time-boxed** | A time on **Work Start** or **Work End** | A "Planned Edit:" block from **Work Start** to **Work End** |
+
+- **A time-boxed to-do is planned too.** Both kinds put the to-do on your calendar for the days they cover.
+- **The Due Date is separate.** It's when the to-do has to be done, not when you'll work on it.
+- **Only time-boxed to-dos count** toward **Time boxed tasks completed** on [My Work](using-leantime/my-work-dashboard.md). To time-box a to-do quickly, drag it from **My ToDos** onto a time in the calendar there.
+- **All-day "Planned:" items are new in Leantime 3.17.** Before 3.17, every planned to-do showed as "Planned Edit:". To hide them, open **My Calendar**, then **Calendar Settings**, and under **Planned days** clear **Show planned days on my calendar**.
+
 ## How do I make a to-do repeat?
 
 Some work comes back on a schedule: restocking every Monday, a report at the end of every month, a check-in every two weeks. Set the to-do up to repeat once instead of adding it again each time.
