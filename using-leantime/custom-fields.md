@@ -2,7 +2,7 @@
 
 Every team tracks something Leantime doesn't have a field for: a budget code, a cost estimate, which client contact asked for it. The Custom Fields plugin lets you add your own fields to to-dos, for every project or only the ones that need them.
 
-![A to-do's Custom Fields tab (outlined) with Food type set to Household items and Estimated cost ($) set to 850, and the Save Fields button](../_images/plugins/custom-fields-todo.webp)
+![A to-do's Custom Fields tab in Leantime, with a Food type choice and an Estimated cost of 850, and the Save Fields button](../_images/plugins/leantime-custom-fields-todo.webp)
 
 Custom fields come with the [Custom Fields](plugins/custom-fields.md) plugin. On Leantime Cloud it's already on; on your own server, see [Custom Fields](plugins/custom-fields.md) to install it.
 
@@ -18,7 +18,7 @@ Custom fields are set up once for your whole Leantime, by an Admin or Owner.
 6. **Choose where it shows** under **Display Conditions** (see the next section).
 7. **Click Save Fields.**
 
-![The Custom Fields page under Company: the Food type field with its label, choices and Display Conditions (outlined), set to show on to-dos in the Open the Eastside pantry project](../_images/plugins/custom-fields-admin.webp)
+![The Custom Fields settings: a Food type field with its choices and Display Conditions (outlined), shown on one project's to-dos](../_images/plugins/leantime-custom-fields-settings.webp)
 
 ## Which field types can I use?
 

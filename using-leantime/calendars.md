@@ -2,7 +2,7 @@
 
 My Calendar shows your own events and your to-dos from every project in one place: when each one is due, and when you've planned to work on it. You can bring in your Google, Outlook or Apple calendar, and subscribe to your Leantime calendar from those apps.
 
-![My Calendar in Month view: Team check-in and Client review events, Due To-Do bars for the homepage copy, checkout provider and product photos, a Planned Edit on the 23rd and the all-day Photo shoot on the 26th, with Connect Calendar and Calendar Settings on the left](../_images/using-leantime/calendar-month.webp)
+![Leantime's calendar in month view: events, to-do due dates, a planned day and an all-day event, with Connect Calendar on the left](../_images/using-leantime/leantime-calendar-month-view.webp)
 
 ## How do I open my calendar?
 
@@ -31,7 +31,7 @@ To-dos show when you're assigned to them or a collaborator on them, in every pro
 3. **Choose the Start Date and Start Time, then the End Date and End Time.** For something that takes the whole day, switch on **All Day Event** instead of setting times.
 4. **Click Save.**
 
-![The Event dialog: Title "Client review: new homepage", Start Date 11/19/2026 at 02:00 PM, End Date 11/19/2026 at 03:00 PM, the All Day Event switch, and Save](../_images/using-leantime/calendar-add-event.webp)
+![The Event dialog: title, start and end date and time, the All Day Event switch, and Save](../_images/using-leantime/leantime-calendar-add-event.webp)
 
 An event has a title and a time, and that's all: there's no description, location, guest list or repeat. For meetings with other people, use the calendar you already invite them from, and [connect it](#how-do-i-see-my-google-outlook-or-apple-calendar-in-leantime) so they show here too.
 
@@ -48,7 +48,7 @@ Events from connected calendars can't be moved here; change them in their own ca
 
 Give it a **Work Start** and **Work End** on the to-do, or drag it from **My ToDos** onto the Calendar widget on [My Work](using-leantime/my-work-dashboard.md). Either way it shows on your calendar as a **Planned Edit** block, and you can drag the block to another time.
 
-![Week view: a Planned Edit block for "Test the checkout on phones" from 9:00 AM to 12:00 PM on Monday, a 10:00 AM Team check-in on Tuesday, and the all-day Photo shoot on Thursday](../_images/using-leantime/calendar-week.webp)
+![The calendar in week view: a planned work block on Monday, a team check-in on Tuesday and an all-day event on Thursday](../_images/using-leantime/leantime-calendar-week-view.webp)
 
 ## How do I see my Google, Outlook or Apple calendar in Leantime?
 
@@ -62,7 +62,7 @@ Connect it with its iCal link, so your meetings show next to your to-dos.
 3. **Fill in a Calendar Name, paste the iCal URL, and pick a Color.**
 4. **Click Import.**
 
-![The Connect a Calendar dialog: the iCal/ICS URL section with Calendar Name, iCal URL and Color fields, and the Import button](../_images/using-leantime/calendar-connect.webp)
+![The Connect a Calendar dialog: an iCal (ICS) URL with a name and color, and the Import button](../_images/using-leantime/leantime-calendar-ical-import.webp)
 
 The calendar appears in the left panel with its color. Leantime reads it again every 30 minutes or so, and only shows it: change its events in their own app.
 
@@ -77,7 +77,7 @@ To rename a connected calendar, change its link or color, or remove it, use the 
    - **Outlook:** **Add calendar → Subscribe from web**.
    - **Apple Calendar:** **File → New Calendar Subscription**.
 
-![The Integrate Calendar dialog: the calendar URL in a text box, Generate iCal URL, and Remove Calendar Access](../_images/using-leantime/calendar-export.webp)
+![The Integrate Calendar dialog: your calendar's iCal URL, Generate iCal URL, and Remove Calendar Access](../_images/using-leantime/leantime-calendar-ical-export.webp)
 
 The subscription has your events, your due to-dos (with a reminder 30 minutes before) and your planned work (with a reminder 5 minutes before). Calendars you connected from elsewhere aren't included. Calendar apps check subscriptions on their own schedule, so changes can take a few hours to show up in Google Calendar.
 

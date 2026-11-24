@@ -6,7 +6,7 @@ Leantime tells you when something changes in your projects: a new comment, a to-
 
 Click the bell at the top right. **Notifications** lists recent changes in your projects. **Mentions** lists the times someone wrote your name with @, like `@Ada`.
 
-![The notifications panel under the bell, with Notifications and Mentions tabs and a comment from Ben](../_images/using-leantime/notifications-bell.webp)
+![Leantime's notifications panel under the bell, with the Notifications and Mentions tabs and a comment from a teammate](../_images/using-leantime/leantime-notifications-panel.webp)
 
 Click a notification to open what it's about.
 
@@ -17,7 +17,7 @@ Click a notification to open what it's about.
 3. **Choose your settings** (explained below).
 4. **Click Save.**
 
-![The Notifications tab: email and push switches, Email frequency, the Notify me about switches, and Per-Project Notifications with one project's level outlined](../_images/using-leantime/notifications-settings.webp)
+![Notification settings: email and push switches, email frequency, what to be notified about, and per-project levels](../_images/using-leantime/leantime-notification-settings.webp)
 
 | Setting | What it does |
 |---|---|

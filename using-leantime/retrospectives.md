@@ -2,7 +2,7 @@
 
 A retrospective is a short look back with the team, after a sprint, a milestone or an event: what worked, what didn't, and what to try next time. Leantime gives each project a Retrospective board to collect the answers and keep them for later.
 
-![The Retrospective board "After the soft opening": two cards each under Continue, Stop and Start, with Add New in the Start column outlined](../_images/using-leantime/retrospectives-board.webp)
+![A Leantime retrospective board: two cards each under Continue, Stop and Start, with Add New in Start outlined](../_images/using-leantime/leantime-retrospective-board.webp)
 
 ## How do I hold a retrospective in Leantime?
 

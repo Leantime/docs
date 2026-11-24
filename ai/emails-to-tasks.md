@@ -49,7 +49,7 @@ The assistant searches your mail, groups the messages into conversations, and sh
 
 The tasks in the Customer Service project's table, each assigned to Sam with a priority and a due date:
 
-![The Customer Service project's To-Dos table: four customer tasks assigned to Sam, each with a High or Medium priority and a due date](../_images/ai/emails-to-tasks.webp)
+![Leantime to-dos created by an AI assistant from customer emails: four tasks assigned to one person, with priorities and due dates](../_images/ai/leantime-ai-tasks-from-emails.webp)
 
 Besides the title and description, the assistant can set the **assignee**, **priority** (Critical, High, Medium, Low or Lowest), **due date**, **milestone** and **collaborators**. Ask for what you need. If it isn't sure which project or person you mean, it asks.
 

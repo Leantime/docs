@@ -43,7 +43,7 @@ A key can also see the projects that are open to everyone in your organization. 
 
 A token doesn't expire. It works until you delete it on the same tab, where you also see when it was last used.
 
-![Account Settings with the Personal Access Tokens tab open: Create Token outlined, and one token, Reporting script, with when it was last used and created](../_images/api/personal-access-tokens.webp)
+![Leantime's Personal Access Tokens tab: Create Token outlined, and one token with when it was last used and created](../_images/api/leantime-api-personal-access-tokens.webp)
 
 ## How do I make my first call?
 

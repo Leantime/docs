@@ -8,7 +8,7 @@ Open the project, open **Data Room** in the left menu and click **Reports**. The
 
 ## What's in the Status Report?
 
-![The Status Report of Website Redesign: On Track and Print at the top, the Status Report and Delivery Metrics tabs, the period picker outlined, four numbers, Accomplished this period, Changed this period and the milestones In flight](../_images/using-leantime/reports-status.webp)
+![Leantime's project Status Report: On Track, the period picker (outlined), four key numbers, what was done and changed, and the milestones](../_images/using-leantime/leantime-project-status-report.webp)
 
 **At the top:** the project's status from its latest [project update](using-leantime/managing-projects.md#whats-on-the-project-overview) (**On Track**, **At Risk** or **Off Track**) and a **Print** button.
 
@@ -28,7 +28,7 @@ Open the project, open **Data Room** in the left menu and click **Reports**. The
 
 ## What's in Delivery Metrics?
 
-![The Delivery Metrics tab: Planned Hours, Hours Left, Logged Hours and Open To-Dos, and the Cumulative Flow chart with its Number of To-Dos, Effort and Hours switch outlined](../_images/using-leantime/reports-metrics.webp)
+![Delivery Metrics: planned, remaining and logged hours, open to-dos, and the Cumulative Flow chart with its switch outlined](../_images/using-leantime/leantime-reports-cumulative-flow.webp)
 
 - **Summary:** planned hours, hours left, logged hours and open to-dos.
 - **Cumulative Flow:** how many to-dos were new, in progress and done on each day. Switch between **Number of To-Dos**, **Effort** and **Hours** above the chart. A band that keeps growing while **Done** stays flat means work is piling up.
@@ -75,9 +75,9 @@ The reports above cover one project. A [program](using-leantime/programs.md) and
 | **Resources & Coverage** | People and capacity from the programs' [Resources](using-leantime/programs.md#how-do-i-plan-peoples-time-with-resources) plans: how much of everyone's time is booked, a row per project (or per program, in a strategy), the work still to do against the time available, and gaps to discuss, like someone booked past their hours. **Show in** switches between hours and days. |
 | **Impact Journey** | Where things stood before the work, how far each outcome has come against its target, and the change you're working toward. |
 
-![The Overview tab of the Feed more families in Riverside strategy report: 3 of 5 milestones completed, goals on track, 24.5 hours logged, Site agreed as the peak of the period, projects that need an update, the team's latest update, and theory health from Inputs to Impact](../_images/plugins/strategy-report-overview.webp)
+![A strategy report's Overview: milestones completed, goals on track, hours logged, projects that need an update, and theory health](../_images/plugins/leantime-strategy-report-overview.webp)
 
-![The Resources & Coverage tab of the Community Pantries program report: 4 people at 71% of capacity, a row for each project with its weekly hours, capacity against demand, and a gap: Dev Example is booked for 10 hours a week against 8](../_images/plugins/program-report-resources.webp)
+![A program report's Resources & Coverage tab: people at 71% of capacity, weekly hours per project, and a capacity gap](../_images/plugins/leantime-program-report-resources.webp)
 
 At the top right, the report says **On track**, **At risk** or **Off track**. It comes from the latest status update on the program or strategy, or, without one, from its goals; the line under it says which. Open the menu (⋮) to set it yourself under **Set verdict**, go back to the calculated one with **Revert to metrics**, or **Print** the report or save it as a PDF.
 

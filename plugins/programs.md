@@ -4,7 +4,7 @@ The Programs plugin adds programs to Leantime: a group of projects that work tow
 
 On the Leantime Marketplace it's called **Program Plans**, and some screens say "Plan" where they mean a program, like **Plan Settings**.
 
-![A program's Projects page: Open the Eastside pantry and Start the Northside mobile pantry in the New column, with Add Project outlined](../_images/plugins/program-projects.webp)
+![A program's Projects page in Leantime: two pantry projects in the New column, with Add Project outlined](../_images/plugins/leantime-program-projects.webp)
 
 ## What does it add?
 

@@ -2,7 +2,7 @@
 
 The Recurring Tasks plugin repeats a to-do on a schedule, like restocking every Monday or a report at the end of every month, so you set it up once instead of adding it again each time.
 
-![The recurrence settings of the to-do "Restock the shelves" (outlined): Repeat every 1 Week(s) on Monday, Trigger Recurrence On Due Date, Create new task, and Repeat Task switched on. The link above reads "Repeats every week on Monday".](../_images/plugins/recurring-todos.webp)
+![Recurring to-do settings in Leantime: repeat every week on Monday, triggered on the due date, creating a new task each time](../_images/plugins/leantime-recurring-tasks-settings.webp)
 
 ## What does it add?
 

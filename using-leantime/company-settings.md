@@ -2,7 +2,7 @@
 
 Company Settings holds what applies to your whole Leantime: its language and name, the logo, defaults for notifications, phone notifications, usage statistics (telemetry) and API keys. Administrators and Owners can open it.
 
-![Company Settings, Details tab: Language, Company Name and the Help make Leantime better! switch under Company Details, Email frequency under Defaults, and the Logo upload on the right](../_images/using-leantime/company-settings-details.webp)
+![Leantime's Company Settings, Details tab: language, company name, default email frequency and the logo upload](../_images/using-leantime/leantime-company-settings.webp)
 
 ## How do I open Company Settings?
 
@@ -50,7 +50,7 @@ API keys let other tools work with your Leantime through its [API](api/usage.md)
 4. **Under Project Access, tick the projects** the key can use.
 5. **Click Save**, then **copy the key** that appears. It starts with `lt_`, and this is the only time you see all of it.
 
-![The New API Key dialog: Key Name "Reporting sync", Role Read Only, Status Active, and Project Access with After-school tutoring ticked under Example Co](../_images/using-leantime/company-settings-new-api-key.webp)
+![The New API Key dialog: name, a Read Only role, Active status, and access to one project](../_images/using-leantime/leantime-api-key-new.webp)
 
 Each key shows on the tab with when it was created and last used. Its menu has **Edit Key**, to change its role, projects or **Status** (set **Deactivated** to pause it), and **Delete Key**.
 
