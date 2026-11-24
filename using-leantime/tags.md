@@ -10,7 +10,7 @@ Tags are your own labels for to-dos, ideas and docs. Use them for anything that 
 2. Click the field and start typing. Leantime suggests tags already used in this project. Click one, or press **Enter** (or click **+**) to add what you typed as a new tag.
 3. Click **Save**.
 
-![A to-do's Tags field with the tags mobile and payments, and "de" typed in the search box, suggesting the existing tag design](../_images/using-leantime/tags-field.webp)
+![A to-do's Tags field in Leantime with two tags, and de typed in the box, suggesting the existing tag design](../_images/using-leantime/leantime-tags-field.webp)
 
 **On an idea:** open the idea. The tag field is under its name. Click **Save**.
 
@@ -31,7 +31,7 @@ The ones already used on to-dos, ideas and docs in the same project. Each projec
 - **Ideas board:** a tag icon with a number on the idea's card.
 - **Docs:** under the doc's title.
 
-![A Kanban card for Test the checkout on phones, with its tag list open: mobile and payments](../_images/using-leantime/tags-card.webp)
+![A Kanban card with its tag list open: mobile and payments](../_images/using-leantime/leantime-tags-kanban-card.webp)
 
 ## How do I find everything with a tag?
 
