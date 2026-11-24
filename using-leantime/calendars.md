@@ -83,6 +83,35 @@ The subscription has your events, your due to-dos (with a reminder 30 minutes be
 
 **Keep the address private:** anyone who has it can see your calendar, without signing in. If it got out, click **Generate iCal URL** again: the new address replaces the old one, which stops working. **Remove Calendar Access** turns the address off completely.
 
+## How do I see Leantime in my calendar app (with CalDAV)?
+
+The iCal subscription above is read-only. With the free [CalDAV Calendar Sync](plugins/caldav.md) plugin, your calendar app connects to Leantime as a calendar account, and you can add, change and delete Leantime events from the app too. It works with Apple Calendar (Mac, iPhone, iPad), Thunderbird, DAVx5 on Android and Evolution.
+
+1. **Open My Calendar, then Calendar Settings** in the left panel. Under **CalDAV Integration** you see the address to use, ending in `/caldav/server/`.
+2. **Create an app password:** click **CalDAV Accounts**, then **App passwords**. Under **What is it for?**, name the app (for example "iPhone") and click **Create app password**. Copy the password right away: it's shown only once.
+3. **Add a CalDAV account in your calendar app,** with:
+   - **Server:** the address from step 1;
+   - **Username:** your Leantime email address;
+   - **Password:** the app password.
+
+   On an iPhone, for example: **Add Account → Other → Add CalDAV Account**. In Thunderbird: **New Calendar → On the Network**.
+
+Your calendar app shows your Leantime events, which you can change there, and your due to-dos and planned work, which are read-only. Without two-factor authentication or single sign-on, your Leantime password also works, but an app password is safer: you can revoke one app without changing your password.
+
+## How do I sync with Nextcloud or another calendar server?
+
+With the [CalDAV Calendar Sync](plugins/caldav.md) plugin, Leantime syncs your events both ways with Nextcloud, ownCloud, Baikal, Radicale or another CalDAV server.
+
+1. **Open My Calendar, then Calendar Settings,** and click **CalDAV Accounts**.
+2. **Click Add CalDAV Account** and fill in:
+   - **Name:** for you, like "My Nextcloud";
+   - **Server URL:** your server's address, like `https://cloud.example.com`;
+   - **Calendar URL:** the full address of the calendar on that server. In Nextcloud, open the calendar's **…** menu and copy its private link;
+   - **Username** and **Password:** your account on that server. If you use two-factor authentication there, use an app password from that server.
+3. **Leave Enabled and Verify SSL Certificate on,** and click **Connect**.
+
+Changes you make in Leantime go out right away, and Leantime checks the server for changes every 15 minutes. Events deleted on the server disappear from Leantime on the next check. Repeating events come in as every occurrence from 60 days back to a year ahead. You can connect several servers; each keeps its own settings.
+
 ## Which views can I use?
 
 Choose **Day**, **Week**, **Month** or **Year** in the menu at the top. **today** jumps back to the current date, and the arrows move back and forward. Leantime remembers the view you used last.

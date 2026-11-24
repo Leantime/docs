@@ -121,6 +121,7 @@
     - [Whiteboards](plugins/whiteboards.md)
     - [Daily Intentions](plugins/daily-intentions.md)
     - [Advanced Authentication](plugins/advanced-authentication.md)
+    - [CalDAV Calendar Sync](plugins/caldav.md)
  - [Frequently Asked Questions (FAQ)](installation/frequently-asked-questions.md)
 
 **External Links**

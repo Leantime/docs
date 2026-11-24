@@ -293,7 +293,7 @@ Each person can subscribe to their Leantime calendar from Google Calendar, Outlo
 
 ### Does Leantime support Google Calendar or Outlook sync?
 
-Direct two-way sync requires the CalDAV plugin. The basic iCal export is one-way (Leantime → external calendar).
+The iCal export is one-way: Leantime → your calendar app (see [Calendars](using-leantime/calendars.md)). For two-way sync, use the free [CalDAV Calendar Sync](plugins/caldav.md) plugin, with Apple Calendar, Thunderbird, DAVx5 or a CalDAV server like Nextcloud. The plugin doesn't connect to Google Calendar or Outlook; use the one-way iCal subscription with them.
 
 ### Can I schedule tasks on my calendar?
 
