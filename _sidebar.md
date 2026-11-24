@@ -73,6 +73,7 @@
   - [Everyday tasks in the app](using-leantime/mobile-app-how-to.md)
 - [Billing on Leantime Cloud](using-leantime/cloud-billing.md)
 - [Delete your Cloud account](using-leantime/delete-cloud-account.md)
+- [Security and privacy on Cloud](using-leantime/cloud-security.md)
 - [Projects](using-leantime/managing-projects.md)
 - [Programs](using-leantime/programs.md)
 - [Strategies](using-leantime/strategies.md)
