@@ -6,7 +6,7 @@ Every project has a file library for the documents, images and recordings your t
 
 Open the project, then click **Files** under **DATA ROOM** in the left menu. Everyone who can see the project can see and download its files.
 
-![The Files page of a project: the upload area with Browse, Webcam and Screen Capture outlined, and two files below, one with its menu open showing Download and Delete](../_images/using-leantime/files-library.webp)
+![Leantime's project Files page: the upload area with Browse, Webcam and Screen Capture outlined, and a file's menu with Download and Delete](../_images/using-leantime/leantime-project-files-library.webp)
 
 ## How do I add a file?
 
