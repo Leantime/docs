@@ -69,6 +69,7 @@
 **Using Leantime**
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
+- [Search](using-leantime/search.md)
 - [Leantime on your phone](using-leantime/mobile-app.md)
   - [Everyday tasks in the app](using-leantime/mobile-app-how-to.md)
 - [Billing on Leantime Cloud](using-leantime/cloud-billing.md)
