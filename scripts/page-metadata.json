@@ -551,23 +551,6 @@
     "searchTitle": "Use Leantime from Claude or ChatGPT: what to ask",
     "description": "Update to-dos, assign work and start projects from Claude, ChatGPT or Cursor in plain language, with example prompts, routines and tips for good results."
   },
-  "ai/everyday-workflows.md": {
-    "plugin": {
-      "name": "MCP Server",
-      "url": "https://marketplace.leantime.io/product/mcp-server/"
-    },
-    "searchTitle": "Turn emails into tasks with Claude and Leantime's MCP server",
-    "description": "Copy-ready AI workflows for Leantime: turn emails into tasks with Claude and Gmail, on request or every morning, and set up a project for a teammate.",
-    "glance": {
-      "minutes": 10,
-      "level": "Beginner",
-      "needs": [
-        "A Leantime account and a Claude account",
-        "Gmail, for the email workflows"
-      ],
-      "result": "Emails turned into Leantime tasks with an assignee, a priority and a due date, on request or every morning"
-    }
-  },
   "installation/mobile-app-setup.md": {
     "title": "Set up the mobile app on a self-hosted server",
     "description": "Get a self-hosted Leantime ready for the mobile app: Advanced Authentication, sign-in with SSO, and phone notifications through Leantime's relay.",
@@ -904,5 +887,93 @@
     "description": "How to use the Leantime phone app each day: the Today screen and day bar, your one thing, adding and finishing tasks, tracking time, reminders and notes.",
     "searchTitle": "Leantime mobile app how-to: Today, tasks, time and notes",
     "checked": "mobile 1.1.0"
+  },
+  "ai/recipes.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "AI recipes for Leantime: Claude, ChatGPT and coding agents",
+    "description": "Complete AI recipes for Leantime: meeting notes to to-dos, a daily standup report, a coding agent working through tagged to-dos, and emails to tasks.",
+    "checked": "3.17"
+  },
+  "ai/meeting-notes-to-todos.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Turn meeting notes into Leantime to-dos with AI",
+    "description": "Paste meeting notes into Claude or ChatGPT and get assigned Leantime to-dos with due dates, priorities and a meeting tag, plus a project update.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 1,
+      "level": "Beginner",
+      "needs": [
+        "An AI assistant connected to Leantime",
+        "The people in the notes on the project's team"
+      ],
+      "result": "Assigned to-dos with due dates and priorities, tagged with the meeting's name, and a project update with the decisions"
+    }
+  },
+  "ai/standup-report.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Daily standup report from Leantime with Claude",
+    "description": "Have an AI assistant write a project's standup from Leantime: done, in progress, waiting, blocked and time logged, on request or every morning.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "An AI assistant connected to Leantime",
+        "For the morning schedule: Claude, with Leantime added as a connector"
+      ],
+      "result": "A short standup per project, in your chat or posted as a project update every morning"
+    }
+  },
+  "ai/coding-agent.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Hand Leantime to-dos to Claude Code or another coding agent",
+    "description": "Tag Leantime to-dos for a coding agent like Claude Code: it plans, does the work, links the pull request and hands each to-do back for your review.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "Claude Code, or another coding agent that supports MCP, connected to Leantime",
+        "A Leantime project with to-dos, and the repository the work is in"
+      ],
+      "result": "To-dos worked on by the agent, with its plan, result and pull request link in the comments, waiting for your review"
+    }
+  },
+  "ai/emails-to-tasks.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Turn emails into tasks with Claude and Leantime's MCP server",
+    "description": "Turn customer emails into Leantime tasks with Claude and Gmail: one task per conversation, with an owner, priority and due date, on request or every morning.",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "A Leantime account and a Claude account",
+        "Gmail"
+      ],
+      "result": "Emails turned into Leantime tasks with an assignee, a priority and a due date, on request or every morning"
+    }
+  },
+  "ai/project-for-someone-else.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Set up a Leantime project for a teammate with AI",
+    "description": "Have Claude or ChatGPT create a Leantime project, add a teammate to its team and assign them their first tasks, in one request you check first."
   }
 }

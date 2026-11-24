@@ -94,15 +94,30 @@ const useLeantimeGroups = USE_LEANTIME_GROUPS.map(([label, pages]) => ({
 })).filter((group) => group.items.length > 0);
 
 // AI, plugins and project management concepts, in reading order. Pages appear once their file exists.
+// The AI recipes sit in their own group inside AI with Leantime, at AI_RECIPES_LABEL's place.
+const AI_RECIPES_LABEL = 'What your AI assistant can do';
+const AI_RECIPES = [
+	'ai/recipes|All recipes',
+	'ai/meeting-notes-to-todos|Meeting notes to to-dos',
+	'ai/standup-report|A standup report every morning',
+	'ai/coding-agent|To-dos for a coding agent',
+	'ai/emails-to-tasks|Emails to tasks',
+	'ai/project-for-someone-else|A project for a teammate',
+];
 const AI_PAGES = [
 	'ai|Overview',
 	'ai/use-leantime-from-your-ai-assistant',
-	'ai/everyday-workflows|Everyday workflows',
+	AI_RECIPES_LABEL,
 	'ai/leantime-cloud-ai|L.E.O. in Leantime Cloud',
 	'installation/leantime-mcp|MCP server: connect your assistant',
 	'ai/working-with-ai',
 	'ai/glossary|Glossary',
 ];
+const aiRecipeItems = menuEntries(AI_RECIPES);
+const aiItems = AI_PAGES.flatMap((entry) => {
+	if (entry !== AI_RECIPES_LABEL) return menuEntries([entry]);
+	return aiRecipeItems.length ? [{ label: AI_RECIPES_LABEL, items: aiRecipeItems }] : [];
+});
 const PLUGIN_PAGES = [
 	'installation/using-plugins|Overview',
 	'plugins/strategy-pro',
@@ -283,6 +298,8 @@ export default defineConfig({
 		'/installation/advanced': '/installation/other-methods/',
 		'/installation/plugin-configuration': '/plugins/advanced-authentication/',
 		'/installation/quick-installation': '/installation/package-installation/',
+		// Everyday workflows became the AI recipes; its two workflows have their own pages now.
+		'/ai/everyday-workflows': '/ai/recipes/',
 	},
 	integrations: [
 		starlight({
@@ -342,7 +359,7 @@ export default defineConfig({
 					label: 'Use Leantime',
 					items: [
 						...useLeantimeGroups,
-						{ label: 'AI with Leantime', items: menuEntries(AI_PAGES) },
+						{ label: 'AI with Leantime', items: aiItems },
 						{ label: 'Plugins', items: menuEntries(PLUGIN_PAGES) },
 					],
 				},
