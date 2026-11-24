@@ -404,6 +404,84 @@ user (WHERE userId = session), so a foreign id is a no-op.
 
 
 ---
+### `leantime.rpc.Calendar.Calendar.getShowPlannedDays`
+
+Whether your calendar shows date-only plans (Planned days with no time). On by default.
+
+```json
+{
+    "method": "leantime.rpc.Calendar.Calendar.getShowPlannedDays",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+**Returns:**
+False when you turned "Show planned days on my calendar" off.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
+### `leantime.rpc.Calendar.Calendar.saveShowPlannedDays`
+
+Turns "Show planned days on my calendar" on or off for you. Applies to the Leantime
+calendar, the dashboard calendar, the mobile calendar and your iCal feed.
+
+```json
+{
+    "method": "leantime.rpc.Calendar.Calendar.saveShowPlannedDays",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "show": bool,
+    }
+}
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `show` | **bool** | True to show date-only plans as all-day items. |
+
+
+**Returns:**
+The setting as saved.
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
 ### `leantime.rpc.Calendar.Calendar.getMyExternalCalendars`
 
 Retrieves all external calendars for a given user.

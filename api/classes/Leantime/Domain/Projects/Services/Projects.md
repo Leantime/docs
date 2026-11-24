@@ -1377,6 +1377,50 @@ was already a member (or the ids were invalid).
 
 
 ---
+### `leantime.rpc.Projects.Projects.removeUserFromProject`
+
+Removes one user from one project's team, leaving their other projects alone.
+
+```json
+{
+    "method": "leantime.rpc.Projects.Projects.removeUserFromProject",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "params": {
+        "userId": int,
+        "projectId": int,
+    }
+}
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | **int** | The user to remove. |
+| `projectId` | **int** | The project to remove them from. |
+
+
+**Returns:**
+True when a membership was removed; false when they weren't on the team (or the ids were invalid).
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": bool
+}
+```
+
+
+
+---
 ### `leantime.rpc.Projects.Projects.deleteAllUserProjectRelations`
 
 Removes all project relations for a given user.
