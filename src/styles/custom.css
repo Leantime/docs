@@ -1,0 +1,521 @@
+/*
+ * Leantime docs theme.
+ *
+ * Built for people who skim, get interrupted and come back: one colour per section, so you
+ * always know where you are; calm, high-contrast text; numbered steps that stand out; and an
+ * Easy-read text option. Colour never carries meaning on its own: every coloured element also
+ * has a label or an icon.
+ */
+
+/*
+ * Values from Leantime's own theme (public/theme/default/css/light.css and dark.css, and the type rule
+ * in app/Views/Templates/components/COMPONENTS.md), so the docs look like the app: the same accent,
+ * the same red / amber / green / blue for notes and warnings, the same corners and label sizes.
+ * Text colours are one step darker (light) or lighter (dark) than the app's fill colours where the
+ * fill alone wouldn't reach WCAG AA as text.
+ */
+:root {
+	--lt-radius: 16px; /* --box-radius: cards and panels */
+	--lt-radius-small: 8px; /* --box-radius-small: chips inside a card, buttons */
+	--lt-badge-height: 1.25rem; /* 20px: every badge, chip and pill */
+	--lt-label-size: 0.75rem; /* --font-size-s 12px: labels, badges */
+	--lt-label-tracking: 0.04em;
+}
+
+/* Brand accent (dark theme is Starlight's default :root): the app's dark --accent1, hsl(198, 100%, 32%). */
+:root {
+	--sl-color-accent-low: #00283b;
+	--sl-color-accent: #0072a3;
+	--sl-color-accent-high: #b3e3f7;
+
+	/* The app's dark --blue, --green, --yellow and --red, for notes and warnings. */
+	--lt-blue: #1b75bb;
+	--lt-blue-text: #8cc4ee;
+	--lt-green: #32965d;
+	--lt-green-text: #8fdcb0;
+	--lt-yellow: #fdb833;
+	--lt-yellow-text: #fdcf73;
+	--lt-red: #f76c5e;
+	--lt-red-text: #f9a39a;
+
+	/* Section colours, dark theme. Each passes WCAG AA as text on the page background.
+	   Install is the app's --accent1 hue, Use Leantime its --accent2 (green) hue. */
+	--lt-section-install: #5cc8f5;
+	--lt-section-use: #3dd6b5;
+	--lt-section-ai: #b9a0f8;
+	--lt-section-learn: #f5bd5c;
+	--lt-section-dev: #f79a78;
+	--lt-accent: var(--sl-color-accent-high);
+	/* Fills: bars, tints, card edges and dots. On dark they're the section colours themselves. */
+	--lt-fill-install: var(--lt-section-install);
+	--lt-fill-use: var(--lt-section-use);
+	--lt-fill-ai: var(--lt-section-ai);
+	--lt-fill-learn: var(--lt-section-learn);
+	--lt-fill-dev: var(--lt-section-dev);
+	--lt-fill: var(--lt-accent);
+
+	/* A narrower text column (Starlight's default is 45rem): shorter lines are easier to follow. */
+	--sl-content-width: 40rem;
+}
+
+/*
+ * "On this page" on wide screens: a fixed, narrow column instead of Starlight's, which grows with
+ * the window. Hidden (src/components/TableOfContents.astro), it shrinks to a strip with the
+ * button, and the text column is centred in the room that frees up.
+ */
+:root {
+	--lt-toc-width: 14rem;
+}
+:root[data-lt-toc='collapsed'] {
+	--lt-toc-width: 3.5rem;
+}
+@media (min-width: 72rem) {
+	/* The panel inside is position: fixed, so it needs the width too (100% would be the window). */
+	.right-sidebar-container,
+	.right-sidebar {
+		width: var(--lt-toc-width);
+	}
+	[data-has-sidebar][data-has-toc] .main-pane {
+		--sl-content-margin-inline: auto;
+		width: calc(100% - var(--lt-toc-width));
+	}
+	.right-sidebar-panel .sl-container {
+		width: auto;
+		max-width: none;
+	}
+	:root[data-lt-toc='collapsed'] .right-sidebar-panel {
+		padding-inline: 0.75rem;
+	}
+}
+
+/* The home page is a grid of links, not reading text: give it more room next to the sidebar. */
+:root:has(.lt-home) {
+	--sl-content-width: 56rem;
+}
+
+:root[data-theme='light'] {
+	/* The app's --accent1, #004666 (hsl(199, 100%, 20%)). */
+	--sl-color-accent-low: #d4e5ec;
+	--sl-color-accent: #004666;
+	--sl-color-accent-high: #002b3f;
+
+	/* The app's light --blue, --green, --yellow and --red. */
+	--lt-blue: #1976d2;
+	--lt-blue-text: #115293;
+	--lt-green: #2e7d32;
+	--lt-green-text: #1f5e23;
+	--lt-yellow: #f9a825;
+	--lt-yellow-text: #7a4a00;
+	--lt-red: #d64045;
+	--lt-red-text: #a3242a;
+
+	--lt-section-install: #004666;
+	--lt-section-use: #00755e; /* --accent2 #00a887, darker so it reads as text */
+	--lt-section-ai: #6a3fc2;
+	--lt-section-learn: #8a5300;
+	--lt-section-dev: #b03a14;
+	--lt-accent: var(--sl-color-accent);
+	/* Fills on light: the bright versions of the same hues (the app's --accent2 green, its amber),
+	   for bars, tints, card edges and dots. The darker colours above are only for text, where they
+	   need the contrast; used as fills they turned the light theme navy, brown and rust. */
+	--lt-fill-install: #1a9bd7;
+	--lt-fill-use: #00a887;
+	--lt-fill-ai: #8b65ee;
+	--lt-fill-learn: #f5a524;
+	--lt-fill-dev: #f0714f;
+	--lt-fill: #1a9bd7;
+}
+
+[data-section='install'],
+:root[data-section='install'] { --lt-accent: var(--lt-section-install); --lt-fill: var(--lt-fill-install); }
+[data-section='use'],
+:root[data-section='use'] { --lt-accent: var(--lt-section-use); --lt-fill: var(--lt-fill-use); }
+[data-section='ai'],
+:root[data-section='ai'] { --lt-accent: var(--lt-section-ai); --lt-fill: var(--lt-fill-ai); }
+[data-section='learn'],
+:root[data-section='learn'] { --lt-accent: var(--lt-section-learn); --lt-fill: var(--lt-fill-learn); }
+[data-section='dev'],
+:root[data-section='dev'] { --lt-accent: var(--lt-section-dev); --lt-fill: var(--lt-fill-dev); }
+
+/* Sidebar: a coloured bar beside each top-level group. Groups mix folders (MCP and plugins sit
+   under Use Leantime), so the colour follows the group's position, not its links. */
+.sidebar-content .top-level > li > details {
+	border-inline-start: 4px solid transparent;
+	padding-inline-start: 0.4rem;
+	margin-inline-start: -0.4rem;
+}
+/* One colour per top-level menu group, in the order of the sidebar in astro.config.mjs, matching the
+   section label above each of its pages (src/lib/sections.ts): Start here (the brand's blue to green,
+   the way in), Use Leantime, Project management concepts, Self-host Leantime, Leantime Cloud (its
+   pages are Using Leantime pages), Build on Leantime. */
+.sidebar-content .top-level > li:nth-child(1) > details {
+	border-image: linear-gradient(var(--lt-fill-install), var(--lt-fill-use)) 1;
+}
+.sidebar-content .top-level > li:nth-child(2) > details { border-color: var(--lt-fill-use); }
+.sidebar-content .top-level > li:nth-child(3) > details { border-color: var(--lt-fill-learn); }
+.sidebar-content .top-level > li:nth-child(4) > details { border-color: var(--lt-fill-install); }
+.sidebar-content .top-level > li:nth-child(5) > details { border-color: var(--lt-fill-use); }
+.sidebar-content .top-level > li:nth-child(6) > details { border-color: var(--lt-fill-dev); }
+/* "AI with Leantime" sits inside Use Leantime but is its own section: its label takes the AI colour. */
+.sidebar-content details details:has(a[href^='/ai/']) > summary .large {
+	color: var(--lt-section-ai);
+}
+
+/* You are here: the current page in the menu is filled with its section's colour (the same colour
+   as the label above the title), not the general accent. */
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover,
+.sidebar-content a[aria-current='page']:focus {
+	background-color: var(--lt-accent);
+	color: var(--sl-color-text-invert);
+}
+:root[data-theme='light'] .sidebar-content a[aria-current='page'],
+:root[data-theme='light'] .sidebar-content a[aria-current='page']:hover,
+:root[data-theme='light'] .sidebar-content a[aria-current='page']:focus {
+	background-color: color-mix(in srgb, var(--lt-fill) 18%, var(--sl-color-bg));
+	color: var(--lt-accent);
+	box-shadow: inset 3px 0 0 var(--lt-fill);
+}
+
+/* Groups inside a group ("Your day", "Plan and track", "By type of work") are section labels:
+   smaller, grey and spaced out, so they don't read like the top-level groups above them. */
+.sidebar-content details details > summary .large {
+	font-size: var(--lt-label-size);
+	font-weight: 600;
+	letter-spacing: var(--lt-label-tracking);
+	text-transform: uppercase;
+	color: var(--sl-color-gray-2);
+}
+.sidebar-content details details > summary {
+	padding-block: 0.15rem;
+}
+.sidebar-content details details > summary .caret {
+	width: 1rem;
+	height: 1rem;
+	color: var(--sl-color-gray-3);
+}
+
+/* Headings: smaller than Starlight's (h2 36px, h3 24px), with more air above each section, so
+   the page reads as calm chunks instead of a wall of big titles. */
+.sl-markdown-content h2 {
+	margin-top: 3.25rem;
+	padding-top: 0.25rem;
+	font-size: 1.75rem;
+	line-height: 1.25;
+}
+.sl-markdown-content h3 {
+	margin-top: 2rem;
+	font-size: 1.25rem;
+}
+.sl-markdown-content h2 + p,
+.sl-markdown-content h3 + p {
+	margin-top: 0.75rem;
+}
+
+/* Space between blocks and between list items, so steps and paragraphs don't run together. */
+.sl-markdown-content :is(p, ul, ol, table, figure, blockquote) + :is(p, ul, ol, table, figure, blockquote) {
+	margin-top: 1.25rem;
+}
+.sl-markdown-content :is(ol, ul):not(.sl-steps) > li + li {
+	margin-top: 0.6rem;
+}
+.sl-markdown-content :is(p, li) > img {
+	margin-block: 0.75rem;
+}
+/* Phone screenshots (the mobile app pages): phone width, not full column width, so a page with several stays readable.
+   leantime-mobile-app-* is the name since docs#134; /mobile-* is the old one, still on master until it merges. */
+.sl-markdown-content :is(img[src*='/leantime-mobile-app-'], img[src*='/mobile-']),
+.sl-markdown-content .lt-zoom:has(> :is(img[src*='/leantime-mobile-app-'], img[src*='/mobile-'])) {
+	max-width: min(100%, 360px);
+}
+/* Screenshots never fill the window: at most 60% of its height (520px on big screens), so the text
+   around them stays in view on a laptop. A tall one gets narrower instead of taller. The width comes
+   from the image's shape (--lt-w/--lt-h, written at build time by src/lib/image-size.mjs), so the space
+   is reserved before a lazy image loads. Click one to see it full size (src/components/MarkdownContent.astro). */
+.sl-markdown-content img[style*='--lt-w']:not(.heading-icon),
+.sl-markdown-content .lt-zoom[style*='--lt-w'] {
+	width: min(100%, calc(min(60vh, 520px) * var(--lt-w) / var(--lt-h)), calc(var(--lt-w) * 1px));
+	height: auto;
+}
+/* The click-to-enlarge link takes the screenshot's size, and the screenshot fills it. */
+.sl-markdown-content .lt-zoom {
+	display: block;
+	margin-block: 0.75rem;
+	cursor: zoom-in;
+	border-radius: var(--lt-radius-small);
+}
+.sl-markdown-content .lt-zoom > img {
+	display: block;
+	width: 100% !important;
+	max-width: 100%;
+	margin: 0 !important;
+}
+.sl-markdown-content .lt-zoom:focus-visible {
+	outline: 2px solid var(--sl-color-text-accent);
+	outline-offset: 3px;
+}
+.lt-lightbox {
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	max-width: 96vw;
+	max-height: 94vh;
+	padding: 0;
+	border: none;
+	border-radius: var(--lt-radius);
+	background: var(--sl-color-bg);
+	box-shadow: 0 10px 40px rgb(0 0 0 / 0.35);
+	overflow: auto;
+}
+.lt-lightbox::backdrop {
+	background: rgb(0 0 0 / 0.7);
+}
+.lt-lightbox img {
+	display: block;
+	max-width: 94vw;
+	max-height: 88vh;
+	width: auto;
+	height: auto;
+	cursor: zoom-out;
+}
+.lt-lightbox-close {
+	position: absolute;
+	top: 0.75rem;
+	inset-inline-end: 0.75rem;
+	padding: 0.3rem 0.8rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 999px;
+	background: var(--sl-color-bg);
+	color: var(--sl-color-white);
+	font: inherit;
+	font-size: var(--sl-text-sm);
+	cursor: pointer;
+}
+.sl-markdown-content :is(td, th) {
+	padding-block: 0.7rem;
+	/* Lists let words break anywhere, which squeezed tables inside a list step ("Outpu-ts"). */
+	overflow-wrap: break-word;
+}
+
+/* Steps: bigger, coloured step numbers so you can find your place again after switching windows. */
+.sl-markdown-content .sl-steps > li::before {
+	background-color: color-mix(in srgb, var(--lt-fill) 18%, var(--sl-color-bg));
+	color: var(--lt-accent);
+	font-weight: 700;
+	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--lt-fill) 55%, transparent);
+}
+.sl-markdown-content .sl-steps > li::after {
+	background-color: color-mix(in srgb, var(--lt-fill) 35%, transparent);
+}
+
+/* "Where does this run?" labels on code blocks (expressive-code titles). */
+.expressive-code .frame .header .title {
+	font-weight: 600;
+}
+
+/* Collapsible "More detail" sections keep the main path short. */
+.sl-markdown-content details {
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: var(--lt-radius);
+	padding: 0.6rem 1rem;
+}
+.sl-markdown-content details > summary {
+	cursor: pointer;
+	font-weight: 600;
+}
+.sl-markdown-content details[open] > summary {
+	margin-bottom: 0.5rem;
+}
+
+/* Easy-read text: Atkinson Hyperlegible, more spacing, shorter lines. */
+:root[data-reading='easy'] {
+	--sl-font: 'Atkinson Hyperlegible', var(--sl-font-system);
+	--sl-line-height: 1.9;
+	--sl-content-width: 40rem;
+}
+:root[data-reading='easy'] .sl-markdown-content {
+	letter-spacing: 0.012em;
+	word-spacing: 0.06em;
+}
+:root[data-reading='easy'] .sl-markdown-content :is(p, li) + :is(p, li) {
+	margin-top: 0.9rem;
+}
+
+/* Notes, tips, cautions and warnings in the app's blue, green, amber and red. */
+.starlight-aside {
+	border-radius: var(--lt-radius-small);
+}
+.starlight-aside--note {
+	--sl-color-asides-text-accent: var(--lt-blue-text);
+	--sl-color-asides-border: var(--lt-blue);
+	background-color: color-mix(in srgb, var(--lt-blue) 12%, var(--sl-color-bg));
+}
+.starlight-aside--tip {
+	--sl-color-asides-text-accent: var(--lt-green-text);
+	--sl-color-asides-border: var(--lt-green);
+	background-color: color-mix(in srgb, var(--lt-green) 12%, var(--sl-color-bg));
+}
+.starlight-aside--caution {
+	--sl-color-asides-text-accent: var(--lt-yellow-text);
+	--sl-color-asides-border: var(--lt-yellow);
+	background-color: color-mix(in srgb, var(--lt-yellow) 14%, var(--sl-color-bg));
+}
+.starlight-aside--danger {
+	--sl-color-asides-text-accent: var(--lt-red-text);
+	--sl-color-asides-border: var(--lt-red);
+	background-color: color-mix(in srgb, var(--lt-red) 12%, var(--sl-color-bg));
+}
+
+/* Respect "reduce motion". */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}
+
+/* Home page: a soft wash of the logo's blue and green behind the title, so the page opens with the
+   brand, while the Install button stays the strongest thing on it. */
+.hero {
+	/* The logo's blue and green, at their brightest (the dark theme's section colours): darker
+	   shades turn grey when faded this far. */
+	--lt-wash-blue: #5cc8f5;
+	--lt-wash-green: #3dd6b5;
+	padding: clamp(1.5rem, 5vw, 3rem);
+	border-radius: var(--lt-radius);
+	background:
+		radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--lt-wash-blue) 30%, transparent), transparent 55%),
+		radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--lt-wash-green) 30%, transparent), transparent 60%),
+		var(--sl-color-bg);
+	border: 1px solid color-mix(in srgb, var(--lt-wash-blue) 35%, var(--sl-color-gray-6));
+}
+:root[data-theme='dark'] .hero {
+	background:
+		radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--lt-wash-blue) 20%, transparent), transparent 55%),
+		radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--lt-wash-green) 16%, transparent), transparent 60%),
+		var(--sl-color-bg);
+	border-color: color-mix(in srgb, var(--lt-wash-blue) 25%, var(--sl-color-gray-5));
+}
+
+/* Home page cards: each in the colour of the section it leads to, the same colour as that section's
+   bar in the menu and the label above its pages, so the colours mean something from the first page. */
+.lt-tasks {
+	display: flex;
+}
+.lt-tasks .card {
+	flex: 1;
+	--sl-card-border: var(--sl-color-gray-5);
+	--sl-card-bg: transparent;
+	border-radius: var(--lt-radius);
+	border-top: 4px solid var(--lt-fill);
+	transition: border-color 0.15s ease;
+}
+.lt-tasks .card:has(a:hover) {
+	border-color: var(--lt-fill);
+}
+.lt-tasks .card .icon {
+	color: var(--lt-accent);
+	background-color: color-mix(in srgb, var(--lt-fill) 16%, var(--sl-color-bg));
+	border: none;
+	border-radius: var(--lt-radius-small);
+}
+
+/* Reading pages without an "At a glance" box: the title area takes a faint tint of the section's
+   colour, fading down into the page, so the colour of the label above the title carries across the
+   top. Pages with the box don't need it: the label and the box already carry the colour. */
+.main-pane .content-panel:has(> .sl-container > .lt-eyebrow):not(:has(.lt-glance)) {
+	background: linear-gradient(color-mix(in srgb, var(--lt-fill) 10%, transparent), transparent);
+}
+:root[data-theme='dark'] .main-pane .content-panel:has(> .sl-container > .lt-eyebrow):not(:has(.lt-glance)) {
+	background: linear-gradient(color-mix(in srgb, var(--lt-fill) 13%, transparent), transparent);
+}
+
+/* Home page "Common questions": each group is a soft panel with its own heading, and the
+   questions inside it are rows you read down. Two columns on wide screens (the longest group on
+   the left), one on phones. */
+.lt-questions {
+	display: grid;
+	gap: 1rem;
+	align-items: start;
+}
+@media (min-width: 50rem) {
+	.lt-questions {
+		grid-template-columns: 1fr 1fr;
+	}
+	.lt-questions > div:first-child {
+		grid-row: span 2;
+	}
+}
+.lt-questions > div {
+	margin-top: 0 !important;
+	padding: 1.25rem 1.5rem 0.75rem;
+	border: 1px solid var(--sl-color-gray-6);
+	border-radius: var(--lt-radius);
+	background-color: var(--sl-color-gray-7);
+	box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+:root[data-theme='dark'] .lt-questions > div {
+	background-color: var(--sl-color-gray-6);
+	border-color: var(--sl-color-gray-5);
+}
+.lt-questions h3 {
+	margin: 0 0 0.25rem !important;
+	font-size: var(--sl-text-xl);
+	font-weight: 600;
+	color: var(--sl-color-white);
+}
+/* The group headings don't need Starlight's "link to this heading" icon. */
+.lt-questions .sl-anchor-link {
+	display: none;
+}
+.lt-questions .sl-heading-wrapper {
+	margin: 0 0 0.25rem !important;
+}
+.lt-questions ul {
+	margin-top: 0 !important;
+	padding-inline-start: 0;
+	list-style: none;
+}
+.lt-questions li {
+	margin: 0 !important;
+}
+.lt-questions li + li {
+	border-top: 1px solid var(--sl-color-gray-5);
+}
+.lt-questions li a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.65rem 0;
+	color: var(--sl-color-text-accent);
+	font-weight: 500;
+	text-decoration: none;
+}
+.lt-questions li a::after {
+	content: '→';
+	flex-shrink: 0;
+	color: var(--sl-color-gray-3);
+	transition: transform 0.15s ease;
+}
+.lt-questions li a:hover {
+	text-decoration: underline;
+}
+.lt-questions li a:hover::after {
+	color: var(--sl-color-text-accent);
+	transform: translateX(3px);
+}
+.lt-questions li a:focus-visible {
+	outline: 2px solid var(--sl-color-text-accent);
+	outline-offset: 2px;
+}
+
+/* Dark mode shows the app's white logo (src/assets/leantime-logo-white.svg). Its artwork fills the
+   whole image while the light logo has some room around it, so it's drawn a little smaller to match. */
+.site-title img[src*='leantime-logo-white'] {
+	height: 1.85rem;
+}

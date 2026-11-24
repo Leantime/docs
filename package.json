@@ -1,0 +1,20 @@
+{
+  "name": "leantime-docs",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/check-headings.mjs && node scripts/check-seo.mjs && astro build",
+    "preview": "astro preview",
+    "check:headings": "node scripts/check-headings.mjs",
+    "check:seo": "node scripts/check-seo.mjs --strict"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.42.7",
+    "astro": "7.4.4",
+    "posthog-js": "1.444.0",
+    "sharp": "0.35.5",
+    "starlight-links-validator": "0.27.0",
+    "starlight-llms-txt": "0.12.0"
+  }
+}

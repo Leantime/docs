@@ -1,0 +1,23 @@
+---
+/**
+ * PostHog analytics (EU Cloud). The project token is PostHog's public, write-only key,
+ * meant for use in web pages. Anonymous visitors get no person profiles
+ * (person_profiles defaults to 'identified_only').
+ *
+ * Exposed as window.posthog so the page feedback buttons (Footer.astro) can send
+ * their answer to it.
+ */
+---
+
+<script>
+	import posthog from 'posthog-js';
+
+	const w = window as unknown as { posthog?: typeof posthog };
+	if (!w.posthog) {
+		posthog.init('phc_s6qjt57sEV4HnmCgzCbMJhLx3fPynr288LESXVE4gaVA', {
+			api_host: 'https://eu.i.posthog.com',
+			defaults: '2026-08-30',
+		});
+		w.posthog = posthog;
+	}
+</script>

@@ -1,0 +1,121 @@
+---
+/**
+ * The page's text, with "Copy page for AI" and "Markdown" above it: buttons that hand the page to an
+ * AI assistant. They sit in the page, under the title area, so the title area is only about where
+ * you are and what the page is.
+ */
+import Default from '@astrojs/starlight/components/MarkdownContent.astro';
+
+const { entry, id } = Astro.locals.starlightRoute;
+const markdownUrl = id && !entry.data.draft ? `/${id}.md` : undefined;
+---
+
+{
+	markdownUrl && (
+		<div class="lt-page-tools not-content">
+			<button type="button" class="lt-tool" data-copy-md={markdownUrl} aria-live="polite">
+				<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16h-9V7h9v14Z"/></svg>
+				<span data-label>Copy page for AI</span>
+			</button>
+			<a class="lt-tool" href={markdownUrl} title="This page as plain Markdown, for AI assistants and tools">
+				<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M20.6 5H3.4C2.6 5 2 5.6 2 6.4v11.2c0 .8.6 1.4 1.4 1.4h17.2c.8 0 1.4-.6 1.4-1.4V6.4c0-.8-.6-1.4-1.4-1.4ZM12 16h-2v-4l-1.5 2L7 12v4H5V8h2l1.5 2L10 8h2v8Zm4.5.5L13.5 13H15V8h3v5h1.5l-3 3.5Z"/></svg>
+				<span>Markdown</span>
+			</a>
+		</div>
+	)
+}
+
+<Default><slot /></Default>
+
+<script>
+	// Screenshots shown smaller than they are (custom.css limits their height) open full size on click,
+	// in a dialog: Esc, the Close button or a click anywhere closes it. Without JavaScript the link
+	// opens the image itself.
+	const screenshots = document.querySelectorAll<HTMLImageElement>(
+		'.sl-markdown-content img[src^="/_images/"]:not(.heading-icon)',
+	);
+	let lightbox: HTMLDialogElement | undefined;
+	const open = (img: HTMLImageElement) => {
+		if (!lightbox) {
+			lightbox = document.createElement('dialog');
+			lightbox.className = 'lt-lightbox';
+			lightbox.innerHTML = '<button type="button" class="lt-lightbox-close">Close</button><img alt="">';
+			lightbox.addEventListener('click', () => lightbox!.close());
+			document.body.append(lightbox);
+		}
+		const big = lightbox.querySelector('img')!;
+		big.src = img.currentSrc || img.src;
+		big.alt = img.alt;
+		lightbox.setAttribute('aria-label', img.alt || 'Screenshot');
+		lightbox.showModal();
+		lightbox.querySelector<HTMLButtonElement>('.lt-lightbox-close')!.focus();
+	};
+	screenshots.forEach((img) => {
+		if (img.closest('a')) return;
+		const shown = img.getBoundingClientRect().width;
+		const real = Number(img.getAttribute('width')) || img.naturalWidth;
+		// Only where the full size shows noticeably more (most screenshots are taken at 2x).
+		if (!shown || real < shown * 1.25) return;
+		const link = document.createElement('a');
+		link.href = img.getAttribute('src')!;
+		link.className = 'lt-zoom';
+		link.title = 'Show full size';
+		link.setAttribute('style', img.getAttribute('style') ?? '');
+		img.replaceWith(link);
+		link.append(img);
+		link.addEventListener('click', (event) => {
+			if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+			event.preventDefault();
+			open(img);
+		});
+	});
+
+	// "Copy page for AI": put the page's Markdown copy on the clipboard.
+	document.querySelectorAll<HTMLButtonElement>('[data-copy-md]').forEach((button) => {
+		const label = button.querySelector('[data-label]');
+		const original = label?.textContent ?? '';
+		const say = (text: string) => {
+			if (!label) return;
+			label.textContent = text;
+			setTimeout(() => (label.textContent = original), 2500);
+		};
+		button.addEventListener('click', async () => {
+			try {
+				const response = await fetch(button.dataset.copyMd!);
+				if (!response.ok) throw new Error(String(response.status));
+				await navigator.clipboard.writeText(await response.text());
+				say('Copied. Paste it into your AI chat');
+			} catch {
+				window.location.href = button.dataset.copyMd!;
+			}
+		});
+	});
+</script>
+
+<style>
+	.lt-page-tools {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 0 0 1.5rem;
+	}
+	.lt-tool {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.3rem 0.7rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: var(--lt-radius-small);
+		background: transparent;
+		color: var(--sl-color-gray-2);
+		font: inherit;
+		font-size: var(--sl-text-xs);
+		text-decoration: none;
+		cursor: pointer;
+	}
+	.lt-tool:hover,
+	.lt-tool:focus-visible {
+		color: var(--sl-color-white);
+		border-color: var(--sl-color-gray-3);
+	}
+</style>

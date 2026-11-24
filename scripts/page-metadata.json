@@ -1,0 +1,1012 @@
+{
+  "_comment": "Search titles and descriptions per page, applied by scripts/docsify-to-starlight.py (also with --metadata-only). Keys are paths under src/content/docs. 'title' replaces the page heading, 'searchTitle' (optional) is the browser-tab and search-result title when it should say more than the heading, 'edition' (both, self-hosted or cloud), 'plugin' ({name, url}) and 'checked' (the Leantime version last checked, e.g. \"3.14\") set the label row under the title (defaults per folder in src/lib/availability.ts), 'description' is the meta description (aim for 110-158 characters), 'draft: true' leaves an empty page out of the build, 'glance' is the At a glance box of a task page (minutes, maxMinutes, level, needs, where, result; see CONTRIBUTING.md) and replaces the page's '**At a glance**' Markdown block. New pages and override pages set these in their own front matter instead.",
+  "getting-started/get-started.md": {
+    "title": "Get started with Leantime",
+    "searchTitle": "Get started with Leantime: Cloud trial or your own server",
+    "description": "Start a two-week Leantime Cloud trial or install Leantime on your own server, invite your team, and decide how to organize your work."
+  },
+  "getting-started/organize-your-work.md": {
+    "title": "How should I organize my work in Leantime?",
+    "searchTitle": "How to organize your work in Leantime: projects, clients, goals",
+    "description": "Set up Leantime for how your team works: projects, milestones, outcomes, goals, clients, programs and strategies, sized to your team and kept calm."
+  },
+  "getting-started/client-work.md": {
+    "title": "Organize client work in Leantime: MSPs, agencies and consultancies",
+    "searchTitle": "Leantime for MSPs, agencies, consultancies and dev firms",
+    "description": "Organize customer work in Leantime: a client per customer, projects that only their people see, internal projects and shared infrastructure."
+  },
+  "getting-started/product-and-game-development.md": {
+    "title": "Organize product and game development in Leantime",
+    "searchTitle": "Leantime for game studios, product teams and startups",
+    "description": "Plan releases as milestones, collect ideas and playtest feedback, and measure each release with goals in Leantime, for studios and product teams."
+  },
+  "getting-started/nonprofits.md": {
+    "title": "Organize a non-profit or NGO in Leantime",
+    "searchTitle": "Non-profit project management: programs and logic models",
+    "description": "Run a non-profit or NGO in Leantime: link your mission to programs and projects, build a logic model for your theory of change, and track outcomes for funders."
+  },
+  "getting-started/research.md": {
+    "title": "Organize research and academic work in Leantime",
+    "searchTitle": "Leantime for research labs, theses and grant-funded studies",
+    "description": "Break long research work into outcomes you can finish, keep notes and sources with the project, and track deadlines and grants in Leantime."
+  },
+  "getting-started/your-own-work.md": {
+    "title": "Organize your own work and career in Leantime",
+    "searchTitle": "Leantime for your own work, a job search or a career change",
+    "description": "Use Leantime on your own: a project or two, small outcomes that show progress, a planned day in My Work, and a calm setup with less to look at."
+  },
+  "api/index.md": {
+    "title": "JSON-RPC API reference",
+    "description": "Every Leantime JSON-RPC 2.0 namespace and service, with links to the method reference for tasks, projects, timesheets, users, calendars and more."
+  },
+  "api/usage.md": {
+    "title": "Use the Leantime API",
+    "description": "Use the Leantime JSON-RPC API: create an API key or personal access token, make your first call with curl, and read errors and rate limits.",
+    "glance": {
+      "minutes": 10,
+      "level": "Some experience",
+      "needs": [
+        "A Leantime account. For an API key, the Administrator or Owner role",
+        "A way to send HTTP requests, like `curl` or your own code"
+      ],
+      "where": [
+        "Leantime, under **Company Settings → API Keys** or **My Profile → Personal Access Tokens**",
+        "A terminal or your code, calling `/api/jsonrpc`"
+      ],
+      "result": "A key or token, and a request that returns data from your Leantime."
+    },
+    "searchTitle": "Leantime API: API keys, access tokens and JSON-RPC calls"
+  },
+  "development/commandline.md": {
+    "title": "Using the Leantime CLI",
+    "description": "Run Leantime admin tasks with php bin/leantime: add users, update the database, schedule jobs with cron, manage plugins and clear the cache, on Docker too.",
+    "searchTitle": "Leantime CLI: bin/leantime commands for self-hosting"
+  },
+  "development/plugin-development.md": {
+    "title": "Plugin development guide",
+    "description": "Build a Leantime plugin from the Hello World example: composer.json, register.php, language files, controllers, Blade views and menu items."
+  },
+  "installation/authentication-configuration.md": {
+    "title": "Authentication: OIDC, LDAP and single sign-on",
+    "description": "Single sign-on for self-hosted Leantime: OpenID Connect (Keycloak, Authentik, Entra ID, Google) or LDAP and Active Directory, with role mapping and fixes.",
+    "glance": {
+      "minutes": 30,
+      "level": "Advanced",
+      "needs": [
+        "An identity provider that supports OpenID Connect (such as Keycloak, Authentik, Google or Microsoft Entra ID), or an LDAP or Active Directory server",
+        "For LDAP: the PHP `ldap` extension on the Leantime server"
+      ],
+      "where": [
+        "Your identity provider's admin console, to register Leantime (OIDC)",
+        "Leantime's `.env` file, or the container's environment"
+      ],
+      "result": "People sign in to Leantime with their company accounts, through OIDC single sign-on or LDAP."
+    },
+    "searchTitle": "Leantime SSO: OIDC, LDAP and Active Directory login"
+  },
+  "installation/backup-restore.md": {
+    "title": "Backup and restore",
+    "description": "Back up self-hosted Leantime: the MySQL or MariaDB database, uploaded files and config/.env, for Docker and server installs, with a script and restore steps.",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "Your database name, user and password (they're in `config/.env`)",
+        "Somewhere safe to keep the backup, away from the Leantime server"
+      ],
+      "where": [
+        "A terminal on your server (on shared hosting: cPanel's **phpMyAdmin** and **File Manager**)"
+      ],
+      "result": "A copy of your database and of `config/.env`, `userfiles/` and `app/Plugins/` that you can restore from."
+    },
+    "searchTitle": "Back up and restore Leantime (database and files)"
+  },
+  "installation/common-issues.md": {
+    "title": "Common issues",
+    "description": "Fix common self-hosted Leantime problems: the login page reloads, /install shows 404 or loops, 500 errors, missing styles, failed uploads and unsent emails.",
+    "searchTitle": "Leantime troubleshooting: login loops, 500 errors, no styles"
+  },
+  "installation/configuration.md": {
+    "title": "Configuration reference",
+    "description": "Every setting for self-hosted Leantime in config/.env or Docker environment variables: database, app URL, S3, email, SSO, sessions, cron and debug mode.",
+    "searchTitle": "Leantime configuration reference: .env variables"
+  },
+  "installation/development.md": {
+    "title": "Local development setup",
+    "description": "Run Leantime locally to work on the code: the Docker development environment with MySQL, mail and S3 servers, or a setup on your own machine.",
+    "glance": {
+      "minutes": 20,
+      "level": "Advanced",
+      "needs": [
+        "`docker`, `docker compose`, `make`, `composer` and `npm` installed",
+        "PHP 8.2 or later on your computer, with the PHP extensions Leantime needs (`make run-dev` runs Composer there)",
+        "A copy (clone) of the Leantime repository"
+      ],
+      "where": [
+        "A terminal in the root of the Leantime repository",
+        "Your browser, to open Leantime and the test tools"
+      ],
+      "result": "A local Leantime for development, with its own MySQL database, a mail catcher (MailDev), Redis and S3 test storage."
+    }
+  },
+  "installation/docker-troubleshooting.md": {
+    "title": "Docker troubleshooting",
+    "description": "Fix common problems when running Leantime in Docker: diagnostic commands for containers, logs and the database, redirect loops after a fresh install and more."
+  },
+  "installation/docker.md": {
+    "title": "Install Leantime with Docker",
+    "description": "Self-host Leantime with the official Docker image: Docker Compose with MySQL, where your data lives, HTTPS behind a reverse proxy, updates and plugins.",
+    "searchTitle": "Install Leantime with Docker Compose (self-hosted)"
+  },
+  "installation/email-configuration.md": {
+    "title": "Email and SMTP configuration",
+    "description": "Set up email in self-hosted Leantime: SMTP settings for Gmail, Microsoft 365, SendGrid, Mailgun and Amazon SES, a test email, and why emails aren't sent.",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "SMTP details from your email provider: server, port, username and password (an app password for Gmail with 2-Step Verification)",
+        "The address Leantime sends from"
+      ],
+      "where": [
+        "Your email provider's settings, for the SMTP details",
+        "Leantime's `config/.env` file, or the container's environment",
+        "A terminal on your server, to send a test email"
+      ],
+      "result": "Leantime sending invitations, password resets and notifications through your mail server, confirmed with a test email."
+    },
+    "searchTitle": "Leantime email setup: SMTP for Gmail, Microsoft 365 and more"
+  },
+  "installation/frequently-asked-questions.md": {
+    "title": "Frequently asked questions",
+    "description": "Short answers for people who run their own Leantime: requirements, Docker, SMTP, roles, LDAP and OIDC, updates, logs and resetting the admin password.",
+    "searchTitle": "Self-hosted Leantime FAQ: install, email, SSO and upgrades"
+  },
+  "installation/installation-types.md": {
+    "title": "Installation options",
+    "description": "Choose how to self-host Leantime: Docker, a Linux server with Apache or Nginx, cPanel shared hosting, a Synology NAS or Kubernetes, and what each one needs.",
+    "searchTitle": "How to install Leantime: Docker, server or shared hosting"
+  },
+  "installation/kubernetes.md": {
+    "title": "Install Leantime on Kubernetes",
+    "description": "Install Leantime on Kubernetes with the Helm chart from Leantime's repository: values to set, your own domain, updates, backups and what the chart can't do yet.",
+    "glance": {
+      "minutes": 30,
+      "level": "Advanced",
+      "needs": [
+        "A Kubernetes cluster with a default storage class",
+        "Helm 3 or later, and kubectl set up to reach the cluster"
+      ],
+      "where": [
+        "A terminal where `helm` and `kubectl` can reach your cluster"
+      ],
+      "result": "Leantime and its MariaDB database running in your cluster, with volumes for uploaded files, from the chart in Leantime's repository."
+    },
+    "searchTitle": "Install Leantime on Kubernetes with Helm",
+    "edition": "self-hosted",
+    "checked": "3.15"
+  },
+  "installation/leantime-mcp.md": {
+    "title": "MCP server: connect AI assistants to Leantime",
+    "description": "Connect Claude, ChatGPT, Cursor, VS Code, Windsurf and Codex to Leantime with the MCP server: sign-in or tokens, client setup, every tool, and security.",
+    "glance": {
+      "minutes": 10,
+      "level": "Some experience",
+      "needs": [
+        "Leantime Cloud, or self-hosted Leantime 3.13 or later with a license for the [MCP Server](https://marketplace.leantime.io/product/mcp-server/) plugin (3.16 or later to connect Claude and ChatGPT by signing in)",
+        "An AI assistant that connects to remote MCP servers: Claude, ChatGPT, Claude Code, Cursor, VS Code, Windsurf or Codex"
+      ],
+      "where": [
+        "Leantime, under **Leantime Apps** (self-hosted only), to install the plugin",
+        "Your AI assistant's connector or MCP settings",
+        "Leantime, under **My Profile → Personal Access Tokens**, for assistants that use a token"
+      ],
+      "result": "An AI assistant that lists your Leantime projects and can find and update to-dos, log time and more, with your permissions."
+    },
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Leantime MCP server: connect Claude, ChatGPT and Cursor"
+  },
+  "installation/other-methods.md": {
+    "title": "Other ways to install Leantime",
+    "description": "Install Leantime with Portainer, on TrueNAS or Unraid, or on a Raspberry Pi: a tested Compose file, the settings to change, and how to update.",
+    "searchTitle": "Install Leantime with Portainer, TrueNAS, Unraid or a Pi",
+    "edition": "self-hosted",
+    "checked": "3.15"
+  },
+  "installation/package-installation.md": {
+    "title": "Install from the release package (Apache or Nginx)",
+    "description": "Install self-hosted Leantime from the release package on a Linux server with PHP 8.2 and MySQL or MariaDB, with Apache or Nginx config and the web installer.",
+    "glance": {
+      "minutes": 30,
+      "maxMinutes": 60,
+      "level": "Some experience",
+      "needs": [
+        "A Linux server that meets the [system requirements](/installation/system-requirements/), with Apache or Nginx, PHP and MySQL or MariaDB",
+        "Administrator (sudo) rights on that server"
+      ],
+      "where": [
+        "A terminal on your server",
+        "Your web server's site configuration (Apache or Nginx)",
+        "Leantime's `config/.env` file",
+        "Your browser, at `<yourdomain.com>/install`"
+      ],
+      "result": "Leantime running on your own web server, with its database set up and your first user account created."
+    },
+    "searchTitle": "Install Leantime on Linux with Apache or Nginx"
+  },
+  "installation/plugin-installation.md": {
+    "title": "Install and configure plugins",
+    "description": "Install Leantime plugins from the marketplace or by hand, add license keys, and set up AdvancedAuth single sign-on with GitHub, Google, Microsoft and more.",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "An administrator account in Leantime",
+        "A license key from the [Leantime Marketplace](https://marketplace.leantime.io/), for paid plugins",
+        "On Docker: the plugins folder kept in a volume, so plugins survive a restart"
+      ],
+      "where": [
+        "The [Leantime Marketplace](https://marketplace.leantime.io/), to get a license key",
+        "Leantime, under **Company → Leantime Apps**",
+        "Leantime's `config/.env` file, only for plugins that need settings (such as Advanced Authentication)"
+      ],
+      "result": "The plugin installed and enabled in Leantime, ready to use."
+    }
+  },
+  "installation/subfolder.md": {
+    "title": "Run Leantime in a subfolder",
+    "description": "Run Leantime under a path such as yourcompany.com/leantime instead of its own domain or subdomain, and the settings that change."
+  },
+  "installation/synology.md": {
+    "title": "Install on a Synology NAS",
+    "description": "Self-host Leantime on a Synology NAS with Container Manager (DSM 7.2+) and the official Docker image, with all data kept in a shared folder.",
+    "glance": {
+      "minutes": 30,
+      "level": "Some experience",
+      "needs": [
+        "A Synology NAS with DSM 7.2 or later and Container Manager",
+        "About 650 MB of free memory for the two containers"
+      ],
+      "where": [
+        "DSM **Control Panel**, to turn on SSH",
+        "**File Station**, in the `docker` shared folder",
+        "A terminal on the NAS, over SSH",
+        "**Container Manager → Project**",
+        "Your browser, at `http://<nas-ip>:8080/install`"
+      ],
+      "result": "Leantime running on your NAS, with all its data in `/volume1/docker/leantime` where you can back it up."
+    }
+  },
+  "installation/system-requirements.md": {
+    "title": "System requirements",
+    "description": "What self-hosted Leantime needs: PHP 8.2+ and its extensions, MySQL 8 or MariaDB 10.6+, Apache or Nginx and writable folders, or just a Docker host.",
+    "searchTitle": "Leantime system requirements: PHP, MySQL and Docker"
+  },
+  "installation/upgrade-guide.md": {
+    "title": "Upgrade Leantime",
+    "description": "Upgrade self-hosted Leantime and run the database update: with Docker, the command line updater or by hand, plus what changed in each version.",
+    "glance": {
+      "minutes": 15,
+      "maxMinutes": 45,
+      "level": "Some experience",
+      "needs": [
+        "A fresh backup of your database and files (see [Backup and restore](/installation/backup-restore/))",
+        "The version you run now (help menu → **System**)"
+      ],
+      "where": [
+        "A terminal on your server (on shared hosting: your control panel's File Manager or FTP)",
+        "Leantime in your browser, to run the database update"
+      ],
+      "result": "Leantime on the new version, with your data, files and plugins."
+    },
+    "searchTitle": "Upgrade Leantime: new version and database update",
+    "edition": "self-hosted",
+    "checked": "3.15"
+  },
+  "installation/using-plugins.md": {
+    "title": "Plugins",
+    "description": "The Leantime plugins and what each one adds: strategies, programs, whiteboards, notes, custom fields, recurring to-dos, focus tools and single sign-on.",
+    "searchTitle": "Leantime plugins: which one do you need?"
+  },
+  "knowledge-base/agile.md": {
+    "title": "Agile project management in Leantime",
+    "description": "Agile basics and how Leantime supports them: kanban, Scrum, sprints, retrospectives, and estimating effort and velocity."
+  },
+  "knowledge-base/idea-development.md": {
+    "title": "Design thinking",
+    "description": "The five stages of design thinking (empathize, define, ideate, prototype, test) and how to use Leantime's boards for each one."
+  },
+  "knowledge-base/whatislean.md": {
+    "title": "Lean methodology",
+    "description": "How Leantime uses lean methods: kanban from lean manufacturing, and lean startup practices for business models and research."
+  },
+  "technical/hooks.md": {
+    "title": "Events and filters (hooks) reference",
+    "description": "Events and filters Leantime dispatches, with their names, arguments and source locations, for plugin developers."
+  },
+  "using-leantime/calendars.md": {
+    "title": "Calendar",
+    "description": "Your Leantime calendar: events, due to-dos and planned work in one place. Connect Google, Outlook or Apple calendars and subscribe to Leantime from them.",
+    "searchTitle": "Calendar in Leantime: events, due dates and Google sync"
+  },
+  "using-leantime/company-settings.md": {
+    "title": "Company Settings",
+    "description": "Set your Leantime company name, language, logo and notification defaults, create API keys, and see exactly what telemetry sends and how to turn it off.",
+    "searchTitle": "Company Settings in Leantime: logo, defaults, API keys"
+  },
+  "using-leantime/idea-management.md": {
+    "title": "Idea management",
+    "description": "Collect, discuss and track ideas in Leantime with the Idea Wall and Idea Kanban, from first thought to implementation."
+  },
+  "using-leantime/integrations.md": {
+    "title": "Project integrations: Slack, Discord, Mattermost, Telegram and Zulip",
+    "description": "Send Leantime project updates to Slack, Discord, Mattermost, Telegram or Zulip: what gets posted, how to connect each one, and what to do if nothing arrives.",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "A project in Leantime whose settings you can change",
+        "Permission to add a bot or webhook in your chat app (Telegram, Discord, Slack, Mattermost or Zulip)"
+      ],
+      "where": [
+        "Your chat app, to create the bot or webhook",
+        "Leantime, in the project's settings, **Integrations** tab"
+      ],
+      "result": "Updates from the project (to-dos, milestones, ideas, comments and files) posted to your chat channel."
+    },
+    "searchTitle": "Leantime Slack, Discord, Mattermost and Telegram alerts"
+  },
+  "using-leantime/managing-clients.md": {
+    "title": "Clients",
+    "searchTitle": "Clients in Leantime: group projects by customer or department",
+    "description": "Group Leantime projects by customer, product or department, and let each customer's people see only their own projects.",
+    "checked": "3.14"
+  },
+  "using-leantime/managing-projects.md": {
+    "title": "Projects",
+    "searchTitle": "Projects in Leantime: create, share and organize projects",
+    "description": "Create a project in Leantime, choose who can see it, add your team and their roles, switch features on or off, and copy, close or delete projects.",
+    "checked": "3.14"
+  },
+  "using-leantime/my-work-dashboard.md": {
+    "title": "My Work Dashboard",
+    "searchTitle": "My Work dashboard in Leantime: to-dos, calendar, focus timer",
+    "description": "What the Leantime My Work dashboard shows: your to-dos from every project, a calendar for time boxing, the Pomodoro timer, daily intentions and widgets.",
+    "checked": "3.14"
+  },
+  "using-leantime/notifications.md": {
+    "title": "Notifications",
+    "searchTitle": "Leantime notifications: email, in-app and per-project settings",
+    "description": "Choose which Leantime notifications you get by email and in the app, mute busy projects, and fix notification emails that arrive late or not at all.",
+    "checked": "3.14"
+  },
+  "using-leantime/goals.md": {
+    "title": "Goals",
+    "searchTitle": "Goals in Leantime: measurable targets linked to milestones",
+    "description": "Set measurable goals in Leantime, track their progress and link each goal to the milestones that move it. One milestone can count toward several goals.",
+    "checked": "3.14"
+  },
+  "using-leantime/docs.md": {
+    "title": "Docs",
+    "searchTitle": "Docs in Leantime: project wiki, checklists and templates",
+    "description": "Write project docs in Leantime: checklists, meeting notes and decisions next to the work, with templates, nested pages, drafts and links to milestones.",
+    "checked": "3.14"
+  },
+  "using-leantime/blueprints.md": {
+    "title": "Blueprints",
+    "searchTitle": "Blueprints in Leantime: SWOT, Lean Canvas, Logic Model and more",
+    "description": "Think a project through with Leantime Blueprints: Project Value Canvas, SWOT, Lean Canvas, Business Model Canvas, Risk Analysis, Logic Model and more.",
+    "checked": "3.14"
+  },
+  "using-leantime/reports.md": {
+    "title": "Reports",
+    "searchTitle": "Project reports in Leantime: status report and delivery metrics",
+    "description": "See how a Leantime project is going: milestones done and in flight, goals, status updates, hours and cumulative flow per quarter. Print or save as PDF.",
+    "checked": "3.14"
+  },
+  "using-leantime/retrospectives.md": {
+    "title": "Retrospectives",
+    "description": "Run a retrospective in Leantime at the end of a sprint, milestone or project: what went well, what didn't, and what to change."
+  },
+  "using-leantime/roadmap-planning.md": {
+    "title": "Roadmap and milestones",
+    "description": "Plan a roadmap with milestones in Leantime: add to-dos to them, see and change the timeline (Gantt view), set dependencies, track progress and link goals.",
+    "searchTitle": "Milestones and the project timeline in Leantime"
+  },
+  "using-leantime/task-management.md": {
+    "title": "Task management",
+    "description": "Manage to-dos (tasks) in Leantime: subtasks, repeating to-dos, custom fields, kanban, table and list views, swimlanes, statuses and time tracking.",
+    "searchTitle": "To-dos (tasks) in Leantime: kanban, subtasks and sprints"
+  },
+  "using-leantime/timesheets.md": {
+    "title": "Timesheets and time tracking",
+    "description": "Track time in Leantime: start a timer on a to-do, log hours afterwards or a week at once, review the team's hours, and mark time as invoiced, approved or paid.",
+    "searchTitle": "Time tracking in Leantime: timers and timesheets"
+  },
+  "using-leantime/user-management.md": {
+    "title": "User management",
+    "description": "Invite people to Leantime, choose a role from Read Only to Owner, give clients access to only their projects, set work hours and turn on two-factor login.",
+    "searchTitle": "Leantime users and roles: invite people, set permissions"
+  },
+  "installation/move-server.md": {
+    "glance": {
+      "minutes": 30,
+      "maxMinutes": 60,
+      "level": "Some experience",
+      "needs": [
+        "Access to both servers",
+        "A time when nobody uses Leantime (changes made during the move are lost)",
+        "Access to your domain's DNS settings, if the address moves with it"
+      ],
+      "where": [
+        "A terminal on the old server",
+        "A terminal on the new server",
+        "Your DNS provider, to point your domain at the new server",
+        "Leantime on the new server, to check that everything moved"
+      ],
+      "result": "Leantime running on the new server with all projects, to-dos, files, users and plugins. Large file folders take longer to copy."
+    },
+    "searchTitle": "Move Leantime to a new server (Docker or package)",
+    "description": "Move a self-hosted Leantime to a new server: copy the database, uploaded files, plugins and settings for Docker or a package install, then check it all works."
+  },
+  "using-leantime/import-csv.md": {
+    "glance": {
+      "minutes": 10,
+      "maxMinutes": 30,
+      "level": "Beginner",
+      "needs": [
+        "An Administrator or Owner account in Leantime",
+        "A CSV export from your old tool",
+        "Your team in Leantime and on its projects' teams, if the file assigns to-dos to them"
+      ],
+      "where": [
+        "Your old tool, to export the CSV",
+        "A spreadsheet app, to rename the columns",
+        "Leantime, under **Integrations → CSV Import** in the company menu"
+      ],
+      "result": "Your to-dos in Leantime, with their titles, descriptions, assignees, statuses and due dates."
+    },
+    "searchTitle": "Import into Leantime from Jira, Trello, Asana or CSV",
+    "description": "Move to-dos, projects, milestones, goals, ideas and users into Leantime from Jira, Trello, Asana or a spreadsheet: export a CSV, map the columns and import.",
+    "checked": "3.17"
+  },
+  "plugins/strategy-pro.md": {
+    "plugin": {
+      "name": "Strategy Pro",
+      "url": "https://marketplace.leantime.io/product/leantime-strategies/"
+    },
+    "searchTitle": "Strategy Pro plugin: install it on self-hosted Leantime",
+    "description": "What the Strategy Pro plugin adds to Leantime, and how to install, license and update it on your own server. Already on in Leantime Cloud."
+  },
+  "plugins/programs.md": {
+    "plugin": {
+      "name": "Programs",
+      "url": "https://marketplace.leantime.io/product/leantime-program-plans/"
+    },
+    "searchTitle": "Programs plugin: install it on self-hosted Leantime",
+    "description": "What the Programs (Program Plans) plugin adds to Leantime, and how to install, license and update it on your own server. Already on in Leantime Cloud."
+  },
+  "plugins/whiteboards.md": {
+    "plugin": {
+      "name": "Whiteboards",
+      "url": "https://marketplace.leantime.io/product/leantime-whiteboards/"
+    },
+    "searchTitle": "Whiteboards plugin: install it on self-hosted Leantime",
+    "description": "What the Whiteboards plugin adds to Leantime, and how to install, license and update it on your own server, including the unpkg.com browser requirement."
+  },
+  "plugins/custom-fields.md": {
+    "plugin": {
+      "name": "Custom Fields",
+      "url": "https://marketplace.leantime.io/product/leantime-customfields/"
+    },
+    "searchTitle": "Custom Fields plugin: install it on self-hosted Leantime",
+    "description": "What the Custom Fields plugin adds to Leantime, its field types, and how to install, license, update or remove it on your own server without losing data."
+  },
+  "plugins/recurring-todos.md": {
+    "plugin": {
+      "name": "Recurring to-dos",
+      "url": "https://marketplace.leantime.io/product/recurring-tasks/"
+    },
+    "searchTitle": "Recurring Tasks plugin: install it on self-hosted Leantime",
+    "description": "What the Recurring Tasks plugin adds to Leantime, and how to install it on your own server, including the cron job that creates each repeat on time."
+  },
+  "plugins/notes.md": {
+    "plugin": {
+      "name": "Notes",
+      "url": "https://marketplace.leantime.io/product/leantime-notes/"
+    },
+    "searchTitle": "Notes plugin: install it on self-hosted Leantime",
+    "description": "What the Notes plugin adds to Leantime, and how to install, license and update it on your own server. Already on in Leantime Cloud, for private notes."
+  },
+  "plugins/pomodoro.md": {
+    "plugin": {
+      "name": "Pomodoro timer",
+      "url": "https://marketplace.leantime.io/product/leantime-pomodoro/"
+    },
+    "searchTitle": "Pomodoro Timer plugin: install it on self-hosted Leantime",
+    "description": "What the Pomodoro Timer plugin adds to the Leantime My Work dashboard, and how to install, license and update it on your own server."
+  },
+  "ai/leantime-cloud-ai.md": {
+    "edition": "cloud",
+    "description": "L.E.O., the AI assistant in Leantime Cloud: ask it about your work, let it sort your to-dos, break a to-do into steps, get help writing, and what it costs."
+  },
+  "ai/use-leantime-from-your-ai-assistant.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Use Leantime from Claude or ChatGPT: what to ask",
+    "description": "Update to-dos, assign work and start projects from Claude, ChatGPT or Cursor in plain language, with example prompts, routines and tips for good results."
+  },
+  "installation/mobile-app-setup.md": {
+    "title": "Set up the mobile app on a self-hosted server",
+    "description": "Get a self-hosted Leantime ready for the mobile app: Advanced Authentication, sign-in with SSO, and phone notifications through Leantime's relay.",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "An administrator account on a self-hosted Leantime, 3.9.5 or later (3.15.4 or later for phone notifications)",
+        "A license for the [Advanced Authentication](https://marketplace.leantime.io/product/advanced-auth/) plugin",
+        "HTTPS with a certificate from a public authority"
+      ],
+      "where": [
+        "Leantime, under **Company → Leantime Apps**, to install the plugin",
+        "Leantime, under **Company → Company Settings**, to turn on phone notifications",
+        "The app, under **You → Settings → Notification settings**"
+      ],
+      "result": "Your team signs in to Leantime on their phones and gets notifications there."
+    },
+    "plugin": {
+      "name": "Advanced Authentication",
+      "url": "https://marketplace.leantime.io/product/advanced-auth/"
+    }
+  },
+  "installation/keycloak-sso.md": {
+    "searchTitle": "Set up Keycloak single sign-on (SSO) for Leantime",
+    "description": "Connect self-hosted Leantime to Keycloak with OpenID Connect, no plugin needed: create the realm and client, set the LEAN_OIDC variables and fix common errors.",
+    "edition": "self-hosted",
+    "glance": {
+      "minutes": 30,
+      "level": "Some experience",
+      "needs": [
+        "Leantime 3.13.2 or later (older versions don't send PKCE; leave **Require PKCE** off on those)",
+        "A Keycloak server, with an administrator account"
+      ],
+      "where": [
+        "The Keycloak admin console",
+        "Leantime's `.env` file, or the Leantime container's environment",
+        "A terminal on the Leantime server, to apply the settings",
+        "Leantime's login page, in a private browser window"
+      ],
+      "result": "An **OIDC Login** button on Leantime's login page that signs people in with Keycloak. People who sign in for the first time get a Leantime account automatically, if you allow it."
+    }
+  },
+  "getting-started/features.md": {
+    "searchTitle": "Leantime features: what it can and can't do",
+    "description": "What Leantime does on Cloud and self-hosted: to-dos, milestones, goals, docs, time tracking, SSO, API and plugins, with yes-or-no answers to common questions."
+  },
+  "ai/index.md": {
+    "searchTitle": "AI with Leantime: MCP, L.E.O. and AI-assisted setup",
+    "description": "Three ways to use AI with Leantime: connect Claude, ChatGPT or Cursor through the MCP server, use L.E.O. in Leantime Cloud, or get AI help to set it up."
+  },
+  "blueprints/swot-analysis.md": {
+    "searchTitle": "SWOT analysis for projects: template and how to use it",
+    "description": "Run a SWOT analysis for a project in Leantime: what goes in Strengths, Weaknesses, Opportunities and Threats, and how to use it to decide what comes next."
+  },
+  "blueprints/lean-canvas.md": {
+    "searchTitle": "Lean Canvas template: what goes in each box",
+    "description": "Test a business or product idea on one page with the Lean Canvas: what goes in each of the nine boxes, and how to turn risky assumptions into experiments."
+  },
+  "blueprints/business-model-canvas.md": {
+    "searchTitle": "Business Model Canvas template: the nine building blocks",
+    "description": "See how an organization creates, delivers and earns from its value with the Business Model Canvas: what goes in each of the nine boxes, and how to use it."
+  },
+  "knowledge-base/kanban.md": {
+    "searchTitle": "What is Kanban? Practices, WIP limits and swimlanes",
+    "description": "Kanban in plain language: where it comes from, its core practices, why to limit work in progress, how to see if work flows, and kanban boards outside software."
+  },
+  "knowledge-base/scrum.md": {
+    "searchTitle": "What is Scrum? Sprints, roles, events and artifacts",
+    "description": "Scrum in plain language: sprints, the Scrum team, the events and artifacts, and what story points and velocity are for, based on the Scrum Guide."
+  },
+  "ai/glossary.md": {
+    "searchTitle": "Glossary: self-hosting and Leantime terms in plain language",
+    "description": "Plain-language definitions of the words you meet when you install and run Leantime: servers and hosting, Docker, configuration, sign-in and security."
+  },
+  "ai/working-with-ai.md": {
+    "description": "Get useful help from an AI assistant when you run Leantime: what it can help with, what to give it, what never to paste, and how to check its answers."
+  },
+  "blueprints/environment-analysis.md": {
+    "searchTitle": "Environment analysis (PESTLE) template for projects",
+    "description": "Look at the world around your project with a PESTLE analysis in Leantime: what goes in each of the six areas, how to sort what you find, and how to use it."
+  },
+  "blueprints/insights.md": {
+    "searchTitle": "Research insights board: observe, listen and learn",
+    "description": "Collect what you learn from the people you work for on the Insights board: what you saw, what they said, what you read, and what it all means for the project."
+  },
+  "blueprints/project-brief.md": {
+    "searchTitle": "Project brief template: agree on a project before it starts",
+    "description": "Write a one-page project brief in Leantime: what the project is, why it matters, who decides and what it can spend, and how to get each part agreed."
+  },
+  "blueprints/project-value-canvas.md": {
+    "searchTitle": "Project Value Canvas: is this project worth doing?",
+    "description": "Check a project is worth doing before you plan it: who it's for, their problem, your solution and what they gain, on Leantime's Project Value Canvas."
+  },
+  "blueprints/risk-analysis.md": {
+    "searchTitle": "Risk analysis template: impact and probability matrix",
+    "description": "List what could go wrong on a project, rate impact and probability on Leantime's risk grid, decide what to do about each risk, and keep them under control."
+  },
+  "development/contributing.md": {
+    "searchTitle": "Contribute to Leantime: code, translations and more",
+    "description": "Help build Leantime, the open source project management system: ways to help without code, how to send a pull request, and where to start in the code."
+  },
+  "installation/plugin-licenses.md": {
+    "searchTitle": "Leantime plugin licenses, updates and problems",
+    "description": "Find and enter a Leantime plugin license key, see what counts as a user, update plugins, and fix a plugin that was disabled or doesn't load."
+  },
+  "installation/shared-hosting.md": {
+    "searchTitle": "Install Leantime on shared hosting with cPanel",
+    "description": "Install Leantime on cPanel shared hosting without a command line: check PHP, create the database, upload, point a subdomain, run the installer, set up cron."
+  },
+  "knowledge-base/index.md": {
+    "description": "Plain-language guides to the project management ideas behind Leantime: Lean, Agile, Scrum, Kanban, design thinking and project phases, with sources."
+  },
+  "knowledge-base/phasesofproject.md": {
+    "searchTitle": "What are the phases of a project? A plain-language guide",
+    "description": "The phases of a project, from starting it to closing it: what happens in each, whether they have to happen in order, and where milestones and timelines fit."
+  },
+  "plugins/daily-intentions.md": {
+    "searchTitle": "Daily Intentions: implementation intentions in Leantime",
+    "description": "Why daily intentions work: the research on implementation intentions (if-then plans) behind the Daily Intentions widget on Leantime Cloud, with sources.",
+    "edition": "cloud",
+    "plugin": {
+      "name": "Daily Intentions"
+    }
+  },
+  "plugins/advanced-authentication.md": {
+    "searchTitle": "Advanced Authentication plugin: SSO, SAML and mobile sign-in",
+    "description": "Sign in to self-hosted Leantime with Google, Microsoft, GitHub, Okta, SAML 2.0 and more, and from the mobile app: install, set up providers and settings.",
+    "edition": "self-hosted",
+    "plugin": {
+      "name": "Advanced Authentication",
+      "url": "https://marketplace.leantime.io/product/advanced-auth/"
+    }
+  },
+  "using-leantime/mobile-app.md": {
+    "searchTitle": "Leantime mobile app for iPhone and Android",
+    "description": "Use Leantime on your phone: get the app, connect it to Leantime Cloud or your own server, sign in with SSO, turn on notifications, and fix sign-in errors."
+  },
+  "blueprints/logic-model.md": {
+    "searchTitle": "Logic model template: how to fill one out in Leantime",
+    "description": "Fill out a logic model in Leantime: inputs, activities, outputs, outcomes and impact, with examples, then connect it to programs, milestones and goals."
+  },
+  "knowledge-base/logic-model.md": {
+    "searchTitle": "What is a logic model? Logic model vs theory of change",
+    "description": "What a logic model is, its five parts, the difference between outputs and outcomes, how to read it as if-then, and how it differs from a theory of change."
+  },
+  "using-leantime/strategies.md": {
+    "plugin": {
+      "name": "Strategy Pro",
+      "url": "https://marketplace.leantime.io/product/leantime-strategies/"
+    },
+    "searchTitle": "Strategies in Leantime: focus areas, goals and the work",
+    "description": "Set out what your organization is working toward in Leantime: focus areas, measurable goals, a Logic Model, and the programs and projects that move them."
+  },
+  "using-leantime/programs.md": {
+    "plugin": {
+      "name": "Programs",
+      "url": "https://marketplace.leantime.io/product/leantime-program-plans/"
+    },
+    "searchTitle": "Programs in Leantime: manage several related projects together",
+    "description": "Group related projects into a program in Leantime: one view of their to-dos and milestones, shared goals and sprints, and Resources to plan people's time."
+  },
+  "using-leantime/whiteboards.md": {
+    "plugin": {
+      "name": "Whiteboards",
+      "url": "https://marketplace.leantime.io/product/leantime-whiteboards/"
+    },
+    "searchTitle": "Whiteboards in Leantime: draw diagrams inside a project",
+    "description": "Sketch floor plans, processes, org charts and screen layouts on a whiteboard inside a Leantime project, with Excalidraw tools, a shape library and export."
+  },
+  "using-leantime/notes.md": {
+    "plugin": {
+      "name": "Notes",
+      "url": "https://marketplace.leantime.io/product/leantime-notes/"
+    },
+    "searchTitle": "Private notes in Leantime: notebooks, tags and search",
+    "description": "Keep private notes and ideas next to your work in Leantime: write a note, sort notes into notebooks, and pin, tag and search them. Only you can see them."
+  },
+  "using-leantime/custom-fields.md": {
+    "plugin": {
+      "name": "Custom Fields",
+      "url": "https://marketplace.leantime.io/product/leantime-customfields/"
+    },
+    "searchTitle": "Custom fields in Leantime: add your own fields to to-dos",
+    "description": "Add your own fields to Leantime to-dos: text, number, select, checkbox, radio and on/off fields, in every project or only some, filled in on each to-do."
+  },
+  "installation/reverse-proxy.md": {
+    "searchTitle": "Leantime behind a reverse proxy: nginx, Caddy, Traefik",
+    "description": "Put Leantime behind nginx, Apache, Caddy, Traefik or Cloudflare: tested configurations, the LEAN_APP_URL and proxy settings, and fixes for common errors.",
+    "edition": "self-hosted",
+    "glance": {
+      "minutes": 20,
+      "level": "Some experience",
+      "needs": [
+        "Leantime running, in Docker or on your own web server",
+        "A domain pointing at your server, and a way to get a certificate"
+      ],
+      "where": [
+        "Your proxy's configuration",
+        "Leantime's `.env` file, or the Leantime container's environment"
+      ],
+      "result": "Leantime on your own domain over HTTPS, with sign-in, uploads, the API and the mobile app working"
+    }
+  },
+  "development/security.md": {
+    "title": "Report a security issue",
+    "description": "How to report a security issue in Leantime privately, what to include, how reports are triaged and fixed, and how long a reply can take.",
+    "searchTitle": "Report a security issue in Leantime"
+  },
+  "using-leantime/sprints.md": {
+    "title": "Sprints",
+    "description": "Plan work in sprints in Leantime: create a sprint, move to-dos in from the backlog, follow the sprint burndown, and carry open work into the next one.",
+    "searchTitle": "Sprints in Leantime: backlog, sprint planning and burndown",
+    "checked": "3.15"
+  },
+  "using-leantime/account-settings.md": {
+    "title": "Your account and settings",
+    "description": "Change your Leantime profile, photo, password and two-factor authentication, your language and time zone, and the theme, font and colors you see.",
+    "searchTitle": "Leantime account settings: password, 2FA, language, theme",
+    "checked": "3.15"
+  },
+  "installation/security-checklist.md": {
+    "title": "Secure your Leantime server",
+    "description": "A security checklist for self-hosted Leantime: your own secret key, database passwords, HTTPS, sign-in limits, two-factor, updates and backups.",
+    "searchTitle": "Leantime security checklist for self-hosted servers",
+    "edition": "self-hosted",
+    "glance": {
+      "minutes": 30,
+      "level": "Some experience",
+      "needs": [
+        "Leantime installed on your own server or in Docker",
+        "Access to its config/.env file or Docker settings"
+      ]
+    },
+    "checked": "3.15"
+  },
+  "installation/scheduled-jobs-and-redis.md": {
+    "title": "Scheduled jobs, the queue and Redis",
+    "description": "Run Leantime's scheduled jobs with cron or Docker, see what each job does, check that they run, and set up Redis for sign-ins and the cache.",
+    "searchTitle": "Leantime cron, scheduled jobs and Redis setup",
+    "edition": "self-hosted",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "Leantime on your own server or in Docker",
+        "Access to the server's command line"
+      ]
+    },
+    "checked": "3.15"
+  },
+  "installation/one-click-installs.md": {
+    "title": "One-click installs",
+    "description": "Installed Leantime from Coolify, Dokploy, Easypanel, Hostinger or Railway? Check the version, secret key, volumes, email and backups the template set up.",
+    "searchTitle": "Leantime one-click installs: Coolify, Dokploy, Easypanel",
+    "edition": "self-hosted",
+    "checked": "3.15"
+  },
+  "using-leantime/delete-cloud-account.md": {
+    "title": "Delete your Leantime Cloud account",
+    "description": "Delete your Leantime Cloud account and all its data: where the Owner finds Delete Account, why Billing may be missing, and how to leave a team instead.",
+    "searchTitle": "How to delete your Leantime account and data",
+    "edition": "cloud",
+    "checked": "3.15"
+  },
+  "using-leantime/cloud-billing.md": {
+    "title": "Billing on Leantime Cloud",
+    "description": "Manage your Leantime Cloud plan: the free trial, changing plans and users, AI credits, invoices, failed payments, plan limits and cancelling.",
+    "searchTitle": "Leantime Cloud billing: plans, invoices, failed payments",
+    "edition": "cloud",
+    "checked": "3.15"
+  },
+  "installation/buy-plugins.md": {
+    "title": "Buy a plugin from the Leantime Marketplace",
+    "description": "Buy a Leantime plugin or bundle: user tiers, which license key to use for bundles, the yearly updates and support plan, upgrades and lost keys.",
+    "searchTitle": "Buy Leantime plugins: licenses, bundles and renewals",
+    "edition": "self-hosted",
+    "checked": "3.15"
+  },
+  "using-leantime/files.md": {
+    "title": "Files",
+    "description": "Share files in a Leantime project: upload, record your webcam or screen, attach files to to-dos, who can delete them, and what to do if an upload fails.",
+    "searchTitle": "Files in Leantime: upload, attach and share project files",
+    "checked": "3.16"
+  },
+  "plugins/caldav.md": {
+    "plugin": {
+      "name": "CalDAV Calendar Sync",
+      "url": "https://marketplace.leantime.io/product/caldav-calendar-sync/"
+    },
+    "searchTitle": "CalDAV Calendar Sync for Leantime: Apple, Thunderbird, Nextcloud",
+    "description": "The free CalDAV Calendar Sync plugin for Leantime: sync with Apple Calendar, Thunderbird, DAVx5 and Nextcloud both ways, app passwords, and how to install it.",
+    "checked": "3.16"
+  },
+  "using-leantime/reminders.md": {
+    "title": "Reminders and the morning summary",
+    "description": "Leantime's morning summary of what's coming up: due to-dos, milestones and project ends, Remind me on each to-do, the time setting and the admin switch.",
+    "searchTitle": "Leantime reminders: morning summary and Remind me on to-dos",
+    "checked": "3.17"
+  },
+  "using-leantime/cloud-security.md": {
+    "title": "Security and privacy on Leantime Cloud",
+    "description": "How Leantime Cloud protects your data: encryption, access by role, backups, AI, EU data, deletion, and answers for vendor and security reviews.",
+    "searchTitle": "Leantime Cloud security and privacy: data, AI and reviews",
+    "edition": "cloud",
+    "checked": "3.17"
+  },
+  "using-leantime/comments.md": {
+    "title": "Comments, @mentions and reactions",
+    "description": "Comment on to-dos, docs and ideas in Leantime: reply, @mention people, react, edit or delete, log a comment as time, and read a to-do's History.",
+    "searchTitle": "Leantime comments, @mentions and reactions",
+    "checked": "3.17"
+  },
+  "using-leantime/search.md": {
+    "title": "Search",
+    "description": "Search Leantime with ⌘K: find to-dos, projects, docs, ideas, goals, comments, files and people, see what it matches, and filter by project or date.",
+    "searchTitle": "Search in Leantime: ⌘K, matching rules and filters",
+    "checked": "3.17"
+  },
+  "using-leantime/tags.md": {
+    "title": "Tags",
+    "description": "Use tags in Leantime to label to-dos, ideas and docs: add them, reuse suggestions, see them on cards, and find every item with a tag.",
+    "searchTitle": "Tags in Leantime: label and find to-dos, ideas and docs",
+    "checked": "3.17"
+  },
+  "using-leantime/swimlanes.md": {
+    "title": "Kanban swimlanes",
+    "description": "Turn on Kanban swimlanes in Leantime with Group By: rows per person, milestone, priority, sprint or due date, and drag cards between rows.",
+    "searchTitle": "Kanban swimlanes in Leantime: rows with Group By",
+    "checked": "3.17"
+  },
+  "using-leantime/mobile-app-how-to.md": {
+    "title": "Everyday tasks in the Leantime app",
+    "description": "How to use the Leantime phone app each day: the Today screen and day bar, your one thing, adding and finishing tasks, tracking time, reminders and notes.",
+    "searchTitle": "Leantime mobile app how-to: Today, tasks, time and notes",
+    "checked": "mobile 1.1.0"
+  },
+  "ai/recipes.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "AI recipes for Leantime: Claude, ChatGPT and coding agents",
+    "description": "Complete AI recipes for Leantime: meeting notes to to-dos, a daily standup report, a coding agent working through tagged to-dos, and emails to tasks.",
+    "checked": "3.17"
+  },
+  "ai/meeting-notes-to-todos.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Turn meeting notes into Leantime to-dos with AI",
+    "description": "Paste meeting notes into Claude or ChatGPT and get assigned Leantime to-dos with due dates, priorities and a meeting tag, plus a project update.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 1,
+      "level": "Beginner",
+      "needs": [
+        "An AI assistant connected to Leantime",
+        "The people in the notes on the project's team"
+      ],
+      "result": "Assigned to-dos with due dates and priorities, tagged with the meeting's name, and a project update with the decisions"
+    }
+  },
+  "ai/standup-report.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Daily standup report from Leantime with Claude",
+    "description": "Have an AI assistant write a project's standup from Leantime: done, in progress, waiting, blocked and time logged, on request or every morning.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "An AI assistant connected to Leantime",
+        "For the morning schedule: Claude, with Leantime added as a connector",
+        "For everyone's logged hours: the Company Manager role or higher"
+      ],
+      "result": "A short standup per project, in your chat or posted as a project update every morning"
+    }
+  },
+  "ai/weekly-summary.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Weekly project summary from Leantime with Claude",
+    "description": "Have an AI assistant write a project's weekly summary from Leantime and post it as a project update: done, blocked, next week, milestones and hours.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "An AI assistant connected to Leantime",
+        "For the Friday schedule: Claude, with Leantime added as a connector",
+        "For everyone's logged hours: the Company Manager role or higher"
+      ],
+      "result": "A project update with the week's summary and a green, yellow or red status"
+    }
+  },
+  "ai/coding-agent.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Hand Leantime to-dos to Claude Code or another coding agent",
+    "description": "Tag Leantime to-dos for a coding agent like Claude Code: it plans, does the work, links the pull request and hands each to-do back for your review.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 15,
+      "level": "Some experience",
+      "needs": [
+        "Claude Code, or another coding agent that supports MCP, connected to Leantime",
+        "A Leantime project with to-dos, and the repository the work is in"
+      ],
+      "result": "To-dos worked on by the agent, with its plan, result and pull request link in the comments, waiting for your review"
+    }
+  },
+  "ai/emails-to-tasks.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Turn emails into tasks with Claude and Leantime's MCP server",
+    "description": "Turn customer emails into Leantime tasks with Claude and Gmail: one task per conversation, with an owner, priority and due date, on request or every morning.",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "A Leantime account and a Claude account",
+        "Gmail"
+      ],
+      "result": "Emails turned into Leantime tasks with an assignee, a priority and a due date, on request or every morning"
+    }
+  },
+  "ai/project-for-someone-else.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Set up a Leantime project for a teammate with AI",
+    "description": "Have Claude or ChatGPT create a Leantime project, add a teammate to its team and assign them their first tasks, in one request you check first."
+  },
+  "ai/invoice-from-timesheets.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Invoice from Leantime timesheets with an AI assistant",
+    "description": "Turn the billable time your team logged in Leantime into an invoice with an AI assistant, per person or per to-do, then mark the time as invoiced.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "An AI assistant connected to Leantime",
+        "The Company Manager role or higher (for the quick draft, Company Manager in that project is enough)",
+        "Your rates and the client's details"
+      ],
+      "where": [
+        "Your AI assistant",
+        "Leantime, under **Company → All Timesheets**, for the export and the **Invoiced** marks"
+      ],
+      "result": "An invoice for the billable time, and the time marked **Invoiced** in Leantime"
+    }
+  }
+}

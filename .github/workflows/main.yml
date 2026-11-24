@@ -6,14 +6,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-    
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # full history, so "Last updated" dates come from git
+
+    - name: 🟢 Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24
+        cache: npm
+
+    - name: 🏗️ Build site
+      run: |
+        npm ci
+        npm run build
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: docs.leantime.io
         server-dir: ./docs.leantime.io/
+        local-dir: ./dist/
         username: ${{ secrets.FTPUSER }}
         password: ${{ secrets.FTPPASS }}
         log-level: verbose
-        

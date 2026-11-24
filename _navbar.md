@@ -1,5 +1,0 @@
-[🏠 Homepage](https://leantime.io/)
-[🚀 Get Leantime](https://leantime.io/pricing/)
-[☎️ Get Installation Support](https://marketplace.leantime.io/)
-[💬 Community Chat](https://discord.gg/4zMzJtAq9z)
-[📚 Blog](https://leantime.io/blog/)
