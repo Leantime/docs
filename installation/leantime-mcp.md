@@ -424,7 +424,7 @@ The assistant works best when you are specific about **which project** and **wha
 
 ### What to ask
 
-For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md). For complete workflows, like turning emails into tasks with a mail connector, see [Everyday workflows](ai/everyday-workflows.md).
+For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Use Leantime from your AI assistant](ai/use-leantime-from-your-ai-assistant.md). For complete recipes, like turning meeting notes into to-dos, a standup report every morning or handing to-dos to a coding agent, see [Things your AI assistant can do in Leantime](ai/recipes.md).
 
 ## Running an AI agent as a team member
 
@@ -444,6 +444,8 @@ You work in the Leantime project "Support Backlog".
 3. When done, add a comment with the result and set the status to "Review". Never set "Done" yourself.
 4. If something is unclear, add a comment with your question and assign the task back to its creator.
 ```
+
+For a complete recipe where the agent picks up to-dos you tag for it, see [Hand to-dos to a coding agent](ai/coding-agent.md).
 
 Leantime doesn't run the agent on a schedule. The agent runs when you (or your automation) start it. Use your agent platform's scheduler if you want a daily digest or a regular check.
 

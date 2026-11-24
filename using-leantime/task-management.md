@@ -174,6 +174,10 @@ Sprints are optional. Use the menu next to **To-Dos** at the top of the page to 
 
 See [User Management](using-leantime/user-management.md) for the roles.
 
+## Can an AI assistant create and update to-dos?
+
+Yes. Connected to Leantime, an assistant like Claude can turn meeting notes into assigned to-dos, report on what's done and blocked, or work through the to-dos you tag for it. See [Things your AI assistant can do in Leantime](ai/recipes.md), for example [Turn meeting notes into to-dos](ai/meeting-notes-to-todos.md) and [Hand to-dos to a coding agent](ai/coding-agent.md).
+
 ## Related
 
 - [How should I organize my work?](getting-started/organize-your-work.md)
