@@ -9,7 +9,7 @@ Reminders are in Leantime 3.17 and later, and on Leantime Cloud.
 - **Your to-dos that are due soon.** Yours are the to-dos assigned to you, and unassigned to-dos you created. When each one shows up depends on its reminder (see [How do I choose how often a to-do reminds me?](#how-do-i-choose-how-often-a-to-do-reminds-me)).
 - **Milestones you own,** a week before and the day before they end.
 - **Projects ending,** a week before and the day before, for the project's managers. If nobody on the project is a manager, everyone on it gets them.
-- **To-dos that repeat every day or every weekday,** as one line, like "Routine tasks today: 3".
+- **To-dos that repeat every day or every weekday and are due today,** as one line, like "Routine tasks today: 3". If you chose an earlier reminder for one of them, the days before it's due list it on its own, like any other to-do.
 - **To-dos that were due earlier and are still open,** as one quiet line, like "2 still open from earlier". They're never listed one by one, and on their own they don't send a summary.
 
 The summary lists up to 5 items, most urgent first, and says how many more there are. Done to-dos, closed projects, and anything you can't see in Leantime are left out.
@@ -50,7 +50,7 @@ Open the to-do's **⋮** menu (on its card, at the top of the open to-do, or in 
 | **Only the morning it's due** | Just that morning |
 | **Don't remind me** | Never |
 
-The menu shows the current choice, like **Remind me: Day before**, and marks your default with **Your default**. After you choose for one of your own to-dos, **Use this for all my to-dos** makes that choice your default.
+The menu shows the current choice, like **Remind me: Day before**, and marks your default with **Your default**. When you pick something other than the reminder one of your own to-dos already follows, **Use this for all my to-dos** appears and makes that choice your default. To change your default at any time, use **How often to-dos remind you** in the Morning summary settings (see [How do I change the time or turn it off?](#how-do-i-change-the-time-or-turn-it-off)).
 
 - **A to-do needs a due date** to remind you.
 - **Someone else's to-do:** if you can see it, pick a reminder to add it to your own summary. It doesn't remind the person it's assigned to.
