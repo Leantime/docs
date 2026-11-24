@@ -32,7 +32,7 @@
     - [Project Integrations](using-leantime/integrations.md)
    - [Backup & Restore](installation/backup-restore.md)
    - [Move to a New Server](installation/move-server.md)
-   - [Import from Jira, Trello, Asana or CSV](using-leantime/import-csv.md)
+   - [Import from Jira, Trello, Asana, CSV or Excel](using-leantime/import-csv.md)
    - [Upgrade Leantime](installation/upgrade-guide.md)
    - [Common Issues](installation/common-issues.md)
 
