@@ -119,7 +119,7 @@ Swimlanes split the Kanban board into rows, so a busy board is easier to scan. I
 
 ![The Kanban board grouped by priority: a Critical row with its to-do in the Blocked column, and the High row below, with Group By outlined](../_images/using-leantime/todos-swimlanes.webp)
 
-Dragging a card to another row changes that field, like its assignee or milestone. See [Kanban swimlanes](using-leantime/swimlanes.md) for every grouping, what the rows show, and how to add to-dos straight into a row.
+Dragging a card to another row changes that field, like its assignee or milestone. Grouped by **Type** or **Parent Task**, it changes only the status. See [Kanban swimlanes](using-leantime/swimlanes.md) for every grouping, what the rows show, and how to add to-dos straight into a row.
 
 ## How do I filter or find to-dos?
 
