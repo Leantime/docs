@@ -53,7 +53,11 @@ async function sizePage(html, publicDir) {
 		const extra = [];
 		if (!/\swidth=/.test(tag) || !/\sheight=/.test(tag)) {
 			const size = await sizeOf(publicDir, m[1]);
-			if (size) extra.push(`width="${size.width}"`, `height="${size.height}"`);
+			if (size) {
+				extra.push(`width="${size.width}"`, `height="${size.height}"`);
+				// The shape, for the height limit in custom.css (a screenshot never fills the whole window).
+				if (!/\sstyle=/.test(tag)) extra.push(`style="--lt-w:${size.width};--lt-h:${size.height}"`);
+			}
 		}
 		if (!/\sdecoding=/.test(tag)) extra.push('decoding="async"');
 		// Small inline icons (the integration logos next to headings) don't count as the page's first screenshot.

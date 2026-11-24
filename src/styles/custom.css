@@ -224,11 +224,77 @@
 }
 /* Phone screenshots (the mobile app pages): phone width, not full column width, so a page with several stays readable.
    leantime-mobile-app-* is the name since docs#134; /mobile-* is the old one, still on master until it merges. */
-.sl-markdown-content :is(img[src*='/leantime-mobile-app-'], img[src*='/mobile-']) {
+.sl-markdown-content :is(img[src*='/leantime-mobile-app-'], img[src*='/mobile-']),
+.sl-markdown-content .lt-zoom:has(> :is(img[src*='/leantime-mobile-app-'], img[src*='/mobile-'])) {
 	max-width: min(100%, 360px);
+}
+/* Screenshots never fill the window: at most 60% of its height (520px on big screens), so the text
+   around them stays in view on a laptop. A tall one gets narrower instead of taller. The width comes
+   from the image's shape (--lt-w/--lt-h, written at build time by src/lib/image-size.mjs), so the space
+   is reserved before a lazy image loads. Click one to see it full size (src/components/MarkdownContent.astro). */
+.sl-markdown-content img[style*='--lt-w']:not(.heading-icon),
+.sl-markdown-content .lt-zoom[style*='--lt-w'] {
+	width: min(100%, calc(min(60vh, 520px) * var(--lt-w) / var(--lt-h)), calc(var(--lt-w) * 1px));
+	height: auto;
+}
+/* The click-to-enlarge link takes the screenshot's size, and the screenshot fills it. */
+.sl-markdown-content .lt-zoom {
+	display: block;
+	margin-block: 0.75rem;
+	cursor: zoom-in;
+	border-radius: var(--lt-radius-small);
+}
+.sl-markdown-content .lt-zoom > img {
+	display: block;
+	width: 100% !important;
+	max-width: 100%;
+	margin: 0 !important;
+}
+.sl-markdown-content .lt-zoom:focus-visible {
+	outline: 2px solid var(--sl-color-text-accent);
+	outline-offset: 3px;
+}
+.lt-lightbox {
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	max-width: 96vw;
+	max-height: 94vh;
+	padding: 0;
+	border: none;
+	border-radius: var(--lt-radius);
+	background: var(--sl-color-bg);
+	box-shadow: 0 10px 40px rgb(0 0 0 / 0.35);
+	overflow: auto;
+}
+.lt-lightbox::backdrop {
+	background: rgb(0 0 0 / 0.7);
+}
+.lt-lightbox img {
+	display: block;
+	max-width: 94vw;
+	max-height: 88vh;
+	width: auto;
+	height: auto;
+	cursor: zoom-out;
+}
+.lt-lightbox-close {
+	position: absolute;
+	top: 0.75rem;
+	inset-inline-end: 0.75rem;
+	padding: 0.3rem 0.8rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 999px;
+	background: var(--sl-color-bg);
+	color: var(--sl-color-white);
+	font: inherit;
+	font-size: var(--sl-text-sm);
+	cursor: pointer;
 }
 .sl-markdown-content :is(td, th) {
 	padding-block: 0.7rem;
+	/* Lists let words break anywhere, which squeezed tables inside a list step ("Outpu-ts"). */
+	overflow-wrap: break-word;
 }
 
 /* Steps: bigger, coloured step numbers so you can find your place again after switching windows. */

@@ -28,6 +28,48 @@ const markdownUrl = id && !entry.data.draft ? `/${id}.md` : undefined;
 <Default><slot /></Default>
 
 <script>
+	// Screenshots shown smaller than they are (custom.css limits their height) open full size on click,
+	// in a dialog: Esc, the Close button or a click anywhere closes it. Without JavaScript the link
+	// opens the image itself.
+	const screenshots = document.querySelectorAll<HTMLImageElement>(
+		'.sl-markdown-content img[src^="/_images/"]:not(.heading-icon)',
+	);
+	let lightbox: HTMLDialogElement | undefined;
+	const open = (img: HTMLImageElement) => {
+		if (!lightbox) {
+			lightbox = document.createElement('dialog');
+			lightbox.className = 'lt-lightbox';
+			lightbox.innerHTML = '<button type="button" class="lt-lightbox-close">Close</button><img alt="">';
+			lightbox.addEventListener('click', () => lightbox!.close());
+			document.body.append(lightbox);
+		}
+		const big = lightbox.querySelector('img')!;
+		big.src = img.currentSrc || img.src;
+		big.alt = img.alt;
+		lightbox.setAttribute('aria-label', img.alt || 'Screenshot');
+		lightbox.showModal();
+		lightbox.querySelector<HTMLButtonElement>('.lt-lightbox-close')!.focus();
+	};
+	screenshots.forEach((img) => {
+		if (img.closest('a')) return;
+		const shown = img.getBoundingClientRect().width;
+		const real = Number(img.getAttribute('width')) || img.naturalWidth;
+		// Only where the full size shows noticeably more (most screenshots are taken at 2x).
+		if (!shown || real < shown * 1.25) return;
+		const link = document.createElement('a');
+		link.href = img.getAttribute('src')!;
+		link.className = 'lt-zoom';
+		link.title = 'Show full size';
+		link.setAttribute('style', img.getAttribute('style') ?? '');
+		img.replaceWith(link);
+		link.append(img);
+		link.addEventListener('click', (event) => {
+			if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+			event.preventDefault();
+			open(img);
+		});
+	});
+
 	// "Copy page for AI": put the page's Markdown copy on the clipboard.
 	document.querySelectorAll<HTMLButtonElement>('[data-copy-md]').forEach((button) => {
 		const label = button.querySelector('[data-label]');
