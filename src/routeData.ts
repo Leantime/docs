@@ -1,8 +1,45 @@
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import sharp from 'sharp';
 import { getCollection } from 'astro:content';
 import { defineRouteMiddleware } from '@astrojs/starlight/route-data';
 
 const SITE = 'https://docs.leantime.io';
 const OG_IMAGE = `${SITE}/og-image.png`;
+
+type PreviewImage = { url: string; width: number; height: number; alt: string };
+const imageSizes = new Map<string, Promise<{ width: number; height: number } | null>>();
+
+/** Width and height of an image in public/, read once per image. */
+function imageSize(src: string): Promise<{ width: number; height: number } | null> {
+	if (!imageSizes.has(src)) {
+		const file = join(process.cwd(), 'public', decodeURI(src));
+		imageSizes.set(
+			src,
+			existsSync(file)
+				? sharp(file)
+						.metadata()
+						.then(({ width, height }) => (width && height ? { width, height } : null))
+						.catch(() => null)
+				: Promise.resolve(null),
+		);
+	}
+	return imageSizes.get(src)!;
+}
+
+/**
+ * The page's first screenshot, for link previews (og:image) and the article's image. Link previews
+ * crop to a wide box, so tall screenshots (the phone app) and small ones are skipped; those pages
+ * keep the site-wide image.
+ */
+async function previewImage(body: string | undefined): Promise<PreviewImage | null> {
+	if (!body) return null;
+	for (const [, alt, src] of body.matchAll(/!\[([^\]]*)\]\((\/_images\/[^)\s]+\.(?:webp|png|jpe?g))\)/g)) {
+		const size = await imageSize(src);
+		if (size && size.width >= 600 && size.width >= size.height) return { url: `${SITE}${src}`, alt, ...size };
+	}
+	return null;
+}
 
 /** Section names for breadcrumbs and articleSection, keyed by the first URL segment. */
 const SECTIONS: Record<string, string> = {
@@ -141,6 +178,20 @@ export const onRequest = defineRouteMiddleware(async (context) => {
 		publisher: { '@id': 'https://leantime.io/#organization' },
 		wordCount: entry.body ? entry.body.split(/\s+/).filter(Boolean).length : undefined,
 	};
+	const preview = await previewImage(entry.body);
+	if (preview) {
+		article.image = { '@type': 'ImageObject', url: preview.url, width: preview.width, height: preview.height, caption: preview.alt };
+		const meta: Record<string, string> = {
+			'og:image': preview.url,
+			'og:image:width': String(preview.width),
+			'og:image:height': String(preview.height),
+			'og:image:alt': preview.alt,
+		};
+		for (const tag of route.head) {
+			const property = tag.tag === 'meta' ? String(tag.attrs?.property ?? '') : '';
+			if (property in meta && tag.attrs) tag.attrs.content = meta[property];
+		}
+	}
 	if (description) article.description = description;
 	if (section) article.articleSection = section;
 	if (route.lastUpdated) article.dateModified = route.lastUpdated.toISOString();
