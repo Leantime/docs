@@ -71,6 +71,8 @@ The timer always logs **General, billable**. Change the type afterwards in **Lis
 
 Further along each row are three columns: **Invoiced**, **MGR Approval** and **Paid**. Tick the checkbox of each entry you've dealt with, or use **Select all** under the column at the bottom of the table, then click **Save**. Once saved, the checkbox is replaced by the date it was marked.
 
+To turn the billable time into an invoice with an AI assistant first, see [Turn timesheets into an invoice](ai/invoice-from-timesheets.md).
+
 ## Who can log and see time?
 
 - **Editors and above** log their own time and see their own timesheets.
