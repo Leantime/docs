@@ -114,13 +114,16 @@ import { RELEASE_URL, SHORT_VERSION } from '../lib/version';
 
 	/* The version: a quiet pill next to "Docs". Hidden where the header gets crowded. */
 	.lt-version {
-		padding: 0.05rem 0.45rem;
+		display: inline-flex;
+		align-items: center;
+		min-height: var(--lt-badge-height);
+		padding: 0 0.45rem;
 		border: 1px solid var(--sl-color-gray-5);
 		border-radius: 999px;
-		color: var(--sl-color-gray-3);
-		font-size: var(--sl-text-xs);
+		color: var(--sl-color-gray-2);
+		font-size: var(--lt-label-size);
 		font-weight: 600;
-		line-height: 1.5;
+		line-height: 1;
 		text-decoration: none;
 		font-variant-numeric: tabular-nums;
 	}

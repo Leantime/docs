@@ -7,15 +7,41 @@
  * has a label or an icon.
  */
 
-/* Brand accent (dark theme is Starlight's default :root). */
+/*
+ * Values from Leantime's own theme (public/theme/default/css/light.css and dark.css, and the type rule
+ * in app/Views/Templates/components/COMPONENTS.md), so the docs look like the app: the same accent,
+ * the same red / amber / green / blue for notes and warnings, the same corners and label sizes.
+ * Text colours are one step darker (light) or lighter (dark) than the app's fill colours where the
+ * fill alone wouldn't reach WCAG AA as text.
+ */
+:root {
+	--lt-radius: 16px; /* --box-radius: cards and panels */
+	--lt-radius-small: 8px; /* --box-radius-small: chips inside a card, buttons */
+	--lt-badge-height: 1.25rem; /* 20px: every badge, chip and pill */
+	--lt-label-size: 0.75rem; /* --font-size-s 12px: labels, badges */
+	--lt-label-tracking: 0.04em;
+}
+
+/* Brand accent (dark theme is Starlight's default :root): the app's dark --accent1, hsl(198, 100%, 32%). */
 :root {
 	--sl-color-accent-low: #00283b;
-	--sl-color-accent: #0083bf;
+	--sl-color-accent: #0072a3;
 	--sl-color-accent-high: #b3e3f7;
 
-	/* Section colours, dark theme. Each passes WCAG AA as text on the page background. */
+	/* The app's dark --blue, --green, --yellow and --red, for notes and warnings. */
+	--lt-blue: #1b75bb;
+	--lt-blue-text: #8cc4ee;
+	--lt-green: #32965d;
+	--lt-green-text: #8fdcb0;
+	--lt-yellow: #fdb833;
+	--lt-yellow-text: #fdcf73;
+	--lt-red: #f76c5e;
+	--lt-red-text: #f9a39a;
+
+	/* Section colours, dark theme. Each passes WCAG AA as text on the page background.
+	   Install is the app's --accent1 hue, Use Leantime its --accent2 (green) hue. */
 	--lt-section-install: #5cc8f5;
-	--lt-section-use: #3fd4a8;
+	--lt-section-use: #3dd6b5;
 	--lt-section-ai: #b9a0f8;
 	--lt-section-learn: #f5bd5c;
 	--lt-section-dev: #f79a78;
@@ -61,12 +87,23 @@
 }
 
 :root[data-theme='light'] {
-	--sl-color-accent-low: #cdeaf7;
-	--sl-color-accent: #006c9e;
-	--sl-color-accent-high: #003a55;
+	/* The app's --accent1, #004666 (hsl(199, 100%, 20%)). */
+	--sl-color-accent-low: #d4e5ec;
+	--sl-color-accent: #004666;
+	--sl-color-accent-high: #002b3f;
 
-	--lt-section-install: #006c9e;
-	--lt-section-use: #00745a;
+	/* The app's light --blue, --green, --yellow and --red. */
+	--lt-blue: #1976d2;
+	--lt-blue-text: #115293;
+	--lt-green: #2e7d32;
+	--lt-green-text: #1f5e23;
+	--lt-yellow: #f9a825;
+	--lt-yellow-text: #7a4a00;
+	--lt-red: #d64045;
+	--lt-red-text: #a3242a;
+
+	--lt-section-install: #004666;
+	--lt-section-use: #00755e; /* --accent2 #00a887, darker so it reads as text */
 	--lt-section-ai: #6a3fc2;
 	--lt-section-learn: #8a5300;
 	--lt-section-dev: #b03a14;
@@ -102,9 +139,9 @@
 /* Groups inside a group ("Your day", "Plan and track", "By type of work") are section labels:
    smaller, grey and spaced out, so they don't read like the top-level groups above them. */
 .sidebar-content details details > summary .large {
-	font-size: var(--sl-text-xs);
+	font-size: var(--lt-label-size);
 	font-weight: 600;
-	letter-spacing: 0.06em;
+	letter-spacing: var(--lt-label-tracking);
 	text-transform: uppercase;
 	color: var(--sl-color-gray-2);
 }
@@ -172,7 +209,7 @@
 /* Collapsible "More detail" sections keep the main path short. */
 .sl-markdown-content details {
 	border: 1px solid var(--sl-color-gray-5);
-	border-radius: 0.5rem;
+	border-radius: var(--lt-radius);
 	padding: 0.6rem 1rem;
 }
 .sl-markdown-content details > summary {
@@ -197,6 +234,31 @@
 	margin-top: 0.9rem;
 }
 
+/* Notes, tips, cautions and warnings in the app's blue, green, amber and red. */
+.starlight-aside {
+	border-radius: var(--lt-radius-small);
+}
+.starlight-aside--note {
+	--sl-color-asides-text-accent: var(--lt-blue-text);
+	--sl-color-asides-border: var(--lt-blue);
+	background-color: color-mix(in srgb, var(--lt-blue) 12%, var(--sl-color-bg));
+}
+.starlight-aside--tip {
+	--sl-color-asides-text-accent: var(--lt-green-text);
+	--sl-color-asides-border: var(--lt-green);
+	background-color: color-mix(in srgb, var(--lt-green) 12%, var(--sl-color-bg));
+}
+.starlight-aside--caution {
+	--sl-color-asides-text-accent: var(--lt-yellow-text);
+	--sl-color-asides-border: var(--lt-yellow);
+	background-color: color-mix(in srgb, var(--lt-yellow) 14%, var(--sl-color-bg));
+}
+.starlight-aside--danger {
+	--sl-color-asides-text-accent: var(--lt-red-text);
+	--sl-color-asides-border: var(--lt-red);
+	background-color: color-mix(in srgb, var(--lt-red) 12%, var(--sl-color-bg));
+}
+
 /* Respect "reduce motion". */
 @media (prefers-reduced-motion: reduce) {
 	*,
@@ -217,7 +279,7 @@
 	flex: 1;
 	--sl-card-border: var(--sl-color-gray-5);
 	--sl-card-bg: transparent;
-	border-radius: 0.6rem;
+	border-radius: var(--lt-radius);
 }
 .lt-tasks .card .icon {
 	color: var(--sl-color-gray-3);
@@ -243,7 +305,7 @@
 	margin-top: 0 !important;
 	padding: 1.25rem 1.5rem 0.75rem;
 	border: 1px solid var(--sl-color-gray-6);
-	border-radius: 0.75rem;
+	border-radius: var(--lt-radius);
 	background-color: var(--sl-color-gray-7);
 	box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
 }

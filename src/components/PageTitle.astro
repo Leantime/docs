@@ -177,10 +177,12 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		align-items: center;
 		gap: 0.45rem;
 		margin-top: 1rem;
-		padding: 0.15rem 0.7rem 0.15rem 0.55rem;
+		min-height: var(--lt-badge-height);
+		padding: 0 0.7rem 0 0.55rem;
 		border-radius: 999px;
-		font-size: var(--sl-text-sm);
+		font-size: var(--lt-label-size);
 		font-weight: 600;
+		line-height: 1;
 		color: var(--lt-accent);
 		background: color-mix(in srgb, var(--lt-accent) 13%, transparent);
 	}
@@ -198,15 +200,20 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		margin: 0.75rem 0 0;
 		padding: 0;
 		list-style: none;
-		font-size: var(--sl-text-xs);
+		font-size: var(--lt-label-size);
 	}
+	/* Badges: the app's one size, 12px / 600 on a 20px box. */
 	.lt-label {
+		display: inline-flex;
+		align-items: center;
+		min-height: var(--lt-badge-height);
 		margin: 0;
-		padding: 0.15rem 0.65rem;
+		padding: 0 0.65rem;
 		border: 1px solid var(--sl-color-gray-5);
 		border-radius: 999px;
 		color: var(--sl-color-gray-2);
-		line-height: 1.6;
+		font-weight: 600;
+		line-height: 1;
 	}
 	.lt-label[data-kind='plugin'] {
 		border-color: color-mix(in srgb, var(--sl-color-accent) 55%, transparent);
@@ -238,7 +245,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		gap: 0.4rem;
 		padding: 0.3rem 0.7rem;
 		border: 1px solid var(--sl-color-gray-5);
-		border-radius: 0.4rem;
+		border-radius: var(--lt-radius-small);
 		background: transparent;
 		color: var(--sl-color-gray-2);
 		font: inherit;
@@ -257,7 +264,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	.lt-glance {
 		margin-top: 1.25rem;
 		border: 1px solid color-mix(in srgb, var(--lt-accent) 35%, var(--sl-color-gray-5));
-		border-radius: 0.75rem;
+		border-radius: var(--lt-radius);
 		overflow: hidden;
 		background: var(--sl-color-bg);
 		container-type: inline-size;
@@ -273,9 +280,9 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	}
 	.lt-glance-title {
 		margin: 0;
-		font-size: var(--sl-text-sm);
-		font-weight: 700;
-		letter-spacing: 0.06em;
+		font-size: var(--lt-label-size);
+		font-weight: 600;
+		letter-spacing: var(--lt-label-tracking);
 		text-transform: uppercase;
 		color: var(--lt-accent);
 	}
@@ -287,17 +294,21 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	.lt-chip {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.4rem;
+		gap: 0.35rem;
+		min-height: var(--lt-badge-height);
 		margin: 0;
-		padding: 0.2rem 0.65rem;
+		padding: 0 0.6rem;
 		border-radius: 999px;
 		background: var(--sl-color-bg);
 		border: 1px solid color-mix(in srgb, var(--lt-accent) 40%, transparent);
-		font-size: var(--sl-text-sm);
+		font-size: var(--lt-label-size);
 		font-weight: 600;
+		line-height: 1;
 		color: var(--sl-color-white);
 	}
 	.lt-chip svg {
+		width: 0.875rem;
+		height: 0.875rem;
 		color: var(--lt-accent);
 	}
 	.lt-chip-label {
@@ -348,9 +359,9 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		align-items: center;
 		gap: 0.4rem;
 		margin: 0 0 0.5rem;
-		font-size: var(--sl-text-xs);
-		font-weight: 700;
-		letter-spacing: 0.05em;
+		font-size: var(--lt-label-size);
+		font-weight: 600;
+		letter-spacing: var(--lt-label-tracking);
 		text-transform: uppercase;
 		color: var(--lt-accent);
 	}
