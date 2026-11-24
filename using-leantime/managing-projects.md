@@ -107,7 +107,7 @@ The Project Overview is each project's start page. You get there by picking the 
 - **Project Checklist:** suggested steps to set up the project well.
 - **Background:** the description from the project's settings.
 - **Latest To-Dos**, with **Create To-Do** to add one.
-- **Project Updates:** short status notes for the team. Click **Update Status** to post one.
+- **Project Updates:** short status notes for the team. Click **Update Status** to post one. An AI assistant can post them too, like [a standup report every morning](ai/standup-report.md).
 - **Project Progress** and **Milestones:** how much is done.
 
 ## How do I copy or duplicate a project in Leantime?
