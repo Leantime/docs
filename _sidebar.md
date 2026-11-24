@@ -83,6 +83,7 @@
 - [Notifications](using-leantime/notifications.md)
 - [Your account and settings](using-leantime/account-settings.md)
 - [Custom Fields](using-leantime/custom-fields.md)
+- [Tags](using-leantime/tags.md)
 - [Goals](using-leantime/goals.md)
 - [Ideas](using-leantime/idea-management.md)
 - [Docs](using-leantime/docs.md)
