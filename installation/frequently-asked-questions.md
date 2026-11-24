@@ -287,7 +287,7 @@ Each person can subscribe to their Leantime calendar from Google Calendar, Outlo
 ### What appears on the calendar?
 
 - Tasks with due dates
-- Tasks with scheduled work times (editFrom/editTo)
+- To-dos you've planned to work on: their **Work Start** and **Work End**, as an all-day "Planned:" item or a "Planned Edit:" block
 - Milestones with dates
 - Calendar events created in Leantime
 
@@ -297,7 +297,7 @@ Direct two-way sync requires the CalDAV plugin. The basic iCal export is one-way
 
 ### Can I schedule tasks on my calendar?
 
-Yes. Edit a task and set the "editFrom" and "editTo" dates. This schedules when you plan to work on the task, separate from the due date.
+Yes. Open the to-do and, under **Schedule**, set **Work Start** and **Work End**. A date alone plans the day; a time blocks out the hours (time-boxing). This is when you plan to work on it, separate from the due date. See [What do planned and time-boxed mean?](using-leantime/task-management.md#what-do-planned-and-time-boxed-mean)
 
 ---
 
