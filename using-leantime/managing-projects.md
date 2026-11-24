@@ -54,7 +54,7 @@ Each project can hide the features it doesn't use, so the menu only shows what t
 
 A switched-off feature is hidden for everyone in the project, whatever their role. Nothing is deleted: its content comes back when you switch it on again.
 
-- **Files** off hides the project's file library. Files attached to to-dos and images in text stay available.
+- **Files** off hides the project's [file library](using-leantime/files.md). Files attached to to-dos and images in text stay available.
 - **Time tracking** off means nobody can log time on this project's to-dos. Time logged earlier stays in the timesheets.
 - **To-Dos, Milestones, the Project Overview and comments** are always on.
 
