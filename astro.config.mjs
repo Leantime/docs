@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 import starlightLlmsTxt from 'starlight-llms-txt';
+import imageSize from './src/lib/image-size.mjs';
 
 const SITE = 'https://docs.leantime.io';
 
@@ -473,5 +474,7 @@ export default defineConfig({
 				}),
 			],
 		}),
+		// Screenshots get their real width and height (no layout shift) and load lazily below the first one.
+		imageSize(),
 	],
 });
