@@ -2,7 +2,7 @@
 
 The free CalDAV Calendar Sync plugin syncs your Leantime calendar both ways with the calendars you already use, through the open CalDAV standard. Your Leantime events show up in Apple Calendar, Thunderbird or on your Android phone, and your Nextcloud or other calendar server stays in step with Leantime.
 
-![The CalDAV Integration page: CalDAV Accounts with Add CalDAV Account outlined, About CalDAV Integration with the supported servers, and Connect External Calendar Apps with the server address and the App passwords button outlined](../_images/plugins/caldav-settings.webp)
+![Leantime's CalDAV Integration page: Add CalDAV Account, the supported servers, and the server address with App passwords, outlined](../_images/plugins/leantime-caldav-calendar-sync.webp)
 
 ## What does it add?
 
