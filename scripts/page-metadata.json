@@ -928,7 +928,8 @@
       "level": "Beginner",
       "needs": [
         "An AI assistant connected to Leantime",
-        "For the morning schedule: Claude, with Leantime added as a connector"
+        "For the morning schedule: Claude, with Leantime added as a connector",
+        "For everyone's logged hours: the Company Manager role or higher"
       ],
       "result": "A short standup per project, in your chat or posted as a project update every morning"
     }
