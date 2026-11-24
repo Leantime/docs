@@ -6,7 +6,7 @@ Search finds to-dos, projects, docs, ideas, goals, Blueprint cards, comments, fi
 
 ## How do I search?
 
-1. **Click the search box** at the top, or press **⌘K** (Mac) or **Ctrl+K** (Windows and Linux). **/** works too, when you're not typing somewhere else.
+1. **Click the search box** at the top, or press **⌘K** (Mac), **Ctrl+K** (Windows and Linux) or **/**. The keys work when you're not typing in a field or in the editor; there, **Ctrl+K** adds a link instead.
 2. **Type at least two characters.** Results show as you type, grouped by type: To-Dos, Projects, Docs and so on.
 3. **Click a result to open it,** or use the arrow keys and press **Enter**.
 
@@ -34,7 +34,7 @@ On the results page:
 - **Filter:**
   - **Project** limits the results to one project. People results aren't limited by it: they show everyone who matches, not only the project's team.
   - **Changed after** and **Changed before** limit them to things changed in that period.
-  - **Only mine** keeps to-dos assigned to you or created by you, and the docs, ideas, cards, comments and files you wrote or uploaded.
+  - **Only mine** keeps to-dos assigned to you or created by you, and the docs, ideas, cards, comments and files you wrote or uploaded. Projects and People results aren't limited by it.
 - **Reset filters** clears them.
 
 Each type shows its first results; click **Load more** under it for the rest.
