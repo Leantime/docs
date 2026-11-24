@@ -66,10 +66,6 @@
     "title": "Plugin development guide",
     "description": "Build a Leantime plugin from the Hello World example: composer.json, register.php, language files, controllers, Blade views and menu items."
   },
-  "getting-started/new-project.md": {
-    "title": "Set up your first project",
-    "description": "Plan a new project in Leantime from idea to execution: research boards, milestones, to-dos and your first sprint, step by step."
-  },
   "installation/authentication-configuration.md": {
     "title": "Authentication: OIDC, LDAP and single sign-on",
     "description": "Single sign-on for self-hosted Leantime: OpenID Connect (Keycloak, Authentik, Entra ID, Google) or LDAP and Active Directory, with role mapping and fixes.",
@@ -412,10 +408,6 @@
     "searchTitle": "Project reports in Leantime: status report and delivery metrics",
     "description": "See how a Leantime project is going: milestones done and in flight, goals, status updates, hours and cumulative flow per quarter. Print or save as PDF.",
     "checked": "3.14"
-  },
-  "using-leantime/research-boards.md": {
-    "title": "Research boards",
-    "description": "Test an idea before you build it with Leantime's research board: define the customer, the problem, the solution and the details."
   },
   "using-leantime/retrospectives.md": {
     "title": "Retrospectives",

@@ -19,7 +19,7 @@ const USE_LEANTIME_GROUPS = [
 	['Your day', ['my-work-dashboard', 'search', 'calendars', 'timesheets|Time tracking', 'notes', 'notifications', 'reminders', 'account-settings|Your account', 'mobile-app|On your phone', 'mobile-app-how-to|Everyday tasks in the app']],
 	['Plan and track', ['managing-projects', 'task-management|To-Dos', 'swimlanes|Kanban swimlanes', 'tags', 'custom-fields|Custom Fields', 'roadmap-planning|Milestones', 'sprints', 'goals']],
 	['Above your projects', ['programs', 'strategies']],
-	['Think', ['idea-management|Ideas', 'blueprints', 'whiteboards', 'research-boards', 'retrospectives']],
+	['Think', ['idea-management|Ideas', 'blueprints', 'whiteboards', 'retrospectives']],
 	['Write and share', ['comments|Comments and @mentions', 'docs', 'files', 'reports']],
 	['Your team and company', ['managing-clients', 'user-management', 'company-settings', 'integrations|Integrations', 'import-csv']],
 ];
@@ -52,7 +52,6 @@ const START_HERE = [
 	'getting-started/features',
 	'getting-started/organize-your-work',
 	WORK_TYPES_LABEL,
-	'getting-started/new-project',
 	'installation/frequently-asked-questions|FAQ',
 ];
 const menuEntries = (entries) =>
@@ -286,16 +285,20 @@ export default defineConfig({
 	// (/#/ai/keycloak-sso) reach these paths through legacyRedirect first.
 	redirects: {
 		'/ai/keycloak-sso': '/installation/keycloak-sso/',
+		// Old walkthroughs with Leantime 2.x screenshots, retired in docs#136: creating projects is on Projects,
+		// and the research board is the Blueprints templates (Lean Canvas, Project Value Canvas, Insights).
+		'/getting-started/new-project': '/using-leantime/managing-projects/',
+		'/using-leantime/research-boards': '/using-leantime/blueprints/',
 		// Old concept pages retired in docs#99; their topics live on these pages now.
 		'/knowledge-base/system-roles': '/using-leantime/user-management/',
 		'/knowledge-base/wheretostart': '/getting-started/get-started/',
-		'/knowledge-base/product-validation': '/using-leantime/research-boards/',
+		'/knowledge-base/product-validation': '/using-leantime/blueprints/',
 		'/knowledge-base/team-happiness': '/using-leantime/retrospectives/',
 		// docsify pages removed or renamed before the conversion; old links and search results still point here.
 		'/getting-started/agencies': '/getting-started/client-work/',
 		'/getting-started/product-managers': '/getting-started/product-and-game-development/',
 		'/getting-started/startups': '/getting-started/product-and-game-development/',
-		'/getting-started/quick-start': '/getting-started/new-project/',
+		'/getting-started/quick-start': '/getting-started/get-started/',
 		'/installation/advanced': '/installation/other-methods/',
 		'/installation/plugin-configuration': '/plugins/advanced-authentication/',
 		'/installation/quick-installation': '/installation/package-installation/',
