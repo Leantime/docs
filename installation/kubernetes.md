@@ -2,7 +2,7 @@
 
 Leantime's repository includes a Helm chart in its `helm` folder. It runs one Leantime pod and its own MariaDB database, with volumes for uploaded files. It isn't published in a Helm repository, so you install it from a copy of the repository.
 
-The steps below were tested with Leantime 3.15.3 on a local Kubernetes cluster; the chart is the same in 3.16.0. If you don't need Kubernetes, [Docker Compose](installation/docker.md) is simpler and covers more settings.
+The steps below were tested with Leantime 3.15.3 on a local Kubernetes cluster; the chart is the same in 3.17.0. If you don't need Kubernetes, [Docker Compose](installation/docker.md) is simpler and covers more settings.
 
 ## Before you start
 
@@ -13,10 +13,10 @@ The steps below were tested with Leantime 3.15.3 on a local Kubernetes cluster; 
 
 ## How do I install Leantime with Helm?
 
-1. **Get the chart** from the latest release (3.16.0 in this example):
+1. **Get the chart** from the latest release (3.17.0 in this example):
 
    ```sh
-   git clone --depth 1 --branch v3.16.0 https://github.com/Leantime/leantime
+   git clone --depth 1 --branch v3.17.0 https://github.com/Leantime/leantime
    ```
 
 2. **Get the chart's MariaDB dependency.** It comes from Bitnami's Helm repository, so add that first:
@@ -30,7 +30,7 @@ The steps below were tested with Leantime 3.15.3 on a local Kubernetes cluster; 
 
    ```yaml
    image:
-     tag: "3.16.0"                 # the Leantime version; don't use "latest"
+     tag: "3.17.0"                 # the Leantime version; don't use "latest"
    app:
      url: "https://projects.example.com"
      session:

@@ -29,6 +29,17 @@ Click a notification to open what it's about.
 
 @Mentions always reach you, whatever you switch off, and so do changes to to-dos you're a collaborator on.
 
+## What do notification emails look like?
+
+Leantime sends one email, **Updates on your work**, with what changed since your last email. Changes are grouped by to-do, with times in your own time zone. **New** lists what you haven't seen yet, and **Already seen** lists what you've already read in Leantime, so the email is complete. **Open in Leantime** takes you there.
+
+Since Leantime 3.16, you also hear:
+
+- **When someone adds you to a project:** "You were added to" the project, in the bell, by email and on your phone.
+- **About @mentions on boards, goals and ideas,** on your phone too, like mentions on to-dos.
+
+On your phone, each change arrives as one notification: assigning a to-do to you and changing it at the same time doesn't push twice. The bell and the update emails can still list them separately.
+
 ## How do I get fewer notifications from a busy project?
 
 Change the project's level under **Per-Project Notifications**:

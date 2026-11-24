@@ -29,7 +29,7 @@ services:
       start_period: 300s
 
   leantime:
-    image: leantime/leantime:3.16.0
+    image: leantime/leantime:3.17.0
     restart: unless-stopped
     ports:
       - "8080:8080"
@@ -62,7 +62,7 @@ volumes:
 - **`<database password>`** appears twice. Use the same password in both places.
 - **`<long random value>`** is Leantime's secret key. Make one with `openssl rand -base64 32`, or any password generator, at least 32 characters long.
 - **`<server address>`** is the address you open Leantime at, like `192.168.1.20`. Once you put Leantime behind HTTPS, change `LEAN_APP_URL` to the `https://` address (see [Run Leantime behind a reverse proxy](installation/reverse-proxy.md)).
-- **`3.16.0`** is the Leantime version. Check the [releases](https://github.com/Leantime/leantime/releases) for the newest one.
+- **`3.17.0`** is the Leantime version. Check the [releases](https://github.com/Leantime/leantime/releases) for the newest one.
 - **`America/New_York`** is the default time zone, as a [tz database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 - **Port 8080 already in use?** Change the first number, for example `"8090:8080"`, and use that port in `LEAN_APP_URL`.
 
@@ -75,7 +75,7 @@ Once Leantime is running, open `http://<server address>:8080`. Enter your email 
 3. Click **Deploy the stack**. The first start takes a few minutes while the database sets itself up.
 4. Open Leantime and run the installer.
 
-**To update:** open the stack, click **Editor**, change the version in `leantime/leantime:3.16.0`, and click **Update the stack**. Your data stays in the stack's volumes. Then open Leantime and click **Update Now!** if it asks (see [Upgrade Leantime](installation/upgrade-guide.md)).
+**To update:** open the stack, click **Editor**, change the version in `leantime/leantime:3.17.0`, and click **Update the stack**. Your data stays in the stack's volumes. Then open Leantime and click **Update Now!** if it asks (see [Upgrade Leantime](installation/upgrade-guide.md)).
 
 ## How do I install Leantime on TrueNAS?
 
