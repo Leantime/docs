@@ -94,5 +94,6 @@ If a to-do appears that wasn't finished recently, ask the assistant to leave it 
 
 - [Things your AI assistant can do in Leantime](ai/recipes.md): more recipes
 - [Turn meeting notes into to-dos](ai/meeting-notes-to-todos.md)
+- [Get a weekly project summary](ai/weekly-summary.md): the same idea, once a week, for the team, your manager or a client
 - [Use Leantime from your AI assistant: routines worth keeping](ai/use-leantime-from-your-ai-assistant.md#routines-worth-keeping)
 - [Projects: what's on the project overview](using-leantime/managing-projects.md#whats-on-the-project-overview)

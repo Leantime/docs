@@ -125,6 +125,8 @@ yellow or red), what was finished this week, what's in progress,
 upcoming milestones and risks. Show it to me, then post it as a project update.
 ```
 
+For the complete recipe, posted every Friday, see [Get a weekly project summary](ai/weekly-summary.md).
+
 ## How do I get good results?
 
 - **Name the project.** "Create a to-do in the Website project" works better than "create a to-do", because the assistant doesn't have to guess.
