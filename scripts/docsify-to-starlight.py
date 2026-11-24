@@ -55,6 +55,14 @@ BROKEN_LINK_FIXES = {
     'installation/quick-installation.md': 'installation/package-installation.md',
     'knowledge-base/idea-management.md': 'knowledge-base/idea-development.md',
 }
+# Pages retired in a docs PR that waits for this site to go live (docs#136). Until it merges they're still
+# in the docs repo: they aren't converted, and links to them point where astro.config.mjs redirects them.
+RETIRED = {
+    'getting-started/new-project.md': 'using-leantime/managing-projects.md',
+    'using-leantime/research-boards.md': 'using-leantime/blueprints.md',
+}
+EXCLUDE_PREFIXES += list(RETIRED)
+BROKEN_LINK_FIXES.update(RETIRED)
 SOURCE_PAGES = set()
 PUBLIC = ['_images', 'favicon.ico', 'apple-touch-icon.png']
 
