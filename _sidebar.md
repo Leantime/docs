@@ -43,6 +43,7 @@
 - [Things your AI assistant can do](ai/recipes.md)
     - [Turn meeting notes into to-dos](ai/meeting-notes-to-todos.md)
     - [Get a standup report every morning](ai/standup-report.md)
+    - [Get a weekly project summary](ai/weekly-summary.md)
     - [Hand to-dos to a coding agent](ai/coding-agent.md)
     - [Turn emails into tasks](ai/emails-to-tasks.md)
     - [Set up a project for someone else](ai/project-for-someone-else.md)

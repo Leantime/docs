@@ -10,6 +10,7 @@ For shorter examples of what to ask, see [Use Leantime from your AI assistant](a
 | --- | --- | --- |
 | A meeting's decisions to become assigned to-dos, and the team to see what was decided | [Turn meeting notes into to-dos](ai/meeting-notes-to-todos.md) | Any connected assistant |
 | A short report every morning: what got done, what's in progress, what's blocked, and the time logged | [Get a standup report every morning](ai/standup-report.md) | Any connected assistant; Claude for the morning schedule |
+| A weekly summary posted for the team, your manager or a client: done, blocked, coming up, milestones and decisions | [Get a weekly project summary](ai/weekly-summary.md) | Any connected assistant; Claude for the Friday schedule |
 | A coding agent to pick up to-dos you tag for it, and hand them back for review | [Hand to-dos to a coding agent](ai/coding-agent.md) | Claude Code, or another coding agent |
 | Customer emails to become tasks with an owner, a priority and a due date | [Turn emails into tasks](ai/emails-to-tasks.md) | Claude with the Gmail connector |
 | A project ready for a teammate: the project, its team and their first tasks | [Set up a project for someone else](ai/project-for-someone-else.md) | Any connected assistant |
