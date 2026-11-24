@@ -21,18 +21,19 @@ for this week, since Monday:
 - Decisions: from this week's project updates.
 - Time: the hours logged this week, per person.
 One line per to-do, with its number. Leave out empty sections.
-Show it to me first. Then post it as a project update, formatted as
-paragraphs and bulleted lists. Set the status to yellow if anything is
-blocked or overdue, red if a milestone will be missed, otherwise green.
+Show it to me first, and wait for my OK before you post it as a
+project update, formatted as paragraphs and bulleted lists. Set the
+status to yellow if anything is blocked or overdue, red if a milestone
+will be missed, otherwise green.
 ```
 
-The assistant reads the project's to-dos, milestones, project updates and timesheets, shows you the summary, and posts it once you agree. The update appears on the project's overview under **Project Updates**:
+The assistant reads the project's to-dos, milestones, project updates and timesheets, shows you the summary, and waits. Once you say it's fine, it posts the summary as a project update. The update appears on the project's overview under **Project Updates**:
 
 ![A weekly summary posted by an AI assistant as a yellow Leantime project update: done, waiting for approval, blocked, coming up next week, milestones, decisions and time logged](../_images/ai/leantime-ai-weekly-summary-project-update.webp)
 
 The project's team is told about it, like any project update (see [Notifications](using-leantime/notifications.md)). If the project sends its updates to Slack, Discord, Mattermost, Telegram or Zulip, it goes there too (see [Project integrations](using-leantime/integrations.md)).
 
-To read it yourself without posting it, leave out the last three lines of the request.
+To read it yourself without posting it, leave out the last four lines of the request.
 
 ## Every Friday, on a schedule
 
