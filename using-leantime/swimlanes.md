@@ -10,7 +10,7 @@ In Leantime, swimlanes are under **Group By** on the Kanban board. There's no se
 2. Make sure **Kanban** is selected at the top left.
 3. Click **Group By** at the top right and choose what each row stands for.
 
-![The Kanban board with the Group By menu open and Milestone selected: a row for the Checkout rebuilt milestone and one for Design approved, each across the status columns](../_images/using-leantime/swimlanes-group-by.webp)
+![Leantime's Kanban board grouped by milestone: the Group By menu open, and a swimlane for each milestone across the status columns](../_images/using-leantime/leantime-kanban-swimlanes-group-by.webp)
 
 To go back to one board, click **Group By** and choose **No Grouping**. Grouping only changes the view: nothing about your to-dos changes.
 
