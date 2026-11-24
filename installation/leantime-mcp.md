@@ -48,7 +48,7 @@ When you ask a question, the assistant decides which Leantime tools to call (for
 
 You need:
 
-| | Leantime Cloud | Self-hosted |
+| Detail | Leantime Cloud | Self-hosted |
 |---|---|---|
 | Leantime version | Always current | **3.13 or later** (MCP Server plugin 2.x). Signing in from Claude and ChatGPT needs **3.16 or later**. |
 | MCP Server plugin | Included, nothing to install | Install from the [Marketplace](https://marketplace.leantime.io/product/mcp-server/) |
@@ -295,7 +295,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 ### Tasks
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `findTasks` | Finds tasks across your projects by assignee, status or last change | Reads |
 | `getTicket` | Shows one task with all its details | Reads |
@@ -312,7 +312,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 ### Milestones
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `findMilestones` | Lists a project's milestones | Reads |
 | `getMilestone` | Shows one milestone | Reads |
@@ -322,7 +322,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 ### Projects
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getAllProjects` | Lists your projects with progress | Reads |
 | `findProject` | Finds a project by name | Reads |
@@ -339,7 +339,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 ### Goals
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getAllGoals` | Lists a project's goals | Reads |
 | `getGoal` | Shows one goal with its progress | Reads |
@@ -353,7 +353,7 @@ You don't call these tools yourself. The assistant picks them based on what you 
 
 These work on **your own** calendar.
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getCalendar` | Shows your events and scheduled tasks for a date range | Reads |
 | `getICalUrl` | Gives you the address to subscribe to your Leantime calendar | Reads |
@@ -379,7 +379,7 @@ These work on **your own** morning summary and reminders. They need Leantime Clo
 
 ### Comments and status updates
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `getComments` | Shows comments on a task, goal, idea or doc | Reads |
 | `getAllProjectComments` | Shows a project's status updates | Reads |
@@ -389,7 +389,7 @@ These work on **your own** morning summary and reminders. They need Leantime Clo
 
 ### Time tracking
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `startTimer`, `stopTimer` | Starts and stops your timer on a task | Changes |
 | `logTime` | Logs hours to a task | Adds |
@@ -400,7 +400,7 @@ These work on **your own** morning summary and reminders. They need Leantime Clo
 
 ### Search and help
 
-| Tool | What it does | |
+| Tool | What it does | Effect |
 |---|---|---|
 | `search` | Searches tasks, projects, goals, milestones, docs and more, like the search bar in Leantime | Reads |
 | `searchLeantimeDocumentation` | Searches Leantime's online documentation (self-hosted: needs `LEAN_JINA_KEY`, see [Settings for administrators](?id=settings-for-administrators)) | Reads |
