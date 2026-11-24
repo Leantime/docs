@@ -2,7 +2,6 @@
 /**
  * Page title, extended:
  * - a colour-coded section label above the title, so you always know where you are;
- * - "Copy for AI" and "Markdown" buttons that hand the page to an AI assistant;
  * - a row of labels: core feature or plugin, Cloud and/or self-hosted, and the version last checked
  *   (src/lib/availability.ts, set per folder and by the `edition`, `plugin` and `checked` front matter);
  * - the "At a glance" box from the `glance` front matter (time, level, what you need, where you'll work, result).
@@ -13,11 +12,10 @@ import { SECTION_NAMES, sectionOf } from '../lib/sections';
 import { EDITION_LABELS, MARKETPLACE_URL, availabilityOf } from '../lib/availability';
 
 const { entry, id } = Astro.locals.starlightRoute;
-const { title, glance, section: sectionOverride, draft } = entry.data;
+const { title, glance, section: sectionOverride } = entry.data;
 const availability = id ? availabilityOf(id, entry.data) : undefined;
 const hasLabels = availability && (availability.showFeature || availability.edition || availability.checked);
 const section = sectionOf(id, sectionOverride);
-const markdownUrl = id && !draft ? `/${id}.md` : undefined;
 /** Front matter text with `code`, **bold** and [links](/path/) written as Markdown. */
 const inline = (text: string) =>
 	text
@@ -63,20 +61,6 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 {/* The section colour also tints step numbers and other accents further down the page. */}
 {section && <script is:inline define:vars={{ section }}>document.documentElement.dataset.section = section;</script>}
 
-{
-	markdownUrl && (
-		<div class="lt-page-tools not-content">
-			<button type="button" class="lt-tool" data-copy-md={markdownUrl} aria-live="polite">
-				<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16h-9V7h9v14Z"/></svg>
-				<span data-label>Copy page for AI</span>
-			</button>
-			<a class="lt-tool" href={markdownUrl} title="This page as plain Markdown, for AI assistants and tools">
-				<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M20.6 5H3.4C2.6 5 2 5.6 2 6.4v11.2c0 .8.6 1.4 1.4 1.4h17.2c.8 0 1.4-.6 1.4-1.4V6.4c0-.8-.6-1.4-1.4-1.4ZM12 16h-2v-4l-1.5 2L7 12v4H5V8h2l1.5 2L10 8h2v8Zm4.5.5L13.5 13H15V8h3v5h1.5l-3 3.5Z"/></svg>
-				<span>Markdown</span>
-			</a>
-		</div>
-	)
-}
 
 {
 	glance && (
@@ -141,28 +125,6 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	)
 }
 
-<script>
-	// "Copy page for AI": put the page's Markdown copy on the clipboard.
-	document.querySelectorAll<HTMLButtonElement>('[data-copy-md]').forEach((button) => {
-		const label = button.querySelector('[data-label]');
-		const original = label?.textContent ?? '';
-		const say = (text: string) => {
-			if (!label) return;
-			label.textContent = text;
-			setTimeout(() => (label.textContent = original), 2500);
-		};
-		button.addEventListener('click', async () => {
-			try {
-				const response = await fetch(button.dataset.copyMd!);
-				if (!response.ok) throw new Error(String(response.status));
-				await navigator.clipboard.writeText(await response.text());
-				say('Copied. Paste it into your AI chat');
-			} catch {
-				window.location.href = button.dataset.copyMd!;
-			}
-		});
-	});
-</script>
 
 <style>
 	h1 {
@@ -184,13 +146,13 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		font-weight: 600;
 		line-height: 1;
 		color: var(--lt-accent);
-		background: color-mix(in srgb, var(--lt-accent) 13%, transparent);
+		background: color-mix(in srgb, var(--lt-fill) 13%, transparent);
 	}
 	.lt-dot {
 		width: 0.55rem;
 		height: 0.55rem;
 		border-radius: 50%;
-		background: var(--lt-accent);
+		background: var(--lt-fill);
 	}
 	/* Where the page applies: small, quiet pills under the title. */
 	.lt-labels {
@@ -233,37 +195,12 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	.lt-label-quiet {
 		border-style: dashed;
 	}
-	.lt-page-tools {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		margin-top: 0.85rem;
-	}
-	.lt-tool {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		padding: 0.3rem 0.7rem;
-		border: 1px solid var(--sl-color-gray-5);
-		border-radius: var(--lt-radius-small);
-		background: transparent;
-		color: var(--sl-color-gray-2);
-		font: inherit;
-		font-size: var(--sl-text-xs);
-		text-decoration: none;
-		cursor: pointer;
-	}
-	.lt-tool:hover,
-	.lt-tool:focus-visible {
-		color: var(--sl-color-white);
-		border-color: var(--sl-color-gray-3);
-	}
 	/* At a glance: a header strip (time, level), then "You need", "Where you'll work" and "At the end",
 	   side by side when there's room and stacked when there isn't.
 	   Everything is tinted with the section colour, so the box matches the page it sits on. */
 	.lt-glance {
 		margin-top: 1.25rem;
-		border: 1px solid color-mix(in srgb, var(--lt-accent) 35%, var(--sl-color-gray-5));
+		border: 1px solid color-mix(in srgb, var(--lt-fill) 35%, var(--sl-color-gray-5));
 		border-radius: var(--lt-radius);
 		overflow: hidden;
 		background: var(--sl-color-bg);
@@ -275,8 +212,8 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		align-items: center;
 		gap: 0.5rem 1rem;
 		padding: 0.75rem 1rem;
-		background: color-mix(in srgb, var(--lt-accent) 14%, var(--sl-color-bg));
-		border-bottom: 1px solid color-mix(in srgb, var(--lt-accent) 30%, transparent);
+		background: color-mix(in srgb, var(--lt-fill) 14%, var(--sl-color-bg));
+		border-bottom: 1px solid color-mix(in srgb, var(--lt-fill) 30%, transparent);
 	}
 	.lt-glance-title {
 		margin: 0;
@@ -300,7 +237,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		padding: 0 0.6rem;
 		border-radius: 999px;
 		background: var(--sl-color-bg);
-		border: 1px solid color-mix(in srgb, var(--lt-accent) 40%, transparent);
+		border: 1px solid color-mix(in srgb, var(--lt-fill) 40%, transparent);
 		font-size: var(--lt-label-size);
 		font-weight: 600;
 		line-height: 1;
@@ -324,7 +261,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	.lt-meter i {
 		width: 4px;
 		border-radius: 1px;
-		background: color-mix(in srgb, var(--lt-accent) 25%, transparent);
+		background: color-mix(in srgb, var(--lt-fill) 25%, transparent);
 	}
 	.lt-meter i:nth-child(1) { height: 40%; }
 	.lt-meter i:nth-child(2) { height: 70%; }
@@ -332,7 +269,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 	.lt-meter[data-level='1'] i:nth-child(-n + 1),
 	.lt-meter[data-level='2'] i:nth-child(-n + 2),
 	.lt-meter[data-level='3'] i {
-		background: var(--lt-accent);
+		background: var(--lt-fill);
 	}
 	.lt-glance-body {
 		display: grid;
@@ -421,7 +358,7 @@ const levelRank = { Beginner: 1, 'Some experience': 2, Advanced: 3 };
 		text-align: center;
 	}
 	.lt-result {
-		background: color-mix(in srgb, var(--lt-accent) 7%, transparent);
+		background: color-mix(in srgb, var(--lt-fill) 7%, transparent);
 	}
 	.lt-result p {
 		margin: 0;

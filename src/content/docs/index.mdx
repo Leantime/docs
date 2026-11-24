@@ -27,7 +27,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 ## What do you want to do?
 
 <CardGrid>
-<div class="lt-tasks">
+<div class="lt-tasks" data-section="install">
 <Card title="Install and run Leantime" icon="rocket">
 - [With Docker](/installation/docker/), about 10 minutes
 - [On your own server](/installation/package-installation/) with PHP and MySQL
@@ -35,20 +35,20 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 - [Upgrade to a new version](/installation/upgrade-guide/)
 </Card>
 </div>
-<div class="lt-tasks">
+<div class="lt-tasks" data-section="use">
 <Card title="Use Leantime" icon="open-book">
 - [Get started with Leantime](/getting-started/get-started/)
-- [Set up your first project](/getting-started/new-project/)
+- [Set up your first project](/using-leantime/managing-projects/)
 - [Add features with plugins](/installation/using-plugins/)
 </Card>
 </div>
-<div class="lt-tasks">
+<div class="lt-tasks" data-section="ai">
 <Card title="Use AI with Leantime" icon="comment">
 - [Connect Claude, Cursor or VS Code](/installation/leantime-mcp/)
 - [llms.txt](/llms.txt): all the docs for AI tools
 </Card>
 </div>
-<div class="lt-tasks">
+<div class="lt-tasks" data-section="dev">
 <Card title="Build on Leantime" icon="code-branch">
 - [Connect to the API](/api/usage/)
 - [Write a plugin](/development/plugin-development/)
@@ -79,7 +79,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 ### Using Leantime
 
 - [How do I get started with Leantime?](/getting-started/get-started/)
-- [How do I set up my first project?](/getting-started/new-project/)
+- [How do I set up my first project?](/using-leantime/managing-projects/)
 - [How do I add users and choose their roles?](/using-leantime/user-management/)
 - [How do I track time?](/using-leantime/timesheets/)
 - [How do I plan a roadmap with milestones?](/using-leantime/roadmap-planning/)

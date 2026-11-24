@@ -327,6 +327,7 @@ export default defineConfig({
 				Header: './src/components/Header.astro',
 				Footer: './src/components/Footer.astro',
 				PageTitle: './src/components/PageTitle.astro',
+				MarkdownContent: './src/components/MarkdownContent.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				TableOfContents: './src/components/TableOfContents.astro',
 			},

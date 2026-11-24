@@ -46,6 +46,13 @@
 	--lt-section-learn: #f5bd5c;
 	--lt-section-dev: #f79a78;
 	--lt-accent: var(--sl-color-accent-high);
+	/* Fills: bars, tints, card edges and dots. On dark they're the section colours themselves. */
+	--lt-fill-install: var(--lt-section-install);
+	--lt-fill-use: var(--lt-section-use);
+	--lt-fill-ai: var(--lt-section-ai);
+	--lt-fill-learn: var(--lt-section-learn);
+	--lt-fill-dev: var(--lt-section-dev);
+	--lt-fill: var(--lt-accent);
 
 	/* A narrower text column (Starlight's default is 45rem): shorter lines are easier to follow. */
 	--sl-content-width: 40rem;
@@ -108,33 +115,67 @@
 	--lt-section-learn: #8a5300;
 	--lt-section-dev: #b03a14;
 	--lt-accent: var(--sl-color-accent);
+	/* Fills on light: the bright versions of the same hues (the app's --accent2 green, its amber),
+	   for bars, tints, card edges and dots. The darker colours above are only for text, where they
+	   need the contrast; used as fills they turned the light theme navy, brown and rust. */
+	--lt-fill-install: #1a9bd7;
+	--lt-fill-use: #00a887;
+	--lt-fill-ai: #8b65ee;
+	--lt-fill-learn: #f5a524;
+	--lt-fill-dev: #f0714f;
+	--lt-fill: #1a9bd7;
 }
 
 [data-section='install'],
-:root[data-section='install'] { --lt-accent: var(--lt-section-install); }
+:root[data-section='install'] { --lt-accent: var(--lt-section-install); --lt-fill: var(--lt-fill-install); }
 [data-section='use'],
-:root[data-section='use'] { --lt-accent: var(--lt-section-use); }
+:root[data-section='use'] { --lt-accent: var(--lt-section-use); --lt-fill: var(--lt-fill-use); }
 [data-section='ai'],
-:root[data-section='ai'] { --lt-accent: var(--lt-section-ai); }
+:root[data-section='ai'] { --lt-accent: var(--lt-section-ai); --lt-fill: var(--lt-fill-ai); }
 [data-section='learn'],
-:root[data-section='learn'] { --lt-accent: var(--lt-section-learn); }
+:root[data-section='learn'] { --lt-accent: var(--lt-section-learn); --lt-fill: var(--lt-fill-learn); }
 [data-section='dev'],
-:root[data-section='dev'] { --lt-accent: var(--lt-section-dev); }
+:root[data-section='dev'] { --lt-accent: var(--lt-section-dev); --lt-fill: var(--lt-fill-dev); }
 
 /* Sidebar: a coloured bar beside each top-level group. Groups mix folders (MCP and plugins sit
    under Use Leantime), so the colour follows the group's position, not its links. */
 .sidebar-content .top-level > li > details {
-	border-inline-start: 3px solid transparent;
+	border-inline-start: 4px solid transparent;
 	padding-inline-start: 0.4rem;
 	margin-inline-start: -0.4rem;
 }
-/* One colour per top-level menu group, in the order of the sidebar in astro.config.mjs:
-   Start here, Use Leantime, Self-host Leantime, Leantime Cloud, Build on Leantime. */
-.sidebar-content .top-level > li:nth-child(1) > details { border-color: var(--lt-section-learn); }
-.sidebar-content .top-level > li:nth-child(2) > details { border-color: var(--lt-section-use); }
-.sidebar-content .top-level > li:nth-child(3) > details { border-color: var(--lt-section-install); }
-.sidebar-content .top-level > li:nth-child(4) > details { border-color: var(--lt-section-ai); }
-.sidebar-content .top-level > li:nth-child(5) > details { border-color: var(--lt-section-dev); }
+/* One colour per top-level menu group, in the order of the sidebar in astro.config.mjs, matching the
+   section label above each of its pages (src/lib/sections.ts): Start here (the brand's blue to green,
+   the way in), Use Leantime, Project management concepts, Self-host Leantime, Leantime Cloud (its
+   pages are Using Leantime pages), Build on Leantime. */
+.sidebar-content .top-level > li:nth-child(1) > details {
+	border-image: linear-gradient(var(--lt-fill-install), var(--lt-fill-use)) 1;
+}
+.sidebar-content .top-level > li:nth-child(2) > details { border-color: var(--lt-fill-use); }
+.sidebar-content .top-level > li:nth-child(3) > details { border-color: var(--lt-fill-learn); }
+.sidebar-content .top-level > li:nth-child(4) > details { border-color: var(--lt-fill-install); }
+.sidebar-content .top-level > li:nth-child(5) > details { border-color: var(--lt-fill-use); }
+.sidebar-content .top-level > li:nth-child(6) > details { border-color: var(--lt-fill-dev); }
+/* "AI with Leantime" sits inside Use Leantime but is its own section: its label takes the AI colour. */
+.sidebar-content details details:has(a[href^='/ai/']) > summary .large {
+	color: var(--lt-section-ai);
+}
+
+/* You are here: the current page in the menu is filled with its section's colour (the same colour
+   as the label above the title), not the general accent. */
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover,
+.sidebar-content a[aria-current='page']:focus {
+	background-color: var(--lt-accent);
+	color: var(--sl-color-text-invert);
+}
+:root[data-theme='light'] .sidebar-content a[aria-current='page'],
+:root[data-theme='light'] .sidebar-content a[aria-current='page']:hover,
+:root[data-theme='light'] .sidebar-content a[aria-current='page']:focus {
+	background-color: color-mix(in srgb, var(--lt-fill) 18%, var(--sl-color-bg));
+	color: var(--lt-accent);
+	box-shadow: inset 3px 0 0 var(--lt-fill);
+}
 
 /* Groups inside a group ("Your day", "Plan and track", "By type of work") are section labels:
    smaller, grey and spaced out, so they don't read like the top-level groups above them. */
@@ -192,13 +233,13 @@
 
 /* Steps: bigger, coloured step numbers so you can find your place again after switching windows. */
 .sl-markdown-content .sl-steps > li::before {
-	background-color: color-mix(in srgb, var(--lt-accent) 18%, var(--sl-color-bg));
+	background-color: color-mix(in srgb, var(--lt-fill) 18%, var(--sl-color-bg));
 	color: var(--lt-accent);
 	font-weight: 700;
-	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--lt-accent) 45%, transparent);
+	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--lt-fill) 55%, transparent);
 }
 .sl-markdown-content .sl-steps > li::after {
-	background-color: color-mix(in srgb, var(--lt-accent) 30%, transparent);
+	background-color: color-mix(in srgb, var(--lt-fill) 35%, transparent);
 }
 
 /* "Where does this run?" labels on code blocks (expressive-code titles). */
@@ -271,7 +312,31 @@
 	}
 }
 
-/* Home page cards: plain, so the links stand out. */
+/* Home page: a soft wash of the logo's blue and green behind the title, so the page opens with the
+   brand, while the Install button stays the strongest thing on it. */
+.hero {
+	/* The logo's blue and green, at their brightest (the dark theme's section colours): darker
+	   shades turn grey when faded this far. */
+	--lt-wash-blue: #5cc8f5;
+	--lt-wash-green: #3dd6b5;
+	padding: clamp(1.5rem, 5vw, 3rem);
+	border-radius: var(--lt-radius);
+	background:
+		radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--lt-wash-blue) 30%, transparent), transparent 55%),
+		radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--lt-wash-green) 30%, transparent), transparent 60%),
+		var(--sl-color-bg);
+	border: 1px solid color-mix(in srgb, var(--lt-wash-blue) 35%, var(--sl-color-gray-6));
+}
+:root[data-theme='dark'] .hero {
+	background:
+		radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--lt-wash-blue) 20%, transparent), transparent 55%),
+		radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--lt-wash-green) 16%, transparent), transparent 60%),
+		var(--sl-color-bg);
+	border-color: color-mix(in srgb, var(--lt-wash-blue) 25%, var(--sl-color-gray-5));
+}
+
+/* Home page cards: each in the colour of the section it leads to, the same colour as that section's
+   bar in the menu and the label above its pages, so the colours mean something from the first page. */
 .lt-tasks {
 	display: flex;
 }
@@ -280,9 +345,27 @@
 	--sl-card-border: var(--sl-color-gray-5);
 	--sl-card-bg: transparent;
 	border-radius: var(--lt-radius);
+	border-top: 4px solid var(--lt-fill);
+	transition: border-color 0.15s ease;
+}
+.lt-tasks .card:has(a:hover) {
+	border-color: var(--lt-fill);
 }
 .lt-tasks .card .icon {
-	color: var(--sl-color-gray-3);
+	color: var(--lt-accent);
+	background-color: color-mix(in srgb, var(--lt-fill) 16%, var(--sl-color-bg));
+	border: none;
+	border-radius: var(--lt-radius-small);
+}
+
+/* Reading pages without an "At a glance" box: the title area takes a faint tint of the section's
+   colour, fading down into the page, so the colour of the label above the title carries across the
+   top. Pages with the box don't need it: the label and the box already carry the colour. */
+.main-pane .content-panel:has(> .sl-container > .lt-eyebrow):not(:has(.lt-glance)) {
+	background: linear-gradient(color-mix(in srgb, var(--lt-fill) 10%, transparent), transparent);
+}
+:root[data-theme='dark'] .main-pane .content-panel:has(> .sl-container > .lt-eyebrow):not(:has(.lt-glance)) {
+	background: linear-gradient(color-mix(in srgb, var(--lt-fill) 13%, transparent), transparent);
 }
 
 /* Home page "Common questions": each group is a soft panel with its own heading, and the
