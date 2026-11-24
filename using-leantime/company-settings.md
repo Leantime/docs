@@ -18,6 +18,7 @@ The other pages under **Company** are **All Timesheets**, **All Projects**, **Al
 | **Company Name** | Shown in the browser tab and in emails |
 | **Help make Leantime better!** | Sends a daily usage summary to Leantime (see [Telemetry](#telemetry)) |
 | **Email frequency** | The shortest wait between two update emails, for everyone. Each person can choose a longer wait, not a shorter one (see [Notifications](using-leantime/notifications.md)) |
+| **Send morning summaries** (under **Reminders**, with its own **Save**) | Turns the daily morning summary and to-do reminders on or off for everyone. Leantime 3.17 and later (see [Reminders and the morning summary](using-leantime/reminders.md)) |
 | **Default notification types for new users** | Which kinds of changes people hear about until they save their own choice: Tasks & Milestones, Comments, Goals, Ideas, Project Updates, and Boards & Whiteboards |
 | **Default notification level** | **All Activity** or **My Work Only**, for people who haven't chosen their own |
 | **Mobile push notifications** | On your own server only: send notifications to the Leantime mobile app through Leantime's relay (see [Set up the mobile app](installation/mobile-app-setup.md#how-do-i-turn-on-phone-notifications)) |
