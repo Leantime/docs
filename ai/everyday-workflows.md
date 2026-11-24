@@ -23,7 +23,7 @@ Each workflow uses Leantime's [MCP server](installation/leantime-mcp.md). For sh
 1. In Claude on the web, open **Customize → Connectors**, click **+** and choose **Add custom connector**.
 2. Name it "Leantime" and enter `https://your-leantime-url/mcp`.
 3. If Claude asks how to sign in, choose **Register automatically**. Leantime registers Claude by itself, and doesn't use a client ID or secret.
-4. Click **Connect**, sign in to Leantime, and click **Allow access**.
+4. Click **Connect**, sign in to Leantime, and click **Allow access**. Leantime warns that it hasn't verified the app; that's expected when you've just clicked Connect (see [Why does Leantime say it hasn't verified the app?](installation/leantime-mcp.md#why-does-leantime-say-it-hasnt-verified-the-app)).
 
 On Claude Team and Enterprise, an owner adds the connector for the organization first; then each person connects their own Leantime account. On the Free plan you can add one custom connector.
 

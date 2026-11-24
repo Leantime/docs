@@ -126,7 +126,7 @@ In every example, replace `https://your-leantime-url` with your Leantime address
 1. In Claude, open **Settings → Connectors** and click **Add custom connector**.
 2. Name it "Leantime" and paste `https://your-leantime-url/mcp`. Leave the OAuth client ID and secret fields empty.
 3. Click **Connect**. Leantime opens: sign in as usual (with two-factor or single sign-on if you use them).
-4. Check what Leantime asks, and click **Allow access**.
+4. Check what Leantime asks, and click **Allow access**. Leantime warns that it hasn't verified the app: that's expected (see [Why does Leantime say it hasn't verified the app?](#why-does-leantime-say-it-hasnt-verified-the-app)).
 
 You're back in Claude, and Leantime is connected. A connector you add on claude.ai or in Claude Desktop also shows up in the Claude phone apps.
 
@@ -134,7 +134,23 @@ You're back in Claude, and Leantime is connected. A connector you add on claude.
 
 1. In ChatGPT, add a custom MCP server or connector. Where to find this depends on your plan, and OpenAI changes the menus often: see [Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt). On some plans you first switch on **Developer mode**; on work plans, an admin may have to allow it.
 2. Paste `https://your-leantime-url/mcp` as the address, and choose **OAuth** for authentication.
-3. Sign in to Leantime and click **Allow access**.
+3. Sign in to Leantime and click **Allow access**. Leantime warns that it hasn't verified the app: that's expected (see the next section).
+
+### Why does Leantime say it hasn't verified the app?
+
+When an assistant connects by signing in, Leantime shows what the assistant asks for and who you're signed in as. It also shows a warning: "Leantime has not verified this app. Only allow access if you just connected Leantime from it."
+
+![Connect Claude to Leantime: what Claude will be able to do, the warning that Leantime has not verified the app and that access is granted to claude.ai, the account you're signed in as, and the Allow access and Cancel buttons](../_images/installation/mcp-allow-access.webp)
+
+You see this warning every time, for Claude and ChatGPT too. Assistants register themselves with Leantime when you click **Connect**, so Leantime has no list of apps to check them against.
+
+Before you click **Allow access**, check three things:
+
+- **You just started it:** you clicked **Connect** (or **Authenticate** in Claude Code) in your assistant a moment ago.
+- **The address after "Access is granted to"** is your assistant's: **claude.ai** for Claude, **chatgpt.com** for ChatGPT, or **localhost** (or **127.0.0.1**) for Claude Code and other assistants that run on your computer.
+- **The account under "Signed in as"** is the one the assistant should use. To use another one, click **Not you?** and sign in again.
+
+If you didn't just start connecting, or the address isn't your assistant's, click **Cancel**.
 
 ### Which apps are connected?
 
@@ -148,7 +164,7 @@ Run once in a terminal:
 claude mcp add --transport http leantime https://your-leantime-url/mcp
 ```
 
-Then type `/mcp` inside Claude Code, choose **leantime** and **Authenticate**, and sign in to Leantime in the browser. To use a token instead, add `--header "Authorization: Bearer YOUR_TOKEN"` to the command.
+Then type `/mcp` inside Claude Code, choose **leantime** and **Authenticate**, and sign in to Leantime in the browser (Leantime warns that it hasn't verified the app: see [Why does Leantime say it hasn't verified the app?](#why-does-leantime-say-it-hasnt-verified-the-app)). To use a token instead, add `--header "Authorization: Bearer YOUR_TOKEN"` to the command.
 
 Add `--scope user` to use Leantime in every project, not just the current folder. Check it with `claude mcp list`.
 
