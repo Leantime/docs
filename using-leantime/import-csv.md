@@ -128,7 +128,7 @@ A file can hold up to 500,000 cells, for example 20,000 rows of 25 columns. For 
 
 ## Why didn't everything import?
 
-Some problems only show up when Leantime saves the rows, after **Confirm**. Leantime still imports every other row. The page then says **Some rows weren't imported**, with how many rows came in and a list of the others: each with its row number and the reason, for example "Row 14: There is no item with the Id 482 that you can update." If no row could be saved, it says **Nothing was imported**.
+Some problems only show up when Leantime saves the rows, after **Confirm**. Leantime still imports every other row. The page then says **Some rows weren't imported**, with how many rows came in and a list of the others: each with its row number and the reason. If no row could be saved, it says **Nothing was imported**.
 
 To finish:
 
