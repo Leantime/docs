@@ -58,7 +58,7 @@ Any repeatable process fits. For example:
 ## Doing it in Leantime
 
 - **The board:** the To-Dos [Kanban view](using-leantime/task-management.md) has a column per status. Rename, add or hide statuses to match your workflow, and decide which ones count as in progress and done.
-- **Swimlanes:** **Group By** on the Kanban board splits it into lanes by priority, person, milestone, sprint, due date and more.
+- **Swimlanes:** **Group By** on the Kanban board splits it into lanes by priority, person, milestone, sprint, due date and more (see [Kanban swimlanes](using-leantime/swimlanes.md)).
 - **WIP limits:** Leantime doesn't cap a column for you. Agree on a limit as a team and keep an eye on the **In Progress** column; **Group By → User** shows who has too much on.
 - **Flow:** the **Cumulative Flow** chart in [Reports](using-leantime/reports.md) shows work in progress over time. A band that keeps widening while **Done** stays flat means work is piling up.
 
