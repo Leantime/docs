@@ -24,7 +24,7 @@ At 08:00 in your time zone, unless you choose another time:
 
 Click the summary, or **See what's coming up** in the email, to open the **Coming up** panel. It has everything, not only the first 5, grouped into **Today**, **Tomorrow**, **Later this week** and **Later**. Each row's **⋮** menu changes that to-do's reminder.
 
-![The Coming up panel: Write the new homepage copy under Today, Test the checkout on phones under Tomorrow, Set up payment webhooks under Later this week, each with a ⋮ menu, and the summary time at the bottom](../_images/using-leantime/reminders-coming-up.webp)
+![Leantime's Coming up panel: to-dos due today, tomorrow and later this week, each with a menu, and the morning summary time](../_images/using-leantime/leantime-reminders-coming-up.webp)
 
 ## How do I change the time or turn it off?
 
@@ -35,7 +35,7 @@ Click the summary, or **See what's coming up** in the email, to open the **Comin
    - **Time:** when the summary comes, in your time zone (see [How do I change my language, date format or time zone?](using-leantime/account-settings.md#how-do-i-change-my-language-date-format-or-time-zone)).
    - **How often to-dos remind you:** your default for your to-dos. You can choose differently for one to-do. To-dos that repeat every day or every weekday remind you only the morning they're due, whatever this default, unless it's **Don't remind me**.
 
-![The Morning summary section of the Notifications tab (outlined): the Send me a morning summary switch, Time 08:00 AM in your timezone, How often to-dos remind you, and Save](../_images/using-leantime/reminders-settings.webp)
+![The Morning summary settings (outlined): the summary switch, the time in your timezone, how often to-dos remind you, and Save](../_images/using-leantime/leantime-reminders-morning-summary.webp)
 
 Whether the summary comes by email or on your phone follows the **Receive email notifications** and **Receive push notifications** switches above it (see [Notifications](using-leantime/notifications.md)).
 
