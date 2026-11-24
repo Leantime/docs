@@ -985,5 +985,28 @@
     },
     "searchTitle": "Set up a Leantime project for a teammate with AI",
     "description": "Have Claude or ChatGPT create a Leantime project, add a teammate to its team and assign them their first tasks, in one request you check first."
+  },
+  "ai/invoice-from-timesheets.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Invoice from Leantime timesheets with an AI assistant",
+    "description": "Turn the billable time your team logged in Leantime into an invoice with an AI assistant, per person or per to-do, then mark the time as invoiced.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "An AI assistant connected to Leantime",
+        "The Company Manager role or higher (for the quick draft, Company Manager in that project is enough)",
+        "Your rates and the client's details"
+      ],
+      "where": [
+        "Your AI assistant",
+        "Leantime, under **Company → All Timesheets**, for the export and the **Invoiced** marks"
+      ],
+      "result": "An invoice for the billable time, and the time marked **Invoiced** in Leantime"
+    }
   }
 }

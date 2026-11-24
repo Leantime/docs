@@ -104,6 +104,7 @@ const AI_RECIPES = [
 	'ai/coding-agent|To-dos for a coding agent',
 	'ai/emails-to-tasks|Emails to tasks',
 	'ai/project-for-someone-else|A project for a teammate',
+	'ai/invoice-from-timesheets|An invoice from timesheets',
 ];
 const AI_PAGES = [
 	'ai|Overview',
