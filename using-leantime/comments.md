@@ -33,6 +33,8 @@ The person you mention gets "Ada mentioned you in a project" in the bell, under 
 
 Click the smiley next to **Reply** and pick 👍, ❤️, 🎉, 😄, 🤔 or 💯. The reaction shows under the comment with a count; hover over it to see who reacted. Click your reaction again to take it back.
 
+In Leantime 3.17, the smiley and the reactions don't show when you open a to-do from a link, such as from the bell or a notification email. Close the to-do and open it from its card on the board, and they're there.
+
 ## How do I edit or delete a comment?
 
 Open the **⋮** menu on your comment and choose **Edit** or **Delete**. On a reply, **Edit** and **Delete** are next to **Reply**.
@@ -41,7 +43,7 @@ You can edit and delete your own comments and replies. Company Managers, Adminis
 
 ## Can I turn a comment into a time entry?
 
-Yes, on a to-do in a project with time tracking on. Open the **⋮** menu on the comment and choose **Add to Timesheet**. Leantime opens the to-do's **Time Tracking** tab with the comment as the entry's description; add the hours and save (see [Timesheets](using-leantime/timesheets.md)).
+Yes, on a to-do in a project with time tracking on, if you can log time: Editors and above (Commenters can't). Open the **⋮** menu on the comment and choose **Add to Timesheet**. Leantime opens the to-do's **Time Tracking** tab with the comment as the entry's description; add the hours and save (see [Timesheets](using-leantime/timesheets.md)).
 
 ## How do I see what changed on a to-do?
 
