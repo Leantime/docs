@@ -4,7 +4,7 @@ Leantime Mobile is the free app for iPhone and Android that connects to the Lean
 
 The app is for your own day, not for setting up projects: see what's due, plan tomorrow, focus on one to-do, track time and keep notes. Project setup and administration stay in the browser.
 
-![The app's Connect screen with the Cloud and Self-Hosted tabs, a box for the workspace name, Connect, and Try Demo Mode](../_images/using-leantime/mobile-connect.webp)
+![The Leantime mobile app's first screen, Welcome to Leantime: Leantime Cloud, Your own server, and Explore the demo](../_images/using-leantime/leantime-mobile-app-welcome.webp)
 
 ## How do I get the Leantime mobile app?
 
@@ -13,14 +13,18 @@ The app is for your own day, not for setting up projects: see what's due, plan t
 
 The app is for phones; tablet layouts come later. It's free. On Leantime Cloud it works with your plan at no extra cost, trials included. On a self-hosted server it needs the [Advanced Authentication](plugins/advanced-authentication.md) plugin, a paid plugin from the marketplace.
 
-**Just looking?** Tap **Try Demo Mode** on the first screen. It opens a sample workspace, with no account or server needed.
+**Just looking?** Tap **Explore the demo** on the first screen. It opens a sample workspace with a pretend team. You don't need an account, and nothing you do is saved.
 
 ## How do I connect the app to Leantime Cloud?
 
-1. **Choose Cloud** on the Connect screen.
-2. **Enter your workspace name:** only the part before `.leantime.io`. If your workspace is `acme.leantime.io`, enter `acme`.
-3. **Sign in** with the email and password you use in the browser.
+1. **Tap Leantime Cloud** on the first screen.
+2. **Enter your workspace name:** the first part of the address you open in your browser. If your workspace is `acme.leantime.io`, enter `acme`. Then tap **Continue**.
+3. **Sign in** with the email and password you use in the browser. The workspace you're signing in to is shown at the top, with **Change** if it's the wrong one.
 4. **Enter your code** if your account uses two-factor authentication. Codes change every 30 seconds, so use the current one.
+
+![The Leantime Cloud screen: Workspace name ending in .leantime.io, Continue, and My team runs its own server](../_images/using-leantime/leantime-mobile-app-cloud-sign-in.webp)
+
+If the app says there's no workspace at that address, check the spelling. Your workspace name is in your invite email, and in the address bar when you use Leantime in a browser: it's the part before `.leantime.io`.
 
 Everything in the app works on Leantime Cloud, with no plugins or setup.
 
@@ -30,10 +34,14 @@ Your Leantime administrator sets up the server first: it needs Leantime 3.9.5 or
 
 Then, in the app:
 
-1. **Choose Self-Hosted** on the Connect screen.
-2. **Enter the full address** you use in the browser, including `https://` and any port or folder, for example `https://leantime.example.com` or `https://example.com/leantime`.
+1. **Tap Your own server** on the first screen.
+2. **Enter the server address:** the full address you open Leantime at in your browser, including any port or folder, for example `https://leantime.example.com` or `https://example.com/leantime`. Then tap **Continue**.
 3. **Sign in** with your Leantime email and password, or with your company login (see the next section).
 4. **Enter your code** if your account uses two-factor authentication.
+
+![The Your own server screen: Server address, Continue, and My address ends in .leantime.io](../_images/using-leantime/leantime-mobile-app-self-hosted.webp)
+
+Typed your own server's address on the Cloud screen? The app notices: it says **This is your own server's address** and offers **Connect to your own server**. Each screen also links to the other one: **My team runs its own server** and **My address ends in .leantime.io**.
 
 **Quick test:** open the same address in your phone's browser. If Leantime's login page loads and you can sign in there, your phone can reach the server. If the app still can't sign in, the server may be missing Advanced Authentication or dropping the app's sign-in token; see [What does the app's error message mean?](#what-does-the-apps-error-message-mean).
 
@@ -49,16 +57,18 @@ No button for your company login? Ask your administrator: what the server needs 
 
 ## What can I do in the app?
 
-![The Today tab: what's due today, quick wins, the schedule, and what's coming up tomorrow](../_images/using-leantime/mobile-today.webp)
+For step-by-step help with each of these, see [Everyday tasks in the Leantime app](using-leantime/mobile-app-how-to.md).
+
+![The Today tab: Choose today's must-do, the task you last worked on with Resume, the schedule, Quick Wins and what's due today](../_images/using-leantime/leantime-mobile-app-today.webp)
 
 - **Today:** what's due, what you worked on last, quick wins and your schedule for the day.
 - **Tasks:** your to-dos from every project. Add, update and finish them, and log time.
 - **Now:** a timer for one to-do. Count up while you work, or count down a set length (Pomodoro style). Pause, resume, then stop and log the time to the to-do, even if you only worked for five minutes. It also offers short moments to breathe.
 - **Notes:** your notes, kept with your projects.
-- **You:** your calendar, timesheet, inbox and settings, and **Progress**: a view of where you stand right now and a weekly reflection of what you closed and helped with. Progress is only in the app and is just for you.
+- **You:** your calendar, timesheet, inbox and settings, and **Progress**: swipe between **Present** (where you stand right now), **This week** and **This month** (what you closed and helped with). Progress is only in the app and is just for you.
 - **Plan tomorrow:** pick a few to-dos for the next day. They move to tomorrow's date.
 
-![Plan Tomorrow: a short list of suggested to-dos to move to tomorrow](../_images/using-leantime/mobile-plan-tomorrow.webp)
+![Plan Tomorrow: a short list of suggested to-dos to move to tomorrow](../_images/using-leantime/leantime-mobile-app-plan-tomorrow.webp)
 
 What you can change follows your [role](using-leantime/user-management.md) in the workspace:
 
@@ -70,7 +80,7 @@ What you can change follows your [role](using-leantime/user-management.md) in th
 
 If the app says your role can't do something, ask your workspace administrator.
 
-![The Now tab: a focus timer counting down on one to-do](../_images/using-leantime/mobile-now-timer.webp)
+![The Now tab: the focus timer set to 25 minutes, with the presets and the to-do it logs time to](../_images/using-leantime/leantime-mobile-app-focus-timer.webp)
 
 ## Can I get notifications on my phone?
 
@@ -78,7 +88,7 @@ Yes. The app can tell you when someone assigns you a to-do, mentions you, or com
 
 1. **Open You → Settings → Notification settings.**
 2. **Turn on Phone notifications.** If your phone asks whether Leantime may send notifications, allow it.
-3. **Optional:** under **How they arrive**, choose whether they show as a banner or arrive quietly.
+3. **Optional, on iPhone:** under **How they arrive**, choose **Alerts** (a banner, and a sound for things meant for you if your sounds are on) or **Quietly** (straight to Notification Center).
 
 What you get follows your [notification settings](using-leantime/notifications.md), the same ones as in the browser: muted projects and kinds of changes you've switched off stay quiet on your phone too. @Mentions and changes to to-dos you're a collaborator on still reach you. Turning **Phone notifications** off only affects that phone.
 
@@ -90,12 +100,16 @@ On Leantime Cloud, that's all. On a self-hosted server, your administrator turns
 
 ## How do reminders work?
 
-Turn them on under **You → Settings → Reminders**:
+Open **You → Settings → Reminders**. What you see there depends on your Leantime:
 
-- **Morning cue:** a gentle start to the day, at the time you choose.
-- **Plan tomorrow:** an evening nudge to pick tomorrow's to-dos.
+- **With Leantime's built-in reminders (Leantime 3.17 or later):**
+  - **Morning summary:** what's coming up, once a day by push, email and in your inbox. Nothing due means no message. It's on by default. While it's on, you also see:
+  - **Time:** when the summary arrives.
+  - **How often tasks remind you:** your default for **Remind me** on each to-do (see [How do I get reminded about a task?](using-leantime/mobile-app-how-to.md#how-do-i-get-reminded-about-a-task)).
+- **With an older Leantime:** **Morning cue**, a gentle start to the day at the **Time** you choose.
+- **Plan tomorrow**, on every server: an evening nudge to pick tomorrow's to-dos. It's off until you turn it on.
 
-The app also tells you when a focus timer ends. The first time, your phone asks whether Leantime may send notifications. If you said no, turn them on again in your phone's settings, under **Notifications → Leantime**.
+The app also tells you when a focus timer ends. If your phone doesn't allow Leantime notifications, the Reminders section says so and offers **Open phone Settings**; turn them on under **Notifications → Leantime**.
 
 ## What does the app's error message mean?
 
@@ -116,7 +130,7 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 
 | What's going on | What to do |
 | --- | --- |
-| A full address in the Cloud box, or a workspace name in the Self-Hosted box | Cloud: type only the part before `.leantime.io`. Self-hosted: switch to **Self-Hosted** and type the whole address. |
+| A workspace name on the **Your own server** screen | Tap **My address ends in .leantime.io** and enter only the part before `.leantime.io`. |
 | The address redirects (adds `www`, switches to `https`, adds a folder) | Use the address your browser ends up on. |
 | You only sign in with a company login and never set a password | Use **Sign in with SSO** or your provider's button. If there's none, ask your administrator. |
 | The two-factor code is right but fails | A clock is off: check that your phone sets its time automatically, and ask your administrator to sync the server time (NTP). |
@@ -124,9 +138,14 @@ Find the sentence the app showed you. The last column is for your Leantime admin
 
 ## How do I delete my account or my data?
 
-- **Workspace owners:** **Settings → Delete Account** opens your workspace's deletion page in the browser (see [Delete your Leantime Cloud account](using-leantime/delete-cloud-account.md)).
-- **Everyone else:** your account belongs to your workspace. Ask its owner to remove you. Signing out of the app clears everything it stored on your phone.
-- **Usage data:** the app collects pseudonymous usage data (which screens and features are used, never your content). Turn it off under **Settings → Privacy & Security → Share Usage Data**, or email support@leantime.io to have it deleted.
+Open **You → Settings** and scroll to **Delete Account**. What it offers depends on who you are:
+
+- **Owner of a Leantime Cloud workspace:** tap **Delete Workspace**, then **Continue to web**: your workspace's deletion page opens in the browser. On Cloud, your account is your workspace, so this deletes it for your whole team (see [Delete your Leantime Cloud account](using-leantime/delete-cloud-account.md)).
+- **Everyone else** (Cloud team members, and everyone on a self-hosted server): your account is managed by your workspace's owner or your Leantime administrator. **How to delete my account** opens the instructions on leantime.io: ask them to remove you.
+
+Signing out of the app clears everything it stored on your phone.
+
+**Usage data:** the app collects pseudonymous usage data (which screens and features are used, never your content). Turn it off under **Settings → Privacy & Security → Share Usage Data**, or email support@leantime.io to have it deleted.
 
 ## Still stuck?
 

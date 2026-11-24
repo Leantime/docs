@@ -32,6 +32,7 @@ Only you. Notes and notebooks belong to the person who wrote them, and there's n
 ## Related
 
 - [Notes: install and set up](plugins/notes.md)
+- [Notes in the Leantime app](using-leantime/mobile-app-how-to.md#how-do-i-take-a-note)
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
 - [Docs](using-leantime/docs.md)
 - [Pomodoro timer](using-leantime/my-work-dashboard.md#how-do-i-use-the-pomodoro-timer)

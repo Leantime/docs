@@ -70,6 +70,7 @@
 
 - [My Work Dashboard](using-leantime/my-work-dashboard.md)
 - [Leantime on your phone](using-leantime/mobile-app.md)
+  - [Everyday tasks in the app](using-leantime/mobile-app-how-to.md)
 - [Billing on Leantime Cloud](using-leantime/cloud-billing.md)
 - [Delete your Cloud account](using-leantime/delete-cloud-account.md)
 - [Projects](using-leantime/managing-projects.md)
