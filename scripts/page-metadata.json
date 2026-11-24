@@ -927,6 +927,25 @@
       "result": "A short standup per project, in your chat or posted as a project update every morning"
     }
   },
+  "ai/weekly-summary.md": {
+    "plugin": {
+      "name": "MCP Server",
+      "url": "https://marketplace.leantime.io/product/mcp-server/"
+    },
+    "searchTitle": "Weekly project summary from Leantime with Claude",
+    "description": "Have an AI assistant write a project's weekly summary from Leantime and post it as a project update: done, blocked, next week, milestones and hours.",
+    "checked": "3.17",
+    "glance": {
+      "minutes": 10,
+      "level": "Beginner",
+      "needs": [
+        "An AI assistant connected to Leantime",
+        "For the Friday schedule: Claude, with Leantime added as a connector",
+        "For everyone's logged hours: the Company Manager role or higher"
+      ],
+      "result": "A project update with the week's summary and a green, yellow or red status"
+    }
+  },
   "ai/coding-agent.md": {
     "plugin": {
       "name": "MCP Server",

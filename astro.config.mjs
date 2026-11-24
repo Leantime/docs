@@ -100,6 +100,7 @@ const AI_RECIPES = [
 	'ai/recipes|All recipes',
 	'ai/meeting-notes-to-todos|Meeting notes to to-dos',
 	'ai/standup-report|A standup report every morning',
+	'ai/weekly-summary|A weekly project summary',
 	'ai/coding-agent|To-dos for a coding agent',
 	'ai/emails-to-tasks|Emails to tasks',
 	'ai/project-for-someone-else|A project for a teammate',
