@@ -2,7 +2,7 @@
 
 Every to-do has a **Discussion** where your team talks about the work, so the conversation stays with the work it's about. This page shows how to comment, reply, @mention someone and react, and how to see what changed on a to-do in its **History**.
 
-![The Discussion of a to-do: a comment that @mentions Ben Ortiz, with a thumbs-up reaction, and a reply below it](../_images/using-leantime/comments-discussion.webp)
+![A to-do's discussion in Leantime: a comment that @mentions a teammate, with a thumbs-up reaction and a reply below it](../_images/using-leantime/leantime-todo-comments-mentions.webp)
 
 ## Where can I comment?
 
