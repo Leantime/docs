@@ -60,6 +60,7 @@ BROKEN_LINK_FIXES = {
 RETIRED = {
     'getting-started/new-project.md': 'using-leantime/managing-projects.md',
     'using-leantime/research-boards.md': 'using-leantime/blueprints.md',
+    'knowledge-base/time-management.md': 'knowledge-base/agile.md',  # docs#136: only a heading
 }
 EXCLUDE_PREFIXES += list(RETIRED)
 BROKEN_LINK_FIXES.update(RETIRED)

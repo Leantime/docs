@@ -286,10 +286,12 @@ export default defineConfig({
 	// (/#/ai/keycloak-sso) reach these paths through legacyRedirect first.
 	redirects: {
 		'/ai/keycloak-sso': '/installation/keycloak-sso/',
-		// Old walkthroughs with Leantime 2.x screenshots, retired in docs#136: creating projects is on Projects,
-		// and the research board is the Blueprints templates (Lean Canvas, Project Value Canvas, Insights).
+		// Pages retired in docs#136. Old walkthroughs with Leantime 2.x screenshots: creating projects is on Projects,
+		// the research board is the Blueprints templates (Lean Canvas, Project Value Canvas, Insights), and
+		// time-management was only a heading ("Agile in Leantime").
 		'/getting-started/new-project': '/using-leantime/managing-projects/',
 		'/using-leantime/research-boards': '/using-leantime/blueprints/',
+		'/knowledge-base/time-management': '/knowledge-base/agile/',
 		// Old concept pages retired in docs#99; their topics live on these pages now.
 		'/knowledge-base/system-roles': '/using-leantime/user-management/',
 		'/knowledge-base/wheretostart': '/getting-started/get-started/',
