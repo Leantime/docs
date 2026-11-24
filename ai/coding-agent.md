@@ -88,7 +88,7 @@ Open the project's to-dos and look at **Waiting for Approval**, or ask your assi
 
 - **It's good:** merge the pull request, set the to-do to **Done**, and remove the `agent-done` tag.
 - **It needs changes:** add a comment saying what to change, and replace `agent-done` with `agent` again. The next time you start the agent, it reads your comment before it goes on.
-- **It asked a question** (`agent-question`): answer in a comment, and tag it `agent` again.
+- **It asked a question** (`agent-question`): answer in a comment, and replace `agent-question` with `agent`.
 
 ## Good to know
 

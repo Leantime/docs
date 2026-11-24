@@ -6,6 +6,7 @@ Your AI assistant can write the standup for a project from what's in Leantime: w
 
 - **Time:** a minute to ask; about 10 minutes to set up the morning schedule
 - **You need:** an AI assistant connected to Leantime (see [Connect your assistant](ai/recipes.md#connect-your-assistant)); for the schedule, Claude with Leantime added as a connector
+- **For the hours:** the Company Manager role or higher, to see everyone's time (see [Who can log and see time?](using-leantime/timesheets.md#who-can-log-and-see-time))
 - **At the end:** a short report per project, in your chat or as a project update every morning
 
 ## Ask when you need it
@@ -85,7 +86,7 @@ If a to-do appears that wasn't finished recently, ask the assistant to leave it 
 ## Tips
 
 - **Keep blocked to-dos explained.** The report can only say why something is blocked if someone wrote it in a comment. A rule like "when you set a to-do to Blocked, add a comment" makes the report much more useful.
-- **Time needs logging.** The hours come from the project's timesheets (see [Time tracking](using-leantime/timesheets.md)). Time nobody logged doesn't show.
+- **Time needs logging, and the right role.** The hours come from the project's timesheets (see [Time tracking](using-leantime/timesheets.md)). Time nobody logged doesn't show. Seeing everyone's time needs the Company Manager role or higher. As an Editor, leave out "with the hours logged on them" and the Time line, or ask only for your own hours.
 - **Statuses differ per project.** If your project uses other names, like "Review" instead of "Waiting for Approval", use them in the request.
 - **Formatting:** ask for "paragraphs and bulleted lists" in a project update. Line breaks in plain text can run together into one paragraph in Leantime.
 
