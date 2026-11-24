@@ -144,8 +144,9 @@
 .sl-markdown-content :is(p, li) > img {
 	margin-block: 0.75rem;
 }
-/* Phone screenshots (the mobile app pages): phone width, not full column width, so a page with several stays readable. */
-.sl-markdown-content img[src*='/mobile-'] {
+/* Phone screenshots (the mobile app pages): phone width, not full column width, so a page with several stays readable.
+   leantime-mobile-app-* is the name since docs#134; /mobile-* is the old one, still on master until it merges. */
+.sl-markdown-content :is(img[src*='/leantime-mobile-app-'], img[src*='/mobile-']) {
 	max-width: min(100%, 360px);
 }
 .sl-markdown-content :is(td, th) {
