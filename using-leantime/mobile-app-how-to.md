@@ -106,7 +106,7 @@ This needs Leantime 3.17 or later, which has built-in reminders. On an older ser
 
 Open the task, tap **⋮** at the top right, then **Remind me**. The task needs a due date first: without one, the app says **Add a due date to get reminders.** Choose when:
 
-- **The day before and the morning it's due** (the default)
+- **The day before and the morning it's due**: the default, until you choose another under **How often tasks remind you** (see [How do reminders work?](using-leantime/mobile-app.md#how-do-reminders-work))
 - **Every morning until it's due**
 - **Only the morning it's due**
 - **Don't remind me**
