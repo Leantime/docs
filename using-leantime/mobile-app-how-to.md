@@ -10,7 +10,7 @@ The app has five tabs at the bottom: **Today**, **Tasks**, **Now**, **Notes** an
 
 Open **Today**. At the top, a bar runs from a sun to a moon across your day, split into **morning** (until noon), **afternoon** (until 6 pm) and **evening**. The white dot is now. The bar's color follows the sun: yellow in the morning, orange in the afternoon, pink at sunset and violet at night. It's there for time blindness: one glance tells you how much of the day has passed, without reading a clock. If you've set an evening plan-tomorrow reminder, a small amber tick marks it.
 
-![The Today tab: the day bar in the evening, Today's must-do with its Resume button, the schedule, Quick Wins and what's due today](../_images/using-leantime/mobile-today-must-do.webp)
+![The Leantime mobile app's Today tab: today's must-do with Resume, the schedule, Quick Wins and what's due today](../_images/using-leantime/leantime-mobile-app-today-must-do.webp)
 
 Below it, Today shows:
 
@@ -33,7 +33,7 @@ To change the order or hide sections, tap the gear at the top right (**Customize
 
 Tap **Choose today's must-do** on Today. The app asks **What's your one thing today?**: the must-do that moves your work forward.
 
-![What's your one thing today?, with three to-dos due today, and Choose from all tasks, Add a new task and See everything coming up below](../_images/using-leantime/mobile-one-thing.webp)
+![What's your one thing today? Three to-dos due today, and buttons to choose another, add a task or see what's coming up](../_images/using-leantime/leantime-mobile-app-one-thing.webp)
 
 1. Pick one of the suggestions. The app offers up to three, from what's due today, what you were working on, what's coming up and what's been waiting. If yesterday's one thing is still open, it comes first.
 2. Or, under **Something else?**, use **Choose from all tasks** or **Add a new task**. With Leantime 3.17 or later, **See everything coming up** shows the days ahead first.
@@ -50,13 +50,13 @@ The first time you confirm, if your phone doesn't allow Leantime notifications y
 3. Optional: **Priority**, **Effort** (a T-shirt size from XS to XL), **Due Date** and a **Description**. The task is assigned to you; pick a project first to assign it to someone else.
 4. Tap **Create Task**.
 
-![The New Task screen: Task Title, Project, Assignee, Priority, Effort and Due Date](../_images/using-leantime/mobile-new-task.webp)
+![The app's New Task screen: title, project, assignee, priority, effort and due date](../_images/using-leantime/leantime-mobile-app-new-todo.webp)
 
 ## How do I update or finish a task?
 
 Tap the task to open it.
 
-![A task: High priority and XL effort at the top, Status with the Done button, and Details with Due Date, Milestone, Assignee and Collaborators](../_images/using-leantime/mobile-task.webp)
+![A to-do in the app: priority and effort, the Done button, and its due date, milestone, assignee and collaborators](../_images/using-leantime/leantime-mobile-app-todo-details.webp)
 
 - **Finish it:** tap **Done**. Tap it again to reopen the task.
 - **Change the status:** tap the status, for example **In Progress**, and pick another one from your project's statuses.
@@ -82,7 +82,7 @@ There are three ways, and they all end up in your Leantime timesheet.
 
 **Start Work on a task.** Open the task and tap **Start Work** (under **Time Logged**). The **Now** tab opens on **Track** with that task, and the clock runs. A task that's still **New** moves to **In Progress** (switch this off under **Settings → Auto-Promote on Start Work**). Tap the timer to pause or resume. When you're done, tap **Stop & log** to log the time to the task.
 
-![Now, on the Track tab: Track Your Work, a timer at 00:00 to tap to start, and the task Draft the launch announcement below it](../_images/using-leantime/mobile-track.webp)
+![The app's Track tab: a timer at 00:00 to tap to start, and the to-do it tracks](../_images/using-leantime/leantime-mobile-app-track-time.webp)
 
 **Use the Now tab.** **Now** has three modes at the top:
 
@@ -98,7 +98,7 @@ No connection? Logged time is kept on your phone and sent when Leantime can be r
 
 **You → Time** shows your week: hours per day, and today's entries, which you can delete. The arrows move between weeks; tap a day's bar to see that day's entries. **Punch In** asks which task you're working on and starts the clock; tap it again to punch out.
 
-![Time: this week's hours per day, Punch In, today's entries and Log Time](../_images/using-leantime/mobile-time.webp)
+![Time: this week's hours per day, Punch In, today's entries and Log Time](../_images/using-leantime/leantime-mobile-app-time-tracking.webp)
 
 ## How do I get reminded about a task?
 
@@ -111,7 +111,7 @@ Open the task, tap **⋮** at the top right, then **Remind me**. The task needs 
 - **Only the morning it's due**
 - **Don't remind me**
 
-![The Remind me menu on a task: The day before and the morning it's due (Your default), Every morning until it's due, Only the morning it's due, and Don't remind me](../_images/using-leantime/mobile-remind-me.webp)
+![The app's Remind me menu on a to-do: your default, every morning until it's due, only the morning it's due, or don't remind me](../_images/using-leantime/leantime-mobile-app-remind-me.webp)
 
 Reminders arrive in your **morning summary**: what's coming up, once a day by push, email and in your inbox. To see the whole summary, open **Coming up**, from **See everything coming up** on the one-thing screen or from the summary at the top of your **Inbox**. It lists what's due today, tomorrow, later this week and later, from tasks and milestones to projects. Tap a task to open it. **Change in Settings** at the bottom sets when the summary arrives (see [How do reminders work?](using-leantime/mobile-app.md#how-do-reminders-work)).
 
@@ -119,7 +119,7 @@ Reminders arrive in your **morning summary**: what's coming up, once a day by pu
 
 On Today, tap the question in the **Tomorrow** section, like **What will you work on tomorrow?** (or **Plan more for tomorrow** when tomorrow already has tasks). The app suggests a few tasks; tick the ones you want to work on tomorrow, or tap **New task for tomorrow**. **Show all … tasks** and the magnifier find others. Tap **Add … to tomorrow** at the bottom: the tasks you picked move to tomorrow's date.
 
-![Plan Tomorrow: a short list of suggested to-dos to move to tomorrow](../_images/using-leantime/mobile-plan-tomorrow.webp)
+![Plan Tomorrow: a short list of suggested to-dos to move to tomorrow](../_images/using-leantime/leantime-mobile-app-plan-tomorrow.webp)
 
 ## How do I take a note?
 

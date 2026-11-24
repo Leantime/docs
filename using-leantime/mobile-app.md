@@ -4,7 +4,7 @@ Leantime Mobile is the free app for iPhone and Android that connects to the Lean
 
 The app is for your own day, not for setting up projects: see what's due, plan tomorrow, focus on one to-do, track time and keep notes. Project setup and administration stay in the browser.
 
-![The app's first screen, Welcome to Leantime: a Leantime Cloud card, a Your own server card, and Explore the demo](../_images/using-leantime/mobile-welcome.webp)
+![The Leantime mobile app's first screen, Welcome to Leantime: Leantime Cloud, Your own server, and Explore the demo](../_images/using-leantime/leantime-mobile-app-welcome.webp)
 
 ## How do I get the Leantime mobile app?
 
@@ -22,7 +22,7 @@ The app is for phones; tablet layouts come later. It's free. On Leantime Cloud i
 3. **Sign in** with the email and password you use in the browser. The workspace you're signing in to is shown at the top, with **Change** if it's the wrong one.
 4. **Enter your code** if your account uses two-factor authentication. Codes change every 30 seconds, so use the current one.
 
-![The Leantime Cloud screen: Workspace name ending in .leantime.io, Continue, and My team runs its own server](../_images/using-leantime/mobile-cloud.webp)
+![The Leantime Cloud screen: Workspace name ending in .leantime.io, Continue, and My team runs its own server](../_images/using-leantime/leantime-mobile-app-cloud-sign-in.webp)
 
 If the app says there's no workspace at that address, check the spelling. Your workspace name is in your invite email, and in the address bar when you use Leantime in a browser: it's the part before `.leantime.io`.
 
@@ -39,7 +39,7 @@ Then, in the app:
 3. **Sign in** with your Leantime email and password, or with your company login (see the next section).
 4. **Enter your code** if your account uses two-factor authentication.
 
-![The Your own server screen: Server address, Continue, and My address ends in .leantime.io](../_images/using-leantime/mobile-own-server.webp)
+![The Your own server screen: Server address, Continue, and My address ends in .leantime.io](../_images/using-leantime/leantime-mobile-app-self-hosted.webp)
 
 Typed your own server's address on the Cloud screen? The app notices: it says **This is your own server's address** and offers **Connect to your own server**. Each screen also links to the other one: **My team runs its own server** and **My address ends in .leantime.io**.
 
@@ -59,7 +59,7 @@ No button for your company login? Ask your administrator: what the server needs 
 
 For step-by-step help with each of these, see [Everyday tasks in the Leantime app](using-leantime/mobile-app-how-to.md).
 
-![The Today tab: Choose today's must-do, the task you last worked on with Resume, the schedule, Quick Wins and what's due today](../_images/using-leantime/mobile-today.webp)
+![The Today tab: Choose today's must-do, the task you last worked on with Resume, the schedule, Quick Wins and what's due today](../_images/using-leantime/leantime-mobile-app-today.webp)
 
 - **Today:** what's due, what you worked on last, quick wins and your schedule for the day.
 - **Tasks:** your to-dos from every project. Add, update and finish them, and log time.
@@ -68,7 +68,7 @@ For step-by-step help with each of these, see [Everyday tasks in the Leantime ap
 - **You:** your calendar, timesheet, inbox and settings, and **Progress**: swipe between **Present** (where you stand right now), **This week** and **This month** (what you closed and helped with). Progress is only in the app and is just for you.
 - **Plan tomorrow:** pick a few to-dos for the next day. They move to tomorrow's date.
 
-![Plan Tomorrow: a short list of suggested to-dos to move to tomorrow](../_images/using-leantime/mobile-plan-tomorrow.webp)
+![Plan Tomorrow: a short list of suggested to-dos to move to tomorrow](../_images/using-leantime/leantime-mobile-app-plan-tomorrow.webp)
 
 What you can change follows your [role](using-leantime/user-management.md) in the workspace:
 
@@ -80,7 +80,7 @@ What you can change follows your [role](using-leantime/user-management.md) in th
 
 If the app says your role can't do something, ask your workspace administrator.
 
-![The Now tab: the focus timer set to 25 minutes, with the presets and the to-do it logs time to](../_images/using-leantime/mobile-now-timer.webp)
+![The Now tab: the focus timer set to 25 minutes, with the presets and the to-do it logs time to](../_images/using-leantime/leantime-mobile-app-focus-timer.webp)
 
 ## Can I get notifications on my phone?
 
