@@ -2,7 +2,7 @@
 
 Search finds to-dos, projects, docs, ideas, goals, Blueprint cards, comments, files and people across every project you can see. It's the box at the top of every page.
 
-![The search results page for "checkout": to-dos, projects and docs grouped by type, with the Filter panel open showing Project, Changed after, Changed before and Only mine](../_images/using-leantime/search-results.webp)
+![Leantime's search results for checkout: to-dos, projects and docs grouped by type, and the Filter panel with project, dates and Only mine](../_images/using-leantime/leantime-search-results.webp)
 
 ## How do I search?
 
