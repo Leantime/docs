@@ -11,7 +11,7 @@ plugin:
 
 The Pomodoro plugin puts a focus timer on the My Work dashboard: work on one thing for 25 minutes, then take a short break. It can log the time to the to-do you're working on.
 
-![The Pomodoro Timer box on the My Work dashboard: 25:00, Pomodoro (25min) chosen, the play and reset buttons, and "Drop a task here to start timer" outlined](/_images/plugins/pomodoro-widget.webp)
+![The Pomodoro Timer on Leantime's My Work dashboard: 25:00, the play and reset buttons, and a drop zone to start the timer on a task](/_images/plugins/leantime-pomodoro-timer-widget.webp)
 
 ## What does it add?
 

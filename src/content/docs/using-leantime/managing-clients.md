@@ -13,7 +13,7 @@ A client groups projects and the people who work on them. Agencies and consultan
 
 1. **Open Company** in the top menu, then **All Clients** under **Management** in the left menu.
 
-   ![The All Clients list with Example Co and Northwind Bakery, and the New Client button outlined](/_images/using-leantime/clients-list.webp)
+   ![Leantime's All Clients list with two clients, and the New Client button outlined](/_images/using-leantime/leantime-clients-list.webp)
 
 2. **Click New Client.**
 3. **Fill in the client's details.** Only **Name** is required. You can add an email, website, address and phone number.
@@ -35,7 +35,7 @@ To add someone to a client:
 2. **Click Add User** under **Users assigned to this client.** The new user form opens with the client already chosen.
 3. **Fill in the person's name, email and role, and click Invite User.** Leantime emails them a link to set their password.
 
-![A client's page, with its details on the left and the Add User button outlined above the list of users assigned to the client](/_images/using-leantime/clients-page.webp)
+![A client's page: its details, and Add User outlined above the users assigned to the client](/_images/using-leantime/leantime-client-details.webp)
 
 You can also change an existing user's client in **Company → User Management** (see [User Management](/using-leantime/user-management/)).
 

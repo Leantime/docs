@@ -8,7 +8,7 @@ head:
 
 To-Dos are the work in a project: each one has an owner, a status, a priority and a size, and can belong to a milestone. Open **To-Dos** in a project's menu to see them as a [Kanban](/knowledge-base/kanban/) board, a table or a list. Break bigger to-dos into subtasks, add collaborators who need to follow along, and group the board into swimlanes when it gets busy.
 
-![The To-Dos Kanban board of the Open the Eastside pantry project: columns New, Blocked, In Progress, Waiting for Approval and Done, with New outlined](/_images/using-leantime/todos-kanban.webp)
+![Leantime's to-dos Kanban board: columns New, Blocked, In Progress, Waiting for Approval and Done, with New outlined](/_images/using-leantime/leantime-todos-kanban-board.webp)
 
 ## How do I add a to-do in Leantime?
 
@@ -22,7 +22,7 @@ Adding to-dos needs the Editor role or higher.
 
 Click a to-do's title to open it. The **Details** tab holds everything about it:
 
-![A to-do's Details tab: the title, Status, Priority, Effort, Assigned to with Assign to me, Collaborators (outlined), Due Date, Tags and the description, with Organization (Type, Project, Milestone, Sprint, Related To) on the right](/_images/using-leantime/todos-details.webp)
+![A to-do's Details tab: status, priority, effort, assignee, collaborators (outlined), due date, tags and description](/_images/using-leantime/leantime-todo-details.webp)
 
 | Field | What it's for |
 | --- | --- |
@@ -53,7 +53,7 @@ If several people each do a separate part, give each part its own subtask and as
 1. **Open the to-do** and scroll to **Subtasks**.
 2. **Click Add Task,** type what needs doing, and click **Save**.
 
-![The Subtasks section of a to-do: Add Task (outlined), and two subtasks with their effort and status](/_images/using-leantime/todos-subtasks.webp)
+![A to-do's Subtasks section: Add Task (outlined), and two subtasks with their effort and status](/_images/using-leantime/leantime-todo-subtasks.webp)
 
 A subtask is a to-do of its own: it has its own assignee, status, effort and due date, and it inherits its parent's project, milestone and sprint. Change its status right in the list; open it to change the rest. On the Kanban board, subtasks are separate cards, with the parent's name above the title, and the parent's card shows how many subtasks it has.
 
@@ -71,7 +71,7 @@ Leantime links to-dos in one way: a subtask belongs to its parent (**Related To*
 
 Some work comes back on a schedule: restocking every Monday, a report at the end of every month, a check-in every two weeks. Set the to-do up to repeat once instead of adding it again each time.
 
-![The recurrence settings of the to-do "Restock the shelves" (outlined): Repeat every 1 Week(s) on Monday, Trigger Recurrence On Due Date, Create new task, and Repeat Task switched on. The link above reads "Repeats every week on Monday".](/_images/plugins/recurring-todos.webp)
+![Recurring to-do settings: repeat every week on Monday, triggered on the due date, creating a new task each time](/_images/plugins/leantime-recurring-tasks-settings.webp)
 
 Repeating to-dos come with the Recurring Tasks plugin. On Leantime Cloud it's already on; on your own server, see [Recurring to-dos](/plugins/recurring-todos/) to install it.
 
@@ -123,7 +123,7 @@ The timeline isn't here: it's under **Milestones** in the project menu, where **
 
 Swimlanes split the Kanban board into rows, so a busy board is easier to scan. Click **Group By** and choose what each row stands for:
 
-![The Kanban board grouped by priority: a Critical row with its to-do in the Blocked column, and the High row below, with Group By outlined](/_images/using-leantime/todos-swimlanes.webp)
+![Kanban swimlanes grouped by priority: a Critical row and a High row, with Group By outlined](/_images/using-leantime/leantime-kanban-swimlanes.webp)
 
 - **Priority**, **Effort**, **Type** or **Milestone**
 - **User:** one row per assignee
@@ -137,7 +137,7 @@ Click a row's name to collapse it. **Add To-Do** inside a row fills in that row'
 
 Click **Filter** and choose a **User**, **Milestone**, **Type**, **Priority** or **Status**, or type a **Search Term**, then click **Search**. The number on the button shows how many filters are on. **Not Done** under Status hides finished work.
 
-![The Filter panel: User, Milestone, Type, Priority, Status and Search Term, with the Search button](/_images/using-leantime/todos-filter.webp)
+![The to-dos Filter panel: User, Milestone, Type, Priority, Status and Search Term, with the Search button](/_images/using-leantime/leantime-todos-filter.webp)
 
 To find a to-do in any project, use the search box at the top of every page.
 
@@ -147,7 +147,7 @@ Every project starts with **New**, **Blocked**, **In Progress**, **Waiting for A
 
 To rename, add, reorder or hide statuses, open **Project Settings → To-Do Status Settings**. For each status you set its label, color, whether it shows on the Kanban board, and how Reports count it (**Report As**: New, In Progress, Done, or not at all). A to-do in a status reported as Done counts as finished in Reports and milestone progress. If you move it there while your timer runs on it, your timer stops; other people's timers keep running. **Archived** can't be renamed or removed. You need the Manager role or higher.
 
-![Project Settings, To-Do Status Settings (outlined): each status with its sort position, label, color, Report As and Show on Kanban Board](/_images/using-leantime/todos-statuses.webp)
+![To-Do Status Settings (outlined): each status with its position, label, color, Report As and Show on Kanban Board](/_images/using-leantime/leantime-todo-status-settings.webp)
 
 The **⋮** menu on a Kanban column has the same options for that column: **Edit Label** and **Add/Remove Columns**.
 
@@ -179,6 +179,10 @@ Sprints are optional. Use the menu next to **To-Dos** at the top of the page to 
 | Manager and above | Also change the project's statuses |
 
 See [User Management](/using-leantime/user-management/) for the roles.
+
+## Can an AI assistant create and update to-dos?
+
+Yes. Connected to Leantime, an assistant like Claude can turn meeting notes into assigned to-dos, report on what's done and blocked, or work through the to-dos you tag for it. See [Things your AI assistant can do in Leantime](/ai/recipes/), for example [Turn meeting notes into to-dos](/ai/meeting-notes-to-todos/) and [Hand to-dos to a coding agent](/ai/coding-agent/).
 
 ## Related
 

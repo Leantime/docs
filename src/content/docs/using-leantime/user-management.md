@@ -8,7 +8,7 @@ head:
 
 Everyone who works in Leantime has a user account with a role. The role decides what they can do: look, comment, change things, or run the projects and the company. On each project you choose who's on the team, and you can give someone a different role there.
 
-![The Users page under Company → User Management: four people with their email, role, status and two-factor authentication, and the Add User button outlined](/_images/using-leantime/users-list.webp)
+![Leantime's User Management page: four people with their email, role, status and two-factor authentication, and Add User outlined](/_images/using-leantime/leantime-user-management.webp)
 
 ## How do I add someone to Leantime?
 
@@ -32,7 +32,7 @@ User Management needs the Administrator role or higher. A Company Manager can in
 
 Someone who isn't in Leantime yet? Click **Create new user** on the same tab to invite them, or **Invite User** in the **Team** box on the project's dashboard.
 
-![The Team tab of the Open the Eastside pantry project: Ada, Ben, Chloe and Dev under Current Team Members, with Ben's project role (Editor) outlined, and Create new user](/_images/using-leantime/users-team.webp)
+![A project's Team tab: four team members, with one person's project role (Editor) outlined](/_images/using-leantime/leantime-project-team-roles.webp)
 
 Changing a project's team needs the Company Manager role or higher.
 
@@ -82,7 +82,7 @@ Weekly hours tell Leantime how much time someone has to plan with. You set them 
    - **Volunteer:** the hours they can give, as best they can.
 4. **Click Save.**
 
-![Chloe's user page under Company → User Management, with the Capacity section outlined: Weekly hours 24 and Employment type Part-time](/_images/using-leantime/users-capacity.webp)
+![A user's Capacity section (outlined): 24 weekly hours, part-time](/_images/using-leantime/leantime-user-capacity.webp)
 
 Both fields are optional and start empty. Only people who can edit users see them: the Administrator role or higher.
 

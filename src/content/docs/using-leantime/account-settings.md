@@ -13,7 +13,7 @@ Account Settings is where you change your own details: your name, email and phot
 
 Click your profile picture (or your initials) at the top right, then **My Profile**. **Account Settings** opens. The same menu also goes straight to **Theme**, **Background** and **Settings**, and has **Sign Out**.
 
-![The menu under the profile picture at the top right, outlined: My Profile, Theme, Background, Settings, Support Leantime and Sign Out](/_images/using-leantime/account-menu.webp)
+![Leantime's account menu under the profile picture: My Profile, Theme, Background, Settings, Support Leantime and Sign Out](/_images/using-leantime/leantime-account-menu.webp)
 
 | Tab | What you change there |
 | --- | --- |
@@ -30,7 +30,7 @@ Click your profile picture (or your initials) at the top right, then **My Profil
 
 Open the **Profile information** tab.
 
-![The Profile information tab: First name, Last name, Email and Phone with Save, the photo with Upload and Select File on the right, and Employee Information below](/_images/using-leantime/account-profile.webp)
+![The Profile information tab: name, email and phone, the profile photo upload, and Employee Information](/_images/using-leantime/leantime-account-profile.webp)
 
 - **Name, email and phone:** change them and click **Save**. Your email is also what you sign in with, so use the new address the next time you sign in. Each email can belong to only one person in Leantime.
 - **Photo:** on the right, click **Select File** and choose a JPG, PNG, GIF or WebP picture. Move and zoom it until it fits the circle, then click **Save** under it.
@@ -93,7 +93,7 @@ Open the **Theme** tab, choose and click **Save**:
 - **Font:** **Roboto**, **Atkinson Hyperlegible** (made to be easy to read, with letters that are hard to mix up) or **Shantell Sans** (a friendly, handwritten look).
 - **Color Scheme:** Leantime's colors, your company's colors (**Company Colors**), or one of 13 other schemes.
 
-![The Theme tab: Optimal Stimulation with Less and More, Color Mode with Light and Dark, and Font with Roboto, Atkinson Hyperlegible and Shantell Sans](/_images/using-leantime/account-theme.webp)
+![The Theme tab: Less or More, light or dark mode, and the fonts Roboto, Atkinson Hyperlegible and Shantell Sans](/_images/using-leantime/leantime-theme-dark-mode-settings.webp)
 
 To change what's behind your pages, open the **Background** tab. Choose the **Color gradient** of your color scheme, or upload a picture (JPG, PNG, GIF or WebP).
 

@@ -13,7 +13,7 @@ A strategy is what your organization is working toward over the next year or mor
 
 Use it when several projects serve the same bigger aim, and you want to see whether that aim is moving. For one project on its own, [project goals](/using-leantime/goals/) are enough.
 
-![The Strategy Overview of "Feed more families in Riverside": a card for each focus area (Customer, Financial, Internal Processes, Learning & Growth) with its goals, and the Community Pantries program under the strategy's programs and projects. The goal "Serve more families every week" is outlined.](/_images/plugins/strategy-overview.webp)
+![Leantime's Strategy Overview: a card per focus area (Customer, Financial, Internal Processes, Learning & Growth) with goals, and its programs](/_images/plugins/leantime-strategy-overview.webp)
 
 Strategies come with the [Strategy Pro](/plugins/strategy-pro/) plugin. On Leantime Cloud it's already on; on your own server, see [Strategy Pro](/plugins/strategy-pro/) to install it.
 
@@ -38,7 +38,7 @@ Focus areas are the big themes your strategy works on. Every new strategy starts
 - **To add one,** choose **Create Focus Area** in that same list.
 - **To say why it matters,** click **Edit** on the focus area. A sentence or two helps everyone see why it's worth the effort.
 
-![The Goals & Outcomes page for the Customer focus area, with the focus area list open (outlined): Create Focus Area, Customer, Financial, Internal Processes and Learning & Growth](/_images/plugins/strategy-focus-areas.webp)
+![A strategy's Goals & Outcomes page, with the focus area list open (outlined) and Create Focus Area](/_images/plugins/leantime-strategy-focus-areas.webp)
 
 ## How do I add a goal to my strategy?
 

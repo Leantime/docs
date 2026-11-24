@@ -40,7 +40,7 @@ To see the to-dos of one milestone, use **Filter → Milestone** on the To-Dos p
 - **Table:** the milestones in a list, with their status, owner, dependency, dates and progress, and their planned, remaining and logged hours.
 - **Calendar:** the milestones on a month calendar.
 
-![The Milestones timeline of the Open the Eastside pantry project: Site agreed, Volunteers trained and Pantry open as bars, with an arrow from Volunteers trained to Pantry open, and the New button outlined](/_images/using-leantime/milestones-timeline.webp)
+![Leantime's milestones Gantt timeline: three milestones as bars, a dependency arrow between two, and the New button outlined](/_images/using-leantime/leantime-milestones-gantt-timeline.webp)
 
 On the timeline, drag the ends of a bar to change its dates, or drag the bar to move it. Leantime saves the new dates right away. To show the to-dos on the timeline too, switch on **Show Tasks** under **Filter**.
 
@@ -52,7 +52,7 @@ A [program](/using-leantime/programs/#how-do-i-see-all-of-the-programs-work)'s *
 
 **Depends On** says that this milestone waits for another one. On the timeline, an arrow goes from the first milestone to the one that depends on it.
 
-![The milestone window for Pantry open, with Depends On set to Volunteers trained outlined](/_images/using-leantime/milestones-edit.webp)
+![A milestone's Depends On setting (outlined), set to the milestone before it](/_images/using-leantime/leantime-milestone-dependency.webp)
 
 It's a reminder, not a rule: Leantime doesn't stop you from planning a milestone before the one it depends on. Check the arrows when you move dates.
 

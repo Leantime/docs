@@ -8,7 +8,7 @@ head:
 
 An environment analysis looks at the world around your project: the trends and changes you don't control, but that can help or hurt it. Leantime's board uses the six areas of a PESTLE analysis.
 
-![The Environment Analysis board with cards under Political, Economic, Societal, Technological, Legal and Ecological; the card "The city is reviewing its food-aid grants", marked Threat and Stakeholders, is outlined](/_images/blueprints/environment.webp)
+![Leantime's Environment Analysis (PESTLE) board: cards under Political, Economic, Societal, Technological, Legal and Ecological](/_images/blueprints/leantime-pestle-environment-analysis.webp)
 
 To start one, open **Think → Blueprints** in the project and click **Environment Analysis** (see [Blueprints](/using-leantime/blueprints/)).
 

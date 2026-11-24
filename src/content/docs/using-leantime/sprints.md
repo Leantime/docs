@@ -19,7 +19,7 @@ Sprints are optional. Many teams work from one board without them. To decide whe
 4. Check **First Day** and **Last Day**. Leantime suggests today until two weeks from now.
 5. Click **Save**, then close the window.
 
-![The Sprint window: Sprint Name "Sprint 2: phones and photos", the Website Redesign project, First Day 12/06/2026, Last Day 12/19/2026, and the Save button outlined](/_images/using-leantime/sprint-create.webp)
+![Leantime's new sprint window: sprint name, project, first and last day, and Save outlined](/_images/using-leantime/leantime-sprint-new.webp)
 
 ## How do I switch between sprints and the backlog?
 
@@ -29,7 +29,7 @@ Click the name next to **To-Dos** at the top of the page. The menu has:
 - **Backlog:** the to-dos that aren't in any sprint.
 - **Each sprint,** with its dates.
 
-![The To-Dos board of Website Redesign showing Sprint 1: launch the checkout, with the menu open (outlined): Create Sprint, All To-Dos, Backlog, and Sprint 1 with its dates 11/22/2026 - 12/05/2026](/_images/using-leantime/sprint-menu.webp)
+![The To-Dos sprint menu (outlined): Create Sprint, All To-Dos, Backlog, and the current sprint with its dates](/_images/using-leantime/leantime-sprint-menu.webp)
 
 Your choice applies to the Kanban, Table and List views, and Leantime keeps it while you move around. The number of to-dos in the view shows at the top right.
 
@@ -39,7 +39,7 @@ Your choice applies to the Kanban, Table and List views, and Leantime keeps it w
 - **Use the Table view.** Click **Table**, then the **Sprint** of a to-do, and choose the sprint. This is the quickest way to move several to-dos from the backlog.
 - **Open the to-do** and choose a **Sprint**.
 
-![The Table view of All To-Dos: the Sprint column, with the menu of "Collect product photos" open (outlined), offering Not assigned to a sprint and Sprint 1: launch the checkout](/_images/using-leantime/sprint-table.webp)
+![The to-dos table's Sprint column, with one to-do's sprint menu open (outlined)](/_images/using-leantime/leantime-sprint-todos-table.webp)
 
 To take a to-do out of a sprint, choose **Not assigned to a sprint**. It goes back to the backlog.
 

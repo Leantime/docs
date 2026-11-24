@@ -5,7 +5,7 @@ description: "Collect, discuss and track ideas in Leantime with the Idea Wall an
 
 Good ideas turn up in the middle of other work and get lost. The Ideas board in each project gives them a place: write them down, talk them over, and move the promising ones forward until they become real work.
 
-![The Ideas board of Open the Eastside pantry in Kanban view: ideas in New Idea, Discovery, Delivering and Accepted, with Add Idea outlined](/_images/using-leantime/ideas-kanban.webp)
+![Leantime's Ideas board in Kanban view: ideas in New Idea, Discovery, Delivering and Accepted, with Add Idea outlined](/_images/using-leantime/leantime-ideas-kanban-board.webp)
 
 ## How do I add an idea?
 

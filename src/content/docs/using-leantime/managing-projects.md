@@ -13,7 +13,7 @@ A project holds your to-dos, [milestones](/using-leantime/roadmap-planning/), [g
 
 1. **Open the Projects menu** at the top of the screen and click **Start something new**.
 
-   ![The Projects menu open, with "Start something new" outlined under "Open Project Hub"](/_images/using-leantime/projects-menu.webp)
+   ![Leantime's Projects menu, with Start something new outlined under Open Project Hub](/_images/using-leantime/leantime-projects-menu.webp)
 
 2. **Type the project's name** in the title field.
 3. **Describe what the project is for** in the box below it. Everyone on the project sees this on the Project Overview, so a sentence or two about the goal helps.
@@ -21,7 +21,7 @@ A project holds your to-dos, [milestones](/using-leantime/roadmap-planning/), [g
 5. **Choose who can access the project** (see [Who can see a project?](#who-can-see-a-project-in-leantime)).
 6. **Click Save.**
 
-   ![The New Project form, with the project name "Customer Portal" outlined](/_images/using-leantime/projects-new.webp)
+   ![The New Project form, with the project name outlined](/_images/using-leantime/leantime-project-new.webp)
 
 Leantime opens the project's settings next, so you can add your team.
 
@@ -45,7 +45,7 @@ Administrators and Owners can always see every project.
 4. **Choose each person's role for this project.** **Inherit** gives them the role they have everywhere in Leantime. To change it for this project only, pick **Read Only**, **Commenter**, **Editor** or **Manager**.
 5. **Click Save.**
 
-![The Team tab, with Ada, Chloe and Ben as team members and Ben's project role outlined](/_images/using-leantime/projects-team.webp)
+![A project's Team tab: three team members, with one person's project role outlined](/_images/using-leantime/leantime-project-team.webp)
 
 Administrators and Owners keep their role in every project, so they don't have a role menu here. To invite someone who doesn't have an account yet, click **Create new user** (see [User Management](/using-leantime/user-management/)).
 
@@ -57,7 +57,7 @@ Each project can hide the features it doesn't use, so the menu only shows what t
 2. **Switch features on or off:** Goals, Ideas, Blueprints, Docs, Files, Reports and Time tracking.
 3. **Click Save.**
 
-![The Modules tab, with switches for Goals, Ideas, Blueprints, Docs, Files, Reports and Time tracking, and Time tracking outlined](/_images/using-leantime/projects-modules.webp)
+![A project's Modules tab: switches for Goals, Ideas, Blueprints, Docs, Files, Reports and Time tracking](/_images/using-leantime/leantime-project-modules.webp)
 
 A switched-off feature is hidden for everyone in the project, whatever their role. Nothing is deleted: its content comes back when you switch it on again.
 
@@ -76,7 +76,7 @@ Every project has its own list of statuses, the columns you see on the to-do boa
 3. **Set Report As** for each status: **New**, **In Progress**, **Done** or **Don't Include in Reports**. This decides how to-dos in that status count in progress bars and reports.
 4. **To add a status,** click **Add Status** at the bottom. Then click **Save**.
 
-![The To-Do Status Settings tab, with the "Report As" setting of the first status outlined](/_images/using-leantime/projects-statuses.webp)
+![The To-Do Status Settings tab, with the first status's Report As setting outlined](/_images/using-leantime/leantime-project-todo-statuses.webp)
 
 The **Archived** status can't be renamed or removed.
 
@@ -92,7 +92,7 @@ The **Archived** status can't be renamed or removed.
 
 The Projects menu is a list of names. That works when you know which project you want. A long list can be hard to scan, though, and it doesn't tell you how anything is going. The Project Hub shows the same projects as cards, with the ones you care about first and enough on each card to see where things stand without opening the project.
 
-![The Project Hub, with Website Redesign under My Favorites showing 20% progress and On Track, its star outlined, and the other projects below under All Assigned Projects](/_images/using-leantime/projects-hub.webp)
+![The Project Hub: a favorite project with 20% progress and On Track, its star outlined, and all assigned projects below](/_images/using-leantime/leantime-project-hub.webp)
 
 Open it from **My Work → Project Hub**. Each card shows:
 
@@ -109,12 +109,12 @@ Open it from **My Work → Project Hub**. Each card shows:
 
 The Project Overview is each project's start page. You get there by picking the project in the Projects menu.
 
-![The Project Overview of Website Redesign: checklist, background, latest to-dos, project updates, progress and milestones](/_images/using-leantime/projects-overview.webp)
+![A Project Overview: checklist, background, latest to-dos, project updates, progress and milestones](/_images/using-leantime/leantime-project-overview.webp)
 
 - **Project Checklist:** suggested steps to set up the project well.
 - **Background:** the description from the project's settings.
 - **Latest To-Dos**, with **Create To-Do** to add one.
-- **Project Updates:** short status notes for the team. Click **Update Status** to post one.
+- **Project Updates:** short status notes for the team. Click **Update Status** to post one. An AI assistant can post them too, like [a standup report every morning](/ai/standup-report/).
 - **Project Progress** and **Milestones:** how much is done.
 
 ## How do I copy or duplicate a project in Leantime?
@@ -126,7 +126,7 @@ Copying is useful when you run the same kind of project again, like a yearly eve
 3. **Optional: switch on Assign the same users** to add the same team, with the same project roles.
 4. **Click Duplicate.**
 
-![The Duplicate Project dialog with New Project Name, Planned Start Date, Client / Product and "Assign the same users"](/_images/using-leantime/projects-copy.webp)
+![The Duplicate Project dialog: new name, planned start date, client, and Assign the same users](/_images/using-leantime/leantime-project-duplicate.webp)
 
 The copy gets the project's to-dos and milestones, its Ideas, Goals, Blueprints and Docs, its to-do statuses and its module switches. Dates move so that the copy starts on the new start date. Comments, files and logged time aren't copied.
 

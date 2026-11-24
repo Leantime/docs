@@ -37,7 +37,7 @@ To check your version, click the **?** (help) icon at the top right of Leantime;
 
 ## How does my team sign in?
 
-Once Advanced Authentication is enabled, people choose **Self-Hosted** in the app, enter the address they use in the browser, and sign in. The steps for them are on [Leantime on your phone](/using-leantime/mobile-app/#how-do-i-connect-the-app-to-my-self-hosted-leantime).
+Once Advanced Authentication is enabled, people tap **Your own server** in the app, enter the address they use in the browser, and sign in. The steps for them are on [Leantime on your phone](/using-leantime/mobile-app/#how-do-i-connect-the-app-to-my-self-hosted-leantime).
 
 They can sign in with their Leantime email and password, or with a company login:
 

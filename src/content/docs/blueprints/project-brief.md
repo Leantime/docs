@@ -8,7 +8,7 @@ head:
 
 A project brief is the one page everyone can agree on before work starts: what the project is, why it matters, who decides, and what it can spend. In Leantime it's a board, so each part can be discussed and accepted on its own.
 
-![The Project Brief board: Summary and Mission at the top, then Responsible, Accountable, Consulted and Informed outlined, then High Level Budget and High Level Timeline](/_images/blueprints/brief.webp)
+![Leantime's Project Brief board: Summary and Mission, the RACI boxes (Responsible, Accountable, Consulted, Informed), budget and timeline](/_images/blueprints/leantime-project-brief-raci.webp)
 
 To start one, open **Think → Blueprints** in the project and click **Project Brief** (see [Blueprints](/using-leantime/blueprints/)).
 

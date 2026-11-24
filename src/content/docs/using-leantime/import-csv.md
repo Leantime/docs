@@ -4,14 +4,15 @@ description: "Move to-dos, projects, milestones, goals, ideas and users into Lea
 head:
   - tag: title
     content: "Import into Leantime from Jira, Trello, Asana or CSV"
+checked: "3.17"
 glance:
   minutes: 10
   maxMinutes: 30
   level: "Beginner"
   needs:
-    - "An administrator account in Leantime"
+    - "An Administrator or Owner account in Leantime"
     - "A CSV export from your old tool"
-    - "Your team and projects already in Leantime, if the file assigns to-dos to them"
+    - "Your team in Leantime and on its projects' teams, if the file assigns to-dos to them"
   where:
     - "Your old tool, to export the CSV"
     - "A spreadsheet app, to rename the columns"

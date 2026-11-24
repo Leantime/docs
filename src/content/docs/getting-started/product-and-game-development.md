@@ -25,7 +25,7 @@ For game studios, software and product teams, and startups: you build something,
 ## Where do ideas, feedback and playtest notes go?
 
 - **Ideas** holds feature ideas and player requests until you decide what goes into a release (see [Ideas](/using-leantime/idea-management/)).
-- **Research boards** keep what you learned from playtests and interviews (see [Research boards](/using-leantime/research-boards/)).
+- **Research boards** keep what you learned from playtests and interviews (see [Research boards](/using-leantime/blueprints/)).
 - **Blueprints** like the Lean Canvas or the Project Value Canvas help when you're working out who the product is for (see [Blueprints](/using-leantime/blueprints/)).
 
 ## How do I know if a release worked?

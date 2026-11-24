@@ -20,7 +20,7 @@ Take a food network that wants to feed more families:
 
 Strategies and programs come from the [Strategy Pro](/plugins/strategy-pro/) and [Programs](/plugins/programs/) plugins (Leantime Strategies and Program Plans on the marketplace) when you self-host, and are included in Leantime Cloud. A small team without them can start with one project per program and add the levels above later.
 
-![The Projects menu, My Projects tab: the strategy "Feed more families in Riverside", the program "Community Pantries" under it, and the project "Open the Eastside pantry" under that](/_images/getting-started/organize-structure.webp)
+![Leantime's Projects menu: a strategy, a program under it, and a project under the program](/_images/getting-started/leantime-strategy-program-project-structure.webp)
 
 ## How do I build a logic model in Leantime?
 

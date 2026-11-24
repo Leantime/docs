@@ -6,11 +6,12 @@ glance:
   level: "Advanced"
   needs:
     - "`docker`, `docker compose`, `make`, `composer` and `npm` installed"
+    - "PHP 8.2 or later on your computer, with the PHP extensions Leantime needs (`make run-dev` runs Composer there)"
     - "A copy (clone) of the Leantime repository"
   where:
     - "A terminal in the root of the Leantime repository"
     - "Your browser, to open Leantime and the test tools"
-  result: "A local Leantime for development, with its own MySQL database, a mail catcher (MailDev), phpMyAdmin and S3 test storage."
+  result: "A local Leantime for development, with its own MySQL database, a mail catcher (MailDev), Redis and S3 test storage."
 ---
 
 How to run Leantime from source to work on its code. To run Leantime for your team, use [Docker](/installation/docker/) or a [package installation](/installation/package-installation/) instead.

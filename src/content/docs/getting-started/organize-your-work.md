@@ -54,7 +54,7 @@ To put an existing project under a program or strategy, open its **Project Setti
 
 When you write a strategy, start with two questions: what are you trying to accomplish, and how will the world look different when you do? A new strategy comes with four focus areas to hang its goals on: Customer, Financial, Internal Processes, and Learning & Growth. Rename them or add your own.
 
-![The Projects menu, My Projects tab: the strategy "Feed more families in Riverside", the program "Community Pantries" under it, and the project "Open the Eastside pantry" under that](/_images/getting-started/organize-structure.webp)
+![Leantime's Projects menu: a strategy, a program under it, and a project under the program](/_images/getting-started/leantime-strategy-program-project-structure.webp)
 
 ## What's the difference between milestones, outcomes and goals in Leantime?
 

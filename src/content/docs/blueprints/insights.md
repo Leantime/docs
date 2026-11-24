@@ -10,7 +10,7 @@ The Observe / Learn - Insights board collects what you learn from the people you
 
 It fits the research steps of [design thinking](/knowledge-base/idea-development/): observe and listen first, then decide what to build.
 
-![The Observe / Learn - Insights board with cards under Ethnographic Observations, Ethnographic Interviews, Focus Groups and Secondary Research; the first observation card is outlined](/_images/blueprints/insights.webp)
+![Leantime's Insights board: cards under Ethnographic Observations, Interviews, Focus Groups and Secondary Research](/_images/blueprints/leantime-research-insights-board.webp)
 
 To start one, open **Think → Blueprints** in the project and click **Observe / Learn - Insights** (see [Blueprints](/using-leantime/blueprints/)).
 

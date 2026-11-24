@@ -11,7 +11,7 @@ plugin:
 
 Not everything belongs in a project yet: a question for the city, ideas for an opening day, a list of people to thank. The Notes plugin gives you a private place for them, next to your work in Leantime, so they don't end up on sticky notes or in another app.
 
-![The Notes page: three notes in the Quick Notes notebook on the left, "Ideas for the opening day" open on the right, and the notebook switcher (All Notes, 3) outlined](/_images/plugins/notes-page.webp)
+![Leantime's Notes page: three notes in the Quick Notes notebook, one open on the right, and the notebook switcher outlined](/_images/plugins/leantime-notes-notebooks.webp)
 
 Notes come with the [Notes](/plugins/notes/) plugin. On Leantime Cloud it's already on; on your own server, see [Notes](/plugins/notes/) to install it.
 
@@ -41,6 +41,7 @@ Only you. Notes and notebooks belong to the person who wrote them, and there's n
 ## Related
 
 - [Notes: install and set up](/plugins/notes/)
+- [Notes in the Leantime app](/using-leantime/mobile-app-how-to/#how-do-i-take-a-note)
 - [My Work Dashboard](/using-leantime/my-work-dashboard/)
 - [Docs](/using-leantime/docs/)
 - [Pomodoro timer](/using-leantime/my-work-dashboard/#how-do-i-use-the-pomodoro-timer)

@@ -272,7 +272,7 @@ Yes. Leantime Mobile is available for [iPhone](https://apps.apple.com/app/leanti
 
 It's the personal side of your workspace: **Today** shows what's worth your attention, **Plan tomorrow** sets a short list for the next day, **Now** is a focus timer that logs your time, and **Tasks** and **Notes** keep your to-dos and thoughts with your projects. You also get your calendar, timesheet, progress and notifications.
 
-To look around before you connect, tap **Try Demo Mode** on the app's first screen: it opens a sample workspace, with no account or server needed. In the EU, the iPhone app is in the [TestFlight beta](https://testflight.apple.com/join/nHF3AGwx) until it reaches the App Store there. See [Leantime on your phone](/using-leantime/mobile-app/) for setup, sign-in and troubleshooting.
+To look around before you connect, tap **Explore the demo** on the app's first screen: it opens a sample workspace, with no account or server needed. In the EU, the iPhone app is in the [TestFlight beta](https://testflight.apple.com/join/nHF3AGwx) until it reaches the App Store there. See [Leantime on your phone](/using-leantime/mobile-app/) for setup, sign-in and troubleshooting.
 
 ### Accessibility
 

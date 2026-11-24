@@ -11,7 +11,7 @@ plugin:
 
 The Custom Fields plugin lets you add your own fields to to-dos, for the details your team tracks that Leantime doesn't have a field for: a budget code, a cost estimate, which client contact asked for it.
 
-![A to-do's Custom Fields tab (outlined) with Food type set to Household items and Estimated cost ($) set to 850, and the Save Fields button](/_images/plugins/custom-fields-todo.webp)
+![A to-do's Custom Fields tab in Leantime, with a Food type choice and an Estimated cost of 850, and the Save Fields button](/_images/plugins/leantime-custom-fields-todo.webp)
 
 ## What does it add?
 

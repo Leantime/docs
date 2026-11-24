@@ -62,7 +62,7 @@ These steps are for the [Docker Compose setup](/installation/docker/). Your data
 
 4. Open Leantime in your browser. If the new version has database changes, you see **Update Database**. Select **Update Now!**
 
-   ![The Update Database page with the Update Now! button](/_images/installation/update-database.webp)
+   ![Leantime's Update Database page with the Update Now! button](/_images/installation/leantime-upgrade-update-database.webp)
 
 5. Sign in again.
 

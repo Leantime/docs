@@ -15,7 +15,7 @@ There are three ways to log time. They all end up in the same timesheets.
 1. **Open the to-do's ⋮ menu**, on its card or at the top right of the open to-do.
 2. **Click Start Work** under **Track Time**.
 
-![A to-do's ⋮ menu on the Kanban board, with Start Work under Track Time outlined](/_images/using-leantime/timesheets-start-work.webp)
+![Leantime time tracking: a to-do's menu on the Kanban board, with Start Work under Track Time outlined](/_images/using-leantime/leantime-time-tracking-start-work.webp)
 
 The timer shows at the top of the page, next to the menu, while it runs. When you're done, click it and choose **Stop Timer**, or choose **Stop Work** in the to-do's ⋮ menu. The time goes into your timesheet as **General, billable**.
 
@@ -32,7 +32,7 @@ Good to know:
 2. **Under Track Time,** choose the **Type** of work, the **Date** and the **Hours**, and add a **Description** if you like.
 3. **Click Save.**
 
-![The Time Tracking tab of a to-do: the Track Time form outlined, and a Logged Hours chart with 12 planned hours, 6 logged and 6 remaining](/_images/using-leantime/timesheets-todo.webp)
+![A to-do's Time Tracking tab: the Track Time form, and a chart of 12 planned hours, 6 logged and 6 remaining](/_images/using-leantime/leantime-time-tracking-todo.webp)
 
 **Logged Hours**, next to it, shows the time logged on this to-do against its plan: **Planned Hours**, **Logged Hours** and **Hours Remaining**. If the to-do has subtasks, it also shows the totals including them. Set the plan on the **Details** tab, in **Planned Hours / Hours Left**.
 
@@ -44,7 +44,7 @@ Good to know:
 4. **Type the hours** under each day.
 5. **Click Save.**
 
-![My Timesheets in Week View: three rows of logged hours for the week of November 9, with one row outlined, and an empty row at the bottom for new time](/_images/using-leantime/timesheets-my.webp)
+![My Timesheets in Week View: three rows of logged hours, one outlined, and an empty row for new time](/_images/using-leantime/leantime-timesheet-week-view.webp)
 
 Each row is one to-do and one type of work. To change hours, type over them and click **Save**.
 
@@ -67,7 +67,7 @@ The timer always logs **General, billable**. Change the type afterwards in **Lis
 
 **Company → All Timesheets** lists the time everyone has logged. It needs the Company Manager role or higher.
 
-![All Timesheets: entries from Ben, Chloe and Dev with their hours, planned hours, to-do, project, client, type and milestone, and the Filter and Export buttons outlined](/_images/using-leantime/timesheets-all.webp)
+![All Timesheets: everyone's entries with hours, to-do, project, client and milestone, and the Filter and Export buttons outlined](/_images/using-leantime/leantime-timesheets-all.webp)
 
 - **Filter** by client, project, to-do, dates, person, type, and whether the time is invoiced, approved or paid.
 - **Columns** shows or hides columns, like **Plan Hours**, **Difference**, **Milestone** and **Tags**.
@@ -93,6 +93,8 @@ Yes. In the project's **Project Settings**, open the **Modules** tab and switch 
 - In a [program](/using-leantime/programs/#how-do-i-plan-peoples-time-with-resources), the **Resources** page compares each person's booked hours with the time they've logged this week.
 
 With the Pomodoro plugin, you can also drop a to-do onto the Pomodoro timer on My Work: its play and pause buttons then start and stop this same timer (see [Can it log my time to a to-do?](/using-leantime/my-work-dashboard/#can-it-log-my-time-to-a-to-do)).
+
+On your phone, the Leantime app tracks time too: **Start Work** on a to-do, the **Now** timer, or **Log Time** (see [Everyday tasks in the Leantime app](/using-leantime/mobile-app-how-to/#how-do-i-track-my-time)). It's the same timesheet.
 
 ## Related
 

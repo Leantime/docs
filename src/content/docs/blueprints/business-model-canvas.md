@@ -10,7 +10,7 @@ The Business Model Canvas shows how an organization creates value, delivers it a
 
 The canvas is by Alexander Osterwalder and Yves Pigneur, published by Strategyzer. For an early idea you still need to test, the [Lean Canvas](/blueprints/lean-canvas/) is quicker.
 
-![The Business Model Canvas board: cards in Key Partners, Key Activities, Key Resources, Value Proposition, Customer Relationships and Channels, with Value Proposition outlined](/_images/blueprints/business-model.webp)
+![Leantime's Business Model Canvas: cards in Key Partners, Key Activities, Key Resources, Value Proposition, Customer Relationships and Channels](/_images/blueprints/leantime-business-model-canvas.webp)
 
 To start one, open **Think → Blueprints** in the project and click **Business Model Canvas** (see [Blueprints](/using-leantime/blueprints/)).
 

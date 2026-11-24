@@ -146,7 +146,7 @@ In every example, replace `https://your-leantime-url` with your Leantime address
 1. In Claude, open **Settings → Connectors** and click **Add custom connector**.
 2. Name it "Leantime" and paste `https://your-leantime-url/mcp`. Leave the OAuth client ID and secret fields empty.
 3. Click **Connect**. Leantime opens: sign in as usual (with two-factor or single sign-on if you use them).
-4. Check what Leantime asks, and click **Allow access**.
+4. Check what Leantime asks, and click **Allow access**. Leantime warns that it hasn't verified the app: that's expected (see [Why does Leantime say it hasn't verified the app?](#why-does-leantime-say-it-hasnt-verified-the-app)).
 
 You're back in Claude, and Leantime is connected. A connector you add on claude.ai or in Claude Desktop also shows up in the Claude phone apps.
 
@@ -154,7 +154,23 @@ You're back in Claude, and Leantime is connected. A connector you add on claude.
 
 1. In ChatGPT, add a custom MCP server or connector. Where to find this depends on your plan, and OpenAI changes the menus often: see [Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt). On some plans you first switch on **Developer mode**; on work plans, an admin may have to allow it.
 2. Paste `https://your-leantime-url/mcp` as the address, and choose **OAuth** for authentication.
-3. Sign in to Leantime and click **Allow access**.
+3. Sign in to Leantime and click **Allow access**. Leantime warns that it hasn't verified the app: that's expected (see the next section).
+
+### Why does Leantime say it hasn't verified the app?
+
+When an assistant connects by signing in, Leantime shows what the assistant asks for and who you're signed in as. It also shows a warning: "Leantime has not verified this app. Only allow access if you just connected Leantime from it."
+
+![Leantime's MCP sign-in screen for Claude: what Claude can do, the not-verified warning, access granted to claude.ai, and Allow access](/_images/installation/leantime-mcp-oauth-allow-access.webp)
+
+You see this warning every time, for Claude and ChatGPT too. Assistants register themselves with Leantime when you click **Connect**, so Leantime has no list of apps to check them against.
+
+Before you click **Allow access**, check three things:
+
+- **You just started it:** you clicked **Connect** (or **Authenticate** in Claude Code) in your assistant a moment ago.
+- **The address after "Access is granted to"** is your assistant's: **claude.ai** for Claude, **chatgpt.com** for ChatGPT, or **localhost** (or **127.0.0.1**) for Claude Code and other assistants that run on your computer.
+- **The account under "Signed in as"** is the one the assistant should use. To use another one, click **Not you?** and sign in again.
+
+If you didn't just start connecting, or the address isn't your assistant's, click **Cancel**.
 
 ### Which apps are connected?
 
@@ -168,7 +184,7 @@ Run once in a terminal:
 claude mcp add --transport http leantime https://your-leantime-url/mcp
 ```
 
-Then type `/mcp` inside Claude Code, choose **leantime** and **Authenticate**, and sign in to Leantime in the browser. To use a token instead, add `--header "Authorization: Bearer YOUR_TOKEN"` to the command.
+Then type `/mcp` inside Claude Code, choose **leantime** and **Authenticate**, and sign in to Leantime in the browser (Leantime warns that it hasn't verified the app: see [Why does Leantime say it hasn't verified the app?](#why-does-leantime-say-it-hasnt-verified-the-app)). To use a token instead, add `--header "Authorization: Bearer YOUR_TOKEN"` to the command.
 
 Add `--scope user` to use Leantime in every project, not just the current folder. Check it with `claude mcp list`.
 
@@ -335,8 +351,8 @@ You don't call these tools yourself. The assistant picks them based on what you 
 | `getProjectsAssignedToUser` | Lists the projects you're assigned to | Reads |
 | `getUsersAssignedToProject` | Lists a project's team | Reads |
 | `addProject` | Creates a project (Managers and above) | Adds |
-| `addUserToProject` | Adds someone to a project's team and tells them (Managers and above; Leantime Cloud, or Leantime 3.16.0 or later with an MCP Server plugin newer than 2.0.1) | Changes |
-| `removeUserFromProject` | Removes someone from a project's team (Managers and above; Leantime Cloud, or Leantime 3.16.0 or later with an MCP Server plugin newer than 2.0.1) | Changes |
+| `addUserToProject` | Adds someone to a project's team and tells them (Managers and above; Leantime Cloud, or Leantime 3.16.0 or later with MCP Server plugin 2.1.0 or later) | Changes |
+| `removeUserFromProject` | Removes someone from a project's team (Managers and above; Leantime Cloud, or Leantime 3.16.0 or later with MCP Server plugin 2.1.0 or later) | Changes |
 | `editProject`, `patchProject` | Changes a project (Managers and above) | Changes |
 
 > **Known issue:** in the current version, `editProject` also resets the project fields you don't mention (access, client, budget, dates, program). Until this is fixed, change project settings in Leantime itself, not through the assistant.
@@ -369,6 +385,17 @@ These work on **your own** calendar.
 | `breakdownTask` | Splits a task into subtasks and schedules them | Adds |
 
 > **Known issue:** in the current version, editing an event with `editEvent` or `bulkEditEvents` turns it into an all-day event. Until this is fixed, change existing events in Leantime itself. Creating and deleting events works as expected.
+
+### Reminders
+
+These work on **your own** morning summary and reminders. They need Leantime Cloud, or Leantime 3.17 or later with MCP Server plugin 2.1.0 or later.
+
+| Tool | What it does | Effect |
+|---|---|---|
+| `getComingUp` | Shows what's coming up for you: due to-dos, milestones and projects ending soon, the same list as your morning summary | Reads |
+| `setTaskReminder` | Chooses how often one to-do reminds you: the day before, every morning, only the morning it's due, or never | Changes |
+| `getReminderSettings` | Shows your morning summary settings: on or off, the time, and your default for to-dos | Reads |
+| `updateReminderSettings` | Changes your morning summary settings | Changes |
 
 ### Comments and status updates
 
@@ -417,7 +444,7 @@ The assistant works best when you are specific about **which project** and **wha
 
 ### What to ask
 
-For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Use Leantime from your AI assistant](/ai/use-leantime-from-your-ai-assistant/). For complete workflows, like turning emails into tasks with a mail connector, see [Everyday workflows](/ai/everyday-workflows/).
+For examples and routines, like updating to-dos by telling the assistant what you did, turning meeting notes into assigned to-dos, or starting a new project in one message, see [Use Leantime from your AI assistant](/ai/use-leantime-from-your-ai-assistant/). For complete recipes, like turning meeting notes into to-dos, a standup report every morning or handing to-dos to a coding agent, see [Things your AI assistant can do in Leantime](/ai/recipes/).
 
 ## Running an AI agent as a team member
 
@@ -437,6 +464,8 @@ You work in the Leantime project "Support Backlog".
 3. When done, add a comment with the result and set the status to "Review". Never set "Done" yourself.
 4. If something is unclear, add a comment with your question and assign the task back to its creator.
 ```
+
+For a complete recipe where the agent picks up to-dos you tag for it, see [Hand to-dos to a coding agent](/ai/coding-agent/).
 
 Leantime doesn't run the agent on a schedule. The agent runs when you (or your automation) start it. Use your agent platform's scheduler if you want a daily digest or a regular check.
 

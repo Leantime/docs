@@ -11,7 +11,7 @@ plugin:
 
 Strategy Pro adds strategies to Leantime: a place above your programs and projects for what your organization is working toward, with goals you can measure and the work that moves them.
 
-![The Strategy Overview of "Feed more families in Riverside": a card for each focus area with its goals, and the Community Pantries program under the strategy's programs and projects](/_images/plugins/strategy-overview.webp)
+![Leantime's Strategy Overview: a card for each focus area with its goals, and the programs and projects under the strategy](/_images/plugins/leantime-strategy-overview.webp)
 
 ## What does it add?
 

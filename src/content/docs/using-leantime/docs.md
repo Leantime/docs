@@ -14,7 +14,7 @@ Docs are the written pages of a project: checklists, meeting notes, how-tos, dec
 1. **Open the project**, open **Data Room** in the left menu and click **Docs**.
 2. **Click Create Article.** A new, empty document opens.
 
-   ![A document called "Launch checklist" in Docs: the Contents list on the left with a page nested under it and Create Article outlined, the checklist in the middle, and Details on the right](/_images/using-leantime/docs-page.webp)
+   ![A document in Leantime Docs, the wiki: the contents list with a nested page, the checklist, and Details on the right](/_images/using-leantime/leantime-docs-wiki-page.webp)
 
 3. **Give it a title** at the top. The button left of the title picks an icon for it.
 4. **Write.** Leantime saves as you type: **Saving…** and then **Saved** appear under the title.
@@ -25,7 +25,7 @@ New documents start as **Drafts**. When it's ready for the team, set **Status** 
 
 Type **/** on an empty line to open the list of things you can add:
 
-![The commands menu that opens when you type /, listing 2 Columns, 3 Columns, 4 Columns, Sidebar Left and Sidebar Right at the top](/_images/using-leantime/docs-commands.webp)
+![The commands menu you open by typing /, starting with column and sidebar layouts](/_images/using-leantime/leantime-docs-wiki-commands.webp)
 
 - **Headings, lists and checklists.** A **Task List** gives you boxes to tick, handy for a launch or onboarding checklist.
 - **Tables, quotes, dividers and collapsible sections**, to keep long pages easy to scan.
@@ -44,11 +44,11 @@ The toolbar above the text has the everyday formatting: bold, italic, lists, lin
 - **Add tags** under the title to label docs that belong together.
 - **Make more than one space.** A project starts with one space called **Default**. To add another, for example one per team or for "Processes" and "Meeting notes", click the space name next to **Docs** and choose **Create a new wiki**.
 
-![The space menu next to Docs open, with "Create a new wiki" outlined above the Default space](/_images/using-leantime/docs-spaces.webp)
+![The Docs space menu, with Create a new wiki outlined above the default space](/_images/using-leantime/leantime-docs-wiki-spaces.webp)
 
 ## Who can see a doc?
 
-![The Details panel of a doc: Status set to Published and outlined, Parent, Milestone, Author and Last Updated](/_images/using-leantime/docs-details.webp)
+![A doc's Details panel: Status set to Published (outlined), parent, milestone, author and last update](/_images/using-leantime/leantime-docs-wiki-details.webp)
 
 - **Published** docs are visible to everyone who can see the project.
 - **Drafts** only show in the **Contents** list for the person who wrote them, so the team doesn't come across unfinished pages. A draft isn't private, though: anyone who can see the project can still open it with its link. Don't put anything in a draft that the project team shouldn't read.

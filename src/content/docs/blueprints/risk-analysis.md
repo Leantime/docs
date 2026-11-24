@@ -8,7 +8,7 @@ head:
 
 A risk analysis lists what could go wrong, how likely it is, how much it would hurt, and what you'll do about it. Leantime's board sorts risks into a grid by impact and probability, so the ones that need attention first stand out.
 
-![The Risk Analysis board with four boxes by impact and probability; the card "Not enough volunteers over the holidays" under High impact / High probability is outlined](/_images/blueprints/risks.webp)
+![Leantime's Risk Analysis board: four boxes by impact and probability, with a high-impact, high-probability risk outlined](/_images/blueprints/leantime-risk-analysis-matrix.webp)
 
 To start one, open **Think → Blueprints** in the project and click **Risk Analysis** (see [Blueprints](/using-leantime/blueprints/)).
 

@@ -11,7 +11,7 @@ plugin:
 
 The Notes plugin gives everyone a private place for notes that don't belong in a project yet: a question for the city, ideas for an opening day, a list of people to thank.
 
-![The Notes page: three notes in the Quick Notes notebook on the left, "Ideas for the opening day" open on the right, and the notebook switcher (All Notes, 3) outlined](/_images/plugins/notes-page.webp)
+![Leantime's Notes page: three notes in the Quick Notes notebook, one open on the right, and the notebook switcher outlined](/_images/plugins/leantime-notes-notebooks.webp)
 
 ## What does it add?
 

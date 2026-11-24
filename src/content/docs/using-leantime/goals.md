@@ -16,7 +16,7 @@ Goals keep the reason for the work in view. Big results take time, and it's easy
 1. **Open the project** and click **Goals** in the left menu. The **Goal Dashboard** opens. If you don't see Goals, it may be switched off for this project (see [How do I switch features on or off for a project?](/using-leantime/managing-projects/#how-do-i-switch-features-on-or-off-for-a-project)).
 2. **Click Create New Goal.**
 
-   ![The Goal Dashboard of Website Redesign: overall progress 27%, two goals On Track, the two goal cards with their milestones, and the Create New Goal button outlined](/_images/using-leantime/goals-dashboard.webp)
+   ![Leantime's Goal Dashboard: overall progress 27%, two goals On Track with their milestones, and Create New Goal outlined](/_images/using-leantime/leantime-goals-dashboard.webp)
 
 3. **Name your goal:** the result you want, in a few words.
 4. **Fill in What are you tracking?:** the thing you count, like "Newsletter subscribers" or "Online orders per week".
@@ -24,7 +24,7 @@ Goals keep the reason for the work in view. Big results take time, and it's easy
 6. **Optional: add dates.** Set a **Start Date** and **End Date** under **Details**.
 7. **Click Save.**
 
-   ![The new goal form, with "Newsletter subscribers" outlined under "What are you tracking?", and Start 200 and Goal 500](/_images/using-leantime/goals-new.webp)
+   ![The new goal form: what you're tracking (outlined), a start value of 200 and a goal of 500](/_images/using-leantime/leantime-goal-new.webp)
 
 After you save, the goal opens on its **Progress** tab. Set **Now** to where you are today: click the number under **NOW**, type it and click **Save**.
 
@@ -47,15 +47,15 @@ A goal can link to as many milestones as it needs, and one milestone can count t
 1. **Open the goal** and go to the **Progress** tab.
 2. **Under Milestones, click the link button** ("Link one you already have"). To make a new milestone instead, click **+**, type its name and click **Save**.
 
-   ![A goal's Progress tab: the number moving from 40 toward 100, and two linked milestones, Checkout rebuilt at 50% and New site live at 0%, with the link button outlined](/_images/using-leantime/goals-milestones.webp)
+   ![A goal's Progress tab: the number moving from 40 toward 100, and two linked milestones with their progress](/_images/using-leantime/leantime-goal-progress-milestones.webp)
 
 3. **Choose the milestone** from the list and click **Save**. Repeat for each milestone.
 
-   ![The milestone list open under the linked milestones, ready to choose one](/_images/using-leantime/goals-link-milestone.webp)
+   ![The milestone list open under a goal's linked milestones](/_images/using-leantime/leantime-goal-link-milestone.webp)
 
 The goal now lists each linked milestone with its due date and progress, and a count of how many are not started, in progress or done. On the Goal Dashboard, each goal card shows its milestones too.
 
-![Two goal cards on the board. "Checkout rebuilt" appears on both, outlined on the second](/_images/using-leantime/goals-shared-milestone.webp)
+![Two goal cards sharing one milestone, outlined on the second card](/_images/using-leantime/leantime-goals-shared-milestone.webp)
 
 To unlink a milestone, click the **×** at the end of its row. The milestone and its to-dos stay as they are.
 
@@ -81,7 +81,7 @@ Yes, with the [Strategy Pro](/plugins/strategy-pro/) plugin. A project goal can 
 2. **Under Which goal will this report into?, pick the strategy goal.** The list shows each goal by its metric.
 3. **Click Save.**
 
-![A project goal, "Eastside pantry families per week", with "Which goal will this report into?" outlined and set to "Families served per week"](/_images/plugins/strategy-report-into.webp)
+![A project goal with Which goal will this report into? outlined and set to a strategy goal](/_images/plugins/leantime-goal-reports-into.webp)
 
 The list only offers goals of the strategy the project belongs to (directly or through its [program](/using-leantime/programs/)), and only goals that allow linking. Whether the strategy goal adds up the project numbers or is updated by hand is set on the strategy goal (see [How do my projects' goals count toward the strategy?](/using-leantime/strategies/#how-do-my-projects-goals-count-toward-the-strategy)).
 

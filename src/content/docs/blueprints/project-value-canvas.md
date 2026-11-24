@@ -8,7 +8,7 @@ head:
 
 The Project Value Canvas checks that a project is worth doing before you plan the work: who it's for, what problem they have, how you'll solve it, and what they gain. It's a good first blueprint for any new project.
 
-![The Project Value Canvas of the Open the Eastside pantry project: a card in each of Customer Segments, Problem, Solution and Benefit, with the customer card outlined](/_images/blueprints/value.webp)
+![Leantime's Project Value Canvas: a card each in Customer Segments, Problem, Solution and Benefit, with the customer card outlined](/_images/blueprints/leantime-project-value-canvas.webp)
 
 To start one, open **Think → Blueprints** in the project and click **Project Value Canvas** (see [Blueprints](/using-leantime/blueprints/)).
 
