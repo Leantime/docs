@@ -21,7 +21,7 @@ A paper is too big to feel progress on. Split each stage into outcomes small eno
 ## Where do notes, protocols and sources go?
 
 - **Docs** holds protocols, meeting notes and reading notes, and can show the milestone a doc belongs to (see [Docs](using-leantime/docs.md)).
-- **Research boards** collect what you found and what it means (see [Research boards](using-leantime/research-boards.md)).
+- **The Insights board** collects what you saw, what people told you and what you read, and what it means (see [Observe / Learn - Insights](blueprints/insights.md)).
 - **Files** keeps the PDFs and data files that belong to the project.
 
 ## Tips for research work
