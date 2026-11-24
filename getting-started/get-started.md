@@ -10,6 +10,12 @@ There are two ways to use Leantime. Only the first step differs: on Leantime Clo
 
 To keep going after two weeks, choose a plan under **Company → Billing** (see [Billing on Leantime Cloud](using-leantime/cloud-billing.md)). If you don't, your workspace is paused and kept for 180 days, so you can come back to it. To pick it up again, email support@leantime.io. To remove it sooner, delete it yourself (see [Delete your Leantime Cloud account](using-leantime/delete-cloud-account.md)). The [privacy policy](https://leantime.io/privacy/) has the details.
 
+## Is there a free plan?
+
+Leantime Cloud has no free plan. It starts with a free two-week trial, and then you choose a paid plan (see [Billing on Leantime Cloud](using-leantime/cloud-billing.md)).
+
+The open source edition is free: you can host it yourself at no cost, for as many people as you like. Paid plugins and support are optional.
+
 ## How do I install Leantime on my own server?
 
 1. **Check what your server needs.** With Docker, you only need Docker with Docker Compose: the image brings PHP, and the example setup starts the database. For a package installation, you need PHP 8.2 or later and MySQL 8.0+, MariaDB 10.6+ or PostgreSQL (see [System requirements](installation/system-requirements.md)).
@@ -19,6 +25,8 @@ To keep going after two weeks, choose a plan under **Company → Billing** (see 
 5. **Optional: add plugins** from the [marketplace](https://marketplace.leantime.io/), for example Strategies and Programs, or Advanced Authentication for the mobile app (see [Plugins](installation/plugin-installation.md)).
 
 The open source edition is free under the AGPLv3 license. You can move a self-hosted Leantime to Cloud later.
+
+Would you rather not install it yourself? Leantime can install it for you, or install and maintain it (see [Can someone install Leantime for me?](installation/installation-types.md#can-someone-install-leantime-for-me)).
 
 ## What should I do first in Leantime?
 

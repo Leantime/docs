@@ -38,6 +38,8 @@ Leantime officially supports:
 - Docker Compose installations
 - Standard PHP installations
 
+Want the Leantime team to install it for you? See [Can someone install Leantime for me?](installation/installation-types.md#can-someone-install-leantime-for-me)
+
 **Note:** Cloudron, Elestio, Turnkey, Coolify and other platforms that install Leantime from their own templates are not officially supported: support comes from each platform. See [One-click installs](installation/one-click-installs.md) for what to check after installing from one.
 
 ### How do I set the correct file permissions?
