@@ -2,7 +2,7 @@
 
 The Whiteboards plugin adds a blank canvas to every project, for anything that's easier to draw than to write: a floor plan, a process, an org chart, a rough screen layout.
 
-![The Eastside pantry floor plan whiteboard: Intake desk, then Dry goods and Fresh produce, then Checkout, drawn with arrows. The Library button is outlined.](../_images/plugins/whiteboards-editor.webp)
+![A Leantime whiteboard: a pantry floor plan from Intake desk through Dry goods and Fresh produce to Checkout, with the Library button outlined](../_images/plugins/leantime-whiteboard-editor.webp)
 
 ## What does it add?
 

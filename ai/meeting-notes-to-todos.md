@@ -34,11 +34,11 @@ The assistant lists the to-dos it would create, with who, when and how urgent. C
 
 Four to-dos in the project, each assigned, with a due date, a priority from how urgent the notes made it sound, and the `launch-checkin` tag:
 
-![The Website Redesign To-Dos table: four new to-dos tagged launch-checkin. Check cookie banner changes with legal (Ben, Medium, due 4 December), Draft the launch announcement email (Ada, High), Fix the checkout error in Safari (Chloe, Critical) and Finish the product photo shoot (Ben, Medium)](../_images/ai/meeting-notes-todos.webp)
+![Leantime to-dos created by an AI assistant from meeting notes: four to-dos, each with an assignee and a priority](../_images/ai/leantime-ai-meeting-notes-todos.webp)
 
 And a project update on the project's overview, under **Project Updates**, with the decision, the open question and the new to-dos:
 
-![A project update: Launch check-in, 23 Nov (Ada, Ben, Chloe). Decision: the launch moves to 4 December. Open question: cookie banner changes, Ben checks with legal. The four to-dos added, tagged launch-checkin](../_images/ai/meeting-notes-update.webp)
+![The project update the assistant posted: the meeting's decision, open question and the four new to-dos](../_images/ai/leantime-ai-meeting-notes-project-update.webp)
 
 The people you assigned are told about their to-dos the same way as when you assign them yourself (see [Notifications](using-leantime/notifications.md)).
 

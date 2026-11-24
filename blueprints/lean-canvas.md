@@ -4,7 +4,7 @@ The Lean Canvas fits a whole business idea on one page, so you can see quickly w
 
 The Lean Canvas is by Ash Maurya, adapted from the Business Model Canvas. For a model of how an established organization works, use the [Business Model Canvas](blueprints/business-model-canvas.md) instead.
 
-![The Lean Canvas board with cards in Problem, Solution, Unique Value Proposition, Unfair Advantage, Existing Alternatives, Key Metrics, High-Level Concept and Channels, and the Problem card outlined](../_images/blueprints/lean.webp)
+![Leantime's Lean Canvas: cards in Problem, Solution, Unique Value Proposition, Unfair Advantage, Key Metrics and Channels](../_images/blueprints/leantime-lean-canvas.webp)
 
 To start one, open **Think → Blueprints** in the project and click **Lean Canvas** (see [Blueprints](using-leantime/blueprints.md)).
 

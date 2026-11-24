@@ -6,7 +6,7 @@ Use it when you run several related projects and keep switching between them to 
 
 Some screens still say "Plan" where they mean a program, like **Plan Settings**. Plan and program are the same thing, so this page gives both names.
 
-![A program's Projects page: Open the Eastside pantry and Start the Northside mobile pantry in the New column, with Add Project outlined](../_images/plugins/program-projects.webp)
+![A program's Projects page in Leantime: two pantry projects in the New column, with Add Project outlined](../_images/plugins/leantime-program-projects.webp)
 
 Programs come with the [Programs](plugins/programs.md) plugin. On Leantime Cloud it's already on; on your own server, see [Programs](plugins/programs.md) to install it.
 
@@ -29,7 +29,7 @@ A program has its own menu: **Dashboard**, **Projects**, **Tasks**, **Timeline**
 - **A new project:** open **Projects** in the program's menu and click **Add Project**. The new project starts out in the program.
 - **A project you already have:** open the project, click **Project Settings**, choose the program under **Part of Program or Strategy** (or **Part of Plan or Strategy**), and click **Save**.
 
-![Project Settings of Start the Northside mobile pantry, with Part of Program or Strategy outlined and set to the Community Pantries program](../_images/plugins/program-part-of.webp)
+![Project Settings with Part of Program or Strategy outlined and set to the Community Pantries program](../_images/plugins/leantime-program-project-settings.webp)
 
 A project belongs to one program at a time. A program can itself sit under a [strategy](using-leantime/strategies.md): choose the strategy under **Part of Program or Strategy** (or **Part of Plan or Strategy**) in **Program Settings**.
 
@@ -40,9 +40,9 @@ A project belongs to one program at a time. A program can itself sit under a [st
 - **Tasks:** every to-do from every project in the program, as **Kanban**, **Table** or **List**. The Kanban columns group to-dos by stage (New, In Progress and Done), so projects with their own statuses still line up; each card shows its project and its own status.
 - **Timeline:** every project and its milestones on one chart. Change the scale with **Timeframe**: day, week or month.
 
-![The program's Tasks page in Kanban view, with to-dos from both projects in New, In Progress and Done, and Tasks outlined in the menu](../_images/plugins/program-tasks.webp)
+![A program's to-dos on one Kanban board, from both of its projects, with Tasks outlined in the menu](../_images/plugins/leantime-program-kanban-board.webp)
 
-![The program's Timeline: both projects and their milestones from October to May, with Timeline outlined in the menu](../_images/plugins/program-timeline.webp)
+![A program's Gantt timeline: both projects and their milestones from October to May](../_images/plugins/leantime-program-gantt-timeline.webp)
 
 ## Can projects in a program share sprints?
 
@@ -56,7 +56,7 @@ A program has its own **Goals**, like a project does (see [Goals](using-leantime
 
 **Resources** (in beta) shows whether the program has the people for its work: how many hours each person has, how many they're booked for on each project, and how much time they've logged this week. It also keeps the program's budget lines and outside partners it depends on.
 
-![The Resources page of the Community Pantries program: the Allocated tile (80h of 112h a week) outlined, 15h logged this week, and planned against logged hours for each project](../_images/plugins/programs-resources.webp)
+![A program's Resources page: 80 of 112 hours a week allocated (outlined), hours logged this week, and planned against logged per project](../_images/plugins/leantime-program-resource-capacity.webp)
 
 1. **Click Resources** in the program menu. The first time, Leantime adds everyone on the program's projects for you. To add someone else, use **Add Person** on the **People** tab.
 2. **Book their hours:** on the **People** tab, click the bar next to a person, enter the hours a week they'll spend on each project, and click **Done**.

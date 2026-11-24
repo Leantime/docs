@@ -2,7 +2,7 @@
 
 A SWOT analysis looks at where a project stands: its **Strengths** and **Weaknesses**, which are inside your team or organization, and the **Opportunities** and **Threats** around it. It helps you decide what to build on and what to protect against.
 
-![The SWOT Analysis board with Helpful and Harmful headings, and a card or two in each of Strengths, Weaknesses, Opportunities and Threats, with the Strengths column outlined](../_images/blueprints/swot.webp)
+![Leantime's SWOT Analysis board: cards in Strengths, Weaknesses, Opportunities and Threats, under Helpful and Harmful](../_images/blueprints/leantime-swot-analysis-board.webp)
 
 To start one, open **Think → Blueprints** in the project and click **SWOT Analysis** (see [Blueprints](using-leantime/blueprints.md)).
 

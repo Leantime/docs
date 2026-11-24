@@ -140,7 +140,7 @@ You're back in Claude, and Leantime is connected. A connector you add on claude.
 
 When an assistant connects by signing in, Leantime shows what the assistant asks for and who you're signed in as. It also shows a warning: "Leantime has not verified this app. Only allow access if you just connected Leantime from it."
 
-![Connect Claude to Leantime: what Claude will be able to do, the warning that Leantime has not verified the app and that access is granted to claude.ai, the account you're signed in as, and the Allow access and Cancel buttons](../_images/installation/mcp-allow-access.webp)
+![Leantime's MCP sign-in screen for Claude: what Claude can do, the not-verified warning, access granted to claude.ai, and Allow access](../_images/installation/leantime-mcp-oauth-allow-access.webp)
 
 You see this warning every time, for Claude and ChatGPT too. Assistants register themselves with Leantime when you click **Connect**, so Leantime has no list of apps to check them against.
 

@@ -2,7 +2,7 @@
 
 My Work is your personal start page: your to-dos from every project, your calendar and a few numbers about your week, in one place. Open it with **My Work** in the top menu. Everyone has their own, and you can choose what's on it.
 
-![The My Work dashboard: four numbers at the top, the My ToDos widget and the Calendar widget, with the Update Dashboard button outlined at the top right](../_images/using-leantime/mywork-dashboard.webp)
+![Leantime's My Work dashboard: four key numbers, the My ToDos and Calendar widgets, and Update Dashboard outlined](../_images/using-leantime/leantime-my-work-dashboard.webp)
 
 ## What do the numbers at the top mean?
 
@@ -22,7 +22,7 @@ My ToDos lists the to-dos assigned to you, from every project.
 - **Start a timer** with the play button on the to-do, and stop it the same way (see [Time tracking](using-leantime/timesheets.md)).
 - **Add a to-do** with the **+** button next to a group.
 
-![The My ToDos widget with its Group By menu open: Due Dates, Project and Priority](../_images/using-leantime/mywork-groupby.webp)
+![The My ToDos widget's Group By menu: Due Dates, Project and Priority](../_images/using-leantime/leantime-my-work-todos-group-by.webp)
 
 ## How do I plan my day with the Calendar widget?
 
@@ -36,7 +36,7 @@ For more on calendars, see [Calendars](using-leantime/calendars.md).
 2. **Switch widgets on or off** in the Widget Manager: **My ToDos**, **Calendar** and **My Projects** (your projects, favorites first). Some plugins add more widgets, like the [Pomodoro timer](#how-do-i-use-the-pomodoro-timer), [Notes](using-leantime/notes.md) and, on Leantime Cloud, the [Daily Intention](#how-do-i-set-a-daily-intention).
 3. **Close the Widget Manager.**
 
-![The Widget Manager with switches for My ToDos, Calendar and My Projects, and a Reset Dashboard button](../_images/using-leantime/mywork-widget-manager.webp)
+![The Widget Manager: switches for My ToDos, Calendar and My Projects, and Reset Dashboard](../_images/using-leantime/leantime-my-work-widget-manager.webp)
 
 To move a widget, drag it by the dotted handle at its top left. To hide one or fit it to its content, use the **⋮** menu at its top right. **Reset Dashboard** in the Widget Manager puts everything back the way it started.
 
@@ -46,7 +46,7 @@ The palette button next to Update Dashboard changes your theme and colors.
 
 The Pomodoro technique is simple: work on one thing for 25 minutes, then take a short break. The **Pomodoro Timer** widget puts the timer on My Work, and can log the time to the to-do you're working on.
 
-![The Pomodoro Timer box on the My Work dashboard: 25:00, Pomodoro (25min) chosen, the play and reset buttons, and "Drop a task here to start timer" outlined](../_images/plugins/pomodoro-widget.webp)
+![The Pomodoro Timer widget: 25:00, the play and reset buttons, and a drop zone to start the timer on a task](../_images/plugins/leantime-pomodoro-timer-widget.webp)
 
 The timer comes with the Pomodoro plugin. On Leantime Cloud it's already on; on your own server, see [Pomodoro timer](plugins/pomodoro.md) to install it.
 

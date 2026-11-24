@@ -4,7 +4,7 @@ A whiteboard is a blank canvas inside a project, for anything that's easier to d
 
 The drawing tools come from [Excalidraw](https://excalidraw.com), so if you've used it before, you already know how they work.
 
-![The Eastside pantry floor plan whiteboard: Intake desk, then Dry goods and Fresh produce, then Checkout, drawn with arrows. The Library button is outlined.](../_images/plugins/whiteboards-editor.webp)
+![A Leantime whiteboard: a pantry floor plan from Intake desk through Dry goods and Fresh produce to Checkout, with the Library button outlined](../_images/plugins/leantime-whiteboard-editor.webp)
 
 Whiteboards come with the [Whiteboards](plugins/whiteboards.md) plugin. On Leantime Cloud it's already on; on your own server, see [Whiteboards](plugins/whiteboards.md) to install it.
 
@@ -14,7 +14,7 @@ Whiteboards come with the [Whiteboards](plugins/whiteboards.md) plugin. On Leant
 2. **Click Create Whiteboard.**
 3. **Enter a title** and click **Save**. The whiteboard opens, ready to draw on.
 
-![The Whiteboards page of Open the Eastside pantry: the Board group with the Eastside pantry floor plan, and Create Whiteboard outlined](../_images/plugins/whiteboards-list.webp)
+![A project's Whiteboards page: one board in the Board group, and Create Whiteboard outlined](../_images/plugins/leantime-whiteboards-list.webp)
 
 If you don't see **Whiteboards**, check that you have the Editor role or higher, and that whiteboards are switched on for the project (see [How do I switch features on or off for a project?](using-leantime/managing-projects.md#how-do-i-switch-features-on-or-off-for-a-project)).
 

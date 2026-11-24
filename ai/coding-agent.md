@@ -76,11 +76,11 @@ The agent lists the to-dos it found and starts on the first one. Leantime doesn'
 
 When the agent is done with a to-do, it's in **Waiting for Approval**, still assigned to the same person, tagged `agent-done`:
 
-![The to-do Compress the hero images on the homepage: status Waiting for Approval, assigned to Ben Ortiz, tagged agent-done and performance, and a description that ends with when it's done](../_images/ai/agent-handoff-todo.webp)
+![A Leantime to-do after the coding agent: Waiting for Approval, still assigned to the same person, tagged agent-done](../_images/ai/leantime-ai-coding-agent-todo.webp)
 
 Its comments have the agent's plan, and its result with the pull request link, each starting with "Claude:":
 
-![Two comments on the to-do. The first: Claude: picking this up, with a plan of three steps. The second: Claude: done, the 4 hero images are now WebP between 140 and 260 KB, with the pull request link, ready for review](../_images/ai/agent-handoff-comments.webp)
+![The agent's two comments on the to-do: its plan, then the result with the pull request link](../_images/ai/leantime-ai-coding-agent-comments.webp)
 
 ## Step 4: Review the work
 

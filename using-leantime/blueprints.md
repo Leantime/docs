@@ -7,7 +7,7 @@ Blueprints are boards for thinking a project through before and while you work o
 1. **Open the project**, open **Think** in the left menu and click **Blueprints**.
 2. **Click the blueprint you want** under **Templates**. Leantime creates the board and opens it.
 
-   ![The Blueprints page: two boards under "Jump right back in", and the list of templates with Lean Canvas outlined](../_images/using-leantime/blueprints-templates.webp)
+   ![Leantime's Blueprints page: recent boards, and the list of templates with Lean Canvas outlined](../_images/using-leantime/leantime-blueprints-templates.webp)
 
 Blueprints you've already started move up to **Jump right back in**, so you can get back to them in one click.
 
@@ -35,7 +35,7 @@ If you don't know where to start, try the **Project Value Canvas**: it asks who 
 
 1. **Click Add New** in the column the card belongs in.
 
-   ![A SWOT Analysis board with one card in each of Strengths, Weaknesses, Opportunities and Threats, and Add New under Strengths outlined](../_images/using-leantime/blueprints-board.webp)
+   ![A SWOT Analysis board with one card in each box, and Add New under Strengths outlined](../_images/using-leantime/leantime-blueprints-swot-board.webp)
 
 2. **Give it a title** and fill in the rest. What you can fill in depends on the blueprint. A SWOT card has a description and supporting data. A Project Value Canvas card asks for your assumptions, the data behind them and your conclusion, and has a status such as **Draft**, **In review** or **Validated: Valid**.
 3. **Click Save.**
@@ -51,13 +51,13 @@ The menu at the top right of a board lets you **Edit** its name, **Export** it, 
 
 Yes, for example one SWOT per product or per year. Click the board name next to the blueprint's title and choose **Create New Board**. The same menu switches between boards.
 
-![The board menu open on a SWOT Analysis board, with Create New Board outlined above the existing board](../_images/using-leantime/blueprints-new-board.webp)
+![A board's menu, with Create New Board outlined](../_images/using-leantime/leantime-blueprints-new-board.webp)
 
 ## What about the Logic Model?
 
 The Logic Model maps how your work leads to change: the **Inputs** you invest, the **Activities** you do, the **Outputs** they produce, the **Outcomes** you expect and the **Impact** you're aiming for. Non-profits, NGOs and funded programs often use it to plan and report to funders.
 
-![The Logic Model board with five columns: Inputs, Activities, Outputs, Outcomes and Impact](../_images/using-leantime/blueprints-logic-model.webp)
+![The Logic Model board's five columns: Inputs, Activities, Outputs, Outcomes and Impact](../_images/using-leantime/leantime-blueprints-logic-model.webp)
 
 In core Leantime, the Logic Model is a board like the others: you fill each column with cards. With the [Strategy Pro](plugins/strategy-pro.md) plugin, a strategy's Logic Model connects to the work: it can be built from your programs, milestones and [goals](using-leantime/goals.md), shows how strong each link between columns is, and can turn into milestones, to-dos and goals. See [Logic Model](blueprints/logic-model.md) for both.
 
