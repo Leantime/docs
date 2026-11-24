@@ -99,7 +99,7 @@ When there's an update, **My Apps** shows it next to the plugin (for example, "v
 
 Before updating, Leantime keeps a copy of the current version. If the new version doesn't load, Leantime puts the previous version back and tells you.
 
-Your purchase includes updates for one year. After that, the plugin keeps working on the versions it supports, and you can renew on the marketplace to get newer versions.
+Your purchase includes updates for one year. After that, the plugin keeps working on the versions it supports, and you can renew on the marketplace to get newer versions (see [Do I have to pay every year?](installation/buy-plugins.md#do-i-have-to-pay-every-year)).
 
 ## Can plugins update automatically?
 
