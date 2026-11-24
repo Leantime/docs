@@ -46,6 +46,7 @@
     - [Hand to-dos to a coding agent](ai/coding-agent.md)
     - [Turn emails into tasks](ai/emails-to-tasks.md)
     - [Set up a project for someone else](ai/project-for-someone-else.md)
+    - [Turn timesheets into an invoice](ai/invoice-from-timesheets.md)
 - [AI in Leantime Cloud (L.E.O.)](ai/leantime-cloud-ai.md)
 - [MCP server: connect your own assistant](installation/leantime-mcp.md)
 - [Working with AI assistants](ai/working-with-ai.md)

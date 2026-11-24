@@ -13,6 +13,7 @@ For shorter examples of what to ask, see [Use Leantime from your AI assistant](a
 | A coding agent to pick up to-dos you tag for it, and hand them back for review | [Hand to-dos to a coding agent](ai/coding-agent.md) | Claude Code, or another coding agent |
 | Customer emails to become tasks with an owner, a priority and a due date | [Turn emails into tasks](ai/emails-to-tasks.md) | Claude with the Gmail connector |
 | A project ready for a teammate: the project, its team and their first tasks | [Set up a project for someone else](ai/project-for-someone-else.md) | Any connected assistant |
+| An invoice from the billable time your team logged, and the time marked as invoiced | [Turn timesheets into an invoice](ai/invoice-from-timesheets.md) | Any connected assistant; one that makes files for a PDF or spreadsheet |
 
 ## Connect your assistant
 

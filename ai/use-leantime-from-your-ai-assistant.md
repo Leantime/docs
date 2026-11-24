@@ -117,6 +117,8 @@ Compare my calendar and the to-dos I finished this week with the time I logged.
 Which to-dos have no time? Then log what I tell you, as Development.
 ```
 
+Once the time is in, see [Turn timesheets into an invoice](ai/invoice-from-timesheets.md).
+
 **Write a client or team update**
 
 ```
